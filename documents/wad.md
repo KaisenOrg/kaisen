@@ -95,7 +95,23 @@ In this way, Kaizen establishes itself as an intelligent and collaborative study
 ## 2.1. Project Scope
 
 ### 2.1.1. Porter's 5 Forces Model
-[FILL IN WITH UP TO 400 WORDS - Place here the 5 forces model]
+
+The education industry faces growing challenges, such as the low quality of teaching and the difficulty of reliably proving learning. According to UNESCO, millions of young people still do not have access to adequate education, while the job market evolves rapidly and demands constant professional development. In addition, the lack of effective means—digital or physical—to validate knowledge hinders the advancement of many individuals. 
+
+In this context, Kaizen emerges as an innovative solution by combining artificial intelligence and blockchain to personalize learning and ensure the secure validation of knowledge through immutable digital certificates (NFTs). By facilitating learning, transparent certification, and collaborative sharing, Kaizen offers an effective alternative to the limitations of the traditional education model, expanding access and trust in the educational process. 
+
+In this scenario, Porter's Five Forces analysis is applied—an essential tool for assessing the competitive environment and understanding the factors that influence the dynamics of the sector.
+
+<div align="center">
+
+<sub>Figura X - Porter's 5 Forces Model</sub>
+
+<img src="./assets/.png" width="100%">
+
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
+
+</div>
+
 
 ### 2.1.2. SWOT Analysis of Partner Institution
 [FILL IN WITH UP TO 100 WORDS - Place here the SWOT analysis]
