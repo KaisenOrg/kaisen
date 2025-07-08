@@ -1,26 +1,26 @@
 # Kaizen
-## Nome do Grupo: [PREENCHER NOME DO GRUPO]
-#### Nomes dos integrantes do grupo:
-[PREENCHER NOME DO INTEGRANTE]
+## Group Name: [FILL IN GROUP NAME]
+#### Group Members' Names:
+[FILL IN MEMBER NAME]
 
 
-## Sumário
+## Table of Contents
 
 <details>
-  <summary><a href="#1-introdução">1. Introdução</a></summary>
+  <summary><a href="#1-introduction">1. Introduction</a></summary>
 </details>
 
 <details>
-  <summary><a href="#2-visão-geral-da-aplicação">2. Visão Geral da Aplicação</a></summary>
+  <summary><a href="#2-application-overview">2. Application Overview</a></summary>
   <ul>
     <li>
-      <a href="#21-escopo-do-projeto">2.1. Escopo do Projeto</a>
+      <a href="#21-project-scope">2.1. Project Scope</a>
       <ul>
-        <li><a href="#211-modelo-de-5-forças-de-porter">2.1.1. Modelo de 5 Forças de Porter</a></li>
-        <li><a href="#212-análise-swot-da-instituição-parceira">2.1.2. Análise SWOT da Instituição Parceira</a></li>
-        <li><a href="#213-solução">2.1.3. Solução</a></li>
+        <li><a href="#211-porter-5-forces-model">2.1.1. Porter's 5 Forces Model</a></li>
+        <li><a href="#212-swot-analysis-of-partner-institution">2.1.2. SWOT Analysis of Partner Institution</a></li>
+        <li><a href="#213-solution">2.1.3. Solution</a></li>
         <li><a href="#214-value-proposition-canvas">2.1.4. Value Proposition Canvas</a></li>
-        <li><a href="#215-matriz-de-riscos-do-projeto">2.1.5. Matriz de Riscos do Projeto</a></li>
+        <li><a href="#215-project-risk-matrix">2.1.5. Project Risk Matrix</a></li>
       </ul>
     </li>
     <li><a href="#22-personas">2.2. Personas</a></li>
@@ -28,161 +28,161 @@
 </details>
 
 <details>
-  <summary><a href="#3-projeto-da-aplicação">3. Projeto da Aplicação</a></summary>
+  <summary><a href="#3-application-project">3. Application Project</a></summary>
   <ul>
-    <li><a href="#31-diagrama-de-arquitetura">3.1. Diagrama de Arquitetura</a></li>
-    <li><a href="#32-guia-de-estilos">3.2. Guia de estilos</a></li>
+    <li><a href="#31-architecture-diagram">3.1. Architecture Diagram</a></li>
+    <li><a href="#32-style-guide">3.2. Style Guide</a></li>
     <ul>
-      <li><a href="#321-cores">3.2.1. Cores</a></li>
-      <li><a href="#322-tipografia">3.2.2. Tipografia</a></li>
-      <li><a href="#323-iconografia-e-imagens">3.2.3. Iconografia e imagens</a></li>
+      <li><a href="#321-colors">3.2.1. Colors</a></li>
+      <li><a href="#322-typography">3.2.2. Typography</a></li>
+      <li><a href="#323-iconography-and-images">3.2.3. Iconography and Images</a></li>
     </ul>
-    <li><a href="#33-protótipo-de-alta-fidelidade">3.3. Protótipo de alta fidelidade</a></li>
-    <li><a href="#34-modelagem-de-dados-on-chain">3.4. Modelagem de Dados (On-Chain)</a></li>
+    <li><a href="#33-high-fidelity-prototype">3.3. High-Fidelity Prototype</a></li>
+    <li><a href="#34-data-modeling-on-chain">3.4. Data Modeling (On-Chain)</a></li>
     <ul>
-      <li><a href="#341-lógica-dos-smart-contracts-on-chain">3.4.1. Lógica dos Smart Contracts (On-Chain)</a></li>
+      <li><a href="#341-smart-contracts-logic-on-chain">3.4.1. Smart Contracts Logic (On-Chain)</a></li>
     </ul>
   </ul>
 </details>
 
 <details>
-  <summary><a href="#4-desenvolvimento-da-aplicação">4. Desenvolvimento da Aplicação</a></summary>
+  <summary><a href="#4-application-development">4. Application Development</a></summary>
   <ul>
-    <li><a href="#41-primeira-versão-da-aplicação-mvp">4.1. Primeira versão da aplicação (MVP)</a></li>
+    <li><a href="#41-first-version-of-the-application-mvp">4.1. First Version of the Application (MVP)</a></li>
   </ul>
 </details>
 
 <details>
-  <summary><a href="#5-estudo-de-mercado-e-plano-de-marketing">5. Estudo de Mercado e Plano de Marketing</a></summary>
+  <summary><a href="#5-market-study-and-marketing-plan">5. Market Study and Marketing Plan</a></summary>
   <ul>
-    <li><a href="#51-resumo-executivo">5.1. Resumo Executivo</a></li>
-    <li><a href="#52-análise-de-mercado">5.2. Análise de Mercado</a></li>
-    <li><a href="#53-análise-da-concorrência">5.3. Análise da Concorrência</a></li>
-    <li><a href="#54-público-alvo">5.4. Público-Alvo</a></li>
-    <li><a href="#55-posicionamento">5.5. Posicionamento</a></li>
-    <li><a href="#56-estratégia-de-marketing">5.6. Estratégia de Marketing</a></li>
+    <li><a href="#51-executive-summary">5.1. Executive Summary</a></li>
+    <li><a href="#52-market-analysis">5.2. Market Analysis</a></li>
+    <li><a href="#53-competitive-analysis">5.3. Competitive Analysis</a></li>
+    <li><a href="#54-target-audience">5.4. Target Audience</a></li>
+    <li><a href="#55-positioning">5.5. Positioning</a></li>
+    <li><a href="#56-marketing-strategy">5.6. Marketing Strategy</a></li>
   </ul>
 </details>
 
 <details>
-  <summary><a href="#6-conclusões-e-trabalhos-futuros">6. Conclusões e trabalhos futuros</a></summary>
+  <summary><a href="#6-conclusions-and-future-work">6. Conclusions and Future Work</a></summary>
 </details>
 
 <details>
-  <summary><a href="#7-referências">7. Referências</a></summary>
+  <summary><a href="#7-references">7. References</a></summary>
 </details>
 
 <details>
-  <summary><a href="#8-anexos">8. Anexos</a></summary>
+  <summary><a href="#8-appendices">8. Appendices</a></summary>
 </details>
 
 
-# 1. Introdução
-[PREENCHER - Posicione aqui a introdução para sua aplicação.]
+# 1. Introduction
+[FILL IN - Place here the introduction to your application.]
 
 
-# 2. Visão Geral da Aplicação
+# 2. Application Overview
 
-## 2.1. Escopo do Projeto
+## 2.1. Project Scope
 
-### 2.1.1. Modelo de 5 Forças de Porter
-[PREENCHER COM ATÉ 400 PALAVRAS - Posicione aqui o modelo de 5]
+### 2.1.1. Porter's 5 Forces Model
+[FILL IN WITH UP TO 400 WORDS - Place here the 5 forces model]
 
-### 2.1.2. Análise SWOT da Instituição Parceira
-[PREENCHER COM ATÉ 100 PALAVRAS - Posicione aqui a análise swot]
+### 2.1.2. SWOT Analysis of Partner Institution
+[FILL IN WITH UP TO 100 WORDS - Place here the SWOT analysis]
 
-### 2.1.3. Solução
-**Problema a ser resolvido:** [PREENCHER]
-**Dados disponíveis:** [PREENCHER]
-**Solução proposta:** [PREENCHER]
-**Forma de utilização da solução:** [PREENCHER]
-**Benefícios esperados:** [PREENCHER]
-**Critério de sucesso e como será avaliado:** [PREENCHER]
+### 2.1.3. Solution
+**Problem to be solved:** [FILL IN]
+**Available data:** [FILL IN]
+**Proposed solution:** [FILL IN]
+**How to use the solution:** [FILL IN]
+**Expected benefits:** [FILL IN]
+**Success criteria and how it will be evaluated:** [FILL IN]
 
 ### 2.1.4. Value Proposition Canvas
-[PREENCHER - Posicione aqui o Value Proposition Canvas]
+[FILL IN - Place here the Value Proposition Canvas]
 
-### 2.1.5. Matriz de Riscos do Projeto
-[PREENCHER - Posicione aqui a matriz de riscos]
+### 2.1.5. Project Risk Matrix
+[FILL IN - Place here the risk matrix]
 
 ## 2.2. Personas
-[PREENCHER - Posicione aqui as personas]
+[FILL IN - Place here the personas]
 
 
-# 3. Projeto da Aplicação
+# 3. Application Project
 
-## 3.1. Diagrama de Arquitetura
-[PREENCHER - Posicione aqui o diagrama de arquitetura]
+## 3.1. Architecture Diagram
+[FILL IN - Place here the architecture diagram]
 
-## 3.2. Guia de estilos
-[PREENCHER - Descreva aqui orientações gerais sobre cores, fontes, ícones e imagens da aplicação Kaizen.]
+## 3.2. Style Guide
+[FILL IN - Describe here general guidelines about colors, fonts, icons and images for the Kaizen application.]
 
-### 3.2.1. Cores
-[PREENCHER - Apresente aqui a paleta de cores.]
+### 3.2.1. Colors
+[FILL IN - Present here the color palette.]
 
-### 3.2.2. Tipografia
-[PREENCHER - Apresente aqui a tipografia da solução.]
+### 3.2.2. Typography
+[FILL IN - Present here the typography of the solution.]
 
-### 3.2.3. Iconografia e imagens
-[PREENCHER - Apresente aqui os ícones e imagens.]
+### 3.2.3. Iconography and Images
+[FILL IN - Present here the icons and images.]
 
-## 3.3. Protótipo de alta fidelidade
-[PREENCHER - Posicione aqui as telas do protótipo]
+## 3.3. High-Fidelity Prototype
+[FILL IN - Place here the prototype screens]
 
-## 3.4. Modelagem de Dados (On-Chain)
+## 3.4. Data Modeling (On-Chain)
 
-### 3.4.1. Lógica dos Smart Contracts (On-Chain)
-**Contrato de Certificado (Padrão ERC-721 ou ERC-1155):**
-Função Principal: 
-Descrição:
-Validação:
-**Contrato de Token (Padrão ERC-20):**
-Nome do Token:
-Funções Principais: 
-Lógica de Recompensa: 
-
-
-# 4. Desenvolvimento da Aplicação
-
-## 4.1. Primeira versão da aplicação (MVP)
-[PREENCHER - Descreva e ilustre aqui o que foi entregue no MVP, como as funcionalidades do Front-end e as primeiras integrações.]
+### 3.4.1. Smart Contracts Logic (On-Chain)
+**Certificate Contract (ERC-721 or ERC-1155 Standard):**
+Main Function: 
+Description:
+Validation:
+**Token Contract (ERC-20 Standard):**
+Token Name:
+Main Functions: 
+Reward Logic: 
 
 
-# 5. Estudo de Mercado e Plano de Marketing
+# 4. Application Development
 
-## 5.1. Resumo Executivo
-[PREENCHER]
-
-## 5.2. Análise de Mercado
-[PREENCHER AS SUBSEÇÕES COM PESQUISAS DE MERCADO]
-
-## 5.3. Análise da Concorrência
-**a) Principais Concorrentes:**
-Diretos:[PREENCHER]
-Indiretos:[PREENCHER]
-**b) Vantagens Competitivas da Aplicação Web:**
-[PREENCHER]
-
-## 5.4. Público-Alvo
-**a) Segmentação de Mercado:** [PREENCHER]
-**b) Perfil do Público-Alvo:** [PREENCHER - Caracterize o público-alvo com dados demográficos, psicográficos e comportamentais.]
-
-## 5.5. Posicionamento
-**a) Proposta de Valor Única:** [PREENCHER]
-**b) Estratégia de Diferenciação:** [PREENCHER - Explique como sua aplicação se destaca da concorrência.]
-
-## 5.6. Estratégia de Marketing
-[PREENCHER AS SUBSEÇÕES COM A ESTRATÉGIA DE MARKETING DIGITAL]
+## 4.1. First Version of the Application (MVP)
+[FILL IN - Describe and illustrate here what was delivered in the MVP, such as Front-end functionalities and initial integrations.]
 
 
-# 6. Conclusões e trabalhos futuros
-[PREENCHER - Escreva de que formas a solução da aplicação web atingiu os objetivos descritos na seção 2 deste documento. Indique pontos fortes e pontos a melhorar de maneira geral.]
+# 5. Market Study and Marketing Plan
+
+## 5.1. Executive Summary
+[FILL IN]
+
+## 5.2. Market Analysis
+[FILL IN THE SUBSECTIONS WITH MARKET RESEARCH]
+
+## 5.3. Competitive Analysis
+**a) Main Competitors:**
+Direct: [FILL IN]
+Indirect: [FILL IN]
+**b) Competitive Advantages of the Web Application:**
+[FILL IN]
+
+## 5.4. Target Audience
+**a) Market Segmentation:** [FILL IN]
+**b) Target Audience Profile:** [FILL IN - Characterize the target audience with demographic, psychographic and behavioral data.]
+
+## 5.5. Positioning
+**a) Unique Value Proposition:** [FILL IN]
+**b) Differentiation Strategy:** [FILL IN - Explain how your application stands out from the competition.]
+
+## 5.6. Marketing Strategy
+[FILL IN THE SUBSECTIONS WITH DIGITAL MARKETING STRATEGY]
 
 
-# 7. Referências
-[PREENCHER - Incluir as principais referências de seu projeto]
+# 6. Conclusions and Future Work
+[FILL IN - Write how the web application solution achieved the objectives described in section 2 of this document. Indicate strengths and areas for improvement in general.]
 
 
-# 8. Anexos
-[PREENCHER - Inclua aqui quaisquer complementos para seu projeto, como diagramas, imagens, tabelas etc.]
+# 7. References
+[FILL IN - Include the main references of your project]
+
+
+# 8. Appendices
+[FILL IN - Include here any complements to your project, such as diagrams, images, tables, etc.]
 
