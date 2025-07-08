@@ -104,13 +104,29 @@ In this scenario, Porter's Five Forces analysis is applied—an essential tool f
 
 <div align="center">
 
-<sub>Figura X - Porter's 5 Forces Model</sub>
+<sub>Figure X - Porter's 5 Forces Model</sub>
 
-<img src="./assets/.png" width="100%">
+<img src="./assets/five-forces.png" width="100%">
 
-<sup>Fonte: Material produzido pelos autores (2025)</sup>
+<sup>Source: Material produced by the authors (2025)</sup>
 
 </div>
+
+**Competitor Rivalry – High**<br>
+The online education platform market is booming, driven by giants such as Coursera, Udemy, Duolingo, and Khan Academy, which reach millions of users around the world. This diversity of alternatives increases the competition for attention and engagement. To differentiate itself in this scenario, Kaizen adopts a unique proposal: it combines personalized artificial intelligence with immutable validation of knowledge via blockchain. This approach creates a qualitative barrier that reduces the direct impact of traditional competition and positions the platform as a reference in educational innovation.
+
+**Threat of new entrants – Moderate**<br>
+The threat of new entrants is moderate because, despite the ease of entry into the digital sector, developing a platform that integrates AI, blockchain, gamification, and knowledge validation requires technical expertise, investment in infrastructure, and educational credibility. These requirements create technological and trust barriers, thus making it difficult for new participants with similar proposals to enter and protecting the position of the Kaizen platform in the market.
+
+**Threat of substitute products – High**<br>
+The threat of substitute products is high, as users may opt for informal solutions, such as YouTube videos, e-books, forums, or free podcasts. These alternatives, although accessible, lack pedagogical structure, valid certification, and engagement mechanisms. To overcome this scenario, the Kaizen platform relies on a personalized learning journey based on artificial intelligence and the immutable validation of knowledge through NFTs—a significant differentiator that is not easily replicable by traditional or informal substitutes.
+
+**Bargaining power of customers – High**<br>
+Given the wide range of free or low-cost educational resources available, users have a high level of choice and demand clear value in their decisions. To reduce this pressure, Kaizen invests in the user experience by offering a gamified, transparent platform focused on digital reputation through certified NFTs. This value proposition strengthens loyalty, increases engagement, and transforms the user into an active agent in their own educational development.
+
+**Supplier Bargaining Power – Moderate**<br>
+Dependence on external technological infrastructure and tools—such as AI APIs and blockchain networks—can increase suppliers’ bargaining power and impact operating costs. To mitigate this risk, Kaizen adopts a service decentralization strategy, prioritizing scalable, interoperable solutions that allow flexibility in choosing partners. With this, the platform ensures technical autonomy and greater resilience in the face of fluctuations in the supplier market.
+
 
 
 ### 2.1.2. SWOT Analysis of Partner Institution
