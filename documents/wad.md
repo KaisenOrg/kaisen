@@ -78,7 +78,16 @@
 
 
 # 1. Introduction
-[FILL IN - Place here the introduction to your application.]
+
+Kaizen is a decentralized educational platform that transforms the way individuals learn, share, and validate knowledge. By integrating artificial intelligence and blockchain technology, the application offers an innovative and continuous experience in which the user not only studies in a personalized way but also publicly proves their progress through immutable digital certifications.
+
+In practice, the process begins when the user sends content such as PDFs, notes, or articles directly to Kai—the platform's intelligent virtual assistant. From this material, Kai generates interactive flashcards, quizzes, summaries, and personalized study paths, facilitating targeted and efficient learning. Upon completing their study journey, the user can validate the knowledge acquired through an NFT certificate, which reliably and transparently attests to their mastery of the studied content.
+
+In addition, Kaizen promotes knowledge sharing, where the user, after completing their paths, can make them publicly available with the content they studied, allowing other people to benefit from the path taken. To further enrich this exchange, community members can suggest complementary materials to existing trails, while the trail creator maintains the autonomy to accept all, some, or none of the contributions. This promotes active curation and ensures the quality of shared resources.
+
+Aiming to encourage constant engagement, the application rewards users for each significant interaction—whether it be answering a question correctly, completing a trail, or contributing relevant content. These accumulated tokens can be used in Kai's Shop, an interactive and playful environment where it is possible to unlock variations of the mascot (with personalized looks and skins), as well as exclusive tools that enhance learning and the creation of new content.
+
+In this way, Kaizen establishes itself as an intelligent and collaborative study environment—in which each achievement is recorded, each contribution is valued, and knowledge is transformed into digital reputation, social recognition, and tangible rewards.
 
 
 # 2. Application Overview
