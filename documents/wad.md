@@ -147,7 +147,10 @@ Dependence on external technological infrastructure and tools—such as AI APIs 
 [FILL IN - Place here the risk matrix]
 
 ## 2.2. Personas
-[FILL IN - Place here the personas]
+
+Representing specific individuals, personas are semi-fictional profiles built based on real data and observations about the target audience. Their main function is to facilitate the understanding of users' needs, behaviors, and motivations, allowing for more targeted and effective solution development.
+
+Below are three personas developed specifically for this project to guide decision-making and ensure greater alignment with end-user expectations.
 
 
 # 3. Application Project
