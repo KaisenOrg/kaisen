@@ -6,13 +6,23 @@
 
 [to fill in]
 
-## Funcionalidades principais:
+## Funcionalidades principais
 
 [to fill in]
 
 ## Tecnologias Utilizadas
 
 [to fill in]
+
+## Fluxos da Aplicação
+
+[to fill in]
+
+## Demonstração
+
+*Colocar vídeo da demo*
+*Colocar Dapp funcional*
+*Colocar vídeo da apresentação*
 
 ## Configuração para execução do projeto
 
@@ -39,17 +49,6 @@
 [to fill in]
 
 *Colocar o diagrama de arquitetura*
-
-## Fluxos da Aplicação
-
-[to fill in]
-
-
-## Demonstração
-
-*Colocar vídeo da demo*
-*Colocar Dapp funcional*
-*Colocar vídeo da apresentação*
 
 ## Estrutura de Pastas e Arquivos:
 
