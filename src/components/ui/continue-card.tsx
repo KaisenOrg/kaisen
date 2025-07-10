@@ -1,5 +1,5 @@
 import React from "react";
-import { BookmarkIcon } from "@heroicons/react/24/outline";
+import { BookmarkIcon } from "@heroicons/react/20/solid";
 import { Progress } from "@/components/ui/progress";
 
 const COURSE_TITLE = "Principles of Python";
