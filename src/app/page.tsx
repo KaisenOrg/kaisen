@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { createBackendActor } from "../lib/agent";
-import { ConnectWallet } from "@nfid/identitykit/react";
 
 export default function Home() {
   // Estado para armazenar a pergunta do usuário
@@ -39,43 +38,43 @@ export default function Home() {
     }
   };
 
-  return (
-    <main style={{ padding: "2rem", fontFamily: "sans-serif", maxWidth: "768px", margin: "auto" }}>
-      <h1>Pergunte ao Gemini via IC</h1>
-      <p>
+    return (
+    <main className="max-w-7xl mx-auto px-8">
+      <h1 className="text-2xl font-semibold mb-2">Pergunte ao Gemini via IC</h1>
+      <p className="mb-6">
         Digite uma pergunta abaixo para enviá-la a um canister Motoko,
         que por sua vez se comunica com a API do Gemini.
       </p>
 
       {/* Seção de Input e Botão */}
-      <div style={{ display: "flex", marginTop: "1.5rem" }}>
+      <div className="flex mt-6">
         <input
           type="text"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="O que é a computação quântica?"
           disabled={loading}
-          style={{ flexGrow: 1, padding: "10px", border: "1px solid #ccc", borderRadius: "4px 0 0 4px" }}
-          // Permite enviar com a tecla Enter
+          className="flex-grow p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100"
           onKeyDown={(e) => { if (e.key === 'Enter') handleAskGemini(); }}
         />
-        <button onClick={handleAskGemini} disabled={loading} style={{ padding: "10px 15px", border: "1px solid #007bff", background: "#007bff", color: "white", borderRadius: "0 4px 4px 0", cursor: "pointer" }}>
+        <button
+          onClick={handleAskGemini}
+          disabled={loading}
+          className={`px-4 py-2 border border-blue-600 bg-blue-600 text-white rounded-r-md cursor-pointer transition-colors duration-150 disabled:bg-blue-300 disabled:cursor-not-allowed`}
+        >
           {loading ? "Pensando..." : "Enviar"}
         </button>
       </div>
 
-      <ConnectWallet />
-
       {/* Seção de Resposta */}
-      {/* Mostra um indicador de carregamento enquanto espera */}
-      {loading && <p style={{ marginTop: "1rem" }}>Aguardando a resposta do canister...</p>}
+      {loading && (
+        <p className="mt-4 text-gray-600">Aguardando a resposta do canister...</p>
+      )}
 
-      {/* Mostra a resposta quando ela existir */}
       {response && (
-        <div style={{ marginTop: "1.5rem", border: "1px solid #eee", borderRadius: "4px", padding: "15px" }}>
-          <p><strong>Resposta do Gemini:</strong></p>
-          {/* Usamos whiteSpace: 'pre-wrap' para preservar quebras de linha na resposta */}
-          <p style={{ whiteSpace: 'pre-wrap', lineHeight: '1.6' }}>{response}</p>
+        <div className="mt-6 border border-gray-200 rounded-md p-4 bg-gray-50">
+          <p className="font-semibold mb-2">Resposta do Gemini:</p>
+          <p className="whitespace-pre-wrap leading-relaxed">{response}</p>
         </div>
       )}
     </main>
