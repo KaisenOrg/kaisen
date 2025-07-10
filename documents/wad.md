@@ -152,6 +152,35 @@ Representing specific individuals, personas are semi-fictional profiles built ba
 
 Below are three personas developed specifically for this project to guide decision-making and ensure greater alignment with end-user expectations.
 
+<div align="center">
+
+<sub>Figure X - Persona 1</sub>
+
+<img src="./assets/persona1.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure X - Persona 2</sub>
+
+<img src="./assets/persona2.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure X - Persona 3</sub>
+
+<img src="./assets/persona3.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
 
 # 3. Application Project
 
