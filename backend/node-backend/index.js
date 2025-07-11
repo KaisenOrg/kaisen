@@ -6,7 +6,6 @@ import {uploadToPinata} from'./uploadToPinata.js';
 const app = express();
 app.use(bodyParser.json());
 
-//rota
 app.post('/mint', async (req, res) => {
   try {
     const data = req.body;

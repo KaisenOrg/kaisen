@@ -6,10 +6,18 @@ dotenv.config();
 
 /**
  * Faz upload do arquivo SVG para o Pinata (IPFS)
- * @param {string} svgString
- * @returns {Promise<string>} CID (hash IPFS)
+ * @param {string} svgString - Conteúdo SVG a ser enviado
+ * @returns {Promise<{
+ *   ipfsHash: string,
+ *   gateways: {
+ *     ipfs: string,
+ *     ipfsio: string,
+ *     cloudflare: string,
+ *     dweb: string
+ *   }
+ * }>}
  */
-//Envia para o Pinata
+
 export async function uploadToPinata(svgString) {
   const data = new FormData();
   data.append('file', Buffer.from(svgString), {
@@ -26,7 +34,6 @@ export async function uploadToPinata(svgString) {
     }
   });
 
-  //Retorna o hash e alguns gateways para carregar a imagem posteriormente
   return {
     ipfsHash: res.data.IpfsHash,
     gateways: {

@@ -33,7 +33,7 @@ actor {
   };
 
   /// Função principal: emite o certificado e envia requisição HTTP para Node.js
-  public func issueCertificate(username: Text, track: Text, time: Nat) : async Text {
+  public func emmitCertificate(username: Text, track: Text, time: Nat) : async Text {
     let tokenId = generateUUID();
 
     let cert: CertificateData = {
@@ -43,7 +43,6 @@ actor {
       tokenId;
     };
 
-    // Payload JSON
     let payloadJson = 
       "{ \"username\": \"" # username # "\", " #
       "\"track\": \"" # track # "\", " #
@@ -60,7 +59,7 @@ actor {
 
     // Configuração da requisição
     let request : IC.http_request_args = {
-      url = "https://07378d1b314b.ngrok-free.app/mint"; // <-- Substitua aqui!
+      url = "${COLOCAR-O-LINK-PARA-FAZER-A-REQUISICAO-AQUI}/mint"; // <-- Substitua aqui!
       method = #post;
       headers = headers;
       body = ?request_body;
@@ -81,7 +80,7 @@ actor {
       case null "Erro ao decodificar resposta";
     };
 
-    // Armazenar localmente
+    // Armazenar as informações do certificado na Blockchain
     certificates := Array.append(certificates, [cert]);
 
     return cid;
