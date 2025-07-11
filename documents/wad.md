@@ -193,7 +193,76 @@ Therefore, to ensure the sustainability of the solution, it is essential to vali
 
 ### 2.1.4. Value Proposition Canvas
 
-[FILL IN - Place here the Value Proposition Canvas]
+The Value Proposition Canvas is a strategic tool used by various companies with the objective of deeply understanding the needs, pains, and desires of their customers, while simultaneously aiming to create and position the offered product or service according to those demands. Based on this, the following is the Value Proposition Canvas of the Kaizen solution, which presents a well-defined customer profile and a clear description of how the proposed solution aligns with it.
+
+<div align="center">
+
+<sub>Figure X - Value Proposition Canvas</sub>
+
+<img src="./assets/canvas-value.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+**Customer Jobs:**<br>
+
+- Study autonomously using online content.
+- Create and organize their own study materials (summaries, flashcards, learning paths).
+- Search for reliable and relevant materials aligned with their goals.
+- Officially validate knowledge acquired through informal means.
+- Share knowledge and materials with others.
+- View their progress and learning history in a clear and personalized way.
+- Evaluate and select candidates based on real and evidenced learning journeys.
+
+**Pains:**<br>
+
+- Lack of free, logically or chronologically organized study content.
+- Difficulty finding high-quality, objective materials.
+- Absence of a clear and personalized overview of study progress.
+- Inability to officially validate informal learning.
+- Lack of centralization of study materials across different fields of knowledge.
+- Lack of incentive for those who share knowledge with the community.
+
+**Gains:**<br>
+
+- Creation of a valued digital reputation through an active community.
+- Income generation and recognition through created content and learning paths.
+- Transparent, trustworthy, and immutable digital certificates that validate knowledge.
+- A solid, traceable portfolio for use in selection processes.
+- Continuous motivation through gamification and rewards.
+- Integrated and clear view of any individual's learning history.
+
+**Products & Services:**<br>
+
+- Decentralized educational platform integrating AI and blockchain.
+- Intelligent virtual assistant (Kai) that transforms any material into flashcards, summaries, quizzes, and personalized study paths.
+- Digital certification via NFT with public and immutable validation.
+- Public learning paths with possibilities for collaboration and community curation.
+- Gamification system with rewards in tokens and cosmetic items.
+- Interactive store with customizations and additional tools.
+- Traceable educational profile with reputation linked to progress and collaboration.
+
+**Pain Relievers:**<br>
+
+- Automated and personalized organization of studies based on the user’s own materials.
+- Official validation of informal learning without dependence on traditional institutions.
+- Clear and continuous visualization of knowledge evolution.
+- Tools to centralize and document the entire educational journey.
+- Tangible incentives for those who contribute to the community (rewards and reputation).
+- Transparency and traceability in recording competencies and learning.
+
+**Gain Creators:**<br>
+
+- More efficient, personalized, and motivating study experience supported by AI.
+- Rewards for every meaningful interaction: studying, creating, contributing.
+- Possibility to monetize one’s own educational content.
+- Recognition of the educational journey as a reputation-building asset.
+- Shareable educational portfolio for recruiters in an objective and reliable format.
+
+The analysis conducted through the Kaizen Value Proposition Canvas demonstrates not only a clear understanding of the target audience’s pains and expectations but also a consistent plan to offer a functional and strategic response to these demands. The proposal is anchored in technological differentiators, such as the integration of AI, blockchain, and NFT certifications. However, the most relevant aspect of the proposal lies in the platform’s ability to convert informal learning into verifiable reputation, a feature still rarely explored consistently in the educational market.
+
+Therefore, it is worth emphasizing that the solution addresses a real and pressing issue: the disconnect between knowledge acquired through non-traditional means and its validation. The centralization of learning data, personalization of the study process, and the possibility of monetizing and sharing educational journeys add direct value to the end user. Kaizen does not merely rely on emerging technologies; it builds an ecosystem in which knowledge is treated as a reputational asset—traceable, shareable, and, most importantly, rewardable.
 
 ### 2.1.5. Project Risk Matrix
 
