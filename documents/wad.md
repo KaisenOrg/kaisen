@@ -156,7 +156,7 @@ Below are three personas developed specifically for this project to guide decisi
 
 <sub>Figure X - Persona 1</sub>
 
-<img src="./assets/persona1.png" width="100%">
+<img src="./assets/persona-clara.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -166,7 +166,7 @@ Below are three personas developed specifically for this project to guide decisi
 
 <sub>Figure X - Persona 2</sub>
 
-<img src="./assets/persona2.png" width="100%">
+<img src="./assets/persona-daniel.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -176,7 +176,7 @@ Below are three personas developed specifically for this project to guide decisi
 
 <sub>Figure X - Persona 3</sub>
 
-<img src="./assets/persona3.png" width="100%">
+<img src="./assets/persona-renata.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
