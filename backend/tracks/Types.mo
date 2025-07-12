@@ -28,9 +28,9 @@ module {
      * @notice Um elemento de uma página pode ser um bloco de texto ou uma imagem.
      */
     public type PageElement = {
-      #text : TextBlock;
-      #image : ImageBlock;
-      #video: VideoBlock;
+      #Text : TextBlock;
+      #Image : ImageBlock;
+      #Video: VideoBlock;
     };
 
     /**
@@ -79,10 +79,10 @@ module {
      * Cada seção da trilha terá um 'Content'.
      */
     public type Content = {
-      #page : Page;
-      #flashcard : [Flashcard];
-      #quiz : [Quiz];
-      #essay : [EssayQuestion];
+      #Page : Page;
+      #Flashcard : [Flashcard];
+      #Quiz : [Quiz];
+      #Essay : [EssayQuestion];
     };
 
     /**

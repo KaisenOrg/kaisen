@@ -79,9 +79,9 @@ actor {
     "              },\n" #
     "              \"content\": {\n" #
     "                \"type\": \"OBJECT\",\n" #
-    "                \"description\": \"O conteúdo da seção. A IA deve preencher APENAS UMA das propriedades a seguir: #page, #flashcard, #quiz, ou #essay.\",\n" #
+    "                \"description\": \"O conteúdo da seção. A IA deve preencher APENAS UMA das propriedades a seguir: #Page, #Flashcard, #Quiz, ou #Essay.\",\n" #
     "                \"properties\": {\n" #
-    "                  \"#page\": {\n" #
+    "                  \"#Page\": {\n" #
     "                    \"type\": \"OBJECT\",\n" #
     "                    \"properties\": {\n" #
     "                      \"title\": { \"type\": \"STRING\" },\n" #
@@ -90,14 +90,14 @@ actor {
     "                        \"description\": \"Uma lista de elementos que compõem a página.\",\n" #
     "                        \"items\": {\n" #
     "                          \"type\": \"OBJECT\",\n" #
-    "                          \"description\": \"Um elemento da página. PREENCHA APENAS UMA das propriedades: #text, #image, ou #video.\",\n" #
+    "                          \"description\": \"Um elemento da página. PREENCHA APENAS UMA das propriedades: #Text, #Image, ou #Video.\",\n" #
     "                          \"properties\": {\n" #
-    "                            \"#text\": {\n" #
+    "                            \"#Text\": {\n" #
     "                              \"type\": \"OBJECT\",\n" #
     "                              \"properties\": { \"value\": { \"type\": \"STRING\" } },\n" #
     "                              \"required\": [\"value\"]\n" #
     "                            },\n" #
-    "                            \"#image\": {\n" #
+    "                            \"#Image\": {\n" #
     "                              \"type\": \"OBJECT\",\n" #
     "                              \"properties\": {\n" #
     "                                \"url\": { \"type\": \"STRING\" },\n" #
@@ -105,7 +105,7 @@ actor {
     "                              },\n" #
     "                              \"required\": [\"url\"]\n" #
     "                            },\n" #
-    "                            \"#video\": {\n" #
+    "                            \"#Video\": {\n" #
     "                              \"type\": \"OBJECT\",\n" #
     "                              \"properties\": {\n" #
     "                                \"url\": { \"type\": \"STRING\" },\n" #
@@ -119,7 +119,7 @@ actor {
     "                    },\n" #
     "                    \"required\": [\"title\", \"elements\"]\n" #
     "                  },\n" #
-    "                  \"#flashcard\": {\n" #
+    "                  \"#Flashcard\": {\n" #
     "                    \"type\": \"ARRAY\",\n" #
     "                    \"description\": \"Uma lista de flashcards para revisão de conceitos.\",\n" #
     "                    \"items\": {\n" #
@@ -131,7 +131,7 @@ actor {
     "                      \"required\": [\"sentence\", \"answer\"]\n" #
     "                    }\n" #
     "                  },\n" #
-    "                  \"#quiz\": {\n" #
+    "                  \"#Quiz\": {\n" #
     "                    \"type\": \"ARRAY\",\n" #
     "                    \"description\": \"Uma lista de quizzes para testar o conhecimento.\",\n" #
     "                    \"items\": {\n" #
@@ -154,7 +154,7 @@ actor {
     "                      \"required\": [\"question\", \"alternatives\", \"correctAnswerId\"]\n" #
     "                    }\n" #
     "                  },\n" #
-    "                  \"#essay\": {\n" #
+    "                  \"#Essay\": {\n" #
     "                    \"type\": \"ARRAY\",\n" #
     "                    \"description\": \"Uma lista de questões dissertativas para avaliação aprofundada.\",\n" #
     "                    \"items\": {\n" #
