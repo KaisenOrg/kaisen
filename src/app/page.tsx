@@ -1,43 +1,37 @@
-'use client'; // Necessário para usar hooks e interatividade do lado do cliente
+'use client';
 
 import { useState } from "react";
 import { kaiActor } from "../lib/agent";
 
 export default function Home() {
-  // Estado para armazenar a pergunta do usuário
   const [prompt, setPrompt] = useState<string>("");
-  // Estado para armazenar a resposta do canister
   const [response, setResponse] = useState<string>("");
-  // Estado para controlar o status de carregamento
   const [loading, setLoading] = useState<boolean>(false);
 
-  // Função para lidar com o envio da pergunta
   const handleAskKai = async () => {
-    // Verifica se o campo de texto não está vazio
     if (!prompt.trim()) {
       setResponse("Por favor, digite uma pergunta.");
       return;
     }
 
     setLoading(true);
-    setResponse(""); // Limpa a resposta anterior ao iniciar uma nova chamada
+    setResponse("");
 
     try {
       const response = await kaiActor.generateTrack(prompt);
-      
+
       const result = JSON.parse(response);
-      
+
       setResponse(result.candidates[0].content.parts[0].text);
     } catch (error) {
       console.error("Error calling askKai function:", error);
       setResponse("Ocorreu um erro ao se comunicar com o canister.");
     } finally {
-      // Garante que o estado de carregamento seja desativado ao final
       setLoading(false);
     }
   };
 
-    return (
+  return (
     <main className="max-w-7xl mx-auto px-8">
       <h1 className="text-2xl font-semibold mb-2">Pergunte ao Gemini via IC</h1>
       <p className="mb-6">
@@ -45,7 +39,6 @@ export default function Home() {
         que por sua vez se comunica com a API do Gemini.
       </p>
 
-      {/* Seção de Input e Botão */}
       <div className="flex mt-6">
         <input
           type="text"
@@ -65,7 +58,6 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Seção de Resposta */}
       {loading && (
         <p className="mt-4 text-gray-600">Aguardando a resposta do canister...</p>
       )}

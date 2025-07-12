@@ -17,13 +17,12 @@ actor {
 
   stable var certificates: [CertificateData] = [];
 
-  /// Função exigida para fazer transformações (obrigatória para HTTPS Outcalls)
   public query func transform({
-    context : Blob;
+    // context : Blob;
     response : IC.http_request_result;
   }) : async IC.http_request_result {
     {
-      response with headers = [];
+      response with headers = []; // not intersted in the headers
     };
   };
 

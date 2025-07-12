@@ -14,7 +14,6 @@ import Env "../env";
 actor {
   stable var uuidCounter : Nat = 0;
 
-  // function to transform the response
   public query func transform({
     // context : Blob;
     response : IC.http_request_result;
@@ -42,147 +41,147 @@ actor {
 
     // The request body is a Blob, so we do the following:
     // Write a JSON string
-    let request_body_json : Text = "{
-      \"system_instruction\": {
-        \"parts\": [
-          {
-            \"text\": \"Você é Kai, uma raposa laranja, astuta, curiosa e incrivelmente amigável. Sua paixão é desvendar o conhecimento e guiar os outros em jornadas de aprendizado. Você é didático, paciente e sempre busca tornar tópicos complexos em algo simples e fascinante. Sua personalidade é encorajadora e um pouco brincalhona. Você se refere às jornadas de aprendizado como 'trilhas' e às partes delas como 'seções'. Sua missão principal é atuar como um tutor e criador de conteúdo para a plataforma de aprendizado Kaisen.\"
-          }
-        ]
-      },
-      \"generationConfig\": {
-        \"responseMimeType\": \"application/json\",
-        \"responseSchema\": {
-          \"type\": \"OBJECT\",
-          \"description\": \"Representa uma trilha de aprendizado completa e estruturada sobre um tópico específico.\",
-          \"properties\": {
-            \"title\": {
-              \"type\": \"STRING\",
-              \"description\": \"O título principal e criativo da trilha de aprendizado.\"
-            },
-            \"description\": {
-              \"type\": \"STRING\",
-              \"description\": \"Uma descrição curta e engajante sobre o que o usuário aprenderá nesta trilha.\"
-            },
-            \"sections\": {
-              \"type\": \"ARRAY\",
-              \"description\": \"Uma lista ordenada de seções sequenciais que compõem a trilha.\",
-              \"items\": {
-                \"type\": \"OBJECT\",
-                \"properties\": {
-                  \"id\": {
-                    \"type\": \"NUMBER\",
-                    \"description\": \"Um ID numérico sequencial para a seção, começando em 1.\"
-                  },
-                  \"title\": {
-                    \"type\": \"STRING\",
-                    \"description\": \"O título desta seção específica.\"
-                  },
-                  \"content\": {
-                    \"type\": \"OBJECT\",
-                    \"description\": \"O conteúdo da seção. A IA deve preencher APENAS UMA das propriedades a seguir: #page, #flashcard, #quiz, ou #essay.\",
-                    \"properties\": {
-                      \"#page\": {
-                        \"type\": \"OBJECT\",
-                        \"properties\": {
-                          \"title\": { \"type\": \"STRING\" },
-                          \"elements\": {
-                            \"type\": \"ARRAY\",
-                            \"description\": \"Uma lista de elementos que compõem a página.\",
-                            \"items\": {
-                              \"type\": \"OBJECT\",
-                              \"description\": \"Um elemento da página. PREENCHA APENAS UMA das propriedades: #text, #image, ou #video.\",
-                              \"properties\": {
-                                \"#text\": {
-                                  \"type\": \"OBJECT\",
-                                  \"properties\": { \"value\": { \"type\": \"STRING\" } },
-                                  \"required\": [\"value\"]
-                                },
-                                \"#image\": {
-                                  \"type\": \"OBJECT\",
-                                  \"properties\": {
-                                    \"url\": { \"type\": \"STRING\" },
-                                    \"caption\": { \"type\": \"STRING\" }
-                                  },
-                                  \"required\": [\"url\"]
-                                },
-                                \"#video\": {
-                                  \"type\": \"OBJECT\",
-                                  \"properties\": {
-                                    \"url\": { \"type\": \"STRING\" },
-                                    \"caption\": { \"type\": \"STRING\" }
-                                  },
-                                  \"required\": [\"url\", \"caption\"]
-                                }
-                              }
-                            }
-                          }
-                        },
-                        \"required\": [\"title\", \"elements\"]
-                      },
-                      \"#flashcard\": {
-                        \"type\": \"ARRAY\",
-                        \"description\": \"Uma lista de flashcards para revisão de conceitos.\",
-                        \"items\": {
-                          \"type\": \"OBJECT\",
-                          \"properties\": {
-                            \"sentence\": { \"type\": \"STRING\", \"description\": \"A frente do flashcard (pergunta ou termo).\" },
-                            \"answer\": { \"type\": \"STRING\", \"description\": \"O verso do flashcard (resposta ou definição).\" }
-                          },
-                          \"required\": [\"sentence\", \"answer\"]
-                        }
-                      },
-                      \"#quiz\": {
-                        \"type\": \"ARRAY\",
-                        \"description\": \"Uma lista de quizzes para testar o conhecimento.\",
-                        \"items\": {
-                          \"type\": \"OBJECT\",
-                          \"properties\": {
-                            \"question\": { \"type\": \"STRING\" },
-                            \"alternatives\": {
-                              \"type\": \"ARRAY\",
-                              \"items\": {
-                                \"type\": \"OBJECT\",
-                                \"properties\": {
-                                  \"id\": { \"type\": \"NUMBER\" },
-                                  \"text\": { \"type\": \"STRING\" }
-                                },
-                                \"required\": [\"id\", \"text\"]
-                              }
-                            },
-                            \"correctAnswerId\": { \"type\": \"NUMBER\" }
-                          },
-                          \"required\": [\"question\", \"alternatives\", \"correctAnswerId\"]
-                        }
-                      },
-                      \"#essay\": {
-                        \"type\": \"ARRAY\",
-                        \"description\": \"Uma lista de questões dissertativas para avaliação aprofundada.\",
-                        \"items\": {
-                          \"type\": \"OBJECT\",
-                          \"properties\": {
-                            \"question\": { \"type\": \"STRING\" },
-                            \"expectedAnswer\": { \"type\": \"STRING\" }
-                          },
-                          \"required\": [\"question\", \"expectedAnswer\"]
-                        }
-                      }
-                    }
-                  }
-                },
-                \"required\": [\"id\", \"title\", \"content\"]
-              }
-            }
-          },
-          \"required\": [\"title\", \"description\", \"sections\"]
-        }
-      },
-      \"contents\": [{
-        \"parts\": [{
-          \"text\": \"" # prompt # "\"
-        }]
-      }]
-    }";
+    let request_body_json : Text = "{\n" #
+    "  \"system_instruction\": {\n" #
+    "    \"parts\": [\n" #
+    "      {\n" #
+    "        \"text\": \"Você é Kai, uma raposa laranja, astuta, curiosa e incrivelmente amigável. Sua paixão é desvendar o conhecimento e guiar os outros em jornadas de aprendizado. Você é didático, paciente e sempre busca tornar tópicos complexos em algo simples e fascinante. Sua personalidade é encorajadora e um pouco brincalhona. Você se refere às jornadas de aprendizado como 'trilhas' e às partes delas como 'seções'. Sua missão principal é atuar como um tutor e criador de conteúdo para a plataforma de aprendizado Kaisen.\"\n" #
+    "      }\n" #
+    "    ]\n" #
+    "  },\n" #
+    "  \"generationConfig\": {\n" #
+    "    \"responseMimeType\": \"application/json\",\n" #
+    "    \"responseSchema\": {\n" #
+    "      \"type\": \"OBJECT\",\n" #
+    "      \"description\": \"Representa uma trilha de aprendizado completa e estruturada sobre um tópico específico.\",\n" #
+    "      \"properties\": {\n" #
+    "        \"title\": {\n" #
+    "          \"type\": \"STRING\",\n" #
+    "          \"description\": \"O título principal e criativo da trilha de aprendizado.\"\n" #
+    "        },\n" #
+    "        \"description\": {\n" #
+    "          \"type\": \"STRING\",\n" #
+    "          \"description\": \"Uma descrição curta e engajante sobre o que o usuário aprenderá nesta trilha.\"\n" #
+    "        },\n" #
+    "        \"sections\": {\n" #
+    "          \"type\": \"ARRAY\",\n" #
+    "          \"description\": \"Uma lista ordenada de seções sequenciais que compõem a trilha.\",\n" #
+    "          \"items\": {\n" #
+    "            \"type\": \"OBJECT\",\n" #
+    "            \"properties\": {\n" #
+    "              \"id\": {\n" #
+    "                \"type\": \"NUMBER\",\n" #
+    "                \"description\": \"Um ID numérico sequencial para a seção, começando em 1.\"\n" #
+    "              },\n" #
+    "              \"title\": {\n" #
+    "                \"type\": \"STRING\",\n" #
+    "                \"description\": \"O título desta seção específica.\"\n" #
+    "              },\n" #
+    "              \"content\": {\n" #
+    "                \"type\": \"OBJECT\",\n" #
+    "                \"description\": \"O conteúdo da seção. A IA deve preencher APENAS UMA das propriedades a seguir: #page, #flashcard, #quiz, ou #essay.\",\n" #
+    "                \"properties\": {\n" #
+    "                  \"#page\": {\n" #
+    "                    \"type\": \"OBJECT\",\n" #
+    "                    \"properties\": {\n" #
+    "                      \"title\": { \"type\": \"STRING\" },\n" #
+    "                      \"elements\": {\n" #
+    "                        \"type\": \"ARRAY\",\n" #
+    "                        \"description\": \"Uma lista de elementos que compõem a página.\",\n" #
+    "                        \"items\": {\n" #
+    "                          \"type\": \"OBJECT\",\n" #
+    "                          \"description\": \"Um elemento da página. PREENCHA APENAS UMA das propriedades: #text, #image, ou #video.\",\n" #
+    "                          \"properties\": {\n" #
+    "                            \"#text\": {\n" #
+    "                              \"type\": \"OBJECT\",\n" #
+    "                              \"properties\": { \"value\": { \"type\": \"STRING\" } },\n" #
+    "                              \"required\": [\"value\"]\n" #
+    "                            },\n" #
+    "                            \"#image\": {\n" #
+    "                              \"type\": \"OBJECT\",\n" #
+    "                              \"properties\": {\n" #
+    "                                \"url\": { \"type\": \"STRING\" },\n" #
+    "                                \"caption\": { \"type\": \"STRING\" }\n" #
+    "                              },\n" #
+    "                              \"required\": [\"url\"]\n" #
+    "                            },\n" #
+    "                            \"#video\": {\n" #
+    "                              \"type\": \"OBJECT\",\n" #
+    "                              \"properties\": {\n" #
+    "                                \"url\": { \"type\": \"STRING\" },\n" #
+    "                                \"caption\": { \"type\": \"STRING\" }\n" #
+    "                              },\n" #
+    "                              \"required\": [\"url\", \"caption\"]\n" #
+    "                            }\n" #
+    "                          }\n" #
+    "                        }\n" #
+    "                      }\n" #
+    "                    },\n" #
+    "                    \"required\": [\"title\", \"elements\"]\n" #
+    "                  },\n" #
+    "                  \"#flashcard\": {\n" #
+    "                    \"type\": \"ARRAY\",\n" #
+    "                    \"description\": \"Uma lista de flashcards para revisão de conceitos.\",\n" #
+    "                    \"items\": {\n" #
+    "                      \"type\": \"OBJECT\",\n" #
+    "                      \"properties\": {\n" #
+    "                        \"sentence\": { \"type\": \"STRING\", \"description\": \"A frente do flashcard (pergunta ou termo).\" },\n" #
+    "                        \"answer\": { \"type\": \"STRING\", \"description\": \"O verso do flashcard (resposta ou definição).\" }\n" #
+    "                      },\n" #
+    "                      \"required\": [\"sentence\", \"answer\"]\n" #
+    "                    }\n" #
+    "                  },\n" #
+    "                  \"#quiz\": {\n" #
+    "                    \"type\": \"ARRAY\",\n" #
+    "                    \"description\": \"Uma lista de quizzes para testar o conhecimento.\",\n" #
+    "                    \"items\": {\n" #
+    "                      \"type\": \"OBJECT\",\n" #
+    "                      \"properties\": {\n" #
+    "                        \"question\": { \"type\": \"STRING\" },\n" #
+    "                        \"alternatives\": {\n" #
+    "                          \"type\": \"ARRAY\",\n" #
+    "                          \"items\": {\n" #
+    "                            \"type\": \"OBJECT\",\n" #
+    "                            \"properties\": {\n" #
+    "                              \"id\": { \"type\": \"NUMBER\" },\n" #
+    "                              \"text\": { \"type\": \"STRING\" }\n" #
+    "                            },\n" #
+    "                            \"required\": [\"id\", \"text\"]\n" #
+    "                          }\n" #
+    "                        },\n" #
+    "                        \"correctAnswerId\": { \"type\": \"NUMBER\" }\n" #
+    "                      },\n" #
+    "                      \"required\": [\"question\", \"alternatives\", \"correctAnswerId\"]\n" #
+    "                    }\n" #
+    "                  },\n" #
+    "                  \"#essay\": {\n" #
+    "                    \"type\": \"ARRAY\",\n" #
+    "                    \"description\": \"Uma lista de questões dissertativas para avaliação aprofundada.\",\n" #
+    "                    \"items\": {\n" #
+    "                      \"type\": \"OBJECT\",\n" #
+    "                      \"properties\": {\n" #
+    "                        \"question\": { \"type\": \"STRING\" },\n" #
+    "                        \"expectedAnswer\": { \"type\": \"STRING\" }\n" #
+    "                      },\n" #
+    "                      \"required\": [\"question\", \"expectedAnswer\"]\n" #
+    "                    }\n" #
+    "                  }\n" #
+    "                }\n" #
+    "              }\n" #
+    "            },\n" #
+    "            \"required\": [\"id\", \"title\", \"content\"]\n" #
+    "          }\n" #
+    "        }\n" #
+    "      },\n" #
+    "      \"required\": [\"title\", \"description\", \"sections\"]\n" #
+    "    }\n" #
+    "  },\n" #
+    "  \"contents\": [{\n" #
+    "    \"parts\": [{\n" #
+    "      \"text\": \"" # prompt # "\"\n" #
+    "    }]\n" #
+    "  }]\n" #
+    "}";
 
     // Convert Text into a Blob
     let request_body = Text.encodeUtf8(request_body_json);
@@ -238,7 +237,7 @@ actor {
       return response;
     } catch (err) {
       let error_message = "Ocorreu um erro fatal ao gerar a trilha: " # Error.message(err);
-      
+
       Debug.print(error_message);
 
       return "{\"error\": \"" # error_message # "\"}";
