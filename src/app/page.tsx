@@ -1,7 +1,7 @@
 'use client'; // Necessário para usar hooks e interatividade do lado do cliente
 
 import { useState } from "react";
-import { createBackendActor } from "../lib/agent";
+import { kaiActor } from "../lib/agent";
 
 export default function Home() {
   // Estado para armazenar a pergunta do usuário
@@ -12,7 +12,7 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
 
   // Função para lidar com o envio da pergunta
-  const handleAskGemini = async () => {
+  const handleAskKai = async () => {
     // Verifica se o campo de texto não está vazio
     if (!prompt.trim()) {
       setResponse("Por favor, digite uma pergunta.");
@@ -23,14 +23,13 @@ export default function Home() {
     setResponse(""); // Limpa a resposta anterior ao iniciar uma nova chamada
 
     try {
-      // Cria o ator para se comunicar com o backend
-      const backend = createBackendActor();
-      // Chama a função 'askGemini' no canister com o prompt do usuário
-      const result = await backend.askGemini(prompt);
-      // Atualiza o estado com a resposta recebida
-      setResponse(result);
+      const response = await kaiActor.generateTrack(prompt);
+      
+      const result = JSON.parse(response);
+      
+      setResponse(result.candidates[0].content.parts[0].text);
     } catch (error) {
-      console.error("Error calling askGemini function:", error);
+      console.error("Error calling askKai function:", error);
       setResponse("Ocorreu um erro ao se comunicar com o canister.");
     } finally {
       // Garante que o estado de carregamento seja desativado ao final
@@ -55,10 +54,10 @@ export default function Home() {
           placeholder="O que é a computação quântica?"
           disabled={loading}
           className="flex-grow p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100"
-          onKeyDown={(e) => { if (e.key === 'Enter') handleAskGemini(); }}
+          onKeyDown={(e) => { if (e.key === 'Enter') handleAskKai(); }}
         />
         <button
-          onClick={handleAskGemini}
+          onClick={handleAskKai}
           disabled={loading}
           className={`px-4 py-2 border border-blue-600 bg-blue-600 text-white rounded-r-md cursor-pointer transition-colors duration-150 disabled:bg-blue-300 disabled:cursor-not-allowed`}
         >
@@ -72,7 +71,7 @@ export default function Home() {
       )}
 
       {response && (
-        <div className="mt-6 border border-gray-200 rounded-md p-4 bg-gray-50">
+        <div className="mt-6 border border-gray-200/50 rounded-md p-4 bg-gray-50/10">
           <p className="font-semibold mb-2">Resposta do Gemini:</p>
           <p className="whitespace-pre-wrap leading-relaxed">{response}</p>
         </div>

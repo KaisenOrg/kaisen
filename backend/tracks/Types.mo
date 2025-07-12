@@ -5,7 +5,7 @@ module {
      * @notice Um bloco de texto simples, como um parágrafo.
      */
     public type TextBlock = {
-      text: Text;
+      value: Text;
     };
 
     /**
@@ -13,15 +13,24 @@ module {
      */
     public type ImageBlock = {
       url: Text;
-      legenda: ?Text;
+      caption: ?Text;
+    };
+
+    /**
+     * @notice Representa uma seção de vídeo com um título, uma URL e uma descrição.
+     */
+    public type VideoBlock = {
+      url: Text;
+      caption: Text;
     };
 
     /**
      * @notice Um elemento de uma página pode ser um bloco de texto ou uma imagem.
      */
     public type PageElement = {
-      #Text : TextBlock;
-      #Image : ImageBlock;
+      #text : TextBlock;
+      #image : ImageBlock;
+      #video: VideoBlock;
     };
 
     /**
@@ -30,15 +39,6 @@ module {
     public type Page = {
       title: Text;
       elements: [PageElement];
-    };
-
-    /**
-     * @notice Representa uma seção de vídeo com um título, uma URL e uma descrição.
-     */
-    public type Video = {
-      title: Text;
-      url: Text;
-      description: Text;
     };
 
     /**
@@ -79,11 +79,10 @@ module {
      * Cada seção da trilha terá um 'Content'.
      */
     public type Content = {
-      #Page : Page;
-      #Video : Video;
-      #Flashcard : Flashcard;
-      #Quiz : Quiz;
-      #Essay : EssayQuestion;
+      #page : Page;
+      #flashcard : [Flashcard];
+      #quiz : [Quiz];
+      #essay : [EssayQuestion];
     };
 
     /**
