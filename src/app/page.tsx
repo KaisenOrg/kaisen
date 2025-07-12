@@ -1,14 +1,23 @@
 'use client';
 
 import { useState } from "react";
-import { kaiActor } from "../lib/agent";
+import { useAuthenticatedActor, kaiActor } from "../lib/agent";
+import { useAuth } from "@nfid/identitykit/react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  const kaiAuthenticatedActor = useAuthenticatedActor("kai_backend");
+  const { connect, user, isConnecting } = useAuth();
+
   const [prompt, setPrompt] = useState<string>("");
   const [response, setResponse] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleAskKai = async () => {
+    if (!kaiActor) {
+      return;
+    }
+
     if (!prompt.trim()) {
       setResponse("Por favor, digite uma pergunta.");
       return;
@@ -30,6 +39,18 @@ export default function Home() {
       setLoading(false);
     }
   };
+
+  async function handleLogin() {
+    await connect();
+  }
+
+  if (!user || user.principal.isAnonymous() || !kaiActor) {
+    return (
+      <main className="max-w-7xl mx-auto px-8">
+        <Button onClick={handleLogin} disabled={isConnecting}>Faça login para falar com o Kai</Button>
+      </main>
+    );
+  }
 
   return (
     <main className="max-w-7xl mx-auto px-8">
