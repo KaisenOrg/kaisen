@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   output: "export",
   env: {
     NEXT_PUBLIC_CANISTER_ID_KAI_BACKEND: process.env.CANISTER_ID_KAI_BACKEND,
+    NEXT_PUBLIC_CANISTER_ID_TRACKS_BACKEND: process.env.CANISTER_ID_TRACKS_BACKEND
   }
 };
 

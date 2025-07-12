@@ -3,12 +3,22 @@
   "canisters": {
     "kai_backend": {
       "type": "motoko",
-      "main": "backend/kai/main.mo"
+      "main": "backend/kai/main.mo",
+      "dependencies": [
+        "tracks_backend" 
+      ]
+    },
+    "tracks_backend": {
+      "type": "motoko",
+      "main": "backend/tracks/main.mo"
     },
     "kaizen_frontend": {
       "type": "assets",
       "build": "npm install && npm run build",
       "source": ["out"],
+      "dependencies": [
+        "kai_backend"
+      ],
       "declarations": {
         "output": "declarations"
       }
