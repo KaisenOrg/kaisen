@@ -1,20 +1,20 @@
 'use client';
 
 import { useState } from "react";
-import { useAuthenticatedActor, kaiActor } from "../lib/agent";
+import { useAuthenticatedActor, anonymousKaiActor } from "../lib/agent";
 import { useAuth } from "@nfid/identitykit/react";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const kaiAuthenticatedActor = useAuthenticatedActor("kai_backend");
-  const { connect, user, isConnecting } = useAuth();
+  const { connect, disconnect, user, isConnecting } = useAuth();
 
   const [prompt, setPrompt] = useState<string>("");
   const [response, setResponse] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleAskKai = async () => {
-    if (!kaiActor) {
+    if (!kaiAuthenticatedActor) {
       return;
     }
 
@@ -27,13 +27,13 @@ export default function Home() {
     setResponse("");
 
     try {
-      const response = await kaiActor.generateTrack(prompt);
+      const response = await kaiAuthenticatedActor.generateTrack(prompt);
 
       const result = JSON.parse(response);
 
       setResponse(result.candidates[0].content.parts[0].text);
     } catch (error) {
-      console.error("Error calling askKai function:", error);
+      console.error("Error calling generateTrack function:", error);
       setResponse("Ocorreu um erro ao se comunicar com o canister.");
     } finally {
       setLoading(false);
@@ -44,7 +44,11 @@ export default function Home() {
     await connect();
   }
 
-  if (!user || user.principal.isAnonymous() || !kaiActor) {
+  async function handleLogout() {
+    await disconnect();
+  }
+  
+  if (!user || user.principal.isAnonymous() || !kaiAuthenticatedActor) {
     return (
       <main className="max-w-7xl mx-auto px-8">
         <Button onClick={handleLogin} disabled={isConnecting}>Faça login para falar com o Kai</Button>
@@ -59,6 +63,8 @@ export default function Home() {
         Digite uma pergunta abaixo para enviá-la a um canister Motoko,
         que por sua vez se comunica com a API do Gemini.
       </p>
+
+      <Button onClick={handleLogout}>Desconectar</Button>
 
       <div className="flex mt-6">
         <input
