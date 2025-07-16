@@ -1,4 +1,3 @@
-import Array "mo:base/Array";
 import Text "mo:base/Text";
 import Blob "mo:base/Blob";
 import Time "mo:base/Time";
@@ -10,9 +9,6 @@ import Debug "mo:base/Debug";
 import Error "mo:base/Error";
 import Result "mo:base/Result";
 
-import ChatCanister "canister:chats_backend";
-
-import JsonParser "JsonParser";
 import Env "../env";
 
 actor {
@@ -48,34 +44,47 @@ actor {
       { name = "Idempotency-Key"; value = idempotency_key },
     ];
 
-    let contextPart = switch (context) {
-      case (?c) {
-        if (Text.size(c) >= 2) {
-          let chars = Text.toArray(c);
-          let strippedChars = Array.tabulate<Char>(Text.size(c) - 2, func(i) { chars[i + 1] });
-          let strippedContext = Text.fromArray(strippedChars);
-          ", " # strippedContext;
+    let promptContent = "{ \"role\": \"user\", \"parts\": [{ \"text\": \"" # Text.replace(prompt, #text "\"", "\\\"") # "\" }] }";
+
+    // 2. Prepara a parte do histórico (se existir)
+    let historyContent = switch (context) {
+      case (?h) {
+        // Remove os colchetes iniciais e finais, se existirem
+        let trimmed = if (Text.startsWith(h, #text "[")) {
+          switch (Text.stripStart(h, #text "[")) {
+            case (?withoutStart) {
+              if (Text.endsWith(withoutStart, #text "]")) {
+                switch (Text.stripEnd(withoutStart, #text "]")) {
+                  case (?result) { result };
+                  case null { withoutStart };
+                };
+              } else {
+                withoutStart;
+              };
+            };
+            case null { h };
+          };
         } else {
-          "";
+          h;
         };
+        if (trimmed == "") { "" } else { trimmed # ", " };
       };
       case null {
-        "";
+        ""; // Se não houver histórico, retorna uma string vazia
       };
     };
 
+    // 3. Monta o corpo final da requisição com a estrutura 'contents' correta
     let request_body_json : Text = "{\n" #
     "  \"system_instruction\": {\n" #
     "    \"parts\": [ { \"text\": \"" # kaiInstructions # "\" } ]\n" #
     "  },\n" #
     (if useTrackFormat { trackFormatConfig # ",\n" } else { "" }) #
-    "  \"contents\": [{\n" #
-    "    \"parts\": [\n" #
-    "      { \"text\": \"" # prompt # "\", \"role\": \"user\" }" #
-    contextPart #
-    "    ]\n" #
-    "  }]\n" #
+    // O array 'contents' agora é montado dinamicamente
+    "  \"contents\": [" # historyContent # promptContent # "]\n" #
     "}";
+
+    Debug.print("Request Body Enviado: " # request_body_json);
 
     let request_body = Text.encodeUtf8(request_body_json);
 
@@ -105,54 +114,38 @@ actor {
     };
   };
 
-  public shared (_msg) func generateChatResponse(chatId : Text, prompt : Text) : async Result.Result<Text, Text> {
+  public shared (_msg) func generateChatResponse(prompt : Text, history : ?Text) : async Result.Result<Text, Text> {
+    Debug.print("Gerando resposta de chat com contexto...");
     try {
-      let historyResult = await ChatCanister.getChatHistory(chatId);
+      // Chama 'askKai' em modo chat (useTrackFormat = false)
+      let aiResponseText = await askKai(prompt, false, history);
 
-      let history = switch (historyResult) {
-        case (?h) h;
-        case (null) {
-          throw Error.reject("Chat não encontrado ou acesso não autorizado.");
-        };
+      // Opcional: Verifique se a resposta é um JSON de erro da nossa própria função askKai
+      if (Text.startsWith(aiResponseText, #text "{\"error\"")) {
+        return #err(aiResponseText);
       };
 
-      var formattedHistory = "";
-      for (message in history.vals()) {
-        let role = switch (message.sender) {
-          case (#User) "user";
-          case (#Model) "model"; // Usando a tag #Model como discutimos
-        };
-        formattedHistory #= "{ \"text\": \"" # Text.replace(message.text, #text "\"", "\\\"") # "\", \"role\": \"" # role # "\" }, ";
-      };
-
-      let aiResponseText = await askKai(prompt, false, ?formattedHistory);
-
-      await ChatCanister.addInteraction(chatId, prompt, aiResponseText);
-
+      // CORREÇÃO: Retorna #Ok com 'O' maiúsculo.
       return #ok(aiResponseText);
-
     } catch (err) {
       let errorMessage = "Erro no fluxo de chat: " # Error.message(err);
-
+      // CORREÇÃO: Retorna #Err com 'E' maiúsculo.
       return #err(errorMessage);
     };
   };
 
   public shared (_msg) func generateTrack(topic : Text) : async Result.Result<Text, Text> {
+    Debug.print("Gerando trilha completa para o tópico: " # topic);
     try {
-      let response = await askKai(topic, true, null);
-      let parseResult = JsonParser.extractTrackJson(response);
+      // Chama 'askKai' em modo trilha (useTrackFormat = true)
+      let response : Text = await askKai(topic, true, null);
 
-      switch (parseResult) {
-        case (#ok(trackJson)) { return #ok(trackJson) };
-        case (#err(e)) { return #err(e) };
-      };
+      // A resposta já é o JSON que queremos, pois o responseSchema funcionou.
+      // Apenas retornamos o resultado.
+      return #ok(response);
     } catch (err) {
-      let error_message = "Ocorreu um erro fatal ao gerar a trilha: " # Error.message(err);
-
-      Debug.print(error_message);
-
-      return #err("{\"error\": \"" # error_message # "\"}");
+      let errorMessage = "Ocorreu um erro fatal ao gerar a trilha: " # Error.message(err);
+      return #err(errorMessage);
     };
   };
 };
