@@ -48,7 +48,7 @@
   },
   "defaults": {
     "build": {
-      "packtool": "",
+      "packtool": "mops sources",
       "args": ""
     }
   }
