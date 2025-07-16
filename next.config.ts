@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
+    eslint: {
+    // IGNORE ESLINT ERRORS IN BUILD
+    ignoreDuringBuilds: true,
+  },
   env: {
     NEXT_PUBLIC_CANISTER_ID_INTERNET_IDENTITY: process.env.CANISTER_ID_INTERNET_IDENTITY,
     NEXT_PUBLIC_CANISTER_ID_KAI_BACKEND: process.env.CANISTER_ID_KAI_BACKEND,

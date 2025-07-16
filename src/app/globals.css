@@ -54,7 +54,7 @@
 
 .dark {
   --background: oklch(0.1831 0.0040 285.9940);
-  --foreground: oklch(0.9288 0.0126 255.5078);
+  --foreground: oklch(100% 0.00011 271.152);
   --card: oklch(0.2195 0.0077 285.7448);
   --card-foreground: oklch(0.9850 0 0);
   --popover: oklch(0.2195 0.0077 285.7448);
@@ -168,4 +168,11 @@
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+}
+
+.subtle-grid-background {
+  background-image:
+    linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+  background-size: 30px 30px; /* You can adjust the grid size here */
 }

@@ -5,7 +5,7 @@ import CommunityCard from "@/components/ui/community-card";
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto px-8">
+    <main className="max-w-7xl mx-auto py-12 px-8 ">
       <HomeButton />
 
       <div className="mt-6">
