@@ -24,6 +24,7 @@ dist/
 # Environment variables
 .env
 .env*
+env.mo
 
 # Mops
 .mops

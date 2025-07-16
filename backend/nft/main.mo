@@ -34,7 +34,6 @@ actor class CertificateNFT() {
     for (byte in blob.vals()) {
       let high_nibble_nat8 = byte >> 4;
       let low_nibble_nat8 = byte & 15;
-
       let high_index = Nat8.toNat(high_nibble_nat8);
       let low_index = Nat8.toNat(low_nibble_nat8);
 

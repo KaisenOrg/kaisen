@@ -1,49 +1,66 @@
-import { Actor, HttpAgent } from "@dfinity/agent";
-import { idlFactory as backendIdlFactory } from "../declarations/kai_backend";
-import type { _SERVICE as BackendService } from "../declarations/kai_backend/kai_backend.did";
+'use client';
 
-const getAgent = () => {
-  // Para o desenvolvimento local, o host é a porta da sua réplica local
-  // Para produção, você pode remover o host para usar o gateway padrão da IC
-  // const host = process.env.NODE_ENV === "production"
-  //   ? "https://icp-api.io"
-  //   : "http://127.0.0.1:4943"; // Porta padrão do dfx
+import { useMemo, useEffect, useState } from 'react';
+import { Actor, ActorSubclass, HttpAgent } from '@dfinity/agent';
+import { useAgent, useIdentity } from '@nfid/identitykit/react';
 
-  const host = "http://127.0.0.1:4943";
+import { idlFactory as kaiIdlFactory } from '../declarations/kai_backend';
+import type { _SERVICE as KaiService } from '../declarations/kai_backend/kai_backend.did';
+import { idlFactory as tracksIdlFactory } from '../declarations/tracks_backend';
+import type { _SERVICE as TracksService } from '../declarations/tracks_backend/tracks_backend.did';
+import { idlFactory as chatIdlFactory } from '../declarations/chats_backend';
+import type { _SERVICE as ChatService } from '../declarations/chats_backend/chats_backend.did';
+import { useDevAuth } from '@/providers/dev-auth';
 
-  const agent = new HttpAgent({ host });
-
-  // Em produção, isso não é necessário
-  // if (process.env.NODE_ENV !== "production") {
-  //   agent.fetchRootKey().catch(err => {
-  //     console.warn("Unable to fetch root key. Check to ensure the local replica is running");
-  //     console.error(err);
-  //   });
-  // }
-
-  // No ambiente local, o agent precisa buscar as 'root keys' da rede
-  agent.fetchRootKey().catch(err => {
-    console.warn("Unable to fetch root key. Check to ensure the local replica is running");
-    console.error(err);
-  });
-  return agent;
+const canisterMap = {
+  kai_backend: { idl: kaiIdlFactory, service: {} as KaiService },
+  tracks_backend: { idl: tracksIdlFactory, service: {} as TracksService },
+  chats_backend: { idl: chatIdlFactory, service: {} as ChatService },
 };
 
-export const createBackendActor = () => {
-  const agent = getAgent();
+const canisterIds = {
+  kai_backend: process.env.NEXT_PUBLIC_CANISTER_ID_KAI_BACKEND,
+  tracks_backend: process.env.NEXT_PUBLIC_CANISTER_ID_TRACKS_BACKEND,
+  chats_backend: process.env.NEXT_PUBLIC_CANISTER_ID_CHATS_BACKEND,
+};
 
-  // O ID do canister é injetado como uma variável de ambiente pelo dfx
-  const canisterId = process.env.NEXT_PUBLIC_CANISTER_ID_KAI_BACKEND;
+type CanisterName = keyof typeof canisterMap;
 
-  if (!canisterId) {
-    throw new Error("CANISTER_ID_KAI_BACKEND environment variable not set");
-  }
+export const useActor = <T extends CanisterName>(canisterName: T) => {
+  const { identity } = useDevAuth();
+  const [actor, setActor] = useState<ActorSubclass<typeof canisterMap[T]['service']> | null>(null);
 
-  // Cria o ator, que permite chamar os métodos do canister
-  const backendActor = Actor.createActor<BackendService>(backendIdlFactory, {
-    agent,
-    canisterId,
-  });
+  useEffect(() => {
+    const create = async () => {
+      const canisterId = canisterIds[canisterName];
 
-  return backendActor;
+      if (!identity || !canisterId) {
+        setActor(null);
+        return;
+      }
+
+      const agent = await HttpAgent.create({
+        identity,
+        host: process.env.NEXT_PUBLIC_DFX_NETWORK === 'ic'
+          ? 'https://icp-api.io'
+          : 'http://127.0.0.1:4943',
+      });
+
+      if (process.env.NEXT_PUBLIC_DFX_NETWORK !== 'ic') {
+        await agent.fetchRootKey();
+      }
+
+      const newActor = Actor.createActor<typeof canisterMap[T]['service']>(canisterMap[canisterName].idl, {
+        agent,
+        canisterId,
+      });
+
+      setActor(newActor);
+    };
+
+    create().catch(console.error);
+
+  }, [identity, canisterName]);
+
+  return actor;
 };
