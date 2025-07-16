@@ -1,5 +1,6 @@
 import React from "react";
 import { BookmarkIcon, ClockIcon, UserGroupIcon, RocketLaunchIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 type CommunityCardProps = {
     variant?: "default" | "large";
@@ -45,7 +46,7 @@ export default function CommunityCard({
         // We'll use the containerClass div as the relative parent.
         <div className={containerClass}>
             {showMascot && (
-                <img
+                <Image
                     src="/kai-sleeping.svg"
                     alt="Kai mascot"
                     // Positioned relative to the card container
@@ -54,9 +55,9 @@ export default function CommunityCard({
                     draggable={false}
                 />
             )}
-            
+
             {/* Background grid effect */}
-            <img
+            <Image
                 src="/geometric-bg.svg"
                 alt=""
                 aria-hidden="true"

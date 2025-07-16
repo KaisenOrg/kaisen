@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from "react";
-import { useAuthenticatedActor, anonymousKaiActor } from "../lib/agent";
-import { useAuth } from "@nfid/identitykit/react";
+import { useActor } from "../lib/agent";
 import { Button } from "@/components/ui/button";
+import { useDevAuth } from "@/providers/dev-auth";
 
 export default function Home() {
-  const kaiAuthenticatedActor = useAuthenticatedActor("kai_backend");
-  const { connect, disconnect, user, isConnecting } = useAuth();
+  const { login, isAuthenticated, logout } = useDevAuth();
+  const kaiAuthenticatedActor = useActor("kai_backend");
 
   const [prompt, setPrompt] = useState<string>("");
   const [response, setResponse] = useState<string>("");
@@ -29,9 +29,14 @@ export default function Home() {
     try {
       const response = await kaiAuthenticatedActor.generateTrack(prompt);
 
-      const result = JSON.parse(response);
-
-      setResponse(result.candidates[0].content.parts[0].text);
+      if ("ok" in response) {
+        const result = JSON.parse(response.ok);
+        setResponse(result);
+      } else if ("err" in response) {
+        setResponse(`Erro: ${response.err}`);
+      } else {
+        setResponse("Resposta inesperada do canister.");
+      }
     } catch (error) {
       console.error("Error calling generateTrack function:", error);
       setResponse("Ocorreu um erro ao se comunicar com o canister.");
@@ -41,17 +46,17 @@ export default function Home() {
   };
 
   async function handleLogin() {
-    await connect();
+    login();
   }
 
   async function handleLogout() {
-    await disconnect();
+    logout();
   }
-  
-  if (!user || user.principal.isAnonymous() || !kaiAuthenticatedActor) {
+
+  if (!isAuthenticated || !kaiAuthenticatedActor) {
     return (
       <main className="max-w-7xl mx-auto px-8">
-        <Button onClick={handleLogin} disabled={isConnecting}>Faça login para falar com o Kai</Button>
+        <Button onClick={handleLogin}>Faça login para falar com o Kai</Button>
       </main>
     );
   }
