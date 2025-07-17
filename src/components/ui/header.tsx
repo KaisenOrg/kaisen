@@ -9,7 +9,7 @@ export default function Header() {
       {/* Left side: Menu and Logo */}
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" className="w-10 h-10">
-          <Bars3BottomLeftIcon style={{width: 24, height: 24}}/>
+          <Bars3BottomLeftIcon style={{ width: 24, height: 24 }} />
         </Button>
         <div className="flex items-center">
           <Image
@@ -22,7 +22,7 @@ export default function Header() {
         </div>
       </div>
 
-{/* Center: Search Input */}
+      {/* Center: Search Input */}
       <div className="flex-1 flex justify-center">
         <div className="w-full max-w-md">
           <div className="relative">
@@ -41,7 +41,7 @@ export default function Header() {
       {/* Right side: Notifications and User Avatar */}
       <div className="flex items-center gap-4">
         <Button variant="outline" size="icon" className="w-10 h-10">
-          <BellIcon style={{width: 24, height: 24}}/>
+          <BellIcon style={{ width: 24, height: 24 }} />
           <span className="sr-only">Notifications</span>
         </Button>
         <Avatar className="w-10 h-10">
