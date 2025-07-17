@@ -17,7 +17,7 @@ export function TabNavigationItem({ route, baseUrl }: { route: TabRouteType, bas
   return (
     <Link
       href={`${baseUrl}${route.value}`}
-      className={`flex items-center gap-3 px-3 py-4 hover:text-primary ${isActive ? "text-white" : "text-zinc-500"
+      className={`transition-all flex items-center gap-3 px-3 py-4 hover:text-primary ${isActive ? "text-white border-b-2 border-primary" : "text-zinc-500"
         }`}
     >
       {route.icon && (
