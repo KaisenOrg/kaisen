@@ -12,7 +12,7 @@ export default function TracksLayout({ children }: { children: React.ReactNode }
   ];
 
   return (
-    <main>
+    <main className="flex flex-col h-full">
       <PageHeader
         title="Lorem ipsum"
         subtitle="Lorem ipsum dolor sit amet"
