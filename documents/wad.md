@@ -133,12 +133,41 @@ Dependence on external technological infrastructure and tools—such as AI APIs 
 [FILL IN WITH UP TO 100 WORDS - Place here the SWOT analysis]
 
 ### 2.1.3. Solution
-**Problem to be solved:** [FILL IN]
-**Available data:** [FILL IN]
-**Proposed solution:** [FILL IN]
-**How to use the solution:** [FILL IN]
-**Expected benefits:** [FILL IN]
-**Success criteria and how it will be evaluated:** [FILL IN]
+**Problem to be solved:** <br> 
+The traditional educational model is centralized, expensive, and inefficient in providing detailed and verifiable proof of individual knowledge. Furthermore, the certificates currently used are fragile, and learning is treated as a product rather than a collaborative ecosystem. Consequently, there is a lack of effective mechanisms for validating knowledge, as well as limited incentives for sharing and collaboration within the community.
+
+**Available data:** <br> 
+The platform offers a wide variety of educational content, available in various formats, such as PDFs, articles, research papers, and technical documentation. Furthermore, relevant data is collected, such as user learning patterns and preferences, community engagement metrics, and blockchain-based validation records. It is worth noting that the platform utilizes both user-generated content and learning materials processed by artificial intelligence (AI), thus creating a comprehensive and dynamic knowledge repository.
+
+**Proposed solution:** <br> 
+Kaizen is the first decentralized knowledge protocol that transforms learning—once a passive consumption process—into a creative, collaborative, and valuable experience. The solution combines personalized learning paths with AI technologies and blockchain validation, creating a true “GitHub of Knowledge.”
+
+Users input raw materials (such as PDFs, topics, and links), which are processed by Kai, an AI assistant. Kai, in turn, generates personalized learning paths. These paths can be published, forked, and improved by the community, resulting in a living, constantly evolving repository, validated by NFT certificates and incentivized by the $KOIN token economy.
+
+**How to use the solution:** <br> 
+- Content Input: The user submits documents or defines topics of interest to Kai.
+- Path Generation: The AI creates personalized paths containing quizzes, flashcards, and interactive content.
+- Learning Process: Users progress through the paths with the support of the AI tutor.
+- Community Collaboration: Upon completion, paths can be published and improved by the community through forking.
+- Validation: Completion of the learning process is certified by “mineable” NFTs, serving as proof of learning.
+- Incentive: Users are rewarded with $KOIN tokens for creating quality content, completing paths, and collaborating with the community.
+
+**Expected benefits:** <br>
+- Democratization of access to personalized, AI-driven education.
+- Verifiable and portable knowledge credentials, secured by blockchain certificates.
+- Creation of a collaborative knowledge ecosystem, with content continuously improved by the community.
+- Establishment of a sustainable incentive model that values learning and sharing.
+- Reduction of educational costs and expansion of access to education.
+- Strengthening digital reputation and professional recognition through certified achievements.
+
+**Success criteria and how it will be evaluated:** <br>
+- User Engagement: Measured by the number of paths created, completed, and forked monthly.
+- Community Growth: Assessed based on the number of active users and retention rate (goal: over 5,000 active users in the first year).
+- Knowledge Quality: Verified through community reviews and engagement metrics for published tracks.
+- Certification Adoption: Quantified by the number of NFT certificates issued and shared in professional contexts.
+- Token Economy Health: Monitored based on the circulation of the $KOIN token, adoption of staking mechanisms, and market activity.
+- Educational Impact: Assessed by measuring improvements in user knowledge and skills through pre- and post-assessments.
+
 
 ### 2.1.4. Value Proposition Canvas
 [FILL IN - Place here the Value Proposition Canvas]
