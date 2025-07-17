@@ -1,0 +1,33 @@
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+export type TabRouteType = {
+  value: string
+  label: string
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>
+}
+
+export function TabNavigationItem({ route, baseUrl }: { route: TabRouteType, baseUrl: string }) {
+  const pathname = usePathname()
+  const normalizedBaseUrl = (baseUrl.endsWith("/") && route.value) ? `${baseUrl}/` : baseUrl
+  const normalizedRouteValue = route.value === "" || route.value === "/" ? "" : route.value
+  const tabUrl = `${normalizedBaseUrl}${normalizedRouteValue}`
+  const isActive = pathname === tabUrl || (route.value === "" || route.value === "/") && pathname === normalizedBaseUrl
+
+  return (
+    <Link
+      href={`${baseUrl}${route.value}`}
+      className={`flex items-center gap-3 px-3 py-4 hover:text-primary ${isActive ? "text-white" : "text-zinc-500"
+        }`}
+    >
+      {route.icon && (
+        <route.icon
+          className="h-6 w-6"
+          // Set icon color to primary if active, otherwise inherit
+          style={isActive ? { color: "var(--primary)" } : undefined}
+        />
+      )}
+      <span>{route.label}</span>
+    </Link>
+  )
+}

@@ -70,7 +70,7 @@ export default function TestBackendPage() {
       // CORREÇÃO: A ordem dos parâmetros e o tratamento do 'Result' foram ajustados
       const result = await kaiActor.generateChatResponse(
         currentPrompt,
-        messages.length > 0 ? [historyForAI] : []
+        messages.length > 0 ? historyForAI : ''
       );
 
       if ('err' in result) {
