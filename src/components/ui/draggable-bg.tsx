@@ -16,19 +16,11 @@ export function DraggableBackground({
   className,
   canvasClassName,
 }: DraggableBackgroundProps) {
-  // Ref para o container visível (o viewport)
   const viewportRef = useRef<HTMLDivElement>(null);
-
-  // Estado para guardar a posição (offset) do canvas
   const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  // Estado para controlar se o usuário está arrastando
   const [isDragging, setIsDragging] = useState(false);
-
-  // Ref para guardar a posição inicial do clique para calcular o delta
   const dragStartRef = useRef({ x: 0, y: 0 });
 
-  // Ativado quando o usuário clica no canvas
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     if (e.button !== 0 || !viewportRef.current) return;
 
@@ -42,7 +34,6 @@ export function DraggableBackground({
     viewportRef.current.style.cursor = 'grabbing';
   };
 
-  // Ativado quando o usuário solta o botão do mouse
   const handleMouseUp = () => {
     setIsDragging(false);
     if (viewportRef.current) {
@@ -50,12 +41,10 @@ export function DraggableBackground({
     }
   };
 
-  // Ativado quando o mouse sai da área do componente
   const handleMouseLeave = () => {
     if (isDragging) handleMouseUp();
   };
 
-  // Ativado quando o mouse se move sobre o canvas
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!isDragging || !viewportRef.current) return;
     e.preventDefault();

@@ -1,62 +1,92 @@
 'use client'
-import { Button } from '@/components/ui/button'
+import { TrackCard } from '@/components/specific/tracks/card'
+import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
-import Link from 'next/link'
+import { generateTrackPositions } from '@/lib/utils'
+import { useState, useEffect } from 'react';
+
+const tracks = [
+  {
+    id: 1,
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    buttonText: 'Read',
+    href: '/tracks',
+    active: true
+  },
+  {
+    id: 2,
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    buttonText: 'Watch',
+    href: '/tracks',
+    active: false
+  },
+  {
+    id: 3,
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    buttonText: 'Answer',
+    href: '/tracks',
+    active: false
+  },
+  {
+    id: 4,
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    buttonText: 'Test',
+    href: '/tracks',
+    active: false
+  },
+];
 
 export default function TracksPage() {
-  const screenHeight = window.innerHeight
+  const [tracksWithPositions, setTracksWithPositions] = useState<any[]>([]);
+  const [screenHeight, setScreenHeight] = useState(0);
+  const cardDimensions = { width: 320, height: 238 };
+
+  useEffect(() => {
+    const screenHeight = window.innerHeight;
+    setScreenHeight(screenHeight);
+
+    const generatedTracks = generateTrackPositions(tracks, {
+      cardWidth: cardDimensions.width,
+      canvasHeight: screenHeight * 0.8,
+      gap: 200,
+      initialLeftOffset: 150,
+      verticalBounds: [0.2, 0.4],
+      maxVerticalShift: 400
+    });
+
+    setTracksWithPositions(generatedTracks);
+
+  }, []);
+
+  const canvasWidth = tracks.length * (cardDimensions.width + 120) + 450;
 
   return (
     <article className='flex-1 flex'>
       <DraggableBackground
         className="h-full w-full bg-gradient-to-t from-primary/5 to-transparent select-none"
-        canvasWidth={2000}
+        canvasWidth={canvasWidth}
         canvasHeight={screenHeight * 0.8}
-        canvasClassName="place-items-center flex gap-10 p-15 bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
+        canvasClassName="bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
       >
-
-        <Link href="/tracks">
-          <div className='relative flex flex-col gap-2 bg-card w-80 p-6 border-2 border-zinc-800 rounded-2xl'>
-            <strong>Lorem ipsum</strong>
-
-            <p className='text-sm text-zinc-400'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
-
-            <Button variant='outline' className='mt-4'>
-              Read
-            </Button>
-          </div>
-        </Link>
-
-        <Link href="/tracks">
-          <div className='relative flex flex-col gap-2 bg-card w-80 p-6 border-2 border-zinc-800 rounded-2xl'>
-            <strong>Lorem ipsum</strong>
-
-            <p className='text-sm text-zinc-400'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
-
-            <Button variant='outline' className='mt-4'>
-              Watch
-            </Button>
-          </div>
-        </Link>
-
-        <Link href="/tracks">
-          <div className='relative flex flex-col gap-2 bg-card w-80 p-6 border-2 border-zinc-800 rounded-2xl'>
-            <strong>Lorem ipsum</strong>
-
-            <p className='text-sm text-zinc-400'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
-
-            <Button variant='outline' className='mt-4'>
-              Answer
-            </Button>
-          </div>
-        </Link>
-
+        {tracksWithPositions.length > 0 && (
+          <>
+            <ConnectingArrows positions={tracksWithPositions.map(t => ({ ...t.position, active: t.active }))} cardDimensions={cardDimensions} />
+            {tracksWithPositions.map(track => (
+              <TrackCard
+                key={track.id}
+                title={track.title}
+                description={track.description}
+                buttonText={track.buttonText}
+                href={track.href}
+                style={track.position}
+              />
+            ))}
+          </>
+        )}
       </DraggableBackground>
 
       <div>
