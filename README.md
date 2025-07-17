@@ -52,7 +52,44 @@
 
 ## Estrutura de Pastas e Arquivos:
 
-[to fill in]
+```
+Kaizen/
+│
+├── backend/               # Canisters Motoko para Internet Computer
+│   ├── kai/               # Canister principal com integração Gemini AI
+│   │   └── main.mo
+│   └── tracks/            # Canister para gerenciamento de trilhas
+│       └── main.mo
+├── src/                   # Código fonte da aplicação Next.js
+│   ├── app/               # App Router do Next.js 13+
+│   │   ├── favicon.ico
+│   │   ├── globals.css    # Estilos globais com Tailwind CSS
+│   │   ├── layout.tsx     # Layout raiz da aplicação
+│   │   └── page.tsx       # Página principal
+│   ├── lib/               # Utilitários e configurações
+│   │   └── agent.ts       # Configuração do agente IC para comunicação com canisters
+│   ├── providers/         # Providers React (Tema, Autenticação)
+│   │   └── index.tsx
+│   └── declarations/      # Tipos TypeScript gerados automaticamente pelo dfx
+├── public/                # Arquivos estáticos
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── documents/             # Documentação do projeto
+│   ├── wad.md             # Documento principal de análise e requisitos
+│   └── assets/            # Imagens e recursos da documentação
+│       ├── canvas-value.png
+│       ├── five-forces.png
+│       └── persona-*.png
+├── .gitignore             # Arquivo para ignorar arquivos no Git
+├── package.json           # Gerenciador de dependências do Node.js
+├── package-lock.json      # Lock file das dependências
+├── dfx.json               # Configuração do DFX (Internet Computer SDK)
+├── next.config.js         # Configuração do Next.js
+└── README.md              # Documentação do projeto
+```
 
 ## Histórico de Lançamentos    
 
