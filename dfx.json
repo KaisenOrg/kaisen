@@ -28,10 +28,6 @@
       "type": "motoko",
       "main": "backend/tracks/main.mo"
     },
-    "nft_certificates": {
-      "type": "motoko",
-      "main": "backend/nft/main.mo"
-    },
     "kaizen_frontend": {
       "type": "assets",
       "build": "npm install && npm run build",
@@ -48,7 +44,7 @@
   },
   "defaults": {
     "build": {
-      "packtool": "mops sources",
+      "packtool": "",
       "args": ""
     }
   }

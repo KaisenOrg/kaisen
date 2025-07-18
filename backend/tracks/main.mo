@@ -101,4 +101,80 @@ actor {
       };
     };
   };
+
+  // DEV FUNCTION (deletar antes de enviar p/ produção)
+
+  /**
+     * @notice Limpa todas as trilhas existentes e injeta um conjunto de trilhas de exemplo para teste.
+     * Apenas controllers do canister podem chamar esta função.
+     */
+  public shared (controller) func injectSampleTracks() : async () {
+    tracks := Trie.empty();
+
+    let trackId1 = "1001";
+    let track1 : Types.Track = {
+      id = trackId1;
+      title = "Motoko para Iniciantes";
+      description = "Uma trilha de aprendizado introdutória sobre a linguagem Motoko na Internet Computer.";
+      authorId = Principal.toText(controller.caller);
+      createdAt = Time.now();
+      sections = [
+        {
+          id = 1;
+          title = "O que é Motoko?";
+          content = #Page({
+            title = "Introdução ao Motoko";
+            elements = [
+              #Text({
+                value = "Motoko é uma linguagem de programação moderna e com segurança de tipos, projetada para compilar diretamente para WebAssembly.";
+              }),
+              #Text({
+                value = "Ela é otimizada para o modelo de programação de atores da Internet Computer.";
+              }),
+            ];
+          });
+        },
+        {
+          id = 2;
+          title = "Teste Rápido";
+          content = #Quiz([{
+            question = "Qual palavra-chave declara uma variável que persiste durante upgrades?";
+            alternatives = [
+              { id = 1; text = "var" },
+              { id = 2; text = "let" },
+              { id = 3; text = "stable" },
+            ];
+            correctAnswerId = 3;
+          }]);
+        },
+      ];
+    };
+
+    let trackId2 = "1002";
+    let track2 : Types.Track = {
+      id = trackId2;
+      title = "A Arte do Brigadeiro";
+      description = "Aprenda a fazer o doce mais amado do Brasil.";
+      authorId = Principal.toText(controller.caller);
+
+      createdAt = Time.now();
+      sections = [{
+        id = 1;
+        title = "Conceitos Chave";
+        content = #Flashcard([
+          {
+            sentence = "Ingrediente principal que dá a base de chocolate.";
+            answer = "Leite condensado e chocolate em pó";
+          },
+          {
+            sentence = "O ponto correto para desligar o fogo.";
+            answer = "Quando a mistura desgruda do fundo da panela.";
+          },
+        ]);
+      }];
+    };
+
+    tracks := Trie.put(tracks, key(trackId1), Text.equal, track1).0;
+    tracks := Trie.put(tracks, key(trackId2), Text.equal, track2).0;
+  };
 };

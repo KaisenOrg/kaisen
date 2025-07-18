@@ -1,9 +1,19 @@
+'use client';
 import HomeButton from "@/components/ui/home-button";
-import { Card } from "@/components/ui/card";
 import ContinueCard from "@/components/ui/continue-card";
 import CommunityCard from "@/components/ui/community-card";
+import { useActor } from "@/lib/agent";
+import { useEffect } from "react";
 
 export default function Home() {
+  const tracksActor = useActor('tracks_backend');
+
+  useEffect(() => {
+    if (!tracksActor) return;
+
+    tracksActor.injectSampleTracks();
+  }, [tracksActor]);
+
   return (
     <main className="max-w-7xl mx-auto py-12 px-8">
       <HomeButton />

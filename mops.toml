@@ -1,7 +1,0 @@
-[package]
-name = "kaizen"
-version = "0.1.0"
-
-[dependencies]
-base = "0.14.14"
-sha2 = "0.1.6"
