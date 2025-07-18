@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Ed25519KeyIdentity } from '@dfinity/identity';
 import type { Identity } from '@dfinity/agent';
 import type { Principal } from '@dfinity/principal';
@@ -32,6 +32,12 @@ export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => 
 
   const isAuthenticated = !!identity;
   const principal = identity?.getPrincipal();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      login();
+    }
+  }, [isAuthenticated]);
 
   return (
     <DevAuthContext.Provider value={{ isAuthenticated, identity, principal, login, logout }}>

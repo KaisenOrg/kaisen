@@ -174,7 +174,32 @@ actor {
       }];
     };
 
+    let trackId3 = "1003";
+    let track3 : Types.Track = {
+      id = trackId3;
+      title = "A Arte da Fofoca";
+      description = "Aprenda a fazer o doce mais amado do Brasil.";
+      authorId = Principal.toText(controller.caller);
+
+      createdAt = Time.now();
+      sections = [{
+        id = 1;
+        title = "Conceitos Chave";
+        content = #Flashcard([
+          {
+            sentence = "Ingrediente principal que dá a base de chocolate.";
+            answer = "Leite condensado e chocolate em pó";
+          },
+          {
+            sentence = "O ponto correto para desligar o fogo.";
+            answer = "Quando a mistura desgruda do fundo da panela.";
+          },
+        ]);
+      }];
+    };
+
     tracks := Trie.put(tracks, key(trackId1), Text.equal, track1).0;
     tracks := Trie.put(tracks, key(trackId2), Text.equal, track2).0;
+    tracks := Trie.put(tracks, key(trackId3), Text.equal, track3).0;
   };
 };
