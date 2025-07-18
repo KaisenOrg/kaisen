@@ -91,6 +91,7 @@ actor {
     let http_request : IC.http_request_args = {
       url = url;
       max_response_bytes = null;
+      is_replicated = null;
       headers = request_headers;
       body = ?request_body;
       method = #post;
