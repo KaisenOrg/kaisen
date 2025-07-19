@@ -1,23 +1,31 @@
 'use client';
+
+import { useEffect } from 'react';
 import HomeButton from "@/components/ui/home-button";
-import ContinueCard from "@/components/ui/continue-card";
 import CommunityCard from "@/components/ui/community-card";
-import { useActor } from "@/lib/agent";
-import { useEffect } from "react";
+import ContinueCard from '@/components/ui/continue-card';
+
+import { useActor } from '@/lib/agent';
+import { useTrackStore } from '@/store/useTrackStore';
 
 export default function Home() {
+  const { tracks, isLoading, error, fetchTracks, injectSampleTracks } = useTrackStore();
+
   const tracksActor = useActor('tracks_backend');
 
   useEffect(() => {
-    if (!tracksActor) return;
-
-    tracksActor.injectSampleTracks();
-  }, [tracksActor]);
+    if (tracksActor) {
+      injectSampleTracks(tracksActor).finally(() => { // remover inject quando enviar pra produção
+        fetchTracks(tracksActor);
+      })
+    }
+  }, [tracksActor, fetchTracks]);
 
   return (
     <main className="max-w-7xl mx-auto py-12 px-8">
       <HomeButton />
 
+      {/* Seção "Continue de onde parou" (pode ser implementada no futuro) */}
       <div className="mt-6">
         <h2 className="text-lg font-semibold">Pick up where you left off</h2>
 
@@ -33,54 +41,23 @@ export default function Home() {
         <h2 className="text-lg font-semibold">Explore community blocks</h2>
         <h3 className="text-sm font-medium text-zinc-400">Browse and join learning tracks created by the community</h3>
 
-        <div className="flex mt-4 gap-4">
-          <CommunityCard
-            title="Learn Next.js with the community"
-            description="Join us to explore the latest features of Next.js and build amazing applications together. We share resources, tips, and support each other in our coding journey."
-            creator="goat"
-            members="150"
-            time="30min"
-            variant="large"
-            showMascot={true}
-          />
-          <CommunityCard
-            title="Placeholder"
-            description="This is a placeholder for a community block."
-            creator="placeholder"
-            members="0"
-            time="--"
-          />
-          <CommunityCard
-            title="Placeholder"
-            description="This is a placeholder for a community block."
-            creator="placeholder"
-            members="0"
-            time="--"
-          />
-        </div>
-        <div className="flex mt-4 gap-4">
-          <CommunityCard
-            title="Placeholder"
-            description="This is a placeholder for a community block."
-            creator="placeholder"
-            members="0"
-            time="--"
-          />
-          <CommunityCard
-            title="Placeholder"
-            description="This is a placeholder for a community block."
-            creator="placeholder"
-            members="0"
-            time="--"
-          />
-          <CommunityCard
-            title="Learn Next.js with the community"
-            description="Join us to explore the latest features of Next.js and build amazing applications together. We share resources, tips, and support each other in our coding journey."
-            creator="goat"
-            members="150"
-            time="30min"
-            variant="large"
-          />
+        {/* Lógica para exibir o estado de carregamento ou erro */}
+        {isLoading && <p className="mt-4 text-zinc-500">Carregando trilhas...</p>}
+        {error && <p className="mt-4 text-red-500">{error}</p>}
+
+        <div className="flex flex-wrap gap-4 mt-4">
+          {!isLoading && tracks.map((track, i) => (
+            <CommunityCard
+              key={track.id}
+              title={track.title}
+              description={track.description}
+              creator={track.authorId.slice(0, 10) + "..."}
+              members={'0'}
+              time={`--`}
+              variant={i === 0 || (i === tracks.length - 1 && i > 2) ? 'large' : 'default'}
+              showMascot={i === 0 || (i === tracks.length - 1 && i > 1)}
+            />
+          ))}
         </div>
       </div>
     </main>
