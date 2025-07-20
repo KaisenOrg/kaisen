@@ -3,7 +3,7 @@
 import { PlusIcon } from "@heroicons/react/24/solid";
 import { useRef, useState } from "react";
 
-export default function HomeButton() {
+export default function HomeButton({ onClick }: { onClick?: () => void }) {
   const divRef = useRef<HTMLDivElement>(null);
   let animationFrame: number | null = null;
 
@@ -49,9 +49,7 @@ export default function HomeButton() {
 
   return (
     <div
-      onClick={() => {
-        alert("teste");
-      }}
+      onClick={onClick}
       ref={divRef}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}

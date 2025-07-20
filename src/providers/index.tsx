@@ -4,11 +4,12 @@ import { ThemeProvider } from 'next-themes';
 import { IdentityKitAuthType } from '@nfid/identitykit';
 import { IdentityKitProvider } from '@nfid/identitykit/react';
 import { DevAuthProvider } from './dev-auth';
+import { GlobalPopover } from '@/components/ui/global-popover';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      {process.env.NEXT_PUBLIC_DFX_NETWORK === 'ic' ?
+      {process.env.NEXT_PUBLIC_DFX_NETWORK === 'ic' ? (
         <IdentityKitProvider
           authType={IdentityKitAuthType.DELEGATION}
           signerClientOptions={{
@@ -21,9 +22,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
             ]
           }}>
           {children}
+          <GlobalPopover />
         </IdentityKitProvider>
-        : <DevAuthProvider>{children}</DevAuthProvider>
-      }
+      ) : (
+        <DevAuthProvider>
+          {children}
+          <GlobalPopover />
+        </DevAuthProvider>
+      )}
     </ThemeProvider>
   );
 }
