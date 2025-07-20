@@ -7,23 +7,37 @@ import ContinueCard from '@/components/ui/continue-card';
 
 import { useActor } from '@/lib/agent';
 import { useTrackStore } from '@/store/useTrackStore';
+import { usePopoverStore } from '@/store/usePopoverStore';
 
 export default function Home() {
   const { tracks, isLoading, error, fetchTracks, injectSampleTracks } = useTrackStore();
+  const { open } = usePopoverStore();
 
   const tracksActor = useActor('tracks_backend');
+
+  const handleOpenConfirmationPopover = () => {
+    open({
+      type: 'generic',
+      title: 'Confirmar Ação',
+      description: 'Tem certeza que deseja continuar?',
+      content: <p>Esta ação não poderá ser desfeita.</p>,
+      onConfirm: () => alert('Ação confirmada!'),
+    });
+  };
 
   useEffect(() => {
     if (tracksActor) {
       injectSampleTracks(tracksActor).finally(() => { // remover inject quando enviar pra produção
-        fetchTracks(tracksActor);
+        fetchTracks(tracksActor).then(() => {
+          console.log(tracks)
+        });
       })
     }
   }, [tracksActor, fetchTracks]);
 
   return (
     <main className="max-w-7xl mx-auto py-12 px-8">
-      <HomeButton />
+      <HomeButton onClick={handleOpenConfirmationPopover} />
 
       {/* Seção "Continue de onde parou" (pode ser implementada no futuro) */}
       <div className="mt-6">

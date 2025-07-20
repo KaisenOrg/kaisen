@@ -170,6 +170,11 @@
   }
 }
 
+[data-state=open], [data-state=closed] {
+  --tw-translate-x: -50%;
+  --tw-translate-y: -50%;
+}
+
 .subtle-grid-background {
   background-image:
     linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),

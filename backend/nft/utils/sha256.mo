@@ -35,6 +35,7 @@ import Array "mo:base/Array";
 import Blob "mo:base/Blob";
 import Nat "mo:base/Nat";
 import Nat8 "mo:base/Nat8";
+import Nat16 "mo:base/Nat16";
 import Nat32 "mo:base/Nat32";
 import Nat64 "mo:base/Nat64";
 import Prim "mo:prim";
@@ -125,7 +126,7 @@ module {
   let nat32To16 = Prim.nat32ToNat16;
   let nat32To64 = Prim.nat32ToNat64;
   let nat16To32 = Prim.nat16ToNat32;
-  let nat16To8 = Prim.nat16ToNat8;
+  let _nat16To8 = Prim.nat16ToNat8;
   let nat8To16 = Prim.nat8ToNat16;
 
   public class Digest(algo_ : Algorithm) {
@@ -956,22 +957,38 @@ module {
     public func sum() : Blob {
       writePadding();
 
-      let (d0, d1) = Prim.explodeNat16(s0h);
-      let (d2, d3) = Prim.explodeNat16(s0l);
-      let (d4, d5) = Prim.explodeNat16(s1h);
-      let (d6, d7) = Prim.explodeNat16(s1l);
-      let (d8, d9) = Prim.explodeNat16(s2h);
-      let (d10, d11) = Prim.explodeNat16(s2l);
-      let (d12, d13) = Prim.explodeNat16(s3h);
-      let (d14, d15) = Prim.explodeNat16(s3l);
-      let (d16, d17) = Prim.explodeNat16(s4h);
-      let (d18, d19) = Prim.explodeNat16(s4l);
-      let (d20, d21) = Prim.explodeNat16(s5h);
-      let (d22, d23) = Prim.explodeNat16(s5l);
-      let (d24, d25) = Prim.explodeNat16(s6h);
-      let (d26, d27) = Prim.explodeNat16(s6l);
-      let (d28, d29) = Prim.explodeNat16(s7h);
-      let (d30, d31) = Prim.explodeNat16(s7l);
+      let d0 = Nat16.toNat8(s0h >> 8);
+      let d1 = Nat16.toNat8(s0h & 0xff);
+      let d2 = Nat16.toNat8(s0l >> 8);
+      let d3 = Nat16.toNat8(s0l & 0xff);
+      let d4 = Nat16.toNat8(s1h >> 8);
+      let d5 = Nat16.toNat8(s1h & 0xff);
+      let d6 = Nat16.toNat8(s1l >> 8);
+      let d7 = Nat16.toNat8(s1l & 0xff);
+      let d8 = Nat16.toNat8(s2h >> 8);
+      let d9 = Nat16.toNat8(s2h & 0xff);
+      let d10 = Nat16.toNat8(s2l >> 8);
+      let d11 = Nat16.toNat8(s2l & 0xff);
+      let d12 = Nat16.toNat8(s3h >> 8);
+      let d13 = Nat16.toNat8(s3h & 0xff);
+      let d14 = Nat16.toNat8(s3l >> 8);
+      let d15 = Nat16.toNat8(s3l & 0xff);
+      let d16 = Nat16.toNat8(s4h >> 8);
+      let d17 = Nat16.toNat8(s4h & 0xff);
+      let d18 = Nat16.toNat8(s4l >> 8);
+      let d19 = Nat16.toNat8(s4l & 0xff);
+      let d20 = Nat16.toNat8(s5h >> 8);
+      let d21 = Nat16.toNat8(s5h & 0xff);
+      let d22 = Nat16.toNat8(s5l >> 8);
+      let d23 = Nat16.toNat8(s5l & 0xff);
+      let d24 = Nat16.toNat8(s6h >> 8);
+      let d25 = Nat16.toNat8(s6h & 0xff);
+      let d26 = Nat16.toNat8(s6l >> 8);
+      let d27 = Nat16.toNat8(s6l & 0xff);
+      let d28 = Nat16.toNat8(s7h >> 8);
+      let d29 = Nat16.toNat8(s7h & 0xff);
+      let d30 = Nat16.toNat8(s7l >> 8);
+      let d31 = Nat16.toNat8(s7l & 0xff);
 
       return Prim.arrayToBlob(
         if (algo_ == #sha224)
