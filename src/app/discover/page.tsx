@@ -1,7 +1,7 @@
 import CommunityCard from "@/components/ui/community-card";
 import DiscoverFilter from "@/components/ui/discover-filter";
 
-export default function Home() {
+export default function Discover() {
   return (
     <main className="max-w-7xl mx-auto px-8">
       <div className="mt-2">
