@@ -114,37 +114,84 @@ actor {
     let trackId1 = "1001";
     let track1 : Types.Track = {
       id = trackId1;
-      title = "Motoko para Iniciantes";
-      description = "Uma trilha de aprendizado introdutória sobre a linguagem Motoko na Internet Computer.";
+      title = "A Fascinante História da Fotografia";
+      description = "Viaje no tempo e descubra como a humanidade aprendeu a capturar a luz! Desde as primeiras imagens borradas até as câmaras digitais de hoje, esta trilha explora os inventores, as tecnologias e os momentos que definiram a arte da fotografia.";
       authorId = Principal.toText(controller.caller);
       createdAt = Time.now();
       sections = [
         {
           id = 1;
-          title = "O que é Motoko?";
+          title = "O Nascimento da Imagem";
           content = #Page({
-            title = "Introdução ao Motoko";
+            title = "Capturando a Primeira Luz";
             elements = [
               #Text({
-                value = "Motoko é uma linguagem de programação moderna e com segurança de tipos, projetada para compilar diretamente para WebAssembly.";
+                value = "Bem-vindo(a), explorador(a) visual! A nossa jornada começa no início do século XIX, muito antes das selfies. A fotografia nasceu de uma combinação de química e ótica. A primeira imagem permanente foi criada por Joseph Nicéphore Niépce em 1826, uma vista da janela de sua casa que exigiu uma exposição de várias horas!";
+              }),
+              #Image({
+                url = "https://placehold.co/600x400?text=Vista+da+Janela+em+Le+Gras+(1826)";
+                caption = ?"A primeira fotografia da história, tirada por Niépce.";
               }),
               #Text({
-                value = "Ela é otimizada para o modelo de programação de atores da Internet Computer.";
+                value = "Esta invenção, chamada de 'Heliografia', usava uma placa de estanho coberta com betume. Onde a luz batia, o betume endurecia; o resto era lavado, revelando uma imagem rudimentar.";
               }),
             ];
           });
         },
         {
           id = 2;
-          title = "Teste Rápido";
+          title = "Conceitos Fundamentais (Flashcards)";
+          content = #Flashcard([
+            {
+              sentence = "O processo criado por Louis Daguerre que popularizou a fotografia.";
+              answer = "Daguerreótipo (Daguerréotype)";
+            },
+            {
+              sentence = "A parte da câmara que controla a quantidade de luz que entra.";
+              answer = "Abertura (Aperture)";
+            },
+            {
+              sentence = "O componente sensível à luz que captura a imagem (em câmaras analógicas).";
+              answer = "Filme fotográfico";
+            },
+          ]);
+        },
+        {
+          id = 3;
+          title = "Teste seu Conhecimento!";
           content = #Quiz([{
-            question = "Qual palavra-chave declara uma variável que persiste durante upgrades?";
+            question = "Quem é considerado o inventor da primeira fotografia permanente?";
             alternatives = [
-              { id = 1; text = "var" },
-              { id = 2; text = "let" },
-              { id = 3; text = "stable" },
+              { id = 1; text = "Louis Daguerre" },
+              { id = 2; text = "George Eastman" },
+              { id = 3; text = "Joseph Nicéphore Niépce" },
+              { id = 4; text = "Thomas Edison" },
             ];
             correctAnswerId = 3;
+          }]);
+        },
+        {
+          id = 4;
+          title = "A Revolução Digital";
+          content = #Page({
+            title = "Adeus, Filme! Olá, Pixels!";
+            elements = [
+              #Video({
+                url = "https://videos.pexels.com/video-files/3214561/3214561-hd_1280_720_25fps.mp4";
+                caption = "A fotografia digital mudou para sempre a forma como registamos os nossos momentos.";
+              }),
+              #Text({
+                value = "A grande virada ocorreu no final do século XX com a invenção do sensor digital (CCD e, mais tarde, CMOS). Em vez de capturar a luz em um filme químico, as câmaras digitais a convertem em dados eletrónicos – pixels.";
+              }),
+            ];
+          });
+        },
+        {
+          id = 5;
+          title = "Reflexão Final";
+          content = #Essay([{
+            question = "Em sua opinião, qual foi o maior impacto da fotografia digital na sociedade?";
+            expectedAnswer = "O aluno deve discutir temas como a democratização da imagem, a ascensão das redes sociais, e questões sobre a veracidade das imagens na era da manipulação digital.";
           }]);
         },
       ];
@@ -198,8 +245,8 @@ actor {
       }];
     };
 
-    tracks := Trie.put(tracks, key(trackId1), Text.equal, track1).0;
-    tracks := Trie.put(tracks, key(trackId2), Text.equal, track2).0;
     tracks := Trie.put(tracks, key(trackId3), Text.equal, track3).0;
+    tracks := Trie.put(tracks, key(trackId2), Text.equal, track2).0;
+    tracks := Trie.put(tracks, key(trackId1), Text.equal, track1).0;
   };
 };
