@@ -3,7 +3,7 @@ import { TrackCard } from '@/components/specific/tracks/card'
 import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
 import { useState, useEffect, useMemo } from 'react';
-import { generateTrackPositions } from '@/lib/utils';
+import { generateSectionPositions } from '@/lib/utils';
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
 import { ChatPanel } from '@/components/specific/tracks/chat-panel';
 
