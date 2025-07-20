@@ -3,25 +3,42 @@
 import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { InformationCircleIcon, ArrowsPointingOutIcon, XMarkIcon, PaperClipIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 import { ChatSuggestionCard } from "./chat-suggestion-card";
+import { useActor } from "@/lib/agent";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import Image from "next/image";
 
 
 export function ChatPanel() {
   const [input, setInput] = useState("");
-  const [chat, setChat] = useState([] as { role: "user" | "kai"; content: string }[]);
+  const [chat, setChat] = useState([] as { role: "user" | "model"; content: string }[]);
   const [showChat, setShowChat] = useState(false);
+
   const inputRef = useRef<HTMLInputElement>(null);
+  const kaiActor = useActor('kai_backend');
 
   const handleSend = () => {
     if (!input.trim()) return;
     setChat((prev) => [...prev, { role: "user", content: input }]);
     setInput("");
     setShowChat(true);
-    // Optionally, add a fake Kai response for demo:
-    setTimeout(() => {
-      setChat((prev) => [...prev, { role: "kai", content: "I'm here to help!" }]);
-    }, 500);
+
+    const historyForAI = chat.map(m => `{"role": "${m.role.toLowerCase()}", "parts": [{"text": "${m.content.replace(/"/g, '\\"')}"}]}`)
+      .join(', ');
+
+    kaiActor?.generateChatResponse(
+      input,
+      chat.length > 0 ? [historyForAI] : []
+    )
+      .then((response) => {
+        if ('err' in response) {
+          setChat((prev) => [...prev, { role: "model", content: response.err }]);
+          return;
+        }
+
+        setChat((prev) => [...prev, { role: "model", content: JSON.parse(response.ok).candidates[0].content.parts[0].text }]);
+      })
   };
 
   const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -45,7 +62,7 @@ export function ChatPanel() {
           </div>
           <div className="flex flex-col gap-2 mt-2">
             {chat.map((msg, idx) => (
-              msg.role === "kai" ? (
+              msg.role === "model" ? (
                 <div key={idx} className="flex gap-2 self-start max-w-[80%] items-center justify-center">
                   <Image
                     src="/kai-sitting.svg"
@@ -55,7 +72,9 @@ export function ChatPanel() {
                     className="mb-1"
                   />
                   <div className="bg-zinc-300 text-zinc-900 px-4 py-2 rounded-xl">
-                    {msg.content}
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {msg.content}
+                    </ReactMarkdown>
                   </div>
                 </div>
               ) : (

@@ -10,7 +10,7 @@ import { ChatPanel } from '@/components/specific/tracks/chat-panel';
 import { useTrackStore } from '@/store/useTrackStore';
 import { usePopoverStore } from '@/store/usePopoverStore';
 import { useActor } from '@/lib/agent';
-import { type Track, type Section } from '@/types';
+import { type Section } from '@/types';
 
 export default function TracksPage() {
   const { tracks, isLoading, error, fetchTracks, injectSampleTracks } = useTrackStore();
@@ -97,7 +97,7 @@ export default function TracksPage() {
       </Panel>
       <PanelResizeHandle className="bg-zinc-800 w-0.5 cursor-col-resize" />
       <Panel defaultSize={30} minSize={30} maxSize={60} className="h-full">
-        <ChatPanel/>
+        <ChatPanel />
       </Panel>
     </PanelGroup>
   )
