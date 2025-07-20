@@ -2,8 +2,10 @@
 import { TrackCard } from '@/components/specific/tracks/card'
 import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
-import { generateSectionPositions } from '@/lib/utils'
 import { useState, useEffect, useMemo } from 'react';
+import { generateTrackPositions } from '@/lib/utils';
+import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
+import { ChatPanel } from '@/components/specific/tracks/chat-panel';
 
 import { useTrackStore } from '@/store/useTrackStore';
 import { usePopoverStore } from '@/store/usePopoverStore';
@@ -68,33 +70,35 @@ export default function TracksPage() {
   }, [screenWidth]);
 
   return (
-    <article className='flex-1 flex'>
-      <DraggableBackground
-        className="h-full w-full bg-gradient-to-t from-primary/5 to-transparent select-none"
-        canvasWidth={canvasWidth}
-        canvasHeight={screenHeight * 0.8}
-        canvasClassName="bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
-      >
-        {sectionsWithPositions.length > 0 && !isLoading && (
-          <>
-            <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
-            {sectionsWithPositions.map(section => (
-              <TrackCard
-                key={section.id}
-                title={section.title}
-                description={`Seção ${section.id} da trilha.`}
-                buttonText={getButtonTextForContent(section.content)}
-                onClick={() => handleSectionClick(section)}
-                style={section.position}
-              />
-            ))}
-          </>
-        )}
-      </DraggableBackground>
-
-      <div>
-        <p>chat</p>
-      </div>
-    </article>
+    <PanelGroup direction="horizontal" className="flex-1 flex h-full">
+      <Panel defaultSize={75} minSize={20} className="flex-1 flex">
+        <DraggableBackground
+          className="h-full w-full bg-gradient-to-t from-primary/5 to-transparent select-none"
+          canvasWidth={canvasWidth}
+          canvasHeight={screenHeight * 0.8}
+          canvasClassName="bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
+        >
+          {sectionsWithPositions.length > 0 && !isLoading && (
+            <>
+              <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
+              {sectionsWithPositions.map(section => (
+                <TrackCard
+                  key={section.id}
+                  title={section.title}
+                  description={`Seção ${section.id} da trilha.`}
+                  buttonText={getButtonTextForContent(section.content)}
+                  onClick={() => handleSectionClick(section)}
+                  style={section.position}
+                />
+              ))}
+            </>
+          )}
+        </DraggableBackground>
+      </Panel>
+      <PanelResizeHandle className="bg-zinc-800 w-0.5 cursor-col-resize" />
+      <Panel defaultSize={30} minSize={30} maxSize={60} className="h-full">
+        <ChatPanel/>
+      </Panel>
+    </PanelGroup>
   )
 }
