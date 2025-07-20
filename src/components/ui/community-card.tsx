@@ -30,7 +30,7 @@ export default function CommunityCard({
 
     // The root wrapper is now a flex container to allow its child to grow.
     const wrapperClass = `relative flex ${
-        variant === "large" ? "max-w-2xl w-full" : "max-w-xs w-full"
+        variant === "large" ? "flex-1 md:max-w-2xl min-w-xs" : "flex-1 min-w-xs lg:max-w-xs w-full"
     }`;
 
     // The card itself now has `flex-grow` to fill the wrapper's height.

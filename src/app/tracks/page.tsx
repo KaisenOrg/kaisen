@@ -2,96 +2,103 @@
 import { TrackCard } from '@/components/specific/tracks/card'
 import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
-import { generateTrackPositions } from '@/lib/utils'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { generateSectionPositions } from '@/lib/utils';
+import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
+import { ChatPanel } from '@/components/specific/tracks/chat-panel';
 
-const tracks = [
-  {
-    id: 1,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    buttonText: 'Read',
-    href: '/tracks',
-    active: true
-  },
-  {
-    id: 2,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    buttonText: 'Watch',
-    href: '/tracks',
-    active: false
-  },
-  {
-    id: 3,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    buttonText: 'Answer',
-    href: '/tracks',
-    active: false
-  },
-  {
-    id: 4,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    buttonText: 'Test',
-    href: '/tracks',
-    active: false
-  },
-];
+import { useTrackStore } from '@/store/useTrackStore';
+import { usePopoverStore } from '@/store/usePopoverStore';
+import { useActor } from '@/lib/agent';
+import { type Section } from '@/types';
 
 export default function TracksPage() {
-  const [tracksWithPositions, setTracksWithPositions] = useState<any[]>([]);
+  const { tracks, isLoading, error, fetchTracks, injectSampleTracks } = useTrackStore();
+  const { open } = usePopoverStore();
+  const tracksActor = useActor('tracks_backend');
+
+  const selectedTrack = tracks?.[0];
+
+  const [sectionsWithPositions, setSectionsWithPositions] = useState<any[]>([]);
   const [screenHeight, setScreenHeight] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(0);
   const cardDimensions = { width: 320, height: 238 };
 
   useEffect(() => {
-    const screenHeight = window.innerHeight;
-    setScreenHeight(screenHeight);
+    if (tracksActor) {
+      injectSampleTracks(tracksActor).then(() => {
+        fetchTracks(tracksActor);
+      });
+    }
+  }, [tracksActor, fetchTracks, injectSampleTracks]);
 
-    const generatedTracks = generateTrackPositions(tracks, {
-      cardWidth: cardDimensions.width,
-      canvasHeight: screenHeight * 0.8,
-      gap: 200,
-      initialLeftOffset: 150,
-      verticalBounds: [0.2, 0.4],
-      maxVerticalShift: 400
-    });
+  useEffect(() => {
+    if (selectedTrack && selectedTrack.sections.length > 0) {
+      const currentScreenHeight = window.innerHeight;
+      const currentScreenWidth = window.innerWidth;
+      setScreenHeight(currentScreenHeight);
+      setScreenWidth(currentScreenWidth);
 
-    setTracksWithPositions(generatedTracks);
+      // @ts-ignore
+      const generatedSections = generateSectionPositions(selectedTrack.sections, {
+        cardWidth: cardDimensions.width,
+        canvasHeight: currentScreenHeight * 0.8,
+        gap: 200,
+        initialLeftOffset: 150,
+        verticalBounds: [0.2, 0.4],
+        maxVerticalShift: 400
+      });
+      setSectionsWithPositions(generatedSections);
+    }
+  }, [selectedTrack]);
 
-  }, []);
+  const handleSectionClick = (section: Section) => {
+    open({ type: 'section', data: section });
+  };
 
-  const canvasWidth = tracks.length * (cardDimensions.width + 120) + 450;
+  // Função para determinar o texto do botão com base no tipo de conteúdo
+  const getButtonTextForContent = (content: Section['content']): string => {
+    if ('Page' in content) return 'Ler';
+    if ('Quiz' in content) return 'Iniciar Quiz';
+    if ('Flashcard' in content) return 'Revisar';
+    if ('Essay' in content) return 'Responder';
+    return 'Ver';
+  };
+
+  const canvasWidth = useMemo(() => {
+    return Math.max(selectedTrack ? selectedTrack.sections.length * (cardDimensions.width + 120) + 450 : 0, screenWidth);
+  }, [screenWidth]);
 
   return (
-    <article className='flex-1 flex'>
-      <DraggableBackground
-        className="h-full w-full bg-gradient-to-t from-primary/5 to-transparent select-none"
-        canvasWidth={canvasWidth}
-        canvasHeight={screenHeight * 0.8}
-        canvasClassName="bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
-      >
-        {tracksWithPositions.length > 0 && (
-          <>
-            <ConnectingArrows positions={tracksWithPositions.map(t => ({ ...t.position, active: t.active }))} cardDimensions={cardDimensions} />
-            {tracksWithPositions.map(track => (
-              <TrackCard
-                key={track.id}
-                title={track.title}
-                description={track.description}
-                buttonText={track.buttonText}
-                href={track.href}
-                style={track.position}
-              />
-            ))}
-          </>
-        )}
-      </DraggableBackground>
-
-      <div>
-        <p>chat</p>
-      </div>
-    </article>
+    <PanelGroup direction="horizontal" className="flex-1 flex h-full">
+      <Panel defaultSize={75} minSize={20} className="flex-1 flex">
+        <DraggableBackground
+          className="h-full w-full bg-gradient-to-t from-primary/5 to-transparent select-none"
+          canvasWidth={canvasWidth}
+          canvasHeight={screenHeight * 0.8}
+          canvasClassName="bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
+        >
+          {sectionsWithPositions.length > 0 && !isLoading && (
+            <>
+              <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
+              {sectionsWithPositions.map(section => (
+                <TrackCard
+                  key={section.id}
+                  title={section.title}
+                  description={`Seção ${section.id} da trilha.`}
+                  buttonText={getButtonTextForContent(section.content)}
+                  onClick={() => handleSectionClick(section)}
+                  style={section.position}
+                />
+              ))}
+            </>
+          )}
+        </DraggableBackground>
+      </Panel>
+      <PanelResizeHandle className="bg-zinc-800 w-0.5 cursor-col-resize" />
+      <Panel defaultSize={30} minSize={30} maxSize={60} className="h-full">
+        <ChatPanel />
+      </Panel>
+    </PanelGroup>
   )
 }

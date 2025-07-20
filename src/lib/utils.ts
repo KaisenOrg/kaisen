@@ -1,13 +1,8 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { type Section } from "@/types"
 
-interface Track { // mover para outro lugar como uma Types sei la
-  id: number | string;
-  // ...outras propriedades do track
-  [key: string]: any;
-}
-
-interface PositionedTrack extends Track {
+interface Positionedsection extends Section {
   position: {
     top: number;
     left: number;
@@ -25,15 +20,15 @@ interface GenerationOptions {
 }
 
 /**
- * Gera posições para uma lista de "trilhas" (tracks).
- * @param tracks - O array de objetos de trilha, sem a propriedade 'position'.
+ * Gera posições para uma lista de "trilhas" (sections).
+ * @param sections - O array de objetos de trilha, sem a propriedade 'position'.
  * @param options - As opções de configuração para o layout.
  * @returns Um novo array de trilhas com a propriedade 'position' adicionada.
  */
-export function generateTrackPositions(
-  tracks: Track[],
+export function generateSectionPositions(
+  sections: Section[],
   options: GenerationOptions
-): PositionedTrack[] {
+): Positionedsection[] {
   const {
     cardWidth,
     canvasHeight,
@@ -50,7 +45,7 @@ export function generateTrackPositions(
 
   let lastTop: number | null = null;
 
-  return tracks.map((track, index) => {
+  return sections.map((section, index) => {
     // --- Cálculo da Posição Horizontal (left) ---
     const left = initialLeftOffset + index * (cardWidth + gap);
 
@@ -72,7 +67,7 @@ export function generateTrackPositions(
     lastTop = top;
 
     return {
-      ...track,
+      ...section,
       position: { top, left },
     };
   });
