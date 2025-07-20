@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
     eslint: {
     // IGNORE ESLINT ERRORS IN BUILD
     ignoreDuringBuilds: true,

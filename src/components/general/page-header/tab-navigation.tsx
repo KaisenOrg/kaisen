@@ -7,7 +7,7 @@ interface TabNavigationProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function TabNavigation({ tabs, baseUrl }: TabNavigationProps) {
   return (
-    <nav className="mt-4 flex">
+    <nav className="flex">
       {tabs.map((route) => (
         <TabNavigationItem key={route.value} route={route} baseUrl={baseUrl} />
       ))}
