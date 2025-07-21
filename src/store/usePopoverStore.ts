@@ -10,7 +10,8 @@ type PopoverPayload =
     description?: string;
     content: ReactNode;
     onConfirm?: () => void;
-  };
+  }
+  | { type: 'loading', progress?: number };
 
 interface PopoverState {
   isOpen: boolean;

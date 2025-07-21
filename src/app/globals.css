@@ -170,7 +170,7 @@
   }
 }
 
-[data-state=open], [data-state=closed] {
+[data-state=open], [data-state=closed], span {
   --tw-translate-x: -50%;
   --tw-translate-y: -50%;
 }

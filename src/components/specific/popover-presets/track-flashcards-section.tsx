@@ -40,7 +40,7 @@ export function FlashcardSectionPreset({ title, flashcards = [] }: Props) {
           </span>
         </div>
 
-        <Button variant="outline" className="cursor-pointer" onClick={close}>
+        <Button className="cursor-pointer" onClick={close}>
           Marcar como concluída
         </Button>
       </DialogFooter>

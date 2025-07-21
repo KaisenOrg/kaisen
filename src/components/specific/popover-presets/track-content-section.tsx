@@ -74,7 +74,7 @@ export function ContentSectionPreset({ title, pageData }: Props) {
       </div>
 
       <DialogFooter>
-        <Button variant="outline" onClick={close}>
+        <Button onClick={close}>
           Marcar como lida
         </Button>
       </DialogFooter>

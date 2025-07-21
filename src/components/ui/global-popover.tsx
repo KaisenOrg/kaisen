@@ -6,6 +6,9 @@ import {
   ContentSectionPreset,
   FlashcardSectionPreset,
   GenericPopupContent,
+  QuizSectionPreset,
+  EssaySectionPreset,
+  LoadingPreset,
 } from '@/components/specific/popover-presets';
 
 export function GlobalPopover() {
@@ -32,11 +35,32 @@ export function GlobalPopover() {
             />
           );
         }
+        if ('Quiz' in payload.data.content) {
+          return (
+            <QuizSectionPreset
+              title={payload.data.title}
+              pageData={payload.data.content.Quiz}
+            />
+          );
+        }
+        if ('Essay' in payload.data.content) {
+          return (
+            <EssaySectionPreset
+              title={payload.data.title}
+              pageData={payload.data.content.Essay}
+            />
+          );
+        }
         return (
           <GenericPopupContent
             title="Erro ao carregar o conteúdo"
             description="Aconteceu um erro ao carregar o conteúdo desta seção. Por favor, tente novamente mais tarde."
           />
+        );
+
+      case 'loading':
+        return (
+          <LoadingPreset progress={payload.progress} />
         );
 
       case 'generic':
