@@ -17,7 +17,7 @@ export default function ContinueCard() {
         <p className="text-sm text-zinc-400 pb-6">{COURSE_DESCRIPTION}</p>
       </div>
       <div className="absolute bottom-0 left-0 right-0 bg-zinc-800 rounded-b-lg">
-        <Progress value={PROGRESS_VALUE} className="rounded-t-lg" />
+        <Progress value={PROGRESS_VALUE} indicatorClassName="bg-green-400" className="rounded-t-lg" />
       </div>
     </div>
   );
