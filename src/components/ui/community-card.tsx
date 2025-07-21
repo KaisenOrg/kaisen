@@ -38,8 +38,8 @@ export default function CommunityCard({
 
   const containerClass =
     variant === "large"
-      ? "relative flex max-w-2xl w-full rounded-lg border-2 border-zinc-800 bg-card p-6 cursor-pointer hover:bg-zinc-600/25 transition-colors"
-      : "relative max-w-xs rounded-lg border-2 border-zinc-800 bg-card pt-6 pb-4 cursor-pointer hover:bg-zinc-600/25 transition-colors";
+      ? "relative flex-2/5 basis-xl flex rounded-lg border-2 border-zinc-800 bg-card p-6 cursor-pointer hover:bg-zinc-600/25 transition-colors"
+      : "relative flex-1/5 basis-2xs rounded-lg border-2 border-zinc-800 bg-card pt-6 pb-4 cursor-pointer hover:bg-zinc-600/25 transition-colors";
 
   const contentClass =
     variant === "large"
