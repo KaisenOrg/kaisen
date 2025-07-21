@@ -14,7 +14,7 @@ import { type Section } from '@/types';
 
 export default function TracksPage() {
   const { tracks, isLoading, error, fetchTracks, injectSampleTracks } = useTrackStore();
-  const { open } = usePopoverStore();
+  const { open, close } = usePopoverStore();
   const tracksActor = useActor('tracks_backend');
 
   const selectedTrack = tracks?.[0];
@@ -26,8 +26,12 @@ export default function TracksPage() {
 
   useEffect(() => {
     if (tracksActor) {
+      open({ type: 'loading' });
+
       injectSampleTracks(tracksActor).then(() => {
-        fetchTracks(tracksActor);
+        fetchTracks(tracksActor).finally(() => {
+          close();
+        });
       });
     }
   }, [tracksActor, fetchTracks, injectSampleTracks]);
