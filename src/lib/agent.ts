@@ -1,15 +1,15 @@
 'use client';
 
-import { useMemo, useEffect, useState } from 'react';
-import { Actor, ActorSubclass, HttpAgent } from '@dfinity/agent';
-import { useAgent, useIdentity } from '@nfid/identitykit/react';
+import { useEffect, useState } from 'react';
+import { Actor, ActorSubclass, Agent, HttpAgent } from '@dfinity/agent';
+import { useAgent } from '@nfid/identitykit/react';
 
-import { idlFactory as kaiIdlFactory } from '../declarations/kai_backend';
-import type { _SERVICE as KaiService } from '../declarations/kai_backend/kai_backend.did';
-import { idlFactory as tracksIdlFactory } from '../declarations/tracks_backend';
-import type { _SERVICE as TracksService } from '../declarations/tracks_backend/tracks_backend.did';
-import { idlFactory as chatIdlFactory } from '../declarations/chats_backend';
-import type { _SERVICE as ChatService } from '../declarations/chats_backend/chats_backend.did';
+import { idlFactory as kaiIdlFactory } from '@/declarations/kai_backend';
+import type { _SERVICE as KaiService } from '@/declarations/kai_backend/kai_backend.did';
+import { idlFactory as tracksIdlFactory } from '@/declarations/tracks_backend';
+import type { _SERVICE as TracksService } from '@/declarations/tracks_backend/tracks_backend.did';
+import { idlFactory as chatIdlFactory } from '@/declarations/chats_backend';
+import type { _SERVICE as ChatService } from '@/declarations/chats_backend/chats_backend.did';
 import { useDevAuth } from '@/providers/dev-auth';
 
 const canisterMap = {
@@ -27,40 +27,59 @@ const canisterIds = {
 type CanisterName = keyof typeof canisterMap;
 
 export const useActor = <T extends CanisterName>(canisterName: T) => {
-  const { identity } = useDevAuth();
+  const { identity: devIdentity } = useDevAuth();
+  const authAgent = useAgent();
   const [actor, setActor] = useState<ActorSubclass<typeof canisterMap[T]['service']> | null>(null);
 
   useEffect(() => {
-    const create = async () => {
+    const createActor = async () => {
       const canisterId = canisterIds[canisterName];
-
-      if (!identity || !canisterId) {
+      if (!canisterId) {
+        console.error(`Canister ID for ${canisterName} not found.`);
         setActor(null);
         return;
       }
 
-      const agent = await HttpAgent.create({
-        identity,
-        host: process.env.NEXT_PUBLIC_DFX_NETWORK === 'ic'
-          ? 'https://icp-api.io'
-          : 'http://127.0.0.1:4943',
-      });
+      let agent: HttpAgent | Agent;
 
-      if (process.env.NEXT_PUBLIC_DFX_NETWORK !== 'ic') {
-        await agent.fetchRootKey();
+      const isMainnet = process.env.NEXT_PUBLIC_DFX_NETWORK === 'ic';
+
+      if (isMainnet) {
+        // Mainnet: usa agent do NFID (já autenticado)
+        if (!authAgent) {
+          setActor(null);
+          return;
+        }
+        agent = authAgent;
+      } else {
+        // Dev: cria um agent com devIdentity
+        if (!devIdentity) {
+          setActor(null);
+          return;
+        }
+
+        agent = await HttpAgent.create({
+          identity: devIdentity,
+          host: 'http://127.0.0.1:4943',
+        });
+
+        await agent.fetchRootKey(); // necessário no local
       }
 
-      const newActor = Actor.createActor<typeof canisterMap[T]['service']>(canisterMap[canisterName].idl, {
-        agent,
-        canisterId,
-      });
+      const newActor = Actor.createActor<typeof canisterMap[T]['service']>(
+        canisterMap[canisterName].idl,
+        {
+          agent,
+          canisterId,
+        }
+      );
 
       setActor(newActor);
     };
 
-    create().catch(console.error);
+    createActor().catch(console.error);
 
-  }, [identity, canisterName]);
+  }, [canisterName, devIdentity, authAgent]);
 
   return actor;
 };
