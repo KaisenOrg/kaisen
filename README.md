@@ -234,6 +234,14 @@ dfx build --network ic
 dfx deploy --network ic
 ```
 
+### Mainnet Canister IDs
+
+- `kaizen_frontend`: `INSERIR ID REAL`
+- `kai_backend`: `INSERIR ID REAL`
+- `tracks_backend`: `INSERIR ID REAL`
+- `nft_certificates`: `INSERIR ID REAL`
+- `chats_backend`: `INSERIR ID REAL`
+
 ## System Architecture
 
 <div align="center">
