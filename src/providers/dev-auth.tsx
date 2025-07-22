@@ -42,7 +42,7 @@ export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => 
     const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (stored) {
       try {
-        return Ed25519KeyIdentity.fromJSON(JSON.parse(stored));
+        return Ed25519KeyIdentity.fromParsedJson(JSON.parse(stored));
       } catch (e) {
         console.warn("Erro ao carregar identidade do localStorage", e);
         return null;
