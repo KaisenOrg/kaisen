@@ -10,7 +10,7 @@ export const LoginButton = () => {
     return (
       <div className="flex items-center gap-4">
         <span className="text-sm font-mono" title={principal?.toText()}>
-          Dev User: {principal?.toText().slice(0, 8)}...
+          Dev User: {principal?.toText()}
         </span>
         <Button onClick={logout} variant="outline">Logout</Button>
       </div>
