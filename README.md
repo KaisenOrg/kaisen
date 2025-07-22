@@ -1,28 +1,58 @@
-# KAIZEN
+# KAISEN
 
-Kaizen proposes a new framework for acquiring and validating knowledge. It is a decentralized protocol that replaces the passive logic of content consumption with an active, intelligent, and community-driven learning experience.
+<div align="center">
+
+<img src="./documents/assets/buidl-banner.png" width="100%">
+
+</div>
+
+<p align="center">
+  <a href="#solution-overview">Solution Overview</a> •
+  <a href="#core-features">Core Features</a> •
+  <a href="#technologies-used">Technologies Used</a> •
+  <a href="#project-setup">Project Setup</a> •
+  <a href="#data-storage-setup">Data Storage Setup</a> •
+  <a href="#deploying-to-icp-mainnet">Deploying to ICP (Mainnet)</a> •
+  <a href="#system-architecture">System Architecture</a> •
+  <a href="#application-flows">Application Flows</a> •
+  <a href="#demo">Demo</a> •
+  <a href="#project-structure">Project Structure</a> •
+  <a href="#release-history">Release History</a> •
+  <a href="#development-team">Development Team</a> •
+  <a href="#license">License</a>
+</p>
+
+Kaisen proposes a new framework for acquiring and validating knowledge. It is a decentralized protocol that replaces the passive logic of content consumption with an active, intelligent, and community-driven learning experience.
 
 Through the combination of artificial intelligence and collective curation, users build personalized learning paths, while the network itself validates and enhances the most effective routes to mastery. Individual progress is transparently recorded and recognized through NFT certificates, which securely, verifiably, and permanently attest to proficiency in specific skills.
 
-More than just an educational platform, Kaizen lays the foundation for a decentralized, interoperable, and reputation-based knowledge infrastructure.
-
----
+More than just an educational platform, Kaisen lays the foundation for a decentralized, interoperable, and reputation-based knowledge infrastructure.
 
 ## Solution Overview
+
+<div align="center">
+
+<img src="./documents/assets/banner-home.png" width="100%">
+
+</div>
 
 The advancement of artificial intelligence has radically transformed access to knowledge. Tools like ChatGPT, YouTube, and online course platforms are empowering a new generation of autonomous learners — a movement growing rapidly, as highlighted by HolonIQ reports.
 
 However, this revolution faces a structural limitation: the lack of reliable mechanisms to authenticate learning acquired outside of traditional institutions.
 
-Kaizen was created to bridge this gap. It combines artificial intelligence, collective curation, and decentralized infrastructure to transform individual learning journeys into verifiable records. Each path is built with AI support, validated by the community, and registered as NFT certificates that securely, auditably, and interoperably prove the real competencies acquired by each user.
-
----
+Kaisen was created to bridge this gap. It combines artificial intelligence, collective curation, and decentralized infrastructure to transform individual learning journeys into verifiable records. Each path is built with AI support, validated by the community, and registered as NFT certificates that securely, auditably, and interoperably prove the real competencies acquired by each user.
 
 ## Core Features
 
-### 1. Kai — AI-Powered Content Engine
+<div align="center">
 
-Kai is the intelligent core of Kaizen, designed to turn any information source into a structured and meaningful learning experience:
+<img src="./documents/assets/feature-banner.png" width="100%">
+
+</div>
+
+### 1. Kai - AI-Powered Content Engine
+
+Kai is the intelligent core of Kaisen, designed to turn any information source into a structured and meaningful learning experience:
 
 - **Interactive & Contextual Chat**: Acts as an overlay tutor, allowing users to input topics, links, or documents (e.g. PDFs) to start a learning journey.
 - **Automated Path Generation**: Builds personalized tracks with quizzes, flashcards, mind maps, and summaries.
@@ -33,7 +63,7 @@ Kai is the intelligent core of Kaizen, designed to turn any information source i
 
 ### 2. Collaborative & Community Ecosystem
 
-Kaizen is not just a platform — it’s a living ecosystem where knowledge evolves through collective intelligence:
+Kaisen is not just a platform — it’s a living ecosystem where knowledge evolves through collective intelligence:
 
 - **Community Feed**: Explore published learning paths, track trends, and engage with other learners.
 - **Knowledge Forking**: Any public path can be forked, allowing others to adapt, enhance, or expand it.
@@ -43,7 +73,7 @@ Kaizen is not just a platform — it’s a living ecosystem where knowledge evol
 
 ### 3. Knowledge Validation & Reputation (Proof-of-Learning)
 
-Kaizen introduces a reliable infrastructure to authenticate acquired skills, replacing generic certificates with immutable technical proof:
+Kaisen introduces a reliable infrastructure to authenticate acquired skills, replacing generic certificates with immutable technical proof:
 
 - **NFT Certificates**: Completing a track generates an NFT that verifiably proves mastery.
 - **Social Recognition**: NFT credentials can be shared on LinkedIn and other networks, with verified blockchain authenticity.
@@ -59,9 +89,13 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 - **Content Creator Dashboard**: Insightful metrics on views, forks, and rewards for each created learning path.
 - **Guided Onboarding**: An interactive tutorial walks new users through the full platform potential step-by-step.
 
----
-
 ## Technologies Used
+
+<div align="center">
+
+<img src="./documents/assets/technology-banner.png" width="100%">
+
+</div>
 
 ### Languages & Frameworks
 
@@ -93,9 +127,13 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 - **dotenv** – Environment variable management.
 - **path (Node.js)** – File path manipulation utility.
 
----
-
 ## Project Setup
+
+<div align="center">
+
+<img src="./documents/assets/setup-banner.png" width="100%">
+
+</div>
 
 ### Requirements
 
@@ -147,13 +185,11 @@ npm run dev
 
 **Check:** Visit http://localhost:3000 to view the running app.
 
----
-
-## Data Storage Setup
+### Data Storage Setup
 
 > ⚠️This project does not use a traditional relational database. All data storage is decentralized and handled through Internet Computer canisters.
 
-### 📦 Storage Structure
+#### 📦 Storage Structure
 
 - Canisters written in Motoko store persistent application state and logic.
 
@@ -161,7 +197,7 @@ npm run dev
 
 - Frontend communicates via @dfinity/agent using the Candid interface.
 
-### 🔐 Architecture Benefits
+#### 🔐 Architecture Benefits
 
 - **Fully decentralized:** No external databases or cloud servers required.
 
@@ -170,6 +206,12 @@ npm run dev
 - **Built-in security:** Identity, isolation, and data integrity by design.
 
 ## Deploying to ICP Mainnet
+
+<div align="center">
+
+<img src="./documents/assets/icp-banner.png" width="100%">
+
+</div>
 
 ### Prerequisites
 
@@ -190,9 +232,51 @@ dfx build --network ic
 dfx deploy --network ic
 ```
 
+## System Architecture
+
+<div align="center">
+
+<img src="./documents/assets/architecture-banner.png" width="100%">
+
+</div>
+
+The diagram below provides a simplified overview of Kaizen’s architecture. Users interact with a modern interface built using React and Next.js, styled with Tailwind CSS, and developed with TypeScript and JavaScript. This front-end layer communicates directly with canisters hosted on the Internet Computer (ICP), which serve as the decentralized back-end of the application. Additionally, these canisters integrate with external services such as the Gemini API to generate content through artificial intelligence, ensuring a dynamic and personalized experience.
+
+<div align="center">
+
+<img src="./documents/assets/simple-architecture.png" width="100%">
+
+</div>
+
 ## Application Flows
 
-[to fill in]
+<div align="center">
+
+<img src="./documents/assets/flow-banner.png" width="100%">
+
+</div>
+
+### Personal Learning Flow (Private Use)
+
+1. The user accesses the platform and completes the guided onboarding.
+2. Through the Kai assistant, the user submits a topic, link, or PDF.
+3. Kai generates a personalized learning path with quizzes, summaries, flashcards, and mind maps.
+4. The user studies the content at their own pace and tracks their progress.
+5. Upon completion, a verifiable NFT certificate is issued and stored in the user’s profile.
+
+---
+
+### Community Publishing Flow (Public Contribution)
+
+1. After creating a learning path, the user can edit and refine the content visually.
+2. Kai evaluates the educational value of the path and suggests publishing it.
+3. The user chooses to publish the path in the community feed.
+4. Other users can explore, fork, or enhance the published path.
+5. The original creator earns visibility, engagement metrics, and may receive $KOIN token rewards.
+
+---
+
+> 📝 These flows reflect Kaisen's hybrid design: empowering personal learning journeys while nurturing a collaborative knowledge ecosystem.
 
 ## Demo
 
@@ -200,13 +284,13 @@ _Colocar vídeo da demo_
 _Colocar Dapp funcional_
 _Colocar vídeo da apresentação_
 
-## System Architecture
+## Project Structure
 
-[to fill in]
+<div align="center">
 
-_Colocar o diagrama de arquitetura_
+<img src="./documents/assets/structure-banner.png" width="100%">
 
-## Folder Structure and Files
+</div>
 
 ```
 Kaizen/
@@ -249,15 +333,43 @@ Kaizen/
 
 ## Release History
 
+<div align="center">
+
+<img src="./documents/assets/history-banner.png" width="100%">
+
+</div>
+
 0.1.0 - XX/XX/2025
 
 ## Development Team
 
-[to fill in]
+<div align="center">
 
-## 📄 License
+<img src="./documents/assets/team-banner.png" width="100%">
+
+</div>
+
+- [Giovanna Neves Rodrigues](https://github.com/GigicaNeves)
+- [José Antônio Ferreira de Lima](https://github.com/jlimaz)
+- [Marcus Felipe dos Santos Valente](http://github.com/m4rcusml)
+- [Messias Fernandes de Olivindo](https://github.com/Messias-Olivindo)
+- [Nicole Riedla Paiva Neves](https://github.com/nicriedla)
+
+## License
+
+<div align="center">
+
+<img src="./documents/assets/license-banner.png" width="100%">
+
+</div>
 
 This project is licensed under the terms of the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).  
 You are free to use, modify, and distribute this software — including for commercial purposes — as long as you retain the copyright notices and attribution.
 
 > See the [LICENSE](./LICENSE) file for more details.
+
+<div align="center">
+
+<img src="./documents/assets/banner.png" width="100%">
+
+</div>
