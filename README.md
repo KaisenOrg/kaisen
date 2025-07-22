@@ -22,6 +22,8 @@
   <a href="#license">License</a>
 </p>
 
+> This README provides an overview of the Kaizen platform. For more detailed information about the application, please refer to the [wad.md](./documents/wad.md).
+
 Kaisen proposes a new framework for acquiring and validating knowledge. It is a decentralized protocol that replaces the passive logic of content consumption with an active, intelligent, and community-driven learning experience.
 
 Through the combination of artificial intelligence and collective curation, users build personalized learning paths, while the network itself validates and enhances the most effective routes to mastery. Individual progress is transparently recorded and recognized through NFT certificates, which securely, verifiably, and permanently attest to proficiency in specific skills.
