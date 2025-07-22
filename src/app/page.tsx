@@ -1,15 +1,13 @@
 "use client";
 
 import { useAuth } from "@/hooks/useAuth";
-import { useUserStore } from "@/store/useUserStore";
-import { useUserBackend } from "@/hooks/useUserBackend";
+import { useUser } from "@/hooks/useUser";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 export default function UserTestPage() {
   const { login, logout, isAuthenticated, principal } = useAuth();
-  const { user } = useUserStore();
-  const { fetchUser, register, update } = useUserBackend();
+  const { user, register, fetchUser, update, clearUser } = useUser();
 
   const [creating, setCreating] = useState(false);
   const [editing, setEditing] = useState(false);
