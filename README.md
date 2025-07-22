@@ -367,9 +367,3 @@ This project is licensed under the terms of the [Apache License 2.0](https://cho
 You are free to use, modify, and distribute this software — including for commercial purposes — as long as you retain the copyright notices and attribution.
 
 > See the [LICENSE](./LICENSE) file for more details.
-
-<div align="center">
-
-<img src="./documents/assets/banner.png" width="100%">
-
-</div>
