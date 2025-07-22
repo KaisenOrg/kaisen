@@ -421,7 +421,23 @@ Indirect: [FILL IN]
 
 # 7. References
 
-[FILL IN - Include the main references of your project]
+IBM. Blockchain in Education Report. 2023. Available at: https://www.ibm.com/downloads/cas/6YVBDQKL. Accessed on: July 03, 2025.
+
+HOLONIQ. Global EdTech Market Outlook 2024. 2024. Available at: https://www.holoniq.com/edtech. Accessed on: July 03, 2025.
+
+DATACAMP. AI in Education: Integrity and Validation Challenges. 2024. Available at: https://www.datacamp.com/pt/blog/ai-in-education. Accessed on: July 03, 2025.
+
+FT MAGAZINE. Artificial Intelligence in Education: Impacts and Challenges. 2024. Available at: https://revistaft.com.br/inteligencia-artificial-na-educacao-impactos-e-desafios/. Accessed on: July 03, 2025.
+
+RNP – NATIONAL EDUCATION AND RESEARCH NETWORK. Artificial intelligence in education: advances and challenges. 2024. Available at: https://www.rnp.br/blog/inteligencia-artificial-na-educacao-avancos-e-desafios/. Accessed on: July 04, 2025.
+
+FRONTIERS IN EDUCATION. Limitations in assessing and formally validating learning outcomes using AI tools. Frontiers in Education, 2024. Available at: https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1501819/full. Accessed on: July 04, 2025.
+
+GONZÁLEZ, R.; MORALES, F. How AI impacts the validation of knowledge. arXiv preprint, 2024. Available at: https://arxiv.org/pdf/2504.06928. Accessed: July 04, 2025.
+
+SMITH, L.; JONES, A. The credibility gap in AI-generated educational content. arXiv preprint, 2024. Available at: https://arxiv.org/pdf/2406.18900. Accessed: July 04, 2025.
+
+TECHTARGET. 8 top blockchain certification courses to pursue. TechTarget, 2023. Available at: https://www.techtarget.com/whatis/feature/8-top-blockchain-certification-courses-to-pursue. Accessed: July 04, 2025.
 
 # 8. Appendices
 
