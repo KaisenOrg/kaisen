@@ -26,7 +26,7 @@ export default function ProfileLayout({children} : {children: React.ReactNode}) 
   }, []);
 
     return(
-        <div className="px-24">
+        <div className="px-14">
             <PageHeader 
                 imageUrl="/"
                 title="Lorem ipsum dolor sit"

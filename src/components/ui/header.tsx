@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Bars3BottomLeftIcon, BellIcon } from "@heroicons/react/24/outline";
 import { ActionSearchBar } from "../general/search-bar";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
+import Link from "next/link";
 
 export default function Header() {
   const koinBalance = 0;
@@ -86,13 +87,15 @@ export default function Header() {
           <span className="sr-only">Notifications</span>
         </Button>
 
-        <Avatar className="w-10 h-10">
-          {/* the src will be dynamic */}
-          <AvatarImage src="https://github.com/shadcn.pngs" alt="@cn" />
-          <AvatarFallback>
-            CN
-          </AvatarFallback>
-        </Avatar>
+        <Link href="/profile">
+          <Avatar className="w-10 h-10">
+            {/* the src will be dynamic */}
+            <AvatarImage src="https://github.com/shadcn.pngs" alt="@cn" />
+            <AvatarFallback>
+              CN
+            </AvatarFallback>
+          </Avatar>
+        </Link>
       </div>
     </header>
   );
