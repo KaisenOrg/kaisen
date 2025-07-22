@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Actor, ActorSubclass, Agent, HttpAgent } from '@dfinity/agent';
 import { useAgent } from '@nfid/identitykit/react';
+import { useDevAuth } from '@/providers/dev-auth';
 
 import { idlFactory as kaiIdlFactory } from '@/declarations/kai_backend';
 import type { _SERVICE as KaiService } from '@/declarations/kai_backend/kai_backend.did';
@@ -10,18 +11,21 @@ import { idlFactory as tracksIdlFactory } from '@/declarations/tracks_backend';
 import type { _SERVICE as TracksService } from '@/declarations/tracks_backend/tracks_backend.did';
 import { idlFactory as chatIdlFactory } from '@/declarations/chats_backend';
 import type { _SERVICE as ChatService } from '@/declarations/chats_backend/chats_backend.did';
-import { useDevAuth } from '@/providers/dev-auth';
+import { idlFactory as icrc1IdlFactory } from '@/declarations/icrc1_ledger';
+import type { _SERVICE as Icrc1LedgerService } from '@/declarations/icrc1_ledger/icrc1_ledger.did';
 
 const canisterMap = {
   kai_backend: { idl: kaiIdlFactory, service: {} as KaiService },
   tracks_backend: { idl: tracksIdlFactory, service: {} as TracksService },
   chats_backend: { idl: chatIdlFactory, service: {} as ChatService },
+  icrc1_ledger: { idl: icrc1IdlFactory, service: {} as Icrc1LedgerService },
 };
 
 const canisterIds = {
   kai_backend: process.env.NEXT_PUBLIC_CANISTER_ID_KAI_BACKEND,
   tracks_backend: process.env.NEXT_PUBLIC_CANISTER_ID_TRACKS_BACKEND,
   chats_backend: process.env.NEXT_PUBLIC_CANISTER_ID_CHATS_BACKEND,
+  icrc1_ledger: process.env.NEXT_PUBLIC_CANISTER_ID_ICRC1_LEDGER,
 };
 
 type CanisterName = keyof typeof canisterMap;

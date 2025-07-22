@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
+  images: {
+    unoptimized: true,
+  },
   eslint: {
     // IGNORE ESLINT ERRORS IN BUILD
     ignoreDuringBuilds: true,
@@ -12,7 +15,8 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_CANISTER_ID_TRACKS_BACKEND: process.env.CANISTER_ID_TRACKS_BACKEND,
     NEXT_PUBLIC_CANISTER_ID_CHATS_BACKEND: process.env.CANISTER_ID_CHATS_BACKEND,
     NEXT_PUBLIC_CANISTER_ID_NFT_CERTIFICATES: process.env.CANISTER_ID_NFT_CERTIFICATES,
-    NEXT_PUBLIC_DFX_NETWORK: process.env.DFX_NETWORK
+    NEXT_PUBLIC_DFX_NETWORK: process.env.DFX_NETWORK,
+    NEXT_PUBLIC_CANISTER_ID_ICRC1_LEDGER: process.env.CANISTER_ID_ICRC1_LEDGER,
   }
 };
 
