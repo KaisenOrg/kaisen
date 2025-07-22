@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Ed25519KeyIdentity } from "@dfinity/identity";
 import type { Identity } from "@dfinity/agent";
 import type { Principal } from "@dfinity/principal";
@@ -18,7 +18,6 @@ interface DevAuthContextType {
 const DevAuthContext = createContext<DevAuthContextType | undefined>(undefined);
 
 const loadIdentity = (): Identity | null => {
-  if (typeof window === "undefined") return null;
   const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
   if (stored) {
     try {
@@ -36,23 +35,7 @@ const saveIdentity = (identity: Ed25519KeyIdentity) => {
 };
 
 export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [identity, setIdentity] = useState<Identity | null>(() => {
-    if (typeof window === "undefined") return null;
-
-    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (stored) {
-      try {
-        return Ed25519KeyIdentity.fromParsedJson(JSON.parse(stored));
-      } catch (e) {
-        console.warn("Erro ao carregar identidade do localStorage", e);
-        return null;
-      }
-    }
-
-    const newIdentity = Ed25519KeyIdentity.generate();
-    saveIdentity(newIdentity);
-    return newIdentity;
-  });
+  const [identity, setIdentity] = useState<Identity | null>(null);
 
   const isAuthenticated = !!identity;
   const principal = identity?.getPrincipal();
@@ -74,6 +57,13 @@ export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => 
   const logout = () => {
     setIdentity(null);
   };
+
+  useEffect(() => {
+    const savedIdentity = loadIdentity();
+    if (savedIdentity) {
+      setIdentity(savedIdentity);
+    }
+  }, []);
 
   return (
     <DevAuthContext.Provider value={{ isAuthenticated, identity, principal, login, logout }}>
