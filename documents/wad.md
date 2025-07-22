@@ -312,6 +312,8 @@ Below are three personas developed specifically for this project to guide decisi
 
 </div>
 
+She represents an ambitious young student from a peripheral community who sees technology as a path to new opportunities. As a technical high school student studying Computer Science in the outskirts of São Paulo, she embodies the self-taught learner, using mobile technology as an ally in her educational journey. Clara's persona highlights the importance of accessible and personalized learning, capable of transforming informal study into recognized credentials—a key challenge for students seeking to demonstrate their competencies beyond traditional academic settings.
+
 <div align="center">
 
 <sub>Figure X - Persona 2</sub>
@@ -322,6 +324,8 @@ Below are three personas developed specifically for this project to guide decisi
 
 </div>
 
+He personifies the modern self-taught developer who stands out in the Web3 ecosystem. At 23, this junior developer represents a growing community of professionals who have honed their skills through alternative learning paths—such as YouTube tutorials, contributions to open-source projects, and participation in hackathons. His persona highlights the gap between practical knowledge and formal recognition, while also symbolizing the creative economy, in which educational content producers seek to generate impact and monetize their knowledge.
+
 <div align="center">
 
 <sub>Figure X - Persona 3</sub>
@@ -331,6 +335,8 @@ Below are three personas developed specifically for this project to guide decisi
 <sup>Source: Material produced by the authors (2025)</sup>
 
 </div>
+
+She represents the progressive HR professional working in a constantly changing talent landscape, especially in technology startups. As an HR analyst with a background in Psychology, she faces the daily challenge of evaluating candidates whose most relevant skills were often acquired through non-traditional learning paths. Her persona highlights the modern recruiter's dilemma: how to fairly recognize and validate informal learning while developing more inclusive, evidence-based selection processes capable of identifying talent beyond formal educational credentials.
 
 # 3. Application Project
 
