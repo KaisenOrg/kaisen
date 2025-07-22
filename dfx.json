@@ -20,6 +20,11 @@
         "chats_backend"
       ]
     },
+    "icrc1_ledger": {
+      "type": "custom",
+      "wasm": "icrc1_ledger.wasm.gz",
+      "candid": "icrc1_ledger.did"
+    },
     "chats_backend": {
       "type": "motoko",
       "main": "backend/chats/main.mo"
