@@ -37,6 +37,10 @@
       "type": "motoko",
       "main": "backend/nft/main.mo"
     },
+    "users_backend": {
+      "type": "motoko",
+      "main": "backend/users/main.mo"
+    },
     "kaizen_frontend": {
       "type": "assets",
       "source": [

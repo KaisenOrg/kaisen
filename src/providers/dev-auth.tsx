@@ -1,9 +1,11 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { Ed25519KeyIdentity } from '@dfinity/identity';
-import type { Identity } from '@dfinity/agent';
-import type { Principal } from '@dfinity/principal';
+import { createContext, useContext, useState } from "react";
+import { Ed25519KeyIdentity } from "@dfinity/identity";
+import type { Identity } from "@dfinity/agent";
+import type { Principal } from "@dfinity/principal";
+
+const LOCAL_STORAGE_KEY = "kaizen-dev-auth";
 
 interface DevAuthContextType {
   isAuthenticated: boolean;
@@ -15,29 +17,63 @@ interface DevAuthContextType {
 
 const DevAuthContext = createContext<DevAuthContextType | undefined>(undefined);
 
-// O Provedor que irá gerenciar o estado da nossa identidade local
+const loadIdentity = (): Identity | null => {
+  if (typeof window === "undefined") return null;
+  const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+  if (stored) {
+    try {
+      return Ed25519KeyIdentity.fromParsedJson(JSON.parse(stored));
+    } catch {
+      console.warn("Erro ao carregar identidade do localStorage");
+      return null;
+    }
+  }
+  return null;
+};
+
+const saveIdentity = (identity: Ed25519KeyIdentity) => {
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(identity.toJSON()));
+};
+
 export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [identity, setIdentity] = useState<Identity | null>(null);
+  const [identity, setIdentity] = useState<Identity | null>(() => {
+    if (typeof window === "undefined") return null;
 
-  // A função de "login" agora simplesmente gera uma nova identidade aleatória
-  const login = () => {
+    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (stored) {
+      try {
+        return Ed25519KeyIdentity.fromJSON(JSON.parse(stored));
+      } catch (e) {
+        console.warn("Erro ao carregar identidade do localStorage", e);
+        return null;
+      }
+    }
+
     const newIdentity = Ed25519KeyIdentity.generate();
-    setIdentity(newIdentity);
-  };
-
-  // O logout simplesmente limpa a identidade
-  const logout = () => {
-    setIdentity(null);
-  };
+    saveIdentity(newIdentity);
+    return newIdentity;
+  });
 
   const isAuthenticated = !!identity;
   const principal = identity?.getPrincipal();
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      login();
+  const login = () => {
+    const savedIdentity = loadIdentity();
+    if (savedIdentity) {
+      setIdentity(savedIdentity);
+      return;
     }
-  }, [isAuthenticated]);
+
+    if (!identity) {
+      const newIdentity = Ed25519KeyIdentity.generate();
+      saveIdentity(newIdentity);
+      setIdentity(newIdentity);
+    }
+  };
+
+  const logout = () => {
+    setIdentity(null);
+  };
 
   return (
     <DevAuthContext.Provider value={{ isAuthenticated, identity, principal, login, logout }}>
@@ -46,11 +82,8 @@ export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => 
   );
 };
 
-// Hook customizado para usar nosso novo contexto
 export const useDevAuth = () => {
-  const context = useContext(DevAuthContext);
-  if (context === undefined) {
-    throw new Error('useDevAuth deve ser usado dentro de um DevAuthProvider');
-  }
-  return context;
+  const ctx = useContext(DevAuthContext);
+  if (!ctx) throw new Error("useDevAuth precisa ser usado dentro do DevAuthProvider");
+  return ctx;
 };

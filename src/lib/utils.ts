@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { type Section } from "@/types"
+import { MotokoUser, UserData, type Section } from "@/types"
+import { Principal } from "@dfinity/candid/lib/cjs/idl";
 
 interface Positionedsection extends Section {
   position: {
@@ -71,6 +72,52 @@ export function generateSectionPositions(
       position: { top, left },
     };
   });
+}
+
+export function toMotokoUser(data: UserData): MotokoUser {
+  const opt = (v?: string | null): [] | [string] => v ? [v] : [];
+
+  return {
+    picture: opt(data.picture),
+    nickname: data.nickname,
+    username: data.username,
+    about: opt(data.about),
+    role: opt(data.role),
+    followers: data.followers.map(f => ({
+      userIdentity: f.userIdentity,
+      timestamp: BigInt(f.timestamp),
+    })),
+    following: data.following,
+    certificates: data.certificates,
+    createdTracks: data.createdTracks,
+    inProgressTracks: data.inProgressTracks,
+    completedTracks: data.completedTracks,
+    principal: data.principal,
+    identity: data.identity,
+  };
+}
+
+export function toUserData(motokoUser: any): UserData {
+  const fromOpt = (v: [] | [string]) => (v.length > 0 ? v[0] : null);
+
+  return {
+    picture: fromOpt(motokoUser.picture),
+    nickname: motokoUser.nickname,
+    username: motokoUser.username,
+    about: fromOpt(motokoUser.about),
+    role: fromOpt(motokoUser.role),
+    followers: motokoUser.followers.map((f: any) => ({
+      userIdentity: f.userIdentity,
+      timestamp: Number(f.timestamp), // BigInt para number (se quiser manter bigint no front, pode)
+    })),
+    following: motokoUser.following,
+    certificates: motokoUser.certificates,
+    createdTracks: motokoUser.createdTracks,
+    inProgressTracks: motokoUser.inProgressTracks,
+    completedTracks: motokoUser.completedTracks,
+    principal: motokoUser.principal,
+    identity: motokoUser.identity,
+  };
 }
 
 export function cn(...inputs: ClassValue[]) {

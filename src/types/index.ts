@@ -1,3 +1,5 @@
+import { Principal } from "@dfinity/principal";
+
 export interface TextBlock {
   value: string;
 }
@@ -12,9 +14,9 @@ export interface VideoBlock {
   caption: string;
 }
 
-export type PageElement = 
-  | { 'Text' : TextBlock }
-  | { 'Image' : ImageBlock }
+export type PageElement =
+  | { 'Text': TextBlock }
+  | { 'Image': ImageBlock }
   | { 'Video': VideoBlock };
 
 export interface Page {
@@ -44,10 +46,10 @@ export interface EssayQuestion {
 }
 
 export type Content =
-  | { 'Page' : Page }
-  | { 'Flashcard' : Flashcard[] }
-  | { 'Quiz' : Quiz[] }
-  | { 'Essay' : EssayQuestion[] };
+  | { 'Page': Page }
+  | { 'Flashcard': Flashcard[] }
+  | { 'Quiz': Quiz[] }
+  | { 'Essay': EssayQuestion[] };
 
 
 export interface Section {
@@ -64,3 +66,35 @@ export interface Track {
   createdAt: number;
   sections: Section[];
 }
+
+export interface UserData {
+  picture?: string | null;
+  nickname: string;
+  username: string;
+  about?: string | null;
+  role?: string | null;
+  certificates: string[];
+  createdTracks: string[];
+  followers: { userIdentity: string; timestamp: number }[];
+  following: string[];
+  inProgressTracks: { id: string; progress: number }[];
+  completedTracks: string[];
+  principal: Principal;
+  identity: string;
+}
+
+export type MotokoUser = {
+  picture: [] | [string];
+  nickname: string;
+  username: string;
+  about: [] | [string];
+  role: [] | [string];
+  followers: { userIdentity: string; timestamp: bigint }[];
+  following: string[];
+  certificates: string[];
+  createdTracks: string[];
+  inProgressTracks: { id: string; progress: number }[];
+  completedTracks: string[];
+  principal: Principal;
+  identity: string;
+};

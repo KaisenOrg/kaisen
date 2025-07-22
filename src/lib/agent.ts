@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { Actor, ActorSubclass, Agent, HttpAgent } from '@dfinity/agent';
 import { useAgent } from '@nfid/identitykit/react';
-import { useDevAuth } from '@/providers/dev-auth';
 
 import { idlFactory as kaiIdlFactory } from '@/declarations/kai_backend';
 import type { _SERVICE as KaiService } from '@/declarations/kai_backend/kai_backend.did';
@@ -13,11 +12,15 @@ import { idlFactory as chatIdlFactory } from '@/declarations/chats_backend';
 import type { _SERVICE as ChatService } from '@/declarations/chats_backend/chats_backend.did';
 import { idlFactory as icrc1IdlFactory } from '@/declarations/icrc1_ledger';
 import type { _SERVICE as Icrc1LedgerService } from '@/declarations/icrc1_ledger/icrc1_ledger.did';
+import { idlFactory as usersIdlFactory } from '@/declarations/users_backend';
+import type { _SERVICE as UsersService } from '@/declarations/users_backend/users_backend.did';
+import { useAuth } from '@/hooks/useAuth';
 
 const canisterMap = {
   kai_backend: { idl: kaiIdlFactory, service: {} as KaiService },
   tracks_backend: { idl: tracksIdlFactory, service: {} as TracksService },
   chats_backend: { idl: chatIdlFactory, service: {} as ChatService },
+  users_backend: { idl: usersIdlFactory, service: {} as UsersService },
   icrc1_ledger: { idl: icrc1IdlFactory, service: {} as Icrc1LedgerService },
 };
 
@@ -25,13 +28,14 @@ const canisterIds = {
   kai_backend: process.env.NEXT_PUBLIC_CANISTER_ID_KAI_BACKEND,
   tracks_backend: process.env.NEXT_PUBLIC_CANISTER_ID_TRACKS_BACKEND,
   chats_backend: process.env.NEXT_PUBLIC_CANISTER_ID_CHATS_BACKEND,
+  users_backend: process.env.NEXT_PUBLIC_CANISTER_ID_USERS_BACKEND,
   icrc1_ledger: process.env.NEXT_PUBLIC_CANISTER_ID_ICRC1_LEDGER,
 };
 
 type CanisterName = keyof typeof canisterMap;
 
 export const useActor = <T extends CanisterName>(canisterName: T) => {
-  const { identity: devIdentity } = useDevAuth();
+  const { identity: devIdentity } = useAuth();
   const authAgent = useAgent();
   const [actor, setActor] = useState<ActorSubclass<typeof canisterMap[T]['service']> | null>(null);
 
@@ -56,7 +60,6 @@ export const useActor = <T extends CanisterName>(canisterName: T) => {
         }
         agent = authAgent;
       } else {
-        // Dev: cria um agent com devIdentity
         if (!devIdentity) {
           setActor(null);
           return;

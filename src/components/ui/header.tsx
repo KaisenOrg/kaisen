@@ -7,12 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Bars3BottomLeftIcon, BellIcon } from "@heroicons/react/24/outline";
 import { ActionSearchBar } from "../general/search-bar";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
-import { useDevAuth } from "@/providers/dev-auth";
 import { useKoin } from "@/hooks/useKoin";
-import { Principal } from "@dfinity/principal";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Header() {
-  const { principal } = useDevAuth();
+  const { principal } = useAuth();
 
   const {
     formattedBalance: koinBalance,
