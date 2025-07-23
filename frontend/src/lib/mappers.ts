@@ -168,7 +168,7 @@ function toFrontendContent(content: BackendContent): Content {
 
   if ("Flashcard" in content) {
     return {
-      Flashcard: content.Flashcard.map((f): Flashcard => ({
+      Flashcard: content.Flashcard.map((f: BackendFlashcard): Flashcard => ({
         sentence: f.sentence,
         answer: f.answer,
       })),
@@ -177,9 +177,9 @@ function toFrontendContent(content: BackendContent): Content {
 
   if ("Quiz" in content) {
     return {
-      Quiz: content.Quiz.map((q): Quiz => ({
+      Quiz: content.Quiz.map((q: BackendQuiz): Quiz => ({
         question: q.question,
-        alternatives: q.alternatives.map((a) => ({
+        alternatives: q.alternatives.map((a: BackendAlternative) => ({
           id: Number(a.id),
           text: a.text,
         })),
@@ -190,7 +190,7 @@ function toFrontendContent(content: BackendContent): Content {
 
   if ("Essay" in content) {
     return {
-      Essay: content.Essay.map((e): EssayQuestion => ({
+      Essay: content.Essay.map((e: BackendEssay): EssayQuestion => ({
         question: e.question,
         expectedAnswer: e.expectedAnswer,
       })),
