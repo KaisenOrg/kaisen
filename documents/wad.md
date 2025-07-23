@@ -1,10 +1,8 @@
-# Kaizen
+<div align="center">
 
-## Group Name: [FILL IN GROUP NAME]
+<img src="./assets/introduction.png" width="100%">
 
-#### Group Members' Names:
-
-[FILL IN MEMBER NAME]
+</div>
 
 ## Table of Contents
 
