@@ -64,7 +64,10 @@
     },
     "kaizen_frontend": {
       "type": "assets",
-      "source": ["out"],
+      "source": [
+        "frontend/dist"
+      ],
+      "build": "cd frontend && npm install && npm run build",
       "dependencies": [
         "kai_backend",
         "tracks_backend",

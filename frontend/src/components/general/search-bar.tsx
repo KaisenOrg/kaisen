@@ -5,16 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MagnifyingGlassIcon, UserGroupIcon, DocumentTextIcon, CalendarDaysIcon, PlusIcon as HeroPlusIcon } from "@heroicons/react/24/outline";
 import { Loader2 } from "lucide-react";
 
-// Define a estrutura de um item de resultado da pesquisa
-interface SearchResult {
-  id: string;
-  label: string;
-  icon: React.ReactNode;
-  description?: string;
-  end?: string;
-  type: 'action' | 'report' | 'user' | 'meeting';
-}
-
 // Dados de exemplo para simular uma pesquisa
 type SearchResultData = {
   id: string;
