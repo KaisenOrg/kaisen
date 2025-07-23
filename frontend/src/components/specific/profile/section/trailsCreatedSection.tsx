@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import CommunityCard from "@/components/ui/community-card";
 import ToggleButton from "@/components/ui/toggleButton";

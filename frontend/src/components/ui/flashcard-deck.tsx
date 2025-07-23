@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { CursorArrowRaysIcon as CursorClick } from '@heroicons/react/24/outline';
-import Image from "next/image";
 
 interface CardData {
   id: number;
@@ -57,7 +56,7 @@ export function FlashcardDeck({
             drag={isTopCard}
             dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
             dragElastic={0.5}
-            onDragEnd={(event, info) => {
+            onDragEnd={(_, info) => {
               if (Math.abs(info.offset.x) > sensitivity || Math.abs(info.offset.y) > sensitivity) {
                 sendToBack();
               }
@@ -97,10 +96,10 @@ export function FlashcardDeck({
                       <CursorClick className="h-8 w-8 -rotate-15" />
                     </div>
                     <div>
-                      <Image src="/kai-sleeping.svg" alt="Kai" width={64} height={64} />
+                      <img src="/kai-sleeping.svg" alt="Kai" width={64} height={64} />
                     </div>
                   </div>
-                  <Image
+                  <img
                     src="/geometric-bg-2.svg"
                     alt=""
                     width={385}

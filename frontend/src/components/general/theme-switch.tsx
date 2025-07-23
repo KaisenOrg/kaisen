@@ -1,5 +1,4 @@
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
@@ -48,16 +47,14 @@ export function ThemeSwitch() {
           )}
         >
           <div className="relative w-full h-[98px] bg-muted">
-            <Image
+            <img
               src={t.img}
               alt={t.label}
-              fill
               className={cn(
                 "object-cover w-full h-full",
                 t.overlay && "opacity-60"
               )}
               draggable={false}
-              priority
             />
           </div>
           <div className="flex items-center gap-2 w-full h-fit px-4 py-2.5 bg-background justify-start">

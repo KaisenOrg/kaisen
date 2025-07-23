@@ -1,5 +1,3 @@
-
-
 import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { InformationCircleIcon, ArrowsPointingOutIcon, XMarkIcon, PaperClipIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
@@ -7,7 +5,6 @@ import { ChatSuggestionCard } from "./chat-suggestion-card";
 import { useActor } from "@/lib/agent";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Image from "next/image";
 
 export function ChatPanel() {
   const [input, setInput] = useState("");
@@ -63,7 +60,7 @@ export function ChatPanel() {
             {chat.map((msg, idx) => (
               msg.role === "model" ? (
                 <div key={idx} className="flex gap-2 self-start max-w-[80%] items-center justify-center">
-                  <Image
+                  <img
                     src="/kai-sitting.svg"
                     alt="Kai"
                     width={48}
@@ -95,7 +92,7 @@ export function ChatPanel() {
               <XMarkIcon className="h-6 w-6 text-zinc-500 transition-colors cursor-pointer hover:text-zinc-700" />
             </div>
           </div>
-          <Image
+          <img
             src="/kai-hidding.svg"
             alt="Kai"
             width={100}

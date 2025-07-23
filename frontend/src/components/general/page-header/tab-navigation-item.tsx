@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { Link, useLocation } from "react-router-dom"
 
 export type TabRouteType = {
   value: string
@@ -8,7 +7,7 @@ export type TabRouteType = {
 }
 
 export function TabNavigationItem({ route, baseUrl }: { route: TabRouteType, baseUrl: string }) {
-  const pathname = usePathname()
+  const pathname = useLocation().pathname
   const normalizedBaseUrl = (baseUrl.endsWith("/") && route.value) ? `${baseUrl}/` : baseUrl
   const normalizedRouteValue = route.value === "" || route.value === "/" ? "" : route.value
   const tabUrl = `${normalizedBaseUrl}${normalizedRouteValue}`
@@ -16,7 +15,7 @@ export function TabNavigationItem({ route, baseUrl }: { route: TabRouteType, bas
 
   return (
     <Link
-      href={`${baseUrl}${route.value}`}
+      to={`${baseUrl}${route.value}`}
       className={`transition-all flex items-center gap-3 px-3 py-4 hover:text-primary ${isActive ? "text-white border-b-2 border-primary" : "text-zinc-500"
         }`}
     >

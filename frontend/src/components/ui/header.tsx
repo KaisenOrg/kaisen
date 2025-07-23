@@ -1,13 +1,12 @@
-import Image from "next/image";
 import { useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Bars3BottomLeftIcon, BellIcon } from "@heroicons/react/24/outline";
 import { ActionSearchBar } from "../general/search-bar";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
-import Link from "next/link";
 import { useKoin } from "@/hooks/useKoin";
 import { useUser } from "@/hooks/useUser";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const { user } = useUser();
@@ -55,7 +54,7 @@ export default function Header() {
           <Bars3BottomLeftIcon style={{ width: 24, height: 24 }} />
         </Button>
         <div className="flex items-center">
-          <Image
+          <img
             src="/logo-text.svg"
             alt="Kaizen Logo"
             width={100}
@@ -84,7 +83,7 @@ export default function Header() {
               className="w-fit p-2 h-10 gap-2 border border-border bg-popover hover:bg-accent/60 transition shadow-sm"
             >
               <span className="sr-only">Koin</span>
-              <Image
+              <img
                 src="/koin.png"
                 alt="Koin Icon"
                 width={24}
@@ -102,7 +101,7 @@ export default function Header() {
               <span className="text-2xl font-bold text-foreground">
                 {loading ? "Carregando..." : `${koinBalance} Koin`}
               </span>
-              <Image src="/koin.png" alt="Koin Icon" width={24} height={24} className="drop-shadow-sm align-middle" style={{ marginBottom: 2 }} />
+              <img src="/koin.png" alt="Koin Icon" width={24} height={24} className="drop-shadow-sm align-middle" style={{ marginBottom: 2 }} />
             </div>
 
             {error && (
@@ -141,7 +140,7 @@ export default function Header() {
           <span className="sr-only">Notifications</span>
         </Button>
 
-        <Link href="/profile">
+        <Link to="/profile">
           <Avatar className="w-10 h-10">
             <AvatarImage src={user?.picture || undefined} alt={user?.username} />
             <AvatarFallback>

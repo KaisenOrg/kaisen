@@ -1,6 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import Image from "next/image";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, ResponsiveContainer } from "recharts";
 
 const progressValue = 22;
 const progressMax = 25;
@@ -9,15 +8,15 @@ const progressPercent = (progressValue / progressMax) * 100;
 export function DonutChartCard() {
   return (
     <Card className="w-full max-w-xs shadow-md rounded-2xl relative">
-        <Image
-            src="/geometric-bg.svg"
-            alt=""
-            width={80}
-            height={80}
-            aria-hidden="true"
-            className="absolute left-0 bottom-0 w-32 h-24 z-0 pointer-events-none select-none overflow-hidden"
-            draggable={false}
-          />
+      <img
+        src="/geometric-bg.svg"
+        alt=""
+        width={80}
+        height={80}
+        aria-hidden="true"
+        className="absolute left-0 bottom-0 w-32 h-24 z-0 pointer-events-none select-none overflow-hidden"
+        draggable={false}
+      />
       <CardHeader>
         <CardTitle className="text-base text-zinc-400 ">
           Accumulated Study Time

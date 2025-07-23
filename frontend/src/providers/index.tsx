@@ -1,4 +1,3 @@
-import { ThemeProvider } from 'next-themes';
 import { IdentityKitAuthType } from '@nfid/identitykit';
 import { IdentityKitProvider } from '@nfid/identitykit/react';
 import { DevAuthProvider } from './dev-auth';
@@ -7,16 +6,14 @@ import { Toaster } from '@/components/ui/sonner';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <IdentityKitProvider
-        authType={IdentityKitAuthType.DELEGATION}
-      >
-        <DevAuthProvider>
-          {children}
-          <GlobalPopover />
-          <Toaster position='top-right' />
-        </DevAuthProvider>
-      </IdentityKitProvider>
-    </ThemeProvider>
+    <IdentityKitProvider
+      authType={IdentityKitAuthType.DELEGATION}
+    >
+      <DevAuthProvider>
+        {children}
+        <GlobalPopover />
+        <Toaster position='top-right' />
+      </DevAuthProvider>
+    </IdentityKitProvider>
   );
 }

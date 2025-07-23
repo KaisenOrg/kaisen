@@ -5,7 +5,6 @@ import {
   UserGroupIcon,
   RocketLaunchIcon,
 } from "@heroicons/react/24/solid";
-import Image from "next/image";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { Button } from "./button";
 
@@ -18,7 +17,7 @@ type CommunityCardProps = {
   time: string;
   showMascot?: boolean;
   showEdit?: boolean;
-  showDelete?:boolean;
+  showDelete?: boolean;
 };
 
 export default function CommunityCard({
@@ -30,7 +29,7 @@ export default function CommunityCard({
   time,
   showMascot = false,
   showEdit = false,
-  showDelete= false
+  showDelete = false
 }: CommunityCardProps) {
   const gridPosition = React.useMemo(
     () => (Math.random() > 0.5 ? "bottom-left" : "top-right"),
@@ -57,7 +56,7 @@ export default function CommunityCard({
     // We'll use the containerClass div as the relative parent.
     <div className={containerClass}>
       {showMascot && (
-        <Image
+        <img
           src="/kai-sleeping.svg"
           alt="Kai mascot"
           width={80}
@@ -82,7 +81,7 @@ export default function CommunityCard({
       )}
 
       {/* Background grid effect */}
-      <Image
+      <img
         src="/geometric-bg.svg"
         alt=""
         width={80}

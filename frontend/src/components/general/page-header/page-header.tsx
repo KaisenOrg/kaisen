@@ -4,7 +4,6 @@ import { ArrowLongLeftIcon } from "@heroicons/react/24/outline"
 import { TabNavigation } from "./tab-navigation"
 import type { TabRouteType } from "./tab-navigation-item"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import Image from "next/image"
 
 interface PageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
@@ -24,11 +23,10 @@ export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
       <header className={cn("relative w-full px-8 pt-12 bg-zinc-950", headerClassname)}>
         {showBgImage &&
           (<div className="absolute pointer-events-none select-none right-0 top-0 w-96 h-[75%] lg:h-full">
-            <Image
+            <img
               src="/geometric-bg-2.svg"
               alt=""
               aria-hidden="true"
-              fill
               sizes="160px"
               draggable={false}
             />
@@ -59,8 +57,8 @@ export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
             </div>
           </div>
 
-          { (tabs && baseUrl) &&
-            <TabNavigation tabs={tabs} baseUrl={baseUrl} /> 
+          {(tabs && baseUrl) &&
+            <TabNavigation tabs={tabs} baseUrl={baseUrl} />
           }
         </div>
       </header>

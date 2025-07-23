@@ -2,7 +2,7 @@ import { useIdentity, useAuth as useNfidAuth } from "@nfid/identitykit/react";
 import { useDevAuth } from "@/providers/dev-auth";
 
 export function useAuth() {
-  const isProd = process.env.NEXT_PUBLIC_DFX_NETWORK === "ic";
+  const isProd = import.meta.env.DFX_NETWORK === "ic";
 
   if (isProd) {
     const { user, connect: login, disconnect: logout } = useNfidAuth();

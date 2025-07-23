@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {
   Squares2X2Icon as OutlineSquares2X2Icon,
   SparklesIcon as OutlineSparklesIcon,
@@ -26,6 +24,7 @@ import {
   Cog6ToothIcon as SolidCog6ToothIcon,
   QuestionMarkCircleIcon as SolidQuestionMarkCircleIcon,
 } from "@heroicons/react/20/solid";
+import { Link, useLocation } from "react-router-dom";
 
 // A single component to handle the link rendering logic
 type NavLinkProps = {
@@ -47,12 +46,11 @@ const NavLink = ({
 }: NavLinkProps) => {
   return (
     <Link
-      href={href}
-      className={`flex items-center justify-between p-2 rounded-md text-sm hover:bg-[var(--sidebar-accent)] font-medium${
-        selected
-          ? " bg-[var(--sidebar-accent)] text-[var(--sidebar-primary-foreground)]"
-          : ""
-      }`}
+      to={href}
+      className={`flex items-center justify-between p-2 rounded-md text-sm hover:bg-[var(--sidebar-accent)] font-medium${selected
+        ? " bg-[var(--sidebar-accent)] text-[var(--sidebar-primary-foreground)]"
+        : ""
+        }`}
     >
       <div className="flex items-center gap-2">
         {selected ? (
@@ -68,7 +66,7 @@ const NavLink = ({
 };
 
 export default function Sidebar() {
-  const pathname = usePathname();
+  const pathname = useLocation().pathname;
 
   // Map your links to real routes
   const mainLinks = [

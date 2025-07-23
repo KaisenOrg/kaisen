@@ -1,5 +1,3 @@
-"use client";
-
 import ContinueCard from "@/components/ui/continue-card";
 import { DonutChartCard } from "@/components/ui/donutChartCard";
 import { HoursLineChart } from "@/components/ui/hoursLineChart";

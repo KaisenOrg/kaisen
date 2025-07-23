@@ -1,5 +1,3 @@
-"use client";
-
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -10,7 +8,6 @@ import {
 } from "@/components/ui/select";
 import ToggleButton from "@/components/ui/toggleButton";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 import { useState } from "react";
 
 export const AchievementsSection = () => {
@@ -50,7 +47,7 @@ export const AchievementsSection = () => {
             key={index}
             className="relative border border-[#27272A] rounded-xl overflow-hidden w-full"
           >
-            <Image
+            <img
               src="/nft.svg"
               alt="Certificado em NFT"
               width={400}
