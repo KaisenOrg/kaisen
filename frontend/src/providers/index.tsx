@@ -1,5 +1,3 @@
-'use client';
-
 import { ThemeProvider } from 'next-themes';
 import { IdentityKitAuthType } from '@nfid/identitykit';
 import { IdentityKitProvider } from '@nfid/identitykit/react';

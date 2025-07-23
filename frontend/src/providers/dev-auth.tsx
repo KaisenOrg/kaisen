@@ -1,5 +1,3 @@
-"use client";
-
 import { createContext, useContext, useEffect, useState } from "react";
 import { Ed25519KeyIdentity } from "@dfinity/identity";
 import type { Identity } from "@dfinity/agent";
