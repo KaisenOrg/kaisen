@@ -19,6 +19,15 @@ export default defineConfig({
       CANISTER_ID_ICRC1_LEDGER: process.env.CANISTER_ID_ICRC1_LEDGER,
     },
   },
+  server: {
+    proxy: {
+      '/api/v2': {
+        target: 'http://127.0.0.1:4943',
+        changeOrigin: true,
+        rewrite: path => path, // mantém /api/v2/...
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

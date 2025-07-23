@@ -30,8 +30,6 @@ const canisterIds = {
   icrc1_ledger: process.env.CANISTER_ID_ICRC1_LEDGER,
 };
 
-console.log(canisterIds);
-
 type CanisterName = keyof typeof canisterMap;
 
 export const useActor = <T extends CanisterName>(canisterName: T) => {
@@ -52,6 +50,10 @@ export const useActor = <T extends CanisterName>(canisterName: T) => {
 
       const isMainnet = process.env.DFX_NETWORK === 'ic';
 
+      console.log("Criando actor para:", canisterName);
+      console.log("Canister ID:", canisterId);
+      console.log("Host:", isMainnet ? "icp0.io" : "http://127.0.0.1:4943");
+
       if (isMainnet) {
         // Mainnet: usa agent do NFID (já autenticado)
         if (!authAgent) {
@@ -67,7 +69,7 @@ export const useActor = <T extends CanisterName>(canisterName: T) => {
 
         agent = await HttpAgent.create({
           identity: devIdentity,
-          host: 'http://127.0.0.1:4943',
+          host: 'http://127.0.0.1:4943'
         });
 
         await agent.fetchRootKey(); // necessário no local
