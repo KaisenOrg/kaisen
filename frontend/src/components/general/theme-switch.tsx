@@ -1,6 +1,6 @@
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { useThemeStore } from "@/stores/useThemeStore";
+import type { Theme } from "@/stores/useThemeStore";
 
 const themes = [
   {
@@ -22,14 +22,7 @@ const themes = [
 ];
 
 export function ThemeSwitch() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
+  const { theme, setTheme } = useThemeStore();
 
   return (
     <div className="flex flex-col sm:flex-row gap-2.5">
@@ -37,7 +30,7 @@ export function ThemeSwitch() {
         <button
           key={t.value}
           type="button"
-          onClick={() => setTheme(t.value)}
+          onClick={() => setTheme(t.value as Theme)}
           aria-pressed={theme === t.value}
           className={cn(
             "group flex flex-col w-full sm:w-[228px] h-[140px] rounded-xl overflow-hidden border-2 transition-all focus:outline-none p-0",

@@ -70,7 +70,7 @@ export default function Sidebar() {
 
   // Map your links to real routes
   const mainLinks = [
-    { name: "Home", href: "/home", Icon: OutlineSquares2X2Icon, SolidIcon: SolidSquares2X2Icon },
+    { name: "Home", href: "/", Icon: OutlineSquares2X2Icon, SolidIcon: SolidSquares2X2Icon },
     { name: "Kai", href: "/kai", Icon: OutlineSparklesIcon, SolidIcon: SolidSparklesIcon },
   ];
 

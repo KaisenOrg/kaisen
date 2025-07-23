@@ -1,4 +1,6 @@
 import RootLayout from '@/layouts/root-layout'
+import Discover from '@/pages/Discover'
+import Home from '@/pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 export function AppRoutes() {
@@ -6,10 +8,9 @@ export function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<RootLayout />}>
-          <Route index element={<>oi</>} />
-          <Route path="/home" element={<></>} />
+          <Route index element={<Home />} />
           <Route path="/kai" element={<></>} />
-          <Route path="/discover" element={<></>} />
+          <Route path="/discover" element={<Discover/>} />
           <Route path="/community" element={<></>} />
           <Route path="/store" element={<></>} />
           <Route path="/tracks/:trackId">
