@@ -346,19 +346,78 @@ She represents the progressive HR professional working in a constantly changing 
 
 ## 3.2. Style Guide
 
-[FILL IN - Describe here general guidelines about colors, fonts, icons and images for the Kaizen application.]
+The Kaizen style guide aims to ensure visual and functional consistency throughout the platform's interface. It serves as a central reference for designers and developers, standardizing the use of colors, typography, and graphic elements. By strengthening Kaizen's visual identity, the guide reduces inconsistencies in interface development and ensures accessibility, aesthetic coherence, and scalability across different application modules—whether they are aimed at individual learning, community validation, or public presentation of acquired knowledge.
 
 ### 3.2.1. Colors
 
-[FILL IN - Present here the color palette.]
+The color palette is an essential element in the visual construction of the Kaizen platform, contributing to the clear communication of the application's purpose, reinforcing its values of autonomy, innovation, and decentralization. The colors were chosen based on principles of contrast, accessibility, and visual hierarchy, ensuring an intuitive, functional, and welcoming experience for different user profiles.
+
+<div align="center">
+
+<sub>Figure X - Colors</sub>
+
+<img src="./assets/colors.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The main color of the visual identity is a vibrant shade of orange (#F97316 | orange-500), which evokes energy, creativity, and transformation—core aspects of Kaizen's educational proposal. This color is applied to prominent interactive elements, such as primary buttons, calls to action, and progress markers. Its more intense variation, dark orange (#C2410C | orange-700), is used in contexts where greater emphasis or visual depth is desired, maintaining consistency and dynamism in communication.
+
+The palette also includes a carefully distributed grayscale, ranging from white (#FAFAFA | zinc-50) to black (#09090B | zinc-950). These neutral tones provide balance to the interface, allowing the orange elements to stand out clearly, while ensuring readability and accessibility across devices and viewing modes (such as dark mode).
+
+Each color in the palette serves a strategic purpose—whether as a background, outline, shadow, or text—reinforcing the Kaizen identity and promoting consistent, streamlined navigation focused on continuous learning.
 
 ### 3.2.2. Typography
 
-[FILL IN - Present here the typography of the solution.]
+The typography used on the Kaizen platform was selected based on legibility, simplicity, and visual consistency, aiming to provide fluid and accessible reading across different devices and contexts. The Poppins font, available on Google Fonts, was chosen for its clean, modern, and highly legible design.
 
-### 3.2.3. Iconography and Images
+<div align="center">
 
-[FILL IN - Present here the icons and images.]
+<sub>Figure X - Typography</sub>
+
+<img src="./assets/typography.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The use of a single typeface throughout the interface contributes to the design's uniformity, while variations in size, weight, and spacing allow for the creation of a well-defined visual hierarchy. Titles and calls to action use bolder weights, such as SemiBold, in larger sizes (32px and 24px), to highlight relevant information and guide user navigation. Body text, such as descriptions and instructions, uses Regular or Medium weights, with sizes ranging from 14px to 16px and consistent spacing of -2%, promoting comfortable and fluid reading.
+
+By strategically adopting the Poppins font and its variations, Kaizen reinforces its visual identity and provides a consistent, welcoming, and inclusive experience for its entire decentralized learning community.
+
+
+### 3.2.3. Visual Elements
+
+The visual elements of the Kaizen platform were designed to communicate, symbolically and emotionally, the solution's core values. Notable among these elements are the mascot and logo, which reinforce the platform's identity and foster a closer connection with users.
+
+<div align="center">
+
+<sub>Figure X - Mascot</sub>
+
+<img src="./assets/mascot.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The platform's mascot, Kai, is an expressive and welcoming fox, presented in several variations that represent different emotional states and moments in the learning journey—such as studying, relaxing, listening to music, or moving. The choice of this animal evokes attributes such as intelligence, curiosity, and lightheartedness, reflecting the platform's vision of making decentralized learning more human, engaging, and accessible. The mascot's presence contributes to strengthening the emotional connection with users, making the experience more engaging and captivating.
+
+<div align="center">
+
+<sub>Figure X - Logo</sub>
+
+<img src="./assets/logo.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The Kaizen logo, meanwhile, is composed of modular geometric shapes organized around a central block—a key symbol of the platform's visual identity. This central block carries a dual meaning: it represents both the blocks that structure blockchain technology and the knowledge blocks constructed throughout the learning process. It's not a traditional solid shape, like a square or rectangle; rather, it's made up of several parts that connect and evolve.
+
+This fragmented composition symbolizes the collaborative and constantly evolving nature of Kaizen, where users and artificial intelligence work together to organize, validate, and expand knowledge. The logo thus conveys the fundamental pillars of the platform's proposal: decentralization, autonomy, technology, and co-authorship.
+
+Together, the Kai mascot and the logo form a strong, symbolic visual identity that's consistent with the principles of Kaizen—a platform that combines cutting-edge technology with empathy and purpose, transforming the way people learn and share knowledge.
 
 ## 3.3. High-Fidelity Prototype
 
