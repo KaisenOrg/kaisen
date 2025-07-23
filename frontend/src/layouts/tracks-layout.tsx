@@ -1,9 +1,8 @@
-'use client'
-
 import { PageHeader } from "@/components/general/page-header";
 import { CubeTransparentIcon, ShieldCheckIcon, BoltIcon, ArchiveBoxIcon } from "@heroicons/react/24/outline";
+import { Outlet } from "react-router-dom";
 
-export default function TracksLayout({ children }: { children: React.ReactNode }) {
+export default function TracksLayout() {
   const tabs = [
     { value: "/", label: "Track", icon: CubeTransparentIcon },
     { value: "/practice", label: "Practice", icon: BoltIcon },
@@ -19,7 +18,7 @@ export default function TracksLayout({ children }: { children: React.ReactNode }
         baseUrl="/tracks"
         tabs={tabs}
       />
-      {children}
+      <Outlet />
     </main>
   );
 }

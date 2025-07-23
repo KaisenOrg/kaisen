@@ -1,6 +1,8 @@
 import RootLayout from '@/layouts/root-layout'
+import TracksLayout from '@/layouts/tracks-layout'
 import Discover from '@/pages/Discover'
 import Home from '@/pages/Home'
+import TrackPage from '@/pages/tracks'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 export function AppRoutes() {
@@ -10,11 +12,12 @@ export function AppRoutes() {
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
           <Route path="/kai" element={<></>} />
-          <Route path="/discover" element={<Discover/>} />
-          <Route path="/community" element={<></>} />
+          <Route path="/proof" element={<></>} />
           <Route path="/store" element={<></>} />
-          <Route path="/tracks/:trackId">
-            <Route index element={<></>} />
+          <Route path="/discover" element={<Discover />} />
+          <Route path="/community" element={<></>} />
+          <Route path="/tracks/:trackId" element={<TracksLayout />}>
+            <Route index element={<TrackPage />} />
             <Route path="proof" element={<></>} />
             <Route path="practice" element={<></>} />
             <Route path="knowledge" element={<></>} />
@@ -30,6 +33,8 @@ export function AppRoutes() {
             <Route path="wallets" element={<></>} />
             {/* outras rotas */}
           </Route>
+          <Route path="/help" element={<></>} />
+          <Route path="*" element={<p>Página não encontrada</p>} />
         </Route>
       </Routes>
     </BrowserRouter>
