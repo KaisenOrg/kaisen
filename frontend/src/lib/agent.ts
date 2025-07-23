@@ -23,11 +23,11 @@ const canisterMap = {
 };
 
 const canisterIds = {
-  kai_backend: import.meta.env.VITE_CANISTER_ID_KAI_BACKEND,
-  tracks_backend: import.meta.env.VITE_CANISTER_ID_TRACKS_BACKEND,
-  chats_backend: import.meta.env.VITE_CANISTER_ID_CHATS_BACKEND,
-  users_backend: import.meta.env.VITE_CANISTER_ID_USERS_BACKEND,
-  icrc1_ledger: import.meta.env.VITE_CANISTER_ID_ICRC1_LEDGER,
+  kai_backend: process.env.CANISTER_ID_KAI_BACKEND,
+  tracks_backend: process.env.CANISTER_ID_TRACKS_BACKEND,
+  chats_backend: process.env.CANISTER_ID_CHATS_BACKEND,
+  users_backend: process.env.CANISTER_ID_USERS_BACKEND,
+  icrc1_ledger: process.env.CANISTER_ID_ICRC1_LEDGER,
 };
 
 console.log(canisterIds);
@@ -50,7 +50,7 @@ export const useActor = <T extends CanisterName>(canisterName: T) => {
 
       let agent: HttpAgent | Agent;
 
-      const isMainnet = import.meta.env.VITE_DFX_NETWORK === 'ic';
+      const isMainnet = process.env.DFX_NETWORK === 'ic';
 
       if (isMainnet) {
         // Mainnet: usa agent do NFID (já autenticado)
