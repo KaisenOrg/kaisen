@@ -41,12 +41,11 @@ export function AppRoutes() {
           <Route path="/store" element={<></>} />
           <Route path="/discover" element={<Discover />} />
           <Route path="/community" element={<></>} />
-          <Route path="/tracks" element={<TracksLayout />}>
-            <Route index element={<Discover />} />
-            <Route path=":id" element={<TrackPage />} />
-            <Route path=":id/proof" element={<TracksProofPage />} />
-            <Route path=":id/practice" element={<PracticePage />} />
-            <Route path=":id/knowledge" element={<KnowledgePage />} />
+          <Route path="/tracks/:id" element={<TracksLayout />}>
+            <Route index element={<TrackPage />} />
+            <Route path="proof" element={<TracksProofPage />} />
+            <Route path="practice" element={<PracticePage />} />
+            <Route path="knowledge" element={<KnowledgePage />} />
             {/* outras rotas */}
           </Route>
           {user ? (<>

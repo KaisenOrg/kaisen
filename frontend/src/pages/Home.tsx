@@ -13,7 +13,7 @@ import '@/globals.css';
 
 export default function Home() {
   const { tracks, isLoading, error } = useTrackStore();
-  const { fetchTracks, injectSampleTracks, createTrack } = useTracksActions();
+  const { fetchTracks, injectSampleTracks } = useTracksActions();
   const tracksActor = useActor('tracks_backend');
   const { open } = usePopoverStore();
 
@@ -95,6 +95,7 @@ export default function Home() {
           {!isLoading && tracks.map((track, i) => (
             <CommunityCard
               key={track.id}
+              id={track.id}
               title={track.title}
               description={track.description}
               creator={track.authorId.slice(0, 10) + "..."}
