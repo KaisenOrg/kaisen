@@ -51,7 +51,7 @@ export default function TrackPage() {
       });
       setSectionsWithPositions(generatedSections);
     }
-  }, [selectedTrack]);
+  }, [selectedTrack, tracks]);
 
   const handleSectionClick = (section: Section) => {
     open({ type: 'section', data: section });

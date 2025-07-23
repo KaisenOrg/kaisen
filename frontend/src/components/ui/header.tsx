@@ -1,15 +1,18 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { Bars3BottomLeftIcon, BellIcon } from "@heroicons/react/24/outline";
-import { ActionSearchBar } from "../general/search-bar";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
+import { ActionSearchBar } from "../general/search-bar";
+import { LoginButton } from "../general/login-button";
+import { Button } from "@/components/ui/button";
 import { useKoin } from "@/hooks/useKoin";
 import { useUser } from "@/hooks/useUser";
-import { Link } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Header() {
   const { user } = useUser();
+  const { isAuthenticated } = useAuth();
 
   const {
     formattedBalance: koinBalance,
@@ -140,14 +143,18 @@ export default function Header() {
           <span className="sr-only">Notifications</span>
         </Button>
 
-        <Link to="/profile">
-          <Avatar className="w-10 h-10">
-            <AvatarImage src={user?.picture || undefined} alt={user?.username} />
-            <AvatarFallback>
-              {user?.nickname?.slice(0, 2) || user?.username?.slice(0, 2) || "??"}
-            </AvatarFallback>
-          </Avatar>
-        </Link>
+        {isAuthenticated ? (
+          <Link to="/profile">
+            <Avatar className="w-10 h-10">
+              <AvatarImage src={user?.picture || undefined} alt={user?.username} />
+              <AvatarFallback>
+                {user?.nickname?.slice(0, 2) || user?.username?.slice(0, 2) || "??"}
+              </AvatarFallback>
+            </Avatar>
+          </Link>
+        ) : (
+          <LoginButton />
+        )}
       </div>
     </header>
   );

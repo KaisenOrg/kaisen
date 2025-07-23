@@ -7,6 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { Button } from "./button";
+import { Link } from "react-router-dom";
 
 type CommunityCardProps = {
   variant?: "default" | "large";
@@ -54,73 +55,75 @@ export default function CommunityCard({
   return (
     // The outer div is no longer necessary if its only purpose was to wrap the card and mascot.
     // We'll use the containerClass div as the relative parent.
-    <div className={containerClass}>
-      {showMascot && (
+    <Link to={`/tracks/${title}`}>
+      <div className={containerClass}>
+        {showMascot && (
+          <img
+            src="/kai-sleeping.svg"
+            alt="Kai mascot"
+            width={80}
+            height={80}
+            // Positioned relative to the card container
+            className="absolute -top-8 -right-4 w-20 h-20 z-20 pointer-events-none select-none overflow-visible"
+            style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.25))" }}
+            draggable={false}
+          />
+        )}
+
+        {showEdit && (
+          <Button className="p-6 absolute z-50 top-0 right-0 border border-[#27272A] rounded-tr-lg rounded-bl-xl bg-[#1A1A1E]">
+            <PencilIcon className="!w-6 !h-auto text-zinc-50" />
+          </Button>
+        )}
+
+        {showDelete && (
+          <Button className="p-6 absolute z-50 top-0 right-0 border border-[#27272A] rounded-tr-lg rounded-bl-xl bg-[#1A1A1E]">
+            <TrashIcon className="!w-6 !h-auto text-zinc-50" />
+          </Button>
+        )}
+
+        {/* Background grid effect */}
         <img
-          src="/kai-sleeping.svg"
-          alt="Kai mascot"
+          src="/geometric-bg.svg"
+          alt=""
           width={80}
           height={80}
-          // Positioned relative to the card container
-          className="absolute -top-8 -right-4 w-20 h-20 z-20 pointer-events-none select-none overflow-visible"
-          style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.25))" }}
+          aria-hidden="true"
+          className={imgClass}
           draggable={false}
         />
-      )}
 
-      {showEdit && (
-        <Button className="p-6 absolute z-50 top-0 right-0 border border-[#27272A] rounded-tr-lg rounded-bl-xl bg-[#1A1A1E]">
-          <PencilIcon className="!w-6 !h-auto text-zinc-50" />
-        </Button>
-      )}
-
-      {showDelete && (
-        <Button className="p-6 absolute z-50 top-0 right-0 border border-[#27272A] rounded-tr-lg rounded-bl-xl bg-[#1A1A1E]">
-          <TrashIcon className="!w-6 !h-auto text-zinc-50" />
-        </Button>
-      )}
-
-      {/* Background grid effect */}
-      <img
-        src="/geometric-bg.svg"
-        alt=""
-        width={80}
-        height={80}
-        aria-hidden="true"
-        className={imgClass}
-        draggable={false}
-      />
-
-      <div className={contentClass}>
-        <div className="flex">
-          <BookmarkIcon className="h-6 w-6 text-purple-400 mr-2" />
-          <h2 className="text-base font-medium text-white pb-2">{title}</h2>
-        </div>
-        <p className="text-sm text-zinc-400 pb-2">{description}</p>
-        <p className="text-xs text-zinc-400 pb-4">
-          Created by <span className="text-orange-500">@{creator}</span>
-        </p>
-        <div className="h-7 flex items-center gap-2 ml-2 pb-2">
-          {variant === "large" && (
-            <>
-              <RocketLaunchIcon className="h-5 w-5 text-orange-500" />
-              <span className="uppercase text-sm font-semibold text-orange-500 tracking-widest">
-                TOP ACCESSED
-              </span>
-            </>
-          )}
-        </div>
-        <div className="flex justify-end items-center gap-4 text-zinc-400 text-sm font-medium pb-2">
-          <div className="flex items-center gap-1">
-            <UserGroupIcon className="h-5 w-5 text-orange-500" />
-            <span>{members}</span>
+        <div className={contentClass}>
+          <div className="flex">
+            <BookmarkIcon className="h-6 w-6 text-purple-400 mr-2" />
+            <h2 className="text-base font-medium text-white pb-2">{title}</h2>
           </div>
-          <div className="flex items-center gap-1">
-            <ClockIcon className="h-5 w-5 text-orange-500" />
-            <span>{time}</span>
+          <p className="text-sm text-zinc-400 pb-2">{description}</p>
+          <p className="text-xs text-zinc-400 pb-4">
+            Created by <span className="text-orange-500">@{creator}</span>
+          </p>
+          <div className="h-7 flex items-center gap-2 ml-2 pb-2">
+            {variant === "large" && (
+              <>
+                <RocketLaunchIcon className="h-5 w-5 text-orange-500" />
+                <span className="uppercase text-sm font-semibold text-orange-500 tracking-widest">
+                  TOP ACCESSED
+                </span>
+              </>
+            )}
+          </div>
+          <div className="flex justify-end items-center gap-4 text-zinc-400 text-sm font-medium pb-2">
+            <div className="flex items-center gap-1">
+              <UserGroupIcon className="h-5 w-5 text-orange-500" />
+              <span>{members}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <ClockIcon className="h-5 w-5 text-orange-500" />
+              <span>{time}</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

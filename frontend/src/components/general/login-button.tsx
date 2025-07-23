@@ -15,5 +15,5 @@ export const LoginButton = () => {
     );
   }
 
-  return <Button onClick={() => login()}>Login (Modo Dev)</Button>;
+  return <Button onClick={() => login()}>Login {process.env.DFX_NETWORK !== 'ic' && '(Dev Mode)'}</Button>;
 };

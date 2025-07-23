@@ -50,10 +50,6 @@ export const useActor = <T extends CanisterName>(canisterName: T) => {
 
       const isMainnet = process.env.DFX_NETWORK === 'ic';
 
-      console.log("Criando actor para:", canisterName);
-      console.log("Canister ID:", canisterId);
-      console.log("Host:", isMainnet ? "icp0.io" : "http://127.0.0.1:4943");
-
       if (isMainnet) {
         // Mainnet: usa agent do NFID (já autenticado)
         if (!authAgent) {
