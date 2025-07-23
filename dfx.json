@@ -28,8 +28,8 @@
     },
     "icrc1_ledger": {
       "type": "custom",
-      "wasm": "icrc1_ledger.wasm.gz",
-      "candid": "icrc1_ledger.did",
+      "wasm": "backend/icrc1_ledger.wasm.gz",
+      "candid": "backend/icrc1_ledger.did",
       "declarations": {
         "output": "src/declarations/icrc1_ledger"
       }
@@ -64,11 +64,14 @@
     },
     "kaizen_frontend": {
       "type": "assets",
-      "source": [
-        "out"
-      ],
+      "source": ["out"],
       "dependencies": [
-        "kai_backend"
+        "kai_backend",
+        "tracks_backend",
+        "chats_backend",
+        "users_backend",
+        "icrc1_ledger",
+        "nft_certificates"
       ],
       "declarations": {
         "output": "src/declarations/kaizen_frontend"

@@ -81,8 +81,6 @@ export default function TestBackendPage() {
       const aiResponseJSON = JSON.parse(aiResponseText);
       setStatus('Kai respondeu. Salvando interação...');
 
-      console.log("Resposta da IA:", aiResponseJSON);
-
       // ETAPA 4: Salva a nova interação (pergunta do usuário + resposta da IA) no chat_backend
       await chatActor.addInteraction(currentChatId!, currentPrompt, aiResponseJSON.candidates[0].content.parts[0].text);
 
