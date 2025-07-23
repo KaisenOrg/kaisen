@@ -51,13 +51,14 @@ export default function HomeButton({ onClick }: { onClick?: () => void }) {
       ref={divRef}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      className="bg-card group border rounded-xl p-8 flex flex-col items-center justify-center text-center text-card-foreground w-full cursor-pointer relative overflow-hidden"
+      className="bg-card group border-2 rounded-xl p-8 flex flex-col items-center justify-center text-center text-card-foreground w-full cursor-pointer relative overflow-hidden"
       style={{
         transformStyle: "preserve-3d",
         transform: "perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)",
         transition: "transform 0.5s cubic-bezier(.22,1,.36,1), box-shadow 0.5s cubic-bezier(.22,1,.36,1)",
         boxShadow: "0 8px 24px 0 rgba(0,0,0,0.10)",
         willChange: "transform, box-shadow",
+        borderColor: "var(--border)",
       }}
     >
       {/* Spotlight overlay */}
@@ -82,7 +83,7 @@ export default function HomeButton({ onClick }: { onClick?: () => void }) {
         <h2 className="text-2xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground group-hover:from-orange-200 group-hover:to-orange-300 transition-all duration-500 ease-out">
           What will you master next?
         </h2>
-        <p className="text-base text-muted-foreground max-w-lg">
+        <p className="text-base text-muted-foreground max-w-lg" style={{ color: 'var(--muted-foreground)' }}>
           Focus on any subject and let Kai guide your learning with tailored
           materials and insights.
         </p>

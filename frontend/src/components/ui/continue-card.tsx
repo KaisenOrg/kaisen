@@ -2,6 +2,7 @@ import { BookmarkIcon } from "@heroicons/react/20/solid";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
+import { Card } from "./card";
 
 const COURSE_TITLE = "Principles of Python";
 const COURSE_DESCRIPTION = "Master Python step by step with personalized, interactive content";
@@ -18,7 +19,7 @@ export default function ContinueCard( { cardClassName, descriptionClassName, pro
   const isCompleted = (progress === 100);
 
   return (
-    <div className={cn("relative max-w-xs rounded-lg border-2 border-zinc-800 bg-card pt-6 pb-4 cursor-pointer hover:bg-zinc-600/25 transition-colors", cardClassName)}>
+    <Card className={cn("relative max-w-xs rounded-lg border-2 border-zinc-800 bg-card pt-6 pb-4 cursor-pointer hover:bg-zinc-600/25 transition-colors", cardClassName)}>
       <div className="flex justify-between">
         <div className="flex flex-col text-left text-white px-6">
           <div className="flex">
@@ -35,6 +36,6 @@ export default function ContinueCard( { cardClassName, descriptionClassName, pro
       <div className="absolute bottom-0 left-0 right-0 bg-zinc-800 rounded-b-lg">
         <Progress value={progress ? progress : PROGRESS_VALUE} indicatorClassName={`bg-green-400 ${isCompleted && 'bg-orange-500'}`} className="rounded-t-lg" />
       </div>
-    </div>
+    </Card>
   );
 }

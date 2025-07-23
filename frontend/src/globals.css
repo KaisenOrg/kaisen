@@ -146,3 +146,9 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 }
+
+body{
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
