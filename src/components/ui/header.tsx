@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Bars3BottomLeftIcon, BellIcon } from "@heroicons/react/24/outline";
 import { ActionSearchBar } from "../general/search-bar";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
+import Link from "next/link";
 import { useKoin } from "@/hooks/useKoin";
 import { useUser } from "@/hooks/useUser";
 
@@ -142,12 +143,14 @@ export default function Header() {
           <span className="sr-only">Notifications</span>
         </Button>
 
-        <Avatar className="w-10 h-10">
-          <AvatarImage src={user?.picture || undefined} alt={user?.username} />
-          <AvatarFallback>
-            {user?.nickname?.slice(0, 2) || user?.username?.slice(0, 2) || "??"}
-          </AvatarFallback>
-        </Avatar>
+        <Link href="/profile">
+          <Avatar className="w-10 h-10">
+            <AvatarImage src={user?.picture || undefined} alt={user?.username} />
+            <AvatarFallback>
+              {user?.nickname?.slice(0, 2) || user?.username?.slice(0, 2) || "??"}
+            </AvatarFallback>
+          </Avatar>
+        </Link>
       </div>
     </header>
   );

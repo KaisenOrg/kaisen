@@ -8,28 +8,32 @@ import Image from "next/image"
 
 interface PageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
-  baseUrl: string
+  baseUrl?: string
   subtitle: string
   imageUrl?: string
   showBackButton?: boolean
   onBackClick?: () => void
-  tabs: TabRouteType[]
+  tabs?: TabRouteType[]
+  showBgImage?: boolean
+  headerClassname?: string
 }
 
 export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
-  ({ className, title, subtitle, showBackButton = true, onBackClick, tabs, baseUrl, imageUrl, ...props }, ref) => {
+  ({ className, title, subtitle, showBackButton = true, onBackClick, tabs, baseUrl, imageUrl, showBgImage = true, headerClassname, ...props }, ref) => {
     return (
-      <header className="relative w-full px-8 pt-12 bg-zinc-950">
-        <div className="absolute pointer-events-none select-none right-0 top-0 w-96 h-[75%] lg:h-full">
-          <Image
-            src="/geometric-bg-2.svg"
-            alt=""
-            aria-hidden="true"
-            fill
-            sizes="160px"
-            draggable={false}
-          />
-        </div>
+      <header className={cn("relative w-full px-8 pt-12 bg-zinc-950", headerClassname)}>
+        {showBgImage &&
+          (<div className="absolute pointer-events-none select-none right-0 top-0 w-96 h-[75%] lg:h-full">
+            <Image
+              src="/geometric-bg-2.svg"
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="160px"
+              draggable={false}
+            />
+          </div>)
+        }
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex gap-10">
             {imageUrl && (
@@ -55,7 +59,9 @@ export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
             </div>
           </div>
 
-          <TabNavigation tabs={tabs} baseUrl={baseUrl} />
+          { (tabs && baseUrl) &&
+            <TabNavigation tabs={tabs} baseUrl={baseUrl} /> 
+          }
         </div>
       </header>
     )

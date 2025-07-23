@@ -6,6 +6,8 @@ import {
   RocketLaunchIcon,
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { Button } from "./button";
 
 type CommunityCardProps = {
   variant?: "default" | "large";
@@ -15,6 +17,8 @@ type CommunityCardProps = {
   members: string;
   time: string;
   showMascot?: boolean;
+  showEdit?: boolean;
+  showDelete?:boolean;
 };
 
 export default function CommunityCard({
@@ -25,6 +29,8 @@ export default function CommunityCard({
   members,
   time,
   showMascot = false,
+  showEdit = false,
+  showDelete= false
 }: CommunityCardProps) {
   const gridPosition = React.useMemo(
     () => (Math.random() > 0.5 ? "bottom-left" : "top-right"),
@@ -61,6 +67,18 @@ export default function CommunityCard({
           style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.25))" }}
           draggable={false}
         />
+      )}
+
+      {showEdit && (
+        <Button className="p-6 absolute z-50 top-0 right-0 border border-[#27272A] rounded-tr-lg rounded-bl-xl bg-[#1A1A1E]">
+          <PencilIcon className="!w-6 !h-auto text-zinc-50" />
+        </Button>
+      )}
+
+      {showDelete && (
+        <Button className="p-6 absolute z-50 top-0 right-0 border border-[#27272A] rounded-tr-lg rounded-bl-xl bg-[#1A1A1E]">
+          <TrashIcon className="!w-6 !h-auto text-zinc-50" />
+        </Button>
       )}
 
       {/* Background grid effect */}
