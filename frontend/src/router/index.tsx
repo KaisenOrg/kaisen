@@ -1,23 +1,35 @@
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useUser } from '@/hooks/useUser'
-import ProfileLayout from '@/layouts/profile-layout'
+
 import RootLayout from '@/layouts/root-layout'
+import ProfileLayout from '@/layouts/profile-layout'
 import SettingsLayout from '@/layouts/settings-layout'
 import TracksLayout from '@/layouts/tracks-layout'
-import Discover from '@/pages/Discover'
+
 import Home from '@/pages/Home'
+import Discover from '@/pages/Discover'
 import ProfilePage from '@/pages/profile'
 import SettingsProfilePage from '@/pages/settings'
 import PreferencesPage from '@/pages/settings/Preferences'
-import WalletsPage from '@/pages/settings/Wallets'
-import UserTestPage from '@/pages/Teste'
-import TrackPage from '@/pages/tracks'
 import KnowledgePage from '@/pages/tracks/knowledge'
 import PracticePage from '@/pages/tracks/practice'
 import TracksProofPage from '@/pages/tracks/proof'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import WalletsPage from '@/pages/settings/Wallets'
+import UserTestPage from '@/pages/Teste'
+import TrackPage from '@/pages/tracks'
+import { usePopoverStore } from '@/stores/usePopoverStore'
+import { useAuth } from '@/hooks/useAuth'
 
 export function AppRoutes() {
-  const { user } = useUser();
+  const { isAuthenticated } = useAuth();
+  const { user, fetchUser } = useUser();
+  const { open, close } = usePopoverStore();
+
+  useEffect(() => {
+    open({ type: 'loading' });
+    fetchUser().finally(() => close());
+  }, [isAuthenticated]);
 
   return (
     <BrowserRouter>
