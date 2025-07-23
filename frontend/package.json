@@ -10,8 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dfinity/agent": "^3.0.1",
+    "@dfinity/auth-client": "^3.0.1",
+    "@dfinity/candid": "^3.0.1",
+    "@dfinity/identity": "^3.0.1",
+    "@dfinity/ledger-icp": "^4.0.0",
+    "@dfinity/principal": "^2.4.1",
+    "@dfinity/utils": "^2.13.2",
+    "@heroicons/react": "^2.2.0",
+    "@nfid/identitykit": "^1.0.14",
+    "framer-motion": "^12.23.6",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "react-resizable-panels": "^3.0.3",
+    "recharts": "^3.1.0",
+    "remark-gfm": "^4.0.1",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
