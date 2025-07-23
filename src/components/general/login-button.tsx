@@ -1,10 +1,10 @@
 'use client';
 
-import { useDevAuth } from '@/providers/dev-auth';
 import { Button } from '@/components/ui/button';
+import { useAuth } from '@/hooks/useAuth';
 
 export const LoginButton = () => {
-  const { login, logout, isAuthenticated, principal } = useDevAuth();
+  const { login, logout, isAuthenticated, principal } = useAuth();
 
   if (isAuthenticated) {
     return (
@@ -17,5 +17,5 @@ export const LoginButton = () => {
     );
   }
 
-  return <Button onClick={login}>Login (Modo Dev)</Button>;
+  return <Button onClick={() => login()}>Login (Modo Dev)</Button>;
 };

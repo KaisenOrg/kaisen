@@ -8,12 +8,13 @@ import ContinueCard from '@/components/ui/continue-card';
 import { useActor } from '@/lib/agent';
 import { useTrackStore } from '@/store/useTrackStore';
 import { usePopoverStore } from '@/store/usePopoverStore';
+import { useTracksActions } from '@/hooks/useTracksActions';
 
 export default function Home() {
-  const { tracks, isLoading, error, fetchTracks, injectSampleTracks } = useTrackStore();
-  const { open } = usePopoverStore();
-
+  const { tracks, isLoading, error } = useTrackStore();
+  const { fetchTracks, injectSampleTracks, createTrack } = useTracksActions();
   const tracksActor = useActor('tracks_backend');
+  const { open } = usePopoverStore();
 
   const handleOpenConfirmationPopover = () => {
     open({
@@ -26,14 +27,13 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (tracksActor) {
-      injectSampleTracks(tracksActor).finally(() => { // remover inject quando enviar pra produção
-        fetchTracks(tracksActor).then(() => {
-          console.log(tracks)
-        });
-      })
-    }
-  }, [tracksActor, fetchTracks]);
+    fetchTracks()
+      .then(() => {
+        if (tracks?.length === 0) {
+          injectSampleTracks();
+        }
+      });
+  }, [tracksActor]);
 
   return (
     <main className="max-w-7xl mx-auto py-12 px-8">

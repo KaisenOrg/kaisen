@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { useActor } from '@/lib/agent';
 import { LoginButton } from '@/components/general/login-button';
 import { Button } from '@/components/ui/button';
-import { useDevAuth } from '@/providers/dev-auth';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { useAuth } from '@/hooks/useAuth';
 
 interface Message {
   sender: 'User' | 'Model';
@@ -14,7 +14,7 @@ interface Message {
 }
 
 export default function TestBackendPage() {
-  const { isAuthenticated } = useDevAuth();
+  const { isAuthenticated } = useAuth();
   const [status, setStatus] = useState<string>('Pronto.');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -80,8 +80,6 @@ export default function TestBackendPage() {
       const aiResponseText = result.ok;
       const aiResponseJSON = JSON.parse(aiResponseText);
       setStatus('Kai respondeu. Salvando interação...');
-
-      console.log("Resposta da IA:", aiResponseJSON);
 
       // ETAPA 4: Salva a nova interação (pergunta do usuário + resposta da IA) no chat_backend
       await chatActor.addInteraction(currentChatId!, currentPrompt, aiResponseJSON.candidates[0].content.parts[0].text);

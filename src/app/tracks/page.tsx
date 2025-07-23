@@ -11,9 +11,11 @@ import { useTrackStore } from '@/store/useTrackStore';
 import { usePopoverStore } from '@/store/usePopoverStore';
 import { useActor } from '@/lib/agent';
 import { type Section } from '@/types';
+import { useTracksActions } from '@/hooks/useTracksActions';
 
 export default function TracksPage() {
-  const { tracks, isLoading, error, fetchTracks, injectSampleTracks } = useTrackStore();
+  const { tracks, isLoading, error } = useTrackStore();
+  const { fetchTracks, injectSampleTracks, createTrack } = useTracksActions();
   const { open, close } = usePopoverStore();
   const tracksActor = useActor('tracks_backend');
 
@@ -25,16 +27,13 @@ export default function TracksPage() {
   const cardDimensions = { width: 320, height: 238 };
 
   useEffect(() => {
-    if (tracksActor) {
-      open({ type: 'loading' });
-
-      injectSampleTracks(tracksActor).then(() => {
-        fetchTracks(tracksActor).finally(() => {
-          close();
-        });
+    fetchTracks()
+      .then(() => {
+        if (tracks?.length === 0) {
+          injectSampleTracks();
+        }
       });
-    }
-  }, [tracksActor, fetchTracks, injectSampleTracks]);
+  }, [tracksActor]);
 
   useEffect(() => {
     if (selectedTrack && selectedTrack.sections.length > 0) {
@@ -43,7 +42,6 @@ export default function TracksPage() {
       setScreenHeight(currentScreenHeight);
       setScreenWidth(currentScreenWidth);
 
-      // @ts-ignore
       const generatedSections = generateSectionPositions(selectedTrack.sections, {
         cardWidth: cardDimensions.width,
         canvasHeight: currentScreenHeight * 0.8,

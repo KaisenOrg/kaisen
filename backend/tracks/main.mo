@@ -48,8 +48,20 @@ actor {
     return newId;
   };
 
-  public query func getTrack(trackId : Text) : async ?Types.Track {
+  public query func getTrackById(trackId : Text) : async ?Types.Track {
     return Trie.get(tracks, key(trackId), Text.equal);
+  };
+
+  public query func getTracksByAuthor(authorId : Text) : async [Types.Track] {
+    var result : [Types.Track] = [];
+
+    for ((_k, track) in Trie.iter(tracks)) {
+      if (track.authorId == authorId) {
+        result := Array.append(result, [track]);
+      };
+    };
+
+    return result;
   };
 
   public query func listAllTracks() : async [Types.Track] {
@@ -79,25 +91,27 @@ actor {
     };
   };
 
-  public shared (msg) func updateTrackDetails(trackId : Text, newTitle : Text, newDescription : Text) : async () {
-    let callerPrincipal = msg.caller;
+  public shared (msg) func updateTrack(trackId : Text, updatedTrack : Types.Track) : async () {
+    let caller = msg.caller;
 
     switch (Trie.get(tracks, key(trackId), Text.equal)) {
       case (null) {
-        throw Error.reject("Trilha com ID '" # trackId # "' não encontrada.");
+        throw Error.reject("Trilha não encontrada.");
       };
       case (?oldTrack) {
-        if (oldTrack.authorId != Principal.toText(callerPrincipal)) {
-          throw Error.reject("Acesso negado: você não é o autor desta trilha.");
+        if (oldTrack.authorId != Principal.toText(caller)) {
+          throw Error.reject("Acesso negado: você não é o autor.");
         };
 
-        let updatedTrack : Types.Track = {
-          oldTrack with
-          title = newTitle;
-          description = newDescription;
+        // Força a consistência do ID e autor
+        let safeTrack : Types.Track = {
+          updatedTrack with
+          id = trackId;
+          authorId = oldTrack.authorId;
+          createdAt = oldTrack.createdAt;
         };
 
-        tracks := Trie.put(tracks, key(trackId), Text.equal, updatedTrack).0;
+        tracks := Trie.put(tracks, key(trackId), Text.equal, safeTrack).0;
       };
     };
   };

@@ -8,12 +8,11 @@ import { Bars3BottomLeftIcon, BellIcon } from "@heroicons/react/24/outline";
 import { ActionSearchBar } from "../general/search-bar";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
 import Link from "next/link";
-import { useDevAuth } from "@/providers/dev-auth";
 import { useKoin } from "@/hooks/useKoin";
-import { Principal } from "@dfinity/principal";
+import { useUser } from "@/hooks/useUser";
 
 export default function Header() {
-  const { principal } = useDevAuth();
+  const { user } = useUser();
 
   const {
     formattedBalance: koinBalance,
@@ -22,17 +21,22 @@ export default function Header() {
     transfer,
     loading,
     error
-  } = useKoin(principal || null);
+  } = useKoin(user?.principal || null);
 
   useEffect(() => {
-    if (principal) {
+    if (user?.principal) {
       fetchBalance();
     }
-  }, [principal]);
+  }, [user?.principal]);
 
   const handleTestTransfer = async () => {
+    if (!user?.principal) {
+      alert("Usuário não autenticado!");
+      return;
+    }
+
     try {
-      const receiver = principal!; // Substitua pelo destinatário real
+      const receiver = user.principal; // Substitua pelo destinatário real
       const amount = BigInt(1_000_000_000); // 0.0001 Koin
 
       await transfer(receiver, amount);
@@ -141,10 +145,9 @@ export default function Header() {
 
         <Link href="/profile">
           <Avatar className="w-10 h-10">
-            {/* the src will be dynamic */}
-            <AvatarImage src="https://github.com/shadcn.pngs" alt="@cn" />
+            <AvatarImage src={user?.picture || undefined} alt={user?.username} />
             <AvatarFallback>
-              CN
+              {user?.nickname?.slice(0, 2) || user?.username?.slice(0, 2) || "??"}
             </AvatarFallback>
           </Avatar>
         </Link>

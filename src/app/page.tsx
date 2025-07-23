@@ -1,105 +1,174 @@
-'use client';
+"use client";
 
-import { useState } from "react";
-import { useActor } from "../lib/agent";
+import { useAuth } from "@/hooks/useAuth";
+import { useUser } from "@/hooks/useUser";
 import { Button } from "@/components/ui/button";
-import { useDevAuth } from "@/providers/dev-auth";
+import { useEffect, useState } from "react";
 
-export default function Home() {
-  const { login, isAuthenticated, logout } = useDevAuth();
-  const kaiAuthenticatedActor = useActor("kai_backend");
+export default function UserTestPage() {
+  const { login, logout, isAuthenticated, principal } = useAuth();
+  const { user, register, fetchUser, update, clearUser } = useUser();
 
-  const [prompt, setPrompt] = useState<string>("");
-  const [response, setResponse] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  const [creating, setCreating] = useState(false);
+  const [editing, setEditing] = useState(false);
 
-  const handleAskKai = async () => {
-    if (!kaiAuthenticatedActor) {
-      return;
+  const [formData, setFormData] = useState({
+    nickname: "",
+    about: "",
+    role: "",
+  });
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchUser();
     }
+  }, [isAuthenticated]);
 
-    if (!prompt.trim()) {
-      setResponse("Por favor, digite uma pergunta.");
-      return;
+  useEffect(() => {
+    if (user) {
+      setFormData({
+        nickname: user.nickname,
+        about: user.about || "",
+        role: user.role || "",
+      });
     }
+  }, [user]);
 
-    setLoading(true);
-    setResponse("");
-
+  const handleCreateUser = async () => {
+    setCreating(true);
     try {
-      const response = await kaiAuthenticatedActor.generateTrack(prompt);
-
-      if ("ok" in response) {
-        const result = JSON.parse(response.ok);
-        setResponse(result);
-      } else if ("err" in response) {
-        setResponse(`Erro: ${response.err}`);
-      } else {
-        setResponse("Resposta inesperada do canister.");
-      }
-    } catch (error) {
-      console.error("Error calling generateTrack function:", error);
-      setResponse("Ocorreu um erro ao se comunicar com o canister.");
+      await register({
+        username: `user-${Math.floor(Math.random() * 1000)}`,
+        nickname: "Usuário de Teste",
+        about: "Usuário criado via teste",
+        role: "Dev",
+      });
+      await fetchUser();
+    } catch (e) {
+      console.error(e);
+      alert("Erro ao criar usuário");
     } finally {
-      setLoading(false);
+      setCreating(false);
     }
   };
 
-  async function handleLogin() {
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSave = async () => {
+    if (!user) return;
+
+    try {
+      await update({
+        ...user,
+        nickname: formData.nickname,
+        about: formData.about,
+        role: formData.role,
+      });
+      setEditing(false);
+      alert("Usuário atualizado com sucesso!");
+    } catch (e) {
+      console.error(e);
+      alert("Erro ao atualizar o usuário");
+    }
+  };
+
+  function handleLogin() {
     login();
   }
 
-  async function handleLogout() {
-    logout();
-  }
-
-  if (!isAuthenticated || !kaiAuthenticatedActor) {
+  if (!isAuthenticated) {
     return (
-      <main className="max-w-7xl mx-auto px-8">
-        <Button onClick={handleLogin}>Faça login para falar com o Kai</Button>
+      <main className="flex flex-col items-center justify-center min-h-screen px-8">
+        <div className="w-full max-w-md p-8 rounded-xl shadow-lg border border-border bg-popover">
+          <h1 className="text-3xl font-bold text-center mb-4 text-foreground">Teste de Usuário</h1>
+          <p className="text-muted-foreground text-center mb-8">
+            Faça login para testar o sistema de usuários.
+          </p>
+          <Button onClick={handleLogin} className="w-full text-lg py-6">
+            Login (Modo Dev)
+          </Button>
+        </div>
       </main>
     );
   }
 
   return (
-    <main className="max-w-7xl mx-auto px-8">
-      <h1 className="text-2xl font-semibold mb-2">Pergunte ao Gemini via IC</h1>
-      <p className="mb-6">
-        Digite uma pergunta abaixo para enviá-la a um canister Motoko,
-        que por sua vez se comunica com a API do Gemini.
-      </p>
+    <main className="max-w-3xl mx-auto px-8 py-12">
+      <h1 className="text-3xl font-bold mb-6">Painel de Teste do Usuário</h1>
 
-      <Button onClick={handleLogout}>Desconectar</Button>
-
-      <div className="flex mt-6">
-        <input
-          type="text"
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          placeholder="O que é a computação quântica?"
-          disabled={loading}
-          className="flex-grow p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100"
-          onKeyDown={(e) => { if (e.key === 'Enter') handleAskKai(); }}
-        />
-        <button
-          onClick={handleAskKai}
-          disabled={loading}
-          className={`px-4 py-2 border border-blue-600 bg-blue-600 text-white rounded-r-md cursor-pointer transition-colors duration-150 disabled:bg-blue-300 disabled:cursor-not-allowed`}
-        >
-          {loading ? "Pensando..." : "Enviar"}
-        </button>
+      <div className="mb-6 p-4 rounded-lg border border-border bg-muted/20">
+        <h2 className="text-lg font-semibold mb-2">Dados Autenticados</h2>
+        <p><strong>Principal:</strong> {principal?.toText()}</p>
       </div>
 
-      {loading && (
-        <p className="mt-4 text-gray-600">Aguardando a resposta do canister...</p>
-      )}
+      {user ? (
+        <>
+          <div className="mb-6 p-4 rounded-lg border border-border bg-muted/20">
+            <h2 className="text-lg font-semibold mb-4">Perfil</h2>
 
-      {response && (
-        <div className="mt-6 border border-gray-200/50 rounded-md p-4 bg-gray-50/10">
-          <p className="font-semibold mb-2">Resposta do Gemini:</p>
-          <p className="whitespace-pre-wrap leading-relaxed">{response}</p>
+            {editing ? (
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm mb-1">Nickname</label>
+                  <input
+                    value={formData.nickname}
+                    onChange={(e) => handleChange("nickname", e.target.value)}
+                    className="w-full p-2 border rounded-md"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm mb-1">About</label>
+                  <textarea
+                    value={formData.about}
+                    onChange={(e) => handleChange("about", e.target.value)}
+                    className="w-full p-2 border rounded-md"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm mb-1">Role</label>
+                  <input
+                    value={formData.role}
+                    onChange={(e) => handleChange("role", e.target.value)}
+                    className="w-full p-2 border rounded-md"
+                  />
+                </div>
+
+                <div className="flex gap-4 mt-4">
+                  <Button onClick={handleSave}>Salvar</Button>
+                  <Button variant="outline" onClick={() => setEditing(false)}>
+                    Cancelar
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-2 text-sm">
+                <p><strong>Nickname:</strong> {user.nickname}</p>
+                <p><strong>Username:</strong> {user.username}</p>
+                <p><strong>About:</strong> {user.about}</p>
+                <p><strong>Role:</strong> {user.role}</p>
+                <p><strong>Followers:</strong> {user.followers.length}</p>
+                <p><strong>Following:</strong> {user.following.length}</p>
+                <p><strong>Tracks Criadas:</strong> {user.createdTracks.length}</p>
+
+                <Button onClick={() => setEditing(true)} className="mt-4">Editar Perfil</Button>
+              </div>
+            )}
+          </div>
+        </>
+      ) : (
+        <div className="mb-6 p-4 rounded-lg border border-border bg-muted/20">
+          <p className="mb-4">Nenhum usuário encontrado para este principal.</p>
+          <Button onClick={handleCreateUser} disabled={creating}>
+            {creating ? "Criando..." : "Criar Usuário de Teste"}
+          </Button>
         </div>
       )}
+
+      <Button onClick={logout} variant="outline">Desconectar</Button>
     </main>
   );
 }
