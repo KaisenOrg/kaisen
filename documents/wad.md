@@ -444,35 +444,63 @@ Reward Logic:
 
 # 5. Market Study and Marketing Plan
 
+Kaizen's market research and marketing plan aim to align the platform's proposal with the audience's real needs, within the context of decentralized digital education. Understanding learning behavior and the competitive landscape allows for strategic positioning of the solution, while the marketing plan guides its communication and promotion, focusing on engagement and brand consolidation.
+
 ## 5.1. Executive Summary
 
-[FILL IN]
+Kaizen is a decentralized educational platform that integrates artificial intelligence and blockchain to personalize learning and certify knowledge through NFTs, ensuring authenticity and portability. In a context marked by the growth of informal learning and the lack of reliable validation, Kaizen connects autonomy, recognition, and collaboration, transforming learning into a gamified and accessible experience.
+
+Its distinguishing features include the automatic organization of personalized paths powered by AI, immutable digital certification, a token economy for rewards, and encouraging community co-creation. The platform offers an innovative alternative to traditional educational solutions, democratizing access to digital reputation based on real knowledge.
+
+Its strategic objectives include: (i) personalizing learning based on user content; (ii) promoting public and secure certification; (iii) stimulating collaborative curation; and (iv) transforming learning into a rewarding and meaningful journey.
 
 ## 5.2. Market Analysis
 
-[FILL IN THE SUBSECTIONS WITH MARKET RESEARCH]
+### 5.2.1. Industry Overview 
+
+The global EdTech market is growing rapidly, driven by digitalization and the demand for autonomous learning, and is expected to exceed US$400 billion by 2025, according to HolonIQ. In Brazil, the expansion of certifications, self-directed learning, and gamification is a consolidated trend.
+
+The integration of AI with blockchain represents a promising innovation, enabling effective personalization and secure certification. Although still emerging, this model is expected to grow, especially in areas with a high demand for informal recognition, such as technology, design, and continuing education.
+
+### 5.2.2. Market Size and Growth
+
+The Brazilian online education market generated R$1.8 billion in revenue in 2023, with an expected average annual growth of 16% through 2027, according to ABED. Platforms that combine autonomy, gamification, and knowledge validation are expected to gain traction amid dissatisfaction with rigid models and the search for more accessible and meaningful ways to learn.
+
+Furthermore, the educational NFT market is expected to grow as the adoption of decentralized digital credentials increases. IBM and the OECD point out that verifiable digital certificates are one of the main trends in competency validation.
+
+### 5.2.3. Market Trends
+
+Trends directly impacting the Kaizen market include: the validation of informal learning, the strengthening of digital reputation and verifiable portfolios, the advancement of decentralized and self-managed platforms, the appreciation of certifications with professional application, the personalization of teaching through AI, and gamification as an engagement strategy.
 
 ## 5.3. Competitive Analysis
 
-**a) Main Competitors:**
-Direct: [FILL IN]
-Indirect: [FILL IN]
-**b) Competitive Advantages of the Web Application:**
-[FILL IN]
+**Main Competitors:**<br>
+Kaizen positions itself against several competitors. Direct competitors include platforms such as Coursera, Udemy, and edX, focused on formal online education; Duolingo, with its gamified learning model; and platforms focused on technology and the creative market, such as Platzi, Alura, and Rocketseat. Indirect competitors include platforms such as YouTube, Reddit, Notion, and tools such as GPTs, Obsidian, and Google Keep, which, while not structured learning platforms, are widely used in self-directed learning and personal knowledge building.
+
+**Competitive Advantages of the Web Application:**<br>
+Kaizen's main competitive advantage is its integrated certification model via NFTs—immutable, verifiable, and shareable—combined with AI that structures personalized trails based on users' own content. Furthermore, the token economy as a form of reward, community curation, and a focus on digital reputation, more than just content delivery, solidify its market differentiation.
 
 ## 5.4. Target Audience
 
-**a) Market Segmentation:** [FILL IN]
-**b) Target Audience Profile:** [FILL IN - Characterize the target audience with demographic, psychographic and behavioral data.]
+The Kaizen platform's target audience is primarily young people between the ages of 16 and 35, including students, developers, and freelancers. This group values autonomy in the learning process, seeks formal recognition for informally acquired skills, and is interested in innovative learning methods. Psychographically, these individuals desire flexibility, autonomy, and validation of their skills. Behaviorally, they are familiar with technologies such as AI, Web3, and collaborative digital platforms, which makes them naturally receptive to the Kaizen approach.
 
 ## 5.5. Positioning
 
-**a) Unique Value Proposition:** [FILL IN]
-**b) Differentiation Strategy:** [FILL IN - Explain how your application stands out from the competition.]
+Kaizen's value proposition is to be the first decentralized educational platform that allows users to create personalized learning paths powered by artificial intelligence, validate their knowledge through NFTs, and share their digital reputation publicly, securely, and transparently. The differentiation strategy centers on inverting the traditional model: instead of relying on pre-formatted content, Kaizen organizes and enhances the knowledge already acquired by the user, transforming this content into a meaningful journey with the help of AI. The NFT certification system and collective curation ensure authenticity, collaboration, and a verifiable reputation for users.
 
 ## 5.6. Marketing Strategy
 
-[FILL IN THE SUBSECTIONS WITH DIGITAL MARKETING STRATEGY]
+**Product:**<br>
+Kaizen is a gamified educational web platform that integrates artificial intelligence, blockchain, and NFTs. Its main differentiator lies in its ability to create personalized learning paths based on the user's content and interests, transforming knowledge into an interactive and meaningful journey. Furthermore, the platform issues digital certificates in NFT format, offering immutable proof of learning. To strengthen engagement, there is a rewards store with items such as skins and tools that can be purchased through the token economy. Another essential component is the presence of an active, co-authoring community, which contributes to the curation of the paths, validates content, and promotes a collaborative learning experience.
+
+**Price:**<br>
+The platform adopts a freemium business model, offering free access to Kaizen's basic features. Advanced features such as customizations, premium paths, private documents, higher upload limits, and access to advanced AI features ("Kaizen Pro") are unlocked through the platform's token, $KOIN. NFT certification is free for users who complete the tracks, creating an ecosystem that values merit and user engagement without creating financial barriers to learning.
+
+**Place:**<br>
+The platform's distribution will be strategic, with an initial launch in digital communities and innovation hubs focused on technology and education. Kaizen will also seek partnerships with bootcamps, hackathons, technical schools, and initiatives related to the Web3 universe. Presence at technology and education events—both online and in-person—will be essential to promote the platform, establish connections with educators and developers, and attract innovative users willing to experiment with new learning methods.
+
+**Promotion:**<br>
+Kaizen's promotion will focus on content marketing and community engagement. Articles, videos, and posts will be produced on topics such as digital reputation, skills validation, artificial intelligence, and new ways to learn independently. The brand will be present on networks such as Twitter, Telegram, and Discord, where conversations about Web3 and educational technology are most active. Additionally, the platform will partner with influencers from the tech and education worlds, who will be able to share their experiences with Kaizen and boost the brand's credibility. Storytelling campaigns featuring real user stories—showing how Kaizen impacted their learning or career paths—will strengthen the emotional connection with the audience and highlight the transformative value of the proposal.
 
 # 6. Conclusions and Future Work
 
