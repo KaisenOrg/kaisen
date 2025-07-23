@@ -1,7 +1,3 @@
-
-'use client';
-
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ThemeSwitch } from "@/components/general/theme-switch";
 import { Switch } from "@/components/ui/switch";

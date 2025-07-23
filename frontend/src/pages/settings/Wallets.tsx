@@ -1,8 +1,7 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { ExpandableText } from "@/components/ui/expandable-text";
 
-export default function walletsPage() {
+export default function WalletsPage() {
   return (
     <div className="max-w-7xl mx-auto py-12 px-8">
       <h1 className="text-2xl font-semibold mb-4">Wallets</h1>

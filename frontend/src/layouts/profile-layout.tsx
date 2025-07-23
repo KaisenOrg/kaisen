@@ -1,12 +1,13 @@
-'use client';
-
 import { PageHeader } from "@/components/general/page-header";
 import { ProfileSidebar } from "@/components/specific/profile/profileSidebar";
+import { useUser } from "@/hooks/useUser";
 import { useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
-export default function ProfileLayout({children} : {children: React.ReactNode}) {
-    //Habilitar o scrool: smooth
-    useEffect(() => {
+export default function ProfileLayout() {
+  const { user } = useUser();
+
+  useEffect(() => {
     const anchors = document.querySelectorAll('a[href^="#"]');
 
     const handleClick = (e: Event) => {
@@ -25,23 +26,23 @@ export default function ProfileLayout({children} : {children: React.ReactNode}) 
     };
   }, []);
 
-    return(
-        <div className="px-14">
-            <PageHeader 
-                imageUrl="/"
-                title="Lorem ipsum dolor sit"
-                subtitle="Lorem ipsum dolor sit"
-                className="mb-12"
-                showBgImage={false}
-                showBackButton={false}
-                headerClassname="bg-transparent"
-            />
-            <div className="flex items-start px-16 gap-5">
-                <ProfileSidebar />
-                
-                {children}
-            </div>
-        </div>
+  return (
+    <div className="px-14">
+      <PageHeader
+        imageUrl={user?.picture || ""}
+        title={user?.nickname || "unknown"}
+        subtitle={`@${user?.username}` || "empty"}
+        className="mb-12"
+        showBgImage={false}
+        showBackButton={false}
+        headerClassname="bg-transparent"
+      />
+      <div className="flex items-start px-16 gap-5">
+        <ProfileSidebar />
 
-    )
+        <Outlet />
+      </div>
+    </div>
+
+  )
 }
