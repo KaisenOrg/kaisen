@@ -10,7 +10,10 @@
           "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
         }
       },
-      "frontend": {}
+      "frontend": {},
+      "declarations": {
+        "output": "src/declarations/internet_identity"
+      }
     },
     "kai_backend": {
       "type": "motoko",
@@ -18,28 +21,46 @@
       "dependencies": [
         "tracks_backend",
         "chats_backend"
-      ]
+      ],
+      "declarations": {
+        "output": "src/declarations/kai_backend"
+      }
     },
     "icrc1_ledger": {
       "type": "custom",
       "wasm": "icrc1_ledger.wasm.gz",
-      "candid": "icrc1_ledger.did"
+      "candid": "icrc1_ledger.did",
+      "declarations": {
+        "output": "src/declarations/icrc1_ledger"
+      }
     },
     "chats_backend": {
       "type": "motoko",
-      "main": "backend/chats/main.mo"
+      "main": "backend/chats/main.mo",
+      "declarations": {
+        "output": "src/declarations/chats_backend"
+      }
     },
     "tracks_backend": {
       "type": "motoko",
-      "main": "backend/tracks/main.mo"
+      "main": "backend/tracks/main.mo",
+      "declarations": {
+        "output": "src/declarations/tracks_backend"
+      }
     },
     "nft_certificates": {
       "type": "motoko",
-      "main": "backend/nft/main.mo"
+      "main": "backend/nft/main.mo",
+      "declarations": {
+        "output": "src/declarations/nft_certificates"
+      }
     },
     "users_backend": {
       "type": "motoko",
-      "main": "backend/users/main.mo"
+      "main": "backend/users/main.mo",
+      "declarations": {
+        "output": "src/declarations/users_backend"
+      }
     },
     "kaizen_frontend": {
       "type": "assets",
@@ -50,7 +71,7 @@
         "kai_backend"
       ],
       "declarations": {
-        "output": "declarations"
+        "output": "src/declarations/kaizen_frontend"
       }
     }
   },
