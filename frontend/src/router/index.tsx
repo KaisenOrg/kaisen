@@ -27,7 +27,7 @@ export function AppRoutes() {
   const { open, close } = usePopoverStore();
 
   useEffect(() => {
-    open({ type: 'loading', useAlertDialog: true });
+    open({ type: 'loading' });
     fetchUser().finally(() => close());
   }, [isAuthenticated]);
 
@@ -62,8 +62,14 @@ export function AppRoutes() {
               {/* outras rotas */}
             </Route>
           </>) : (<>
-            <Route path="/profile" element={<UserTestPage />} />
-            <Route path="/settings" element={<UserTestPage />} />
+            <Route path="/profile">
+              <Route index element={<UserTestPage />} />
+              <Route path="*" element={<UserTestPage />} />
+            </Route>
+            <Route path="/settings">
+              <Route index element={<UserTestPage />} />
+              <Route path="*" element={<UserTestPage />} />
+            </Route>
           </>)}
           <Route path="/help" element={<></>} />
           <Route path="*" element={<p>Página não encontrada</p>} />

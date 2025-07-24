@@ -15,12 +15,13 @@ interface PageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   tabs?: TabRouteType[]
   showBgImage?: boolean
   headerClassname?: string
+  imageFallback?: string
 }
 
 export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
-  ({ className, title, subtitle, showBackButton = true, onBackClick, tabs, baseUrl, imageUrl, showBgImage = true, headerClassname, ...props }, ref) => {
+  ({ className, title, subtitle, showBackButton = true, onBackClick, tabs, baseUrl, imageUrl, imageFallback, showBgImage = true, headerClassname, ...props }, ref) => {
     return (
-      <header className={cn("relative w-full px-8 pt-12 bg-zinc-950", headerClassname)}>
+      <header className={cn("relative w-full px-8 pt-12 bg-background", headerClassname)}>
         {showBgImage &&
           (<div className="absolute pointer-events-none select-none right-0 top-0 w-96 h-[75%] lg:h-full">
             <img
@@ -38,7 +39,7 @@ export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
               <Avatar className="w-24 h-24">
                 <AvatarImage src={imageUrl} />
                 <AvatarFallback className="text-3xl">
-                  CN
+                  {imageFallback || '??'}
                 </AvatarFallback>
               </Avatar>
             )}

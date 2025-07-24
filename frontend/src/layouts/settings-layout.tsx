@@ -15,6 +15,7 @@ export default function SettingsLayout() {
         title="Lorem ipsum"
         subtitle="Lorem ipsum dolor sit amet"
         baseUrl="/settings"
+        showBackButton={false}
         tabs={tabs}
       />
       <Outlet />

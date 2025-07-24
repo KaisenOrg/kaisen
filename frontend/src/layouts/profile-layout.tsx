@@ -29,7 +29,8 @@ export default function ProfileLayout() {
   return (
     <div className="px-14">
       <PageHeader
-        imageUrl={user?.picture || ""}
+        imageUrl={user?.picture || "none"}
+        imageFallback={user?.nickname?.slice(0, 2)}
         title={user?.nickname || "unknown"}
         subtitle={`@${user?.username}` || "empty"}
         className="mb-12"
