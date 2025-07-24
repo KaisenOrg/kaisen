@@ -1,5 +1,5 @@
-import CommunityCard from "@/components/ui/community-card";
-import DiscoverFilter from "@/components/ui/discover-filter";
+// import CommunityCard from "@/components/ui/community-card";
+// import DiscoverFilter from "@/components/ui/discover-filter";
 
 export default function Discover() {
   return (
@@ -12,7 +12,7 @@ export default function Discover() {
         transition: 'background 0.3s, color 0.3s',
       }}
     >
-      <div className="mt-2">
+      {/* <div className="mt-2">
         <h2
           className="text-lg font-semibold"
           style={{ color: 'var(--foreground)' }}
@@ -141,7 +141,7 @@ export default function Discover() {
             variant="large"
           />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

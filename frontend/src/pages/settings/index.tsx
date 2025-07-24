@@ -6,11 +6,32 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { PencilIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import { useUser } from "@/hooks/useUser";
+import ItemCard from "@/components/specific/store/item-card";
+import { useKoin } from "@/hooks/useKoin";
+import { Principal } from "@dfinity/principal";
 
 export default function SettingsProfilePage() {
   const { user } = useUser();
-  const [avatarUrl, _] = useState<string | null>(user?.picture || null);
+  const [avatarUrl] = useState<string | null>(user?.picture || null);
   const [avatarInitials] = useState(user?.username?.slice(0, 2) || "");
+
+  // Store principal (replace with real one if available)
+  const STORE_PRINCIPAL = Principal.fromText("aaaaa-aa");
+  const { transfer } = useKoin(user?.principal || null);
+
+  const handleBuy = async () => {
+    if (!user?.principal) {
+      alert("User not authenticated!");
+      return;
+    }
+    try {
+      const amount = BigInt(250_00000000); // 250 koins (assuming 8 decimals)
+      await transfer(STORE_PRINCIPAL, amount);
+      alert("Compra realizada com sucesso! 250 Koins pagos.");
+    } catch (err) {
+      alert("Erro ao realizar pagamento: " + (err instanceof Error ? err.message : String(err)));
+    }
+  };
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-8">
@@ -82,6 +103,13 @@ export default function SettingsProfilePage() {
         <div className="flex flex-col items-center gap-4">
         </div>
       </div>
+
+      <ItemCard
+        title="Example Item"
+        description="This is an example item description that is quite long and should be truncated if it exceeds two lines."
+        price={250}
+        onBuy={handleBuy}
+      />
     </div>
   );
 }

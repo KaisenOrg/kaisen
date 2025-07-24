@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import CommunityCard from "@/components/ui/community-card";
+// import CommunityCard from "@/components/ui/community-card";
 import ToggleButton from "@/components/ui/toggleButton";
 import { useState, useEffect } from "react";
 
@@ -7,16 +7,16 @@ export const TrailsCreatedSection = () => {
   const quantityPublished = 4;
   const [publishedCards, setPublishedCards] = useState<number[]>([]);
   const [showAllPublished, setShowAllPublished] = useState(false);
-  const visiblePublished = showAllPublished
-    ? publishedCards
-    : publishedCards.slice(0, 3);
+  // const visiblePublished = showAllPublished
+  //   ? publishedCards
+  //   : publishedCards.slice(0, 3);
 
   const quantityUnpublished = 4;
   const [unpublishedCards, setUnpublishedCards] = useState<number[]>([]);
   const [showAllUnpublished, setShowAllUnpublished] = useState(false);
-  const visibleUnpublished = showAllUnpublished
-    ? unpublishedCards
-    : unpublishedCards.slice(0, 3);
+  // const visibleUnpublished = showAllUnpublished
+  //   ? unpublishedCards
+  //   : unpublishedCards.slice(0, 3);
 
   // Inicializar os arrays apenas no lado do cliente para evitar problema de hidration
   useEffect(() => {
@@ -34,7 +34,7 @@ export const TrailsCreatedSection = () => {
       <div className="flex flex-col mb-5">
         <h2 className="text-2xl font-semibold mb-10">Published tracks</h2>
 
-        <div className="grid grid-cols-3 gap-5 mb-5">
+        {/* <div className="grid grid-cols-3 gap-5 mb-5">
           {visiblePublished.map((index) => (
             <CommunityCard
               key={index}
@@ -46,7 +46,7 @@ export const TrailsCreatedSection = () => {
               showEdit={true}
             />
           ))}
-        </div>
+        </div> */}
 
         {publishedCards.length > 3 && (
           <ToggleButton
@@ -60,19 +60,19 @@ export const TrailsCreatedSection = () => {
       <div className="flex flex-col">
         <h2 className="text-2xl font-semibold mb-10">Unpublished tracks</h2>
 
-        <div className="grid grid-cols-3 gap-5 mb-5">
+        {/* <div className="grid grid-cols-3 gap-5 mb-5">
           {visibleUnpublished.map((index) => (
-            <CommunityCard
-              key={index}
-              title="Placeholder"
-              description="This is a placeholder for a community block."
-              creator="placeholder"
-              members="0"
-              time="--"
-              showDelete={true}
-            />
+            // <CommunityCard
+            //   key={index}
+            //   title="Placeholder"
+            //   description="This is a placeholder for a community block."
+            //   creator="placeholder"
+            //   members="0"
+            //   time="--"
+            //   showDelete={true}
+            // />
           ))}
-        </div>
+        </div> */}
 
         {unpublishedCards.length > 3 && (
           <ToggleButton
