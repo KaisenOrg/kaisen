@@ -42,7 +42,6 @@ export function AppRoutes() {
           <Route path="/discover" element={<Discover />} />
           <Route path="/community" element={<></>} />
           <Route path="/tracks" element={<TracksLayout />}>
-            <Route index element={<Discover />} />
             <Route path=":id" element={<TrackPage />} />
             <Route path=":id/proof" element={<TracksProofPage />} />
             <Route path=":id/practice" element={<PracticePage />} />

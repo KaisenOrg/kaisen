@@ -13,7 +13,7 @@ import '@/globals.css';
 
 export default function Home() {
   const { tracks, isLoading, error } = useTrackStore();
-  const { fetchTracks, injectSampleTracks, createTrack } = useTracksActions();
+  const { fetchTracks, injectSampleTracks } = useTracksActions();
   const tracksActor = useActor('tracks_backend');
   const { open } = usePopoverStore();
 
