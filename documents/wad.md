@@ -419,7 +419,126 @@ Together, the Kai mascot and the logo form a strong, symbolic visual identity th
 
 ## 3.3. High-Fidelity Prototype
 
-[FILL IN - Place here the prototype screens]
+A high-fidelity prototype provides a detailed visual representation of the application. It simulates the design's field format, interactions, and user experience, using colors, typography, icons, buttons, and other graphic elements compatible with the final product.
+
+This type of prototype allows you to validate design decisions before development begins, test usability with real users, and present a solution visually and functionally to interested parties.
+
+The complete prototype can be accessed through the Figma platform, using the following link: [Figma Prototype](https://www.figma.com/design/qPsCtf4GvgwH6cmUgdy7Q8/Kaisen--WCHL-?node-id=11-55&p=f&t=iUgnCTERVnBrP4BJ-0)
+
+Below are the prototyped screens, which illustrate the application's main functionalities:
+
+<div align="center">
+
+<sub>Figure X - Home</sub>
+
+<img src="./assets/screens/1.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The home screen serves as the platform's central navigation point, offering users a bird's-eye view of their progress and quick access to key features. As the user's first contact with the application, it plays a crucial role in defining the user experience, setting the visual and functional tone for the journey. It displays highlighted learning paths and personalized statistics, facilitating the intuitive discovery of relevant content.
+
+<div align="center">
+
+<sub>Figure X - Chat</sub>
+
+<img src="./assets/screens/2.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+This interface allows direct communication with the platform's artificial intelligence assistant, Kai. Through this channel, users can submit materials, ask questions, and receive personalized educational guidance. This functionality represents the core of Kaizen's value proposition, as it transforms raw content into structured, dynamic, and interactive learning experiences, powered by AI.
+
+<div align="center">
+
+<sub>Figure X - Tracks</sub>
+
+<img src="./assets/screens/3.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The paths screen organizes and categorizes the content available on the platform, allowing users to navigate different areas of knowledge. It is essential for discovering and organizing learning, offering filtering capabilities by topics, interests, and difficulty levels. This allows users to easily identify which paths best meet their educational needs and objectives.
+
+<div align="center">
+
+<sub>Figure X - Tracks</sub>
+
+<img src="./assets/screens/4.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+Modals provide an in-depth overview of a specific learning path, including its description, user progress, available modules, related content, and supplementary resources. They are essential components for user engagement, as they allow direct access to different types of educational resources, such as flashcards, summaries, quizzes, and videos. Thus, they provide a more dynamic, interactive, and structured learning experience, favoring personalized and efficient knowledge assimilation.
+
+<div align="center">
+
+<sub>Figure X - Practice and Proof of Learning</sub>
+
+<img src="./assets/screens/5.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+In the Practice section, users have access to features that help them review the content studied throughout the path, including quizzes and interactive tests. These resources are essential for consolidating learning and validating individual progress. Upon completing the proposed activities, users unlock the Proof of Learning section, where they can obtain their certificate in NFT format. This certificate is authenticated via blockchain, ensuring its authenticity and immutability. The platform also offers direct sharing options to social media, increasing the visibility of users' achievements and strengthening their digital reputation.
+
+<div align="center">
+
+<sub>Figure X - Discover</sub>
+
+<img src="./assets/screens/6.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The Discover feature aims to expand learning possibilities by facilitating the exploration of new paths and content through thematic categories, smart filters, and personalized recommendations. This screen is vital for maintaining ongoing user engagement and stimulating curiosity, connecting them to knowledge that might otherwise go unnoticed.
+
+<div align="center">
+
+<sub>Figure X - Profile</sub>
+
+<img src="./assets/screens/7.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The profile screen provides a comprehensive overview of the user's journey on the platform, gathering information about their progress and activities. Through this interface, users can access tracks in progress and those already completed, as well as view engagement metrics, such as the time spent on each specific track and the total time spent using the platform.
+
+Furthermore, users have access to their earned certifications, allowing them to download certificates in NFT format or share them directly on social media. The screen also displays the tracks they have published, as well as those that have not yet been made publicly available. If desired, users can create new tracks, with editing and deletion capabilities, giving them the autonomy to contribute to the community and personalize their learning journey.
+
+<div align="center">
+
+<sub>Figure X - Kai's store</sub>
+
+<img src="./assets/screens/8.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+Kai's store is a gamified interface where users can use platform tokens ($KOIN) to purchase visual customizations, skins, exclusive features, and premium tools. This is a strategic feature for both monetization and user retention, offering tangible incentives for continued engagement. By enabling personalized experiences, the store also helps strengthen users' emotional bond with the platform.
+
+<div align="center">
+
+<sub>Figure X - settings and community</sub>
+
+<img src="./assets/screens/9.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+The settings screen allows users to adjust their usage preferences, configure notifications, and manage their accounts in a personalized way. This feature offers greater control over the individual experience within the platform, promoting comfort, accessibility, and security during continued use.
+
+The community screen aims to strengthen interactions between users, serving as a space for exchange and collaboration. Here, participants can post about their experiences on the platform, share reflections on the learning process, promote created paths, and interact with other members' content. This dynamic contributes to building a network of support and educational engagement, encouraging mutual recognition and collective development.
+
 
 ## 3.4. Data Modeling (On-Chain)
 
