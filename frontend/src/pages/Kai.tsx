@@ -1,19 +1,17 @@
-'use client';
-
 import { useState } from 'react';
 import { useActor } from '@/lib/agent';
+import { useAuth } from '@/hooks/useAuth';
 import { LoginButton } from '@/components/general/login-button';
 import { Button } from '@/components/ui/button';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useAuth } from '@/hooks/useAuth';
 
 interface Message {
   sender: 'User' | 'Model';
   text: string;
 }
 
-export default function TestBackendPage() {
+export default function KaiTestPage() {
   const { isAuthenticated } = useAuth();
   const [status, setStatus] = useState<string>('Pronto.');
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -21,7 +19,6 @@ export default function TestBackendPage() {
   // Atores autenticados
   const kaiActor = useActor('kai_backend');
   const chatActor = useActor('chats_backend');
-  const tracksActor = useActor('tracks_backend');
 
   // Estado para o chat
   const [chatId, setChatId] = useState<string | null>(null);
@@ -29,7 +26,7 @@ export default function TestBackendPage() {
   const [messages, setMessages] = useState<Message[]>([]);
 
   // Estado para a trilha gerada
-  const [generatedTrackJSON, setGeneratedTrackJSON] = useState<string | null>(null);
+  const [generatedTrackJSON, _] = useState<string | null>(null);
 
   // --- FUNÇÕES DE TESTE (VERSÃO ATUALIZADA) ---
   // --- FUNÇÕES DE TESTE (VERSÃO ATUALIZADA) ---

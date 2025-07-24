@@ -1,6 +1,6 @@
 import { PostCard } from "@/components/specific/community/post-card";
 
-export default function Community() {
+export default function CommunityPage() {
   return (
     <main className="max-w-7xl mx-auto px-8 py-2 flex flex-col items-start gap-4">
       <h2 className="text-lg font-semibold mt-2">Community</h2>
