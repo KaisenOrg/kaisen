@@ -20,6 +20,8 @@ import UserTestPage from '@/pages/Teste'
 import TrackPage from '@/pages/tracks'
 import { usePopoverStore } from '@/stores/usePopoverStore'
 import { useAuth } from '@/hooks/useAuth'
+import KaiTestPage from '@/pages/Kai'
+import CommunityPage from '@/pages/Community'
 import Store from '@/pages/Store'
 
 export function AppRoutes() {
@@ -37,11 +39,11 @@ export function AppRoutes() {
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
-          <Route path="/kai" element={<></>} />
+          <Route path="/kai" element={<KaiTestPage />} />
           <Route path="/proof" element={<></>} />
           <Route path="/store" element={<Store/>} />
           <Route path="/discover" element={<Discover />} />
-          <Route path="/community" element={<></>} />
+          <Route path="/community" element={<CommunityPage />} />
           <Route path="/tracks/:id" element={<TracksLayout />}>
             <Route index element={<TrackPage />} />
             <Route path="proof" element={<TracksProofPage />} />
@@ -63,10 +65,18 @@ export function AppRoutes() {
               {/* outras rotas */}
             </Route>
           </>) : (<>
-            <Route path="/profile" element={<UserTestPage />} />
-            <Route path="/settings" element={<UserTestPage />} />
+            <Route path="/profile">
+              <Route index element={<UserTestPage />} />
+              <Route path="*" element={<UserTestPage />} />
+            </Route>
+            <Route path="/settings">
+              <Route index element={<UserTestPage />} />
+              <Route path="*" element={<UserTestPage />} />
+            </Route>
           </>)}
+          <Route path="/language" element={<></>} />
           <Route path="/help" element={<></>} />
+          
           <Route path="*" element={<p>Página não encontrada</p>} />
         </Route>
       </Routes>

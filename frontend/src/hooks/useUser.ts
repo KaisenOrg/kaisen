@@ -6,7 +6,7 @@ import type { UserData } from "@/types";
 
 export function useUser() {
   const userActor = useActor("users_backend");
-  const { user, setUser, clearUser } = useUserStore();
+  const { user, setUser, clearUser, setError, error, isLoading, setLoading } = useUserStore();
   const { principal } = useAuth();
 
   const register = async (data: {
@@ -16,6 +16,9 @@ export function useUser() {
     role?: string;
   }) => {
     if (!userActor || !principal) return;
+
+    setLoading(true);
+    setError(null);
 
     const newUser = {
       nickname: data.nickname,
@@ -35,10 +38,14 @@ export function useUser() {
 
     await userActor.createUser(toMotokoUser(newUser));
     setUser(newUser);
+    setLoading(false);
   };
 
   const fetchUser = async () => {
     if (!userActor || !principal) return;
+
+    setError(null);
+    setLoading(true);
 
     const result = await userActor.getUser(principal.toText());
     if ("ok" in result) {
@@ -46,13 +53,26 @@ export function useUser() {
     } else {
       clearUser();
     }
+
+    setLoading(false);
   };
 
   const update = async (newData: UserData) => {
     if (!userActor) return;
-    await userActor.updateUser(toMotokoUser(newData));
-    setUser(newData);
+
+    setError(null);
+    setLoading(true);
+
+    try {
+      await userActor.updateUser(toMotokoUser(newData));
+      setUser(newData);
+    } catch (e) {
+      console.error(e);
+      setError("Erro ao atualizar perfil");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  return { user, register, fetchUser, update, clearUser };
+  return { user, register, fetchUser, update, clearUser, error, isLoading };
 }

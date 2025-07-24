@@ -1,6 +1,9 @@
-import { DialogContent } from "@/components/ui/dialog"
+import {
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogTitle
+} from "@/components/ui/alert-dialog"
 import { Progress } from "@/components/ui/progress"
-import { DialogTitle } from "@radix-ui/react-dialog"
 
 interface Props {
   progress?: number
@@ -8,8 +11,8 @@ interface Props {
 
 export function LoadingPreset({ progress = 50 }: Props) {
   return (
-    <DialogContent className="outline-none w-16 flex flex-col items-center p-0 border-none bg-transparent" showCloseButton={false}>
-      <DialogTitle>
+    <AlertDialogContent className="outline-none w-16 flex flex-col items-center p-0 border-none bg-transparent">
+      <AlertDialogTitle>
         <img
           src="/logo.svg"
           alt="loading"
@@ -17,10 +20,12 @@ export function LoadingPreset({ progress = 50 }: Props) {
           height={64}
           className="animate-spin"
         />
-      </DialogTitle>
+      </AlertDialogTitle>
+      <AlertDialogDescription>
+      </AlertDialogDescription>
       {progress && (
         <Progress className="mt-2 w-sm h-4" color="bg-white" value={progress} />
       )}
-    </DialogContent>
+    </AlertDialogContent>
   )
 }

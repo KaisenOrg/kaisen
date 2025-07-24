@@ -15,7 +15,7 @@ export default function Home() {
   const { tracks, isLoading, error } = useTrackStore();
   const { fetchTracks, injectSampleTracks } = useTracksActions();
   const tracksActor = useActor('tracks_backend');
-  const { open } = usePopoverStore();
+  const { open, close } = usePopoverStore();
 
   const handleOpenConfirmationPopover = () => {
     open({
@@ -28,11 +28,17 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (!tracksActor) return;
+
+    open({ type: 'loading' })
+
     fetchTracks()
-      .then(() => {
+      .then(async () => {
         if (tracks?.length === 0) {
-          injectSampleTracks();
+          await injectSampleTracks();
         }
+
+        close();
       });
   }, [tracksActor]);
 
