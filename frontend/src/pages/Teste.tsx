@@ -35,13 +35,17 @@ export default function UserTestPage() {
   const handleCreateUser = async () => {
     setCreating(true);
     try {
-      await register({
-        username: `user-${Math.floor(Math.random() * 1000)}`,
-        nickname: "Usuário de Teste",
-        about: "Usuário criado via teste",
-        role: "Dev",
+      await fetchUser().finally(async () => {
+        if (!user) {
+          console.log("Creating testing user...");
+          await register({
+            username: `user-${Math.floor(Math.random() * 1000)}`,
+            nickname: "Usuário de Teste",
+            about: "Usuário criado via teste",
+            role: "Dev",
+          });
+        }
       });
-      await fetchUser();
     } catch (e) {
       console.error(e);
       alert("Erro ao criar usuário");

@@ -5,6 +5,7 @@ import { GlobalPopover } from '@/components/ui/global-popover';
 import { Toaster } from '@/components/ui/sonner';
 import { useEffect } from 'react';
 import { useThemeStore } from '@/stores/useThemeStore';
+import { UserProvider } from './user-provider';
 
 function ThemeEffect() {
   const applyTheme = useThemeStore((s) => s.applyTheme);
@@ -20,10 +21,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
       authType={IdentityKitAuthType.DELEGATION}
     >
       <DevAuthProvider>
-        <ThemeEffect />
-        {children}
-        <GlobalPopover />
-        <Toaster position='top-right' />
+        <UserProvider>
+          <ThemeEffect />
+          {children}
+          <GlobalPopover />
+          <Toaster position='top-right' />
+        </UserProvider>
       </DevAuthProvider>
     </IdentityKitProvider>
   );

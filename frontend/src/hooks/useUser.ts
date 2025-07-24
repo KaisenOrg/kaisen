@@ -51,6 +51,7 @@ export function useUser() {
     if ("ok" in result) {
       setUser(toUserData(result.ok));
     } else {
+      setError("Erro ao buscar perfil")
       clearUser();
     }
 
