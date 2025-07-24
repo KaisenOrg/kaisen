@@ -7,6 +7,9 @@ import { useState, useEffect } from "react";
 import { useUser } from "@/hooks/useUser";
 import { usePopoverStore } from "@/stores/usePopoverStore";
 import { toast } from "sonner";
+import ItemCard from "@/components/specific/store/item-card";
+import { useKoin } from "@/hooks/useKoin";
+import { Principal } from "@dfinity/principal";
 
 export default function SettingsProfilePage() {
   const { user, update, isLoading } = useUser();
@@ -19,7 +22,7 @@ export default function SettingsProfilePage() {
     aboutMe: user?.about || "",
   });
 
-  const [avatarUrl, _] = useState<string | null>(user?.picture || null);
+  const [avatarUrl] = useState<string | null>(user?.picture || null);
   const [avatarInitials, setAvatarInitials] = useState(user?.nickname?.slice(0, 2) || "");
   const [isDirty, setIsDirty] = useState(false);
 
@@ -69,6 +72,24 @@ export default function SettingsProfilePage() {
     setIsDirty(false);
     close();
     toast.success("Perfil atualizado com sucesso!");
+  };
+
+  // Store principal (replace with real one if available)
+  const STORE_PRINCIPAL = Principal.fromText("aaaaa-aa");
+  const { transfer } = useKoin(user?.principal || null);
+
+  const handleBuy = async () => {
+    if (!user?.principal) {
+      alert("User not authenticated!");
+      return;
+    }
+    try {
+      const amount = BigInt(250_00000000); // 250 koins (assuming 8 decimals)
+      await transfer(STORE_PRINCIPAL, amount);
+      alert("Compra realizada com sucesso! 250 Koins pagos.");
+    } catch (err) {
+      alert("Erro ao realizar pagamento: " + (err instanceof Error ? err.message : String(err)));
+    }
   };
 
   return (
@@ -175,6 +196,13 @@ export default function SettingsProfilePage() {
           </div>
         </form>
       </div>
+
+      <ItemCard
+        title="Example Item"
+        description="This is an example item description that is quite long and should be truncated if it exceeds two lines."
+        price={250}
+        onBuy={handleBuy}
+      />
     </div>
   );
 }

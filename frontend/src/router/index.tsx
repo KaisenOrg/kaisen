@@ -22,6 +22,7 @@ import { usePopoverStore } from '@/stores/usePopoverStore'
 import { useAuth } from '@/hooks/useAuth'
 import KaiTestPage from '@/pages/Kai'
 import CommunityPage from '@/pages/Community'
+import Store from '@/pages/Store'
 
 export function AppRoutes() {
   const { isAuthenticated } = useAuth();
@@ -40,7 +41,7 @@ export function AppRoutes() {
           <Route index element={<Home />} />
           <Route path="/kai" element={<KaiTestPage />} />
           <Route path="/proof" element={<></>} />
-          <Route path="/store" element={<></>} />
+          <Route path="/store" element={<Store/>} />
           <Route path="/discover" element={<Discover />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/tracks/:id" element={<TracksLayout />}>
