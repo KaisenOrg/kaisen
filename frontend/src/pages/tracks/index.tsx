@@ -11,14 +11,16 @@ import { usePopoverStore } from '@/stores/usePopoverStore';
 import { useActor } from '@/lib/agent';
 import { type Section } from '@/types';
 import { useTracksActions } from '@/hooks/useTracksActions';
+import { useParams } from 'react-router-dom';
 
 export default function TrackPage() {
   const { tracks, isLoading } = useTrackStore();
   const { fetchTracks, injectSampleTracks } = useTracksActions();
   const { open } = usePopoverStore();
   const tracksActor = useActor('tracks_backend');
+  const { id } = useParams();
 
-  const selectedTrack = tracks?.[0];
+  const selectedTrack = tracks?.find((track) => track.id === id);
 
   const [sectionsWithPositions, setSectionsWithPositions] = useState<any[]>([]);
   const [screenHeight, setScreenHeight] = useState(0);

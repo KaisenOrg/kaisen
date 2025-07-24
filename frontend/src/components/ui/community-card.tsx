@@ -19,10 +19,12 @@ type CommunityCardProps = {
   showMascot?: boolean;
   showEdit?: boolean;
   showDelete?: boolean;
+  id: string;
 };
 
 export default function CommunityCard({
   variant = "default",
+  id,
   title,
   description,
   creator,
@@ -55,7 +57,7 @@ export default function CommunityCard({
   return (
     // The outer div is no longer necessary if its only purpose was to wrap the card and mascot.
     // We'll use the containerClass div as the relative parent.
-    <Link to={`/tracks/${title}`}>
+    <Link to={`/tracks/${id}`}>
       <div className={containerClass}>
         {showMascot && (
           <img

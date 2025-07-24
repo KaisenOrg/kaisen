@@ -95,6 +95,7 @@ export default function Home() {
           {!isLoading && tracks.map((track, i) => (
             <CommunityCard
               key={track.id}
+              id={track.id}
               title={track.title}
               description={track.description}
               creator={track.authorId.slice(0, 10) + "..."}
