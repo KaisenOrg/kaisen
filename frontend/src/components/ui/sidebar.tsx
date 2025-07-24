@@ -1,7 +1,6 @@
 import {
   Squares2X2Icon as OutlineSquares2X2Icon,
   SparklesIcon as OutlineSparklesIcon,
-  AcademicCapIcon as OutlineAcademicCapIcon,
   CheckCircleIcon as OutlineCheckCircleIcon,
   ShoppingCartIcon as OutlineShoppingCartIcon,
   Square3Stack3DIcon as OutlineSquare3Stack3DIcon,
@@ -15,7 +14,6 @@ import {
 import {
   Squares2X2Icon as SolidSquares2X2Icon,
   SparklesIcon as SolidSparklesIcon,
-  AcademicCapIcon as SolidAcademicCapIcon,
   CheckCircleIcon as SolidCheckCircleIcon,
   ShoppingCartIcon as SolidShoppingCartIcon,
   Square3Stack3DIcon as SolidSquare3Stack3DIcon,
@@ -25,6 +23,7 @@ import {
   QuestionMarkCircleIcon as SolidQuestionMarkCircleIcon,
 } from "@heroicons/react/20/solid";
 import { Link, useLocation } from "react-router-dom";
+import { useSidebarStore } from "@/stores/useSidebarStore";
 
 // A single component to handle the link rendering logic
 type NavLinkProps = {
@@ -43,30 +42,37 @@ const NavLink = ({
   SolidIcon,
   selected,
   isFooter = false,
-}: NavLinkProps) => {
+  isCollapsed = false,
+}: NavLinkProps & { isCollapsed?: boolean }) => {
   return (
     <Link
       to={href}
       className={`flex items-center justify-between p-2 rounded-md text-sm hover:bg-[var(--sidebar-accent)] font-medium${selected
         ? " bg-[var(--sidebar-accent)] text-[var(--sidebar-primary-foreground)]"
         : ""
-        }`}
+        } ${isCollapsed ? 'justify-center' : ''}`}
     >
-      <div className="flex items-center gap-2">
+      <div className={`flex items-center gap-2 ${isCollapsed ? 'justify-center w-full' : ''}`}>
         {selected ? (
           <SolidIcon className="w-5 h-5 text-[var(--color-primary)]" />
         ) : (
           <Icon className="w-5 h-5" />
         )}
-        <span>{name}</span>
+        <span
+          className={`transition-all duration-300 ease-in-out origin-left min-w-0 overflow-hidden whitespace-nowrap ml-1
+            ${isCollapsed ? 'opacity-0 w-0 absolute' : 'opacity-100 w-auto static'}`}
+        >
+          {name}
+        </span>
       </div>
-      {isFooter && <ChevronRightIcon className="w-4 h-4 text-[var(--sidebar-foreground)]" />}
+      {isFooter && !isCollapsed && <ChevronRightIcon className="w-4 h-4 text-[var(--sidebar-foreground)]" />}
     </Link>
   );
 };
 
 export default function Sidebar() {
   const pathname = useLocation().pathname;
+  const { isCollapsed } = useSidebarStore();
 
   // Map your links to real routes
   const mainLinks = [
@@ -75,7 +81,6 @@ export default function Sidebar() {
   ];
 
   const progressLinks = [
-    { name: "Tracks", href: "/tracks", Icon: OutlineAcademicCapIcon, SolidIcon: SolidAcademicCapIcon },
     { name: "Proof of Learning", href: "/proof", Icon: OutlineCheckCircleIcon, SolidIcon: SolidCheckCircleIcon },
     { name: "Kai's Store", href: "/store", Icon: OutlineShoppingCartIcon, SolidIcon: SolidShoppingCartIcon },
   ];
@@ -98,40 +103,65 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-56 h-full border-r-2 border-[var(--sidebar-border)] bg-[var(--sidebar)] text-[var(--sidebar-foreground)] flex flex-col p-3">
+    <aside className={`h-full border-r-2 border-[var(--sidebar-border)] bg-[var(--sidebar)] text-[var(--sidebar-foreground)] flex flex-col p-3 transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-56'}`}>
       <div className="flex-grow">
         {/* Top-level navigation */}
         <nav className="space-y-1">
           {mainLinks.map((link) => (
-            <NavLink key={link.name} {...link} selected={isSelected(link.href)} />
+            <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
           ))}
         </nav>
-
         {/* Progress Section */}
-        <div className="mt-6">
-          <h3 className="px-2 text-xs font-semibold uppercase text-[var(--sidebar-foreground)] tracking-wider">
-            Progress
-          </h3>
-          <nav className="mt-2 space-y-1">
-            {progressLinks.map((link) => (
-              <NavLink key={link.name} {...link} selected={isSelected(link.href)} />
-            ))}
-          </nav>
-        </div>
-
+        {isCollapsed ? (
+          <div className="mt-6">
+            <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" />
+            <nav className="mt-2 space-y-1">
+              {progressLinks.map((link) => (
+                <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
+              ))}
+            </nav>
+          </div>
+        ) : (
+          <div className="mt-6">
+            <h3
+              className={`px-2 text-xs font-semibold uppercase text-[var(--sidebar-foreground)] tracking-wider transition-all duration-300 ease-in-out origin-left ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100 w-auto'}`}
+              style={{ display: isCollapsed ? 'inline-block' : undefined }}
+            >
+              Progress
+            </h3>
+            <nav className="mt-2 space-y-1">
+              {progressLinks.map((link) => (
+                <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
+              ))}
+            </nav>
+          </div>
+        )}
         {/* Community Section */}
-        <div className="mt-6">
-          <h3 className="px-2 text-xs font-semibold uppercase text-[var(--sidebar-foreground)] tracking-wider">
-            Community
-          </h3>
-          <nav className="mt-2 space-y-1">
-            {communityLinks.map((link) => (
-              <NavLink key={link.name} {...link} selected={isSelected(link.href)} />
-            ))}
-          </nav>
-        </div>
+        {isCollapsed ? (
+          <div className="mt-6">
+            <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" />
+            <nav className="mt-2 space-y-1">
+              {communityLinks.map((link) => (
+                <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
+              ))}
+            </nav>
+          </div>
+        ) : (
+          <div className="mt-6">
+            <h3
+              className={`px-2 text-xs font-semibold uppercase text-[var(--sidebar-foreground)] tracking-wider transition-all duration-300 ease-in-out origin-left ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100 w-auto'}`}
+              style={{ display: isCollapsed ? 'inline-block' : undefined }}
+            >
+              Community
+            </h3>
+            <nav className="mt-2 space-y-1">
+              {communityLinks.map((link) => (
+                <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
-
       {/* Footer Section */}
       <div>
         <nav className="space-y-1">
@@ -141,6 +171,7 @@ export default function Sidebar() {
               {...link}
               selected={isSelected(link.href)}
               isFooter={true}
+              isCollapsed={isCollapsed}
             />
           ))}
         </nav>

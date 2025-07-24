@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Bars3BottomLeftIcon, BellIcon } from "@heroicons/react/24/outline";
+import { BellIcon } from "@heroicons/react/24/outline";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
 import { ActionSearchBar } from "../general/search-bar";
 import { LoginButton } from "../general/login-button";
@@ -9,10 +9,12 @@ import { Button } from "@/components/ui/button";
 import { useKoin } from "@/hooks/useKoin";
 import { useUser } from "@/hooks/useUser";
 import { useAuth } from "@/hooks/useAuth";
+import { useSidebarStore } from "@/stores/useSidebarStore";
 
 export default function Header() {
   const { user } = useUser();
   const { isAuthenticated } = useAuth();
+  const { isCollapsed, toggleSidebar } = useSidebarStore();
 
   const {
     formattedBalance: koinBalance,
@@ -50,11 +52,16 @@ export default function Header() {
   };
 
   return (
-    <header className="flex items-center h-1/11 px-4 border-b bg-background">
+    <header className="flex items-center h-1/11 px-4 border-b-2 bg-background" style={{ borderColor: 'var(--border)' }}>
       {/* Left side: Menu and Logo */}
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon" className="w-10 h-10">
-          <Bars3BottomLeftIcon style={{ width: 24, height: 24 }} />
+        <Button variant="ghost" size="icon" className="w-10 h-10" onClick={toggleSidebar}>
+          <img
+            src="/menu-right-icon.svg"
+            alt="Toggle sidebar"
+            className={`w-6 h-6`}
+            style={{ width: '20px', height:'20px', transform: isCollapsed ? 'rotate(-180deg)' : 'rotate(0deg)' }}
+          />
         </Button>
         <div className="flex items-center">
           <img
