@@ -27,7 +27,7 @@ export function AppRoutes() {
   const { open, close } = usePopoverStore();
 
   useEffect(() => {
-    open({ type: 'loading' });
+    open({ type: 'loading', useAlertDialog: true });
     fetchUser().finally(() => close());
   }, [isAuthenticated]);
 

@@ -3,13 +3,14 @@ import { type Section } from '@/types';
 import type { ReactNode } from 'react';
 
 type PopoverPayload =
-  | { type: 'section'; data: Section }
+  | { type: 'section'; data: Section, useAlertDialog?: boolean }
   | {
     type: 'generic';
     title: string;
     description?: string;
     content: ReactNode;
     onConfirm?: () => void;
+    useAlertDialog?: boolean;
   }
   | { type: 'loading', progress?: number };
 

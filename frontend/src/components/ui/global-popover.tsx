@@ -8,6 +8,7 @@ import {
   EssaySectionPreset,
   LoadingPreset,
 } from '@/components/specific/popover-presets';
+import { AlertDialog } from './alert-dialog';
 
 export function GlobalPopover() {
   const { isOpen, payload, close } = usePopoverStore();
@@ -68,6 +69,7 @@ export function GlobalPopover() {
             description={payload.description}
             content={payload.content}
             onConfirm={payload.onConfirm}
+            useAlertDialog={payload.useAlertDialog}
           />
         );
 
@@ -75,6 +77,12 @@ export function GlobalPopover() {
         return null;
     }
   };
+
+  if (payload?.useAlertDialog || payload?.type === 'loading') return (
+    <AlertDialog open={isOpen} onOpenChange={(open) => !open && close()}>
+      {renderContent()}
+    </AlertDialog>
+  )
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && close()}>
