@@ -12,7 +12,7 @@ type PopoverPayload =
     onConfirm?: () => void;
     useAlertDialog?: boolean;
   }
-  | { type: 'loading', progress?: number };
+  | { type: 'loading', progress?: number, useAlertDialog?: boolean };
 
 interface PopoverState {
   isOpen: boolean;
