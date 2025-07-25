@@ -155,8 +155,8 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 1. Clone the repository and access the folder:
 
 ```bash
-git clone https://github.com/your-username/kaizen.git
-cd kaizen
+git clone https://github.com/KaisenOrg/kaisen.git
+cd kaisen
 ```
 2. Grant permission to the script and run:
 
@@ -190,8 +190,8 @@ sudo apt install -y nodejs build-essential
 sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
 sudo apt install git
 
-git clone https://github.com/your-username/kaizen.git
-cd kaizen
+git clone https://github.com/KaisenOrg/kaisen.git
+cd kaisen
 chmod +x setup.sh
 ./setup.sh
 ```
