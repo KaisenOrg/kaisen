@@ -102,7 +102,7 @@ In this scenario, Porter's Five Forces analysis is applied—an essential tool f
 
 <div align="center">
 
-<sub>Figure X - Porter's 5 Forces Model</sub>
+<sub>Figure 1 - Porter's 5 Forces Model</sub>
 
 <img src="./assets/five-forces.png" width="100%">
 
@@ -131,7 +131,7 @@ The SWOT analysis is a widely used tool for planning and mapping out various sol
 
 <div align="center">
 
-<sub>Figure X - Swot Analysis Model</sub>
+<sub>Figure 2 - Swot Analysis Model</sub>
 
 <img src="./assets/swot-analysis.png" width="100%">
 
@@ -223,7 +223,7 @@ The Value Proposition Canvas is a strategic tool used by various companies with 
 
 <div align="center">
 
-<sub>Figure X - Value Proposition Canvas</sub>
+<sub>Figure 3 - Value Proposition Canvas</sub>
 
 <img src="./assets/canvas-value.png" width="100%">
 
@@ -290,10 +290,6 @@ The analysis conducted through the Kaizen Value Proposition Canvas demonstrates 
 
 Therefore, it is worth emphasizing that the solution addresses a real and pressing issue: the disconnect between knowledge acquired through non-traditional means and its validation. The centralization of learning data, personalization of the study process, and the possibility of monetizing and sharing educational journeys add direct value to the end user. Kaizen does not merely rely on emerging technologies; it builds an ecosystem in which knowledge is treated as a reputational asset—traceable, shareable, and, most importantly, rewardable.
 
-### 2.1.5. Project Risk Matrix
-
-[FILL IN - Place here the risk matrix]
-
 ## 2.2. Personas
 
 Representing specific individuals, personas are semi-fictional profiles built based on real data and observations about the target audience. Their main function is to facilitate the understanding of users' needs, behaviors, and motivations, allowing for more targeted and effective solution development.
@@ -302,7 +298,7 @@ Below are three personas developed specifically for this project to guide decisi
 
 <div align="center">
 
-<sub>Figure X - Persona 1</sub>
+<sub>Figure 4 - Persona 1</sub>
 
 <img src="./assets/persona-clara.png" width="100%">
 
@@ -314,7 +310,7 @@ She represents an ambitious young student from a peripheral community who sees t
 
 <div align="center">
 
-<sub>Figure X - Persona 2</sub>
+<sub>Figure 5 - Persona 2</sub>
 
 <img src="./assets/persona-daniel.png" width="100%">
 
@@ -326,7 +322,7 @@ He personifies the modern self-taught developer who stands out in the Web3 ecosy
 
 <div align="center">
 
-<sub>Figure X - Persona 3</sub>
+<sub>Figure 6 - Persona 3</sub>
 
 <img src="./assets/persona-renata.png" width="100%">
 
@@ -340,7 +336,23 @@ She represents the progressive HR professional working in a constantly changing 
 
 ## 3.1. Architecture Diagram
 
-[FILL IN - Place here the architecture diagram]
+The presented architecture diagram describes the application's technological structure, highlighting the separation between the front-end, back-end (via Internet Computer Canisters), and external integration layers.
+
+<div align="center">
+
+<sub>Figure 7 - Architecture diagram</sub>
+
+<img src="./assets/simple-architecture.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+ The front-end uses modern frameworks and libraries such as React, Tailwind, Node.js, TypeScript, JavaScript, and Vite, ensuring a responsive, modular, and efficient interface for client interaction. This layer is responsible for mediating communication between the user and the services offered by the application. 
+ 
+ The back-end is represented by Canisters hosted on the Internet Computer (ICP), which enable decentralization, scalability, and security of the application's operations. Furthermore, there is external integration with Google's Gemini language model, which can be used to provide artificial intelligence-based features. 
+ 
+ This diagram is essential for visualizing the organization of components, facilitating understanding between developers and stakeholders, and guiding technical decisions throughout development.
 
 ## 3.2. Style Guide
 
@@ -352,7 +364,7 @@ The color palette is an essential element in the visual construction of the Kaiz
 
 <div align="center">
 
-<sub>Figure X - Colors</sub>
+<sub>Figure 8 - Colors</sub>
 
 <img src="./assets/colors.png" width="100%">
 
@@ -372,7 +384,7 @@ The typography used on the Kaizen platform was selected based on legibility, sim
 
 <div align="center">
 
-<sub>Figure X - Typography</sub>
+<sub>Figure 9 - Typography</sub>
 
 <img src="./assets/typography.png" width="100%">
 
@@ -391,7 +403,7 @@ The visual elements of the Kaizen platform were designed to communicate, symboli
 
 <div align="center">
 
-<sub>Figure X - Mascot</sub>
+<sub>Figure 10 - Mascot</sub>
 
 <img src="./assets/mascot.png" width="100%">
 
@@ -403,7 +415,7 @@ The platform's mascot, Kai, is an expressive and welcoming fox, presented in sev
 
 <div align="center">
 
-<sub>Figure X - Logo</sub>
+<sub>Figure 11 - Logo</sub>
 
 <img src="./assets/logo.png" width="100%">
 
@@ -429,7 +441,7 @@ Below are the prototyped screens, which illustrate the application's main functi
 
 <div align="center">
 
-<sub>Figure X - Home</sub>
+<sub>Figure 12 - Home</sub>
 
 <img src="./assets/screens/1.png" width="100%">
 
@@ -441,7 +453,7 @@ The home screen serves as the platform's central navigation point, offering user
 
 <div align="center">
 
-<sub>Figure X - Chat</sub>
+<sub>Figure 13 - Chat</sub>
 
 <img src="./assets/screens/2.png" width="100%">
 
@@ -453,7 +465,7 @@ This interface allows direct communication with the platform's artificial intell
 
 <div align="center">
 
-<sub>Figure X - Tracks</sub>
+<sub>Figure 14 - Tracks</sub>
 
 <img src="./assets/screens/3.png" width="100%">
 
@@ -465,7 +477,7 @@ The paths screen organizes and categorizes the content available on the platform
 
 <div align="center">
 
-<sub>Figure X - Tracks</sub>
+<sub>Figure 15 - Tracks</sub>
 
 <img src="./assets/screens/4.png" width="100%">
 
@@ -477,7 +489,7 @@ Modals provide an in-depth overview of a specific learning path, including its d
 
 <div align="center">
 
-<sub>Figure X - Practice and Proof of Learning</sub>
+<sub>Figure 16 - Practice and Proof of Learning</sub>
 
 <img src="./assets/screens/5.png" width="100%">
 
@@ -489,7 +501,7 @@ In the Practice section, users have access to features that help them review the
 
 <div align="center">
 
-<sub>Figure X - Discover</sub>
+<sub>Figure 17 - Discover</sub>
 
 <img src="./assets/screens/6.png" width="100%">
 
@@ -501,7 +513,7 @@ The Discover feature aims to expand learning possibilities by facilitating the e
 
 <div align="center">
 
-<sub>Figure X - Profile</sub>
+<sub>Figure 18 - Profile</sub>
 
 <img src="./assets/screens/7.png" width="100%">
 
@@ -515,7 +527,7 @@ Furthermore, users have access to their earned certifications, allowing them to 
 
 <div align="center">
 
-<sub>Figure X - Kai's store</sub>
+<sub>Figure 19 - Kai's store</sub>
 
 <img src="./assets/screens/8.png" width="100%">
 
@@ -527,7 +539,7 @@ Kai's store is a gamified interface where users can use platform tokens ($KOIN) 
 
 <div align="center">
 
-<sub>Figure X - settings and community</sub>
+<sub>Figure 20 - settings and community</sub>
 
 <img src="./assets/screens/9.png" width="100%">
 
@@ -539,25 +551,96 @@ The settings screen allows users to adjust their usage preferences, configure no
 
 The community screen aims to strengthen interactions between users, serving as a space for exchange and collaboration. Here, participants can post about their experiences on the platform, share reflections on the learning process, promote created paths, and interact with other members' content. This dynamic contributes to building a network of support and educational engagement, encouraging mutual recognition and collective development.
 
-
-## 3.4. Data Modeling (On-Chain)
-
-### 3.4.1. Smart Contracts Logic (On-Chain)
-
-**Certificate Contract (ERC-721 or ERC-1155 Standard):**
-Main Function:
-Description:
-Validation:
-**Token Contract (ERC-20 Standard):**
-Token Name:
-Main Functions:
-Reward Logic:
-
 # 4. Application Development
 
 ## 4.1. First Version of the Application (MVP)
 
-[FILL IN - Describe and illustrate here what was delivered in the MVP, such as Front-end functionalities and initial integrations.]
+The first version of the Kaizen application MVP has been completed, providing the essential structure of the system, focusing on validating the main usage flows and integrations between the backend and frontend. This initial delivery prioritized user experience, authentication, basic interaction features, and integration with the blockchain layer.
+
+#### Structure and implemented features
+
+In this initial version, the following functional components were delivered:
+
+- **Home page with navigation menu:** Clear interface, with quick access to the main areas of the system.
+- **User authentication system:** Implementation of login, logout, and identity management, integrating with the Motoko backend.
+- **User profile management:** Creation, viewing, and editing of profiles, including nicknames, bios, and roles.
+- **Community dashboard:** Screen for viewing community posts, promoting interaction and engagement among users.
+- **AI Chat (Kai):** Intelligent chat functionality, allowing users to initiate conversations with AI, save history, and dynamic responses.
+- **User Track Management and Display:** View created, in-progress, and completed tracks for each profile.
+
+#### Technical Development Process
+
+Development combined modern technologies, with a clear division between the React/Vite (TypeScript) frontend and the Motoko backend. Hooks and providers were created for authentication, user management, and integration of operations with Motoko canisters. The AI chat system uses asynchronous requests, contextual history, and interaction persistence.
+
+#### Screen Illustrations
+Some of the main screens implemented in this version are:
+
+<div align="center">
+
+<sub>Figure 21 - Home</sub>
+
+<img src="./assets/screens-aplication/home.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 22 - Tracks</sub>
+
+<img src="./assets/screens-aplication/tracks.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 23 - Chat</sub>
+
+<img src="./assets/screens-aplication/chat.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 24 - Discover</sub>
+
+<img src="./assets/screens-aplication/discover.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 25 - Practice</sub>
+
+<img src="./assets/screens-aplication/practice-1.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 26 - Proof of Learning</sub>
+
+<img src="./assets/screens-aplication/proof of learning.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+#### Challenges Faced
+
+Among the main challenges were the secure integration between the frontend and Motoko canisters, the modeling of the decentralized authentication flow, and the management of conversation status with AI, ensuring real-time updates to the interface and consistency of user data.
+
+
+This MVP version validates the essential pillars of the Kaizen platform, serving as a solid foundation for continuous evolution and the inclusion of new features in the next stages of the project.
 
 # 5. Market Study and Marketing Plan
 
@@ -621,7 +704,15 @@ Kaizen's promotion will focus on content marketing and community engagement. Art
 
 # 6. Conclusions and Future Work
 
-[FILL IN - Write how the web application solution achieved the objectives described in section 2 of this document. Indicate strengths and areas for improvement in general.]
+The Kaizen application has established itself as an innovative platform for learning and collectively building knowledge paths in a decentralized environment. By combining modern architecture, blockchain integration, and a focus on user experience, the project allows people to explore and share knowledge in an open, secure, and gamified way.
+
+With the advances achieved to date, Kaizen already offers essential features, such as modular content organization, assistive chat, user profiles, and progress tracking. However, the team recognizes the potential for expansion and improvement of the platform, aiming for ambitious goals for future versions.
+
+Among the main focuses of future development is the implementation of a tokenized rewards system, in which users will be rewarded for performing relevant actions on the platform—such as watching trails, completing stages, contributing content, and interacting socially. This incentive mechanism aims not only to increase engagement but also to value collaboration and active community participation.
+
+Furthermore, a decentralized governance system is planned, allowing users to participate in Kaizen's strategic and evolutionary decisions. Through voting mechanisms, proposals, and deliberations, the community will be able to directly influence the platform's direction, strengthening a sense of belonging and collective autonomy.
+
+These advances, combined with the constant pursuit of improvements in usability, accessibility, internationalization, and integration with new protocols, pave the way for Kaizen to become a benchmark in decentralized, collaborative, and future-oriented education. The commitment remains to building an open, democratic, and increasingly meaningful environment for all its users.
 
 # 7. References
 
