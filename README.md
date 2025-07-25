@@ -166,16 +166,14 @@ chmod +x setup.sh
 ```
 
 The script automatically performs the following steps:
+> Tip: Run `dfx identity get-principal` to get your ID
 
 - Creates the `env.mo` file with the provided data
 - Requests your **Gemini API key**
 - Starts DFX (`--background --clean`)
 - Creates, compiles, generates, and deploys all canisters
 - Requests your **ICP Principal ID**
-> Tip: Run `dfx identity get-principal` to get your ID
 - Deploys the `icrc1_ledger` canister with the correct parameters
-
-> ✅ Everything is done automatically — you just need to provide your credentials when prompted.
 
 #### 🪟 Windows (via WSL)
 
