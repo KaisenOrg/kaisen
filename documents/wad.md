@@ -704,15 +704,17 @@ Kaizen's promotion will focus on content marketing and community engagement. Art
 
 # 6. Conclusions and Future Work
 
-The Kaizen application has established itself as an innovative platform for learning and collectively building knowledge paths in a decentralized environment. By combining modern architecture, blockchain integration, and a focus on user experience, the project allows people to explore and share knowledge in an open, secure, and gamified way.
+Kaizen has established itself as an innovative platform for learning and collectively building knowledge pathways in a decentralized environment. Combining modern architecture, blockchain integration, and a focus on user experience, the project allows people to explore and share knowledge in an open, secure, and gamified way.
 
-With the advances achieved to date, Kaizen already offers essential features, such as modular content organization, assistive chat, user profiles, and progress tracking. However, the team recognizes the potential for expansion and improvement of the platform, aiming for ambitious goals for future versions.
+With the advances achieved to date, Kaizen already offers essential features such as modular content organization, assistive chat, user profiles, and progress tracking. However, the team recognizes the potential for expansion and improvement of the platform, aiming for ambitious goals for future versions.
 
-Among the main focuses of future development is the implementation of a tokenized rewards system, in which users will be rewarded for performing relevant actions on the platform—such as watching trails, completing stages, contributing content, and interacting socially. This incentive mechanism aims not only to increase engagement but also to value collaboration and active community participation.
+Among the main focuses of future development is the implementation of a tokenized rewards system, in which users will be rewarded for performing relevant actions on the platform—such as following trails, completing steps, contributing content, and interacting socially. This incentive mechanism aims not only to increase engagement but also to value collaboration and active community participation.
 
-Furthermore, a decentralized governance system is planned, allowing users to participate in Kaizen's strategic and evolutionary decisions. Through voting mechanisms, proposals, and deliberations, the community will be able to directly influence the platform's direction, strengthening a sense of belonging and collective autonomy.
+Furthermore, a decentralized governance system is being planned, allowing users to participate in Kaizen's strategic and evolutionary decisions. Through mechanisms that allow the community to directly influence the platform's direction, strengthening the sense of belonging and collective autonomy.
 
-These advances, combined with the constant pursuit of improvements in usability, accessibility, internationalization, and integration with new protocols, pave the way for Kaizen to become a benchmark in decentralized, collaborative, and future-oriented education. The commitment remains to building an open, democratic, and increasingly meaningful environment for all its users.
+Another planned advancement is the introduction of the path forking functionality—a mechanism inspired by open-source development practices. With this feature, users will be able to create a personal copy (fork) of any public learning path and freely adapt its structure, content, and flow to suit their individual learning objectives or preferred styles. This opens up possibilities for deeper personalization and experimentation, empowering learners to build truly personalized journeys. Once modified, users will have the option to submit their forked version for review or reintegrate it into the original path, fostering a dynamic ecosystem of collaborative refinement. This not only encourages knowledge diversity and co-creation but also helps identify and elevate the most effective learning experiences for the community as a whole.
+
+These advances, combined with the constant pursuit of improvements in usability, accessibility, internationalization, and integration with new protocols, pave the way for Kaizen to become a benchmark in decentralized, collaborative, and future-oriented education. The commitment remains to build an open, democratic, and increasingly meaningful environment for all its users.
 
 # 7. References
 
