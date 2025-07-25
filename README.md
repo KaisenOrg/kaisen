@@ -141,7 +141,7 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 
 | OS              | Requirements                                                      |
 | --------------- | ----------------------------------------------------------------- |
-| **Linux/macOS** | Node.js 18.x, DFX CLI, npm or yarn                                |
+| **Linux/macOS** | Node.js 18.x, DFX CLI, Git, Gemini API key                               |
 | **Windows**     | WSL 2 with Ubuntu 20.04+, Node.js 18.x (inside WSL), DFX CLI, Git |
 
 > ⚠️ **Note**: DFX runs only on Linux/macOS. Windows users must use WSL (Windows Subsystem for Linux).
@@ -152,15 +152,30 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 
 #### 💻 Linux/macOS
 
+1. Clone the repository and access the folder:
+
 ```bash
 git clone https://github.com/your-username/kaizen.git
 cd kaizen
-npm install
-sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
-dfx start --background
-dfx deploy
-npm run dev
 ```
+2. Grant permission to the script and run:
+
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+The script automatically performs the following steps:
+
+- Creates the `env.mo` file with the provided data
+- Requests your **Gemini API key**
+- Starts DFX (`--background --clean`)
+- Creates, compiles, generates, and deploys all canisters
+- Requests your **ICP Principal ID**
+> Tip: Run `dfx identity get-principal` to get your ID
+- Deploys the `icrc1_ledger` canister with the correct parameters
+
+> ✅ Everything is done automatically — you just need to provide your credentials when prompted.
 
 #### 🪟 Windows (via WSL)
 
@@ -179,13 +194,11 @@ sudo apt install git
 
 git clone https://github.com/your-username/kaizen.git
 cd kaizen
-npm install
-dfx start --background
-dfx deploy
-npm run dev
+chmod +x setup.sh
+./setup.sh
 ```
 
-**Check:** Visit http://localhost:3000 to view the running app.
+**Check:** Visit http://localhost:8080 to view the running app.
 
 ### Data Storage Setup
 
