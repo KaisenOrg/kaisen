@@ -326,11 +326,15 @@ Among the files and folders present in the project root, the following are defin
 
 </div>
 
-Kaizen has become a collaborative and decentralized learning platform, allowing users to explore and share knowledge openly and securely. To date, we've developed key features such as modular content organization, assistive chat, user profiles, and progress tracking.
+Kaizen is consolidating itself as a collaborative and decentralized learning platform, allowing users to explore and share knowledge openly and securely. To date, we have developed important features such as modular content organization, assistive chat, user profiles, and progress tracking.
 
-We faced challenges integrating blockchain and ensuring a seamless user experience, but these obstacles contributed to improving the platform's structure and usability.
+During development, we faced challenges related to integrating with blockchain technology and ensuring a seamless user experience. However, these obstacles are designed to improve the platform's structure and usability.
 
-Looking ahead, our main goals are to implement a tokenized rewards system to encourage user engagement and develop decentralized governance, allowing the community itself to participate in decisions about the platform's direction. We are also committed to continuous improvements in usability, accessibility, and integration with new technologies, making Kaizen increasingly useful and inclusive for everyone.
+For the next steps, our main goals include implementing a tokenized rewards system, which aims to encourage user engagement, and developing decentralized governance, allowing the community itself to participate in decisions regarding platform developments.
+
+Another planned advancement is the introduction of the trail fork functionality. With this feature, users will be able to duplicate an existing trail, customize it according to their interests, and, if desired, contribute to the original trail. This strengthens collaboration, personalized learning, and a sense of belonging to the community.
+
+Finally, we remain committed to continuous improvements in usability, accessibility, and integration with new technologies, making Kaizen increasingly efficient, inclusive, and relevant for all audiences.
 
 ## Development Team
 
