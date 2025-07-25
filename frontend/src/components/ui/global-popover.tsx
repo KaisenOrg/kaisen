@@ -7,6 +7,7 @@ import {
   QuizSectionPreset,
   EssaySectionPreset,
   LoadingPreset,
+  CreateTrackPreset
 } from '@/components/specific/popover-presets';
 import { AlertDialog } from './alert-dialog';
 
@@ -62,6 +63,11 @@ export function GlobalPopover() {
           <LoadingPreset progress={payload.progress} />
         );
 
+      case 'create-track':
+        return (
+          <CreateTrackPreset navigate={payload.navigate} />
+        );
+
       case 'generic':
         return (
           <GenericPopupContent
@@ -78,7 +84,7 @@ export function GlobalPopover() {
     }
   };
 
-  if (payload?.useAlertDialog || payload?.type === 'loading') return (
+  if ((payload?.type === 'generic' && payload?.useAlertDialog) || payload?.type === 'loading') return (
     <AlertDialog open={isOpen} onOpenChange={(open) => !open && close()}>
       {renderContent()}
     </AlertDialog>

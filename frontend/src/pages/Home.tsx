@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect } from 'react';
 import HomeButton from "@/components/ui/home-button";
 import CommunityCard from "@/components/ui/community-card";
@@ -9,21 +7,20 @@ import { useActor } from '@/lib/agent';
 import { useTrackStore } from '@/stores/useTrackStore';
 import { usePopoverStore } from '@/stores/usePopoverStore';
 import { useTracksActions } from '@/hooks/useTracksActions';
+import { useNavigate } from 'react-router-dom';
 import '@/globals.css';
 
 export default function Home() {
-  const { tracks, isLoading, error } = useTrackStore();
+  const { open, close } = usePopoverStore();
+  const { tracks, isLoading } = useTrackStore();
   const { fetchTracks, injectSampleTracks } = useTracksActions();
   const tracksActor = useActor('tracks_backend');
-  const { open, close } = usePopoverStore();
+  const navigate = useNavigate();
 
-  const handleOpenConfirmationPopover = () => {
+  const handleOpenCreateTrackPopover = () => {
     open({
-      type: 'generic',
-      title: 'Confirmar Ação',
-      description: 'Tem certeza que deseja continuar?',
-      content: <p>Esta ação não poderá ser desfeita.</p>,
-      onConfirm: () => alert('Ação confirmada!'),
+      type: 'create-track',
+      navigate
     });
   };
 
@@ -52,7 +49,7 @@ export default function Home() {
         transition: 'background 0.3s, color 0.3s',
       }}
     >
-      <HomeButton onClick={handleOpenConfirmationPopover} />
+      <HomeButton onClick={handleOpenCreateTrackPopover} />
 
       {/* Seção "Continue de onde parou" (pode be implemented in the future) */}
       <div className="mt-6">
@@ -84,18 +81,6 @@ export default function Home() {
         >
           Browse and join learning tracks created by the community
         </h3>
-
-        {/* Lógica para exibir o estado de carregamento ou erro */}
-        {isLoading && (
-          <p style={{ color: 'var(--muted-foreground)' }} className="mt-4">
-            Carregando trilhas...
-          </p>
-        )}
-        {error && (
-          <p style={{ color: 'var(--destructive)' }} className="mt-4">
-            {error}
-          </p>
-        )}
 
         <div className="flex flex-wrap gap-4 mt-4">
           {!isLoading && tracks.map((track, i) => (

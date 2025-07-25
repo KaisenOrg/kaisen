@@ -25,8 +25,16 @@ export function useTracksActions() {
     if (!tracksActor) return;
     setLoading(true);
     try {
-      await tracksActor.createTrack(data.title, data.description, data.sections.map(toMotokoSection));
+      const res = await tracksActor.createTrack(data.title, data.description, data.sections.map(toMotokoSection));
+
+      if ("err" in res) {
+        setError(res.err);
+        return;
+      }
+      
       await fetchTracks();
+
+      return res.ok;
     } catch (err) {
       console.error(err);
       setError("Erro ao criar trilha");

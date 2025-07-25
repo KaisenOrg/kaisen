@@ -69,7 +69,7 @@ export default function TrackPage() {
   };
 
   const canvasWidth = useMemo(() => {
-    return Math.max(selectedTrack ? selectedTrack.sections.length * (cardDimensions.width + 120) + 450 : 0, screenWidth);
+    return Math.max(selectedTrack ? selectedTrack.sections.length * (cardDimensions.width + 120) + 600 : 0, screenWidth);
   }, [screenWidth]);
 
   return (

@@ -79,7 +79,7 @@ actor {
     "  \"system_instruction\": {\n" #
     "    \"parts\": [ { \"text\": \"" # kaiInstructions # "\" } ]\n" #
     "  },\n" #
-    (if useTrackFormat { trackFormatConfig # ",\n" } else { "" }) #
+    (if useTrackFormat { trackFormatConfig } else { "" }) #
     // O array 'contents' agora é montado dinamicamente
     "  \"contents\": [" # historyContent # promptContent # "]\n" #
     "}";

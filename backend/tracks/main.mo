@@ -1,5 +1,6 @@
 import Trie "mo:base/Trie";
 import Principal "mo:base/Principal";
+import Result "mo:base/Result";
 import Time "mo:base/Time";
 import Array "mo:base/Array";
 import Error "mo:base/Error";
@@ -28,24 +29,28 @@ actor {
 
   // --- FUNÇÕES PÚBLICAS ---
 
-  public shared (msg) func createTrack(title : Text, description : Text, sections : [Types.Section]) : async Text {
+  public shared (msg) func createTrack(title : Text, description : Text, sections : [Types.Section]) : async Result.Result<Text, Text> {
     let caller = msg.caller;
     let newId = generateUniqueId();
     let now = Time.now();
 
-    let newTrack : Types.Track = {
-      id = newId;
-      title = title;
-      description = description;
-      authorId = Principal.toText(caller);
-      createdAt = now;
-      sections = sections;
+    try {
+
+      let newTrack : Types.Track = {
+        id = newId;
+        title = title;
+        description = description;
+        authorId = Principal.toText(caller);
+        createdAt = now;
+        sections = sections;
+      };
+
+      tracks := Trie.put(tracks, key(newId), Text.equal, newTrack).0;
+
+      return #ok(newId);
+    } catch (_err) {
+      return #err("Failed to create track.");
     };
-
-    // Usando .0 para pegar apenas a nova trie.
-    tracks := Trie.put(tracks, key(newId), Text.equal, newTrack).0;
-
-    return newId;
   };
 
   public query func getTrackById(trackId : Text) : async ?Types.Track {

@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 
 type PopoverPayload =
   | { type: 'section'; data: Section, useAlertDialog?: boolean }
+  | { type: 'create-track'; navigate: (route: string) => void, useAlertDialog?: boolean }
   | {
     type: 'generic';
     title: string;
