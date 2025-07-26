@@ -58,7 +58,7 @@ export function QuizSectionPreset({ title, pageData }: Props) {
   };
 
   return (
-    <DialogContent>
+    <DialogContent style={{ borderColor: 'var(--border)' }}>
       <DialogHeader>
         <DialogTitle className="text-2xl">
           {title}

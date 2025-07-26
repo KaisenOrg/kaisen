@@ -62,9 +62,6 @@ export default function Home() {
 
         <div className="flex mt-4 gap-4">
           <ContinueCard />
-          <ContinueCard />
-          <ContinueCard />
-          <ContinueCard />
         </div>
       </div>
 

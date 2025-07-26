@@ -97,7 +97,7 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
   };
 
   return (
-    <DialogContent>
+    <DialogContent style={{ borderColor: 'var(--border)' }}>
       <DialogHeader>
         <DialogTitle className="text-2xl">
           {title}

@@ -76,7 +76,7 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
   };
 
   return (
-    <DialogContent className="max-w-xl">
+    <DialogContent className="max-w-xl" style={{ borderColor: 'var(--border)' }}>
       <DialogTitle className="text-2xl font-semibold">Create Track</DialogTitle>
       <DialogDescription>
         Generate a learning track based on a topic and confirm to add it.

@@ -19,7 +19,7 @@ interface Props {
 function ElementRenderer({ element }: { element: PageElement }) {
   if ("Text" in element) {
     return (
-      <p className="mb-4 text-secondary-foreground leading-relaxed">
+      <p className="mb-4 text-secondary-foreground leading-relaxed" >
         {element.Text.value}
       </p>
     );
@@ -61,7 +61,7 @@ export function ContentSectionPreset({ title, pageData }: Props) {
   const { close } = usePopoverStore();
 
   return (
-    <DialogContent showCloseButton={false} className="sm:max-w-3xl max-h-[80vh] overflow-y-auto">
+    <DialogContent showCloseButton={false} className="sm:max-w-3xl max-h-[80vh] overflow-y-auto" style={{ borderColor: 'var(--border)' }}>
       <DialogHeader>
         <DialogTitle className="text-2xl">{title}</DialogTitle>
         <DialogDescription>{pageData.title}</DialogDescription>
