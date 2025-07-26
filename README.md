@@ -111,7 +111,6 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 
 - **Tailwind CSS** – Utility-first CSS framework for fast, responsive design.
 - **CSS** – Custom styling support on top of Tailwind.
-- **next-themes** – Theme-switching library with dark/light mode support.
 
 ### Web3 & Internet Computer
 
