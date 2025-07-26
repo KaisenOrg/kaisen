@@ -111,7 +111,6 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 
 - **Tailwind CSS** – Utility-first CSS framework for fast, responsive design.
 - **CSS** – Custom styling support on top of Tailwind.
-- **next-themes** – Theme-switching library with dark/light mode support.
 
 ### Web3 & Internet Computer
 
@@ -141,8 +140,8 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 
 | OS              | Requirements                                                      |
 | --------------- | ----------------------------------------------------------------- |
-| **Linux/macOS** | Node.js 18.x, DFX CLI, Git, Gemini API key                               |
-| **Windows**     | WSL 2 with Ubuntu 20.04+, Node.js 18.x (inside WSL), DFX CLI, Git |
+| **Linux/macOS** | Node.js 22.x, DFX CLI, Git, Gemini API key                               |
+| **Windows**     | WSL 2 with Ubuntu 20.04+, Node.js 22.x (inside WSL), DFX CLI, Git |
 
 > ⚠️ **Note**: DFX runs only on Linux/macOS. Windows users must use WSL (Windows Subsystem for Linux).
 
@@ -185,18 +184,31 @@ The script automatically performs the following steps:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
+# Install Node.js 22.x
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs build-essential
+
+# Install DFX (Internet Computer SDK)
 sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
-sudo apt install git
+
+# Install Git and dos2unix
+sudo apt install git dos2unix
 
 git clone https://github.com/KaisenOrg/kaisen.git
 cd kaisen
+
+# Fix line endings (required if inside /mnt/c/...)
+dos2unix setup.sh
+
 chmod +x setup.sh
 ./setup.sh
 ```
 
-**Check:** Visit http://localhost:8080 to view the running app.
+> ⚠️ Important: If you cloned the project in a Windows directory (e.g., /mnt/c/...), running `dos2unix setup.sh` is required to avoid execution errors like:
+> -bash: ./setup.sh: cannot execute: required file not found
+
+**Check:** Run `npm run dev` and visit http://localhost:5173 to view the running app or enter the kaisen_frontend link returned by setup.sh.
 
 ### Data Storage Setup
 
@@ -305,7 +317,7 @@ The diagram below provides a simplified overview of Kaizen’s architecture. Use
 
 Access the materials below, which include the demo video and pitch deck, to gain a more complete understanding of the project—from its proposal and technical operation to the strategic vision of the solution.
 
-- 🎥 [Demo Video (with walkthrough and architecture overview)](https://www.youtube.com/seu-link-demo)
+- 🎥 [Demo Video (with walkthrough and architecture overview)](https://youtu.be/gB6UmWj5Ihc)
 - 🖼️ [Pitch Deck and Presentation (problem, solution, roadmap)](https://www.youtube.com/watch?v=nTzzAbid1Ig)
 
 ## Project Structure
