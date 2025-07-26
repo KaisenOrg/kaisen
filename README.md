@@ -303,9 +303,10 @@ The diagram below provides a simplified overview of Kaizen’s architecture. Use
 
 ## Demo
 
-_Colocar vídeo da demo_
-_Colocar Dapp funcional_
-_Colocar vídeo da apresentação_
+Access the materials below, which include the demo video and pitch deck, to gain a more complete understanding of the project—from its proposal and technical operation to the strategic vision of the solution.
+
+- 🎥 [Demo Video (com walkthrough e overview de arquitetura)](https://www.youtube.com/seu-link-demo)
+- 🖼️ [Pitch Deck e Apresentação (problema, solução, roadmap)](https://www.youtube.com/watch?v=nTzzAbid1Ig)
 
 ## Project Structure
 
