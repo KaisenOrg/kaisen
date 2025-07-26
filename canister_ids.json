@@ -1,5 +1,8 @@
 {
   "chats_backend": {
     "ic": "atduo-raaaa-aaaab-abqbq-cai"
+  },
+  "icrc1_ledger": {
+    "ic": "aigil-lyaaa-aaaab-abqda-cai"
   }
 }
