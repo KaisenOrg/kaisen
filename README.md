@@ -184,18 +184,31 @@ The script automatically performs the following steps:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+
+# Install Node.js 22.x
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs build-essential
+
+# Install DFX (Internet Computer SDK)
 sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
-sudo apt install git
+
+# Install Git and dos2unix
+sudo apt install git dos2unix
 
 git clone https://github.com/KaisenOrg/kaisen.git
 cd kaisen
+
+# Fix line endings (required if inside /mnt/c/...)
+dos2unix setup.sh
+
 chmod +x setup.sh
 ./setup.sh
 ```
 
-**Check:** Visit http://localhost:8080 to view the running app.
+> ⚠️ Important: If you cloned the project in a Windows directory (e.g., /mnt/c/...), running `dos2unix setup.sh` is required to avoid execution errors like:
+> -bash: ./setup.sh: cannot execute: required file not found
+
+**Check:** Run `npm run dev` and visit http://localhost:5173 to view the running app or enter the kaisen_frontend link returned by setup.sh.
 
 ### Data Storage Setup
 
