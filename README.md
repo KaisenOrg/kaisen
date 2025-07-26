@@ -141,8 +141,8 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 
 | OS              | Requirements                                                      |
 | --------------- | ----------------------------------------------------------------- |
-| **Linux/macOS** | Node.js 18.x, DFX CLI, Git, Gemini API key                               |
-| **Windows**     | WSL 2 with Ubuntu 20.04+, Node.js 18.x (inside WSL), DFX CLI, Git |
+| **Linux/macOS** | Node.js 22.x, DFX CLI, Git, Gemini API key                               |
+| **Windows**     | WSL 2 with Ubuntu 20.04+, Node.js 22.x (inside WSL), DFX CLI, Git |
 
 > ⚠️ **Note**: DFX runs only on Linux/macOS. Windows users must use WSL (Windows Subsystem for Linux).
 
@@ -185,7 +185,7 @@ The script automatically performs the following steps:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs build-essential
 sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
 sudo apt install git
