@@ -259,11 +259,12 @@ dfx deploy --network ic
 
 ### Mainnet Canister IDs
 
-- `kaizen_frontend`: `INSERIR ID REAL`
-- `kai_backend`: `INSERIR ID REAL`
-- `tracks_backend`: `INSERIR ID REAL`
-- `nft_certificates`: `INSERIR ID REAL`
-- `chats_backend`: `INSERIR ID REAL`
+- `kaizen_frontend`: `NOT RELEASED YET`
+- `kai_backend`: `NOT RELEASED YET`
+- `tracks_backend`: `NOT RELEASED YET`
+- `nft_certificates`: `NOT RELEASED YET`
+- `chats_backend`: `atduo-raaaa-aaaab-abqbq-cai`
+- `icrc1_ledger`: `aigil-lyaaa-aaaab-abqda-cai`
 
 ## System Architecture
 
