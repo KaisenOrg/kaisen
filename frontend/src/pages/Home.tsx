@@ -1,43 +1,42 @@
-import { useEffect } from 'react';
-import HomeButton from "@/components/ui/home-button";
-import CommunityCard from "@/components/ui/community-card";
-import ContinueCard from '@/components/ui/continue-card';
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import { useActor } from '@/lib/agent';
-import { useTrackStore } from '@/stores/useTrackStore';
-import { usePopoverStore } from '@/stores/usePopoverStore';
-import { useTracksActions } from '@/hooks/useTracksActions';
-import { useNavigate } from 'react-router-dom';
-import '@/globals.css';
+import HomeButton from "@/components/ui/home-button"
+import CommunityCard from "@/components/ui/community-card"
+import ContinueCard from '@/components/ui/continue-card'
+
+import { useActor } from '@/lib/agent'
+import { useTrackStore } from '@/stores/useTrackStore'
+import { usePopoverStore } from '@/stores/usePopoverStore'
+import { useTracksActions } from '@/hooks/useTracksActions'
+
+import '@/globals.css'
 
 export default function Home() {
-  const { open, close } = usePopoverStore();
-  const { tracks, isLoading } = useTrackStore();
-  const { fetchTracks, injectSampleTracks } = useTracksActions();
-  const tracksActor = useActor('tracks_backend');
-  const navigate = useNavigate();
+  const { open, close } = usePopoverStore()
+  const { tracks, isLoading } = useTrackStore()
+  const { fetchTracks, injectSampleTracks } = useTracksActions()
+  const tracksActor = useActor('tracks_backend')
+  const navigate = useNavigate()
 
   const handleOpenCreateTrackPopover = () => {
-    open({
-      type: 'create-track',
-      navigate
-    });
-  };
+    open({ type: 'create-track', navigate })
+  }
 
   useEffect(() => {
-    if (!tracksActor) return;
+    if (!tracksActor) return
 
     open({ type: 'loading' })
 
     fetchTracks()
       .then(async () => {
         if (tracks?.length === 0) {
-          await injectSampleTracks();
+          await injectSampleTracks()
         }
 
-        close();
-      });
-  }, [tracksActor]);
+        close()
+      })
+  }, [tracksActor])
 
   return (
     <main
@@ -96,5 +95,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  );
+  )
 }

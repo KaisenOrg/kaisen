@@ -74,7 +74,6 @@ export default function SettingsProfilePage() {
     toast.success("Perfil atualizado com sucesso!");
   };
 
-  // Store principal (replace with real one if available)
   const STORE_PRINCIPAL = Principal.fromText("aaaaa-aa");
   const { transfer } = useKoin(user?.principal || null);
 
@@ -84,7 +83,7 @@ export default function SettingsProfilePage() {
       return;
     }
     try {
-      const amount = BigInt(250_00000000); // 250 koins (assuming 8 decimals)
+      const amount = BigInt(250_00000000);
       await transfer(STORE_PRINCIPAL, amount);
       alert("Compra realizada com sucesso! 250 Koins pagos.");
     } catch (err) {

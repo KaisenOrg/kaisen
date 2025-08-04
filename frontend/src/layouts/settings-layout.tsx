@@ -1,16 +1,16 @@
-import { PageHeader } from "@/components/general/page-header";
-import { UserIcon, AdjustmentsVerticalIcon, WalletIcon } from "@heroicons/react/24/outline";
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom'
+import { PageHeader } from '@/components/general/page-header'
+import { UserIcon, AdjustmentsVerticalIcon, WalletIcon } from '@heroicons/react/24/outline'
 
 export default function SettingsLayout() {
   const tabs = [
-    { value: "/", label: "Profile", icon: UserIcon },
-    { value: "/preferences", label: "Preferences", icon: AdjustmentsVerticalIcon },
-    { value: "/wallets", label: "Wallets", icon: WalletIcon },
-  ];
+    { value: '/', label: 'Profile', icon: UserIcon },
+    { value: '/preferences', label: 'Preferences', icon: AdjustmentsVerticalIcon },
+    { value: '/wallets', label: 'Wallets', icon: WalletIcon },
+  ]
 
   return (
-    <main className="">
+    <main>
       <PageHeader
         title="Lorem ipsum"
         subtitle="Lorem ipsum dolor sit amet"
@@ -20,5 +20,5 @@ export default function SettingsLayout() {
       />
       <Outlet />
     </main>
-  );
+  )
 }

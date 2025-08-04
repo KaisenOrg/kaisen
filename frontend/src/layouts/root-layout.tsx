@@ -1,8 +1,8 @@
-import "@nfid/identitykit/react/styles.css";
+import '@nfid/identitykit/react/styles.css'
 
-import Header from '@/components/ui/header';
-import Sidebar from '@/components/ui/sidebar';
-import { Outlet } from "react-router-dom";
+import Header from '@/components/ui/header'
+import Sidebar from '@/components/ui/sidebar'
+import { Outlet } from 'react-router-dom'
 
 export default function RootLayout() {
   return (
@@ -15,5 +15,5 @@ export default function RootLayout() {
         </div>
       </div>
     </div>
-  );
+  )
 }

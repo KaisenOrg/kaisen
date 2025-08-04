@@ -1,65 +1,65 @@
-import { useAuth } from "@/hooks/useAuth";
-import { useUser } from "@/hooks/useUser";
-import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
+import { useAuth } from '@/hooks/useAuth'
+import { useUser } from '@/hooks/useUser'
+import { Button } from '@/components/ui/button'
 
 export default function UserTestPage() {
-  const { login, logout, isAuthenticated, principal } = useAuth();
-  const { user, register, fetchUser, update } = useUser();
+  const { login, logout, isAuthenticated, principal } = useAuth()
+  const { user, register, fetchUser, update } = useUser()
 
-  const [creating, setCreating] = useState(false);
-  const [editing, setEditing] = useState(false);
+  const [creating, setCreating] = useState(false)
+  const [editing, setEditing] = useState(false)
 
   const [formData, setFormData] = useState({
-    nickname: "",
-    about: "",
-    role: "",
-  });
+    nickname: '',
+    about: '',
+    role: '',
+  })
 
   useEffect(() => {
     if (isAuthenticated) {
-      fetchUser();
+      fetchUser()
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated])
 
   useEffect(() => {
     if (user) {
       setFormData({
         nickname: user.nickname,
-        about: user.about || "",
-        role: user.role || "",
-      });
+        about: user.about || '',
+        role: user.role || '',
+      })
     }
-  }, [user]);
+  }, [user])
 
   const handleCreateUser = async () => {
-    setCreating(true);
+    setCreating(true)
     try {
       await fetchUser().finally(async () => {
         if (!user) {
-          console.log("Creating testing user...");
+          console.log('Creating testing user...')
           await register({
             username: `user-${Math.floor(Math.random() * 1000)}`,
-            nickname: "Usuário de Teste",
-            about: "Usuário criado via teste",
-            role: "Dev",
-          });
+            nickname: 'Usuário de Teste',
+            about: 'Usuário criado via teste',
+            role: 'Dev',
+          })
         }
-      });
+      })
     } catch (e) {
-      console.error(e);
-      alert("Erro ao criar usuário");
+      console.error(e)
+      alert('Erro ao criar usuário')
     } finally {
-      setCreating(false);
+      setCreating(false)
     }
-  };
+  }
 
   const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
 
   const handleSave = async () => {
-    if (!user) return;
+    if (!user) return
 
     try {
       await update({
@@ -67,17 +67,17 @@ export default function UserTestPage() {
         nickname: formData.nickname,
         about: formData.about,
         role: formData.role,
-      });
-      setEditing(false);
-      alert("Usuário atualizado com sucesso!");
+      })
+      setEditing(false)
+      alert('Usuário atualizado com sucesso!')
     } catch (e) {
-      console.error(e);
-      alert("Erro ao atualizar o usuário");
+      console.error(e)
+      alert('Erro ao atualizar o usuário')
     }
-  };
+  }
 
   function handleLogin() {
-    login();
+    login()
   }
 
   if (!isAuthenticated) {
@@ -93,7 +93,7 @@ export default function UserTestPage() {
           </Button>
         </div>
       </main>
-    );
+    )
   }
 
   return (
@@ -172,5 +172,5 @@ export default function UserTestPage() {
 
       <Button onClick={logout} variant="outline">Desconectar</Button>
     </main>
-  );
+  )
 }

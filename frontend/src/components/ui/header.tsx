@@ -38,8 +38,8 @@ export default function Header() {
     }
 
     try {
-      const receiver = user.principal; // Substitua pelo destinatário real
-      const amount = BigInt(1_000_000_000); // 0.0001 Koin
+      const receiver = user.principal;
+      const amount = BigInt(1_000_000_000);
 
       await transfer(receiver, amount);
       alert("Transferência realizada!");
@@ -53,7 +53,6 @@ export default function Header() {
 
   return (
     <header className="flex items-center h-1/11 px-4 border-b-2 bg-background" style={{ borderColor: 'var(--border)' }}>
-      {/* Left side: Menu and Logo */}
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" className="w-10 h-10" onClick={toggleSidebar}>
           <img
@@ -74,17 +73,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Center: Search Input */}
       <div className="flex-1 flex justify-center">
         <div className="w-full max-w-2xl">
           <ActionSearchBar />
         </div>
       </div>
 
-      {/* Right side: Notifications and User Avatar */}
       <div className="flex items-center gap-4">
-
-        {/* Tokenomics Popover */}
         <Popover>
           <PopoverTrigger asChild>
             <Button

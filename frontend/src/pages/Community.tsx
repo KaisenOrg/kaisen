@@ -1,4 +1,4 @@
-import { PostCard } from "@/components/specific/community/post-card";
+import { PostCard } from '@/components/specific/community/post-card'
 
 export default function CommunityPage() {
   return (
@@ -63,5 +63,5 @@ Além disso, troquei do Yarn para o PNPM e o install das deps mudou de 24s para 
         />
       </div>
     </main>
-  );
+  )
 }

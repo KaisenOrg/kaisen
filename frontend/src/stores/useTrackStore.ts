@@ -1,15 +1,15 @@
-import { create } from "zustand";
-import type { Track } from "@/types";
+import { create } from 'zustand'
+import type { Track } from '@/types'
 
 interface TrackStore {
-  tracks: Track[];
-  isLoading: boolean;
-  error: string | null;
+  tracks: Track[]
+  isLoading: boolean
+  error: string | null
 
-  setTracks: (tracks: Track[]) => void;
-  setLoading: (loading: boolean) => void;
-  setError: (error: string | null) => void;
-  clear: () => void;
+  setTracks: (tracks: Track[]) => void
+  setLoading: (loading: boolean) => void
+  setError: (error: string | null) => void
+  clear: () => void
 }
 
 export const useTrackStore = create<TrackStore>((set) => ({
@@ -20,4 +20,4 @@ export const useTrackStore = create<TrackStore>((set) => ({
   setLoading: (isLoading) => set({ isLoading }),
   setError: (error) => set({ error }),
   clear: () => set({ tracks: [], isLoading: false, error: null }),
-}));
+}))

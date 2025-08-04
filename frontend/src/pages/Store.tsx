@@ -1,27 +1,27 @@
-import ItemCard from "@/components/specific/store/item-card";
-import { useKoin } from "@/hooks/useKoin";
-import { Principal } from "@dfinity/principal";
-import { useUser } from "@/hooks/useUser";
+import { Principal } from '@dfinity/principal'
+import { useKoin } from '@/hooks/useKoin'
+import { useUser } from '@/hooks/useUser'
+import ItemCard from '@/components/specific/store/item-card'
 
 export default function Store() {
 
-  const { user } = useUser();
-  const STORE_PRINCIPAL = Principal.fromText("aaaaa-aa");
-  const { transfer } = useKoin(user?.principal || null);
+  const { user } = useUser()
+  const STORE_PRINCIPAL = Principal.fromText('aaaaa-aa')
+  const { transfer } = useKoin(user?.principal || null)
 
   const handleBuy = async () => {
     if (!user?.principal) {
-      alert("User not authenticated!");
-      return;
+      alert('User not authenticated!')
+      return
     }
     try {
-      const amount = BigInt(200_00000000); // 250 koins (assuming 8 decimals)
-      await transfer(STORE_PRINCIPAL, amount);
-      alert("Compra realizada com sucesso! 250 Koins pagos.");
+      const amount = BigInt(200_00000000)
+      await transfer(STORE_PRINCIPAL, amount)
+      alert('Compra realizada com sucesso! 250 Koins pagos.')
     } catch (err) {
-      alert("Erro ao realizar pagamento: " + (err instanceof Error ? err.message : String(err)));
+      alert('Erro ao realizar pagamento: ' + (err instanceof Error ? err.message : String(err)))
     }
-  };
+  }
 
   return (
     <main
@@ -35,10 +35,7 @@ export default function Store() {
     >
 
       <div className="mt-6">
-        <h2
-          className="text-lg font-semibold"
-          style={{ color: 'var(--foreground)' }}
-        >
+        <h2 className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>
           Kai's Store
         </h2>
         <h3
@@ -71,5 +68,5 @@ export default function Store() {
         />
       </div>
     </main>
-  );
+  )
 }

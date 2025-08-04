@@ -26,7 +26,7 @@ export const ProfileSidebar = () => {
     { href: "#activities", title: "Activities", Icon: CubeTransparentIcon },
     { href: "#metrics", title: "Metrics", Icon: BoltIcon },
     { href: "#achievements", title: "Achievements", Icon: CheckCircleIcon },
-    { href: "#trailsCreated", title: "Trails Created", Icon: BookmarkSquareIcon }
+    { href: "#tracksCreated", title: "Tracks Created", Icon: BookmarkSquareIcon }
   ]
 
   return (

@@ -25,7 +25,6 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { useSidebarStore } from "@/stores/useSidebarStore";
 
-// A single component to handle the link rendering logic
 type NavLinkProps = {
   name: string;
   href: string;
@@ -74,7 +73,6 @@ export default function Sidebar() {
   const pathname = useLocation().pathname;
   const { isCollapsed } = useSidebarStore();
 
-  // Map your links to real routes
   const mainLinks = [
     { name: "Home", href: "/", Icon: OutlineSquares2X2Icon, SolidIcon: SolidSquares2X2Icon },
     { name: "Kai", href: "/kai", Icon: OutlineSparklesIcon, SolidIcon: SolidSparklesIcon },
@@ -96,22 +94,18 @@ export default function Sidebar() {
     { name: "Help", href: "/help", Icon: OutlineQuestionMarkCircleIcon, SolidIcon: SolidQuestionMarkCircleIcon },
   ];
 
-  // Helper to check if the current route matches the link
   const isSelected = (href: string) => {
-    // Exact match or startsWith for subroutes
     return pathname === href || pathname.startsWith(href + "/");
   };
 
   return (
     <aside className={`h-full border-r-2 border-[var(--sidebar-border)] bg-[var(--sidebar)] text-[var(--sidebar-foreground)] flex flex-col p-3 transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-56'}`}>
       <div className="flex-grow">
-        {/* Top-level navigation */}
         <nav className="space-y-1">
           {mainLinks.map((link) => (
             <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
           ))}
         </nav>
-        {/* Progress Section */}
         {isCollapsed ? (
           <div className="mt-6">
             <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" />
@@ -136,7 +130,6 @@ export default function Sidebar() {
             </nav>
           </div>
         )}
-        {/* Community Section */}
         {isCollapsed ? (
           <div className="mt-6">
             <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" />
@@ -162,7 +155,6 @@ export default function Sidebar() {
           </div>
         )}
       </div>
-      {/* Footer Section */}
       <div>
         <nav className="space-y-1">
           {footerLinks.map((link) => (

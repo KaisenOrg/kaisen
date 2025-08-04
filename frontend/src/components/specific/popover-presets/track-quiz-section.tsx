@@ -14,14 +14,14 @@ export function QuizSectionPreset({ title, pageData }: Props) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]); // guarda as questões já respondidas
+  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
   const [showResult, setShowResult] = useState(false);
 
   const question = pageData[currentQuestion];
   const isLastQuestion = currentQuestion === pageData.length - 1;
 
   const handleSelect = (index: number) => {
-    if (selected !== null) return; // Evita selecionar de novo
+    if (selected !== null) return;
 
     setSelected(index);
 
@@ -94,7 +94,7 @@ export function QuizSectionPreset({ title, pageData }: Props) {
                       : "opacity-60"
                   )
                 )}
-                disabled={selected !== null} // Desativa após escolha
+                disabled={selected !== null}
               >
                 <span className={cn(
                   "border-2 border-zinc-800 rounded-full w-3.5 h-4/5 absolute left-0 top-1/2 -translate-y-1/2",

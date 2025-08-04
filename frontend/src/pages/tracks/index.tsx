@@ -59,7 +59,6 @@ export default function TrackPage() {
     open({ type: 'section', data: section });
   };
 
-  // Função para determinar o texto do botão com base no tipo de conteúdo
   const getButtonTextForContent = (content: Section['content']): string => {
     if ('Page' in content) return 'Ler';
     if ('Quiz' in content) return 'Iniciar Quiz';

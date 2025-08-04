@@ -5,7 +5,6 @@ export default function HomeButton({ onClick }: { onClick?: () => void }) {
   const divRef = useRef<HTMLDivElement>(null);
   let animationFrame: number | null = null;
 
-  // Spotlight state
   const [spotlight, setSpotlight] = useState({ x: 50, y: 50, opacity: 0 });
 
   const animateTransform = (target: HTMLDivElement, to: { x: number; y: number; scale: number; shadow: number }) => {
@@ -21,10 +20,8 @@ export default function HomeButton({ onClick }: { onClick?: () => void }) {
 
     const { clientX, clientY, currentTarget } = e;
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
-    const x = ((clientX - left - width / 2) / (width / 2)) * 6; // max 6deg
-    const y = ((clientY - top - height / 2) / (height / 2)) * 6; // max 6deg
-
-    // Calculate spotlight position as percentage
+    const x = ((clientX - left - width / 2) / (width / 2)) * 6;
+    const y = ((clientY - top - height / 2) / (height / 2)) * 6;
     const px = ((clientX - left) / width) * 100;
     const py = ((clientY - top) / height) * 100;
     setSpotlight({ x: px, y: py, opacity: 1 });
@@ -38,7 +35,6 @@ export default function HomeButton({ onClick }: { onClick?: () => void }) {
     if (!divRef.current) return;
     if (animationFrame) cancelAnimationFrame(animationFrame);
 
-    // Animate back with a springy effect
     divRef.current.style.transition = "transform 0.5s cubic-bezier(.22,1,.36,1), box-shadow 0.5s cubic-bezier(.22,1,.36,1)";
     divRef.current.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)";
     divRef.current.style.boxShadow = "0 8px 24px 0 rgba(0,0,0,0.10)";
@@ -61,7 +57,6 @@ export default function HomeButton({ onClick }: { onClick?: () => void }) {
         borderColor: "var(--border)",
       }}
     >
-      {/* Spotlight overlay */}
       <div
         style={{
           pointerEvents: "none",
@@ -70,9 +65,9 @@ export default function HomeButton({ onClick }: { onClick?: () => void }) {
           left: 0,
           width: "100%",
           height: "100%",
-          opacity: spotlight.opacity * 0.4, // reduce max opacity for subtlety
+          opacity: spotlight.opacity * 0.4,
           transition: "opacity 0.3s",
-          background: `radial-gradient(circle at ${spotlight.x}% ${spotlight.y}%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 60%, transparent 80%)`, // lower alpha values
+          background: `radial-gradient(circle at ${spotlight.x}% ${spotlight.y}%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 60%, transparent 80%)`,
           zIndex: 1,
         }}
       />

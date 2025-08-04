@@ -23,7 +23,6 @@ export function DraggableBackground({
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     if (e.button !== 0 || !viewportRef.current) return;
 
-    // Foca no viewport para que ele possa capturar eventos de teclado, se necessário
     viewportRef.current.focus();
     setIsDragging(true);
     dragStartRef.current = {
@@ -51,11 +50,9 @@ export function DraggableBackground({
     const viewportWidth = viewportRef.current.clientWidth;
     const viewportHeight = viewportRef.current.clientHeight;
 
-    // Calcula a nova posição do canvas
     let newX = e.clientX - dragStartRef.current.x;
     let newY = e.clientY - dragStartRef.current.y;
 
-    // LÓGICA DOS LIMITES (BOUNDING)
     newX = Math.min(newX, 0);
     newX = Math.max(newX, viewportWidth - canvasWidth);
     newY = Math.min(newY, 0);
@@ -64,7 +61,6 @@ export function DraggableBackground({
     setPosition({ x: newX, y: newY });
   };
 
-  // Objeto de estilo para os valores dinâmicos do canvas
   const canvasStyle: CSSProperties = {
     width: canvasWidth,
     height: canvasHeight,
@@ -72,10 +68,9 @@ export function DraggableBackground({
   };
 
   return (
-    // 'outline-none' remove o anel de foco que pode aparecer.
     <div
       ref={viewportRef}
-      tabIndex={0} // Permite que a div receba foco
+      tabIndex={0}
       className={`relative overflow-hidden cursor-grab outline-none ${className}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}

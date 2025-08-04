@@ -4,7 +4,7 @@ import { Button } from "./button";
 type ToggleButtonProps = {
   isExpanded: boolean;
   setIsExpanded: (value: boolean) => void;
-  showCondition: boolean; // condição para exibir o botão (ex: cards.length > 3)
+  showCondition: boolean;
 };
 
 export default function ToggleButton({

@@ -22,7 +22,6 @@ export function TabNavigationItem({ route, baseUrl }: { route: TabRouteType, bas
       {route.icon && (
         <route.icon
           className="h-6 w-6"
-          // Set icon color to primary if active, otherwise inherit
           style={isActive ? { color: "var(--primary)" } : undefined}
         />
       )}

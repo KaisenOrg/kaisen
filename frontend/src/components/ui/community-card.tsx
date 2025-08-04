@@ -55,8 +55,6 @@ export default function CommunityCard({
       : "flex flex-col text-left text-white px-6 relative w-full overflow-hidden z-[1]";
 
   return (
-    // The outer div is no longer necessary if its only purpose was to wrap the card and mascot.
-    // We'll use the containerClass div as the relative parent.
     <Link to={`/tracks/${id}`}>
       <div className={containerClass}>
         {showMascot && (
@@ -65,7 +63,6 @@ export default function CommunityCard({
             alt="Kai mascot"
             width={80}
             height={80}
-            // Positioned relative to the card container
             className="absolute -top-8 -right-4 w-20 h-20 z-20 pointer-events-none select-none overflow-visible"
             style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.25))" }}
             draggable={false}
@@ -84,7 +81,6 @@ export default function CommunityCard({
           </Button>
         )}
 
-        {/* Background grid effect */}
         <img
           src="/geometric-bg.svg"
           alt=""

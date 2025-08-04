@@ -1,14 +1,14 @@
-import { create } from "zustand";
-import type { UserData } from "@/types";
+import { create } from 'zustand'
+import type { UserData } from '@/types'
 
 interface UserStore {
-  user: UserData | null;
-  setUser: (user: UserData) => void;
-  clearUser: () => void;
-  setError: (error: string | null) => void;
-  error: string | null;
-  isLoading: boolean;
-  setLoading: (isLoading: boolean) => void;
+  user: UserData | null
+  setUser: (user: UserData) => void
+  clearUser: () => void
+  setError: (error: string | null) => void
+  setLoading: (isLoading: boolean) => void
+  error: string | null
+  isLoading: boolean
 }
 
 export const useUserStore = create<UserStore>((set) => ({
@@ -19,4 +19,4 @@ export const useUserStore = create<UserStore>((set) => ({
   error: null,
   isLoading: false,
   setLoading: (isLoading) => set({ isLoading }),
-}));
+}))

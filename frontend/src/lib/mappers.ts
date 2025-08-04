@@ -1,4 +1,4 @@
-import type { MotokoUser, UserData } from "@/types"
+import type { MotokoUser, UserData, Track, Section, Content, PageElement, Flashcard, Quiz, EssayQuestion } from '@/types'
 import type {
   Track as BackendTrack,
   Section as BackendSection,
@@ -8,30 +8,28 @@ import type {
   Quiz as BackendQuiz,
   EssayQuestion as BackendEssay,
   Alternative as BackendAlternative
-} from "@/declarations/tracks_backend/tracks_backend.did";
-
-import type { Track, Section, Content, PageElement, Flashcard, Quiz, EssayQuestion } from "@/types";
+} from '@/declarations/tracks_backend/tracks_backend.did'
 
 interface Positionedsection extends Section {
   position: {
-    top: number;
-    left: number;
-  };
+    top: number
+    left: number
+  }
 }
 
 interface GenerationOptions {
-  cardWidth: number;
-  canvasHeight: number;
-  gap?: number;
-  initialLeftOffset?: number;
-  initialTopOffset?: number;
-  verticalBounds?: [number, number];
-  maxVerticalShift?: number;
+  canvasHeight: number
+  cardWidth: number
+  gap?: number
+  initialLeftOffset?: number
+  initialTopOffset?: number
+  maxVerticalShift?: number
+  verticalBounds?: [number, number]
 }
 
-const opt = (v?: string | null): [] | [string] => v ? [v] : [];
+const opt = (v?: string | null): [] | [string] => v ? [v] : []
 
-const fromOpt = (v: [] | [string]) => (v.length > 0 ? v[0] : null);
+const fromOpt = (v: [] | [string]) => (v.length > 0 ? v[0] : null)
 
 export function toMotokoTrack(track: Track): BackendTrack {
   return {
@@ -41,7 +39,7 @@ export function toMotokoTrack(track: Track): BackendTrack {
     authorId: track.authorId,
     createdAt: BigInt(track.createdAt),
     sections: track.sections.map(toMotokoSection),
-  };
+  }
 }
 
 export function toMotokoSection(section: Section): BackendSection {
@@ -49,29 +47,29 @@ export function toMotokoSection(section: Section): BackendSection {
     id: BigInt(section.id),
     title: section.title,
     content: toMotokoContent(section.content),
-  };
+  }
 }
 
 function toMotokoContent(content: Content): BackendContent {
-  if ("Page" in content) {
+  if ('Page' in content) {
     return {
       Page: {
         title: content.Page.title,
         elements: content.Page.elements.map(toMotokoElement),
       },
-    };
+    }
   }
 
-  if ("Flashcard" in content) {
+  if ('Flashcard' in content) {
     return {
       Flashcard: content.Flashcard.map((f): BackendFlashcard => ({
         sentence: f.sentence,
         answer: f.answer,
       })),
-    };
+    }
   }
 
-  if ("Quiz" in content) {
+  if ('Quiz' in content) {
     return {
       Quiz: content.Quiz.map((q): BackendQuiz => ({
         question: q.question,
@@ -81,101 +79,101 @@ function toMotokoContent(content: Content): BackendContent {
         })),
         correctAnswerId: BigInt(q.correctAnswerId),
       })),
-    };
+    }
   }
 
-  if ("Essay" in content) {
+  if ('Essay' in content) {
     return {
       Essay: content.Essay.map((e): BackendEssay => ({
         question: e.question,
         expectedAnswer: e.expectedAnswer,
       })),
-    };
+    }
   }
 
-  throw new Error("Conteúdo inválido");
+  throw new Error('Conteúdo inválido')
 }
 
 function toMotokoElement(element: PageElement): BackendElement {
-  if ("Text" in element) {
+  if ('Text' in element) {
     return {
       Text: {
         value: element.Text.value,
       },
-    };
+    }
   }
 
-  if ("Image" in element) {
+  if ('Image' in element) {
     return {
       Image: {
         url: element.Image.url,
         caption: element.Image.caption ? [element.Image.caption] : [],
       },
-    };
+    }
   }
 
-  if ("Video" in element) {
+  if ('Video' in element) {
     return {
       Video: {
         url: element.Video.url,
         caption: element.Video.caption,
       },
-    };
+    }
   }
 
-  throw new Error("Elemento inválido");
+  throw new Error('Elemento inválido')
 }
 
 function toFrontendElement(element: BackendElement): PageElement {
-  if ("Text" in element) {
+  if ('Text' in element) {
     return {
       Text: {
         value: element.Text.value,
       },
-    };
+    }
   }
 
-  if ("Image" in element) {
+  if ('Image' in element) {
     return {
       Image: {
         url: element.Image.url,
         caption: fromOpt(element.Image.caption) || undefined,
       },
-    };
+    }
   }
 
-  if ("Video" in element) {
+  if ('Video' in element) {
     return {
       Video: {
         url: element.Video.url,
         caption: element.Video.caption,
       },
-    };
+    }
   }
 
-  throw new Error("Elemento inválido");
+  throw new Error('Elemento inválido')
 }
 
 function toFrontendContent(content: BackendContent): Content {
-  if ("Page" in content) {
+  if ('Page' in content) {
     return {
       Page: {
         title: content.Page.title,
         elements: content.Page.elements.map(toFrontendElement),
       },
-    };
+    }
   }
 
-  if ("Flashcard" in content) {
+  if ('Flashcard' in content) {
     return {
       Flashcard: content.Flashcard.map((f: BackendFlashcard): Flashcard => ({
         sentence: f.sentence,
         answer: f.answer,
       })),
-    };
+    }
   }
 
-  if ("Quiz" in content) {
+  if ('Quiz' in content) {
     return {
       Quiz: content.Quiz.map((q: BackendQuiz): Quiz => ({
         question: q.question,
@@ -185,19 +183,19 @@ function toFrontendContent(content: BackendContent): Content {
         })),
         correctAnswerId: Number(q.correctAnswerId),
       })),
-    };
+    }
   }
 
-  if ("Essay" in content) {
+  if ('Essay' in content) {
     return {
       Essay: content.Essay.map((e: BackendEssay): EssayQuestion => ({
         question: e.question,
         expectedAnswer: e.expectedAnswer,
       })),
-    };
+    }
   }
 
-  throw new Error("Conteúdo inválido");
+  throw new Error('Conteúdo inválido')
 }
 
 export function toFrontendSection(section: BackendSection): Section {
@@ -205,7 +203,7 @@ export function toFrontendSection(section: BackendSection): Section {
     id: Number(section.id),
     title: section.title,
     content: toFrontendContent(section.content),
-  };
+  }
 }
 
 export function toFrontendTrack(track: BackendTrack): Track {
@@ -216,7 +214,7 @@ export function toFrontendTrack(track: BackendTrack): Track {
     authorId: track.authorId,
     createdAt: Number(track.createdAt),
     sections: track.sections.map(toFrontendSection),
-  };
+  }
 }
 
 export function toMotokoUser(data: UserData): MotokoUser {
@@ -237,7 +235,7 @@ export function toMotokoUser(data: UserData): MotokoUser {
     completedTracks: data.completedTracks,
     principal: data.principal,
     identity: data.identity,
-  };
+  }
 }
 
 export function toUserData(motokoUser: any): UserData {
@@ -249,7 +247,7 @@ export function toUserData(motokoUser: any): UserData {
     role: fromOpt(motokoUser.role),
     followers: motokoUser.followers.map((f: any) => ({
       userIdentity: f.userIdentity,
-      timestamp: Number(f.timestamp), // BigInt para number (se quiser manter bigint no front, pode)
+      timestamp: Number(f.timestamp),
     })),
     following: motokoUser.following,
     certificates: motokoUser.certificates,
@@ -258,7 +256,7 @@ export function toUserData(motokoUser: any): UserData {
     completedTracks: motokoUser.completedTracks,
     principal: motokoUser.principal,
     identity: motokoUser.identity,
-  };
+  }
 }
 
 export function generateSectionPositions(
@@ -273,38 +271,32 @@ export function generateSectionPositions(
     initialTopOffset = 0,
     verticalBounds = [0.3, 0.7],
     maxVerticalShift = 100,
-  } = options;
+  } = options
 
-  // Calcula os limites verticais em pixels
-  const minY = canvasHeight * verticalBounds[0] + initialTopOffset;
-  const maxY = canvasHeight * verticalBounds[1] + initialTopOffset;
+  const minY = canvasHeight * verticalBounds[0] + initialTopOffset
+  const maxY = canvasHeight * verticalBounds[1] + initialTopOffset
 
-  let lastTop: number | null = null;
+  let lastTop: number | null = null
 
   return sections.map((section, index) => {
-    // --- Cálculo da Posição Horizontal (left) ---
-    const left = initialLeftOffset + index * (cardWidth + gap);
+    const left = initialLeftOffset + index * (cardWidth + gap)
 
-    // --- Cálculo da Posição Vertical (top) ---
-    let top: number;
+    let top: number
 
     if (lastTop === null) {
-      // Para o primeiro card, escolhe uma posição aleatória dentro da faixa central
-      top = minY + Math.random() * (maxY - minY);
+      top = minY + Math.random() * (maxY - minY)
     } else {
-      // Para os cards seguintes, calcula um desvio aleatório em relação ao anterior
-      const shift = (Math.random() - 0.5) * 2 * maxVerticalShift; // Valor entre -maxVerticalShift e +maxVerticalShift
-      const proposedTop = lastTop + shift;
+      const shift = (Math.random() - 0.5) * 2 * maxVerticalShift
+      const proposedTop = lastTop + shift
 
-      // Garante que a nova posição não saia dos limites verticais definidos
-      top = Math.max(minY, Math.min(proposedTop, maxY));
+      top = Math.max(minY, Math.min(proposedTop, maxY))
     }
 
-    lastTop = top;
+    lastTop = top
 
     return {
       ...section,
       position: { top, left },
-    };
-  });
+    }
+  })
 }

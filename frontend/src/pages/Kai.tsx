@@ -1,100 +1,84 @@
-import { useState } from 'react';
-import { useActor } from '@/lib/agent';
-import { useAuth } from '@/hooks/useAuth';
-import { LoginButton } from '@/components/general/login-button';
-import { Button } from '@/components/ui/button';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { useState } from 'react'
+import { useActor } from '@/lib/agent'
+import { useAuth } from '@/hooks/useAuth'
+import { LoginButton } from '@/components/general/login-button'
+import { Button } from '@/components/ui/button'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 interface Message {
-  sender: 'User' | 'Model';
-  text: string;
+  sender: 'User' | 'Model'
+  text: string
 }
 
 export default function KaiTestPage() {
-  const { isAuthenticated } = useAuth();
-  const [status, setStatus] = useState<string>('Pronto.');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { isAuthenticated } = useAuth()
+  const [status, setStatus] = useState<string>('Pronto.')
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  // Atores autenticados
-  const kaiActor = useActor('kai_backend');
-  const chatActor = useActor('chats_backend');
+  const kaiActor = useActor('kai_backend')
+  const chatActor = useActor('chats_backend')
 
-  // Estado para o chat
-  const [chatId, setChatId] = useState<string | null>(null);
-  const [chatPrompt, setChatPrompt] = useState<string>('');
-  const [messages, setMessages] = useState<Message[]>([]);
-
-  // Estado para a trilha gerada
-  const [generatedTrackJSON, _] = useState<string | null>(null);
-
-  // --- FUNÇÕES DE TESTE (VERSÃO ATUALIZADA) ---
-  // --- FUNÇÕES DE TESTE (VERSÃO ATUALIZADA) ---
+  const [chatId, setChatId] = useState<string | null>(null)
+  const [chatPrompt, setChatPrompt] = useState<string>('')
+  const [messages, setMessages] = useState<Message[]>([])
+  const [generatedTrackJSON, _] = useState<string | null>(null)
 
   const handleSendMessage = async () => {
-    // Validação inicial
     if (!kaiActor || !chatActor || !chatPrompt.trim()) {
-      alert("Faça o login e digite uma mensagem para iniciar a conversa.");
-      return;
+      alert("Faça o login e digite uma mensagem para iniciar a conversa.")
+      return
     }
 
-    setIsLoading(true);
-    setStatus('Iniciando conversa...');
+    setIsLoading(true)
+    setStatus('Iniciando conversa...')
 
-    const currentPrompt = chatPrompt;
-    setMessages(prev => [...prev, { sender: 'User', text: currentPrompt }]);
-    setChatPrompt('');
+    const currentPrompt = chatPrompt
+    setMessages(prev => [...prev, { sender: 'User', text: currentPrompt }])
+    setChatPrompt('')
 
     try {
-      let currentChatId = chatId;
+      let currentChatId = chatId
 
-      // ETAPA 1: Se for a primeira mensagem, cria uma nova sessão de chat
       if (!currentChatId) {
-        setStatus('Criando nova sessão de chat no backend...');
-        const newChatId = await chatActor.createChatSession(currentPrompt);
-        setChatId(newChatId); // Salva o ID do novo chat no estado
-        currentChatId = newChatId;
+        setStatus('Criando nova sessão de chat no backend...')
+        const newChatId = await chatActor.createChatSession(currentPrompt)
+        setChatId(newChatId)
+        currentChatId = newChatId
       }
 
-      // ETAPA 2: Formata o histórico para dar contexto à IA
-      // Enviamos o histórico *antes* da nova resposta da IA
       const historyForAI = messages
         .map(m => `{"role": "${m.sender.toLowerCase()}", "parts": [{"text": "${m.text.replace(/"/g, '\\"')}"}]}`)
-        .join(', ');
+        .join(', ')
 
-      // ETAPA 3: Chama o canister da IA para obter uma resposta
-      setStatus('Kai está pensando...');
-      // CORREÇÃO: A ordem dos parâmetros e o tratamento do 'Result' foram ajustados
+      setStatus('Kai está pensando...')
       const result = await kaiActor.generateChatResponse(
         currentPrompt,
         messages.length > 0 ? [historyForAI] : []
-      );
+      )
 
       if ('err' in result) {
-        throw new Error(result.err);
+        throw new Error(result.err)
       }
 
-      const aiResponseText = result.ok;
-      const aiResponseJSON = JSON.parse(aiResponseText);
-      setStatus('Kai respondeu. Salvando interação...');
+      const aiResponseText = result.ok
+      const aiResponseJSON = JSON.parse(aiResponseText)
+      setStatus('Kai respondeu. Salvando interação...')
 
-      // ETAPA 4: Salva a nova interação (pergunta do usuário + resposta da IA) no chat_backend
-      await chatActor.addInteraction(currentChatId!, currentPrompt, aiResponseJSON.candidates[0].content.parts[0].text);
+      await chatActor.addInteraction(currentChatId!, currentPrompt, aiResponseJSON.candidates[0].content.parts[0].text)
 
-      // ETAPA 5: Atualiza a UI com a resposta da IA
-      const aiMessage: Message = { sender: 'Model', text: aiResponseJSON.candidates[0].content.parts[0].text };
-      setMessages(prev => [...prev, aiMessage]);
-      setStatus('Pronto.');
+      const aiMessage: Message = { sender: 'Model', text: aiResponseJSON.candidates[0].content.parts[0].text }
+      setMessages(prev => [...prev, aiMessage])
+      setStatus('Pronto.')
 
     } catch (e: any) {
-      console.error("Erro na conversa com o Kai:", e);
-      setStatus(`Erro na conversa com o Kai: ${e.message}`);
-      // Reverte a UI se a chamada falhar (opcional)
-      setMessages(messages);
+      console.error("Erro na conversa com o Kai:", e)
+      setStatus(`Erro na conversa com o Kai: ${e.message}`)
+      setMessages(messages)
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  };
+  }
 
   return (
     <div className="p-8 max-w-4xl mx-auto font-sans">
@@ -140,7 +124,7 @@ export default function KaiTestPage() {
 
           <div className="p-4 border rounded-lg">
             <h2 className="text-xl font-semibold mb-2">3. Teste de Salvamento de Trilha</h2>
-            <p className="text-sm text-gray-500 mb-4">Após usar o botão &quot;Gerar Trilha Direto&quot;, o JSON aparecerá abaixo e você poderá salvá-lo.</p>
+            <p className="text-sm text-gray-500 mb-4">Após usar o botão &quotGerar Trilha Direto&quot, o JSON aparecerá abaixo e você poderá salvá-lo.</p>
             {generatedTrackJSON && (
               <pre className="mt-4 p-4 bg-black text-white/50 rounded-md text-xs overflow-x-auto">
                 <code>{JSON.stringify(JSON.parse(generatedTrackJSON), null, 2)}</code>
@@ -150,5 +134,5 @@ export default function KaiTestPage() {
         </>
       )}
     </div>
-  );
+  )
 }

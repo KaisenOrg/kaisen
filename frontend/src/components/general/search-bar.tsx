@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MagnifyingGlassIcon, UserGroupIcon, DocumentTextIcon, CalendarDaysIcon, PlusIcon as HeroPlusIcon } from "@heroicons/react/24/outline";
 import { Loader2 } from "lucide-react";
 
-// Dados de exemplo para simular uma pesquisa
 type SearchResultData = {
   id: string;
   label: string;
@@ -25,23 +24,19 @@ export function ActionSearchBar() {
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
-  // Efeito para simular a pesquisa com lógica condicional de debounce
   useEffect(() => {
-    // Se o campo não estiver focado, limpa tudo.
     if (!isFocused) {
       setSearchResults([]);
       setIsLoadingSearch(false);
       return;
     }
 
-    // Se estiver focado, mas sem texto, mostra os resultados iniciais imediatamente.
     if (query.length === 0) {
-      setIsLoadingSearch(false); // Garante que o loading não apareça
+      setIsLoadingSearch(false);
       setSearchResults(allData);
-      return; // Sai do efeito para não ativar o debounce
+      return;
     }
 
-    // Se estiver focado E com texto, aplica o debounce.
     setIsLoadingSearch(true);
     const handler = setTimeout(() => {
       const filtered = allData.filter(item =>
@@ -52,12 +47,10 @@ export function ActionSearchBar() {
       setIsLoadingSearch(false);
     }, 300);
 
-    // Limpa o timeout se o utilizador continuar a digitar
     return () => clearTimeout(handler);
 
   }, [query, isFocused]);
 
-  // Efeito para fechar o dropdown ao clicar fora
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
@@ -68,7 +61,6 @@ export function ActionSearchBar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
   
-  // Efeito para o atalho Ctrl+K
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
@@ -81,12 +73,9 @@ export function ActionSearchBar() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Variantes de animação (MODIFICADO)
-  // A propriedade 'exit' foi removida para desativar a animação de fecho.
   const containerVariants = {
     hidden: { opacity: 0, y: -5 },
     show: { opacity: 1, y: 0, transition: { duration: 0.2 } },
-    // A propriedade 'exit' foi removida daqui.
   };
 
   const itemVariants = {
@@ -122,7 +111,7 @@ export function ActionSearchBar() {
             variants={containerVariants}
             initial="hidden"
             animate="show"
-            exit="exit" // Apesar de o 'exit' estar aqui, ele não encontrará uma definição em 'containerVariants', desativando a animação.
+            exit="exit"
           >
             <motion.ul className="max-h-80 overflow-hidden">
               {searchResults.map((resultItem) => {

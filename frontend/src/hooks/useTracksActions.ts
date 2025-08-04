@@ -1,89 +1,89 @@
-import { useActor } from "@/lib/agent";
-import { useTrackStore } from "@/stores/useTrackStore";
-import { toFrontendTrack, toMotokoTrack, toMotokoSection } from "@/lib/mappers";
-import type { Track } from "@/types";
+import { useActor } from '@/lib/agent'
+import { useTrackStore } from '@/stores/useTrackStore'
+import { toFrontendTrack, toMotokoTrack, toMotokoSection } from '@/lib/mappers'
+import type { Track } from '@/types'
 
 export function useTracksActions() {
-  const tracksActor = useActor("tracks_backend");
-  const { setTracks, setLoading, setError, clear } = useTrackStore();
+  const tracksActor = useActor('tracks_backend')
+  const { setTracks, setLoading, setError, clear } = useTrackStore()
 
   const fetchTracks = async () => {
-    if (!tracksActor) return;
-    setLoading(true);
+    if (!tracksActor) return
+    setLoading(true)
     try {
-      const res = await tracksActor.listAllTracks();
-      setTracks(res.map(toFrontendTrack));
+      const res = await tracksActor.listAllTracks()
+      setTracks(res.map(toFrontendTrack))
     } catch (err) {
-      console.error(err);
-      setError("Falha ao buscar trilhas");
+      console.error(err)
+      setError('Falha ao buscar trilhas')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
-  const createTrack = async (data: { title: string; description: string; sections: Track["sections"] }) => {
-    if (!tracksActor) return;
-    setLoading(true);
+  const createTrack = async (data: { title: string; description: string; sections: Track['sections'] }) => {
+    if (!tracksActor) return
+    setLoading(true)
     try {
-      const res = await tracksActor.createTrack(data.title, data.description, data.sections.map(toMotokoSection));
+      const res = await tracksActor.createTrack(data.title, data.description, data.sections.map(toMotokoSection))
 
-      if ("err" in res) {
-        setError(res.err);
-        return;
+      if ('err' in res) {
+        setError(res.err)
+        return
       }
       
-      await fetchTracks();
+      await fetchTracks()
 
-      return res.ok;
+      return res.ok
     } catch (err) {
-      console.error(err);
-      setError("Erro ao criar trilha");
+      console.error(err)
+      setError('Erro ao criar trilha')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const updateTrack = async (track: Track) => {
-    if (!tracksActor) return;
-    setLoading(true);
+    if (!tracksActor) return
+    setLoading(true)
     try {
-      await tracksActor.updateTrack(track.id, toMotokoTrack(track));
-      await fetchTracks();
+      await tracksActor.updateTrack(track.id, toMotokoTrack(track))
+      await fetchTracks()
     } catch (err) {
-      console.error(err);
-      setError("Erro ao atualizar trilha");
+      console.error(err)
+      setError('Erro ao atualizar trilha')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const deleteTrack = async (id: string) => {
-    if (!tracksActor) return;
-    setLoading(true);
+    if (!tracksActor) return
+    setLoading(true)
     try {
-      await tracksActor.deleteTrack(id);
-      await fetchTracks();
+      await tracksActor.deleteTrack(id)
+      await fetchTracks()
     } catch (err) {
-      console.error(err);
-      setError("Erro ao deletar trilha");
+      console.error(err)
+      setError('Erro ao deletar trilha')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const injectSampleTracks = async () => {
-    if (!tracksActor) return;
-    setLoading(true);
+    if (!tracksActor) return
+    setLoading(true)
     try {
-      await tracksActor.injectSampleTracks();
-      await fetchTracks();
+      await tracksActor.injectSampleTracks()
+      await fetchTracks()
     } catch (err) {
-      console.error(err);
-      setError("Erro ao injetar trilhas");
+      console.error(err)
+      setError('Erro ao injetar trilhas')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
-  return { fetchTracks, createTrack, updateTrack, deleteTrack, injectSampleTracks, clear };
+  return { fetchTracks, createTrack, updateTrack, deleteTrack, injectSampleTracks, clear }
 }
