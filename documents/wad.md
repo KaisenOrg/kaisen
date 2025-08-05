@@ -1,14 +1,13 @@
 <p align="center">
-  <img src="assets/header-intro.png" alt="header-top"><br>
+  <img src="assets/intro/header-intro.png" alt="header-top"><br>
 </p>
-
 <table align="center" style="border: none; border-collapse: collapse;">
   <tr>
-    <td style="border: none;"><a href="https://www.linkedin.com/in/nicoleriedla/"><img src="assets/intro/nicole.png" alt="Nicole Riedla"></a></td>
-    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/marcus-valente/"><img src="assets/intro/marcus.png" alt="Marcus Valente"></a></td>
-    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/lima-j/"><img src="assets/intro/jose.png" alt="Jose Lima"></a></td>
-    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/messias-olivindo/"><img src="assets/intro/messias.png" alt="Messias Olivindo"></a></td>
-    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/giovanna-neves-rodrigues/"><img src="assets/intro/giovanna.png" alt="Giovanna Neves"></a></td>
+    <td style="border: none;"><a href="https://www.linkedin.com/in/nicoleriedla/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/nicole.png" alt="Nicole Riedla"></a></td>
+    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/marcus-valente/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/marcus.png" alt="Marcus Valente"></a></td>
+    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/lima-j/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/jose.png" alt="Jose Lima"></a></td>
+    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/messias-olivindo/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/messias.png" alt="Messias Olivindo"></a></td>
+    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/giovanna-neves-rodrigues/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/giovanna.png" alt="Giovanna Neves"></a></td>
   </tr>
 </table>
 
@@ -376,7 +375,7 @@ The color palette is an essential element in the visual construction of the Kaiz
 
 <sub>Figure 8 - Colors</sub>
 
-<img src="./assets/colors.png" width="100%">
+<img src="assets/design/colors.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -396,7 +395,7 @@ The typography used on the Kaizen platform was selected based on legibility, sim
 
 <sub>Figure 9 - Typography</sub>
 
-<img src="./assets/typography.png" width="100%">
+<img src="assets/design/typography.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -415,7 +414,7 @@ The visual elements of the Kaizen platform were designed to communicate, symboli
 
 <sub>Figure 10 - Mascot</sub>
 
-<img src="./assets/mascot.png" width="100%">
+<img src="assets/design/mascot.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -427,7 +426,7 @@ The platform's mascot, Kai, is an expressive and welcoming fox, presented in sev
 
 <sub>Figure 11 - Logo</sub>
 
-<img src="./assets/logo.png" width="100%">
+<img src="assets/design/logo.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
