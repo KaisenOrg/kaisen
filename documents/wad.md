@@ -1,8 +1,18 @@
-<div align="center">
+<p align="center">
+  <img src="assets/header-intro.png" alt="header-top"><br>
+</p>
 
-<img src="./assets/introduction.png" width="100%">
+<table align="center" style="border: none; border-collapse: collapse;">
+  <tr>
+    <td style="border: none;"><a href="https://www.linkedin.com/in/nicoleriedla/"><img src="assets/intro/nicole.png" alt="Nicole Riedla"></a></td>
+    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/marcus-valente/"><img src="assets/intro/marcus.png" alt="Marcus Valente"></a></td>
+    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/lima-j/"><img src="assets/intro/jose.png" alt="Jose Lima"></a></td>
+    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/messias-olivindo/"><img src="assets/intro/messias.png" alt="Messias Olivindo"></a></td>
+    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/giovanna-neves-rodrigues/"><img src="assets/intro/giovanna.png" alt="Giovanna Neves"></a></td>
+  </tr>
+</table>
 
-</div>
+<img src="assets/intro/header-bottom.png">
 
 ## Table of Contents
 
@@ -104,7 +114,7 @@ In this scenario, Porter's Five Forces analysis is applied—an essential tool f
 
 <sub>Figure 1 - Porter's 5 Forces Model</sub>
 
-<img src="./assets/five-forces.png" width="100%">
+<img src="assets/business/five-forces.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -133,7 +143,7 @@ The SWOT analysis is a widely used tool for planning and mapping out various sol
 
 <sub>Figure 2 - Swot Analysis Model</sub>
 
-<img src="./assets/swot-analysis.png" width="100%">
+<img src="assets/business/swot-analysis.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -225,7 +235,7 @@ The Value Proposition Canvas is a strategic tool used by various companies with 
 
 <sub>Figure 3 - Value Proposition Canvas</sub>
 
-<img src="./assets/canvas-value.png" width="100%">
+<img src="assets/business/canvas-value.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -300,7 +310,7 @@ Below are three personas developed specifically for this project to guide decisi
 
 <sub>Figure 4 - Persona 1</sub>
 
-<img src="./assets/persona-clara.png" width="100%">
+<img src="assets/business/persona-clara.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -312,7 +322,7 @@ She represents an ambitious young student from a peripheral community who sees t
 
 <sub>Figure 5 - Persona 2</sub>
 
-<img src="./assets/persona-daniel.png" width="100%">
+<img src="assets/business/persona-daniel.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -324,7 +334,7 @@ He personifies the modern self-taught developer who stands out in the Web3 ecosy
 
 <sub>Figure 6 - Persona 3</sub>
 
-<img src="./assets/persona-renata.png" width="100%">
+<img src="assets/business/persona-renata.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
