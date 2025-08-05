@@ -1,47 +1,49 @@
-import { TrackCard } from '@/components/specific/tracks/card'
-import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
-import { DraggableBackground } from '@/components/ui/draggable-bg'
-import { useState, useEffect, useMemo } from 'react';
-import { generateSectionPositions } from '@/lib/mappers';
-import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
-import { ChatPanel } from '@/components/specific/tracks/chat-panel';
+import { useState, useEffect, useMemo } from 'react'
+import { useParams } from 'react-router-dom'
 
-import { useTrackStore } from '@/stores/useTrackStore';
-import { usePopoverStore } from '@/stores/usePopoverStore';
-import { useActor } from '@/lib/agent';
-import { type Section } from '@/types';
-import { useTracksActions } from '@/hooks/useTracksActions';
-import { useParams } from 'react-router-dom';
+import { generateSectionPositions } from '@/lib/mappers'
+import { useTracksActions } from '@/hooks/useTracksActions'
+import { type Section } from '@/types'
+import { useActor } from '@/lib/agent'
+
+import { TrackCard } from '@/components/specific/tracks/card'
+import { DraggableBackground } from '@/components/ui/draggable-bg'
+import { ChatPanel } from '@/components/specific/tracks/chat-panel'
+import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
+import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
+
+import { useTrackStore } from '@/stores/useTrackStore'
+import { useModalStore } from '@/stores/useModalStore'
 
 export default function TrackPage() {
-  const { tracks, isLoading } = useTrackStore();
-  const { fetchTracks, injectSampleTracks } = useTracksActions();
-  const { open } = usePopoverStore();
-  const tracksActor = useActor('tracks_backend');
-  const { id } = useParams();
+  const { tracks, isLoading } = useTrackStore()
+  const { fetchTracks, injectSampleTracks } = useTracksActions()
+  const { open } = useModalStore()
+  const tracksActor = useActor('tracks_backend')
+  const { id } = useParams()
 
-  const selectedTrack = tracks?.find((track) => track.id === id);
+  const selectedTrack = tracks?.find((track) => track.id === id)
 
-  const [sectionsWithPositions, setSectionsWithPositions] = useState<any[]>([]);
-  const [screenHeight, setScreenHeight] = useState(0);
-  const [screenWidth, setScreenWidth] = useState(0);
-  const cardDimensions = { width: 320, height: 238 };
+  const [sectionsWithPositions, setSectionsWithPositions] = useState<any[]>([])
+  const [screenHeight, setScreenHeight] = useState(0)
+  const [screenWidth, setScreenWidth] = useState(0)
+  const cardDimensions = { width: 320, height: 238 }
 
   useEffect(() => {
     fetchTracks()
       .then(() => {
         if (tracks?.length === 0) {
-          injectSampleTracks();
+          injectSampleTracks()
         }
-      });
-  }, [tracksActor]);
+      })
+  }, [tracksActor])
 
   useEffect(() => {
     if (selectedTrack && selectedTrack.sections.length > 0) {
-      const currentScreenHeight = window.innerHeight;
-      const currentScreenWidth = window.innerWidth;
-      setScreenHeight(currentScreenHeight);
-      setScreenWidth(currentScreenWidth);
+      const currentScreenHeight = window.innerHeight
+      const currentScreenWidth = window.innerWidth
+      setScreenHeight(currentScreenHeight)
+      setScreenWidth(currentScreenWidth)
 
       const generatedSections = generateSectionPositions(selectedTrack.sections, {
         cardWidth: cardDimensions.width,
@@ -50,26 +52,26 @@ export default function TrackPage() {
         initialLeftOffset: 150,
         verticalBounds: [0.2, 0.4],
         maxVerticalShift: 400
-      });
-      setSectionsWithPositions(generatedSections);
+      })
+      setSectionsWithPositions(generatedSections)
     }
-  }, [selectedTrack, tracks]);
+  }, [selectedTrack, tracks])
 
   const handleSectionClick = (section: Section) => {
-    open({ type: 'section', data: section });
-  };
+    open({ type: 'section', data: section })
+  }
 
   const getButtonTextForContent = (content: Section['content']): string => {
-    if ('Page' in content) return 'Ler';
-    if ('Quiz' in content) return 'Iniciar Quiz';
-    if ('Flashcard' in content) return 'Revisar';
-    if ('Essay' in content) return 'Responder';
-    return 'Ver';
-  };
+    if ('Page' in content) return 'Ler'
+    if ('Quiz' in content) return 'Iniciar Quiz'
+    if ('Flashcard' in content) return 'Revisar'
+    if ('Essay' in content) return 'Responder'
+    return 'Ver'
+  }
 
   const canvasWidth = useMemo(() => {
-    return Math.max(selectedTrack ? selectedTrack.sections.length * (cardDimensions.width + 120) + 600 : 0, screenWidth);
-  }, [screenWidth]);
+    return Math.max(selectedTrack ? selectedTrack.sections.length * (cardDimensions.width + 120) + 600 : 0, screenWidth)
+  }, [screenWidth])
 
   return (
     <PanelGroup direction="horizontal" className="flex-1 flex h-full">

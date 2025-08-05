@@ -1,13 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Progress } from "@/components/ui/progress";
-import { Textarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/utils";
-import type { EssayQuestion as Essay } from "@/types";
-import { useState } from "react";
-import { useActor } from "@/lib/agent";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { useState } from 'react'
+import { useActor } from '@/lib/agent'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { Progress } from '@/components/ui/progress'
+import { Textarea } from '@/components/ui/textarea'
+import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import type { EssayQuestion as Essay } from '@/types'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 interface Props {
   title: string
@@ -15,23 +15,23 @@ interface Props {
 }
 
 export function EssaySectionPreset({ title, pageData }: Props) {
-  const kaiActor = useActor("kai_backend");
+  const kaiActor = useActor('kai_backend')
 
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answer, setAnswer] = useState("");
-  const [aiFeedback, setAiFeedback] = useState("");
-  const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [showResult, setShowResult] = useState(false);
-  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [answer, setAnswer] = useState('')
+  const [aiFeedback, setAiFeedback] = useState('')
+  const [correctAnswers, setCorrectAnswers] = useState(0)
+  const [showResult, setShowResult] = useState(false)
+  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([])
+  const [loading, setLoading] = useState(false)
 
-  const question = pageData[currentQuestion];
-  const isLastQuestion = currentQuestion === pageData.length - 1;
+  const question = pageData[currentQuestion]
+  const isLastQuestion = currentQuestion === pageData.length - 1
 
   const handleCheckAnswer = async () => {
-    if (!kaiActor || loading) return;
+    if (!kaiActor || loading) return
 
-    setLoading(true);
+    setLoading(true)
 
     const prompt = `
 Você está corrigindo uma prova de dissertativa. Considere a seguinte questão:
@@ -43,58 +43,58 @@ Resposta esperada: ${question.expectedAnswer}
 Resposta do aluno: ${answer}
 
 Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma resposta curta e objetiva começando com "Correto" ou "Incorreto".
-`;
+`
 
     try {
-      const response = await kaiActor.generateChatResponse(prompt, []);
+      const response = await kaiActor.generateChatResponse(prompt, [])
 
       if ('err' in response) {
-        setAiFeedback("Erro ao corrigir a resposta.");
-        return;
+        setAiFeedback('Erro ao corrigir a resposta.')
+        return
       }
 
-      const formatedResponse = JSON.parse(response.ok).candidates[0].content.parts[0].text;
+      const formatedResponse = JSON.parse(response.ok).candidates[0].content.parts[0].text
 
-      setAiFeedback(formatedResponse);
+      setAiFeedback(formatedResponse)
 
-      if (formatedResponse.toLowerCase().startsWith("correto")) {
-        setCorrectAnswers(prev => prev + 1);
+      if (formatedResponse.toLowerCase().startsWith('correto')) {
+        setCorrectAnswers(prev => prev + 1)
       }
 
-      setAnsweredQuestions(prev => [...prev, currentQuestion]);
+      setAnsweredQuestions(prev => [...prev, currentQuestion])
 
     } catch (err) {
-      console.error(err);
-      setAiFeedback("Erro ao corrigir a resposta.");
+      console.error(err)
+      setAiFeedback('Erro ao corrigir a resposta.')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleNext = () => {
     if (isLastQuestion) {
-      setShowResult(true);
-      return;
+      setShowResult(true)
+      return
     }
 
-    setCurrentQuestion(prev => prev + 1);
-    setAnswer("");
-    setAiFeedback("");
-  };
+    setCurrentQuestion(prev => prev + 1)
+    setAnswer('')
+    setAiFeedback('')
+  }
 
   const handleClear = () => {
-    setAnswer("");
-    setAiFeedback("");
-  };
+    setAnswer('')
+    setAiFeedback('')
+  }
 
   const handleRestart = () => {
-    setCurrentQuestion(0);
-    setAnswer("");
-    setAiFeedback("");
-    setCorrectAnswers(0);
-    setShowResult(false);
-    setAnsweredQuestions([]);
-  };
+    setCurrentQuestion(0)
+    setAnswer('')
+    setAiFeedback('')
+    setCorrectAnswers(0)
+    setShowResult(false)
+    setAnsweredQuestions([])
+  }
 
   return (
     <DialogContent style={{ borderColor: 'var(--border)' }}>
@@ -128,8 +128,8 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
 
           {aiFeedback && (
             <div className={cn(
-              "p-4 rounded-md text-sm",
-              aiFeedback.toLowerCase().startsWith("correto") ? "bg-green-500/10 text-green-500" : "bg-red-500/10 text-red-500"
+              'p-4 rounded-md text-sm',
+              aiFeedback.toLowerCase().startsWith('correto') ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'
             )}>
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {aiFeedback}
@@ -147,7 +147,7 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
               onClick={aiFeedback ? handleNext : handleCheckAnswer}
               disabled={loading || (answer.trim() === "" && aiFeedback === "")}
             >
-              {aiFeedback ? (isLastQuestion ? "Finalizar" : "Próximo") : (loading ? "Corrigindo..." : "Enviar")}
+              {aiFeedback ? (isLastQuestion ? 'Finalizar' : 'Próximo') : (loading ? 'Corrigindo...' : 'Enviar')}
             </Button>
 
             <Button
@@ -156,7 +156,7 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
               onClick={handleClear}
               disabled={loading}
             >
-              {aiFeedback ? "Try again" : "Clear"}
+              {aiFeedback ? 'Try again' : 'Clear'}
             </Button>
           </>
         ) : (
@@ -172,5 +172,5 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
         />
       </DialogFooter>
     </DialogContent>
-  );
+  )
 }

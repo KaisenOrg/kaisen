@@ -2,14 +2,14 @@ import {
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogTitle
-} from "@/components/ui/alert-dialog"
-import { Progress } from "@/components/ui/progress"
+} from '@/components/ui/alert-dialog'
+import { Progress } from '@/components/ui/progress'
 
 interface Props {
   progress?: number
 }
 
-export function LoadingPreset({ progress = 50 }: Props) {
+export function LoadingPreset({ progress }: Props) {
   return (
     <AlertDialogContent className="outline-none w-16 flex flex-col items-center p-0 border-none bg-transparent">
       <AlertDialogTitle>
@@ -23,7 +23,7 @@ export function LoadingPreset({ progress = 50 }: Props) {
       </AlertDialogTitle>
       <AlertDialogDescription>
       </AlertDialogDescription>
-      {progress && (
+      {progress ?? (
         <Progress className="mt-2 w-sm h-4" color="bg-white" value={progress} />
       )}
     </AlertDialogContent>

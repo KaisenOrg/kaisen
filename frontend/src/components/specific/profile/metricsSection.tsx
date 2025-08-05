@@ -1,16 +1,13 @@
-import ContinueCard from "@/components/ui/continue-card";
-import { DonutChartCard } from "@/components/ui/donutChartCard";
-import { HoursLineChart } from "@/components/ui/hoursLineChart";
+import { DonutChartCard } from '@/components/specific/profile/donutChartCard'
+import { HoursLineChart } from '@/components/specific/profile/hoursLineChart'
+import ContinueCard from '@/components/general/continue-card'
 
 export const MetricsSection = () => {
-  const quantity = 2;
-  const cards = Array.from({ length: quantity }, (_, i) => i);
+  const quantity = 2
+  const cards = Array.from({ length: quantity }, (_, i) => i)
 
   return (
-    <section
-      id="metrics"
-      className="w-full bg-[#1A1A1E] border border-[#27272A] rounded-xl p-5 flex flex-col"
-    >
+    <section id="metrics" className="w-full bg-[#1A1A1E] border border-[#27272A] rounded-xl p-5 flex flex-col">
       <h1 className="text-2xl font-semibold mb-10">General</h1>
 
       <div className="flex justify-between gap-5">
@@ -36,5 +33,5 @@ export const MetricsSection = () => {
         <HoursLineChart />
       </div>
     </section>
-  );
-};
+  )
+}

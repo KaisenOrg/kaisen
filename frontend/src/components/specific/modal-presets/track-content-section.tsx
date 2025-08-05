@@ -1,29 +1,29 @@
-import { Button } from "@/components/ui/button";
+import { type Page, type PageElement } from '@/types'
+import { useModalStore } from '@/stores/useModalStore'
+import { Button } from '@/components/ui/button'
 import {
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { usePopoverStore } from "@/stores/usePopoverStore";
-import { type Page, type PageElement } from "@/types";
+} from '@/components/ui/dialog'
 
 interface Props {
-  title: string;
-  pageData: Page;
+  title: string
+  pageData: Page
 }
 
 function ElementRenderer({ element }: { element: PageElement }) {
-  if ("Text" in element) {
+  if ('Text' in element) {
     return (
       <p className="mb-4 text-secondary-foreground leading-relaxed" >
         {element.Text.value}
       </p>
-    );
+    )
   }
 
-  if ("Image" in element) {
+  if ('Image' in element) {
     return (
       <figure className="my-4">
         <img src={element.Image.url} alt={element.Image.caption || 'Imagem da trilha'} className="rounded-md border mx-auto" />
@@ -33,10 +33,10 @@ function ElementRenderer({ element }: { element: PageElement }) {
           </figcaption>
         )}
       </figure>
-    );
+    )
   }
 
-  if ("Video" in element) {
+  if ('Video' in element) {
     return (
       <figure className="my-4">
         <video src={element.Video.url} controls className="rounded-md border w-full">
@@ -48,15 +48,14 @@ function ElementRenderer({ element }: { element: PageElement }) {
           </figcaption>
         )}
       </figure>
-    );
+    )
   }
 
-  return null;
+  return null
 }
 
-
 export function ContentSectionPreset({ title, pageData }: Props) {
-  const { close } = usePopoverStore();
+  const { close } = useModalStore()
 
   return (
     <DialogContent showCloseButton={false} className="sm:max-w-3xl max-h-[80vh] overflow-y-auto" style={{ borderColor: 'var(--border)' }}>
@@ -77,5 +76,5 @@ export function ContentSectionPreset({ title, pageData }: Props) {
         </Button>
       </DialogFooter>
     </DialogContent>
-  );
+  )
 }

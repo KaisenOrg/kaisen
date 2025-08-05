@@ -1,4 +1,4 @@
-import { usePopoverStore } from '@/stores/usePopoverStore';
+import { useModalStore } from '@/stores/useModalStore';
 import { Dialog } from "@/components/ui/dialog";
 import {
   ContentSectionPreset,
@@ -8,11 +8,11 @@ import {
   EssaySectionPreset,
   LoadingPreset,
   CreateTrackPreset
-} from '@/components/specific/popover-presets';
+} from '@/components/specific/modal-presets';
 import { AlertDialog } from './alert-dialog';
 
-export function GlobalPopover() {
-  const { isOpen, payload, close } = usePopoverStore();
+export function GlobalModal() {
+  const { isOpen, payload, close } = useModalStore();
 
   const renderContent = () => {
     if (!payload) return null;

@@ -1,4 +1,4 @@
-import ContinueCard from "@/components/ui/continue-card";
+import ContinueCard from "@/components/general/continue-card";
 import ToggleButton from "@/components/ui/toggleButton";
 import { useState } from "react";
 

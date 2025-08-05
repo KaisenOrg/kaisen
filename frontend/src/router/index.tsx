@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { useAuth } from '@/hooks/useAuth'
 import { useUser } from '@/hooks/useUser'
-import { usePopoverStore } from '@/stores/usePopoverStore'
+import { useModalStore } from '@/stores/useModalStore'
 
 import RootLayout from '@/layouts/root-layout'
 import ProfileLayout from '@/layouts/profile-layout'
@@ -28,7 +28,7 @@ import Store from '@/pages/Store'
 export function AppRoutes() {
   const { isAuthenticated } = useAuth()
   const { user, fetchUser } = useUser()
-  const { open, close } = usePopoverStore()
+  const { open, close } = useModalStore()
 
   useEffect(() => {
     open({ type: 'loading' })

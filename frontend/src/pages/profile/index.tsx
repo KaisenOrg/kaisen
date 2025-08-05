@@ -1,7 +1,7 @@
-import { AchievementsSection } from '@/components/specific/profile/section/achievementsSection'
-import { ActivitiesSection } from '@/components/specific/profile/section/activitiesSection'
-import { MetricsSection } from '@/components/specific/profile/section/metricsSection'
-import { TracksCreatedSection } from '@/components/specific/profile/section/tracksCreatedSection'
+import { AchievementsSection } from '@/components/specific/profile/achievementsSection'
+import { ActivitiesSection } from '@/components/specific/profile/activitiesSection'
+import { MetricsSection } from '@/components/specific/profile/metricsSection'
+import { TracksCreatedSection } from '@/components/specific/profile/tracksCreatedSection'
 
 export default function ProfilePage() {
   return (

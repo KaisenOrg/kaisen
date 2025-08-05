@@ -1,79 +1,77 @@
-'use client';
-
+import { useState } from 'react'
+import { useActor } from '@/lib/agent'
+import type { Section } from '@/types'
+import { useModalStore } from '@/stores/useModalStore'
+import { useTracksActions } from '@/hooks/useTracksActions'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import {
   DialogContent,
   DialogDescription,
   DialogTitle,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { useTracksActions } from '@/hooks/useTracksActions';
-import { useActor } from '@/lib/agent';
-import { useState } from 'react';
-import type { Section } from '@/types';
-import { usePopoverStore } from '@/stores/usePopoverStore';
+} from '@/components/ui/dialog'
 
 export function CreateTrackPreset({ navigate }: { navigate: (route: string) => void }) {
-  const { createTrack } = useTracksActions();
-  const { close } = usePopoverStore();
-  const kaiActor = useActor('kai_backend');
+  const { createTrack } = useTracksActions()
+  const { close } = useModalStore()
+  const kaiActor = useActor('kai_backend')
 
-  const [topic, setTopic] = useState('');
+  const [topic, setTopic] = useState('')
   const [track, setTrack] = useState<{
-    title: string;
-    description: string;
-    sections: Section[];
-  } | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+    title: string
+    description: string
+    sections: Section[]
+  } | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleGenerate = async () => {
-    if (!kaiActor) return;
-    setLoading(true);
-    setError(null);
+    if (!kaiActor) return
+    setLoading(true)
+    setError(null)
     try {
-      const result = await kaiActor.generateTrack(topic);
+      const result = await kaiActor.generateTrack(topic)
       if ('ok' in result) {
         const parsed = JSON.parse(
           JSON.parse(result.ok).candidates[0].content.parts[0].text.replaceAll('#', '')
-        );
+        )
 
-        console.log(JSON.stringify(parsed, null, 2));
+        console.log(JSON.stringify(parsed, null, 2))
 
-        const { title, description, sections } = parsed;
-        setTrack({ title, description, sections });
+        const { title, description, sections } = parsed
+        setTrack({ title, description, sections })
       } else {
-        setError(result.err);
+        setError(result.err)
       }
     } catch (err) {
-      setError('Failed to generate track.');
-      console.error(err);
+      setError('Failed to generate track.')
+      console.error(err)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleConfirm = async () => {
-    if (!track) return;
+    if (!track) return
     try {
       const id = await createTrack({
         title: track.title,
         description: track.description,
         sections: track.sections,
-      });
+      })
 
       if (!id) {
-        setError('Failed to save track.');
-        return;
+        setError('Failed to save track.')
+        return
       }
 
-      navigate(`/tracks/${id}`);
-      close();
+      navigate(`/tracks/${id}`)
+      close()
     } catch (err) {
-      setError('Failed to save track.');
-      console.error(err);
+      setError('Failed to save track.')
+      console.error(err)
     }
-  };
+  }
 
   return (
     <DialogContent className="max-w-xl" style={{ borderColor: 'var(--border)' }}>
@@ -135,8 +133,8 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
               <Button
                 variant="ghost"
                 onClick={() => {
-                  setTrack(null);
-                  setError(null);
+                  setTrack(null)
+                  setError(null)
                 }}
               >
                 Cancel
@@ -152,5 +150,5 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
         )}
       </div>
     </DialogContent>
-  );
+  )
 }

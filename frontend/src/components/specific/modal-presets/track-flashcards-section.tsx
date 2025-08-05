@@ -1,16 +1,16 @@
-import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { type Flashcard } from "@/types";
-import { FlashcardDeck } from '@/components/ui/flashcard-deck';
-import { usePopoverStore } from '@/stores/usePopoverStore';
+import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { useModalStore } from '@/stores/useModalStore'
+import { FlashcardDeck } from '@/components/specific/tracks/flashcard-deck'
+import { Button } from '@/components/ui/button'
+import { type Flashcard } from '@/types'
 
 interface Props {
-  title: string;
-  flashcards: Flashcard[];
+  title: string
+  flashcards: Flashcard[]
 }
 
 export function FlashcardSectionPreset({ title, flashcards = [] }: Props) {
-  const { close } = usePopoverStore();
+  const { close } = useModalStore()
 
   return (
     <DialogContent className="sm:max-w-md bg-transparent border-none p-0 text-white">
@@ -43,5 +43,5 @@ export function FlashcardSectionPreset({ title, flashcards = [] }: Props) {
         </Button>
       </DialogFooter>
     </DialogContent>
-  );
+  )
 }

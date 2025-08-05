@@ -1,25 +1,24 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import HomeButton from "@/components/ui/home-button"
-import CommunityCard from "@/components/ui/community-card"
-import ContinueCard from '@/components/ui/continue-card'
+import HomeButton from "@/components/specific/home/home-button"
+import CommunityCard from "@/components/specific/community/community-card"
+import ContinueCard from '@/components/general/continue-card'
 
-import { useActor } from '@/lib/agent'
 import { useTrackStore } from '@/stores/useTrackStore'
-import { usePopoverStore } from '@/stores/usePopoverStore'
+import { useModalStore } from '@/stores/useModalStore'
 import { useTracksActions } from '@/hooks/useTracksActions'
-
+import { useActor } from '@/lib/agent'
 import '@/globals.css'
 
 export default function Home() {
-  const { open, close } = usePopoverStore()
+  const { open, close } = useModalStore()
   const { tracks, isLoading } = useTrackStore()
   const { fetchTracks, injectSampleTracks } = useTracksActions()
   const tracksActor = useActor('tracks_backend')
   const navigate = useNavigate()
 
-  const handleOpenCreateTrackPopover = () => {
+  const handleOpenCreateTrackModal = () => {
     open({ type: 'create-track', navigate })
   }
 
@@ -48,7 +47,7 @@ export default function Home() {
         transition: 'background 0.3s, color 0.3s',
       }}
     >
-      <HomeButton onClick={handleOpenCreateTrackPopover} />
+      <HomeButton onClick={handleOpenCreateTrackModal} />
 
       {/* Seção "Continue de onde parou" (pode be implemented in the future) */}
       <div className="mt-6">

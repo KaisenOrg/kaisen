@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { IdentityKitAuthType } from '@nfid/identitykit'
 import { IdentityKitProvider } from '@nfid/identitykit/react'
 
-import { GlobalPopover } from '@/components/ui/global-popover'
+import { GlobalModal } from '@/components/ui/global-modal'
 import { Toaster } from '@/components/ui/sonner'
 
 import { useThemeStore } from '@/stores/useThemeStore'
@@ -24,7 +24,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         <UserProvider>
           <ThemeEffect />
           {children}
-          <GlobalPopover />
+          <GlobalModal />
           <Toaster position="top-right" />
         </UserProvider>
       </DevAuthProvider>

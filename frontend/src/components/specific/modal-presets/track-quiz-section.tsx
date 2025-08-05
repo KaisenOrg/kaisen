@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Progress } from "@/components/ui/progress";
-import { cn } from "@/lib/utils";
-import type { Quiz } from "@/types";
-import { useState } from "react";
+import { useState } from 'react'
+import { cn } from '@/lib/utils'
+import type { Quiz } from '@/types'
+import { Button } from '@/components/ui/button'
+import { Progress } from '@/components/ui/progress'
+import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 
 interface Props {
   title: string
@@ -11,51 +11,51 @@ interface Props {
 }
 
 export function QuizSectionPreset({ title, pageData }: Props) {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selected, setSelected] = useState<number | null>(null);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
-  const [showResult, setShowResult] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [selected, setSelected] = useState<number | null>(null)
+  const [correctAnswers, setCorrectAnswers] = useState(0)
+  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([])
+  const [showResult, setShowResult] = useState(false)
 
-  const question = pageData[currentQuestion];
-  const isLastQuestion = currentQuestion === pageData.length - 1;
+  const question = pageData[currentQuestion]
+  const isLastQuestion = currentQuestion === pageData.length - 1
 
   const handleSelect = (index: number) => {
-    if (selected !== null) return;
+    if (selected !== null) return
 
-    setSelected(index);
+    setSelected(index)
 
     if (question.alternatives[index].id === question.correctAnswerId) {
-      setCorrectAnswers(prev => prev + 1);
+      setCorrectAnswers(prev => prev + 1)
     }
 
-    setAnsweredQuestions(prev => [...prev, currentQuestion]);
-  };
+    setAnsweredQuestions(prev => [...prev, currentQuestion])
+  }
 
   const handleNext = () => {
     if (isLastQuestion) {
-      setShowResult(true);
-      return;
+      setShowResult(true)
+      return
     }
 
-    setCurrentQuestion(prev => prev + 1);
-    setSelected(null);
-  };
+    setCurrentQuestion(prev => prev + 1)
+    setSelected(null)
+  }
 
   const handlePrev = () => {
-    if (currentQuestion === 0) return;
+    if (currentQuestion === 0) return
 
-    setCurrentQuestion(prev => prev - 1);
-    setSelected(null);
-  };
+    setCurrentQuestion(prev => prev - 1)
+    setSelected(null)
+  }
 
   const handleReset = () => {
-    setCurrentQuestion(0);
-    setSelected(null);
-    setCorrectAnswers(0);
-    setAnsweredQuestions([]);
-    setShowResult(false);
-  };
+    setCurrentQuestion(0)
+    setSelected(null)
+    setCorrectAnswers(0)
+    setAnsweredQuestions([])
+    setShowResult(false)
+  }
 
   return (
     <DialogContent style={{ borderColor: 'var(--border)' }}>
@@ -78,33 +78,33 @@ export function QuizSectionPreset({ title, pageData }: Props) {
       {!showResult && (
         <div className="flex flex-col gap-2 mb-2">
           {question.alternatives.map((alt, index) => {
-            const isSelected = selected === index;
-            const isCorrect = alt.id === question.correctAnswerId;
+            const isSelected = selected === index
+            const isCorrect = alt.id === question.correctAnswerId
 
             return (
               <button
                 key={alt.id}
                 onClick={() => handleSelect(index)}
                 className={cn(
-                  "relative overflow-hidden py-4 px-6 border-2 border-zinc-800 rounded-lg text-left transition-colors",
-                  selected !== index && "hover:bg-zinc-700/10 cursor-pointer",
+                  'relative overflow-hidden py-4 px-6 border-2 border-zinc-800 rounded-lg text-left transition-colors',
+                  selected !== index && 'hover:bg-zinc-700/10 cursor-pointer',
                   selected !== null && (
                     isSelected
-                      ? (isCorrect ? "bg-green-500/20 border-green-500" : "bg-red-500/20 border-red-500")
-                      : "opacity-60"
+                      ? (isCorrect ? 'bg-green-500/20 border-green-500' : 'bg-red-500/20 border-red-500')
+                      : 'opacity-60'
                   )
                 )}
                 disabled={selected !== null}
               >
                 <span className={cn(
-                  "border-2 border-zinc-800 rounded-full w-3.5 h-4/5 absolute left-0 top-1/2 -translate-y-1/2",
-                  selected !== null && isSelected && (isCorrect ? "bg-green-500 border-green-500" : "bg-red-500 border-red-500")
+                  'border-2 border-zinc-800 rounded-full w-3.5 h-4/5 absolute left-0 top-1/2 -translate-y-1/2',
+                  selected !== null && isSelected && (isCorrect ? 'bg-green-500 border-green-500' : 'bg-red-500 border-red-500')
                 )} />
                 <span className="text-sm">
                   {alt.text}
                 </span>
               </button>
-            );
+            )
           })}
         </div>
       )}
@@ -117,7 +117,7 @@ export function QuizSectionPreset({ title, pageData }: Props) {
             </Button>
 
             <Button onClick={handleNext} disabled={selected === null}>
-              {isLastQuestion ? "Finalizar" : "Próximo"}
+              {isLastQuestion ? 'Finalizar' : 'Próximo'}
             </Button>
           </>
         ) : (
@@ -133,5 +133,5 @@ export function QuizSectionPreset({ title, pageData }: Props) {
         />
       </DialogFooter>
     </DialogContent>
-  );
+  )
 }

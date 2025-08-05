@@ -1,11 +1,11 @@
-import { BoltIcon, BookmarkSquareIcon, CheckCircleIcon, ChevronRightIcon, CubeTransparentIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { BoltIcon, BookmarkSquareIcon, CheckCircleIcon, ChevronRightIcon, CubeTransparentIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 type LinkProfileProps = {
   href: string,
   title: string,
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-};
+}
 
 const LinkProfile = ({ href, title, Icon }: LinkProfileProps) => {
   return (
@@ -17,16 +17,15 @@ const LinkProfile = ({ href, title, Icon }: LinkProfileProps) => {
 
       <ChevronRightIcon className="w-6 h-auto " />
     </Link>
-  );
-};
-
+  )
+}
 
 export const ProfileSidebar = () => {
   const links = [
-    { href: "#activities", title: "Activities", Icon: CubeTransparentIcon },
-    { href: "#metrics", title: "Metrics", Icon: BoltIcon },
-    { href: "#achievements", title: "Achievements", Icon: CheckCircleIcon },
-    { href: "#tracksCreated", title: "Tracks Created", Icon: BookmarkSquareIcon }
+    { href: '#activities', title: 'Activities', Icon: CubeTransparentIcon },
+    { href: '#metrics', title: 'Metrics', Icon: BoltIcon },
+    { href: '#achievements', title: 'Achievements', Icon: CheckCircleIcon },
+    { href: '#tracksCreated', title: 'Tracks Created', Icon: BookmarkSquareIcon }
   ]
 
   return (

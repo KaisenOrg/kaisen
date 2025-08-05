@@ -1,8 +1,8 @@
 import { BookmarkIcon } from "@heroicons/react/20/solid";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
-import { Card } from "./card";
+import { Button } from "../ui/button";
+import { Card } from "../ui/card";
 
 const COURSE_TITLE = "Principles of Python";
 const COURSE_DESCRIPTION = "Master Python step by step with personalized, interactive content";

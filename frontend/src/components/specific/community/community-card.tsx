@@ -6,7 +6,7 @@ import {
   RocketLaunchIcon,
 } from "@heroicons/react/24/solid";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { Button } from "./button";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 type CommunityCardProps = {

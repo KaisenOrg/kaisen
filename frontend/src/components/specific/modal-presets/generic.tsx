@@ -1,38 +1,38 @@
+import type { ReactNode } from 'react'
+import { Button } from '@/components/ui/button'
+import { useModalStore } from '@/stores/useModalStore'
 import {
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogFooter,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog'
 import {
   AlertDialogContent,
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogDescription,
   AlertDialogFooter
-} from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
-import { usePopoverStore } from "@/stores/usePopoverStore";
-import type { ReactNode } from "react";
+} from '@/components/ui/alert-dialog'
 
 interface Props {
-  title: string;
-  description?: string;
-  content?: ReactNode;
-  onConfirm?: () => void;
+  title: string
+  description?: string
+  content?: ReactNode
+  onConfirm?: () => void
   useAlertDialog?: boolean
 }
 
 export function GenericPopupContent({ title, description, content, onConfirm, useAlertDialog }: Props) {
-  const { close } = usePopoverStore();
+  const { close } = useModalStore()
 
   const handleConfirm = () => {
     if (onConfirm) {
-      onConfirm();
+      onConfirm()
     }
-    close();
-  };
+    close()
+  }
 
   if (useAlertDialog) {
     return (
@@ -46,7 +46,7 @@ export function GenericPopupContent({ title, description, content, onConfirm, us
 
         <AlertDialogFooter>
           <Button variant="outline" onClick={close}>
-            {onConfirm ? "Cancelar" : "Fechar"}
+            {onConfirm ? 'Cancelar' : 'Fechar'}
           </Button>
           {onConfirm && <Button onClick={handleConfirm}>Confirmar</Button>}
         </AlertDialogFooter>
@@ -65,10 +65,10 @@ export function GenericPopupContent({ title, description, content, onConfirm, us
 
       <DialogFooter>
         <Button variant="outline" onClick={close}>
-          {onConfirm ? "Cancelar" : "Fechar"}
+          {onConfirm ? 'Cancelar' : 'Fechar'}
         </Button>
         {onConfirm && <Button onClick={handleConfirm}>Confirmar</Button>}
       </DialogFooter>
     </DialogContent>
-  );
+  )
 }
