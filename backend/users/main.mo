@@ -4,9 +4,9 @@ import Result "mo:base/Result";
 import Iter "mo:base/Iter";
 import Types "./Types";
 
-actor {
-  private var users : TrieMap.TrieMap<Text, Types.User> = TrieMap.TrieMap(Text.equal, Text.hash);
-  stable var stableUsers : [(Text, Types.User)] = [];
+persistent actor {
+  private transient var users : TrieMap.TrieMap<Text, Types.User> = TrieMap.TrieMap(Text.equal, Text.hash);
+  var stableUsers : [(Text, Types.User)] = [];
 
   system func preupgrade() {
     stableUsers := Iter.toArray(users.entries());
@@ -48,5 +48,4 @@ actor {
       case _ { return #ok };
     };
   };
-
 };

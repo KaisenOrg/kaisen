@@ -10,26 +10,25 @@ import Sha256 "utils/sha256";
 import Nat8 "mo:base/Nat8";
 import Principal "mo:base/Principal";
 
-actor class CertificateNFT() {
+persistent actor {
   public type NFT = {
     id : Text;
-    authorId: Text;
+    authorId : Text;
     userName : Text;
     trackName : Text;
-    timeSpent : Nat;          
+    timeSpent : Nat;
     emmittedAt : Time.Time;
-    img : Text;            
+    img : Text;
   };
 
-  //Trie para guardar os NFTs
-  private var nfts = Trie.empty<Text, NFT>();
+  private transient var nfts = Trie.empty<Text, NFT>();
 
   type Key<K> = Trie.Key<K>;
 
   private func key(t : Text) : Key<Text> { { hash = Text.hash(t); key = t } };
-  
-  private func blobToHex(blob: Blob) : Text {
-    let hex = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+
+  private func blobToHex(blob : Blob) : Text {
+    let hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
     var text = "";
     for (byte in blob.vals()) {
       let high_nibble_nat8 = byte >> 4;
@@ -42,30 +41,27 @@ actor class CertificateNFT() {
     return text;
   };
 
-  //Trie para guardar os usuários e seus respectivos NFTs
-  var userIndex : Trie.Trie<Text, [Text]> = Trie.empty();
+  transient var userIndex : Trie.Trie<Text, [Text]> = Trie.empty();
 
-  func updateUserIndex(userId: Text, nftId: Text) {
+  func updateUserIndex(userId : Text, nftId : Text) {
     switch (Trie.get(userIndex, key(userId), Text.equal)) {
-        case (?ids) {
-            userIndex := Trie.put(userIndex, key(userId), Text.equal, Array.append(ids, [nftId])).0;
-        };
-        case null {
-            userIndex := Trie.put(userIndex, key(userId), Text.equal, [nftId]).0;
-        };
+      case (?ids) {
+        userIndex := Trie.put(userIndex, key(userId), Text.equal, Array.append(ids, [nftId])).0;
+      };
+      case null {
+        userIndex := Trie.put(userIndex, key(userId), Text.equal, [nftId]).0;
+      };
     };
   };
 
   public shared ({ caller }) func mintNFT(
     userName : Text,
-    trackName : Text, 
-    timeSpent : Nat
-    ) : async  Result.Result<Text, Text> {
+    trackName : Text,
+    timeSpent : Nat,
+  ) : async Result.Result<Text, Text> {
 
-    //Criação de um hash para ser o identificador do NFT
     let timeSpentText = Nat.toText(timeSpent);
-    let serializedMetadata : Text = 
-    "userName=" # userName #
+    let serializedMetadata : Text = "userName=" # userName #
     "|trackName=" # trackName #
     "|timeSpent=" # timeSpentText;
     let contentBlob = Text.encodeUtf8(serializedMetadata);
@@ -76,7 +72,7 @@ actor class CertificateNFT() {
       case (?_existing) {
         return #err("NFT already exists");
       };
-      case null {  
+      case null {
         let img = svg.generateSVG(userName, trackName, timeSpent, nftId);
 
         let nft : NFT = {
@@ -106,18 +102,21 @@ actor class CertificateNFT() {
     return allNfts;
   };
 
-  public query func getNFTsByUser(userId: Text) : async [NFT] {
+  public query func getNFTsByUser(userId : Text) : async [NFT] {
     switch (Trie.get(userIndex, key(userId), Text.equal)) {
-        case (?nftIds) {
-            return Array.mapFilter(nftIds, func (id: Text) : ?NFT {
-                Trie.get(nfts, key(id), Text.equal)
-            });
-        };
-        case null { return [] };
+      case (?nftIds) {
+        return Array.mapFilter(
+          nftIds,
+          func(id : Text) : ?NFT {
+            Trie.get(nfts, key(id), Text.equal);
+          },
+        );
+      };
+      case null { return [] };
     };
-  } ;
-  
-  public shared query func getNFTById(id: Text) : async ?NFT {
+  };
+
+  public shared query func getNFTById(id : Text) : async ?NFT {
     return Trie.get(nfts, key(id), Text.equal);
   };
 

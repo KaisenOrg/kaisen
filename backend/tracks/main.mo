@@ -10,11 +10,9 @@ import Int "mo:base/Int";
 
 import Types "Types";
 
-actor {
-  stable var tracks : Trie.Trie<Text, Types.Track> = Trie.empty();
-  stable var nextIdCounter : Nat = 0;
-
-  // --- FUNÇÕES PRIVADAS (HELPERS) ---
+persistent actor {
+  var tracks : Trie.Trie<Text, Types.Track> = Trie.empty();
+  var nextIdCounter : Nat = 0;
 
   type Key<K> = Trie.Key<K>;
 
@@ -26,8 +24,6 @@ actor {
     nextIdCounter += 1;
     return timeText # "-" # counterText;
   };
-
-  // --- FUNÇÕES PÚBLICAS ---
 
   public shared (msg) func createTrack(title : Text, description : Text, sections : [Types.Section]) : async Result.Result<Text, Text> {
     let caller = msg.caller;
@@ -108,7 +104,6 @@ actor {
           throw Error.reject("Acesso negado: você não é o autor.");
         };
 
-        // Força a consistência do ID e autor
         let safeTrack : Types.Track = {
           updatedTrack with
           id = trackId;
@@ -121,12 +116,6 @@ actor {
     };
   };
 
-  // DEV FUNCTION (deletar antes de enviar p/ produção)
-
-  /**
-     * @notice Limpa todas as trilhas existentes e injeta um conjunto de trilhas de exemplo para teste.
-     * Apenas controllers do canister podem chamar esta função.
-     */
   public shared (controller) func injectSampleTracks() : async () {
     tracks := Trie.empty();
 

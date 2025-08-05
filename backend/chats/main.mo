@@ -10,21 +10,10 @@ import Debug "mo:base/Debug";
 
 import Types "Types";
 
-actor {
-  stable var chats : Trie.Trie<Text, Types.ChatSession> = Trie.empty();
-  stable var nextChatId : Nat = 0;
-  stable var kaiCanister : ?Principal = null;
+persistent actor {
+  var chats : Trie.Trie<Text, Types.ChatSession> = Trie.empty();
+  var nextChatId : Nat = 0;
 
-  // --- FUNÇÕES DE ADMINISTRAÇÃO (SEGURANÇA) ---
-  public shared (msg) func setKaiCanister(id : Principal) : async () {
-    let caller = msg.caller;
-    if (not Principal.isController(caller)) {
-      throw Error.reject("Acesso negado: o chamador não é um controller.");
-    };
-    kaiCanister := ?id;
-  };
-
-  // --- FUNÇÕES PÚBLICAS (API DO CANISTER) ---
   public shared (msg) func createChatSession(firstMessageText : Text) : async Text {
     let caller = msg.caller;
     let now = Time.now();
@@ -92,7 +81,6 @@ actor {
     };
   };
 
-  // --- FUNÇÕES AUXILIARES ---
   private func generateUniqueId() : Text {
     nextChatId += 1;
     return Int.toText(Time.now()) # "-" # Nat.toText(nextChatId);
