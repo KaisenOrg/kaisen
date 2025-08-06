@@ -1,8 +1,8 @@
-# KAISEN
+# Kaisen
 
 <div align="center">
 
-<img src="./documents/assets/buidl-banner.png" width="100%">
+<img src="./documents/assets/banner.png" width="100%">
 
 </div>
 
