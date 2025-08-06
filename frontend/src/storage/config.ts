@@ -1,1 +1,1 @@
-export const LOCAL_STORAGE_KEY = 'kaizen-dev-auth'
+export const LOCAL_STORAGE_KEY = 'kaisen-dev-auth'

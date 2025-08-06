@@ -63,7 +63,7 @@ export default function Header() {
         <div className="flex items-center">
           <img
             src="/logo-text.svg"
-            alt="Kaizen Logo"
+            alt="Kaisen Logo"
             width={100}
             height={40}
             className="h-auto"
