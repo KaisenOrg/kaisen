@@ -10,6 +10,7 @@ import { useModalStore } from '@/stores/useModalStore'
 import { useTracksActions } from '@/hooks/useTracksActions'
 import { useActor } from '@/lib/agent'
 import '@/globals.css'
+import { SkeletonContinueCard } from '@/components/general/skeletonContinueCard'
 
 export default function Home() {
   const { open, close } = useModalStore()
@@ -60,6 +61,8 @@ export default function Home() {
 
         <div className="flex mt-4 gap-4">
           <ContinueCard />
+
+          <SkeletonContinueCard />
         </div>
       </div>
 
