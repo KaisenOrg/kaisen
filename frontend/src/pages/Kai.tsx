@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useActor } from '@/lib/agent'
-import { useAuth } from '@/hooks/useAuth'
+import { useUser } from '@/providers/user-provider'
 import { LoginButton } from '@/components/general/login-button'
 import { Button } from '@/components/ui/button'
 import ReactMarkdown from 'react-markdown'
@@ -12,7 +12,7 @@ interface Message {
 }
 
 export default function KaiTestPage() {
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated } = useUser()
   const [status, setStatus] = useState<string>('Pronto.')
   const [isLoading, setIsLoading] = useState<boolean>(false)
 

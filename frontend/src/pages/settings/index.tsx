@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { PencilIcon } from "@heroicons/react/20/solid";
 import { useState, useEffect } from "react";
-import { useUser } from "@/hooks/useUser";
+import { useUser } from "@/providers/user-provider";
 import { useModalStore } from "@/stores/useModalStore";
 import { toast } from "sonner";
 import ItemCard from "@/components/specific/store/item-card";
@@ -12,7 +12,7 @@ import { useKoin } from "@/hooks/useKoin";
 import { Principal } from "@dfinity/principal";
 
 export default function SettingsProfilePage() {
-  const { user, update, isLoading } = useUser();
+  const { user, updateUser, isLoading } = useUser();
   const { open, close } = useModalStore();
 
   const [form, setForm] = useState({
@@ -61,8 +61,7 @@ export default function SettingsProfilePage() {
 
     open({ type: "loading" });
 
-    await update({
-      ...user,
+    await updateUser({
       username: form.fullName,
       nickname: form.displayName,
       role: form.whatDoYouDo,

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
-import { useUser } from '@/hooks/useUser'
+import { useUser } from '@/providers/user-provider'
 import { PageHeader } from '@/components/general/page-header'
 import { ProfileSidebar } from '@/components/specific/profile/profileSidebar'
 

@@ -6,8 +6,8 @@ import { GlobalModal } from '@/components/ui/global-modal'
 import { Toaster } from '@/components/ui/sonner'
 
 import { useThemeStore } from '@/stores/useThemeStore'
-import { UserProvider } from './user-provider'
 import { DevAuthProvider } from './dev-auth'
+import { UserProvider } from './user-provider'
 
 function ThemeEffect() {
   const applyTheme = useThemeStore((s) => s.applyTheme)

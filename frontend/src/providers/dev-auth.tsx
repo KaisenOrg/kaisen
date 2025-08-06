@@ -7,7 +7,7 @@ const LOCAL_STORAGE_KEY = 'kaizen-dev-auth'
 
 interface DevAuthContextType {
   isAuthenticated: boolean
-  identity: Identity | null
+  identity?: Identity 
   principal?: Principal
   login: () => void
   logout: () => void
@@ -33,7 +33,7 @@ const saveIdentity = (identity: Ed25519KeyIdentity) => {
 }
 
 export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [identity, setIdentity] = useState<Identity | null>(null)
+  const [identity, setIdentity] = useState<Identity | undefined>(undefined)
 
   const isAuthenticated = !!identity
   const principal = identity?.getPrincipal()
@@ -53,7 +53,7 @@ export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => 
   }
 
   const logout = () => {
-    setIdentity(null)
+    setIdentity(undefined)
   }
 
   useEffect(() => {

@@ -1,8 +1,8 @@
 import { Button } from '@/components/ui/button';
-import { useAuth } from '@/hooks/useAuth';
+import { useUser } from '@/providers/user-provider';
 
 export const LoginButton = () => {
-  const { login, logout, isAuthenticated, principal } = useAuth();
+  const { login, logout, isAuthenticated, principal } = useUser();
 
   if (isAuthenticated) {
     return (

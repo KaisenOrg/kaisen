@@ -5,13 +5,13 @@ export function useAuth() {
   const isProd = import.meta.env.DFX_NETWORK === 'ic'
 
   if (isProd) {
-    const { user, connect: login, disconnect: logout } = useNfidAuth()
+    const { user, connect: login, disconnect: logout, isConnecting } = useNfidAuth()
     const isAuthenticated = !!user && !user.principal.isAnonymous()
     const principal = user?.principal
     const identity = useIdentity()
 
-    return { isAuthenticated, identity, principal, login, logout }
+    return { isAuthenticated, identity, principal, login, logout, isConnecting }
   }
 
-  return useDevAuth()
+  return { ...useDevAuth(), isConnecting: false }
 }
