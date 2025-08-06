@@ -65,6 +65,7 @@ export function AppRoutes() {
           </>) : (
             isLoading ? null : (<>
               <Route index element={<UserTestPage />} />
+              <Route path="*" element={<UserTestPage />} />
             </>)
           )}
         </Route>

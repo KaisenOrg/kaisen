@@ -3,10 +3,10 @@ import { useAuth } from '@/hooks/useAuth'
 import { useActor } from '@/lib/agent'
 import { toMotokoUser, toUserData } from '@/lib/mappers'
 import { useUserStore } from '@/stores/useUserStore'
+import { useModalStore } from '@/stores/useModalStore'
 import type { UserData } from '@/types'
 import type { Principal } from '@dfinity/principal'
 import type { Identity } from '@dfinity/agent'
-import { useModalStore } from '@/stores/useModalStore'
 
 type ContextType = {
   user: UserData | null
@@ -27,7 +27,7 @@ type ContextType = {
 const UserContext = createContext<ContextType | undefined>(undefined)
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
-  const { identity, isAuthenticated, login, logout, principal, isConnecting } = useAuth()
+  const { identity, isAuthenticated, login, logout, principal } = useAuth()
   const { setUser, user, clearUser, isLoading, setLoading, error, setError } = useUserStore()
   const { open, close } = useModalStore()
   const usersActor = useActor('users_backend')
@@ -133,24 +133,17 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       setLoading(false)
     }
   }
-
+  
   useEffect(() => {
-    setLoading(isConnecting)
-  }, [isConnecting, setLoading])
-
-  useEffect(() => {
-    if (isLoading) {
-      open({ type: 'loading' })
-    } else {
-      close()
-    }
+    if (isLoading) open({ type: 'loading' })
+    else close()
   }, [isLoading])
 
   useEffect(() => {
-    if (isAuthenticated && !user && usersActor && principal) {
+    if (isAuthenticated && !user && usersActor) {
       refetch()
     }
-  }, [isAuthenticated, user, usersActor, principal])
+  }, [isAuthenticated, user, usersActor])
 
   const value = useMemo(() => ({
     user, isAuthenticated,

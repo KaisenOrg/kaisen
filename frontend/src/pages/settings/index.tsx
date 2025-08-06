@@ -1,65 +1,64 @@
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { PencilIcon } from "@heroicons/react/20/solid";
-import { useState, useEffect } from "react";
-import { useUser } from "@/providers/user-provider";
-import { useModalStore } from "@/stores/useModalStore";
-import { toast } from "sonner";
-import ItemCard from "@/components/specific/store/item-card";
-import { useKoin } from "@/hooks/useKoin";
-import { Principal } from "@dfinity/principal";
+import { useState, useEffect } from 'react'
+import { toast } from 'sonner'
+import { useUser } from '@/providers/user-provider'
+import { useModalStore } from '@/stores/useModalStore'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { PencilIcon } from '@heroicons/react/20/solid'
 
 export default function SettingsProfilePage() {
-  const { user, updateUser, isLoading } = useUser();
-  const { open, close } = useModalStore();
+  const { user, updateUser, isLoading } = useUser()
+  const { open, close } = useModalStore()
 
   const [form, setForm] = useState({
-    fullName: user?.username || "",
-    displayName: user?.nickname || "",
-    whatDoYouDo: user?.role || "",
-    aboutMe: user?.about || "",
-  });
+    fullName: user?.username || '',
+    displayName: user?.nickname || '',
+    whatDoYouDo: user?.role || '',
+    aboutMe: user?.about || '',
+  })
 
-  const [avatarUrl] = useState<string | null>(user?.picture || null);
-  const [avatarInitials, setAvatarInitials] = useState(user?.nickname?.slice(0, 2) || "");
-  const [isDirty, setIsDirty] = useState(false);
+  const [avatarUrl] = useState<string | null>(user?.picture || null)
+  const [avatarInitials, setAvatarInitials] = useState(user?.nickname?.slice(0, 2) || '')
+  const [isDirty, setIsDirty] = useState(false)
 
   useEffect(() => {
+    if (!user || isLoading) return
+
     const changed =
       form.fullName !== user?.username ||
       form.displayName !== user?.nickname ||
       form.whatDoYouDo !== user?.role ||
-      form.aboutMe !== user?.about;
-    setIsDirty(changed);
-  }, [form, user]);
+      form.aboutMe !== user?.about
+
+    setIsDirty(changed)
+  }, [form, user, isLoading])
 
   useEffect(() => {
-    if (isLoading) return;
-
+    if (isLoading) return
     if (user) {
       setForm({
         fullName: user.username,
         displayName: user.nickname,
-        whatDoYouDo: user.role || "",
-        aboutMe: user.about || "",
-      });
-      setAvatarInitials(user.nickname.slice(0, 2));
+        whatDoYouDo: user.role || '',
+        aboutMe: user.about || '',
+      })
+      setAvatarInitials(user.nickname.slice(0, 2))
     }
-  }, [user, isLoading]);
+  }, [user, isLoading])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setForm(prev => ({ ...prev, [id]: value }));
-  };
+    const { id, value } = e.target
+    setForm(prev => ({ ...prev, [id]: value }))
+  }
 
   const handleSave = async (e: React.FormEvent) => {
-    if (!user) return;
+    if (!user) return
 
-    e.preventDefault();
+    e.preventDefault()
 
-    open({ type: "loading" });
+    open({ type: 'loading' })
 
     await updateUser({
       username: form.fullName,
@@ -67,28 +66,11 @@ export default function SettingsProfilePage() {
       role: form.whatDoYouDo,
       about: form.aboutMe,
       picture: avatarUrl ?? undefined,
-    });
-    setIsDirty(false);
-    close();
-    toast.success("Perfil atualizado com sucesso!");
-  };
-
-  const STORE_PRINCIPAL = Principal.fromText("aaaaa-aa");
-  const { transfer } = useKoin(user?.principal || null);
-
-  const handleBuy = async () => {
-    if (!user?.principal) {
-      alert("User not authenticated!");
-      return;
-    }
-    try {
-      const amount = BigInt(250_00000000);
-      await transfer(STORE_PRINCIPAL, amount);
-      alert("Compra realizada com sucesso! 250 Koins pagos.");
-    } catch (err) {
-      alert("Erro ao realizar pagamento: " + (err instanceof Error ? err.message : String(err)));
-    }
-  };
+    })
+    setIsDirty(false)
+    close()
+    toast.success('Perfil atualizado com sucesso!')
+  }
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-8">
@@ -98,12 +80,13 @@ export default function SettingsProfilePage() {
           <div className="flex gap-8">
             <div className="flex flex-col w-full gap-8">
               <div>
-                <label htmlFor="fullName" className="block text-sm font-medium mb-1">Full name</label>
+                <label htmlFor="fullName" className="block text-sm font-medium mb-1">Username</label>
                 <Input
                   id="fullName"
                   className="bg-zinc-900 border-zinc-800"
                   value={form.fullName}
                   onChange={handleInputChange}
+                  disabled
                 />
               </div>
               <div>
@@ -158,6 +141,7 @@ export default function SettingsProfilePage() {
               className="bg-zinc-900 border-zinc-800"
               value={form.whatDoYouDo}
               onChange={handleInputChange}
+              placeholder='Empty'
             />
           </div>
 
@@ -168,6 +152,7 @@ export default function SettingsProfilePage() {
               className="bg-zinc-900 border-zinc-800 min-h-[96px]"
               value={form.aboutMe}
               onChange={handleInputChange}
+              placeholder='Empty'
             />
           </div>
 
@@ -185,22 +170,15 @@ export default function SettingsProfilePage() {
                   displayName: user?.nickname || "",
                   whatDoYouDo: user?.role || "",
                   aboutMe: user?.about || "",
-                });
-                setIsDirty(false);
+                })
+                setIsDirty(false)
               }}
             >
-              Cancel
+              Clear
             </Button>
           </div>
         </form>
       </div>
-
-      <ItemCard
-        title="Example Item"
-        description="This is an example item description that is quite long and should be truncated if it exceeds two lines."
-        price={250}
-        onBuy={handleBuy}
-      />
     </div>
-  );
+  )
 }

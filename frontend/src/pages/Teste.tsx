@@ -3,7 +3,11 @@ import { useUser } from '@/providers/user-provider'
 import { Button } from '@/components/ui/button'
 
 export default function UserTestPage() {
-  const { login, logout, isAuthenticated, principal, user, createUser, refetch, updateUser } = useUser()
+  const {
+    login, logout, isAuthenticated,
+    principal, user, createUser,
+    refetch, updateUser
+  } = useUser()
 
   const [creating, setCreating] = useState(false)
   const [editing, setEditing] = useState(false)
@@ -13,12 +17,6 @@ export default function UserTestPage() {
     about: '',
     role: '',
   })
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      refetch()
-    }
-  }, [isAuthenticated])
 
   useEffect(() => {
     if (user) {
