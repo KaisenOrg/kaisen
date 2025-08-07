@@ -25,7 +25,7 @@ Além disso, troquei do Yarn para o PNPM e o install das deps mudou de 24s para 
     // Simula carregamento
     const timeout = setTimeout(() => {
       setLoading(false)
-    }, 1500)
+    }, 2000)
 
     return () => clearTimeout(timeout)
   }, [])

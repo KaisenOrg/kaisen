@@ -27,8 +27,6 @@ export default function Home() {
   useEffect(() => {
     if (!tracksActor) return;
 
-    open({ type: "loading" });
-
     fetchTracks().then(async () => {
       if (tracks?.length === 0) {
         await injectSampleTracks();
