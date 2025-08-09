@@ -7,6 +7,7 @@ import Nat "mo:base/Nat";
 import Text "mo:base/Text";
 import Int "mo:base/Int";
 import Debug "mo:base/Debug";
+import Result "mo:base/Result";
 
 import Types "Types";
 
@@ -14,27 +15,32 @@ persistent actor {
   var chats : Trie.Trie<Text, Types.ChatSession> = Trie.empty();
   var nextChatId : Nat = 0;
 
-  public shared (msg) func createChatSession(firstMessageText : Text) : async Text {
-    let caller = msg.caller;
-    let now = Time.now();
-    let chatId = generateUniqueId();
+  public shared (msg) func createChatSession(firstMessageText : Text) : async Result.Result<Text, Text> {
+    try {
+      let caller = msg.caller;
+      let now = Time.now();
+      let chatId = generateUniqueId();
 
-    let initialMessage : Types.Message = {
-      sender = #User;
-      text = firstMessageText;
-      timestamp = now;
+      let initialMessage : Types.Message = {
+        sender = #User;
+        text = firstMessageText;
+        timestamp = now;
+      };
+
+      let newSession : Types.ChatSession = {
+        id = chatId;
+        owner = caller;
+        title = firstMessageText;
+        createdAt = now;
+        messages = [initialMessage];
+      };
+
+      chats := Trie.put(chats, key(chatId), Text.equal, newSession).0;
+      return #ok(chatId);
+    } catch (err) {
+      let errorMessage = "Ocorreu um erro ao criar o chat: " # Error.message(err);
+      return #err(errorMessage);
     };
-
-    let newSession : Types.ChatSession = {
-      id = chatId;
-      owner = caller;
-      title = firstMessageText;
-      createdAt = now;
-      messages = [initialMessage];
-    };
-
-    chats := Trie.put(chats, key(chatId), Text.equal, newSession).0;
-    return chatId;
   };
 
   public shared (msg) func addInteraction(chatId : Text, userMessage : Text, aiMessage : Text) : async () {
