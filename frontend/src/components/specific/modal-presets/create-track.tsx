@@ -1,27 +1,22 @@
 import { useState } from 'react'
 import { useActor } from '@/lib/agent'
 import type { Section } from '@/types'
+
 import { useModalStore } from '@/stores/useModalStore'
 import { useTracksActions } from '@/hooks/useTracksActions'
-import { Button } from '@/components/ui/button'
+
 import { Input } from '@/components/ui/input'
-import {
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-} from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { DialogContent, DialogTitle } from '@/components/ui/dialog'
 
 export function CreateTrackPreset({ navigate }: { navigate: (route: string) => void }) {
   const { createTrack } = useTracksActions()
   const { close } = useModalStore()
   const kaiActor = useActor('kai_backend')
 
-  const [topic, setTopic] = useState('')
-  const [track, setTrack] = useState<{
-    title: string
-    description: string
-    sections: Section[]
-  } | null>(null)
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [track, setTrack] = useState<{ title: string, description: string, sections: Section[] } | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -30,16 +25,13 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
     setLoading(true)
     setError(null)
     try {
-      const result = await kaiActor.generateTrack(topic)
+      const result = await kaiActor.generateTrack(`Gere uma trilha sobre ${title}.${description ? `Sua descrição deve ser: ${description}` : ''}.`, [])
       if ('ok' in result) {
-        const parsed = JSON.parse(
-          JSON.parse(result.ok).candidates[0].content.parts[0].text.replaceAll('#', '')
-        )
-
-        console.log(JSON.stringify(parsed, null, 2))
-
+        const parsed = JSON.parse(JSON.parse(result.ok).candidates[0].content.parts[0].text.replaceAll('#', ''))
         const { title, description, sections } = parsed
+
         setTrack({ title, description, sections })
+        handleCreateTrack()
       } else {
         setError(result.err)
       }
@@ -51,7 +43,7 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
     }
   }
 
-  const handleConfirm = async () => {
+  const handleCreateTrack = async () => {
     if (!track) return
     try {
       const id = await createTrack({
@@ -65,7 +57,7 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
         return
       }
 
-      navigate(`/tracks/${id}`)
+      navigate(`/tracks/${id}/edit`)
       close()
     } catch (err) {
       setError('Failed to save track.')
@@ -75,80 +67,45 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
 
   return (
     <DialogContent className="max-w-xl" style={{ borderColor: 'var(--border)' }}>
-      <DialogTitle className="text-2xl font-semibold">Create Track</DialogTitle>
-      <DialogDescription>
-        Generate a learning track based on a topic and confirm to add it.
-      </DialogDescription>
+      <DialogTitle className="text-2xl font-semibold">Create New Track</DialogTitle>
 
       <div className="space-y-4 mt-4">
-        {!track && (
-          <>
-            <Input
-              placeholder="Enter a topic (e.g. Intro to AI)"
-              value={topic}
-              onChange={(e) => setTopic(e.target.value)}
-              disabled={loading}
-            />
-            {error && <p className="text-sm text-red-500">{error}</p>}
-            <Button
-              onClick={handleGenerate}
-              disabled={loading || topic.trim() === ''}
-              className="w-full"
-            >
-              {loading ? 'Generating track...' : 'Generate with AI'}
-            </Button>
-          </>
-        )}
+        <div className='flex flex-col gap-2'>
+          <label className="text-sm font-medium">Name your track</label>
+          <Input
+            placeholder="E.g. Introduction to Blockchain"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            disabled={loading}
+          />
+          <p className="text-xs text-zinc-500">Be clear and specific. This will be the main name that everyone will see.</p>
+        </div>
 
-        {track && (
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold">Track Details</h3>
-              <p className="text-sm text-muted-foreground">
-                <strong>Title:</strong> {track.title}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                <strong>Description:</strong> {track.description}
-              </p>
-            </div>
-            <div className="rounded-md border p-3 bg-muted/40 max-h-72 overflow-y-auto">
-              {track.sections.map((section, index) => (
-                <div
-                  key={index}
-                  className="p-2 border-b last:border-none text-sm"
-                >
-                  <p className="font-medium">
-                    {index + 1}. {section.title}
-                  </p>
-                  <p className="text-xs text-muted-foreground italic">
-                    Type: {Object.keys(section.content)[0]}
-                  </p>
-                </div>
-              ))}
-            </div>
+        <div className='flex flex-col gap-2'>
+          <label className="text-sm font-medium">Description</label>
+          <Input
+            placeholder="Describe the main objective of this track, who it is for and what users will learn..."
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            disabled={loading}
+          />
+          <p className="text-xs text-zinc-500">Tip: A good description increases engagement. Think about the prerequisites or the differentiator of your content.</p>
+        </div>
 
-            {error && <p className="text-sm text-red-500">{error}</p>}
+        {error && <p className="text-sm text-red-500">{error}</p>}
 
-            <div className="flex justify-end gap-3">
-              <Button
-                variant="ghost"
-                onClick={() => {
-                  setTrack(null)
-                  setError(null)
-                }}
-              >
-                Cancel
-              </Button>
-              <Button
-                onClick={handleConfirm}
-                className="bg-green-600 hover:bg-green-700 text-white"
-              >
-                Add Track
-              </Button>
-            </div>
-          </div>
-        )}
+        <div className='flex justify-end gap-2'>
+          <Button variant='outline' onClick={close} disabled={loading}>
+            Cancel
+          </Button>
+          <Button
+            onClick={handleGenerate}
+            disabled={loading || title.trim() === ''}
+          >
+            {loading ? 'Creating track...' : 'Create'}
+          </Button>
+        </div>
       </div>
-    </DialogContent>
+    </DialogContent >
   )
 }

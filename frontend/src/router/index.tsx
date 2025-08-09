@@ -21,6 +21,7 @@ import UserTestPage from '@/pages/Teste'
 import TrackPage from '@/pages/tracks'
 import KaiTestPage from '@/pages/Kai'
 import Store from '@/pages/Store'
+import EditTrackPage from '@/pages/tracks/edit'
 
 export function AppRoutes() {
   const { user, isLoading } = useUser()
@@ -44,6 +45,8 @@ export function AppRoutes() {
               <Route path="proof" element={<TracksProofPage />} />
               <Route path="practice" element={<PracticePage />} />
               <Route path="knowledge" element={<KnowledgePage />} />
+
+              <Route path="edit" element={<EditTrackPage />} />
               {/* outras rotas */}
             </Route>
 
