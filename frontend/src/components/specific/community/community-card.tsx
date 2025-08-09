@@ -54,8 +54,13 @@ export default function CommunityCard({
       ? "flex flex-col justify-between text-left text-white relative w-full overflow-hidden z-[1]"
       : "flex flex-col text-left text-white px-6 relative w-full overflow-hidden z-[1]";
 
+  const occupation =
+    variant === "large"
+    ? "col-span-2"
+    : "col-span-1";
+
   return (
-    <Link to={`/tracks/${id}`}>
+    <Link to={`/tracks/${id}`} className={occupation}>
       <div className={containerClass}>
         {showMascot && (
           <img
