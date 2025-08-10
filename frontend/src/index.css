@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@layer components {
+
+ .toast-description {
+    color: var(--muted-foreground) !important;
+    opacity: 0.9 !important;
+  }
+
+  .toast-success {
+    border-left: 4px solid hsl(142.1 76.2% 36.3%) !important;
+  }
+
+  .toast-error {
+    border-left: 4px solid hsl(0 72.2% 50.6%) !important;
+  }
+
+  .toast-warning {
+    border-left: 4px solid hsl(47.9 95.8% 53.1%) !important;
+  }
+
+  .toast-info {
+    border-left: 4px solid hsl(215.4 83.3% 53.3%) !important;
+  }
+
+  .toast-koin {
+    border-left: 4px solid hsl(47.9 95.8% 53.1%) !important;
+  }
+
+}

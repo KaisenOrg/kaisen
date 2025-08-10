@@ -1,10 +1,18 @@
-import { Toaster as Sonner, type ToasterProps } from "sonner"
+import { Toaster as Sonner, type ToasterProps } from "sonner";
 
 const Toaster = ({ ...props }: ToasterProps) => {
-
   return (
     <Sonner
       className="toaster group"
+      toastOptions={{
+        classNames: {
+          success: "toast-success",
+          error: "toast-error",
+          warning: "toast-warning",
+          info: "toast-info",
+          description: 'toast-description'
+        },
+      }}
       style={
         {
           "--normal-bg": "var(--popover)",
@@ -14,7 +22,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       }
       {...props}
     />
-  )
-}
+  );
+};
 
-export { Toaster }
+export { Toaster };
