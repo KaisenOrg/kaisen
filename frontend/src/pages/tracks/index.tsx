@@ -29,6 +29,7 @@ export default function TrackPage() {
   const [screenWidth, setScreenWidth] = useState(0)
   const cardDimensions = { width: 320, height: 238 }
 
+
   useEffect(() => {
     fetchTracks()
       .then(() => {

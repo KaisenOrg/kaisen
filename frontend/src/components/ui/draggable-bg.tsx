@@ -1,4 +1,6 @@
-import { useState, useRef, type MouseEvent, type CSSProperties, type ReactNode } from 'react';
+import { useState, useLayoutEffect, useRef, type ReactNode } from 'react';
+import { useGesture } from '@use-gesture/react';
+import { useCanvasStore } from '@/stores/useCanvasStore';
 import Particles from './bg-particles';
 
 interface DraggableBackgroundProps {
@@ -16,82 +18,96 @@ export function DraggableBackground({
   className,
   canvasClassName,
 }: DraggableBackgroundProps) {
+  const { position: globalPosition, setPosition: setGlobalPosition } = useCanvasStore();
+  const [localPosition, setLocalPosition] = useState(globalPosition);
   const viewportRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStartRef = useRef({ x: 0, y: 0 });
+  const [viewportSize, setViewportSize] = useState({ width: 0, height: 0 });
 
-  const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
-    if (e.button !== 0 || !viewportRef.current) return;
+  useLayoutEffect(() => {
+    if (!viewportRef.current) return;
+    const observer = new ResizeObserver(entries => {
+      const entry = entries[0];
+      if (entry) { setViewportSize({ width: entry.contentRect.width, height: entry.contentRect.height }); }
+    });
+    observer.observe(viewportRef.current);
+    return () => observer.disconnect();
+  }, []);
 
-    viewportRef.current.focus();
-    setIsDragging(true);
-    dragStartRef.current = {
-      x: e.clientX - position.x,
-      y: e.clientY - position.y,
-    };
-    viewportRef.current.style.cursor = 'grabbing';
+  const bounds = {
+    left: viewportSize.width > canvasWidth ? 0 : viewportSize.width - canvasWidth,
+    right: 0,
+    top: viewportSize.height > canvasHeight ? 0 : viewportSize.height - canvasHeight,
+    bottom: 0,
   };
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    if (viewportRef.current) {
-      viewportRef.current.style.cursor = 'grab';
+  const bind = useGesture(
+    {
+      onDrag: ({ delta: [dx, dy] }) => {
+        setLocalPosition(currentPos => {
+          const newX = currentPos.x + dx;
+          const newY = currentPos.y + dy;
+          const clampedX = Math.max(bounds.left, Math.min(newX, bounds.right));
+          const clampedY = Math.max(bounds.top, Math.min(newY, bounds.bottom));
+          return { x: clampedX, y: clampedY };
+        });
+      },
+      onWheel: ({ event, delta: [dx, dy] }) => {
+        event.preventDefault();
+        setLocalPosition(currentPos => {
+          const newX = currentPos.x - dx;
+          const newY = currentPos.y - dy;
+          const clampedX = Math.max(bounds.left, Math.min(newX, bounds.right));
+          const clampedY = Math.max(bounds.top, Math.min(newY, bounds.bottom));
+          return { x: clampedX, y: clampedY };
+        });
+      },
+      onDragEnd: () => setGlobalPosition(localPosition),
+      onWheelEnd: () => setGlobalPosition(localPosition),
+    },
+    {
+      drag: { bounds },
+      wheel: { target: viewportRef },
     }
-  };
+  );
 
-  const handleMouseLeave = () => {
-    if (isDragging) handleMouseUp();
-  };
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!isDragging || !viewportRef.current) return;
-    e.preventDefault();
-
-    const viewportWidth = viewportRef.current.clientWidth;
-    const viewportHeight = viewportRef.current.clientHeight;
-
-    let newX = e.clientX - dragStartRef.current.x;
-    let newY = e.clientY - dragStartRef.current.y;
-
-    newX = Math.min(newX, 0);
-    newX = Math.max(newX, viewportWidth - canvasWidth);
-    newY = Math.min(newY, 0);
-    newY = Math.max(newY, viewportHeight - canvasHeight);
-
-    setPosition({ x: newX, y: newY });
-  };
-
-  const canvasStyle: CSSProperties = {
+  // 1. Criamos um objeto de estilo para o movimento.
+  //    Ele será APLICADO IGUALMENTE às duas camadas.
+  const movableStyle = {
     width: canvasWidth,
     height: canvasHeight,
-    transform: `translate(${position.x}px, ${position.y}px)`,
+    transform: `translate3d(${localPosition.x}px, ${localPosition.y}px, 0)`,
   };
 
   return (
+    // 2. Este é o viewport. Ele captura os eventos de mouse/gestos.
     <div
       ref={viewportRef}
-      tabIndex={0}
-      className={`relative overflow-hidden cursor-grab outline-none ${className}`}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
+      {...bind()}
+      className={`relative overflow-hidden cursor-grab active:cursor-grabbing outline-none touch-action-none ${className}`}
     >
+      {/* 3. CAMADA 1: PARTÍCULAS (atrás) */}
       <div
-        style={canvasStyle}
-        className={`absolute top-0 left-0 transition-transform duration-100 ease-out ${canvasClassName}`}
+        style={movableStyle}
+        className={`absolute inset-0 z-0  ${canvasClassName}`}
       >
         <Particles
+          className="w-full h-full"
           particleColors={['#ff6900']}
-          particleCount={700}
-          particleSpread={30}
+          particleCount={1000}
+          particleSpread={50}
           speed={0.35}
-          particleBaseSize={100}
+          particleBaseSize={500}
           moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={true}
         />
+      </div>
+
+      {/* 4. CAMADA 2: CONTEÚDO (na frente) */}
+      <div
+        style={movableStyle}
+        className="absolute inset-0 z-10"
+      >
         {children}
       </div>
     </div>
