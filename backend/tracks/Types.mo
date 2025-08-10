@@ -57,6 +57,7 @@ module {
   public type Section = {
     id : Nat;
     title : Text;
+    description : Text;
     content : Content;
   };
 

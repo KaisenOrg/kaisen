@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { generateSectionPositions } from '@/lib/mappers'
 import { type Section } from '@/types'
 
-import { TrackCard } from '@/components/specific/tracks/card'
+import { EditSectionCard } from '@/components/specific/tracks/edit-section-card'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
 import { ChatPanel } from '@/components/specific/tracks/chat-panel'
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
@@ -19,7 +19,7 @@ export default function EditTrackPage() {
   const { id } = useParams()
 
   const selectedTrack = tracks?.find((track) => track.id === id)
-
+  
   const [sectionsWithPositions, setSectionsWithPositions] = useState<any[]>([])
   const [screenHeight, setScreenHeight] = useState(0)
   const [screenWidth, setScreenWidth] = useState(0)
@@ -48,14 +48,6 @@ export default function EditTrackPage() {
     open({ type: 'section', data: section })
   }
 
-  const getButtonTextForContent = (content: Section['content']): string => {
-    if ('Page' in content) return 'Read'
-    if ('Quiz' in content) return 'Answer'
-    if ('Flashcard' in content) return 'Review'
-    if ('Essay' in content) return 'Write'
-    return 'See'
-  }
-
   const canvasWidth = useMemo(() => {
     return Math.max(selectedTrack ? selectedTrack.sections.length * (cardDimensions.width + 120) + 600 : 0, screenWidth)
   }, [screenWidth])
@@ -67,17 +59,15 @@ export default function EditTrackPage() {
           className="h-full w-full bg-gradient-to-t from-primary/5 to-transparent select-none"
           canvasWidth={canvasWidth}
           canvasHeight={screenHeight * 0.8}
-          canvasClassName="bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
         >
           {sectionsWithPositions.length > 0 && !isLoading && (
             <>
               <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
               {sectionsWithPositions.map(section => (
-                <TrackCard
+                <EditSectionCard
                   key={section.id}
                   title={section.title}
-                  description={`Seção ${section.id} da trilha.`}
-                  buttonText={getButtonTextForContent(section.content)}
+                  description={section.description || `Seção ${section.id} da trilha.`}
                   onClick={() => handleSectionClick(section)}
                   style={section.position}
                 />

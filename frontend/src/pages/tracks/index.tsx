@@ -6,7 +6,7 @@ import { useTracksActions } from '@/hooks/useTracksActions'
 import { type Section } from '@/types'
 import { useActor } from '@/lib/agent'
 
-import { TrackCard } from '@/components/specific/tracks/card'
+import { SectionCard } from '@/components/specific/tracks/section-card'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
 import { ChatPanel } from '@/components/specific/tracks/chat-panel'
 import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
@@ -80,13 +80,12 @@ export default function TrackPage() {
           className="h-full w-full bg-gradient-to-t from-primary/5 to-transparent select-none"
           canvasWidth={canvasWidth}
           canvasHeight={screenHeight * 0.8}
-          canvasClassName="bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
         >
           {sectionsWithPositions.length > 0 && !isLoading && (
             <>
               <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
               {sectionsWithPositions.map(section => (
-                <TrackCard
+                <SectionCard
                   key={section.id}
                   title={section.title}
                   description={`Seção ${section.id} da trilha.`}

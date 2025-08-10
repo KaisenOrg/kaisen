@@ -7,7 +7,7 @@ import { useTracksActions } from '@/hooks/useTracksActions'
 
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { DialogContent, DialogTitle } from '@/components/ui/dialog'
+import { DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog'
 
 export function CreateTrackPreset({ navigate }: { navigate: (route: string) => void }) {
   const { createTrack } = useTracksActions()
@@ -16,7 +16,6 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
 
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-  const [track, setTrack] = useState<{ title: string, description: string, sections: Section[] } | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -30,8 +29,10 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
         const parsed = JSON.parse(JSON.parse(result.ok).candidates[0].content.parts[0].text.replaceAll('#', ''))
         const { title, description, sections } = parsed
 
-        setTrack({ title, description, sections })
-        handleCreateTrack()
+        const id = await handleCreateTrack({ title, description, sections })
+
+        navigate(`/tracks/${id}/edit`)
+        close()
       } else {
         setError(result.err)
       }
@@ -43,22 +44,19 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
     }
   }
 
-  const handleCreateTrack = async () => {
-    if (!track) return
+  const handleCreateTrack = async ({ title, description, sections }: { title: string, description: string, sections: Section[] }) => {
     try {
       const id = await createTrack({
-        title: track.title,
-        description: track.description,
-        sections: track.sections,
+        title: title,
+        description: description,
+        sections: sections,
       })
 
       if (!id) {
-        setError('Failed to save track.')
-        return
+        throw new Error('Failed to create track.')
       }
 
-      navigate(`/tracks/${id}/edit`)
-      close()
+      return id
     } catch (err) {
       setError('Failed to save track.')
       console.error(err)
@@ -68,6 +66,7 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
   return (
     <DialogContent className="max-w-xl" style={{ borderColor: 'var(--border)' }}>
       <DialogTitle className="text-2xl font-semibold">Create New Track</DialogTitle>
+      <DialogDescription className="text-sm">Generate a track based on the information you provided.</DialogDescription>
 
       <div className="space-y-4 mt-4">
         <div className='flex flex-col gap-2'>

@@ -55,6 +55,7 @@ export type Content =
 export interface Section {
   id: number
   title: string
+  description: string
   content: Content
 }
 
