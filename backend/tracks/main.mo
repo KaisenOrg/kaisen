@@ -117,6 +117,8 @@ persistent actor {
   };
 
   public shared (controller) func injectSampleTracks() : async () {
+    if (tracks != Trie.empty()) return;
+    
     tracks := Trie.empty();
 
     let trackId1 = "1001";
@@ -130,6 +132,7 @@ persistent actor {
         {
           id = 1;
           title = "O Nascimento da Imagem";
+          description = "A primeira fotografia da história foi criada por Joseph Nicéphore Niépce em 1826, uma vista da janela de sua casa que exigiu uma exposição de varias horas.";
           content = #Page({
             title = "Capturando a Primeira Luz";
             elements = [
@@ -149,6 +152,7 @@ persistent actor {
         {
           id = 2;
           title = "Conceitos Fundamentais (Flashcards)";
+          description = "Aprenda os conceitos fundamentais da fotografia, como Daguerreótipo, Abertura e Filme Fotográfico.";
           content = #Flashcard([
             {
               sentence = "O processo criado por Louis Daguerre que popularizou a fotografia.";
@@ -167,6 +171,7 @@ persistent actor {
         {
           id = 3;
           title = "Teste seu Conhecimento!";
+          description = "Aprenda os conceitos fundamentais da fotografia, como Daguerreótipo, Abertura e Filme Fotográfico.";
           content = #Quiz([{
             question = "Quem é considerado o inventor da primeira fotografia permanente?";
             alternatives = [
@@ -181,6 +186,7 @@ persistent actor {
         {
           id = 4;
           title = "A Revolução Digital";
+          description = "A fotografia digital mudou para sempre a forma como registamos os nossos momentos.";
           content = #Page({
             title = "Adeus, Filme! Olá, Pixels!";
             elements = [
@@ -197,6 +203,7 @@ persistent actor {
         {
           id = 5;
           title = "Reflexão Final";
+          description = "A fotografia digital mudou para sempre a forma como registamos os nossos momentos.";
           content = #Essay([{
             question = "Em sua opinião, qual foi o maior impacto da fotografia digital na sociedade?";
             expectedAnswer = "O aluno deve discutir temas como a democratização da imagem, a ascensão das redes sociais, e questões sobre a veracidade das imagens na era da manipulação digital.";
@@ -216,6 +223,7 @@ persistent actor {
       sections = [{
         id = 1;
         title = "Conceitos Chave";
+        description = "Aprenda os conceitos fundamentais da fotografia, como Daguerreótipo, Abertura e Filme Fotográfico.";
         content = #Flashcard([
           {
             sentence = "Ingrediente principal que dá a base de chocolate.";
@@ -240,6 +248,7 @@ persistent actor {
       sections = [{
         id = 1;
         title = "Conceitos Chave";
+        description = "Aprenda os conceitos fundamentais da fotografia, como Daguerreótipo, Abertura e Filme Fotográfico.";
         content = #Flashcard([
           {
             sentence = "Ingrediente principal que dá a base de chocolate.";

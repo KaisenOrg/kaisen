@@ -1,6 +1,7 @@
-import { useState, useLayoutEffect, useRef, type ReactNode, useEffect } from 'react';
+import { useState, useLayoutEffect, useRef, type ReactNode, useEffect, type MouseEvent, type CSSProperties } from 'react';
 import { useGesture } from '@use-gesture/react';
 import { useCanvasStore } from '@/stores/useCanvasStore';
+import Particles from './bg-particles';
 
 interface DraggableBackgroundProps {
   children: ReactNode;
@@ -85,6 +86,16 @@ export function DraggableBackground({
         }}
         className={`absolute top-0 left-0 ${canvasClassName}`}
       >
+        <Particles
+          particleColors={['#ff6900']}
+          particleCount={700}
+          particleSpread={30}
+          speed={0.35}
+          particleBaseSize={100}
+          moveParticlesOnHover={false}
+          alphaParticles={false}
+          disableRotation={true}
+        />
         {children}
       </div>
     </div>
