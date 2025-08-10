@@ -2,24 +2,20 @@ import { useState, useEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { generateSectionPositions } from '@/lib/mappers'
-import { useTracksActions } from '@/hooks/useTracksActions'
 import { type Section } from '@/types'
-import { useActor } from '@/lib/agent'
 
 import { TrackCard } from '@/components/specific/tracks/card'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
 import { ChatPanel } from '@/components/specific/tracks/chat-panel'
-import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
+import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
 
 import { useTrackStore } from '@/stores/useTrackStore'
 import { useModalStore } from '@/stores/useModalStore'
 
-export default function TrackPage() {
+export default function EditTrackPage() {
   const { tracks, isLoading } = useTrackStore()
-  const { fetchTracks, injectSampleTracks } = useTracksActions()
   const { open } = useModalStore()
-  const tracksActor = useActor('tracks_backend')
   const { id } = useParams()
 
   const selectedTrack = tracks?.find((track) => track.id === id)
@@ -28,15 +24,6 @@ export default function TrackPage() {
   const [screenHeight, setScreenHeight] = useState(0)
   const [screenWidth, setScreenWidth] = useState(0)
   const cardDimensions = { width: 320, height: 238 }
-
-  useEffect(() => {
-    fetchTracks()
-      .then(() => {
-        if (tracks?.length === 0) {
-          injectSampleTracks()
-        }
-      })
-  }, [tracksActor])
 
   useEffect(() => {
     if (selectedTrack && selectedTrack.sections.length > 0) {

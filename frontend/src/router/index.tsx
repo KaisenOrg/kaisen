@@ -1,9 +1,6 @@
-import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { useAuth } from '@/hooks/useAuth'
-import { useUser } from '@/hooks/useUser'
-import { useModalStore } from '@/stores/useModalStore'
+import { useUser } from '@/providers/user-provider'
 
 import RootLayout from '@/layouts/root-layout'
 import ProfileLayout from '@/layouts/profile-layout'
@@ -24,40 +21,41 @@ import UserTestPage from '@/pages/Teste'
 import TrackPage from '@/pages/tracks'
 import KaiTestPage from '@/pages/Kai'
 import Store from '@/pages/Store'
+import EditTrackPage from '@/pages/tracks/edit'
 
 export function AppRoutes() {
-  const { isAuthenticated } = useAuth()
-  const { user, fetchUser } = useUser()
-  const { open, close } = useModalStore()
-
-  useEffect(() => {
-    open({ type: 'loading' })
-    fetchUser().finally(() => close())
-  }, [isAuthenticated])
+  const { user, isLoading } = useUser()
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<RootLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/kai" element={<KaiTestPage />} />
-          <Route path="/proof" element={<></>} />
-          <Route path="/store" element={<Store/>} />
-          <Route path="/discover" element={<Discover />} />
-          <Route path="/community" element={<CommunityPage />} />
-          <Route path="/tracks/:id" element={<TracksLayout />}>
-            <Route index element={<TrackPage />} />
-            <Route path="proof" element={<TracksProofPage />} />
-            <Route path="practice" element={<PracticePage />} />
-            <Route path="knowledge" element={<KnowledgePage />} />
-            {/* outras rotas */}
-          </Route>
+        <Route path="/" element={<RootLayout showSideBar={!!user} />}>
           {user ? (<>
+            <Route index element={<Home />} />
+            <Route path="/kai" element={<KaiTestPage />} />
+            <Route path="/proof" element={<></>} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/discover" element={<Discover />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/language" element={<></>} />
+            <Route path="/help" element={<></>} />
+
+            <Route path="/tracks/:id" element={<TracksLayout />}>
+              <Route index element={<TrackPage />} />
+              <Route path="proof" element={<TracksProofPage />} />
+              <Route path="practice" element={<PracticePage />} />
+              <Route path="knowledge" element={<KnowledgePage />} />
+
+              <Route path="edit" element={<EditTrackPage />} />
+              {/* outras rotas */}
+            </Route>
+
             <Route path="/profile" element={<ProfileLayout />}>
               <Route index element={<ProfilePage />} />
               <Route path=':id' element={<ProfilePage />} />
               {/* outras rotas */}
             </Route>
+
             <Route path="/settings" element={<SettingsLayout />}>
               <Route index element={<SettingsProfilePage />} />
               <Route path="profile" element={<SettingsProfilePage />} />
@@ -65,20 +63,14 @@ export function AppRoutes() {
               <Route path="wallets" element={<WalletsPage />} />
               {/* outras rotas */}
             </Route>
-          </>) : (<>
-            <Route path="/profile">
+
+            <Route path="*" element={<p>Página não encontrada</p>} />
+          </>) : (
+            isLoading ? null : (<>
               <Route index element={<UserTestPage />} />
               <Route path="*" element={<UserTestPage />} />
-            </Route>
-            <Route path="/settings">
-              <Route index element={<UserTestPage />} />
-              <Route path="*" element={<UserTestPage />} />
-            </Route>
-          </>)}
-          <Route path="/language" element={<></>} />
-          <Route path="/help" element={<></>} />
-          
-          <Route path="*" element={<p>Página não encontrada</p>} />
+            </>)
+          )}
         </Route>
       </Routes>
     </BrowserRouter>

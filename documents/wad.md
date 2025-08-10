@@ -87,15 +87,15 @@
 
 # 1. Introduction
 
-Kaizen is a decentralized educational platform that transforms the way individuals learn, share, and validate knowledge. By integrating artificial intelligence and blockchain technology, the application offers an innovative and continuous experience in which the user not only studies in a personalized way but also publicly proves their progress through immutable digital certifications.
+Kaisen is a decentralized educational platform that transforms the way individuals learn, share, and validate knowledge. By integrating artificial intelligence and blockchain technology, the application offers an innovative and continuous experience in which the user not only studies in a personalized way but also publicly proves their progress through immutable digital certifications.
 
 In practice, the process begins when the user sends content such as PDFs, notes, or articles directly to Kai—the platform's intelligent virtual assistant. From this material, Kai generates interactive flashcards, quizzes, summaries, and personalized study paths, facilitating targeted and efficient learning. Upon completing their study journey, the user can validate the knowledge acquired through an NFT certificate, which reliably and transparently attests to their mastery of the studied content.
 
-In addition, Kaizen promotes knowledge sharing, where the user, after completing their paths, can make them publicly available with the content they studied, allowing other people to benefit from the path taken. To further enrich this exchange, community members can suggest complementary materials to existing trails, while the trail creator maintains the autonomy to accept all, some, or none of the contributions. This promotes active curation and ensures the quality of shared resources.
+In addition, Kaisen promotes knowledge sharing, where the user, after completing their paths, can make them publicly available with the content they studied, allowing other people to benefit from the path taken. To further enrich this exchange, community members can suggest complementary materials to existing trails, while the trail creator maintains the autonomy to accept all, some, or none of the contributions. This promotes active curation and ensures the quality of shared resources.
 
 Aiming to encourage constant engagement, the application rewards users for each significant interaction—whether it be answering a question correctly, completing a trail, or contributing relevant content. These accumulated tokens can be used in Kai's Shop, an interactive and playful environment where it is possible to unlock variations of the mascot (with personalized looks and skins), as well as exclusive tools that enhance learning and the creation of new content.
 
-In this way, Kaizen establishes itself as an intelligent and collaborative study environment—in which each achievement is recorded, each contribution is valued, and knowledge is transformed into digital reputation, social recognition, and tangible rewards.
+In this way, Kaisen establishes itself as an intelligent and collaborative study environment—in which each achievement is recorded, each contribution is valued, and knowledge is transformed into digital reputation, social recognition, and tangible rewards.
 
 # 2. Application Overview
 
@@ -105,7 +105,7 @@ In this way, Kaizen establishes itself as an intelligent and collaborative study
 
 The education industry faces growing challenges, such as the low quality of teaching and the difficulty of reliably proving learning. According to UNESCO, millions of young people still do not have access to adequate education, while the job market evolves rapidly and demands constant professional development. In addition, the lack of effective means—digital or physical—to validate knowledge hinders the advancement of many individuals.
 
-In this context, Kaizen emerges as an innovative solution by combining artificial intelligence and blockchain to personalize learning and ensure the secure validation of knowledge through immutable digital certificates (NFTs). By facilitating learning, transparent certification, and collaborative sharing, Kaizen offers an effective alternative to the limitations of the traditional education model, expanding access and trust in the educational process.
+In this context, Kaisen emerges as an innovative solution by combining artificial intelligence and blockchain to personalize learning and ensure the secure validation of knowledge through immutable digital certificates (NFTs). By facilitating learning, transparent certification, and collaborative sharing, Kaisen offers an effective alternative to the limitations of the traditional education model, expanding access and trust in the educational process.
 
 In this scenario, Porter's Five Forces analysis is applied—an essential tool for assessing the competitive environment and understanding the factors that influence the dynamics of the sector.
 
@@ -120,19 +120,19 @@ In this scenario, Porter's Five Forces analysis is applied—an essential tool f
 </div>
 
 **Competitor Rivalry – High**<br>
-The online education platform market is booming, driven by giants such as Coursera, Udemy, Duolingo, and Khan Academy, which reach millions of users around the world. This diversity of alternatives increases the competition for attention and engagement. To differentiate itself in this scenario, Kaizen adopts a unique proposal: it combines personalized artificial intelligence with immutable validation of knowledge via blockchain. This approach creates a qualitative barrier that reduces the direct impact of traditional competition and positions the platform as a reference in educational innovation.
+The online education platform market is booming, driven by giants such as Coursera, Udemy, Duolingo, and Khan Academy, which reach millions of users around the world. This diversity of alternatives increases the competition for attention and engagement. To differentiate itself in this scenario, Kaisen adopts a unique proposal: it combines personalized artificial intelligence with immutable validation of knowledge via blockchain. This approach creates a qualitative barrier that reduces the direct impact of traditional competition and positions the platform as a reference in educational innovation.
 
 **Threat of new entrants – Moderate**<br>
-The threat of new entrants is moderate because, despite the ease of entry into the digital sector, developing a platform that integrates AI, blockchain, gamification, and knowledge validation requires technical expertise, investment in infrastructure, and educational credibility. These requirements create technological and trust barriers, thus making it difficult for new participants with similar proposals to enter and protecting the position of the Kaizen platform in the market.
+The threat of new entrants is moderate because, despite the ease of entry into the digital sector, developing a platform that integrates AI, blockchain, gamification, and knowledge validation requires technical expertise, investment in infrastructure, and educational credibility. These requirements create technological and trust barriers, thus making it difficult for new participants with similar proposals to enter and protecting the position of the Kaisen platform in the market.
 
 **Threat of substitute products – High**<br>
-The threat of substitute products is high, as users may opt for informal solutions, such as YouTube videos, e-books, forums, or free podcasts. These alternatives, although accessible, lack pedagogical structure, valid certification, and engagement mechanisms. To overcome this scenario, the Kaizen platform relies on a personalized learning journey based on artificial intelligence and the immutable validation of knowledge through NFTs—a significant differentiator that is not easily replicable by traditional or informal substitutes.
+The threat of substitute products is high, as users may opt for informal solutions, such as YouTube videos, e-books, forums, or free podcasts. These alternatives, although accessible, lack pedagogical structure, valid certification, and engagement mechanisms. To overcome this scenario, the Kaisen platform relies on a personalized learning journey based on artificial intelligence and the immutable validation of knowledge through NFTs—a significant differentiator that is not easily replicable by traditional or informal substitutes.
 
 **Bargaining power of customers – High**<br>
-Given the wide range of free or low-cost educational resources available, users have a high level of choice and demand clear value in their decisions. To reduce this pressure, Kaizen invests in the user experience by offering a gamified, transparent platform focused on digital reputation through certified NFTs. This value proposition strengthens loyalty, increases engagement, and transforms the user into an active agent in their own educational development.
+Given the wide range of free or low-cost educational resources available, users have a high level of choice and demand clear value in their decisions. To reduce this pressure, Kaisen invests in the user experience by offering a gamified, transparent platform focused on digital reputation through certified NFTs. This value proposition strengthens loyalty, increases engagement, and transforms the user into an active agent in their own educational development.
 
 **Supplier Bargaining Power – Moderate**<br>
-Dependence on external technological infrastructure and tools—such as AI APIs and blockchain networks—can increase suppliers’ bargaining power and impact operating costs. To mitigate this risk, Kaizen adopts a service decentralization strategy, prioritizing scalable, interoperable solutions that allow flexibility in choosing partners. With this, the platform ensures technical autonomy and greater resilience in the face of fluctuations in the supplier market.
+Dependence on external technological infrastructure and tools—such as AI APIs and blockchain networks—can increase suppliers’ bargaining power and impact operating costs. To mitigate this risk, Kaisen adopts a service decentralization strategy, prioritizing scalable, interoperable solutions that allow flexibility in choosing partners. With this, the platform ensures technical autonomy and greater resilience in the face of fluctuations in the supplier market.
 
 ### 2.1.2. SWOT Analysis of Partner Institution
 
@@ -181,7 +181,7 @@ The SWOT analysis is a widely used tool for planning and mapping out various sol
 - Saturation of the edtech market (startups and education-focused platforms).
 - Potential devaluation of NFT certificates if not externally recognized.
 
-The SWOT analysis of the Kaizen platform highlights a project with high innovative potential, supported by a differentiated value proposition that integrates Artificial Intelligence, gamification, and decentralized validation through NFTs. Its main strengths lie in the personalization of learning, community engagement, and the construction of digital reputation, all aligned with emerging trends in education and Web3.
+The SWOT analysis of the Kaisen platform highlights a project with high innovative potential, supported by a differentiated value proposition that integrates Artificial Intelligence, gamification, and decentralized validation through NFTs. Its main strengths lie in the personalization of learning, community engagement, and the construction of digital reputation, all aligned with emerging trends in education and Web3.
 
 However, the project faces challenges related to its internal structure and the current maturity level of the market. The lack of initial traction and market validation, combined with the adoption curve of the technologies involved, presents real obstacles to widespread expansion and user acceptance. The limited availability of technical and financial resources, along with the absence of formally recognized institutional certification, reinforces the need for a solid market entry strategy that prioritizes ease of use, real-user testing, and strategic partnerships.
 
@@ -198,7 +198,7 @@ The traditional educational model is centralized, expensive, and inefficient in 
 The platform offers a wide variety of educational content, available in various formats, such as PDFs, articles, research papers, and technical documentation. Furthermore, relevant data is collected, such as user learning patterns and preferences, community engagement metrics, and blockchain-based validation records. It is worth noting that the platform utilizes both user-generated content and learning materials processed by artificial intelligence (AI), thus creating a comprehensive and dynamic knowledge repository.
 
 **Proposed solution:** <br> 
-Kaizen is the first decentralized knowledge protocol that transforms learning—once a passive consumption process—into a creative, collaborative, and valuable experience. The solution combines personalized learning paths with AI technologies and blockchain validation, creating a true “GitHub of Knowledge.”
+Kaisen is the first decentralized knowledge protocol that transforms learning—once a passive consumption process—into a creative, collaborative, and valuable experience. The solution combines personalized learning paths with AI technologies and blockchain validation, creating a true “GitHub of Knowledge.”
 
 Users input raw materials (such as PDFs, topics, and links), which are processed by Kai, an AI assistant. Kai, in turn, generates personalized learning paths. These paths can be published, forked, and improved by the community, resulting in a living, constantly evolving repository, validated by NFT certificates and incentivized by the $KOIN token economy.
 
@@ -228,7 +228,7 @@ Users input raw materials (such as PDFs, topics, and links), which are processed
 
 ### 2.1.4. Value Proposition Canvas
 
-The Value Proposition Canvas is a strategic tool used by various companies with the objective of deeply understanding the needs, pains, and desires of their customers, while simultaneously aiming to create and position the offered product or service according to those demands. Based on this, the following is the Value Proposition Canvas of the Kaizen solution, which presents a well-defined customer profile and a clear description of how the proposed solution aligns with it.
+The Value Proposition Canvas is a strategic tool used by various companies with the objective of deeply understanding the needs, pains, and desires of their customers, while simultaneously aiming to create and position the offered product or service according to those demands. Based on this, the following is the Value Proposition Canvas of the Kaisen solution, which presents a well-defined customer profile and a clear description of how the proposed solution aligns with it.
 
 <div align="center">
 
@@ -295,9 +295,9 @@ The Value Proposition Canvas is a strategic tool used by various companies with 
 - Recognition of the educational journey as a reputation-building asset.
 - Shareable educational portfolio for recruiters in an objective and reliable format.
 
-The analysis conducted through the Kaizen Value Proposition Canvas demonstrates not only a clear understanding of the target audience’s pains and expectations but also a consistent plan to offer a functional and strategic response to these demands. The proposal is anchored in technological differentiators, such as the integration of AI, blockchain, and NFT certifications. However, the most relevant aspect of the proposal lies in the platform’s ability to convert informal learning into verifiable reputation, a feature still rarely explored consistently in the educational market.
+The analysis conducted through the Kaisen Value Proposition Canvas demonstrates not only a clear understanding of the target audience’s pains and expectations but also a consistent plan to offer a functional and strategic response to these demands. The proposal is anchored in technological differentiators, such as the integration of AI, blockchain, and NFT certifications. However, the most relevant aspect of the proposal lies in the platform’s ability to convert informal learning into verifiable reputation, a feature still rarely explored consistently in the educational market.
 
-Therefore, it is worth emphasizing that the solution addresses a real and pressing issue: the disconnect between knowledge acquired through non-traditional means and its validation. The centralization of learning data, personalization of the study process, and the possibility of monetizing and sharing educational journeys add direct value to the end user. Kaizen does not merely rely on emerging technologies; it builds an ecosystem in which knowledge is treated as a reputational asset—traceable, shareable, and, most importantly, rewardable.
+Therefore, it is worth emphasizing that the solution addresses a real and pressing issue: the disconnect between knowledge acquired through non-traditional means and its validation. The centralization of learning data, personalization of the study process, and the possibility of monetizing and sharing educational journeys add direct value to the end user. Kaisen does not merely rely on emerging technologies; it builds an ecosystem in which knowledge is treated as a reputational asset—traceable, shareable, and, most importantly, rewardable.
 
 ## 2.2. Personas
 
@@ -365,11 +365,11 @@ The presented architecture diagram describes the application's technological str
 
 ## 3.2. Style Guide
 
-The Kaizen style guide aims to ensure visual and functional consistency throughout the platform's interface. It serves as a central reference for designers and developers, standardizing the use of colors, typography, and graphic elements. By strengthening Kaizen's visual identity, the guide reduces inconsistencies in interface development and ensures accessibility, aesthetic coherence, and scalability across different application modules—whether they are aimed at individual learning, community validation, or public presentation of acquired knowledge.
+The Kaisen style guide aims to ensure visual and functional consistency throughout the platform's interface. It serves as a central reference for designers and developers, standardizing the use of colors, typography, and graphic elements. By strengthening Kaisen's visual identity, the guide reduces inconsistencies in interface development and ensures accessibility, aesthetic coherence, and scalability across different application modules—whether they are aimed at individual learning, community validation, or public presentation of acquired knowledge.
 
 ### 3.2.1. Colors
 
-The color palette is an essential element in the visual construction of the Kaizen platform, contributing to the clear communication of the application's purpose, reinforcing its values of autonomy, innovation, and decentralization. The colors were chosen based on principles of contrast, accessibility, and visual hierarchy, ensuring an intuitive, functional, and welcoming experience for different user profiles.
+The color palette is an essential element in the visual construction of the Kaisen platform, contributing to the clear communication of the application's purpose, reinforcing its values of autonomy, innovation, and decentralization. The colors were chosen based on principles of contrast, accessibility, and visual hierarchy, ensuring an intuitive, functional, and welcoming experience for different user profiles.
 
 <div align="center">
 
@@ -381,15 +381,15 @@ The color palette is an essential element in the visual construction of the Kaiz
 
 </div>
 
-The main color of the visual identity is a vibrant shade of orange (#F97316 | orange-500), which evokes energy, creativity, and transformation—core aspects of Kaizen's educational proposal. This color is applied to prominent interactive elements, such as primary buttons, calls to action, and progress markers. Its more intense variation, dark orange (#C2410C | orange-700), is used in contexts where greater emphasis or visual depth is desired, maintaining consistency and dynamism in communication.
+The main color of the visual identity is a vibrant shade of orange (#F97316 | orange-500), which evokes energy, creativity, and transformation—core aspects of Kaisen's educational proposal. This color is applied to prominent interactive elements, such as primary buttons, calls to action, and progress markers. Its more intense variation, dark orange (#C2410C | orange-700), is used in contexts where greater emphasis or visual depth is desired, maintaining consistency and dynamism in communication.
 
 The palette also includes a carefully distributed grayscale, ranging from white (#FAFAFA | zinc-50) to black (#09090B | zinc-950). These neutral tones provide balance to the interface, allowing the orange elements to stand out clearly, while ensuring readability and accessibility across devices and viewing modes (such as dark mode).
 
-Each color in the palette serves a strategic purpose—whether as a background, outline, shadow, or text—reinforcing the Kaizen identity and promoting consistent, streamlined navigation focused on continuous learning.
+Each color in the palette serves a strategic purpose—whether as a background, outline, shadow, or text—reinforcing the Kaisen identity and promoting consistent, streamlined navigation focused on continuous learning.
 
 ### 3.2.2. Typography
 
-The typography used on the Kaizen platform was selected based on legibility, simplicity, and visual consistency, aiming to provide fluid and accessible reading across different devices and contexts. The Poppins font, available on Google Fonts, was chosen for its clean, modern, and highly legible design.
+The typography used on the Kaisen platform was selected based on legibility, simplicity, and visual consistency, aiming to provide fluid and accessible reading across different devices and contexts. The Poppins font, available on Google Fonts, was chosen for its clean, modern, and highly legible design.
 
 <div align="center">
 
@@ -403,12 +403,12 @@ The typography used on the Kaizen platform was selected based on legibility, sim
 
 The use of a single typeface throughout the interface contributes to the design's uniformity, while variations in size, weight, and spacing allow for the creation of a well-defined visual hierarchy. Titles and calls to action use bolder weights, such as SemiBold, in larger sizes (32px and 24px), to highlight relevant information and guide user navigation. Body text, such as descriptions and instructions, uses Regular or Medium weights, with sizes ranging from 14px to 16px and consistent spacing of -2%, promoting comfortable and fluid reading.
 
-By strategically adopting the Poppins font and its variations, Kaizen reinforces its visual identity and provides a consistent, welcoming, and inclusive experience for its entire decentralized learning community.
+By strategically adopting the Poppins font and its variations, Kaisen reinforces its visual identity and provides a consistent, welcoming, and inclusive experience for its entire decentralized learning community.
 
 
 ### 3.2.3. Visual Elements
 
-The visual elements of the Kaizen platform were designed to communicate, symbolically and emotionally, the solution's core values. Notable among these elements are the mascot and logo, which reinforce the platform's identity and foster a closer connection with users.
+The visual elements of the Kaisen platform were designed to communicate, symbolically and emotionally, the solution's core values. Notable among these elements are the mascot and logo, which reinforce the platform's identity and foster a closer connection with users.
 
 <div align="center">
 
@@ -432,11 +432,11 @@ The platform's mascot, Kai, is an expressive and welcoming fox, presented in sev
 
 </div>
 
-The Kaizen logo, meanwhile, is composed of modular geometric shapes organized around a central block—a key symbol of the platform's visual identity. This central block carries a dual meaning: it represents both the blocks that structure blockchain technology and the knowledge blocks constructed throughout the learning process. It's not a traditional solid shape, like a square or rectangle; rather, it's made up of several parts that connect and evolve.
+The Kaisen logo, meanwhile, is composed of modular geometric shapes organized around a central block—a key symbol of the platform's visual identity. This central block carries a dual meaning: it represents both the blocks that structure blockchain technology and the knowledge blocks constructed throughout the learning process. It's not a traditional solid shape, like a square or rectangle; rather, it's made up of several parts that connect and evolve.
 
-This fragmented composition symbolizes the collaborative and constantly evolving nature of Kaizen, where users and artificial intelligence work together to organize, validate, and expand knowledge. The logo thus conveys the fundamental pillars of the platform's proposal: decentralization, autonomy, technology, and co-authorship.
+This fragmented composition symbolizes the collaborative and constantly evolving nature of Kaisen, where users and artificial intelligence work together to organize, validate, and expand knowledge. The logo thus conveys the fundamental pillars of the platform's proposal: decentralization, autonomy, technology, and co-authorship.
 
-Together, the Kai mascot and the logo form a strong, symbolic visual identity that's consistent with the principles of Kaizen—a platform that combines cutting-edge technology with empathy and purpose, transforming the way people learn and share knowledge.
+Together, the Kai mascot and the logo form a strong, symbolic visual identity that's consistent with the principles of Kaisen—a platform that combines cutting-edge technology with empathy and purpose, transforming the way people learn and share knowledge.
 
 ## 3.3. High-Fidelity Prototype
 
@@ -470,7 +470,7 @@ The home screen serves as the platform's central navigation point, offering user
 
 </div>
 
-This interface allows direct communication with the platform's artificial intelligence assistant, Kai. Through this channel, users can submit materials, ask questions, and receive personalized educational guidance. This functionality represents the core of Kaizen's value proposition, as it transforms raw content into structured, dynamic, and interactive learning experiences, powered by AI.
+This interface allows direct communication with the platform's artificial intelligence assistant, Kai. Through this channel, users can submit materials, ask questions, and receive personalized educational guidance. This functionality represents the core of Kaisen's value proposition, as it transforms raw content into structured, dynamic, and interactive learning experiences, powered by AI.
 
 <div align="center">
 
@@ -564,7 +564,7 @@ The community screen aims to strengthen interactions between users, serving as a
 
 ## 4.1. First Version of the Application (MVP)
 
-The first version of the Kaizen application MVP has been completed, providing the essential structure of the system, focusing on validating the main usage flows and integrations between the backend and frontend. This initial delivery prioritized user experience, authentication, basic interaction features, and integration with the blockchain layer.
+The first version of the Kaisen application MVP has been completed, providing the essential structure of the system, focusing on validating the main usage flows and integrations between the backend and frontend. This initial delivery prioritized user experience, authentication, basic interaction features, and integration with the blockchain layer.
 
 #### Structure and implemented features
 
@@ -649,15 +649,15 @@ Some of the main screens implemented in this version are:
 Among the main challenges were the secure integration between the frontend and Motoko canisters, the modeling of the decentralized authentication flow, and the management of conversation status with AI, ensuring real-time updates to the interface and consistency of user data.
 
 
-This MVP version validates the essential pillars of the Kaizen platform, serving as a solid foundation for continuous evolution and the inclusion of new features in the next stages of the project.
+This MVP version validates the essential pillars of the Kaisen platform, serving as a solid foundation for continuous evolution and the inclusion of new features in the next stages of the project.
 
 # 5. Market Study and Marketing Plan
 
-Kaizen's market research and marketing plan aim to align the platform's proposal with the audience's real needs, within the context of decentralized digital education. Understanding learning behavior and the competitive landscape allows for strategic positioning of the solution, while the marketing plan guides its communication and promotion, focusing on engagement and brand consolidation.
+Kaisen's market research and marketing plan aim to align the platform's proposal with the audience's real needs, within the context of decentralized digital education. Understanding learning behavior and the competitive landscape allows for strategic positioning of the solution, while the marketing plan guides its communication and promotion, focusing on engagement and brand consolidation.
 
 ## 5.1. Executive Summary
 
-Kaizen is a decentralized educational platform that integrates artificial intelligence and blockchain to personalize learning and certify knowledge through NFTs, ensuring authenticity and portability. In a context marked by the growth of informal learning and the lack of reliable validation, Kaizen connects autonomy, recognition, and collaboration, transforming learning into a gamified and accessible experience.
+Kaisen is a decentralized educational platform that integrates artificial intelligence and blockchain to personalize learning and certify knowledge through NFTs, ensuring authenticity and portability. In a context marked by the growth of informal learning and the lack of reliable validation, Kaisen connects autonomy, recognition, and collaboration, transforming learning into a gamified and accessible experience.
 
 Its distinguishing features include the automatic organization of personalized paths powered by AI, immutable digital certification, a token economy for rewards, and encouraging community co-creation. The platform offers an innovative alternative to traditional educational solutions, democratizing access to digital reputation based on real knowledge.
 
@@ -679,51 +679,51 @@ Furthermore, the educational NFT market is expected to grow as the adoption of d
 
 ### 5.2.3. Market Trends
 
-Trends directly impacting the Kaizen market include: the validation of informal learning, the strengthening of digital reputation and verifiable portfolios, the advancement of decentralized and self-managed platforms, the appreciation of certifications with professional application, the personalization of teaching through AI, and gamification as an engagement strategy.
+Trends directly impacting the Kaisen market include: the validation of informal learning, the strengthening of digital reputation and verifiable portfolios, the advancement of decentralized and self-managed platforms, the appreciation of certifications with professional application, the personalization of teaching through AI, and gamification as an engagement strategy.
 
 ## 5.3. Competitive Analysis
 
 **Main Competitors:**<br>
-Kaizen positions itself against several competitors. Direct competitors include platforms such as Coursera, Udemy, and edX, focused on formal online education; Duolingo, with its gamified learning model; and platforms focused on technology and the creative market, such as Platzi, Alura, and Rocketseat. Indirect competitors include platforms such as YouTube, Reddit, Notion, and tools such as GPTs, Obsidian, and Google Keep, which, while not structured learning platforms, are widely used in self-directed learning and personal knowledge building.
+Kaisen positions itself against several competitors. Direct competitors include platforms such as Coursera, Udemy, and edX, focused on formal online education; Duolingo, with its gamified learning model; and platforms focused on technology and the creative market, such as Platzi, Alura, and Rocketseat. Indirect competitors include platforms such as YouTube, Reddit, Notion, and tools such as GPTs, Obsidian, and Google Keep, which, while not structured learning platforms, are widely used in self-directed learning and personal knowledge building.
 
 **Competitive Advantages of the Web Application:**<br>
-Kaizen's main competitive advantage is its integrated certification model via NFTs—immutable, verifiable, and shareable—combined with AI that structures personalized trails based on users' own content. Furthermore, the token economy as a form of reward, community curation, and a focus on digital reputation, more than just content delivery, solidify its market differentiation.
+Kaisen's main competitive advantage is its integrated certification model via NFTs—immutable, verifiable, and shareable—combined with AI that structures personalized trails based on users' own content. Furthermore, the token economy as a form of reward, community curation, and a focus on digital reputation, more than just content delivery, solidify its market differentiation.
 
 ## 5.4. Target Audience
 
-The Kaizen platform's target audience is primarily young people between the ages of 16 and 35, including students, developers, and freelancers. This group values autonomy in the learning process, seeks formal recognition for informally acquired skills, and is interested in innovative learning methods. Psychographically, these individuals desire flexibility, autonomy, and validation of their skills. Behaviorally, they are familiar with technologies such as AI, Web3, and collaborative digital platforms, which makes them naturally receptive to the Kaizen approach.
+The Kaisen platform's target audience is primarily young people between the ages of 16 and 35, including students, developers, and freelancers. This group values autonomy in the learning process, seeks formal recognition for informally acquired skills, and is interested in innovative learning methods. Psychographically, these individuals desire flexibility, autonomy, and validation of their skills. Behaviorally, they are familiar with technologies such as AI, Web3, and collaborative digital platforms, which makes them naturally receptive to the Kaisen approach.
 
 ## 5.5. Positioning
 
-Kaizen's value proposition is to be the first decentralized educational platform that allows users to create personalized learning paths powered by artificial intelligence, validate their knowledge through NFTs, and share their digital reputation publicly, securely, and transparently. The differentiation strategy centers on inverting the traditional model: instead of relying on pre-formatted content, Kaizen organizes and enhances the knowledge already acquired by the user, transforming this content into a meaningful journey with the help of AI. The NFT certification system and collective curation ensure authenticity, collaboration, and a verifiable reputation for users.
+Kaisen's value proposition is to be the first decentralized educational platform that allows users to create personalized learning paths powered by artificial intelligence, validate their knowledge through NFTs, and share their digital reputation publicly, securely, and transparently. The differentiation strategy centers on inverting the traditional model: instead of relying on pre-formatted content, Kaisen organizes and enhances the knowledge already acquired by the user, transforming this content into a meaningful journey with the help of AI. The NFT certification system and collective curation ensure authenticity, collaboration, and a verifiable reputation for users.
 
 ## 5.6. Marketing Strategy
 
 **Product:**<br>
-Kaizen is a gamified educational web platform that integrates artificial intelligence, blockchain, and NFTs. Its main differentiator lies in its ability to create personalized learning paths based on the user's content and interests, transforming knowledge into an interactive and meaningful journey. Furthermore, the platform issues digital certificates in NFT format, offering immutable proof of learning. To strengthen engagement, there is a rewards store with items such as skins and tools that can be purchased through the token economy. Another essential component is the presence of an active, co-authoring community, which contributes to the curation of the paths, validates content, and promotes a collaborative learning experience.
+Kaisen is a gamified educational web platform that integrates artificial intelligence, blockchain, and NFTs. Its main differentiator lies in its ability to create personalized learning paths based on the user's content and interests, transforming knowledge into an interactive and meaningful journey. Furthermore, the platform issues digital certificates in NFT format, offering immutable proof of learning. To strengthen engagement, there is a rewards store with items such as skins and tools that can be purchased through the token economy. Another essential component is the presence of an active, co-authoring community, which contributes to the curation of the paths, validates content, and promotes a collaborative learning experience.
 
 **Price:**<br>
-The platform adopts a freemium business model, offering free access to Kaizen's basic features. Advanced features such as customizations, premium paths, private documents, higher upload limits, and access to advanced AI features ("Kaizen Pro") are unlocked through the platform's token, $KOIN. NFT certification is free for users who complete the tracks, creating an ecosystem that values merit and user engagement without creating financial barriers to learning.
+The platform adopts a freemium business model, offering free access to Kaisen's basic features. Advanced features such as customizations, premium paths, private documents, higher upload limits, and access to advanced AI features ("Kaisen Pro") are unlocked through the platform's token, $KOIN. NFT certification is free for users who complete the tracks, creating an ecosystem that values merit and user engagement without creating financial barriers to learning.
 
 **Place:**<br>
-The platform's distribution will be strategic, with an initial launch in digital communities and innovation hubs focused on technology and education. Kaizen will also seek partnerships with bootcamps, hackathons, technical schools, and initiatives related to the Web3 universe. Presence at technology and education events—both online and in-person—will be essential to promote the platform, establish connections with educators and developers, and attract innovative users willing to experiment with new learning methods.
+The platform's distribution will be strategic, with an initial launch in digital communities and innovation hubs focused on technology and education. Kaisen will also seek partnerships with bootcamps, hackathons, technical schools, and initiatives related to the Web3 universe. Presence at technology and education events—both online and in-person—will be essential to promote the platform, establish connections with educators and developers, and attract innovative users willing to experiment with new learning methods.
 
 **Promotion:**<br>
-Kaizen's promotion will focus on content marketing and community engagement. Articles, videos, and posts will be produced on topics such as digital reputation, skills validation, artificial intelligence, and new ways to learn independently. The brand will be present on networks such as Twitter, Telegram, and Discord, where conversations about Web3 and educational technology are most active. Additionally, the platform will partner with influencers from the tech and education worlds, who will be able to share their experiences with Kaizen and boost the brand's credibility. Storytelling campaigns featuring real user stories—showing how Kaizen impacted their learning or career paths—will strengthen the emotional connection with the audience and highlight the transformative value of the proposal.
+Kaisen's promotion will focus on content marketing and community engagement. Articles, videos, and posts will be produced on topics such as digital reputation, skills validation, artificial intelligence, and new ways to learn independently. The brand will be present on networks such as Twitter, Telegram, and Discord, where conversations about Web3 and educational technology are most active. Additionally, the platform will partner with influencers from the tech and education worlds, who will be able to share their experiences with Kaisen and boost the brand's credibility. Storytelling campaigns featuring real user stories—showing how Kaisen impacted their learning or career paths—will strengthen the emotional connection with the audience and highlight the transformative value of the proposal.
 
 # 6. Conclusions and Future Work
 
-Kaizen has established itself as an innovative platform for learning and collectively building knowledge pathways in a decentralized environment. Combining modern architecture, blockchain integration, and a focus on user experience, the project allows people to explore and share knowledge in an open, secure, and gamified way.
+Kaisen has established itself as an innovative platform for learning and collectively building knowledge pathways in a decentralized environment. Combining modern architecture, blockchain integration, and a focus on user experience, the project allows people to explore and share knowledge in an open, secure, and gamified way.
 
-With the advances achieved to date, Kaizen already offers essential features such as modular content organization, assistive chat, user profiles, and progress tracking. However, the team recognizes the potential for expansion and improvement of the platform, aiming for ambitious goals for future versions.
+With the advances achieved to date, Kaisen already offers essential features such as modular content organization, assistive chat, user profiles, and progress tracking. However, the team recognizes the potential for expansion and improvement of the platform, aiming for ambitious goals for future versions.
 
 Among the main focuses of future development is the implementation of a tokenized rewards system, in which users will be rewarded for performing relevant actions on the platform—such as following trails, completing steps, contributing content, and interacting socially. This incentive mechanism aims not only to increase engagement but also to value collaboration and active community participation.
 
-Furthermore, a decentralized governance system is being planned, allowing users to participate in Kaizen's strategic and evolutionary decisions. Through mechanisms that allow the community to directly influence the platform's direction, strengthening the sense of belonging and collective autonomy.
+Furthermore, a decentralized governance system is being planned, allowing users to participate in Kaisen's strategic and evolutionary decisions. Through mechanisms that allow the community to directly influence the platform's direction, strengthening the sense of belonging and collective autonomy.
 
 Another planned advancement is the introduction of the path forking functionality—a mechanism inspired by open-source development practices. With this feature, users will be able to create a personal copy (fork) of any public learning path and freely adapt its structure, content, and flow to suit their individual learning objectives or preferred styles. This opens up possibilities for deeper personalization and experimentation, empowering learners to build truly personalized journeys. Once modified, users will have the option to submit their forked version for review or reintegrate it into the original path, fostering a dynamic ecosystem of collaborative refinement. This not only encourages knowledge diversity and co-creation but also helps identify and elevate the most effective learning experiences for the community as a whole.
 
-These advances, combined with the constant pursuit of improvements in usability, accessibility, internationalization, and integration with new protocols, pave the way for Kaizen to become a benchmark in decentralized, collaborative, and future-oriented education. The commitment remains to build an open, democratic, and increasingly meaningful environment for all its users.
+These advances, combined with the constant pursuit of improvements in usability, accessibility, internationalization, and integration with new protocols, pave the way for Kaisen to become a benchmark in decentralized, collaborative, and future-oriented education. The commitment remains to build an open, democratic, and increasingly meaningful environment for all its users.
 
 # 7. References
 

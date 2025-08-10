@@ -4,8 +4,8 @@ import { IdentityKitProvider } from '@nfid/identitykit/react'
 
 import { GlobalModal } from '@/components/ui/global-modal'
 import { useThemeStore } from '@/stores/useThemeStore'
-import { UserProvider } from './user-provider'
 import { DevAuthProvider } from './dev-auth'
+import { UserProvider } from './user-provider'
 
 function ThemeEffect() {
   const applyTheme = useThemeStore((s) => s.applyTheme)

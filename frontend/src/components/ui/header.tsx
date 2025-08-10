@@ -7,13 +7,11 @@ import { ActionSearchBar } from "../general/search-bar";
 import { LoginButton } from "../general/login-button";
 import { Button } from "@/components/ui/button";
 import { useKoin } from "@/hooks/useKoin";
-import { useUser } from "@/hooks/useUser";
-import { useAuth } from "@/hooks/useAuth";
+import { useUser } from "@/providers/user-provider";
 import { useSidebarStore } from "@/stores/useSidebarStore";
 
 export default function Header() {
-  const { user } = useUser();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useUser();
   const { isCollapsed, toggleSidebar } = useSidebarStore();
 
   const {
@@ -65,7 +63,7 @@ export default function Header() {
         <div className="flex items-center">
           <img
             src="/logo-text.svg"
-            alt="Kaizen Logo"
+            alt="Kaisen Logo"
             width={100}
             height={40}
             className="h-auto"

@@ -22,7 +22,7 @@
   <a href="#license">License</a>
 </p>
 
-> This README provides an overview of the Kaizen platform. For more detailed information about the application, please refer to the [wad.md](./documents/wad.md).
+> This README provides an overview of the Kaisen platform. For more detailed information about the application, please refer to the [wad.md](./documents/wad.md).
 
 Kaisen proposes a new framework for acquiring and validating knowledge. It is a decentralized protocol that replaces the passive logic of content consumption with an active, intelligent, and community-driven learning experience.
 
@@ -259,7 +259,7 @@ dfx deploy --network ic
 
 ### Mainnet Canister IDs
 
-- `kaizen_frontend`: `NOT RELEASED YET`
+- `kaisen_frontend`: `NOT RELEASED YET`
 - `kai_backend`: `NOT RELEASED YET`
 - `tracks_backend`: `NOT RELEASED YET`
 - `nft_certificates`: `NOT RELEASED YET`
@@ -274,7 +274,7 @@ dfx deploy --network ic
 
 </div>
 
-The diagram below provides a simplified overview of Kaizen’s architecture. Users interact with a modern interface built using React and Vite.js, styled with Tailwind CSS, and developed with TypeScript and JavaScript. This front-end layer communicates directly with canisters hosted on the Internet Computer (ICP), which serve as the decentralized back-end of the application. Additionally, these canisters integrate with external services such as the Gemini API to generate content through artificial intelligence, ensuring a dynamic and personalized experience.
+The diagram below provides a simplified overview of Kaisen’s architecture. Users interact with a modern interface built using React and Vite.js, styled with Tailwind CSS, and developed with TypeScript and JavaScript. This front-end layer communicates directly with canisters hosted on the Internet Computer (ICP), which serve as the decentralized back-end of the application. Additionally, these canisters integrate with external services such as the Gemini API to generate content through artificial intelligence, ensuring a dynamic and personalized experience.
 
 <div align="center">
 
@@ -351,7 +351,7 @@ Among the files and folders present in the project root, the following are defin
 
 </div>
 
-Kaizen is consolidating itself as a collaborative and decentralized learning platform, allowing users to explore and share knowledge openly and securely. To date, we have developed important features such as modular content organization, assistive chat, user profiles, and progress tracking.
+Kaisen is consolidating itself as a collaborative and decentralized learning platform, allowing users to explore and share knowledge openly and securely. To date, we have developed important features such as modular content organization, assistive chat, user profiles, and progress tracking.
 
 During development, we faced challenges related to integrating with blockchain technology and ensuring a seamless user experience. However, these obstacles are designed to improve the platform's structure and usability.
 
@@ -359,7 +359,7 @@ For the next steps, our main goals include implementing a tokenized rewards syst
 
 Another planned advancement is the introduction of the trail fork functionality. With this feature, users will be able to duplicate an existing trail, customize it according to their interests, and, if desired, contribute to the original trail. This strengthens collaboration, personalized learning, and a sense of belonging to the community.
 
-Finally, we remain committed to continuous improvements in usability, accessibility, and integration with new technologies, making Kaizen increasingly efficient, inclusive, and relevant for all audiences.
+Finally, we remain committed to continuous improvements in usability, accessibility, and integration with new technologies, making Kaisen increasingly efficient, inclusive, and relevant for all audiences.
 
 ## Development Team
 

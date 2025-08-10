@@ -5,13 +5,13 @@ import Sidebar from "@/components/ui/sidebar";
 import { Outlet } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 
-export default function RootLayout() {
+export default function RootLayout({ showSideBar = true }: { showSideBar?: boolean }) {
   return (
     <div className="flex flex-col h-screen">
       <Header />
       <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
-        <div className="relative flex-1">
+        {showSideBar && <Sidebar />}
+       <div className="relative flex-1">
           <div className="absolute inset-0 overflow-y-auto">
             <Outlet />
           </div>

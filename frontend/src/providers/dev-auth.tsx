@@ -2,12 +2,11 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { Ed25519KeyIdentity } from '@dfinity/identity'
 import type { Principal } from '@dfinity/principal'
 import type { Identity } from '@dfinity/agent'
-
-const LOCAL_STORAGE_KEY = 'kaizen-dev-auth'
+import { loadIdentity, saveIdentity } from '@/storage'
 
 interface DevAuthContextType {
   isAuthenticated: boolean
-  identity: Identity | null
+  identity?: Identity
   principal?: Principal
   login: () => void
   logout: () => void
@@ -15,25 +14,8 @@ interface DevAuthContextType {
 
 const DevAuthContext = createContext<DevAuthContextType | undefined>(undefined)
 
-const loadIdentity = (): Identity | null => {
-  const stored = localStorage.getItem(LOCAL_STORAGE_KEY)
-  if (stored) {
-    try {
-      return Ed25519KeyIdentity.fromParsedJson(JSON.parse(stored))
-    } catch {
-      console.warn('Erro ao carregar identidade do localStorage')
-      return null
-    }
-  }
-  return null
-}
-
-const saveIdentity = (identity: Ed25519KeyIdentity) => {
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(identity.toJSON()))
-}
-
 export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [identity, setIdentity] = useState<Identity | null>(null)
+  const [identity, setIdentity] = useState<Identity | undefined>(undefined)
 
   const isAuthenticated = !!identity
   const principal = identity?.getPrincipal()
@@ -53,14 +35,12 @@ export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => 
   }
 
   const logout = () => {
-    setIdentity(null)
+    setIdentity(undefined)
   }
 
   useEffect(() => {
     const savedIdentity = loadIdentity()
-    if (savedIdentity) {
-      setIdentity(savedIdentity)
-    }
+    if (savedIdentity) setIdentity(savedIdentity)
   }, [])
 
   return (

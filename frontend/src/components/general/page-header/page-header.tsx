@@ -58,9 +58,7 @@ export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
             </div>
           </div>
 
-          {(tabs && baseUrl) &&
-            <TabNavigation tabs={tabs} baseUrl={baseUrl} />
-          }
+          {(tabs && baseUrl) ? <TabNavigation tabs={tabs} baseUrl={baseUrl} /> : <div className="h-6" />}
         </div>
       </header>
     )

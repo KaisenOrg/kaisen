@@ -1,10 +1,9 @@
 import { Principal } from '@dfinity/principal'
 import { useKoin } from '@/hooks/useKoin'
-import { useUser } from '@/hooks/useUser'
+import { useUser } from '@/providers/user-provider'
 import ItemCard from '@/components/specific/store/item-card'
 
 export default function Store() {
-
   const { user } = useUser()
   const STORE_PRINCIPAL = Principal.fromText('aaaaa-aa')
   const { transfer } = useKoin(user?.principal || null)

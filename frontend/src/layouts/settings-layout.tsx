@@ -12,8 +12,8 @@ export default function SettingsLayout() {
   return (
     <main>
       <PageHeader
-        title="Lorem ipsum"
-        subtitle="Lorem ipsum dolor sit amet"
+        title="Settings"
+        subtitle="Manage your profile, preferences, and wallets."
         baseUrl="/settings"
         showBackButton={false}
         tabs={tabs}

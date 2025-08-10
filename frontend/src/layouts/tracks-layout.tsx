@@ -1,4 +1,4 @@
-import { Outlet, useNavigate, useParams } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { PageHeader } from '@/components/general/page-header'
 import { useTrackStore } from '@/stores/useTrackStore'
 import { CubeTransparentIcon, ShieldCheckIcon, BoltIcon, ArchiveBoxIcon } from '@heroicons/react/24/outline'
@@ -7,6 +7,7 @@ export default function TracksLayout() {
   const { id } = useParams()
   const { tracks } = useTrackStore()
   const navigate = useNavigate()
+  const location = useLocation()
 
   const tabs = [
     { value: '', label: 'Track', icon: CubeTransparentIcon },
@@ -24,7 +25,7 @@ export default function TracksLayout() {
         subtitle={currentTrack?.description || 'Unknown'}
         onBackClick={() => navigate(-1)}
         baseUrl={`/tracks/${id}`}
-        tabs={tabs}
+        tabs={!location.pathname.includes('edit') ? tabs : undefined}
       />
       <Outlet />
     </main>
