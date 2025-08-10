@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef, type ReactNode, useEffect, type MouseEvent, type CSSProperties } from 'react';
+import { useState, useLayoutEffect, useRef, type ReactNode } from 'react';
 import { useGesture } from '@use-gesture/react';
 import { useCanvasStore } from '@/stores/useCanvasStore';
 import Particles from './bg-particles';
@@ -19,9 +19,7 @@ export function DraggableBackground({
   canvasClassName,
 }: DraggableBackgroundProps) {
   const { position: globalPosition, setPosition: setGlobalPosition } = useCanvasStore();
-
   const [localPosition, setLocalPosition] = useState(globalPosition);
-
   const viewportRef = useRef<HTMLDivElement>(null);
   const [viewportSize, setViewportSize] = useState({ width: 0, height: 0 });
 
@@ -72,30 +70,44 @@ export function DraggableBackground({
     }
   );
 
+  // 1. Criamos um objeto de estilo para o movimento.
+  //    Ele será APLICADO IGUALMENTE às duas camadas.
+  const movableStyle = {
+    width: canvasWidth,
+    height: canvasHeight,
+    transform: `translate3d(${localPosition.x}px, ${localPosition.y}px, 0)`,
+  };
+
   return (
+    // 2. Este é o viewport. Ele captura os eventos de mouse/gestos.
     <div
       ref={viewportRef}
       {...bind()}
       className={`relative overflow-hidden cursor-grab active:cursor-grabbing outline-none touch-action-none ${className}`}
     >
+      {/* 3. CAMADA 1: PARTÍCULAS (atrás) */}
       <div
-        style={{
-          width: canvasWidth,
-          height: canvasHeight,
-          transform: `translate3d(${localPosition.x}px, ${localPosition.y}px, 0)`,
-        }}
-        className={`absolute top-0 left-0 ${canvasClassName}`}
+        style={movableStyle}
+        className={`absolute inset-0 z-0  ${canvasClassName}`}
       >
         <Particles
+          className="w-full h-full"
           particleColors={['#ff6900']}
-          particleCount={700}
-          particleSpread={30}
+          particleCount={1000}
+          particleSpread={50}
           speed={0.35}
-          particleBaseSize={100}
+          particleBaseSize={500}
           moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={true}
         />
+      </div>
+
+      {/* 4. CAMADA 2: CONTEÚDO (na frente) */}
+      <div
+        style={movableStyle}
+        className="absolute inset-0 z-10"
+      >
         {children}
       </div>
     </div>
