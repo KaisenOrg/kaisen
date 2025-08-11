@@ -3,6 +3,7 @@ import { type Section } from '@/types'
 
 type ModalPayload =
   | { type: 'section'; data: Section, useAlertDialog?: boolean }
+  | { type: 'choose-section-content'; useAlertDialog?: boolean }
   | { type: 'create-track'; navigate: (route: string) => void, useAlertDialog?: boolean }
   | {
     type: 'generic'

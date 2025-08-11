@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 
-interface TrackCardProps {
+interface SectionCardProps {
   title: string;
   description: string;
   buttonText: string;
@@ -9,7 +9,7 @@ interface TrackCardProps {
   onClick?: () => void;
 }
 
-export function TrackCard({ title, description, buttonText, onClick, className, style }: TrackCardProps) {
+export function SectionCard({ title, description, buttonText, onClick, className, style }: SectionCardProps) {
   return (
     <div style={style} className={`absolute cursor-default ${className}`}>
       <div className='flex flex-col gap-2 bg-card w-80 p-6 border-2 border-zinc-800 rounded-2xl'>
