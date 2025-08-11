@@ -79,7 +79,7 @@ export default function Sidebar() {
   ];
 
   const progressLinks = [
-    { name: "Profile", href: "/profile", Icon: OutlineUserIcon, SolidIcon: SolidUserIcon },
+    { name: "Profile", href: "/profile/overview", Icon: OutlineUserIcon, SolidIcon: SolidUserIcon },
     { name: "Kai's Store", href: "/store", Icon: OutlineShoppingCartIcon, SolidIcon: SolidShoppingCartIcon },
   ];
 

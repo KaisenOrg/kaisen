@@ -22,6 +22,7 @@ import Store from '@/pages/Store'
 import EditTrackPage from '@/pages/tracks/edit'
 import ProfileLayout from '@/layouts/profile-layout'
 import ProfilePage from '@/pages/profile'
+import ProfileCommunityPage from '@/pages/profile/Community'
 
 export function AppRoutes() {
   const { user, isLoading } = useUser()
@@ -67,9 +68,12 @@ export function AppRoutes() {
           )}
         </Route>
 
-        <Route path="/profile" element={<ProfileLayout />}>
-          <Route index element={<ProfilePage />} />
-        </Route>
+            <Route path="/profile" element={<ProfileLayout />}>
+              <Route index element={<ProfilePage />} />
+              <Route path="overview" element={<ProfilePage />} />
+              <Route path="community" element={<ProfileCommunityPage />} />
+              {/* outras rotas */}
+            </Route>
       </Routes>
     </BrowserRouter>
   )
