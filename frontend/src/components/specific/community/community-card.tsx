@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 type CommunityCardProps = {
-  variant?: "default" | "large";
+  variant?: "default" | "large" | "profile";
   title: string;
   description: string;
   creator: string;
@@ -40,24 +40,28 @@ export default function CommunityCard({
   );
 
   const imgClass =
-    gridPosition === "bottom-left"
-      ? "absolute left-0 bottom-0 w-32 h-24 pointer-events-none select-none z-0 overflow-hidden"
-      : "absolute right-[-36] top-[-36] w-40 h-34 pointer-events-none select-none z-0 overflow-hidden";
+    variant === "profile"
+      ? "absolute left-0 bottom-0 w-32 h-24 pointer-events-none select-none z-0 overflow-hidden max-w-full max-h-full"
+      : gridPosition === "bottom-left"
+        ? "absolute left-0 bottom-0 w-32 h-24 pointer-events-none select-none z-0 overflow-hidden"
+        : "absolute right-[-36] top-[-36] w-40 h-34 pointer-events-none select-none z-0 overflow-hidden";
 
   const containerClass =
     variant === "large"
       ? "relative flex-2/5 basis-xl flex rounded-lg border-2 border-zinc-800 bg-card p-6 cursor-pointer hover:bg-zinc-600/25 transition-colors"
-      : "relative flex-1/5 basis-2xs rounded-lg border-2 border-zinc-800 bg-card pt-6 pb-4 cursor-pointer hover:bg-zinc-600/25 transition-colors";
+      : variant === "profile"
+        ? "relative w-full flex rounded-lg border-2 border-zinc-800 bg-card p-6 pb-2 cursor-pointer hover:bg-zinc-600/25 transition-colors"
+        : "relative flex-1/5 basis-2xs rounded-lg border-2 border-zinc-800 bg-card pt-6 pb-4 cursor-pointer hover:bg-zinc-600/25 transition-colors";
 
   const contentClass =
-    variant === "large"
+    variant === "large" || variant === "profile"
       ? "flex flex-col justify-between text-left text-white relative w-full overflow-hidden z-[1]"
       : "flex flex-col text-left text-white px-6 relative w-full overflow-hidden z-[1]";
 
   const occupation =
-    variant === "large"
-    ? "col-span-2"
-    : "col-span-1";
+    variant === "large" || variant === "profile"
+      ? "col-span-2"
+      : "col-span-1";
 
   return (
     <Link to={`/tracks/${id}`} className={occupation}>
@@ -105,26 +109,26 @@ export default function CommunityCard({
           <p className="text-xs text-zinc-400 pb-4">
             Created by <span className="text-orange-500">@{creator}</span>
           </p>
-          <div className="h-7 flex items-center gap-2 ml-2 pb-2">
-            {variant === "large" && (
-              <>
-                <RocketLaunchIcon className="h-5 w-5 text-orange-500" />
-                <span className="uppercase text-sm font-semibold text-orange-500 tracking-widest">
-                  TOP ACCESSED
-                </span>
-              </>
-            )}
-          </div>
-          <div className="flex justify-end items-center gap-4 text-zinc-400 text-sm font-medium pb-2">
-            <div className="flex items-center gap-1">
-              <UserGroupIcon className="h-5 w-5 text-orange-500" />
-              <span>{members}</span>
+          {variant === "large" && (
+            <div className="h-7 flex items-center gap-2 ml-2 pb-2">
+              <RocketLaunchIcon className="h-5 w-5 text-orange-500" />
+              <span className="uppercase text-sm font-semibold text-orange-500 tracking-widest">
+                TOP ACCESSED
+              </span>
             </div>
-            <div className="flex items-center gap-1">
-              <ClockIcon className="h-5 w-5 text-orange-500" />
-              <span>{time}</span>
+          )}
+          {variant !== "profile" ? (
+            <div className="flex justify-end items-center gap-4 text-zinc-400 text-sm font-medium pb-2">
+              <div className="flex items-center gap-1">
+                <UserGroupIcon className="h-5 w-5 text-orange-500" />
+                <span>{members}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <ClockIcon className="h-5 w-5 text-orange-500" />
+                <span>{time}</span>
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
     </Link>
