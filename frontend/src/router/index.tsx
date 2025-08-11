@@ -19,9 +19,9 @@ import WalletsPage from '@/pages/settings/Wallets'
 import CommunityPage from '@/pages/Community'
 import UserTestPage from '@/pages/Teste'
 import TrackPage from '@/pages/tracks'
-import KaiTestPage from '@/pages/Kai'
 import Store from '@/pages/Store'
 import EditTrackPage from '@/pages/tracks/edit'
+import KaiPage from '@/pages/Kai'
 
 export function AppRoutes() {
   const { user, isLoading } = useUser()
@@ -32,7 +32,7 @@ export function AppRoutes() {
         <Route path="/" element={<RootLayout showSideBar={!!user} />}>
           {user ? (<>
             <Route index element={<Home />} />
-            <Route path="/kai" element={<KaiTestPage />} />
+            <Route path="/kai" element={<KaiPage/>} />
             <Route path="/proof" element={<></>} />
             <Route path="/store" element={<Store />} />
             <Route path="/discover" element={<Discover />} />
