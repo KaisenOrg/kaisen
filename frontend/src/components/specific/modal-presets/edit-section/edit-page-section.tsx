@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogFooter,
 } from '@/components/ui/dialog'
-import { DocumentTextIcon } from '@heroicons/react/24/outline'
+//import { DocumentTextIcon } from '@heroicons/react/24/outline'
 
 export function ChooseContentType() {
   const { close } = useModalStore()
