@@ -3,13 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useUser } from '@/providers/user-provider'
 
 import RootLayout from '@/layouts/root-layout'
-import ProfileLayout from '@/layouts/profile-layout'
 import SettingsLayout from '@/layouts/settings-layout'
 import TracksLayout from '@/layouts/tracks-layout'
 
 import Home from '@/pages/Home'
 import Discover from '@/pages/Discover'
-import ProfilePage from '@/pages/profile'
 import PracticePage from '@/pages/tracks/practice'
 import KnowledgePage from '@/pages/tracks/knowledge'
 import PreferencesPage from '@/pages/settings/Preferences'
@@ -22,6 +20,8 @@ import TrackPage from '@/pages/tracks'
 import KaiTestPage from '@/pages/Kai'
 import Store from '@/pages/Store'
 import EditTrackPage from '@/pages/tracks/edit'
+import ProfileLayout from '@/layouts/profile-layout'
+import ProfilePage from '@/pages/profile'
 
 export function AppRoutes() {
   const { user, isLoading } = useUser()
@@ -50,12 +50,6 @@ export function AppRoutes() {
               {/* outras rotas */}
             </Route>
 
-            <Route path="/profile" element={<ProfileLayout />}>
-              <Route index element={<ProfilePage />} />
-              <Route path=':id' element={<ProfilePage />} />
-              {/* outras rotas */}
-            </Route>
-
             <Route path="/settings" element={<SettingsLayout />}>
               <Route index element={<SettingsProfilePage />} />
               <Route path="profile" element={<SettingsProfilePage />} />
@@ -71,6 +65,10 @@ export function AppRoutes() {
               <Route path="*" element={<UserTestPage />} />
             </>)
           )}
+        </Route>
+
+        <Route path="/profile" element={<ProfileLayout />}>
+          <Route index element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

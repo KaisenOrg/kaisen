@@ -1,26 +1,26 @@
 import {
   Squares2X2Icon as OutlineSquares2X2Icon,
   SparklesIcon as OutlineSparklesIcon,
-  CheckCircleIcon as OutlineCheckCircleIcon,
+  QuestionMarkCircleIcon as OutlineQuestionMarkCircleIcon,
   ShoppingCartIcon as OutlineShoppingCartIcon,
   Square3Stack3DIcon as OutlineSquare3Stack3DIcon,
   RocketLaunchIcon as OutlineRocketLaunchIcon,
   LanguageIcon as OutlineLanguageIcon,
   Cog6ToothIcon as OutlineCog6ToothIcon,
-  QuestionMarkCircleIcon as OutlineQuestionMarkCircleIcon,
+  UserIcon as OutlineUserIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 
 import {
   Squares2X2Icon as SolidSquares2X2Icon,
   SparklesIcon as SolidSparklesIcon,
-  CheckCircleIcon as SolidCheckCircleIcon,
+  QuestionMarkCircleIcon as SolidQuestionMarkCircleIcon,
   ShoppingCartIcon as SolidShoppingCartIcon,
   Square3Stack3DIcon as SolidSquare3Stack3DIcon,
   RocketLaunchIcon as SolidRocketLaunchIcon,
   LanguageIcon as SolidLanguageIcon,
   Cog6ToothIcon as SolidCog6ToothIcon,
-  QuestionMarkCircleIcon as SolidQuestionMarkCircleIcon,
+  UserIcon as SolidUserIcon
 } from "@heroicons/react/20/solid";
 import { Link, useLocation } from "react-router-dom";
 import { useSidebarStore } from "@/stores/useSidebarStore";
@@ -79,7 +79,7 @@ export default function Sidebar() {
   ];
 
   const progressLinks = [
-    { name: "Proof of Learning", href: "/proof", Icon: OutlineCheckCircleIcon, SolidIcon: SolidCheckCircleIcon },
+    { name: "Profile", href: "/profile", Icon: OutlineUserIcon, SolidIcon: SolidUserIcon },
     { name: "Kai's Store", href: "/store", Icon: OutlineShoppingCartIcon, SolidIcon: SolidShoppingCartIcon },
   ];
 
