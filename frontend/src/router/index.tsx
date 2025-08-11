@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import { useEffect } from 'react';                
+import { useIntro } from '@/hooks/useIntro';        
 import { useUser } from '@/providers/user-provider'
 
 import RootLayout from '@/layouts/root-layout'
@@ -24,7 +26,19 @@ import Store from '@/pages/Store'
 import EditTrackPage from '@/pages/tracks/edit'
 
 export function AppRoutes() {
-  const { user, isLoading } = useUser()
+  const { user, isLoading, principal } = useUser()
+
+  const { openIfNeeded, modal } = useIntro({
+  principal: principal?.toText?.(),               
+  onStartTutorial: () => {
+    console.log("Tutorial started");
+  },
+});
+
+useEffect(() => {
+  if (user && !isLoading) openIfNeeded();
+}, [user, isLoading, openIfNeeded]);
+
 
   return (
     <BrowserRouter>
@@ -73,6 +87,8 @@ export function AppRoutes() {
           )}
         </Route>
       </Routes>
+      {modal}
+
     </BrowserRouter>
   )
 }
