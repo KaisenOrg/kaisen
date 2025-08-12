@@ -98,3 +98,9 @@ export type MotokoUser = {
   principal: Principal
   identity: string
 }
+
+export interface Message {
+  id: string;
+  role: 'user' | 'assistant'; // 'assistant' é o nome padrão para a IA na API da OpenAI
+  content: string;
+}
