@@ -10,6 +10,8 @@ type IntroModalProps = {
   principal?: string; 
 };
 
+
+
 export function IntroModal({ open, onOpenChange, onStartTutorial, principal }: IntroModalProps) {
   const handleSkip = () => { markIntroSeen(principal); onOpenChange(false); };
   const handleBegin = () => { markIntroSeen(principal); onStartTutorial?.(); onOpenChange(false); };
