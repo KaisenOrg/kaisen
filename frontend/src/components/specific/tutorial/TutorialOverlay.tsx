@@ -66,12 +66,38 @@ export default function TutorialOverlay({ api }: Props) {
   const pad = 10;   
   const rx  = 12;   
 
+const viewportW = typeof window !== 'undefined' ? window.innerWidth : 800;
+const viewportH = typeof window !== 'undefined' ? window.innerHeight : 600;
+const approxW = Math.min(420, viewportW * 0.92); // mesmo do maxWidth
+const approxH = Math.min(320, viewportH * 0.50); // altura estimada
+const gap = 8;
+
+const resolvedPlacement = useMemo(() => {
+  const preferred = step.placement ?? 'bottom';
+  if (!rect || !step.selector) return preferred;
+
+  // tenta virar se faltar espaço no preferred
+  switch (preferred) {
+    case 'bottom':
+      return rect.bottom + gap + approxH > viewportH ? 'top' : 'bottom';
+    case 'top':
+      return rect.top - gap - approxH < 0 ? 'bottom' : 'top';
+    case 'right':
+      return rect.right + gap + approxW > viewportW ? 'left' : 'right';
+    case 'left':
+      return rect.left - gap - approxW < 0 ? 'right' : 'left';
+    default:
+      return preferred;
+  }
+}, [rect, step?.placement, step?.selector, viewportH, viewportW, approxH, approxW]);
+
+
   // Posição do tooltip
   const tooltipStyle = useMemo(() => {
     if (!rect || step.placement === "center" || !step.selector) {
       return { top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
     }
-    switch (step.placement ?? "bottom") {
+   switch (resolvedPlacement) {
       case "top":    return { top: rect.top - 8, left: rect.left + rect.width/2, transform: "translate(-50%,-100%)" };
       case "left":   return { top: rect.top + rect.height/2, left: rect.left - 8,   transform: "translate(-100%,-50%)" };
       case "right":  return { top: rect.top + rect.height/2, left: rect.right + 8,  transform: "translate(0,-50%)" };
@@ -138,11 +164,18 @@ const highlightBoxStyle = useMemo<React.CSSProperties | null>(() => {
 
 
       <div
-        className="absolute max-w-sm rounded-2xl border border-neutral-700 bg-neutral-900/95 p-4 shadow-2xl text-neutral-100"
-        style={tooltipStyle as any}
-        role="dialog"
-        aria-live="polite"
-      >
+   className="absolute rounded-2xl border border-neutral-700 bg-neutral-900/95 p-4 shadow-2xl text-neutral-100
+              max-h-[50vh] overflow-auto text-sm"
+   style={{
+     ...tooltipStyle,
+     maxWidth: 'min(92vw, 420px)',   // segura horizontal
+     // opcional: melhora quebra de linha
+     wordBreak: 'break-word',
+     whiteSpace: 'normal',
+   } as React.CSSProperties}
+   role="dialog"
+   aria-live="polite">
+
         <div className="text-sm">{step.content}</div>
         <div className="mt-3 flex items-center justify-between gap-2">
           <div className="text-xs text-neutral-400">Passo {stepIndex + 1}</div>

@@ -77,12 +77,12 @@ export default function Sidebar() {
   const { isCollapsed } = useSidebarStore();
 
   const mainLinks = [
-    { name: "Home", href: "/", Icon: OutlineSquares2X2Icon, SolidIcon: SolidSquares2X2Icon },
+    { name: "Home", href: "/", Icon: OutlineSquares2X2Icon, SolidIcon: SolidSquares2X2Icon, id: "home-link" },
     { name: "Kai", href: "/kai", Icon: OutlineSparklesIcon, SolidIcon: SolidSparklesIcon },
   ];
 
   const progressLinks = [
-    { name: "Profile", href: "/profile/overview", Icon: OutlineUserIcon, SolidIcon: SolidUserIcon },
+    { name: "Profile", href: "/profile/overview", Icon: OutlineUserIcon, SolidIcon: SolidUserIcon, id: "progress-link" },
     { name: "Kai's Store", href: "/store", Icon: OutlineShoppingCartIcon, SolidIcon: SolidShoppingCartIcon },
   ];
 
@@ -103,8 +103,8 @@ export default function Sidebar() {
 
   return (
     <aside  className={`h-full border-r-2 border-[var(--sidebar-border)] bg-[var(--sidebar)] text-[var(--sidebar-foreground)] flex flex-col p-3 transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-56'}`}>
-      <div className="flex-grow">
-        <nav className="space-y-1" data-tour="sidebar">
+      <div className="flex-grow" data-tour="sidebar">
+        <nav className="space-y-1" >
           {mainLinks.map((link) => (
             <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
           ))}

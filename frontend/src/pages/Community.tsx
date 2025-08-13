@@ -31,10 +31,10 @@ Além disso, troquei do Yarn para o PNPM e o install das deps mudou de 24s para 
   }, [])
 
   return (
-    <main className="max-w-7xl mx-auto px-8 py-2 flex flex-col items-start gap-4">
+    <main className="max-w-7xl mx-auto px-8 py-2 flex flex-col items-start gap-4" >
       <h2 className="text-lg font-semibold mt-2">Community</h2>
 
-      <div className="mt-2 flex flex-col gap-4 w-full">
+      <div className="mt-2 flex flex-col gap-4 w-full" data-tour="track-card">
         {loading
           ? Array(4).fill(0).map((_, index) => <SkeletonPostCard key={index} />)
           : mockPosts.map((post, index) => (

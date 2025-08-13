@@ -33,6 +33,20 @@ export const basicSteps: TutorialStep[] = [
   },
 
   {
+    id: "home-link",
+    selector: "#home-link",
+    content: "Aqui você acessa a Home pelo menu.",
+    placement: "bottom",
+  },
+
+  {
+    id: "progress-link",
+    selector: "#progress-link",
+    content: "Aqui você acessa o perfil pelo menu.",
+    placement: "bottom",
+  },
+
+  {
     id: "track-card",
     selector: '[data-tour="track-card"]',
     content: "Estas são as trilhas. Clique para ver detalhes e começar.",
