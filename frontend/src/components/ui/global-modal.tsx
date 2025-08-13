@@ -10,7 +10,7 @@ import {
   CreateTrackPreset
 } from '@/components/specific/modal-presets';
 import { AlertDialog } from './alert-dialog';
-import { ChooseContentType } from '../specific/modal-presets/edit-section';
+import { ChooseContentType, CreateSummary } from '../specific/modal-presets/edit-section';
 
 export function GlobalModal() {
   const { isOpen, payload, close } = useModalStore();
@@ -73,6 +73,9 @@ export function GlobalModal() {
         return (
           <ChooseContentType />
         );
+
+      case 'create-summary':
+        return <CreateSummary content={payload.content} />
         
       case 'generic':
         return (

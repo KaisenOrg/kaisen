@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+@plugin "tailwind-scrollbar-hide";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -50,6 +52,8 @@
   --shadow-2xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.43);
   --tracking-normal: 0.025em;
   --spacing: 0.25rem;
+  --brand: oklch(0.623 0.214 259.815);
+  --highlight: oklch(0.852 0.199 91.936);
 }
 
 .dark {
@@ -97,6 +101,8 @@
   --shadow-lg: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 4px 6px -1px hsl(0 0% 0% / 0.17);
   --shadow-xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 8px 10px -1px hsl(0 0% 0% / 0.17);
   --shadow-2xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.43);
+  --brand: oklch(0.707 0.165 254.624);
+  --highlight: oklch(0.852 0.199 91.936);
 }
 
 @theme inline {
@@ -157,6 +163,8 @@
   --tracking-wide: calc(var(--tracking-normal) + 0.025em);
   --tracking-wider: calc(var(--tracking-normal) + 0.05em);
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+  --color-highlight: var(--highlight);
+  --color-brand: var(--brand);
 }
 
 @layer base {

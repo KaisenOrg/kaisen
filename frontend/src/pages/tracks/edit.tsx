@@ -46,7 +46,8 @@ export default function EditTrackPage() {
   }, [selectedTrack, tracks])
 
   const handleSectionClick = (section: Section) => {
-    open({ type: 'section', data: section })
+    if ('Page' in section.content)
+      open({ type: 'create-summary', content: section.content })
   }
 
   const getSectionTypeForContent = (content: Section['content']): string => {
