@@ -14,14 +14,14 @@ type IntroModalProps = {
 
 export function IntroModal({ open, onOpenChange, onStartTutorial, principal }: IntroModalProps) {
   const handleSkip = () => { markIntroSeen(principal); onOpenChange(false); };
-  const handleBegin = () => { markIntroSeen(principal); onStartTutorial?.(); onOpenChange(false); };
+  const handleBegin = () => { markIntroSeen(principal); onStartTutorial?.(); onOpenChange(false); console.log("Tutorial started"); };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
 
       <DialogContent className="sm:max-w-xl md:max-w-xl lg:max-w-2xl text-neutral-100 border-2 border-neutral-800 p-8 z-50
        bg-[url('/geometric-bg-3.svg')]  bg-[length:280px_auto] bg-right-top bg-no-repeat
-    before:content-[''] before:absolute before:inset-0 
+ before:absolute 
       ">
        <img
     src="/kai-sitting-off.svg"

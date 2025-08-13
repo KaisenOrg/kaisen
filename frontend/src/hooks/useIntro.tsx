@@ -1,32 +1,32 @@
-import { useState, useCallback, useRef, useMemo } from "react";
+// src/hooks/useIntro.tsx
+import { useCallback, useMemo, useState } from "react";
+import { hasSeenIntro, markIntroSeen } from "@/lib/introSeen";
 import { IntroModal } from "@/components/specific/tutorial/IntroModal";
-import { hasSeenIntro } from "@/lib/introSeen";
 
-type UseIntroOptions = {
-  principal?: string;            
-  onStartTutorial?: () => void;  
-};
+type Options = { principal?: string; onStartTutorial?: () => void; };
 
-export function useIntro({ principal, onStartTutorial }: UseIntroOptions = {}) {
+export function useIntro({ principal, onStartTutorial }: Options) {
   const [open, setOpen] = useState(false);
-  const firedRef = useRef(false); 
 
   const openIfNeeded = useCallback(() => {
-    if (firedRef.current) return;
-    if (!hasSeenIntro(principal)) {
-      firedRef.current = true;
-      setOpen(true);
-    }
+    if (!hasSeenIntro(principal)) setOpen(true);
   }, [principal]);
 
   const modal = useMemo(() => (
     <IntroModal
       open={open}
-      onOpenChange={setOpen}
-      onStartTutorial={onStartTutorial}
+      onOpenChange={(v) => {
+        setOpen(v);
+        if (!v) markIntroSeen(principal);
+      }}
+      onStartTutorial={() => {
+        onStartTutorial?.();
+        setOpen(false);
+        markIntroSeen(principal);
+      }}
       principal={principal}
     />
-  ), [open, onStartTutorial, principal]);
+  ), [open, principal, onStartTutorial]);
 
-  return { open, setOpen, openIfNeeded, modal };
+  return { openIfNeeded, modal };
 }

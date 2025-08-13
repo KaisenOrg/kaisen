@@ -26,22 +26,28 @@ import ProfileLayout from '@/layouts/profile-layout'
 import ProfilePage from '@/pages/profile'
 import ProfileCommunityPage from '@/pages/profile/Community'
 
+import { useTutorial } from "@/hooks/useTutorial";
+import TutorialOverlay from "@/components/specific/tutorial/TutorialOverlay";
+import { basicSteps } from '@/components/specific/tutorial/Steps';
+
 export function AppRoutes() {
-  const { user, isLoading, principal } = useUser()
+  const { user, isLoading, principal } = useUser();
+  const tutorial = useTutorial();
 
   const { openIfNeeded, modal } = useIntro({
-  principal: principal?.toText?.(),               
-  onStartTutorial: () => {
-    console.log("Tutorial started");
-  },
-});
+    principal: principal?.toText?.(),
+    onStartTutorial: () => {
+      tutorial.start(basicSteps);
+    },
+  });
 
-useEffect(() => {
-  if (user && !isLoading) openIfNeeded();
-}, [user, isLoading, openIfNeeded]);
+  useEffect(() => {
+    if (user && !isLoading) openIfNeeded();
+  }, [user, isLoading, openIfNeeded]);
 
 
   return (
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<RootLayout showSideBar={!!user} />}>
@@ -90,7 +96,7 @@ useEffect(() => {
             </Route>
       </Routes>
       {modal}
-
+      <TutorialOverlay api={tutorial} />
     </BrowserRouter>
   )
 }
