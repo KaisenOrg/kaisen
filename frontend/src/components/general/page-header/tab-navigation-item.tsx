@@ -14,7 +14,7 @@ export function TabNavigationItem({ route, baseUrl }: { route: TabRouteType, bas
   const isActive = pathname === tabUrl || (route.value === "" || route.value === "/") && pathname === normalizedBaseUrl
 
   return (
-    <Link
+    <Link 
       to={`${baseUrl}${route.value}`}
       className={`transition-all flex items-center gap-3 px-3 py-4 hover:text-primary ${isActive ? "text-white border-b-2 border-primary" : "text-zinc-500"
         }`}

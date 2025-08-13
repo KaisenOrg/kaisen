@@ -24,6 +24,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { Link, useLocation } from "react-router-dom";
 import { useSidebarStore } from "@/stores/useSidebarStore";
+import type React from "react";
 
 type NavLinkProps = {
   name: string;
@@ -42,10 +43,12 @@ const NavLink = ({
   selected,
   isFooter = false,
   isCollapsed = false,
-}: NavLinkProps & { isCollapsed?: boolean }) => {
+  ...rest
+}: (NavLinkProps & { isCollapsed?: boolean }) & React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
   return (
     <Link
       to={href}
+      {...rest} 
       className={`flex items-center justify-between p-2 rounded-md text-sm hover:bg-[var(--sidebar-accent)] font-medium${selected
         ? " bg-[var(--sidebar-accent)] text-[var(--sidebar-primary-foreground)]"
         : ""
@@ -84,7 +87,7 @@ export default function Sidebar() {
   ];
 
   const communityLinks = [
-    { name: "Discover", href: "/discover", Icon: OutlineSquare3Stack3DIcon, SolidIcon: SolidSquare3Stack3DIcon },
+    { name: "Discover", href: "/discover", Icon: OutlineSquare3Stack3DIcon, SolidIcon: SolidSquare3Stack3DIcon, id: "discover-link" },
     { name: "Community", href: "/community", Icon: OutlineRocketLaunchIcon, SolidIcon: SolidRocketLaunchIcon },
   ];
 
@@ -99,9 +102,9 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className={`h-full border-r-2 border-[var(--sidebar-border)] bg-[var(--sidebar)] text-[var(--sidebar-foreground)] flex flex-col p-3 transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-56'}`}>
+    <aside  className={`h-full border-r-2 border-[var(--sidebar-border)] bg-[var(--sidebar)] text-[var(--sidebar-foreground)] flex flex-col p-3 transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-56'}`}>
       <div className="flex-grow">
-        <nav className="space-y-1">
+        <nav className="space-y-1" data-tour="sidebar">
           {mainLinks.map((link) => (
             <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
           ))}
