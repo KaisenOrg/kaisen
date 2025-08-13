@@ -4,11 +4,12 @@ import { useParams } from 'react-router-dom'
 import { generateSectionPositions } from '@/lib/mappers'
 import { type Section } from '@/types'
 
-import { TrackCard } from '@/components/specific/tracks/card'
-import { DraggableBackground } from '@/components/ui/draggable-bg'
-import { ChatPanel } from '@/components/specific/tracks/chat-panel'
-import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
 import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
+import { EditSectionCard } from '@/components/specific/tracks/edit-section-card'
+import { ChatPanel } from '@/components/specific/tracks/chat-panel'
+import { DraggableBackground } from '@/components/ui/draggable-bg'
+
+import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels"
 
 import { useTrackStore } from '@/stores/useTrackStore'
 import { useModalStore } from '@/stores/useModalStore'
@@ -48,12 +49,12 @@ export default function EditTrackPage() {
     open({ type: 'section', data: section })
   }
 
-  const getButtonTextForContent = (content: Section['content']): string => {
-    if ('Page' in content) return 'Read'
-    if ('Quiz' in content) return 'Answer'
-    if ('Flashcard' in content) return 'Review'
-    if ('Essay' in content) return 'Write'
-    return 'See'
+  const getSectionTypeForContent = (content: Section['content']): string => {
+    if ('Page' in content) return 'Page'
+    if ('Quiz' in content) return 'Quiz'
+    if ('Flashcard' in content) return 'Flashcard'
+    if ('Essay' in content) return 'Essay'
+    return 'Unknown'
   }
 
   const canvasWidth = useMemo(() => {
@@ -67,17 +68,16 @@ export default function EditTrackPage() {
           className="h-full w-full bg-gradient-to-t from-primary/5 to-transparent select-none"
           canvasWidth={canvasWidth}
           canvasHeight={screenHeight * 0.8}
-          canvasClassName="bg-[radial-gradient(theme(colors.gray.600/0.2)_1px,transparent_0)] bg-[length:20px_20px]"
         >
           {sectionsWithPositions.length > 0 && !isLoading && (
             <>
               <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
               {sectionsWithPositions.map(section => (
-                <TrackCard
+                <EditSectionCard
                   key={section.id}
                   title={section.title}
                   description={`Seção ${section.id} da trilha.`}
-                  buttonText={getButtonTextForContent(section.content)}
+                  sectionType={getSectionTypeForContent(section.content)}
                   onClick={() => handleSectionClick(section)}
                   style={section.position}
                 />

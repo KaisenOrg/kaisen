@@ -10,6 +10,7 @@ import {
   CreateTrackPreset
 } from '@/components/specific/modal-presets';
 import { AlertDialog } from './alert-dialog';
+import { ChooseContentType } from '../specific/modal-presets/edit-section';
 
 export function GlobalModal() {
   const { isOpen, payload, close } = useModalStore();
@@ -68,6 +69,11 @@ export function GlobalModal() {
           <CreateTrackPreset navigate={payload.navigate} />
         );
 
+      case 'choose-section-content':
+        return (
+          <ChooseContentType />
+        );
+        
       case 'generic':
         return (
           <GenericPopupContent

@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import { useActor } from '@/lib/agent'
-import type { Section } from '@/types'
 
 import { useModalStore } from '@/stores/useModalStore'
 import { useTracksActions } from '@/hooks/useTracksActions'
 
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { DialogContent, DialogTitle } from '@/components/ui/dialog'
+import { DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog'
 
 export function CreateTrackPreset({ navigate }: { navigate: (route: string) => void }) {
   const { createTrack } = useTracksActions()
@@ -16,7 +15,6 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
 
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-  const [track, setTrack] = useState<{ title: string, description: string, sections: Section[] } | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -26,14 +24,27 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
     setError(null)
     try {
       const result = await kaiActor.generateTrack(`Gere uma trilha sobre ${title}.${description ? `Sua descrição deve ser: ${description}` : ''}.`, [])
+
       if ('ok' in result) {
         const parsed = JSON.parse(JSON.parse(result.ok).candidates[0].content.parts[0].text.replaceAll('#', ''))
         const { title, description, sections } = parsed
 
-        setTrack({ title, description, sections })
-        handleCreateTrack()
+        const id = await createTrack({
+          title: title,
+          description: description,
+          sections: sections,
+        })
+
+        if (!id) {
+          setError('Failed to save track.')
+          return
+        }
+
+        navigate(`/tracks/${id}/edit`)
+        close()
       } else {
         setError(result.err)
+        console.error(result.err)
       }
     } catch (err) {
       setError('Failed to generate track.')
@@ -43,31 +54,10 @@ export function CreateTrackPreset({ navigate }: { navigate: (route: string) => v
     }
   }
 
-  const handleCreateTrack = async () => {
-    if (!track) return
-    try {
-      const id = await createTrack({
-        title: track.title,
-        description: track.description,
-        sections: track.sections,
-      })
-
-      if (!id) {
-        setError('Failed to save track.')
-        return
-      }
-
-      navigate(`/tracks/${id}/edit`)
-      close()
-    } catch (err) {
-      setError('Failed to save track.')
-      console.error(err)
-    }
-  }
-
   return (
     <DialogContent className="max-w-xl" style={{ borderColor: 'var(--border)' }}>
       <DialogTitle className="text-2xl font-semibold">Create New Track</DialogTitle>
+      <DialogDescription className="text-zinc-500">Create a new track to start learning.</DialogDescription>
 
       <div className="space-y-4 mt-4">
         <div className='flex flex-col gap-2'>
