@@ -98,3 +98,10 @@ export type MotokoUser = {
   principal: Principal
   identity: string
 }
+
+export interface Message {
+  id: string;
+  role: 'user' | 'model';
+  content: string;
+  isLoading?: boolean;
+}
