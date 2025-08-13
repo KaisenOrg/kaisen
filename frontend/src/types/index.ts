@@ -101,6 +101,7 @@ export type MotokoUser = {
 
 export interface Message {
   id: string;
-  role: 'user' | 'assistant'; // 'assistant' é o nome padrão para a IA na API da OpenAI
+  role: 'user' | 'model';
   content: string;
+  isLoading?: boolean;
 }

@@ -29,6 +29,8 @@ export function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/kai-teste" element={<KaiPage />} />
+        
         <Route path="/" element={<RootLayout showSideBar={!!user} />}>
           {user ? (<>
             <Route index element={<Home />} />
