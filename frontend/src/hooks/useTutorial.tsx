@@ -1,4 +1,3 @@
-// src/hooks/useTutorial.tsx
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -9,7 +8,6 @@ export type TutorialStep = {
   selector?: string;
   /** Posição do tooltip em relação ao alvo (ou "center") */
   placement?: "top" | "bottom" | "left" | "right" | "center";
-  /** (opcional) Rota que precisa estar ativa antes de mostrar o passo */
   route?: string;
 };
 

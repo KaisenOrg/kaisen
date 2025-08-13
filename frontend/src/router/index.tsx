@@ -1,4 +1,3 @@
-// src/AppRoutes.tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useIntro } from '@/hooks/useIntro';
@@ -30,7 +29,6 @@ import { useTutorial } from "@/hooks/useTutorial";
 import TutorialOverlay from "@/components/specific/tutorial/TutorialOverlay";
 import { basicSteps } from '@/components/specific/tutorial/Steps';
 
-// 👉 Componente "casca" que apenas monta o BrowserRouter
 export function AppRoutes() {
   return (
     <BrowserRouter>
@@ -39,7 +37,6 @@ export function AppRoutes() {
   );
 }
 
-// 👉 Tudo que usa hooks do router (useTutorial, etc.) fica AQUI dentro
 function RoutedApp() {
   const { user, isLoading, principal } = useUser();
   const tutorial = useTutorial();

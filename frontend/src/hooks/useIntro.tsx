@@ -1,4 +1,3 @@
-// src/hooks/useIntro.tsx
 import { useCallback, useMemo, useState } from "react";
 import { hasSeenIntro, markIntroSeen } from "@/lib/introSeen";
 import { IntroModal } from "@/components/specific/tutorial/IntroModal";

@@ -18,7 +18,6 @@ export const basicSteps: TutorialStep[] = [
     placement: "right",
   },
 
-  // 👉 PASSO COM ROTA: garante que estamos em /discover
   {
     id: "go-discover",
     route: "/discover",
@@ -26,7 +25,6 @@ export const basicSteps: TutorialStep[] = [
     placement: "center",
   },
 
-  // destaque no link (se ele ainda aparece na sidebar)
   {
     id: "discover-link",
     selector: "#discover-link",
@@ -34,7 +32,6 @@ export const basicSteps: TutorialStep[] = [
     placement: "bottom",
   },
 
-  // (opcional) destaque algum elemento dentro da página Discover
   {
     id: "track-card",
     selector: '[data-tour="track-card"]',

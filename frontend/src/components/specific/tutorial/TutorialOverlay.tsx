@@ -1,4 +1,3 @@
-// src/components/tutorial/TutorialOverlay.tsx
 import { createPortal } from "react-dom";
 import { useEffect, useMemo } from "react";
 import type { TutorialApi } from "@/hooks/useTutorial";
@@ -33,26 +32,24 @@ function Spotlight({
         <mask
           id="tour-cutout-mask"
           maskUnits="userSpaceOnUse"
-          maskContentUnits="userSpaceOnUse"   // 👈 coordenadas em px
+          maskContentUnits="userSpaceOnUse"   
           x="0"
           y="0"
           width="100%"
           height="100%"
         >
-          {/* branco = overlay visível; preto = “buraco” (sem overlay) */}
           <rect x="0" y="0" width="100%" height="100%" fill="white" />
           <rect x={x} y={y} width={w} height={h} rx={rx} ry={rx} fill="black" />
         </mask>
       </defs>
 
-      {/* overlay escuro, recortado pela máscara */}
       <rect
         x="0"
         y="0"
         width="100%"
         height="100%"
         fill="black"
-        opacity={opacity}                 // ajuste 0.25–0.40 ao seu gosto
+        opacity={opacity}              
         mask="url(#tour-cutout-mask)"
       />
     </svg>
@@ -66,8 +63,8 @@ export default function TutorialOverlay({ api }: Props) {
   if (!isActive || !step) return null;
 
   const rect = targetEl?.getBoundingClientRect();
-  const pad = 10;   // margem extra ao redor do alvo
-  const rx  = 12;   // raio de canto
+  const pad = 10;   
+  const rx  = 12;   
 
   // Posição do tooltip
   const tooltipStyle = useMemo(() => {
