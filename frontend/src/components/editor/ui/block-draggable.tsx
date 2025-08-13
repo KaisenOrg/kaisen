@@ -221,6 +221,20 @@ function Gutter({
   );
 }
 
+function cleanReactFiberRefs(el: HTMLElement) {
+  for (const key in el) {
+    if (key.startsWith('__reactFiber$') || key.startsWith('__reactProps$')) {
+      try {
+        // @ts-ignore
+        delete el[key];
+      } catch { }
+    }
+  }
+  for (const child of el.children) {
+    cleanReactFiberRefs(child as HTMLElement);
+  }
+}
+
 const DragHandle = React.memo(function DragHandle({
   isDragging,
   previewRef,
@@ -275,6 +289,11 @@ const DragHandle = React.memo(function DragHandle({
             }
 
             const elements = createDragPreviewElements(editor, blocks);
+            elements.forEach((el) => {
+              if (el instanceof HTMLElement) {
+                cleanReactFiberRefs(el);
+              }
+            });
             previewRef.current?.append(...elements);
             previewRef.current?.classList.remove('hidden');
             previewRef.current?.classList.add('opacity-0');
@@ -383,7 +402,10 @@ const createDragPreviewElements = (
   };
 
   const resolveElement = (node: TElement, index: number) => {
-    const domNode = editor.api.toDOMNode(node)!;
+    const domNode = editor.api.toDOMNode(node);
+    if (!domNode) {
+      return;
+    }
     const newDomNode = domNode.cloneNode(true) as HTMLElement;
 
     // Apply visual compensation for horizontal scroll
@@ -447,9 +469,11 @@ const createDragPreviewElements = (
     elements.push(wrapper);
   };
 
-  blocks.forEach((node, index) => resolveElement(node, index));
+  const validBlocks = blocks.filter((block) => editor.api.toDOMNode(block) !== undefined);
 
-  editor.setOption(DndPlugin, 'draggingId', ids);
+  validBlocks.forEach((node, index) => resolveElement(node, index));
+
+  editor.setOption(DndPlugin, 'draggingId', validBlocks.map((block) => block.id as string));
 
   return elements;
 };
@@ -467,6 +491,10 @@ const calculatePreviewTop = (
   const child = editor.api.toDOMNode(element)!;
   const editable = editor.api.toDOMNode(editor)!;
   const firstSelectedChild = blocks[0];
+
+  if (!child || !editable) {
+    return 0;
+  }
 
   const firstDomNode = editor.api.toDOMNode(firstSelectedChild)!;
   // Get editor's top padding
@@ -503,7 +531,11 @@ const calculatePreviewTop = (
 };
 
 const calcDragButtonTop = (editor: PlateEditor, element: TElement): number => {
-  const child = editor.api.toDOMNode(element)!;
+  const child = editor.api.toDOMNode(element);
+
+  if (!child) {
+    return 0;
+  }
 
   const currentMarginTopString = window.getComputedStyle(child).marginTop;
   const currentMarginTop = Number(currentMarginTopString.replace('px', ''));

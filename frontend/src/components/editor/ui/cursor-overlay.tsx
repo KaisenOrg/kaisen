@@ -1,7 +1,3 @@
-'use client';
-
-import * as React from 'react';
-
 import { AIChatPlugin } from '@platejs/ai/react';
 import {
   type CursorData,
