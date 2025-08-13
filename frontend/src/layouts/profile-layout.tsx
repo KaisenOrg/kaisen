@@ -1,48 +1,23 @@
-import { useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
-import { useUser } from '@/providers/user-provider'
-import { PageHeader } from '@/components/general/page-header'
-import { ProfileSidebar } from '@/components/specific/profile/profileSidebar'
+import "@nfid/identitykit/react/styles.css";
 
-export default function ProfileLayout() {
-  const { user } = useUser()
+import Header from "@/components/ui/header";
+import Sidebar from "@/components/ui/sidebar";
+import { Outlet } from "react-router-dom";
+import { Toaster } from "@/components/ui/sonner";
 
-  useEffect(() => {
-    const anchors = document.querySelectorAll('a[href^="#"]')
-
-    const handleClick = (e: Event) => {
-      e.preventDefault()
-      const target = document.querySelector((e.currentTarget as HTMLAnchorElement).getAttribute('href') || '')
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-
-    anchors.forEach(anchor => anchor.addEventListener('click', handleClick))
-
-    return () => {
-      anchors.forEach(anchor => anchor.removeEventListener('click', handleClick))
-    }
-  }, [])
-
+export default function ProfileLayout({ showSideBar = true }: { showSideBar?: boolean }) {
   return (
-    <div className="px-14">
-      <PageHeader
-        imageUrl={user?.picture || 'none'}
-        imageFallback={user?.nickname?.slice(0, 2)}
-        title={user?.nickname || 'unknown'}
-        subtitle={`@${user?.username}` || 'empty'}
-        className="mb-12"
-        showBgImage={false}
-        showBackButton={false}
-        headerClassname="bg-transparent"
-      />
-      <div className="flex items-start px-16 gap-5">
-        <ProfileSidebar />
-
-        <Outlet />
+    <div className="flex flex-col h-screen">
+      <Header />
+      <div className="flex flex-1 overflow-hidden">
+        {showSideBar && <Sidebar />}
+       <div className="relative flex-1">
+          <div className="absolute inset-0 overflow-y-auto">
+            <Outlet />
+          </div>
+          <Toaster className="!absolute" position="top-right" />
+        </div>
       </div>
     </div>
-
-  )
+  );
 }
