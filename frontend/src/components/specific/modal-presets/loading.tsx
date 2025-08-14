@@ -4,11 +4,7 @@ import {
   AlertDialogTitle
 } from '@/components/ui/alert-dialog'
 
-interface Props {
-  progress?: number
-}
-
-export function LoadingPreset({ progress }: Props) {
+export function LoadingPreset() {
   return (
     <AlertDialogContent className="outline-none w-16 flex flex-col items-center p-0 border-none bg-transparent">
       <AlertDialogTitle>
