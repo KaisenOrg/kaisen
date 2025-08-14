@@ -5,6 +5,7 @@ import { generateSectionPositions } from '@/lib/mappers'
 import { useTracksActions } from '@/hooks/useTracksActions'
 import { type Section } from '@/types'
 import { useActor } from '@/lib/agent'
+import { useUser } from '@/providers/user-provider'
 
 import { SectionCard } from '@/components/specific/tracks/section-card'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
@@ -20,6 +21,8 @@ export default function TrackPage() {
   const { fetchTracks, injectSampleTracks } = useTracksActions()
   const { open } = useModalStore()
   const tracksActor = useActor('tracks_backend')
+  const usersActor = useActor('users_backend')
+  const { user } = useUser()
   const { id } = useParams()
 
   const selectedTrack = tracks?.find((track) => track.id === id)
@@ -57,7 +60,16 @@ export default function TrackPage() {
     }
   }, [selectedTrack, tracks])
 
-  const handleSectionClick = (section: Section) => {
+  const handleSectionClick = async (section: Section) => {
+    if (!usersActor || !user) {
+      open({ type: 'generic', title: 'Acesso negado', content: 'Usuário não autenticado.' })
+      return
+    }
+    const res = await usersActor.tryAccessSection(user.identity, selectedTrack?.id ?? '', BigInt(section.id))
+    if ('err' in res) {
+      open({ type: 'generic', title: 'Acesso negado', content: res.err })
+      return
+    }
     open({ type: 'section', data: section })
   }
 
