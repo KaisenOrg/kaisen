@@ -7,6 +7,8 @@ import { useTracksActions } from '@/hooks/useTracksActions'
 import { type Section } from '@/types'
 import { useActor } from '@/lib/agent'
 import { useUser } from '@/providers/user-provider'
+import { toastKoin } from '@/components/general/koin-toast'
+import { useKoin } from '@/hooks/useKoin'
 
 import { SectionCard } from '@/components/specific/tracks/section-card'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
@@ -25,6 +27,8 @@ export default function TrackPage() {
   const usersActor = useActor('users_backend')
   const { user, updateUser } = useUser()
   const { id } = useParams()
+  const { principal } = user || {};
+  const { transfer } = useKoin(principal ?? null);
 
   const selectedTrack = tracks?.find((track) => track.id === id)
 
@@ -85,6 +89,15 @@ export default function TrackPage() {
       const updatedInProgress = user.inProgressTracks.filter(t => t.id !== selectedTrack.id);
       updatedInProgress.push({ id: selectedTrack.id, progress: section.id });
       await updateUser({ inProgressTracks: updatedInProgress });
+      // Recompensa: 5 Koins
+      if (transfer && principal) {
+        try {
+          await transfer(principal, 5_000_000_000n); // 5 Koins (assumindo 8 casas decimais)
+          toastKoin('Você recebeu 5 Koins por concluir a seção!');
+        } catch {
+          // Se falhar, apenas não mostra o toast de sucesso
+        }
+      }
     }
   };
 
@@ -112,7 +125,7 @@ export default function TrackPage() {
           {sectionsWithPositions.length > 0 && !isLoading && (
             <>
               <ConnectingArrows 
-                positions={sectionsWithPositions.map((s, idx) => {
+                positions={sectionsWithPositions.map(s => {
                   const progressData = user?.inProgressTracks.find(t => t.id === selectedTrack?.id);
                   const currentProgress = progressData ? progressData.progress : 0;
                   return {
