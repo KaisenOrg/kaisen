@@ -65,7 +65,7 @@ export default function TrackPage() {
     }
   }, [selectedTrack, tracks])
 
-  const handleSectionClick = async (section: Section) => {
+  const handleSectionClick = async (section: Section, isActive?: boolean, isCompleted?: boolean) => {
     if (!usersActor || !user) {
       toast.error('Usuário não autenticado.')
       return
@@ -75,7 +75,14 @@ export default function TrackPage() {
       toast.error(res.err)
       return
     }
-    open({ type: 'section', data: section })
+    open({
+      type: 'section',
+      data: {
+        ...section,
+        onComplete: isActive ? () => handleCompleteSection(section) : null,
+        isCompleted
+      }
+    })
   }
 
   // Função para marcar seção como concluída
@@ -147,10 +154,8 @@ export default function TrackPage() {
                     title={section.title}
                     description={`Seção ${section.id} da trilha.`}
                     buttonText={getButtonTextForContent(section.content)}
-                    onClick={() => handleSectionClick(section)}
+                    onClick={() => handleSectionClick(section, isActive, isCompleted)}
                     style={section.position}
-                    onComplete={isActive ? () => handleCompleteSection(section) : null}
-                    isCompleted={isCompleted}
                   />
                 );
               })}

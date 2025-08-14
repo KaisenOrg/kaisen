@@ -8,9 +8,11 @@ import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTit
 interface Props {
   title: string
   pageData: Quiz[]
+  onComplete?: (() => void) | null
+  isCompleted?: boolean
 }
 
-export function QuizSectionPreset({ title, pageData }: Props) {
+export function QuizSectionPreset({ title, pageData, onComplete, isCompleted }: Props) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
   const [correctAnswers, setCorrectAnswers] = useState(0)
@@ -49,13 +51,13 @@ export function QuizSectionPreset({ title, pageData }: Props) {
     setSelected(null)
   }
 
-  const handleReset = () => {
-    setCurrentQuestion(0)
-    setSelected(null)
-    setCorrectAnswers(0)
-    setAnsweredQuestions([])
-    setShowResult(false)
-  }
+  // const handleReset = () => {
+  //   setCurrentQuestion(0)
+  //   setSelected(null)
+  //   setCorrectAnswers(0)
+  //   setAnsweredQuestions([])
+  //   setShowResult(false)
+  // }
 
   return (
     <DialogContent className='sm:max-w-4xl h-[80vh] overflow-y-auto p-8 flex flex-col' style={{ borderColor: 'var(--border)' }}>
@@ -122,9 +124,16 @@ export function QuizSectionPreset({ title, pageData }: Props) {
             </div>
           </>
         ) : (
-          <Button className='absolute bottom-8'>
-            Mark as done
-          </Button>
+          onComplete && (
+            <Button
+              variant={isCompleted ? 'secondary' : 'default'}
+              className='absolute bottom-8 mt-2 cursor-pointer'
+              onClick={onComplete}
+              disabled={isCompleted}
+            >
+              {isCompleted ? 'Concluída' : 'Mark as done'}
+            </Button>
+          )
         )}
 
         <Progress

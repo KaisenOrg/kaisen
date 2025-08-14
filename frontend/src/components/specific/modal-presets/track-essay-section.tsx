@@ -12,9 +12,11 @@ import remarkGfm from 'remark-gfm'
 interface Props {
   title: string
   pageData: Essay[]
+  onComplete?: (() => void) | null
+  isCompleted?: boolean
 }
 
-export function EssaySectionPreset({ title, pageData }: Props) {
+export function EssaySectionPreset({ title, pageData, onComplete, isCompleted }: Props) {
   const kaiActor = useActor('kai_backend')
 
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -87,14 +89,14 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
     setAiFeedback('')
   }
 
-  const handleRestart = () => {
-    setCurrentQuestion(0)
-    setAnswer('')
-    setAiFeedback('')
-    setCorrectAnswers(0)
-    setShowResult(false)
-    setAnsweredQuestions([])
-  }
+  // const handleRestart = () => {
+  //   setCurrentQuestion(0)
+  //   setAnswer('')
+  //   setAiFeedback('')
+  //   setCorrectAnswers(0)
+  //   setShowResult(false)
+  //   setAnsweredQuestions([])
+  // }
 
   return (
     <DialogContent className='sm:max-w-4xl h-[80vh] overflow-y-auto p-8 flex flex-col' style={{ borderColor: 'var(--border)' }}>
@@ -160,9 +162,16 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
             </div>
           </>
         ) : (
-          <Button className='absolute bottom-8'>
-            Mark as done
-          </Button>
+          onComplete && (
+            <Button
+              variant={isCompleted ? 'secondary' : 'default'}
+              className='absolute bottom-8 mt-2 cursor-pointer'
+              onClick={onComplete}
+              disabled={isCompleted}
+            >
+              {isCompleted ? 'Concluída' : 'Mark as done'}
+            </Button>
+          )
         )}
 
         <Progress

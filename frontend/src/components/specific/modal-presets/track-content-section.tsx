@@ -1,5 +1,4 @@
 import { type Page, type PageElement } from '@/types'
-import { useModalStore } from '@/stores/useModalStore'
 import { Button } from '@/components/ui/button'
 import {
   DialogContent,
@@ -12,6 +11,8 @@ import {
 interface Props {
   title: string
   pageData: Page
+  onComplete?: (() => void) | null
+  isCompleted?: boolean
 }
 
 function ElementRenderer({ element }: { element: PageElement }) {
@@ -60,8 +61,7 @@ function ElementRenderer({ element }: { element: PageElement }) {
   return null
 }
 
-export function ContentSectionPreset({ title, pageData }: Props) {
-  const { close } = useModalStore()
+export function ContentSectionPreset({ title, pageData, onComplete, isCompleted }: Props) {
 
   return (
     <DialogContent showCloseButton={false} className="sm:max-w-4xl h-[80vh] overflow-y-auto p-8" style={{ borderColor: 'var(--border)' }}>
@@ -77,9 +77,16 @@ export function ContentSectionPreset({ title, pageData }: Props) {
       </div>
 
       <DialogFooter className="">
-        <Button onClick={close}>
-          Mark as done
-        </Button>
+        {onComplete && (
+          <Button
+            variant={isCompleted ? 'secondary' : 'default'}
+            className='mt-2 cursor-pointer'
+            onClick={onComplete}
+            disabled={isCompleted}
+          >
+            {isCompleted ? 'Concluída' : 'Mark as Done'}
+          </Button>
+        )}
       </DialogFooter>
     </DialogContent>
   )
