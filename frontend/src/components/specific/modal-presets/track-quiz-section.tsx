@@ -58,25 +58,25 @@ export function QuizSectionPreset({ title, pageData }: Props) {
   }
 
   return (
-    <DialogContent style={{ borderColor: 'var(--border)' }}>
+    <DialogContent className='sm:max-w-4xl h-[80vh] overflow-y-auto p-8 flex flex-col' style={{ borderColor: 'var(--border)' }}>
       <DialogHeader>
         <DialogTitle className="text-2xl">
           {title}
         </DialogTitle>
 
         {!showResult ? (
-          <DialogDescription className="text-base text-foreground">
+          <DialogDescription className="text-base text-foreground mb-4">
             {`${currentQuestion + 1}. ${question.question}`}
           </DialogDescription>
         ) : (
-          <DialogDescription className="text-base text-foreground">
+          <DialogDescription className="text-base text-foreground mb-4">
             Você acertou {correctAnswers} de {pageData.length} questões.
           </DialogDescription>
         )}
       </DialogHeader>
 
       {!showResult && (
-        <div className="flex flex-col gap-2 mb-2">
+        <div className="flex flex-col gap-2">
           {question.alternatives.map((alt, index) => {
             const isSelected = selected === index
             const isCorrect = alt.id === question.correctAnswerId
@@ -112,17 +112,18 @@ export function QuizSectionPreset({ title, pageData }: Props) {
       <DialogFooter>
         {!showResult ? (
           <>
-            <Button variant="outline" onClick={handlePrev} disabled={currentQuestion === 0}>
-              Voltar
-            </Button>
-
-            <Button onClick={handleNext} disabled={selected === null}>
-              {isLastQuestion ? 'Finalizar' : 'Próximo'}
-            </Button>
+            <div className='absolute bottom-8 flex gap-2'>
+              <Button variant="outline" onClick={handlePrev} disabled={currentQuestion === 0}>
+                Voltar
+              </Button>
+              <Button onClick={handleNext} disabled={selected === null}>
+                {isLastQuestion ? 'Finalizar' : 'Próximo'}
+              </Button>
+            </div>
           </>
         ) : (
-          <Button onClick={handleReset}>
-            Reiniciar Quiz
+          <Button className='absolute bottom-8'>
+            Mark as done
           </Button>
         )}
 

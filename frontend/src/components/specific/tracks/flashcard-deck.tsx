@@ -89,7 +89,7 @@ export function FlashcardDeck({
                 }}
               >
                 {/* Frente */}
-                <div className={`absolute w-full h-full flex flex-col justify-center items-center p-8 bg-zinc-900 border border-zinc-800 rounded-xl [backface-visibility:hidden] ${isTopCard ? '[box-shadow:0px_0px_50px_2px_rgba(194,65,12,0.11)_inset]' : ''}`}>
+                <div className={`absolute w-full h-full flex flex-col justify-center items-center p-8 bg-zinc-900 border border-zinc-800 rounded-xl [backface-visibility:hidden] ${isTopCard ? '[box-shadow:0px_0px_25px_2px_rgba(194,65,12,0.065)_inset]' : ''}`}>
                   <p className="text-center text-xl text-zinc-100">{card.sentence}</p>
                   <div className="flex justify-between items-center absolute bottom-4 w-full px-6">
                     <div className='text-zinc-500'>
@@ -109,7 +109,7 @@ export function FlashcardDeck({
                 </div>
 
                 {/* Verso */}
-                <div className="absolute w-full h-full flex flex-col justify-center items-center p-8 bg-zinc-800 border border-zinc-700 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="absolute w-full h-full flex flex-col justify-center items-center p-8 bg-zinc-900 border border-zinc-800 rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden]">
                   <p className="text-center text-xl font-semibold text-white">{card.answer}</p>
                 </div>
               </motion.div>
