@@ -22,7 +22,7 @@ export default function TrackPage() {
   const { open } = useModalStore()
   const tracksActor = useActor('tracks_backend')
   const usersActor = useActor('users_backend')
-  const { user } = useUser()
+  const { user, updateUser } = useUser()
   const { id } = useParams()
 
   const selectedTrack = tracks?.find((track) => track.id === id)
@@ -73,6 +73,20 @@ export default function TrackPage() {
     open({ type: 'section', data: section })
   }
 
+  // Função para marcar seção como concluída
+  const handleCompleteSection = async (section: Section) => {
+    if (!user || !selectedTrack) return;
+    // Busca progresso atual
+    const progressData = user.inProgressTracks.find(t => t.id === selectedTrack.id);
+    const currentProgress = progressData ? progressData.progress : 0;
+    // Só atualiza se for a próxima seção
+    if (section.id === currentProgress + 1) {
+      const updatedInProgress = user.inProgressTracks.filter(t => t.id !== selectedTrack.id);
+      updatedInProgress.push({ id: selectedTrack.id, progress: section.id });
+      await updateUser({ inProgressTracks: updatedInProgress });
+    }
+  };
+
   const getButtonTextForContent = (content: Section['content']): string => {
     if ('Page' in content) return 'Read'
     if ('Quiz' in content) return 'Answer'
@@ -97,16 +111,25 @@ export default function TrackPage() {
           {sectionsWithPositions.length > 0 && !isLoading && (
             <>
               <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
-              {sectionsWithPositions.map(section => (
-                <SectionCard
-                  key={section.id}
-                  title={section.title}
-                  description={`Seção ${section.id} da trilha.`}
-                  buttonText={getButtonTextForContent(section.content)}
-                  onClick={() => handleSectionClick(section)}
-                  style={section.position}
-                />
-              ))}
+              {sectionsWithPositions.map(section => {
+                // Seção ativa: só pode marcar como concluída se for a próxima
+                const progressData = user?.inProgressTracks.find(t => t.id === selectedTrack?.id);
+                const currentProgress = progressData ? progressData.progress : 0;
+                const isActive = section.id === currentProgress + 1;
+                const isCompleted = section.id <= currentProgress;
+                return (
+                  <SectionCard
+                    key={section.id}
+                    title={section.title}
+                    description={`Seção ${section.id} da trilha.`}
+                    buttonText={getButtonTextForContent(section.content)}
+                    onClick={() => handleSectionClick(section)}
+                    style={section.position}
+                    onComplete={isActive ? () => handleCompleteSection(section) : null}
+                    isCompleted={isCompleted}
+                  />
+                );
+              })}
             </>
           )}
         </DraggableBackground>
