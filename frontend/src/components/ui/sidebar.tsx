@@ -104,7 +104,8 @@ export default function Sidebar() {
   return (
     <aside  className={`h-full border-r-2 border-[var(--sidebar-border)] bg-[var(--sidebar)] text-[var(--sidebar-foreground)] flex flex-col p-3 transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-56'}`}>
       <div className="flex-grow" data-tour="sidebar">
-        <nav className="space-y-1" >
+        <nav className="space-y-1" data-tour="sidebar-home">
+          
           {mainLinks.map((link) => (
             <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
           ))}
@@ -112,7 +113,7 @@ export default function Sidebar() {
         {isCollapsed ? (
           <div className="mt-6">
             <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" />
-            <nav className="mt-2 space-y-1">
+            <nav className="mt-2 space-y-1" > 
               {progressLinks.map((link) => (
                 <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
               ))}
@@ -136,7 +137,7 @@ export default function Sidebar() {
         {isCollapsed ? (
           <div className="mt-6">
             <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" />
-            <nav className="mt-2 space-y-1">
+            <nav className="mt-2 space-y-1" data-tour="sidebar-community">
               {communityLinks.map((link) => (
                 <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
               ))}
@@ -159,9 +160,10 @@ export default function Sidebar() {
         )}
       </div>
       <div>
-        <nav className="space-y-1">
+        <nav className="space-y-1" data-tour="sidebar-settings">
           {footerLinks.map((link) => (
             <NavLink
+            
               key={link.name}
               {...link}
               selected={isSelected(link.href)}
