@@ -5,17 +5,20 @@ export const basicSteps: TutorialStep[] = [
     id: "welcome",
     content: (
       <div>
-        <h4 className="font-semibold mb-1">Bem-vindo(a) 👋</h4>
-        <p className="text-sm">Tour rápido. Clique em “Próximo”.</p>
+        <h4 className="text-lg leading-none font-semibold pb-5">Bem-vindo(a) 👋</h4>
+        <p className=" ">Voce é novo por aqui, vamos te localizar</p>
       </div>
     ),
     placement: "center",
+    badgeSrc: "/kai-sitting-off.svg",
   },
   {
     id: "sidebar",
     selector: '[data-tour="sidebar"]',
     content: "Este é o menu lateral com as principais seções.",
     placement: "right",
+        badgeSrc: "/kai-hidding.svg",
+
   },
 
   {

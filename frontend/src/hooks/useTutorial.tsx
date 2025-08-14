@@ -9,6 +9,7 @@ export type TutorialStep = {
   /** Posição do tooltip em relação ao alvo (ou "center") */
   placement?: "top" | "bottom" | "left" | "right" | "center";
   route?: string;
+  badgeSrc?: string; 
 };
 
 export type TutorialApi = {
