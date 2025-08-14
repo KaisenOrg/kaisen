@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
+import { toast } from 'sonner'
 
 import { generateSectionPositions } from '@/lib/mappers'
 import { useTracksActions } from '@/hooks/useTracksActions'
@@ -62,12 +63,12 @@ export default function TrackPage() {
 
   const handleSectionClick = async (section: Section) => {
     if (!usersActor || !user) {
-      open({ type: 'generic', title: 'Acesso negado', content: 'Usuário não autenticado.' })
+      toast.error('Usuário não autenticado.')
       return
     }
     const res = await usersActor.tryAccessSection(user.identity, selectedTrack?.id ?? '', BigInt(section.id))
     if ('err' in res) {
-      open({ type: 'generic', title: 'Acesso negado', content: res.err })
+      toast.error(res.err)
       return
     }
     open({ type: 'section', data: section })
@@ -110,7 +111,17 @@ export default function TrackPage() {
         >
           {sectionsWithPositions.length > 0 && !isLoading && (
             <>
-              <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
+              <ConnectingArrows 
+                positions={sectionsWithPositions.map((s, idx) => {
+                  const progressData = user?.inProgressTracks.find(t => t.id === selectedTrack?.id);
+                  const currentProgress = progressData ? progressData.progress : 0;
+                  return {
+                    ...s.position,
+                    active: s.id <= currentProgress
+                  }
+                })} 
+                cardDimensions={cardDimensions} 
+              />
               {sectionsWithPositions.map(section => {
                 // Seção ativa: só pode marcar como concluída se for a próxima
                 const progressData = user?.inProgressTracks.find(t => t.id === selectedTrack?.id);
