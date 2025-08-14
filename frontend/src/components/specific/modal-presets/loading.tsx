@@ -3,7 +3,6 @@ import {
   AlertDialogDescription,
   AlertDialogTitle
 } from '@/components/ui/alert-dialog'
-import { Progress } from '@/components/ui/progress'
 
 interface Props {
   progress?: number
@@ -18,14 +17,11 @@ export function LoadingPreset({ progress }: Props) {
           alt="loading"
           width={64}
           height={64}
-          className="animate-spin"
+          className="slow-spin"
         />
       </AlertDialogTitle>
       <AlertDialogDescription>
       </AlertDialogDescription>
-      {progress ?? (
-        <Progress className="mt-2 w-sm h-4" color="bg-white" value={progress} />
-      )}
     </AlertDialogContent>
   )
 }
