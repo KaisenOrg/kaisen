@@ -15,26 +15,31 @@ import { v4 as uuidv4 } from "uuid";
 import type { Message } from "@/types";
 import { LoadingBubble } from "../kai/loading-bubble";
 
+const card1Prompt = "Hi Kai! I'd like you to explain a concept to me. Please ask me what the concept is and then explain it in a simple and easy-to-understand way.";
+const card2Prompt = "Let's do a quiz to test my knowledge. Ask me for the topic, and then create 5 multiple-choice questions about it. After I answer, tell me my score.";
+
 export function ChatPanel() {
   const [input, setInput] = useState("");
   const [chat, setChat] = useState<Message[]>([]);
   const [showChat, setShowChat] = useState(false);
   const [__isLoading, setIsLoading] = useState(false);
 
+  
   const inputRef = useRef<HTMLInputElement>(null);
   const kaiActor = useActor("kai_backend");
-
-  const handleSend = () => {
-    if (!input.trim()) return;
+  
+  const handleSend = (promptText? : string) => {
+    const contentToSend = promptText || input;
+    
+    if (!contentToSend.trim()) return;
 
     setIsLoading(true);
     const userMessage: Message = {
       id: uuidv4(),
       role: "user",
-      content: input,
+      content: contentToSend,
     };
 
-    // Prepara o chat futuro para ser usado tanto na API quanto no estado
     const newChatHistory = [...chat, userMessage];
 
     setChat(newChatHistory);
@@ -134,7 +139,7 @@ export function ChatPanel() {
                     height={48}
                     className="mb-1"
                   />
-                  <div className="bg-zinc-300 text-zinc-900 px-4 py-2 rounded-xl">
+                  <div className="text-white bg-orange-500 px-4 py-2 rounded-xl">
                     {msg.isLoading ? (
                       <LoadingBubble />
                     ) : (
@@ -181,10 +186,13 @@ export function ChatPanel() {
             <ChatSuggestionCard
               title="Explain this concept"
               description="Get a simple explanation for any topic"
+              onClick={ () => handleSend(card1Prompt)}
             />
             <ChatSuggestionCard
               title="Quiz me on this lesson"
               description="Test your knowledge with a quick quiz"
+              onClick={() => handleSend(card2Prompt)}
+
             />
           </div>
         </div>
@@ -195,7 +203,6 @@ export function ChatPanel() {
           <PaperClipIcon className="h-5 w-5 text-zinc-400 cursor-pointer" />
           <PaperAirplaneIcon
             className="h-5 w-5 text-zinc-400 cursor-pointer"
-            onClick={handleSend}
           />
         </div>
         <Input
