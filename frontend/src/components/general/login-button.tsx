@@ -15,5 +15,10 @@ export const LoginButton = () => {
     );
   }
 
-  return <Button onClick={() => login()}>Login {process.env.DFX_NETWORK !== 'ic' && '(Dev Mode)'}</Button>;
+  return (
+    <div className="flex gap-2">
+      <Button variant="ghost" onClick={() => login()}>Login {process.env.DFX_NETWORK !== 'ic'}</Button>
+      <Button variant="outline" onClick={() => alert('Account creation coming soon!')}>Create account</Button>
+    </div>
+  );
 };

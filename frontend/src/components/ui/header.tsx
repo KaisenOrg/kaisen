@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { BellIcon } from "@heroicons/react/24/outline";
+import { BellIcon, UserIcon, Cog6ToothIcon, ArrowRightStartOnRectangleIcon, ChevronRightIcon} from "@heroicons/react/24/outline";
 import { Popover, PopoverTrigger, PopoverContent } from "./popover";
 import { ActionSearchBar } from "../general/search-bar";
 import { LoginButton } from "../general/login-button";
@@ -10,9 +10,23 @@ import { useKoin } from "@/hooks/useKoin";
 import { useUser } from "@/providers/user-provider";
 import { useSidebarStore } from "@/stores/useSidebarStore";
 
+
 export default function Header() {
-  const { isAuthenticated, user } = useUser();
+  const { isAuthenticated, user, logout } = useUser();
   const { isCollapsed, toggleSidebar } = useSidebarStore();
+
+  // Avatar popover state and handlers (moved to top level)
+  const [avatarPopoverOpen, setAvatarPopoverOpen] = useState(false);
+  const avatarRef = useRef(null);
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleAvatarMouseEnter = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    setAvatarPopoverOpen(true);
+  };
+  const handleAvatarMouseLeave = () => {
+    closeTimeout.current = setTimeout(() => setAvatarPopoverOpen(false), 120);
+  };
 
   const {
     formattedBalance: koinBalance,
@@ -145,14 +159,67 @@ export default function Header() {
               <span className="sr-only">Notifications</span>
             </Button>
 
-            <Link to="/profile">
-              <Avatar className="w-10 h-10">
-                <AvatarImage src={user?.picture || undefined} alt={user?.username} />
-                <AvatarFallback>
-                  {user?.nickname?.slice(0, 2) || user?.username?.slice(0, 2) || "??"}
-                </AvatarFallback>
-              </Avatar>
-            </Link>
+            <Popover open={avatarPopoverOpen} onOpenChange={setAvatarPopoverOpen}>
+              <PopoverTrigger asChild>
+                <div
+                  ref={avatarRef}
+                  onMouseEnter={handleAvatarMouseEnter}
+                  onMouseLeave={handleAvatarMouseLeave}
+                  style={{ display: 'inline-block' }}
+                >
+                  <Avatar className="w-10 h-10 cursor-pointer">
+                    <AvatarImage src={user?.picture || undefined} alt={user?.username} />
+                    <AvatarFallback>
+                      {user?.nickname?.slice(0, 2) || user?.username?.slice(0, 2) || "??"}
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
+              </PopoverTrigger>
+              <PopoverContent
+                className="w-64 p-0 rounded-xl shadow-lg border border-border bg-popover text-popover-foreground"
+                side="bottom"
+                align="end"
+                onMouseEnter={handleAvatarMouseEnter}
+                onMouseLeave={handleAvatarMouseLeave}
+                style={{ minWidth: 250 }}
+              >
+                {/* User info header */}
+                <div className="px-4 pt-4 pb-2">
+                  <div className="text-xs text-zinc-400 mb-1">Signed in as</div>
+                  <div className="font-semibold text-white leading-tight">{user?.nickname || user?.username || "User"}</div>
+                </div>
+                <div className="mt-2" />
+                <div className="flex flex-col">
+                  <Link to="/profile" className="flex items-center justify-between px-4 py-3 hover:bg-zinc-800 transition text-left group border-t border-zinc-800">
+                    <span className="flex items-center gap-2">
+                      <UserIcon className="w-5 h-5 text-zinc-400 group-hover:text-white" />
+                      <span className=" text-zinc-400 group-hover:text-white">Profile</span>
+                    </span>
+                    <ChevronRightIcon className="w-4 h-4 text-zinc-500 group-hover:text-white" />
+                  </Link>
+                  <Link to="/settings" className="flex items-center justify-between px-4 py-3 hover:bg-zinc-800 transition text-left group">
+                    <span className="flex items-center gap-2">
+                      <Cog6ToothIcon className="w-5 h-5 text-zinc-400 group-hover:text-white" />
+                      <span className=" text-zinc-400 group-hover:text-white">Settings</span>
+                    </span>
+                    <ChevronRightIcon className="w-4 h-4 text-zinc-500 group-hover:text-white" />
+                  </Link>
+                  <button
+                    className="flex items-center justify-between px-4 py-3 hover:bg-red-500/10 text-red-500 transition text-left group border-t border-zinc-800 mt-1 rounded-b-xl"
+                    onClick={() => {
+                      if (window.confirm('Are you sure you want to sign out?')) {
+                        logout();
+                      }
+                    }}
+                  >
+                    <span className="flex items-center gap-2">
+                      <ArrowRightStartOnRectangleIcon className="w-5 h-5 text-red-500" />
+                      <span>Sign out</span>
+                    </span>
+                  </button>
+                </div>
+              </PopoverContent>
+            </Popover>
           </>
         ) : (
           <LoginButton />
