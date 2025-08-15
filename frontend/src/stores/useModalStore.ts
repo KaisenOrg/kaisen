@@ -3,8 +3,6 @@ import { type Section } from '@/types'
 
 type ModalPayload =
   | { type: 'section'; data: Section & { onComplete?: (() => void) | null; isCompleted?: boolean }, useAlertDialog?: boolean }
-  | { type: 'choose-section-content'; useAlertDialog?: boolean }
-  | { type: 'create-track'; navigate: (route: string) => void, useAlertDialog?: boolean }
   | {
     type: 'generic'
     title: string
@@ -13,7 +11,10 @@ type ModalPayload =
     onConfirm?: () => void
     useAlertDialog?: boolean
   }
+  | { type: 'create-track'; navigate: (route: string) => void, useAlertDialog?: boolean }
   | { type: 'loading', progress?: number, useAlertDialog?: boolean }
+  | { type: 'choose-section-content'; section: Section, trackId: string, useAlertDialog?: boolean }
+  | { type: 'create-summary', section: Section, trackId: string, useAlertDialog?: boolean }
 
 interface ModalState {
   isOpen: boolean

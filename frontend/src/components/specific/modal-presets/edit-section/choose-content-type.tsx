@@ -8,9 +8,10 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog'
 import { DocumentTextIcon } from '@heroicons/react/24/outline'
+import type { Section } from '@/types'
 
-export function ChooseContentType() {
-  const { close } = useModalStore()
+export function ChooseContentType({ trackId, section }: { trackId: string, section: Section }) {
+  const { open, close } = useModalStore()
 
   const handleConfirm = () => {
     close()
@@ -30,6 +31,7 @@ export function ChooseContentType() {
           icon={<DocumentTextIcon className='w-10 h-10 text-primary' />}
           title='Summary'
           description='Create a rich text with the keys points of the subject'
+          onClick={() => open({ type: 'create-summary', section, trackId })}
         />
         <ButtonPoggers
           icon={<DocumentTextIcon className='w-10 h-10 text-primary' />}
@@ -64,8 +66,14 @@ export function ChooseContentType() {
   )
 }
 
-const ButtonPoggers = ({ icon, title, description, disabled }: { icon: React.ReactNode, title: string, description: string, disabled?: boolean }) => (
-  <button disabled={disabled} className='disabled:cursor-not-allowed disabled:opacity-50 flex items-center gap-4 p-4 border-2 border-zinc-800 rounded-2xl not-disabled:hover:bg-zinc-800/25 transition-colors'>
+const ButtonPoggers = ({
+  icon,
+  title,
+  description,
+  disabled,
+  onClick
+}: { icon: React.ReactNode, title: string, description: string, disabled?: boolean, onClick?: () => void }) => (
+  <button onClick={onClick} disabled={disabled} className='disabled:cursor-not-allowed disabled:opacity-50 flex items-center gap-4 p-4 border-2 border-zinc-800 rounded-2xl not-disabled:hover:bg-zinc-800/25 transition-colors'>
     {icon}
     <span className='text-sm text-left'>
       <strong>{title}:</strong> {description}

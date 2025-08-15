@@ -14,14 +14,9 @@ export interface VideoBlock {
   caption: string
 }
 
-export type PageElement =
-  | { 'Text': TextBlock }
-  | { 'Image': ImageBlock }
-  | { 'Video': VideoBlock }
-
 export interface Page {
   title: string
-  elements: PageElement[]
+  content: string
 }
 
 export interface Flashcard {
