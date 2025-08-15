@@ -5,12 +5,11 @@ import { Button } from "@/components/ui/button";
 
 type Props = { api: TutorialApi };
 
-// ---- Spotlight (máscara com “buraco”) --------------------------------------
 function Spotlight({
   rect,
   pad,
   rx,
-  opacity = 0.10,
+  opacity = 0.05,
 }: {
   rect: DOMRect;
   pad: number;
@@ -35,7 +34,6 @@ function Spotlight({
   );
 }
 
-// util clamp
 const clamp = (v: number, min: number, max: number) => Math.min(Math.max(v, min), max);
 
 export default function TutorialOverlay({ api }: Props) {
@@ -49,15 +47,12 @@ export default function TutorialOverlay({ api }: Props) {
   const viewportW = typeof window !== "undefined" ? window.innerWidth : 800;
   const viewportH = typeof window !== "undefined" ? window.innerHeight : 600;
 
-  // limites/margens
-  const margin = 8; // margem de segurança da viewport
-  const gap = 8;    // distância do alvo
+  const margin = 8; 
+  const gap = 8;   
 
-  // Fallbacks aproximados antes da medição real
   const approxW = Math.min(420, viewportW * 0.92);
   const approxH = Math.min(320, viewportH * 0.5);
 
-  // Medição do tamanho real do tooltip
   const tooltipRef = useRef<HTMLDivElement>(null);
   const [tipSize, setTipSize] = useState({ w: approxW, h: approxH });
 
@@ -66,11 +61,10 @@ export default function TutorialOverlay({ api }: Props) {
     if (!el) return;
     const r = el.getBoundingClientRect();
     const measuredW = r.width || approxW;
-    const measuredH = Math.min(r.height || approxH, viewportH * 0.7); // respeita 70vh
+    const measuredH = Math.min(r.height || approxH, viewportH * 0.7); 
     setTipSize({ w: measuredW, h: measuredH });
   }, [stepIndex, step?.content, viewportW, viewportH, rect?.left, rect?.top]);
 
-  // Virar automaticamente se faltar espaço
   const resolvedPlacement = useMemo(() => {
     const preferred = step.placement ?? "bottom";
     if (!rect || !step.selector) return preferred;
@@ -83,10 +77,8 @@ export default function TutorialOverlay({ api }: Props) {
     }
   }, [rect, step?.placement, step?.selector, viewportH, viewportW, approxH, approxW]);
 
-  // Posição final com clamp (sem transform!)
   const tooltipPos = useMemo(() => {
     if (!rect || step.placement === "center" || !step.selector) {
-      // centralizado com clamp
       const left = clamp(viewportW / 2 - tipSize.w / 2, margin, viewportW - margin - tipSize.w);
       const top  = clamp(viewportH / 2 - tipSize.h / 2, margin, viewportH - margin - tipSize.h);
       return { left, top };
@@ -118,7 +110,6 @@ export default function TutorialOverlay({ api }: Props) {
     return { left, top };
   }, [rect, step?.placement, step?.selector, resolvedPlacement, tipSize.w, tipSize.h, viewportW, viewportH]);
 
-  // Máscara CSS alternativa (mantida do seu código)
   const maskStyle = useMemo(() => {
     if (!rect || step.placement === "center" || !step.selector) return {};
     const x = rect.left - pad, y = rect.top - pad, w = rect.width + pad * 2, h = rect.height + pad * 2;
@@ -135,18 +126,16 @@ export default function TutorialOverlay({ api }: Props) {
     } as React.CSSProperties;
   }, [rect, step?.placement, step?.selector]);
 
-  // Garantir visibilidade do alvo
   useEffect(() => {
     if (targetEl) targetEl.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
   }, [targetEl]);
 
-  // Borda de destaque ao redor do alvo
   const highlightBoxStyle = useMemo<React.CSSProperties | null>(() => {
     if (!rect || step.placement === "center" || !step.selector) return null;
-    const x = rect.left - pad;
-    const y = rect.top - pad;
-    const w = rect.width + pad * 2;
-    const h = rect.height + pad * 2;
+    const x = rect.left;
+    const y = rect.top;
+    const w = rect.width ;
+    const h = rect.height ;
     return {
       position: "absolute",
       top: y,
@@ -159,43 +148,36 @@ export default function TutorialOverlay({ api }: Props) {
     };
   }, [rect, step?.placement, step?.selector]);
 
-  // imagem sobreposta opcional (ex.: defina badgeSrc no step)
   const badgeSrc: string | undefined = (step as any)?.badgeSrc;
 
   return createPortal(
     <div className="fixed inset-0 z-[1000] pointer-events-auto">
-      {/* backdrop com “buraco” */}
-      <div className="absolute inset-0 bg-black/40" style={maskStyle} aria-hidden />
+      <div className="absolute inset-0 backdrop-brightness-[40%]" style={maskStyle} aria-hidden />
 
-      {/* spotlight SVG (suave) */}
       {rect && step.selector && step.placement !== "center" ? (
-        <Spotlight rect={rect} pad={pad} rx={rx} opacity={0.35} />
+        <Spotlight rect={rect} pad={pad} rx={rx} opacity={0.5} />
       ) : (
-        <div className="absolute inset-0 bg-black/35" aria-hidden />
+        <div className="absolute inset-0 backdrop-brightness-[40%]" aria-hidden />
       )}
 
-      {/* highlight box */}
       {highlightBoxStyle && <div style={highlightBoxStyle} aria-hidden />}
 
-      {/* WRAPPER posicionado e “clampado” */}
       <div className="absolute" style={tooltipPos}>
         <div className="relative">
-          {/* imagem acima do card (opcional) */}
           {badgeSrc && (
             <img
               src={badgeSrc}
               alt=""
               aria-hidden
               className="absolute -top-18 left-80 -translate-x-1/2 z-10 w-24 h-24 rounded-full
-                         ring-2 ring-neutral-700 shadow-xl pointer-events-none"
+                         ring-2 ring-zinc-700 shadow-xl pointer-events-none"
             />
           )}
 
-          {/* CARD */}
           <div
             ref={tooltipRef}
-            className="rounded-2xl border border-neutral-700 bg-neutral-900/95 p-8 shadow-2xl
-                       text-neutral-100 overflow-auto text-sm mt-6"
+            className="rounded-2xl border border-zinc-700 bg-card p-8 shadow-2xl
+                       text-zinc-100 overflow-auto text-sm mt-6"
             style={{
               maxWidth: "min(92vw, 420px)",
               maxHeight: "70vh",
@@ -214,11 +196,11 @@ export default function TutorialOverlay({ api }: Props) {
             </div>
 
             <div className="mt-4 flex items-center justify-between gap-2">
-              <div className="text-xs text-neutral-400">Passo {stepIndex + 1}</div>
+              <div className="text-xs text-zinc-400">Passo {stepIndex + 1}</div>
               <div className="flex gap-2 mt-1">
-                <Button onClick={stop} variant="ghost">Pular</Button>
-                <Button onClick={prev} variant="outline">Voltar</Button>
-                <Button onClick={next}>Próximo</Button>
+                <Button onClick={stop} variant="ghost">Skip</Button>
+                <Button onClick={prev} variant="outline">Previous</Button>
+                <Button onClick={next}>Next</Button>
               </div>
             </div>
           </div>

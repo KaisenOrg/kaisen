@@ -10,8 +10,6 @@ type IntroModalProps = {
   principal?: string; 
 };
 
-
-
 export function IntroModal({ open, onOpenChange, onStartTutorial, principal }: IntroModalProps) {
   const handleSkip = () => { markIntroSeen(principal); onOpenChange(false); };
   const handleBegin = () => { markIntroSeen(principal); onStartTutorial?.(); onOpenChange(false); console.log("Tutorial started"); };
@@ -19,7 +17,7 @@ export function IntroModal({ open, onOpenChange, onStartTutorial, principal }: I
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
 
-      <DialogContent className="sm:max-w-xl md:max-w-xl lg:max-w-2xl text-neutral-100 border-2 border-neutral-800 p-8 z-50
+      <DialogContent className="sm:max-w-xl md:max-w-xl lg:max-w-2xl text-zinc-100 border-2 border-zinc-800 p-8 z-50
        bg-[url('/geometric-bg-3.svg')]  bg-[length:280px_auto] bg-right-top bg-no-repeat
  before:absolute 
       ">
@@ -30,27 +28,27 @@ export function IntroModal({ open, onOpenChange, onStartTutorial, principal }: I
   />
         <DialogHeader><DialogTitle className="text-xl">Welcome to Kaisen!</DialogTitle></DialogHeader>
 
-        <div className="space-y-3 text-sm leading-relaxed text-neutral-300">
+        <div className="space-y-3 text-sm leading-relaxed text-zinc-300">
           <p>At Kaisen, learning goes beyond the traditional. Here, you learn, develop, and have fun. Count on the support of an engaged community, ready to help and grow alongside you. At the end of your journey, all the knowledge acquired is not just an achievement, but a digital asset: validated and registered with an NFT certificate.</p>
         </div>
 
-        <p className="text-sm text-neutral-200 font-semibold">Here you have the power to:</p>
+        <p className="text-sm text-zinc-200 font-semibold">Here you have the power to:</p>
 
         <div className="space-y-2">
           <div className="flex gap-3 items-start"><Map className="w-6 h-6 text-orange-500" />
-            <p className="text-sm text-neutral-200"><span className="font-medium">Map:</span> Use AI to structure...</p>
+            <p className="text-sm text-zinc-200"><span className="font-medium">Map:</span> Use AI to structure...</p>
           </div>
           <div className="flex gap-3 items-start"><Users className="w-6 h-6 text-orange-500" />
-            <p className="text-sm text-neutral-200"><span className="font-medium">Collaborate:</span> Join the community...</p>
+            <p className="text-sm text-zinc-200"><span className="font-medium">Collaborate:</span> Join the community...</p>
           </div>
           <div className="flex gap-3 items-start"> <Hammer className="w-6 h-6 text-orange-500" />
-            <p className="text-sm text-neutral-200"><span className="font-medium">Build:</span> Help create...</p>
+            <p className="text-sm text-zinc-200"><span className="font-medium">Build:</span> Help create...</p>
           </div>
         </div>
 
         <div className="mt-2 flex justify-end gap-3">
-          <Button variant="outline" className="bg-neutral-800 hover:bg-neutral-700" onClick={handleSkip}>Skip</Button>
-          <Button  onClick={handleBegin}>Begin tutorial</Button>
+          <Button variant="outline" className="bg-zinc-800 hover:bg-zinc-700" onClick={handleSkip}>Skip</Button>
+          <Button  onClick={handleBegin} id="button-finish">Begin tutorial</Button>
         </div>
       </DialogContent>
     </Dialog>

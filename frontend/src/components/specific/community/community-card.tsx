@@ -64,7 +64,7 @@ export default function CommunityCard({
       : "col-span-1";
 
   return (
-    <Link to={`/tracks/${id}`} className={occupation} data-tour="sidebar-suggestions">
+    <Link to={`/tracks/${id}`} className={occupation}>
       <div className={containerClass} >
         {showMascot && (
           <img

@@ -78,17 +78,17 @@ export default function Sidebar() {
 
   const mainLinks = [
     { name: "Home", href: "/", Icon: OutlineSquares2X2Icon, SolidIcon: SolidSquares2X2Icon, id: "home-link" },
-    { name: "Kai", href: "/kai", Icon: OutlineSparklesIcon, SolidIcon: SolidSparklesIcon },
+    { name: "Kai", href: "/kai", Icon: OutlineSparklesIcon, SolidIcon: SolidSparklesIcon, id: "agent-link"},
   ];
 
   const progressLinks = [
     { name: "Profile", href: "/profile/overview", Icon: OutlineUserIcon, SolidIcon: SolidUserIcon, id: "progress-link" },
-    { name: "Kai's Store", href: "/store", Icon: OutlineShoppingCartIcon, SolidIcon: SolidShoppingCartIcon },
+    { name: "Kai's Store", href: "/store", Icon: OutlineShoppingCartIcon, SolidIcon: SolidShoppingCartIcon, id: "store-link"},
   ];
 
   const communityLinks = [
     { name: "Discover", href: "/discover", Icon: OutlineSquare3Stack3DIcon, SolidIcon: SolidSquare3Stack3DIcon, id: "discover-link" },
-    { name: "Community", href: "/community", Icon: OutlineRocketLaunchIcon, SolidIcon: SolidRocketLaunchIcon },
+    { name: "Community", href: "/community", Icon: OutlineRocketLaunchIcon, SolidIcon: SolidRocketLaunchIcon, id: "community-link"},
   ];
 
   const footerLinks = [
@@ -112,7 +112,7 @@ export default function Sidebar() {
         </nav>
         {isCollapsed ? (
           <div className="mt-6">
-            <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" />
+            <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" data-tour="sidebar"/>
             <nav className="mt-2 space-y-1" > 
               {progressLinks.map((link) => (
                 <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
@@ -136,7 +136,7 @@ export default function Sidebar() {
         )}
         {isCollapsed ? (
           <div className="mt-6">
-            <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" />
+            <div className="border-t border-[var(--sidebar-border)] mx-auto w-8" data-tour="sidebar"/>
             <nav className="mt-2 space-y-1" data-tour="sidebar-community">
               {communityLinks.map((link) => (
                 <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
@@ -144,14 +144,14 @@ export default function Sidebar() {
             </nav>
           </div>
         ) : (
-          <div className="mt-6">
+          <div className="mt-6" data-tour="sidebar">
             <h3
               className={`px-2 text-xs font-semibold uppercase text-[var(--sidebar-foreground)] tracking-wider transition-all duration-300 ease-in-out origin-left ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100 w-auto'}`}
               style={{ display: isCollapsed ? 'inline-block' : undefined }}
             >
               Community
             </h3>
-            <nav className="mt-2 space-y-1">
+            <nav className="mt-2 space-y-1" data-tour="sidebar-community">
               {communityLinks.map((link) => (
                 <NavLink key={link.name} {...link} selected={isSelected(link.href)} isCollapsed={isCollapsed} />
               ))}

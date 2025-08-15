@@ -61,7 +61,7 @@ export default function DiscoverFilter() {
   const [duration, setDuration] = useState("Up to 1 hour");
 
   return (
-    <div className="w-full flex flex-col sm:flex-row gap-4 pb-6 mt-5">
+    <div className="w-full flex flex-col sm:flex-row gap-4 mb-6 mt-5" id="discover-filter">
       {/* Campo de busca */}
       <input
         type="text"

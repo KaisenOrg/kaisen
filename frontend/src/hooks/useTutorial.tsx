@@ -4,9 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 export type TutorialStep = {
   id: string;
   content: React.ReactNode;
-  /** Alvo a destacar (ex.: '#discover-link' ou '[data-tour="sidebar"]') */
   selector?: string;
-  /** Posição do tooltip em relação ao alvo (ou "center") */
   placement?: "top" | "bottom" | "left" | "right" | "center";
   route?: string;
   badgeSrc?: string; 
@@ -48,13 +46,11 @@ export function useTutorial(): TutorialApi {
     setTargetEl(null);
   }, []);
 
-  /** muda de passo garantindo rota correta antes */
   const goToStep = useCallback(
     (idx: number) => {
       const next = steps[idx];
       if (!next) return;
 
-      // se o passo pede uma rota diferente da atual, navega
       if (next.route && next.route !== location.pathname) {
         navigate(next.route);
       }
@@ -74,7 +70,6 @@ export function useTutorial(): TutorialApi {
     goToStep(stepIndex - 1);
   }, [stepIndex, goToStep]);
 
-  // encontra o alvo sempre que passo OU rota mudarem
   useEffect(() => {
     if (!isActive || !step) return;
     const id = requestAnimationFrame(() => {
@@ -86,7 +81,6 @@ export function useTutorial(): TutorialApi {
     return () => cancelAnimationFrame(id);
   }, [isActive, step, location.pathname]);
 
-  // recalc em resize/scroll
   useEffect(() => {
     if (!isActive) return;
     const recalc = () => {
