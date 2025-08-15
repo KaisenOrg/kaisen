@@ -25,6 +25,8 @@ export function GlobalModal() {
             <ContentSectionPreset
               title={payload.data.title}
               pageData={payload.data.content.Page}
+              onComplete={payload.data.onComplete}
+              isCompleted={payload.data.isCompleted}
             />
           );
         }
@@ -33,6 +35,8 @@ export function GlobalModal() {
             <FlashcardSectionPreset
               title={payload.data.title}
               flashcards={payload.data.content.Flashcard}
+              onComplete={payload.data.onComplete}
+              isCompleted={payload.data.isCompleted}
             />
           );
         }
@@ -41,6 +45,8 @@ export function GlobalModal() {
             <QuizSectionPreset
               title={payload.data.title}
               pageData={payload.data.content.Quiz}
+              onComplete={payload.data.onComplete}
+              isCompleted={payload.data.isCompleted}
             />
           );
         }
@@ -49,6 +55,8 @@ export function GlobalModal() {
             <EssaySectionPreset
               title={payload.data.title}
               pageData={payload.data.content.Essay}
+              onComplete={payload.data.onComplete}
+              isCompleted={payload.data.isCompleted}
             />
           );
         }

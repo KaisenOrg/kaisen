@@ -189,3 +189,13 @@
     linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
   background-size: 30px 30px; /* You can adjust the grid size here */
 }
+
+/* Slow spin animation for loading indicator */
+.slow-spin {
+  animation: spin 2s linear infinite !important;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -47,6 +47,7 @@ export function toMotokoSection(section: Section): BackendSection {
     id: BigInt(section.id),
     title: section.title,
     content: toMotokoContent(section.content),
+    //description: section.title
   }
 }
 
