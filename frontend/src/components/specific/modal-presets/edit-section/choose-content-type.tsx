@@ -8,8 +8,9 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog'
 import { DocumentTextIcon } from '@heroicons/react/24/outline'
+import type { Section } from '@/types'
 
-export function ChooseContentType() {
+export function ChooseContentType({ trackId, section }: { trackId: string, section: Section }) {
   const { open, close } = useModalStore()
 
   const handleConfirm = () => {
@@ -30,7 +31,7 @@ export function ChooseContentType() {
           icon={<DocumentTextIcon className='w-10 h-10 text-primary' />}
           title='Summary'
           description='Create a rich text with the keys points of the subject'
-          onClick={() => open({ type: 'create-summary' })}
+          onClick={() => open({ type: 'create-summary', section, trackId })}
         />
         <ButtonPoggers
           icon={<DocumentTextIcon className='w-10 h-10 text-primary' />}

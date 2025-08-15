@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { generateSectionPositions } from '@/lib/mappers'
+import { generateSectionPositions, type PositionedSection } from '@/lib/mappers'
 import { type Section } from '@/types'
 
 import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
@@ -21,7 +21,7 @@ export default function EditTrackPage() {
 
   const selectedTrack = tracks?.find((track) => track.id === id)
 
-  const [sectionsWithPositions, setSectionsWithPositions] = useState<any[]>([])
+  const [sectionsWithPositions, setSectionsWithPositions] = useState<PositionedSection[]>([])
   const [screenHeight, setScreenHeight] = useState(0)
   const [screenWidth, setScreenWidth] = useState(0)
   const cardDimensions = { width: 320, height: 238 }
@@ -46,8 +46,8 @@ export default function EditTrackPage() {
   }, [selectedTrack, tracks])
 
   const handleSectionClick = (section: Section) => {
-    if ('Page' in section.content)
-      open({ type: 'create-summary', content: section.content })
+    if (!!('Page' in section.content) && !!selectedTrack)
+      open({ type: 'create-summary', section, trackId: selectedTrack.id })
   }
 
   const getSectionTypeForContent = (content: Section['content']): string => {
@@ -70,14 +70,15 @@ export default function EditTrackPage() {
           canvasWidth={canvasWidth}
           canvasHeight={screenHeight * 0.8}
         >
-          {sectionsWithPositions.length > 0 && !isLoading && (
+          {sectionsWithPositions.length > 0 && !isLoading && selectedTrack && (
             <>
               <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
-              {sectionsWithPositions.map(section => (
+              {sectionsWithPositions.map((section, index) => (
                 <EditSectionCard
-                  key={section.id}
-                  title={section.title}
-                  description={`Seção ${section.id} da trilha.`}
+                  key={(section.id + index).toString()}
+                  section={section}
+                  description={`Section ${index + 1} of ${selectedTrack?.sections.length || 1}`}
+                  trackId={selectedTrack.id}
                   sectionType={getSectionTypeForContent(section.content)}
                   onClick={() => handleSectionClick(section)}
                   style={section.position}

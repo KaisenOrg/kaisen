@@ -1,16 +1,16 @@
-import type { MotokoUser, UserData, Track, Section, Content, PageElement, Flashcard, Quiz, EssayQuestion } from '@/types'
+import type { MotokoUser, UserData, Track, Section, Content, Flashcard, Quiz, EssayQuestion } from '@/types'
 import type {
   Track as BackendTrack,
   Section as BackendSection,
   Content as BackendContent,
-  PageElement as BackendElement,
   Flashcard as BackendFlashcard,
   Quiz as BackendQuiz,
   EssayQuestion as BackendEssay,
   Alternative as BackendAlternative
 } from '@/declarations/tracks_backend/tracks_backend.did'
 
-interface Positionedsection extends Section {
+export interface PositionedSection extends Section {
+  active: boolean
   position: {
     top: number
     left: number
@@ -27,9 +27,9 @@ interface GenerationOptions {
   verticalBounds?: [number, number]
 }
 
-const opt = (v?: string | null): [] | [string] => v ? [v] : []
+export const opt = <T>(v?: T | null): [] | [T] => v ? [v] : []
 
-const fromOpt = (v: [] | [string]) => (v.length > 0 ? v[0] : null)
+export const fromOpt = <T>(v: [] | [T]) => (v.length > 0 ? v[0] : null)
 
 export function toMotokoTrack(track: Track): BackendTrack {
   return {
@@ -55,7 +55,7 @@ function toMotokoContent(content: Content): BackendContent {
     return {
       Page: {
         title: content.Page.title,
-        elements: content.Page.elements.map(toMotokoElement),
+        content: content.Page.content
       },
     }
   }
@@ -94,72 +94,12 @@ function toMotokoContent(content: Content): BackendContent {
   throw new Error('Conteúdo inválido')
 }
 
-function toMotokoElement(element: PageElement): BackendElement {
-  if ('Text' in element) {
-    return {
-      Text: {
-        value: element.Text.value,
-      },
-    }
-  }
-
-  if ('Image' in element) {
-    return {
-      Image: {
-        url: element.Image.url,
-        caption: element.Image.caption ? [element.Image.caption] : [],
-      },
-    }
-  }
-
-  if ('Video' in element) {
-    return {
-      Video: {
-        url: element.Video.url,
-        caption: element.Video.caption,
-      },
-    }
-  }
-
-  throw new Error('Elemento inválido')
-}
-
-function toFrontendElement(element: BackendElement): PageElement {
-  if ('Text' in element) {
-    return {
-      Text: {
-        value: element.Text.value,
-      },
-    }
-  }
-
-  if ('Image' in element) {
-    return {
-      Image: {
-        url: element.Image.url,
-        caption: fromOpt(element.Image.caption) || undefined,
-      },
-    }
-  }
-
-  if ('Video' in element) {
-    return {
-      Video: {
-        url: element.Video.url,
-        caption: element.Video.caption,
-      },
-    }
-  }
-
-  throw new Error('Elemento inválido')
-}
-
 function toFrontendContent(content: BackendContent): Content {
   if ('Page' in content) {
     return {
       Page: {
         title: content.Page.title,
-        elements: content.Page.elements.map(toFrontendElement),
+        content: content.Page.content,
       },
     }
   }
@@ -262,7 +202,7 @@ export function toUserData(motokoUser: any): UserData {
 export function generateSectionPositions(
   sections: Section[],
   options: GenerationOptions
-): Positionedsection[] {
+): PositionedSection[] {
   const {
     cardWidth,
     canvasHeight,
@@ -278,6 +218,7 @@ export function generateSectionPositions(
 
   let lastTop: number | null = null
 
+  // @ts-expect-error
   return sections.map((section, index) => {
     const left = initialLeftOffset + index * (cardWidth + gap)
 

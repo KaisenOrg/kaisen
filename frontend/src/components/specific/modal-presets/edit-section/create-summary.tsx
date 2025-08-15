@@ -8,49 +8,51 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog'
 
-import type { Content } from '@/types'
+import type { Section } from '@/types'
 
 import { Plate, usePlateEditor } from 'platejs/react'
 import { Editor, EditorContainer } from '@/components/editor/ui/editor'
+import { MarkdownPlugin } from '@platejs/markdown'
 import { EditorKit } from '@/lib/editor-kit'
-import type { Value } from 'platejs'
+import { useTracksActions } from '@/hooks/useTracksActions'
+import { useState } from 'react'
 
-export function CreateSummary({ content }: { content?: Content }) {
+export function CreateSummary({ section, trackId }: { section: Section, trackId: string }) {
   const { close } = useModalStore()
+  const { updateSection } = useTracksActions()
+  const [isLoading, setIsLoading] = useState(false)
+
   const editor = usePlateEditor({
     plugins: EditorKit,
-    value: ((): Value => {
-      if (!content) return []
-      if ('Page' in content) {
-        return content.Page.elements.map((element) => {
-          console.log(element)
+    value: editor => {
+      if (!section.content) return []
 
-          if ('Text' in element)
-            return {
-              children: [{ text: element.Text.value }],
-              type: 'p'
-            }
-          if ('Image' in element)
-            return {
-              children: [{ text: element.Image.url }],
-              type: 'img',
-              url: element.Image.url,
-            }
-          if ('Video' in element)
-            return {
-              children: [{ text: '' }],
-              type: 'video',
-              url: 'https://www.youtube.com/watch?v=nTzzAbid1Ig&ab_channel=Kaisen',
-            }
-
-          return { children: [{ text: 'Type something...' }], type: 'p' }
-        })
+      if ('Page' in section.content) {
+        return editor.getApi(MarkdownPlugin).markdown.deserialize(section.content.Page.content)
       }
+
       return []
-    })(),
+    },
   })
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
+    if (!trackId) return
+
+    if (!('Page' in section.content)) return
+
+    setIsLoading(true)
+        
+    await updateSection(section.id, String(trackId), {
+      ...section,
+      content: {
+        Page: {
+          ...section.content.Page,
+          content: editor.getApi(MarkdownPlugin).markdown.serialize(),
+        },
+      },
+    })
+
+    setIsLoading(false)
     close()
   }
 
@@ -75,7 +77,9 @@ export function CreateSummary({ content }: { content?: Content }) {
         <Button variant="outline" onClick={close}>
           Back
         </Button>
-        <Button onClick={handleConfirm}>Create</Button>
+        <Button onClick={handleConfirm} disabled={isLoading}>
+          {isLoading ? 'Saving...' : 'Save'}
+        </Button>
       </DialogFooter>
     </DialogContent>
   )

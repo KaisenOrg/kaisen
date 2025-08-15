@@ -71,11 +71,12 @@ export function GlobalModal() {
 
       case 'choose-section-content':
         return (
-          <ChooseContentType />
+          <ChooseContentType trackId={payload.trackId} section={payload.section} />
         );
 
       case 'create-summary':
-        return <CreateSummary content={payload.content} />
+        if (!payload.section || !!('Page' in payload.section)) return
+        return <CreateSummary section={payload.section} trackId={payload.trackId} />
         
       case 'generic':
         return (

@@ -7,7 +7,6 @@ import Error "mo:base/Error";
 import Nat "mo:base/Nat";
 import Text "mo:base/Text";
 import Int "mo:base/Int";
-
 import Types "Types";
 
 persistent actor {
@@ -125,24 +124,21 @@ persistent actor {
       };
       case (?oldTrack) {
         if (oldTrack.authorId != Principal.toText(caller)) {
-          throw Error.reject("Acesso negado: vocé nao é o autor.");
+          throw Error.reject("Acesso negado: você não é o autor.");
         };
 
-        let safeSection : Types.Section = {
-          updatedSection with
-          id = sectionId;
-        };
-
-        let updatedSections = Array.tabulate<Types.Section>(
-          oldTrack.sections.size(),
-          func(i) {
-            if (i == sectionId) { safeSection } else { oldTrack.sections[i] };
+        let safeSections = Array.map<Types.Section, Types.Section>(
+          oldTrack.sections,
+          func(s) {
+            if (s.id == sectionId) { { updatedSection with id = sectionId } } else {
+              s;
+            };
           },
         );
 
         let safeTrack : Types.Track = {
           oldTrack with
-          sections = updatedSections;
+          sections = safeSections
         };
 
         tracks := Trie.put(tracks, key(trackId), Text.equal, safeTrack).0;

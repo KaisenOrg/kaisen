@@ -1,7 +1,7 @@
 import { useActor } from '@/lib/agent'
 import { useTrackStore } from '@/stores/useTrackStore'
 import { toFrontendTrack, toMotokoTrack, toMotokoSection } from '@/lib/mappers'
-import type { Track } from '@/types'
+import type { Section, Track } from '@/types'
 
 export function useTracksActions() {
   const tracksActor = useActor('tracks_backend')
@@ -13,6 +13,41 @@ export function useTracksActions() {
     try {
       const res = await tracksActor.listAllTracks()
       setTracks(res.map(toFrontendTrack))
+      console.log(res.map(toFrontendTrack).map(t => t.sections))
+    } catch (err) {
+      console.error(err)
+      setError('Falha ao buscar trilhas')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const fetchTrackById = async (id: string) => {
+    if (!tracksActor) return
+    setLoading(true)
+    try {
+      const res = await tracksActor.getTrackById(id)
+
+      if (res.length === 0) return
+
+      return toFrontendTrack(res[0])
+    } catch (err) {
+      console.error(err)
+      setError('Falha ao buscar trilha')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const fetchTracksByAuthor = async (author: string) => {
+    if (!tracksActor) return
+    setLoading(true)
+    try {
+      const res = await tracksActor.getTracksByAuthor(author)
+
+      if (res.length === 0) return []
+
+      return res.map(toFrontendTrack)
     } catch (err) {
       console.error(err)
       setError('Falha ao buscar trilhas')
@@ -31,7 +66,7 @@ export function useTracksActions() {
         setError(res.err)
         return
       }
-      
+
       await fetchTracks()
 
       return res.ok
@@ -52,6 +87,20 @@ export function useTracksActions() {
     } catch (err) {
       console.error(err)
       setError('Erro ao atualizar trilha')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const updateSection = async (sectionId: number, trackId: string, updatedSection: Section) => {
+    if (!tracksActor) return
+    setLoading(true)
+    try {
+      await tracksActor.updateSection(BigInt(sectionId), trackId, toMotokoSection(updatedSection))
+      await fetchTracks()
+    } catch (err) {
+      console.error(err)
+      setError('Erro ao atualizar seção')
     } finally {
       setLoading(false)
     }
@@ -85,5 +134,15 @@ export function useTracksActions() {
     }
   }
 
-  return { fetchTracks, createTrack, updateTrack, deleteTrack, injectSampleTracks, clear }
+  return {
+    fetchTracks,
+    createTrack,
+    updateTrack,
+    updateSection,
+    deleteTrack,
+    fetchTrackById,
+    fetchTracksByAuthor,
+    injectSampleTracks,
+    clear
+  }
 }
