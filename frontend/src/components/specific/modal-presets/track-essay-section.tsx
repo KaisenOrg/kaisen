@@ -12,9 +12,11 @@ import remarkGfm from 'remark-gfm'
 interface Props {
   title: string
   pageData: Essay[]
+  onComplete?: (() => void) | null
+  isCompleted?: boolean
 }
 
-export function EssaySectionPreset({ title, pageData }: Props) {
+export function EssaySectionPreset({ title, pageData, onComplete, isCompleted }: Props) {
   const kaiActor = useActor('kai_backend')
 
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -87,17 +89,17 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
     setAiFeedback('')
   }
 
-  const handleRestart = () => {
-    setCurrentQuestion(0)
-    setAnswer('')
-    setAiFeedback('')
-    setCorrectAnswers(0)
-    setShowResult(false)
-    setAnsweredQuestions([])
-  }
+  // const handleRestart = () => {
+  //   setCurrentQuestion(0)
+  //   setAnswer('')
+  //   setAiFeedback('')
+  //   setCorrectAnswers(0)
+  //   setShowResult(false)
+  //   setAnsweredQuestions([])
+  // }
 
   return (
-    <DialogContent style={{ borderColor: 'var(--border)' }}>
+    <DialogContent className='sm:max-w-4xl h-[80vh] overflow-y-auto p-8 flex flex-col' style={{ borderColor: 'var(--border)' }}>
       <DialogHeader>
         <DialogTitle className="text-2xl">
           {title}
@@ -116,17 +118,16 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
 
       {!showResult && (
         <>
-          <div className="mb-2">
-            <Textarea
-              placeholder="Digite sua resposta aqui"
-              className="min-h-40"
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              disabled={aiFeedback !== ""}
-            />
-          </div>
-
-          {aiFeedback && (
+          {aiFeedback === "" ? (
+            <div className="mb-2">
+              <Textarea
+                placeholder="Digite sua resposta aqui"
+                className="min-h-60 max-h-95"
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+              />
+            </div>
+          ) : (
             <div className={cn(
               'p-4 rounded-md text-sm',
               aiFeedback.toLowerCase().startsWith('correto') ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'
@@ -142,27 +143,35 @@ Diga se a resposta está correta ou incorreta e explique o porquê. Retorne uma 
       <DialogFooter className="mt-2 pb-4">
         {!showResult ? (
           <>
-            <Button
-              className="flex-1"
-              onClick={aiFeedback ? handleNext : handleCheckAnswer}
-              disabled={loading || (answer.trim() === "" && aiFeedback === "")}
-            >
-              {aiFeedback ? (isLastQuestion ? 'Finalizar' : 'Próximo') : (loading ? 'Corrigindo...' : 'Enviar')}
-            </Button>
-
-            <Button
-              className="flex-1"
-              variant="outline"
-              onClick={handleClear}
-              disabled={loading}
-            >
-              {aiFeedback ? 'Try again' : 'Clear'}
-            </Button>
+            <div className='absolute bottom-8 flex gap-2'>
+              <Button
+                className="flex-1"
+                onClick={aiFeedback ? handleNext : handleCheckAnswer}
+                disabled={loading || (answer.trim() === "" && aiFeedback === "")}
+              >
+                {aiFeedback ? (isLastQuestion ? 'Finish' : 'Next') : (loading ? 'Checking your answer...' : 'Correct')}
+              </Button>
+              <Button
+                className="flex-1"
+                variant="outline"
+                onClick={handleClear}
+                disabled={loading}
+              >
+                {aiFeedback ? 'Try again' : 'Clear'}
+              </Button>
+            </div>
           </>
         ) : (
-          <Button onClick={handleRestart}>
-            Reiniciar Quiz
-          </Button>
+          onComplete && (
+            <Button
+              variant={isCompleted ? 'secondary' : 'default'}
+              className='absolute bottom-8 mt-2 cursor-pointer'
+              onClick={onComplete}
+              disabled={isCompleted}
+            >
+              {isCompleted ? 'Concluída' : 'Mark as done'}
+            </Button>
+          )
         )}
 
         <Progress

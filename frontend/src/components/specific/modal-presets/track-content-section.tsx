@@ -1,5 +1,4 @@
 import { type Page, type PageElement } from '@/types'
-import { useModalStore } from '@/stores/useModalStore'
 import { Button } from '@/components/ui/button'
 import {
   DialogContent,
@@ -12,6 +11,8 @@ import {
 interface Props {
   title: string
   pageData: Page
+  onComplete?: (() => void) | null
+  isCompleted?: boolean
 }
 
 function ElementRenderer({ element }: { element: PageElement }) {
@@ -39,9 +40,15 @@ function ElementRenderer({ element }: { element: PageElement }) {
   if ('Video' in element) {
     return (
       <figure className="my-4">
-        <video src={element.Video.url} controls className="rounded-md border w-full">
-          Seu navegador não suporta o elemento de vídeo.
-        </video>
+        <div className="relative w-full pb-[56.25%]">
+          <video
+            src={element.Video.url}
+            controls
+            className="absolute top-0 left-0 w-full h-full rounded-md border-2 border-muted"
+          >
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
+        </div>
         {element.Video.caption && (
           <figcaption className="text-center text-sm text-muted-foreground mt-2">
             {element.Video.caption}
@@ -54,11 +61,10 @@ function ElementRenderer({ element }: { element: PageElement }) {
   return null
 }
 
-export function ContentSectionPreset({ title, pageData }: Props) {
-  const { close } = useModalStore()
+export function ContentSectionPreset({ title, pageData, onComplete, isCompleted }: Props) {
 
   return (
-    <DialogContent showCloseButton={false} className="sm:max-w-3xl max-h-[80vh] overflow-y-auto" style={{ borderColor: 'var(--border)' }}>
+    <DialogContent showCloseButton={false} className="sm:max-w-4xl h-[80vh] overflow-y-auto p-8" style={{ borderColor: 'var(--border)' }}>
       <DialogHeader>
         <DialogTitle className="text-2xl">{title}</DialogTitle>
         <DialogDescription>{pageData.title}</DialogDescription>
@@ -70,10 +76,17 @@ export function ContentSectionPreset({ title, pageData }: Props) {
         ))}
       </div>
 
-      <DialogFooter>
-        <Button onClick={close}>
-          Marcar como lida
-        </Button>
+      <DialogFooter className="">
+        {onComplete && (
+          <Button
+            variant={isCompleted ? 'secondary' : 'default'}
+            className='mt-2 cursor-pointer'
+            onClick={onComplete}
+            disabled={isCompleted}
+          >
+            {isCompleted ? 'Concluída' : 'Mark as Done'}
+          </Button>
+        )}
       </DialogFooter>
     </DialogContent>
   )

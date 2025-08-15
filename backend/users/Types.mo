@@ -1,12 +1,12 @@
 import Time "mo:base/Time";
 
 module {
-  type FollowerData = {
+  public type FollowerData = {
     userIdentity : Text;
     timestamp : Time.Time;
   };
 
-  type InProgressTracksData = {
+  public type InProgressTracksData = {
     id : Text;
     progress : Nat8;
   };
