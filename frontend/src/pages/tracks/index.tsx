@@ -97,7 +97,6 @@ export default function TrackPage() {
     });
   };
 
-  // Função para marcar seção como concluída
   const handleCompleteSection = async (section: Section) => {
     if (!user || !selectedTrack) return;
 
@@ -106,63 +105,87 @@ export default function TrackPage() {
     );
     const currentProgress = progressData ? progressData.progress : 0;
 
-    // Condição principal: só atualiza se for a próxima seção
     if (section.id === currentProgress + 1) {
-      // NOVO: Pega o número total de seções da trilha
       const totalSections = selectedTrack.sections.length;
 
-      // NOVO: Verifica se a seção atual é a última
       if (section.id === totalSections) {
-        // É a última seção, então conclui a TRILHA inteira
         await handleCompleteTrack(selectedTrack.id);
       } else {
-        // NÃO é a última seção, então apenas avança o progresso
         const updatedInProgress = user.inProgressTracks.filter(
           (t) => t.id !== selectedTrack.id
         );
         updatedInProgress.push({ id: selectedTrack.id, progress: section.id });
         await updateUser({ inProgressTracks: updatedInProgress });
 
-        // Recompensa pela seção
         if (transfer && principal) {
           try {
-            await transfer(principal, 5_000_000_000n); // 5 Koins
+            // CORREÇÃO: Usando o construtor BigInt() para compatibilidade
+            await transfer(principal, BigInt("5000000000")); // 5 Koins
             toastKoin("Você recebeu 5 Koins por concluir a seção!");
-          } catch {
-            // Silencioso se falhar
-          }
+          } catch {}
         }
       }
     }
   };
 
-  // Função para marcar TRILHA como concluída
   const handleCompleteTrack = async (trackId: string) => {
     if (!user) return;
 
-    // 1. Remove a trilha da lista 'inProgressTracks'
     const updatedInProgress = user.inProgressTracks.filter(
       (t) => t.id !== trackId
     );
-
-    // 2. (SUGESTÃO) Adiciona a trilha a uma nova lista de 'completedTracks'
-    // DENTRO DE handleCompleteTrack
     const updatedCompleted = [...(user.completedTracks || []), trackId];
-    // 3. Atualiza o estado do usuário
     await updateUser({
       inProgressTracks: updatedInProgress,
       completedTracks: updatedCompleted,
     });
 
-    // 4. Recompensa final: 20 Koins pela trilha completa
     if (transfer && principal) {
       try {
-        await transfer(principal, 20_000_000_000n); // 20 Koins
+        // CORREÇÃO: Usando o construtor BigInt() para compatibilidade
+        await transfer(principal, BigInt("20000000000")); // 20 Koins
         toastKoin("Parabéns! Você concluiu a trilha e recebeu 20 Koins!");
-        
       } catch {
         toast.error("Não foi possível processar sua recompensa final.");
       }
+    }
+
+    await handleMintAndShowNFT();
+  };
+
+  const handleMintAndShowNFT = async () => {
+    if (!nftActor || !user || !selectedTrack) {
+      toast.error("Não foi possível gerar seu certificado NFT. Faltam dados.");
+      return;
+    }
+
+    const toastId = toast.loading("Gerando seu certificado NFT, aguarde...");
+
+    try {
+      const result = await nftActor.mintNFT(
+        user.username || "Usuário Dedicado",
+        selectedTrack.title,
+        1n
+      );
+
+      if (result && 'ok' in result) {
+        const nftData = result.ok;
+        toast.success("Certificado gerado com sucesso!", { id: toastId });
+
+        open({
+          type: "nftCertificate",
+          data: {
+            nft: nftData,
+            message: `Parabéns por terminar a trilha "${selectedTrack.title}"!`,
+          },
+        });
+      } else {
+        const errorMsg = result && 'err' in result ? JSON.stringify(result.err) : "Erro desconhecido";
+        toast.error(`Falha ao gerar o certificado: ${errorMsg}`, { id: toastId });
+      }
+    } catch (error) {
+      console.error("Erro ao tentar gerar o NFT:", error);
+      toast.error("Ocorreu um erro inesperado ao gerar seu certificado.", { id: toastId });
     }
   };
 
@@ -181,7 +204,7 @@ export default function TrackPage() {
         : 0,
       screenWidth
     );
-  }, [screenWidth]);
+  }, [screenWidth, selectedTrack]);
 
   return (
     <PanelGroup direction="horizontal" className="flex-1 flex h-full">
@@ -210,7 +233,6 @@ export default function TrackPage() {
                 cardDimensions={cardDimensions}
               />
               {sectionsWithPositions.map((section) => {
-                // Seção ativa: só pode marcar como concluída se for a próxima
                 const progressData = user?.inProgressTracks.find(
                   (t) => t.id === selectedTrack?.id
                 );
