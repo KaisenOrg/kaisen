@@ -50,7 +50,7 @@ export default function Header() {
   };
 
   return (
-    <header className="flex items-center h-1/11 px-4 border-b-2 bg-background" style={{ borderColor: 'var(--border)' }}>
+    <header className="flex items-center h-1/11 px-4 border-b-2 bg-background" style={{ borderColor: 'var(--border)' }} data-tour="topbar">
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" className="w-10 h-10" onClick={toggleSidebar}>
           <img
@@ -72,7 +72,7 @@ export default function Header() {
       </div>
 
       <div className="flex-1 flex justify-center">
-        <div className="w-full max-w-2xl">
+        <div className="w-full max-w-2xl" data-tour="topbar-search">
           <ActionSearchBar />
         </div>
       </div>
@@ -83,6 +83,7 @@ export default function Header() {
             <Popover>
               <PopoverTrigger asChild>
                 <Button
+                data-tour="topbar-coins"
                   variant="outline"
                   size="icon"
                   className="w-fit p-2 h-10 gap-2 border border-border bg-popover hover:bg-accent/60 transition shadow-sm"
@@ -98,6 +99,7 @@ export default function Header() {
                   <span className="text-sm font-semibold text-foreground">
                     {loading ? "..." : koinBalance}
                   </span>
+                  
                 </Button>
               </PopoverTrigger>
 
@@ -140,12 +142,12 @@ export default function Header() {
               </PopoverContent>
             </Popover>
 
-            <Button variant="outline" size="icon" className="w-10 h-10">
+            <Button variant="outline" size="icon" className="w-10 h-10" data-tour="topbar-notifications">
               <BellIcon style={{ width: 24, height: 24 }} />
               <span className="sr-only">Notifications</span>
             </Button>
 
-            <Link to="/profile">
+            <Link to="/profile" data-tour="topbar-profile">
               <Avatar className="w-10 h-10">
                 <AvatarImage src={user?.picture || undefined} alt={user?.username} />
                 <AvatarFallback>

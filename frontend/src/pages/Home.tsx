@@ -62,7 +62,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-12">
+      <div className="mt-12" data-tour="sidebar-suggestions">
         <h2
           className="text-lg font-semibold"
           style={{ color: "var(--foreground)" }}
@@ -87,7 +87,7 @@ export default function Home() {
                   />
                 ))
             : tracks.map((track, i) => (
-                <CommunityCard
+                <CommunityCard 
                   key={track.id}
                   id={track.id}
                   title={track.title}

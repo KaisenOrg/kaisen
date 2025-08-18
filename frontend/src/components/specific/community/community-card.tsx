@@ -65,7 +65,7 @@ export default function CommunityCard({
 
   return (
     <Link to={`/tracks/${id}`} className={occupation}>
-      <div className={containerClass}>
+      <div className={containerClass} >
         {showMascot && (
           <img
             src="/kai-sleeping.svg"
@@ -100,8 +100,8 @@ export default function CommunityCard({
           draggable={false}
         />
 
-        <div className={contentClass}>
-          <div className="flex">
+        <div className={contentClass} >
+          <div className="flex" >
             <BookmarkIcon className="h-6 w-6 text-purple-400 mr-2" />
             <h2 className="text-base font-medium text-white pb-2">{title}</h2>
           </div>

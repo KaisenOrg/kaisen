@@ -55,7 +55,7 @@ export default function HomeButton({ onClick }: { onClick?: () => void }) {
         boxShadow: "0 8px 24px 0 rgba(0,0,0,0.10)",
         willChange: "transform, box-shadow",
         borderColor: "var(--border)",
-      }}
+      }} data-tour="sidebar-create-track"
     >
       <div
         style={{
