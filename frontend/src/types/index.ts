@@ -14,14 +14,9 @@ export interface VideoBlock {
   caption: string
 }
 
-export type PageElement =
-  | { 'Text': TextBlock }
-  | { 'Image': ImageBlock }
-  | { 'Video': VideoBlock }
-
 export interface Page {
   title: string
-  elements: PageElement[]
+  content: string
 }
 
 export interface Flashcard {
@@ -97,4 +92,11 @@ export type MotokoUser = {
   completedTracks: string[]
   principal: Principal
   identity: string
+}
+
+export interface Message {
+  id: string;
+  role: 'user' | 'model';
+  content: string;
+  isLoading?: boolean;
 }

@@ -1,12 +1,16 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
+import { toast } from 'sonner'
 
 import { generateSectionPositions } from '@/lib/mappers'
 import { useTracksActions } from '@/hooks/useTracksActions'
 import { type Section } from '@/types'
 import { useActor } from '@/lib/agent'
+import { useUser } from '@/providers/user-provider'
+import { toastKoin } from '@/components/general/koin-toast'
+import { useKoin } from '@/hooks/useKoin'
 
-import { TrackCard } from '@/components/specific/tracks/card'
+import { SectionCard } from '@/components/specific/tracks/section-card'
 import { DraggableBackground } from '@/components/ui/draggable-bg'
 import { ChatPanel } from '@/components/specific/tracks/chat-panel'
 import { ConnectingArrows } from '@/components/specific/tracks/connecting-arrows'
@@ -20,7 +24,11 @@ export default function TrackPage() {
   const { fetchTracks, injectSampleTracks } = useTracksActions()
   const { open } = useModalStore()
   const tracksActor = useActor('tracks_backend')
+  const usersActor = useActor('users_backend')
+  const { user, updateUser } = useUser()
   const { id } = useParams()
+  const { principal } = user || {};
+  const { transfer } = useKoin(principal ?? null);
 
   const selectedTrack = tracks?.find((track) => track.id === id)
 
@@ -57,9 +65,48 @@ export default function TrackPage() {
     }
   }, [selectedTrack, tracks])
 
-  const handleSectionClick = (section: Section) => {
-    open({ type: 'section', data: section })
+  const handleSectionClick = async (section: Section, isActive?: boolean, isCompleted?: boolean) => {
+    if (!usersActor || !user) {
+      toast.error('Usuário não autenticado.')
+      return
+    }
+    const res = await usersActor.tryAccessSection(user.identity, selectedTrack?.id ?? '', BigInt(section.id))
+    if ('err' in res) {
+      toast.error(res.err)
+      return
+    }
+    open({
+      type: 'section',
+      data: {
+        ...section,
+        onComplete: isActive ? () => handleCompleteSection(section) : null,
+        isCompleted
+      }
+    })
   }
+
+  // Função para marcar seção como concluída
+  const handleCompleteSection = async (section: Section) => {
+    if (!user || !selectedTrack) return;
+    // Busca progresso atual
+    const progressData = user.inProgressTracks.find(t => t.id === selectedTrack.id);
+    const currentProgress = progressData ? progressData.progress : 0;
+    // Só atualiza se for a próxima seção
+    if (section.id === currentProgress + 1) {
+      const updatedInProgress = user.inProgressTracks.filter(t => t.id !== selectedTrack.id);
+      updatedInProgress.push({ id: selectedTrack.id, progress: section.id });
+      await updateUser({ inProgressTracks: updatedInProgress });
+      // Recompensa: 5 Koins
+      if (transfer && principal) {
+        try {
+          await transfer(principal, 5_000_000_000n); // 5 Koins (assumindo 8 casas decimais)
+          toastKoin('Você recebeu 5 Koins por concluir a seção!');
+        } catch {
+          // Se falhar, apenas não mostra o toast de sucesso
+        }
+      }
+    }
+  };
 
   const getButtonTextForContent = (content: Section['content']): string => {
     if ('Page' in content) return 'Read'
@@ -84,17 +131,34 @@ export default function TrackPage() {
         >
           {sectionsWithPositions.length > 0 && !isLoading && (
             <>
-              <ConnectingArrows positions={sectionsWithPositions.map(s => ({ ...s.position, active: s.active }))} cardDimensions={cardDimensions} />
-              {sectionsWithPositions.map(section => (
-                <TrackCard
-                  key={section.id}
-                  title={section.title}
-                  description={`Seção ${section.id} da trilha.`}
-                  buttonText={getButtonTextForContent(section.content)}
-                  onClick={() => handleSectionClick(section)}
-                  style={section.position}
-                />
-              ))}
+              <ConnectingArrows 
+                positions={sectionsWithPositions.map(s => {
+                  const progressData = user?.inProgressTracks.find(t => t.id === selectedTrack?.id);
+                  const currentProgress = progressData ? progressData.progress : 0;
+                  return {
+                    ...s.position,
+                    active: s.id <= currentProgress
+                  }
+                })} 
+                cardDimensions={cardDimensions} 
+              />
+              {sectionsWithPositions.map(section => {
+                // Seção ativa: só pode marcar como concluída se for a próxima
+                const progressData = user?.inProgressTracks.find(t => t.id === selectedTrack?.id);
+                const currentProgress = progressData ? progressData.progress : 0;
+                const isActive = section.id === currentProgress + 1;
+                const isCompleted = section.id <= currentProgress;
+                return (
+                  <SectionCard
+                    key={section.id}
+                    title={section.title}
+                    description={`Seção ${section.id} da trilha.`}
+                    buttonText={getButtonTextForContent(section.content)}
+                    onClick={() => handleSectionClick(section, isActive, isCompleted)}
+                    style={section.position}
+                  />
+                );
+              })}
             </>
           )}
         </DraggableBackground>

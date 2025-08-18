@@ -1,29 +1,9 @@
 import Time "mo:base/Time";
 
 module {
-  public type TextBlock = {
-    value : Text;
-  };
-
-  public type ImageBlock = {
-    url : Text;
-    caption : ?Text;
-  };
-
-  public type VideoBlock = {
-    url : Text;
-    caption : Text;
-  };
-
-  public type PageElement = {
-    #Text : TextBlock;
-    #Image : ImageBlock;
-    #Video : VideoBlock;
-  };
-
   public type Page = {
     title : Text;
-    elements : [PageElement];
+    content: Text;
   };
 
   public type Flashcard = {

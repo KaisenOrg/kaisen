@@ -21,7 +21,7 @@ interface PageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
   ({ className, title, subtitle, showBackButton = true, onBackClick, tabs, baseUrl, imageUrl, imageFallback, showBgImage = true, headerClassname, ...props }, ref) => {
     return (
-      <header data-tour="sidebar" className={cn("relative w-full px-8 pt-12 bg-background", headerClassname)}>
+      <header data-tour="sidebar" className={cn("relative w-full px-8 pt-12 bg-zinc-950 border-b-2 border-zinc-800", headerClassname)}>
         {showBgImage &&
           (<div className="absolute pointer-events-none select-none right-0 top-0 w-96 h-[75%] lg:h-full">
             <img

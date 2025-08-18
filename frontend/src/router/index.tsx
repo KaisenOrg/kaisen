@@ -55,12 +55,14 @@ function RoutedApp() {
   return (
     <>
       <Routes>
+        <Route path="/kai-teste" element={<KaiPage />} />
+        
         <Route path="/" element={<RootLayout showSideBar={!!user} />}>
           {user ? (
             <>
               <Route index element={<Home />} />
-              <Route path="/kai" element={<KaiTestPage />} />
               <Route path="/proof" element={<></>} />
+              <Route path="/kai" element={<KaiPage/>} />
               <Route path="/store" element={<Store />} />
               <Route path="/discover" element={<Discover />} />
               <Route path="/community" element={<CommunityPage />} />

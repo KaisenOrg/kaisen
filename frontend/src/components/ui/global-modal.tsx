@@ -10,6 +10,7 @@ import {
   CreateTrackPreset
 } from '@/components/specific/modal-presets';
 import { AlertDialog } from './alert-dialog';
+import { ChooseContentType, CreateSummary } from '../specific/modal-presets/edit-section';
 
 export function GlobalModal() {
   const { isOpen, payload, close } = useModalStore();
@@ -24,6 +25,8 @@ export function GlobalModal() {
             <ContentSectionPreset
               title={payload.data.title}
               pageData={payload.data.content.Page}
+              onComplete={payload.data.onComplete}
+              isCompleted={payload.data.isCompleted}
             />
           );
         }
@@ -32,6 +35,8 @@ export function GlobalModal() {
             <FlashcardSectionPreset
               title={payload.data.title}
               flashcards={payload.data.content.Flashcard}
+              onComplete={payload.data.onComplete}
+              isCompleted={payload.data.isCompleted}
             />
           );
         }
@@ -40,6 +45,8 @@ export function GlobalModal() {
             <QuizSectionPreset
               title={payload.data.title}
               pageData={payload.data.content.Quiz}
+              onComplete={payload.data.onComplete}
+              isCompleted={payload.data.isCompleted}
             />
           );
         }
@@ -48,6 +55,8 @@ export function GlobalModal() {
             <EssaySectionPreset
               title={payload.data.title}
               pageData={payload.data.content.Essay}
+              onComplete={payload.data.onComplete}
+              isCompleted={payload.data.isCompleted}
             />
           );
         }
@@ -68,6 +77,15 @@ export function GlobalModal() {
           <CreateTrackPreset navigate={payload.navigate} />
         );
 
+      case 'choose-section-content':
+        return (
+          <ChooseContentType trackId={payload.trackId} section={payload.section} />
+        );
+
+      case 'create-summary':
+        if (!payload.section || !!('Page' in payload.section)) return
+        return <CreateSummary section={payload.section} trackId={payload.trackId} />
+        
       case 'generic':
         return (
           <GenericPopupContent

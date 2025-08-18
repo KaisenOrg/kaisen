@@ -7,7 +7,6 @@ import Error "mo:base/Error";
 import Nat "mo:base/Nat";
 import Text "mo:base/Text";
 import Int "mo:base/Int";
-
 import Types "Types";
 
 persistent actor {
@@ -116,6 +115,37 @@ persistent actor {
     };
   };
 
+  public shared (msg) func updateSection(sectionId : Nat, trackId : Text, updatedSection : Types.Section) : async () {
+    let caller = msg.caller;
+
+    switch (Trie.get(tracks, key(trackId), Text.equal)) {
+      case (null) {
+        throw Error.reject("Trilha nao encontrada.");
+      };
+      case (?oldTrack) {
+        if (oldTrack.authorId != Principal.toText(caller)) {
+          throw Error.reject("Acesso negado: você não é o autor.");
+        };
+
+        let safeSections = Array.map<Types.Section, Types.Section>(
+          oldTrack.sections,
+          func(s) {
+            if (s.id == sectionId) { { updatedSection with id = sectionId } } else {
+              s;
+            };
+          },
+        );
+
+        let safeTrack : Types.Track = {
+          oldTrack with
+          sections = safeSections
+        };
+
+        tracks := Trie.put(tracks, key(trackId), Text.equal, safeTrack).0;
+      };
+    };
+  };
+
   public shared (controller) func injectSampleTracks() : async () {
     tracks := Trie.empty();
 
@@ -132,18 +162,7 @@ persistent actor {
           title = "O Nascimento da Imagem";
           content = #Page({
             title = "Capturando a Primeira Luz";
-            elements = [
-              #Text({
-                value = "Bem-vindo(a), explorador(a) visual! A nossa jornada começa no início do século XIX, muito antes das selfies. A fotografia nasceu de uma combinação de química e ótica. A primeira imagem permanente foi criada por Joseph Nicéphore Niépce em 1826, uma vista da janela de sua casa que exigiu uma exposição de várias horas!";
-              }),
-              #Image({
-                url = "https://placehold.co/600x400?text=Vista+da+Janela+em+Le+Gras+(1826)";
-                caption = ?"A primeira fotografia da história, tirada por Niépce.";
-              }),
-              #Text({
-                value = "Esta invenção, chamada de 'Heliografia', usava uma placa de estanho coberta com betume. Onde a luz batia, o betume endurecia; o resto era lavado, revelando uma imagem rudimentar.";
-              }),
-            ];
+            content = "Bem-vindo(a), explorador(a) visual! A nossa jornada começa no início do século XIX, muito antes das selfies. A fotografia nasceu de uma combinação de química e ótica. A primeira imagem permanente foi criada por Joseph Nicéphore Niépce em 1826, uma vista da janela de sua casa que exigiu uma exposição de várias horas!";
           });
         },
         {
@@ -183,15 +202,7 @@ persistent actor {
           title = "A Revolução Digital";
           content = #Page({
             title = "Adeus, Filme! Olá, Pixels!";
-            elements = [
-              #Video({
-                url = "https://videos.pexels.com/video-files/3214561/3214561-hd_1280_720_25fps.mp4";
-                caption = "A fotografia digital mudou para sempre a forma como registamos os nossos momentos.";
-              }),
-              #Text({
-                value = "A grande virada ocorreu no final do século XX com a invenção do sensor digital (CCD e, mais tarde, CMOS). Em vez de capturar a luz em um filme químico, as câmaras digitais a convertem em dados eletrónicos – pixels.";
-              }),
-            ];
+            content = "A grande virada ocorreu no final do século XX com a invenção do sensor digital (CCD e, mais tarde, CMOS). Em vez de capturar a luz em um filme químico, as câmaras digitais a convertem em dados eletrónicos – pixels.";
           });
         },
         {
