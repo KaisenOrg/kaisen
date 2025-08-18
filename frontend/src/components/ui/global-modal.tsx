@@ -69,7 +69,7 @@ export function GlobalModal() {
 
       case 'loading':
         return (
-          <LoadingPreset progress={payload.progress} />
+          <LoadingPreset />
         );
 
       case 'create-track':
