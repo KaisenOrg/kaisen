@@ -12,22 +12,22 @@ import Discover from '@/pages/Discover';
 import PracticePage from '@/pages/tracks/practice';
 import KnowledgePage from '@/pages/tracks/knowledge';
 import PreferencesPage from '@/pages/settings/Preferences';
+import ProfileCommunityPage from '@/pages/profile/Community';
+import ProfileLayout from '@/layouts/profile-layout';
 import SettingsProfilePage from '@/pages/settings';
 import TracksProofPage from '@/pages/tracks/proof';
 import WalletsPage from '@/pages/settings/Wallets';
+import EditTrackPage from '@/pages/tracks/edit';
 import CommunityPage from '@/pages/Community';
+import ProfilePage from '@/pages/profile';
 import UserTestPage from '@/pages/Teste';
 import TrackPage from '@/pages/tracks';
-import KaiTestPage from '@/pages/Kai';
 import Store from '@/pages/Store';
-import EditTrackPage from '@/pages/tracks/edit';
-import ProfileLayout from '@/layouts/profile-layout';
-import ProfilePage from '@/pages/profile';
-import ProfileCommunityPage from '@/pages/profile/Community';
+import KaiPage from '@/pages/Kai';
 
-import { useTutorial } from "@/hooks/useTutorial";
 import TutorialOverlay from "@/components/specific/tutorial/TutorialOverlay";
 import { basicSteps } from '@/components/specific/tutorial/Steps';
+import { useTutorial } from "@/hooks/useTutorial";
 
 export function AppRoutes() {
   return (
