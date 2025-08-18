@@ -15,6 +15,7 @@ import { DraggableBackground } from "@/components/ui/draggable-bg";
 import { ChatPanel } from "@/components/specific/tracks/chat-panel";
 import { ConnectingArrows } from "@/components/specific/tracks/connecting-arrows";
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
+import NftModal from "@/components/specific/tracks/nftModal";
 
 import { useTrackStore } from "@/stores/useTrackStore";
 import { useModalStore } from "@/stores/useModalStore";
@@ -25,7 +26,6 @@ export default function TrackPage() {
   const { open } = useModalStore();
   const tracksActor = useActor("tracks_backend");
   const usersActor = useActor("users_backend");
-  const nftActor = useActor("nft_certificates");
   const { user, updateUser } = useUser();
   const { id } = useParams();
   const { principal } = user || {};
@@ -34,6 +34,13 @@ export default function TrackPage() {
   const selectedTrack = tracks?.find((track) => track.id === id);
 
   const [sectionsWithPositions, setSectionsWithPositions] = useState<any[]>([]);
+
+  const [nftModalData, setNftModalData] = useState<{
+    username: string;
+    trackName: string;
+    timeSpent: bigint;
+  } | null>(null);
+
   const [screenHeight, setScreenHeight] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
   const cardDimensions = { width: 320, height: 238 };
@@ -129,7 +136,8 @@ export default function TrackPage() {
   };
 
   const handleCompleteTrack = async (trackId: string) => {
-    if (!user) return;
+    // A lógica existente permanece a mesma
+    if (!user || !selectedTrack) return;
 
     const updatedInProgress = user.inProgressTracks.filter(
       (t) => t.id !== trackId
@@ -142,7 +150,6 @@ export default function TrackPage() {
 
     if (transfer && principal) {
       try {
-        // CORREÇÃO: Usando o construtor BigInt() para compatibilidade
         await transfer(principal, BigInt("20000000000")); // 20 Koins
         toastKoin("Parabéns! Você concluiu a trilha e recebeu 20 Koins!");
       } catch {
@@ -150,43 +157,12 @@ export default function TrackPage() {
       }
     }
 
-    await handleMintAndShowNFT();
-  };
-
-  const handleMintAndShowNFT = async () => {
-    if (!nftActor || !user || !selectedTrack) {
-      toast.error("Não foi possível gerar seu certificado NFT. Faltam dados.");
-      return;
-    }
-
-    const toastId = toast.loading("Gerando seu certificado NFT, aguarde...");
-
-    try {
-      const result = await nftActor.mintNFT(
-        user.username || "Usuário Dedicado",
-        selectedTrack.title,
-        1n
-      );
-
-      if (result && 'ok' in result) {
-        const nftData = result.ok;
-        toast.success("Certificado gerado com sucesso!", { id: toastId });
-
-        open({
-          type: "nftCertificate",
-          data: {
-            nft: nftData,
-            message: `Parabéns por terminar a trilha "${selectedTrack.title}"!`,
-          },
-        });
-      } else {
-        const errorMsg = result && 'err' in result ? JSON.stringify(result.err) : "Erro desconhecido";
-        toast.error(`Falha ao gerar o certificado: ${errorMsg}`, { id: toastId });
-      }
-    } catch (error) {
-      console.error("Erro ao tentar gerar o NFT:", error);
-      toast.error("Ocorreu um erro inesperado ao gerar seu certificado.", { id: toastId });
-    }
+    // ADIÇÃO: ABRE O MODAL COM OS DADOS NECESSÁRIOS
+    setNftModalData({
+      username: user.username, // Supondo que o nome esteja em user.name
+      trackName: selectedTrack.title,
+      timeSpent: 0n, // Placeholder, pois o tempo não é medido atualmente
+    });
   };
 
   const getButtonTextForContent = (content: Section["content"]): string => {
@@ -262,6 +238,12 @@ export default function TrackPage() {
       <Panel defaultSize={30} minSize={30} maxSize={60} className="h-full">
         <ChatPanel />
       </Panel>
+      {nftModalData && (
+        <NftModal
+          {...nftModalData}
+          onClose={() => setNftModalData(null)}
+        />
+      )}
     </PanelGroup>
   );
 }
