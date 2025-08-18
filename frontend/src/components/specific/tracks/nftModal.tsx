@@ -1,12 +1,12 @@
 // frontend/src/components/specific/tracks/nftModal.tsx
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom"; // 1. Importe o createPortal
 import { ArrowDownTrayIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Button } from "@radix-ui/react-toolbar";
 
 import { useActor } from "@/lib/agent";
-// Supondo que você tenha os tipos gerados pelo `dfx`
 import type { NFT } from "../../../declarations/nft_certificates/nft_certificates.did";
+import { Button } from "@/components/ui/button";
 
 interface NftModalProps {
     username: string;
@@ -17,63 +17,44 @@ interface NftModalProps {
 
 export default function NftModal({ username, trackName, timeSpent, onClose }: NftModalProps) {
     const nftActor = useActor("nft_certificates");
-    // É uma boa prática tipar o estado
     const [svgCode, setSvgCode] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
+    // Lógica para buscar o NFT (permanece a mesma)
     useEffect(() => {
         const mintAndFetchNFT = async () => {
             if (!nftActor) return;
-
+            setIsLoading(true);
             try {
-                setIsLoading(true);
                 const mintResult = await nftActor.mintNFT(username, trackName, timeSpent);
-                
                 if ('ok' in mintResult) {
                     const nftId = mintResult.ok;
-                    
-                    // A variável nftDataResult será do tipo [NFT] ou []
                     const nftDataResult: NFT[] = await nftActor.getNFTById(nftId);
-                    
-                    // --- AQUI ESTÁ A CORREÇÃO ---
-                    // 1. Verificamos se o array não está vazio.
                     if (nftDataResult.length > 0) {
-                        // 2. Se não estiver vazio, sabemos que nftDataResult[0] é seguro de acessar.
-                        const nft = nftDataResult[0]; 
-                        setSvgCode(nft.img);
+                        setSvgCode(nftDataResult[0].img);
                     } else {
-                        // Isso garante que nunca tentaremos acessar um índice inválido.
                         console.error("NFT não encontrado após o mint.");
                     }
                 } else {
                      console.error("Erro ao mintar o NFT:", mintResult.err);
                 }
-
             } catch (error) {
                 console.error("Ocorreu um erro:", error);
             } finally {
                 setIsLoading(false);
             }
         };
-
         mintAndFetchNFT();
     }, [nftActor, username, trackName, timeSpent]);
 
     const handleDownload = () => {
-        if (!svgCode) return;
-        const blob = new Blob([svgCode], { type: "image/svg+xml" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `certificado-${username}.svg`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        console.log("Botão de download apertado");
     };
 
-    return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
+    // 3. Envolva todo o JSX com createPortal
+    return createPortal(
+        // 2. Adicione a classe z-50 para garantir a sobreposição
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 z-50">
             <div className="bg-white rounded-lg shadow-xl p-6 max-w-lg w-full">
                 <h2 className="text-xl font-bold mb-4">Seu Certificado NFT! 📜</h2>
                 
@@ -96,6 +77,7 @@ export default function NftModal({ username, trackName, timeSpent, onClose }: Nf
                     </Button>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body // O portal será renderizado no final do <body>
     );
 }
