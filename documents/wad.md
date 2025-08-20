@@ -544,7 +544,7 @@ She represents the progressive HR professional working in a constantly changing 
 
 ## 3.1. Architecture Diagram
 
-The presented architecture diagram describes the application's technological structure, highlighting the separation between the front-end, back-end (via Internet Computer Canisters), and external integration layers.
+The application's architecture diagram, as illustrated in the image, was designed with a clear separation between the front-end, authentication, back-end, and external integration layers. This modular structure aims to ensure not only the organization and maintainability of the code, but also security, scalability, and a high-performance user experience. The diagram is, therefore, an essential tool for visualizing the organization of components, facilitating understanding among developers, and guiding technical decisions throughout the project.
 
 <div align="center">
 
@@ -556,9 +556,13 @@ The presented architecture diagram describes the application's technological str
 
 </div>
 
- The front-end uses modern frameworks and libraries such as React, Tailwind, Node.js, TypeScript, JavaScript, and Vite, ensuring a responsive, modular, and efficient interface for client interaction. This layer is responsible for mediating communication between the user and the services offered by the application. 
- 
- The back-end is represented by Canisters hosted on the Internet Computer (ICP), which enable decentralization, scalability, and security of the application's operations. Furthermore, there is external integration with Google's Gemini language model, which can be used to provide artificial intelligence-based features. 
+The front-end represents the layer of direct interaction with the client, built with a set of modern technologies to ensure an efficient interface. The foundation of the interface is developed in React, which allows for the creation of dynamic and reusable UI components. The development process is accelerated by Vite, a high-speed build tool. To ensure the robustness and quality of the code, the project adopts TypeScript, which adds static typing to JavaScript, while styling is managed by Tailwind CSS, a utility-first framework that enables the construction of custom designs in an agile and consistent manner.
+
+The bridge between the user interface and the back-end services is the authentication layer, which adopts a sovereign digital identity approach through Internet Identity and NFID. Unlike traditional systems based on username and password, this method allows users to securely access the application using cryptography and devices with WebAuthn support. This strengthens security, privacy, and the user experience by removing the need to memorize passwords.
+
+The logical core of the application resides in the back-end, which is implemented through Canisters hosted on the Internet Computer (ICP) blockchain. This choice decentralizes the application, making it more secure, transparent, and resistant to failures or censorship. Within this structure, several canisters operate in an orchestrated manner to deliver the platform's functionalities. The users_backend manages user profiles and data; the tracks_backend serves as the central repository for the learning tracks; the chats_backend enables communication and community functionalities; and the nft_certificates, in direct communication with the tracks_backend, is responsible for generating and issuing completion certificates in NFT format, ensuring their authenticity and immutability.
+
+To enhance the application with advanced artificial intelligence, the architecture integrates a cutting-edge external service. The orchestration of this integration is handled by the kai_backend, a specific canister that acts as an intermediary. It receives the raw materials provided by the user (such as PDFs and links) and triggers the Gemini language model, from Google, through secure API calls. Gemini then processes this data to generate personalized learning tracks. This hybrid approach combines the computational power of a large-scale LLM with the security and decentralization of the business logic running on-chain, optimizing the best of both worlds.
  
  This diagram is essential for visualizing the organization of components, facilitating understanding between developers and stakeholders, and guiding technical decisions throughout development.
 
