@@ -80,11 +80,20 @@ export default function TrackPage() {
     isActive?: boolean,
     isCompleted?: boolean
   ) => {
-    console.log(user)
+    console.log(user);
     if (!usersActor || !user) {
       toast.error("Usuário não autenticado.");
       return;
     }
+
+    if (section.id === 1 && !isCompleted && selectedTrack) {
+      const timerKey = `track_startTime_${selectedTrack.id}`;
+      if (!localStorage.getItem(timerKey)) {
+        localStorage.setItem(timerKey, Date.now().toString());
+        console.log(`Cronômetro iniciado para a trilha: ${selectedTrack.id}`);
+      }
+    }
+    
     const res = await usersActor.tryAccessSection(
       user.identity,
       selectedTrack?.id ?? "",
@@ -126,8 +135,7 @@ export default function TrackPage() {
 
         if (transfer && principal) {
           try {
-            // CORREÇÃO: Usando o construtor BigInt() para compatibilidade
-            await transfer(principal, BigInt("5000000000")); // 5 Koins
+            await transfer(principal, BigInt("5000000000"));
             toastKoin("Você recebeu 5 Koins por concluir a seção!");
           } catch {}
         }
@@ -136,8 +144,24 @@ export default function TrackPage() {
   };
 
   const handleCompleteTrack = async (trackId: string) => {
-    // A lógica existente permanece a mesma
     if (!user || !selectedTrack) return;
+
+    const timerKey = `track_startTime_${trackId}`;
+    const startTimeString = localStorage.getItem(timerKey);
+    let timeSpentInSeconds = 0n;
+
+    if (startTimeString) {
+      const startTime = parseInt(startTimeString, 10);
+      const endTime = Date.now();
+      const durationInMs = endTime - startTime;
+      const durationInSeconds = Math.round(durationInMs / 1000);
+      timeSpentInSeconds = BigInt(durationInSeconds);
+
+      localStorage.removeItem(timerKey);
+      console.log(`Trilha finalizada em ${durationInSeconds} segundos.`);
+    } else {
+      console.warn("Não foi possível encontrar o tempo de início da trilha.");
+    }
 
     const updatedInProgress = user.inProgressTracks.filter(
       (t) => t.id !== trackId
@@ -150,18 +174,18 @@ export default function TrackPage() {
 
     if (transfer && principal) {
       try {
-        await transfer(principal, BigInt("20000000000")); // 20 Koins
+        await transfer(principal, BigInt("20000000000"));
         toastKoin("Parabéns! Você concluiu a trilha e recebeu 20 Koins!");
       } catch {
         toast.error("Não foi possível processar sua recompensa final.");
       }
     }
 
-    // ADIÇÃO: ABRE O MODAL COM OS DADOS NECESSÁRIOS
+    // Atualiza o modal do NFT com o tempo calculado
     setNftModalData({
-      username: user.username, // Supondo que o nome esteja em user.name
+      username: user.username,
       trackName: selectedTrack.title,
-      timeSpent: 0n, // Placeholder, pois o tempo não é medido atualmente
+      timeSpent: timeSpentInSeconds,
     });
   };
 

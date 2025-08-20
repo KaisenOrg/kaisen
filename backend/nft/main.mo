@@ -1,4 +1,3 @@
-import Nat "mo:base/Nat";
 import Text "mo:base/Text";
 import Array "mo:base/Array";
 import Time "mo:base/Time";
@@ -16,7 +15,7 @@ persistent actor {
     authorId : Text;
     userName : Text;
     trackName : Text;
-    timeSpent : Nat;
+    timeSpent : Text;
     emmittedAt : Time.Time;
     img : Text;
   };
@@ -57,13 +56,12 @@ persistent actor {
   public shared ({ caller }) func mintNFT(
     userName : Text,
     trackName : Text,
-    timeSpent : Nat,
+    timeSpent : Text,
   ) : async Result.Result<Text, Text> {
 
-    let timeSpentText = Nat.toText(timeSpent);
     let serializedMetadata : Text = "userName=" # userName #
     "|trackName=" # trackName #
-    "|timeSpent=" # timeSpentText;
+    "|timeSpent=" # timeSpent;
     let contentBlob = Text.encodeUtf8(serializedMetadata);
     let hashBlob = Sha256.fromBlob(#sha256, contentBlob);
     let nftId = blobToHex(hashBlob);
