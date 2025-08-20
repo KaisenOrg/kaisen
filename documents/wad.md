@@ -207,11 +207,11 @@ The platform offers a wide variety of educational content, available in various 
 **Proposed solution:** <br> 
 Kaisen is the first decentralized knowledge protocol that transforms learning—once a passive consumption process—into a creative, collaborative, and valuable experience. The solution combines personalized learning paths with AI technologies and blockchain validation, creating a true “GitHub of Knowledge.”
 
-Users input raw materials (such as PDFs, topics, and links), which are processed by Kai, an AI assistant. Kai, in turn, generates personalized learning paths. These paths can be published, forked, and improved by the community, resulting in a living, constantly evolving repository, validated by NFT certificates and incentivized by the $KOIN token economy.
+Users insert raw materials (like PDFs, topics, and links), which are processed by Kai, an AI assistant. From this processing, Kai generates personalized learning tracks. If they prefer, the user can also create their track manually. These tracks can be published, forked, and improved by the community, resulting in a living and constantly evolving repository, validated by NFT certificates and incentivized by the $KOIN token economy.
 
 **How to use the solution:** <br> 
 - Content Input: The user submits documents or defines topics of interest to Kai.
-- Path Generation: The AI creates personalized paths containing quizzes, flashcards, and interactive content.
+- Path Generation: The AI, or the user themselves, creates personalized learning paths that include quizzes, flashcards, and interactive content.
 - Learning Process: Users progress through the paths with the support of the AI tutor.
 - Community Collaboration: Upon completion, paths can be published and improved by the community through forking.
 - Validation: Completion of the learning process is certified by “mineable” NFTs, serving as proof of learning.
