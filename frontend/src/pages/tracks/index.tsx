@@ -136,7 +136,7 @@ export default function TrackPage() {
         if (transfer && principal) {
           try {
             await transfer(principal, BigInt("5000000000"));
-            toastKoin("Você recebeu 5 Koins por concluir a seção!");
+            toastKoin("You've earned 5 Koins for completing the section!");
           } catch {}
         }
       }
@@ -175,13 +175,12 @@ export default function TrackPage() {
     if (transfer && principal) {
       try {
         await transfer(principal, BigInt("20000000000"));
-        toastKoin("Parabéns! Você concluiu a trilha e recebeu 20 Koins!");
+        toastKoin("Congratulations! You've completed the track and earned 20 Koins!");
       } catch {
-        toast.error("Não foi possível processar sua recompensa final.");
+        toast.error("We could not process your final reward.");
       }
     }
 
-    // Atualiza o modal do NFT com o tempo calculado
     setNftModalData({
       username: user.username,
       trackName: selectedTrack.title,

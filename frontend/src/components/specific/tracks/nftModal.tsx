@@ -35,7 +35,6 @@ export default function NftModal({
 
   const timeInHours = formatTimeInHours(timeSpent);
 
-
   useEffect(() => {
     const mintAndFetchNFT = async () => {
       if (!nftActor) return;
@@ -80,11 +79,11 @@ export default function NftModal({
       <div className="bg-black rounded-lg shadow-xl p-6 w-fit">
         <div className=" rounded-md p-4 mb-4 flex justify-center items-center min-h-[200px]">
           {isLoading ? (
-            <p>Gerando seu certificado...</p>
+            <p>Generating your certificate...</p>
           ) : svgCode ? (
             <div dangerouslySetInnerHTML={{ __html: svgCode }} />
           ) : (
-            <p>Não foi possível carregar o certificado.</p>
+            <p>Could not load certificate.</p>
           )}
         </div>
 
