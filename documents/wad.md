@@ -685,7 +685,7 @@ This interface allows direct communication with the platform's artificial intell
 
 </div>
 
-The paths screen organizes and categorizes the content available on the platform, allowing users to navigate different areas of knowledge. It is essential for discovering and organizing learning, offering filtering capabilities by topics, interests, and difficulty levels. This allows users to easily identify which paths best meet their educational needs and objectives.
+The tracks screen is the central environment for content discovery, where all the platform's material is organized and categorized by areas of knowledge. To facilitate the search, the interface offers filtering features by topics, interests, and difficulty levels, allowing users to easily find the most suitable tracks for their educational goals. Furthermore, the platform encourages collective building: users who wish to improve a track can start their collaboration through the "Collaborate" button.
 
 <div align="center">
 
@@ -762,6 +762,36 @@ Kai's store is a gamified interface where users can use platform tokens ($KOIN) 
 The settings screen allows users to adjust their usage preferences, configure notifications, and manage their accounts in a personalized way. This feature offers greater control over the individual experience within the platform, promoting comfort, accessibility, and security during continued use.
 
 The community screen aims to strengthen interactions between users, serving as a space for exchange and collaboration. Here, participants can post about their experiences on the platform, share reflections on the learning process, promote created paths, and interact with other members' content. This dynamic contributes to building a network of support and educational engagement, encouraging mutual recognition and collective development.
+
+<div align="center">
+
+<sub>Figure 20 - settings and community</sub>
+
+<img src="./assets/screens/10.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 20 - settings and community</sub>
+
+<img src="./assets/screens/11.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 20 - settings and community</sub>
+
+<img src="./assets/screens/12.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
 
 # 4. Application Development
 
