@@ -3,7 +3,6 @@ import { Actor, type ActorSubclass, type Agent, HttpAgent } from '@dfinity/agent
 import { useAgent } from '@nfid/identitykit/react'
 import { useAuth } from '@/hooks/useAuth'
 
-// Importações dos canisters existentes
 import { idlFactory as kaiIdlFactory } from '@/declarations/kai_backend'
 import type { _SERVICE as KaiService } from '@/declarations/kai_backend/kai_backend.did'
 import { idlFactory as tracksIdlFactory } from '@/declarations/tracks_backend'
@@ -15,7 +14,6 @@ import type { _SERVICE as Icrc1LedgerService } from '@/declarations/icrc1_ledger
 import { idlFactory as usersIdlFactory } from '@/declarations/users_backend'
 import type { _SERVICE as UsersService } from '@/declarations/users_backend/users_backend.did'
 
-// --- 1. IMPORTAÇÕES CORRIGIDAS PARA NFT_CERTIFICATES ---
 import { idlFactory as nftIdlFactory } from '@/declarations/nft_certificates'
 import type { _SERVICE as NftCertificatesService } from '@/declarations/nft_certificates/nft_certificates.did'
 
@@ -25,7 +23,6 @@ const canisterMap = {
   chats_backend: { idl: chatIdlFactory, service: {} as ChatService },
   users_backend: { idl: usersIdlFactory, service: {} as UsersService },
   icrc1_ledger: { idl: icrc1IdlFactory, service: {} as Icrc1LedgerService },
-  // --- 2. MAPEAMENTO CORRETO DO CANISTER ---
   nft_certificates: { idl: nftIdlFactory, service: {} as NftCertificatesService }
 }
 
@@ -35,7 +32,6 @@ const canisterIds = {
   chats_backend: process.env.CANISTER_ID_CHATS_BACKEND,
   users_backend: process.env.CANISTER_ID_USERS_BACKEND,
   icrc1_ledger: process.env.CANISTER_ID_ICRC1_LEDGER,
-  // --- 3. ADIÇÃO DO ID DO CANISTER ---
   nft_certificates: process.env.CANISTER_ID_NFT_CERTIFICATES,
 }
 

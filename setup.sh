@@ -42,7 +42,7 @@ dfx generate
 # 6. Instala e compila o frontend
 cd frontend
 npm install
-npm run build
+cd ..
 
 # 7. Deploy do ledger ICRC-1 com argumentos
 dfx deploy icrc1_ledger --argument "(variant { Init = record {
@@ -61,5 +61,10 @@ dfx deploy icrc1_ledger --argument "(variant { Init = record {
 
 # 8. Deploy do restante
 dfx deploy
+
+cd frontend
+npm run build
+
+dfx deploy kaisen_frontend
 
 echo "🎉 Projeto Kaisen configurado com sucesso!"
