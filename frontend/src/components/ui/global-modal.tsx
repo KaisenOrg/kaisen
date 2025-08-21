@@ -69,7 +69,7 @@ export function GlobalModal() {
 
       case 'loading':
         return (
-          <LoadingPreset  />
+          <LoadingPreset />
         );
 
       case 'create-track':
