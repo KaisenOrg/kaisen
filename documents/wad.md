@@ -29,8 +29,7 @@
         <li><a href="#212-swot-analysis-of-partner-institution">2.1.2. SWOT Analysis of Partner Institution</a></li>
         <li><a href="#213-solution">2.1.3. Solution</a></li>
         <li><a href="#214-value-proposition-canvas">2.1.4. Value Proposition Canvas</a></li>
-        <li><a href="#215-project-risk-matrix">2.1.5. Project Risk Matrix</a></li>
-        <li><a href="#216-business-model-canvas">2.1.6. Business Model Canvas</a></li>
+        <li><a href="#216-business-model-canvas">2.1.5. Business Model Canvas</a></li>
       </ul>
     </li>
     <li><a href="#22-personas">2.2. Personas</a></li>
@@ -58,7 +57,8 @@
 <details>
   <summary><a href="#4-application-development">4. Application Development</a></summary>
   <ul>
-    <li><a href="#41-first-version-of-the-application-mvp">4.1. First Version of the Application (MVP)</a></li>
+    <li><a href="#41-first-version-of-the-application-mvp">4.1. First Version of the Application</a></li>
+    <li><a href="#42-second-version-of-the-application-mvp">4.2. Second Version of the Application</a></li>
   </ul>
 </details>
 
@@ -306,9 +306,7 @@ The analysis conducted through the Kaisen Value Proposition Canvas demonstrates 
 
 Therefore, it is worth emphasizing that the solution addresses a real and pressing issue: the disconnect between knowledge acquired through non-traditional means and its validation. The centralization of learning data, personalization of the study process, and the possibility of monetizing and sharing educational journeys add direct value to the end user. Kaisen does not merely rely on emerging technologies; it builds an ecosystem in which knowledge is treated as a reputational asset—traceable, shareable, and, most importantly, rewardable.
 
-### 2.1.5 Project Risk Matrix
-
-### 2.1.6 Business Model Canvas
+### 2.1.5 Business Model Canvas
 
 The Business Model Canvas (BMC) for Kaisen presents, in a structured way, the main elements that sustain the platform’s business model. It organizes everything from the value proposition — based on transforming scattered content into personalized learning tracks certified via blockchain — to customer segments, relationship channels, revenue streams, and cost structure. In addition to mapping these areas, the BMC will be used as a tool to analyze the solution’s feasibility, consistency, and growth potential, guiding strategic decisions and continuous improvements.
 
@@ -506,7 +504,7 @@ Below are three personas developed specifically for this project to guide decisi
 
 <div align="center">
 
-<sub>Figure 4 - Persona 1</sub>
+<sub>Figure 5 - Persona 1</sub>
 
 <img src="assets/business/persona-clara.png" width="100%">
 
@@ -518,7 +516,7 @@ She represents an ambitious young student from a peripheral community who sees t
 
 <div align="center">
 
-<sub>Figure 5 - Persona 2</sub>
+<sub>Figure 6 - Persona 2</sub>
 
 <img src="assets/business/persona-daniel.png" width="100%">
 
@@ -530,7 +528,7 @@ He personifies the modern self-taught developer who stands out in the Web3 ecosy
 
 <div align="center">
 
-<sub>Figure 6 - Persona 3</sub>
+<sub>Figure 7 - Persona 3</sub>
 
 <img src="assets/business/persona-renata.png" width="100%">
 
@@ -548,7 +546,7 @@ The application's architecture diagram, as illustrated in the image, was designe
 
 <div align="center">
 
-<sub>Figure 7 - Architecture diagram</sub>
+<sub>Figure 8 - Architecture diagram</sub>
 
 <img src="./assets/simple-architecture.png" width="100%">
 
@@ -576,7 +574,7 @@ The color palette is an essential element in the visual construction of the Kais
 
 <div align="center">
 
-<sub>Figure 8 - Colors</sub>
+<sub>Figure 9 - Colors</sub>
 
 <img src="assets/design/colors.png" width="100%">
 
@@ -596,7 +594,7 @@ The typography used on the Kaisen platform was selected based on legibility, sim
 
 <div align="center">
 
-<sub>Figure 9 - Typography</sub>
+<sub>Figure 10 - Typography</sub>
 
 <img src="assets/design/typography.png" width="100%">
 
@@ -615,7 +613,7 @@ The visual elements of the Kaisen platform were designed to communicate, symboli
 
 <div align="center">
 
-<sub>Figure 10 - Mascot</sub>
+<sub>Figure 11 - Mascot</sub>
 
 <img src="assets/design/mascot.png" width="100%">
 
@@ -627,7 +625,7 @@ The platform's mascot, Kai, is an expressive and welcoming fox, presented in sev
 
 <div align="center">
 
-<sub>Figure 11 - Logo</sub>
+<sub>Figure 12 - Logo</sub>
 
 <img src="assets/design/logo.png" width="100%">
 
@@ -653,7 +651,7 @@ Below are the prototyped screens, which illustrate the application's main functi
 
 <div align="center">
 
-<sub>Figure 12 - Home</sub>
+<sub>Figure 13 - Home</sub>
 
 <img src="./assets/screens/1.png" width="100%">
 
@@ -665,7 +663,7 @@ The home screen serves as the platform's central navigation point, offering user
 
 <div align="center">
 
-<sub>Figure 13 - Chat</sub>
+<sub>Figure 14 - Chat</sub>
 
 <img src="./assets/screens/2.png" width="100%">
 
@@ -677,7 +675,7 @@ This interface allows direct communication with the platform's artificial intell
 
 <div align="center">
 
-<sub>Figure 14 - Tracks</sub>
+<sub>Figure 15 - Tracks</sub>
 
 <img src="./assets/screens/3.png" width="100%">
 
@@ -689,7 +687,7 @@ The tracks screen is the central environment for content discovery, where all th
 
 <div align="center">
 
-<sub>Figure 15 - Tracks</sub>
+<sub>Figure 16 - Tracks</sub>
 
 <img src="./assets/screens/4.png" width="100%">
 
@@ -701,7 +699,7 @@ Modals provide an in-depth overview of a specific learning path, including its d
 
 <div align="center">
 
-<sub>Figure 16 - Practice and Proof of Learning</sub>
+<sub>Figure 17 - Practice and Proof of Learning</sub>
 
 <img src="./assets/screens/5.png" width="100%">
 
@@ -713,7 +711,7 @@ In the Practice section, users have access to features that help them review the
 
 <div align="center">
 
-<sub>Figure 17 - Discover</sub>
+<sub>Figure 18 - Discover</sub>
 
 <img src="./assets/screens/6.png" width="100%">
 
@@ -725,7 +723,7 @@ The Discover feature aims to expand learning possibilities by facilitating the e
 
 <div align="center">
 
-<sub>Figure 18 - Profile</sub>
+<sub>Figure 19 - Profile</sub>
 
 <img src="./assets/screens/7.png" width="100%">
 
@@ -733,13 +731,13 @@ The Discover feature aims to expand learning possibilities by facilitating the e
 
 </div>
 
-The profile screen provides a comprehensive overview of the user's journey on the platform, gathering information about their progress and activities. Through this interface, users can access tracks in progress and those already completed, as well as view engagement metrics, such as the time spent on each specific track and the total time spent using the platform.
+The profile screen is a centralized dashboard that consolidates all of the user's information, activities, and contributions on the Kaizen platform, offering a comprehensive view of their journey and social interaction. It presents identifying information, such as a photo, name, and username, in addition to a personal biography, links to social media, and metrics for followers and followed profiles. The interface also includes action buttons to follow or send messages, and a badges section that highlights special achievements like 'PRO' and 'OG'. 
 
-Furthermore, users have access to their earned certifications, allowing them to download certificates in NFT format or share them directly on social media. The screen also displays the tracks they have published, as well as those that have not yet been made publicly available. If desired, users can create new tracks, with editing and deletion capabilities, giving them the autonomy to contribute to the community and personalize their learning journey.
+The main content is organized into tabs, where the "Overview" tab displays the user's collaborations, such as the learning tracks they created, and a feed of recent activities with completed tracks and social interactions. On the "Community" tab, the user can access all of their publications and track engagement through likes, comments, and reposts.
 
 <div align="center">
 
-<sub>Figure 19 - Kai's store</sub>
+<sub>Figure 20 - Kai's store</sub>
 
 <img src="./assets/screens/8.png" width="100%">
 
@@ -751,7 +749,7 @@ Kai's store is a gamified interface where users can use platform tokens ($KOIN) 
 
 <div align="center">
 
-<sub>Figure 20 - settings and community</sub>
+<sub>Figure 21 - settings and community</sub>
 
 <img src="./assets/screens/9.png" width="100%">
 
@@ -765,7 +763,7 @@ The community screen aims to strengthen interactions between users, serving as a
 
 <div align="center">
 
-<sub>Figure 20 - settings and community</sub>
+<sub>Figure 22 - create tracks</sub>
 
 <img src="./assets/screens/10.png" width="100%">
 
@@ -773,9 +771,11 @@ The community screen aims to strengthen interactions between users, serving as a
 
 </div>
 
+The process of creating a new learning track (track) is an intuitive and flexible workflow, allowing the user to build content manually or with the help of Artificial Intelligence. The flow begins with a modal where the user defines the track's basic information, such as the title and description. Next, they advance to an objective selection screen, "What do you want to learn?", which guides the content generation by the AI or prepares the path for manual construction. When opting for manual creation, the user accesses a visual and interactive canvas-style editor, where they can structure the track dynamically by adding and connecting different content sections such as summaries, flashcards, quizzes, videos, and questions. Furthermore, before proceeding, it is necessary to fill out a "Course Information" form to add metadata and other details.
+
 <div align="center">
 
-<sub>Figure 20 - settings and community</sub>
+<sub>Figure 23 - create sections</sub>
 
 <img src="./assets/screens/11.png" width="100%">
 
@@ -783,9 +783,19 @@ The community screen aims to strengthen interactions between users, serving as a
 
 </div>
 
+Inside the track editor, the platform offers a set of specific modals for creating different types of content sections. Each modal is designed to be intuitive and task-focused, allowing the user to build a rich and interactive learning experience.
+
+For the creation of Summaries, the user utilizes a full-featured text editor (rich text editor). The interface allows for the insertion of a title and the formatting of the text body with several options, such as bold, italics, underline, numbered or bulleted lists, and the insertion of links, ensuring the creation of a well-structured and organized reading material.
+
+The Flashcards section is ideal for memorization exercises. The user can define a title for the set and then create cards individually, filling in the "Front" (for the question or term) and "Back" (for the answer or definition) fields. The interface offers the flexibility to add as many flashcards as needed to the set through the "+ Add new card" button.
+
+In the creation of Quizzes, the user can craft an objective question and configure multiple answer options. For each option, there is a selector that allows marking which one is correct, making the assessment automated and interactive. It is possible to add more questions according to the user's needs.
+
+Additionally, it is possible to incorporate audiovisual content through the Video section. The user simply inserts the desired video URL, adds a title, and a description to contextualize the material. The platform displays a preview of the video, ensuring that the link has been correctly incorporated before the section's creation.
+
 <div align="center">
 
-<sub>Figure 20 - settings and community</sub>
+<sub>Figure 24 - collaboration tools</sub>
 
 <img src="./assets/screens/12.png" width="100%">
 
@@ -793,9 +803,13 @@ The community screen aims to strengthen interactions between users, serving as a
 
 </div>
 
+On the collaboration screen, it is possible to reorganize the order of the sections using a drag-and-drop system, edit the content of existing sections through specific editors (such as the rich text editor for summaries), or add new content sections. All the creation tools available to the original author are also made available to the collaborator, ensuring that their contributions can be rich and well-formatted.
+
+After a collaborator submits their changes, the track's original author is notified. On the "Collaboration" tab, they find a management panel with a detailed history of all pending contributions. For each proposal, crucial information is displayed: what was modified, who made the change, and the submission date. The author then has the power to review each change and decide whether to accept the collaboration, integrating it permanently into the track, or reject it. This approval system ensures the quality and integrity of the original content, while stimulating continuous improvement through the collective intelligence of the community.
+
 # 4. Application Development
 
-## 4.1. First Version of the Application (MVP)
+## 4.1. First Version of the Application
 
 The first version of the Kaisen application MVP has been completed, providing the essential structure of the system, focusing on validating the main usage flows and integrations between the backend and frontend. This initial delivery prioritized user experience, authentication, basic interaction features, and integration with the blockchain layer.
 
@@ -804,10 +818,8 @@ The first version of the Kaisen application MVP has been completed, providing th
 In this initial version, the following functional components were delivered:
 
 - **Home page with navigation menu:** Clear interface, with quick access to the main areas of the system.
-- **User authentication system:** Implementation of login, logout, and identity management, integrating with the Motoko backend.
 - **User profile management:** Creation, viewing, and editing of profiles, including nicknames, bios, and roles.
 - **Community dashboard:** Screen for viewing community posts, promoting interaction and engagement among users.
-- **AI Chat (Kai):** Intelligent chat functionality, allowing users to initiate conversations with AI, save history, and dynamic responses.
 - **User Track Management and Display:** View created, in-progress, and completed tracks for each profile.
 
 #### Technical Development Process
@@ -819,7 +831,7 @@ Some of the main screens implemented in this version are:
 
 <div align="center">
 
-<sub>Figure 21 - Home</sub>
+<sub>Figure 25 - Home</sub>
 
 <img src="./assets/screens-aplication/home.png" width="100%">
 
@@ -829,7 +841,7 @@ Some of the main screens implemented in this version are:
 
 <div align="center">
 
-<sub>Figure 22 - Tracks</sub>
+<sub>Figure 26 - Tracks</sub>
 
 <img src="./assets/screens-aplication/tracks.png" width="100%">
 
@@ -839,39 +851,9 @@ Some of the main screens implemented in this version are:
 
 <div align="center">
 
-<sub>Figure 23 - Chat</sub>
-
-<img src="./assets/screens-aplication/chat.png" width="100%">
-
-<sup>Source: Material produced by the authors (2025)</sup>
-
-</div>
-
-<div align="center">
-
-<sub>Figure 24 - Discover</sub>
+<sub>Figure 27 - Discover</sub>
 
 <img src="./assets/screens-aplication/discover.png" width="100%">
-
-<sup>Source: Material produced by the authors (2025)</sup>
-
-</div>
-
-<div align="center">
-
-<sub>Figure 25 - Practice</sub>
-
-<img src="./assets/screens-aplication/practice-1.png" width="100%">
-
-<sup>Source: Material produced by the authors (2025)</sup>
-
-</div>
-
-<div align="center">
-
-<sub>Figure 26 - Proof of Learning</sub>
-
-<img src="./assets/screens-aplication/proof of learning.png" width="100%">
 
 <sup>Source: Material produced by the authors (2025)</sup>
 
@@ -881,8 +863,77 @@ Some of the main screens implemented in this version are:
 
 Among the main challenges were the secure integration between the frontend and Motoko canisters, the modeling of the decentralized authentication flow, and the management of conversation status with AI, ensuring real-time updates to the interface and consistency of user data.
 
-
 This MVP version validates the essential pillars of the Kaisen platform, serving as a solid foundation for continuous evolution and the inclusion of new features in the next stages of the project.
+
+## 4.2 Second Version of the Application
+
+The second version of the Kaizen platform represents a significant evolution, focused on enhancing the user experience and expanding the key functionalities of the learning ecosystem. The main objective was to solidify the technical infrastructure with the development of a robust back-end and, at the same time, introduce new features to increase engagement, interactivity, and the validation of user achievements through innovative technologies like NFTs.
+
+To ensure a cohesive implementation aligned with usability goals, all development followed a high-fidelity prototype. This allowed for the programming of new screens and the precise restructuring of existing interfaces, resulting in a more polished, intuitive, and functional final product, prepared to support new community interactions and solidify the platform's learning model.
+
+#### Structure and implemented features
+In this new version, the following functional components were delivered, transforming the platform into a more complete and collaborative learning ecosystem:
+
+- **NFT Certificate Management:** Implementation of the complete flow for the generation, viewing, and management of NFT certificates, validating user achievements on the blockchain.
+- **User Authentication System:** Implementation of login, logout, and identity management, integrating with the Motoko backend.
+- **AI Chat (Kai):** Intelligent chat functionality, allowing users to initiate conversations with AI, save history, and dynamic responses.
+- **Track Creation Flow:** Advanced tools for users to create complex learning tracks, with support for multiple content types such as summaries, quizzes, flashcards, and videos.
+- **Community Collaboration System:** A new area that allows users to suggest edits and improvements to existing tracks, with an approval system for the original author.
+- **Enhanced User Profile:** Restructuring of the profile screen to include engagement metrics, published tracks, certificates, and recent activities.
+- **External NFT Verification:** A public page that allows anyone to verify the authenticity of an NFT certificate via a unique code.
+
+#### Technical Development Process
+
+The development was guided by a high-fidelity prototype, ensuring cohesion between design and implementation. On the back-end, robust services were created for the generation and management of NFTs, in addition to the implementation of endpoints to support track creation (CRUD operations), the "Koins" system, the dynamic chat, and user progress tracking. On the front-end, the team implemented the new interfaces, such as the enhanced profile, the complete content creation flow, and the collaboration modals, in addition to adjusting the identity management with support for "DevAuth".
+
+#### Screen Illustrations
+Some of the main screens and flows implemented in this version are:
+
+<div align="center">
+
+<sub>Figure 28 - Track Add Section</sub>
+
+<img src="./assets/screens-aplication/track-add-section.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 29 - NFT Awarded</sub>
+
+<img src="./assets/screens-aplication/nft-awarded.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 30 - Chat</sub>
+
+<img src="./assets/screens-aplication/chat.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+<div align="center">
+
+<sub>Figure 31 - Profile Overview</sub>
+
+<img src="./assets/screens-aplication/profile-overview.png" width="100%">
+
+<sup>Source: Material produced by the authors (2025)</sup>
+
+</div>
+
+#### Challenges Faced
+
+Among the main challenges were the integration of the back-end with blockchain technology for the generation and verification of NFTs, the implementation of a collaboration system that managed different versions and content approvals, and the development of the chat back-end to support dynamic and real-time interactions. On the front-end, the challenge was to translate the complex flows of the prototype into interactive and responsive components.
+
+This second version of Kaisen solidifies the platform as a robust and interactive learning ecosystem. The new features for creation, collaboration, and certification via NFT not only enrich the user experience but also establish an advanced technical foundation for the future implementation of gamification, personalization, and other innovative features.
 
 # 5. Market Study and Marketing Plan
 
