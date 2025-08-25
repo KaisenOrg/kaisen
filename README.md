@@ -93,12 +93,6 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 
 ## Technologies Used
 
-<div align="center">
-
-<img src="./documents/assets/technology-banner.png" width="100%">
-
-</div>
-
 ### Languages & Frameworks
 
 - **Motoko** – Native language for Internet Computer, used to build decentralized backend canisters.
@@ -129,12 +123,6 @@ The user journey is carefully designed to maximize clarity, autonomy, and long-t
 - **path (Node.js)** – File path manipulation utility.
 
 ## Project Setup
-
-<div align="center">
-
-<img src="./documents/assets/setup-banner.png" width="100%">
-
-</div>
 
 ### Requirements
 
@@ -232,12 +220,6 @@ chmod +x setup.sh
 
 ## Deploying to ICP Mainnet
 
-<div align="center">
-
-<img src="./documents/assets/icp-banner.png" width="100%">
-
-</div>
-
 ### Prerequisites
 
 - Internet Identity account
@@ -268,12 +250,6 @@ dfx deploy --network ic
 
 ## System Architecture
 
-<div align="center">
-
-<img src="./documents/assets/architecture-banner.png" width="100%">
-
-</div>
-
 The diagram below provides a simplified overview of Kaisen’s architecture. Users interact with a modern interface built using React and Vite.js, styled with Tailwind CSS, and developed with TypeScript and JavaScript. This front-end layer communicates directly with canisters hosted on the Internet Computer (ICP), which serve as the decentralized back-end of the application. Additionally, these canisters integrate with external services such as the Gemini API to generate content through artificial intelligence, ensuring a dynamic and personalized experience.
 
 <div align="center">
@@ -285,12 +261,6 @@ The diagram below provides a simplified overview of Kaisen’s architecture. Use
 > For more detailed information about the architecture diagram, please refer to the [wad.md](./documents/wad.md).
 
 ## Application Flows
-
-<div align="center">
-
-<img src="./documents/assets/flow-banner.png" width="100%">
-
-</div>
 
 ### Personal Learning Flow (Private Use)
 
@@ -323,12 +293,6 @@ Access the materials below, which include the demo video and pitch deck, to gain
 
 ## Project Structure
 
-<div align="center">
-
-<img src="./documents/assets/structure-banner.png" width="100%">
-
-</div>
-
 Among the files and folders present in the project root, the following are defined:
 
 - **document:** This contains all project documents, such as the Web Application Document (WAD), as well as supplementary documents.
@@ -345,29 +309,13 @@ Among the files and folders present in the project root, the following are defin
 
 ## Conclusions and future work
 
-<div align="center">
+Kaisen is establishing itself as a collaborative and decentralized learning platform, allowing users to explore and share knowledge in an open and secure way. So far, we have developed important features such as modular content organization, assistive chat, user profiles, progress tracking, trail creation, tutorials to facilitate platform understanding, user authentication, NFT generation, the Koins system, and chat with Kai.
 
-<img src="./documents/assets/history-banner.png" width="100%">
+During development, we have faced challenges related to blockchain integration and ensuring a smooth user experience. These obstacles have served to enhance the structure and usability of the platform.
 
-</div>
-
-Kaisen is consolidating itself as a collaborative and decentralized learning platform, allowing users to explore and share knowledge openly and securely. To date, we have developed important features such as modular content organization, assistive chat, user profiles, and progress tracking.
-
-During development, we faced challenges related to integrating with blockchain technology and ensuring a seamless user experience. However, these obstacles are designed to improve the platform's structure and usability.
-
-For the next steps, our main goals include implementing a tokenized rewards system, which aims to encourage user engagement, and developing decentralized governance, allowing the community itself to participate in decisions regarding platform developments.
-
-Another planned advancement is the introduction of the trail fork functionality. With this feature, users will be able to duplicate an existing trail, customize it according to their interests, and, if desired, contribute to the original trail. This strengthens collaboration, personalized learning, and a sense of belonging to the community.
-
-Finally, we remain committed to continuous improvements in usability, accessibility, and integration with new technologies, making Kaisen increasingly efficient, inclusive, and relevant for all audiences.
+For the next steps, our main goals include continuing the development of trail creation, enabling users to create multiple sections — for example, sections with videos, flashcards, and other formats — as well as enabling NFT visualization through its code/ID, providing more robust tutorials, and implementing collaboration within trails, where the author can view changes and choose to accept or reject them. In addition, we will advance the coding implementation of the already prototyped screens.
 
 ## Development Team
-
-<div align="center">
-
-<img src="./documents/assets/team-banner.png" width="100%">
-
-</div>
 
 - [Giovanna Neves Rodrigues](https://github.com/GigicaNeves)
 - [José Antônio Ferreira de Lima](https://github.com/jlimaz)
@@ -376,12 +324,6 @@ Finally, we remain committed to continuous improvements in usability, accessibil
 - [Nicole Riedla Paiva Neves](https://github.com/nicriedla)
 
 ## License
-
-<div align="center">
-
-<img src="./documents/assets/license-banner.png" width="100%">
-
-</div>
 
 This project is licensed under the terms of the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).  
 You are free to use, modify, and distribute this software — including for commercial purposes — as long as you retain the copyright notices and attribution.
