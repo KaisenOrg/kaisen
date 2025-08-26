@@ -241,12 +241,13 @@ dfx deploy --network ic
 
 ### Mainnet Canister IDs
 
-- `kaisen_frontend`: `NOT RELEASED YET`
-- `kai_backend`: `NOT RELEASED YET`
-- `tracks_backend`: `NOT RELEASED YET`
-- `nft_certificates`: `NOT RELEASED YET`
+- `kaisen_frontend`: `rlfkm-gqaaa-aaaab-abtiq-cai`
+- `kai_backend`: `rmemy-liaaa-aaaab-abtia-cai`
+- `tracks_backend`: `rfhhe-5aaaa-aaaab-abtjq-cai`
+- `nft_certificates`: `rcgbq-qyaaa-aaaab-abtja-cai`
 - `chats_backend`: `atduo-raaaa-aaaab-abqbq-cai`
 - `icrc1_ledger`: `aigil-lyaaa-aaaab-abqda-cai`
+- `users_backend`: `rqawj-4iaaa-aaaab-abtka-cai`
 
 ## System Architecture
 
