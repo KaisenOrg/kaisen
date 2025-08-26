@@ -289,8 +289,8 @@ The diagram below provides a simplified overview of Kaisen’s architecture. Use
 
 Access the materials below, which include the demo video and pitch deck, to gain a more complete understanding of the project—from its proposal and technical operation to the strategic vision of the solution.
 
-- 🎥 [Demo Video (with walkthrough and architecture overview)](https://www.youtube.com/watch?v=WNQjr4ieoyU)
-- 🖼️ [Pitch Deck and Presentation (problem, solution, roadmap)](https://www.youtube.com/watch?v=nTzzAbid1Ig)
+- 🎥 [Demo Video (with walkthrough and architecture overview)](https://www.youtube.com/watch?v=Rbn51r7MZO8)
+- 🖼️ [Pitch Deck and Presentation (problem, solution, roadmap)](https://www.youtube.com/watch?v=zJ6ylBeu4VY)
 
 ## Project Structure
 
