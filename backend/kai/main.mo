@@ -11,8 +11,10 @@ import IC "ic:aaaaa-aa";
 
 import Error "mo:base/Error";
 import Result "mo:base/Result";
+import Nat8 "mo:base/Nat8";
 
 import Env "../env";
+import Sha256 "../utils/sha256";
 
 persistent actor {
   var uuidCounter : Nat = 0;
@@ -28,11 +30,26 @@ persistent actor {
     };
   };
 
+  private func blobToHex(blob : Blob) : Text {
+    let hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+    var text = "";
+    for (byte in blob.vals()) {
+      let high_nibble_nat8 = byte >> 4;
+      let low_nibble_nat8 = byte & 15;
+      let high_index = Nat8.toNat(high_nibble_nat8);
+      let low_index = Nat8.toNat(low_nibble_nat8);
+
+      text := text # hex[high_index] # hex[low_index];
+    };
+    return text;
+  };
+
   private func generateUUID() : Text {
     let timeText = Int.toText(Time.now());
-    let counterText = Nat.toText(uuidCounter);
-    uuidCounter += 1;
-    return timeText # "-" # counterText;
+    let contentBlob = Text.encodeUtf8(timeText);
+    let hashBlob = Sha256.fromBlob(#sha256, contentBlob);
+    let textHash = blobToHex(hashBlob);
+    return textHash;
   };
 
   private func askKai(prompt : Text, responseConfig : ?Text, context : ?Text, model : ?Text, isImageGeneration : Bool) : async Text {

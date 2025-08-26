@@ -4,5 +4,20 @@
   },
   "icrc1_ledger": {
     "ic": "aigil-lyaaa-aaaab-abqda-cai"
+  },
+  "kai_backend": {
+    "ic": "rmemy-liaaa-aaaab-abtia-cai"
+  },
+  "kaisen_frontend": {
+    "ic": "rlfkm-gqaaa-aaaab-abtiq-cai"
+  },
+  "nft_certificates": {
+    "ic": "rcgbq-qyaaa-aaaab-abtja-cai"
+  },
+  "tracks_backend": {
+    "ic": "rfhhe-5aaaa-aaaab-abtjq-cai"
+  },
+  "users_backend": {
+    "ic": "rqawj-4iaaa-aaaab-abtka-cai"
   }
 }

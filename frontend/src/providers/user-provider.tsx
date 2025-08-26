@@ -75,6 +75,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   }
 
   const createUser = async (partial: Partial<UserData>) => {
+    
     if (!usersActor || !principal || !identity || isLoading) return
 
     setError(null)

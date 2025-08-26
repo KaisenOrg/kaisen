@@ -5,7 +5,7 @@ import svg "svg/generateSvg";
 import Trie "mo:base/Trie";
 import Blob "mo:base/Blob";
 import Result "mo:base/Result";
-import Sha256 "utils/sha256";
+import Sha256 "../utils/sha256";
 import Nat8 "mo:base/Nat8";
 import Principal "mo:base/Principal";
 
