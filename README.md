@@ -291,7 +291,6 @@ Access the materials below — including the demo video, pitch deck, and deploye
 
 - 🎥 [Demo Video (with walkthrough and architecture overview)](https://www.youtube.com/watch?v=Rbn51r7MZO8)
 - 🖼️ [Pitch Deck and Presentation (problem, solution, roadmap)](https://www.youtube.com/watch?v=zJ6ylBeu4VY)
-- 🌐 [Website deployed](https://rlfkm-gqaaa-aaaab-abtiq-cai.icp0.io/)
 
 ## Project Structure
 
