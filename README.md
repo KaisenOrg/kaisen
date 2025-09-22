@@ -289,8 +289,9 @@ The diagram below provides a simplified overview of Kaisen’s architecture. Use
 
 Access the materials below — including the demo video, pitch deck, and deployed website — for a complete overview of the project, covering its proposal, technical operation, and strategic vision.
 
-- 🎥 [Demo Video (with walkthrough and architecture overview)](https://www.youtube.com/watch?v=Rbn51r7MZO8)
-- 🖼️ [Pitch Deck and Presentation (problem, solution, roadmap)](https://www.youtube.com/watch?v=zJ6ylBeu4VY)
+- 🎥 [Demo Video (with walkthrough and architecture overview)](https://www.youtube.com/watch?v=6K1YQ5hfnrw)
+- 🖼️ [Pitch Deck and Presentation (problem, solution, roadmap)](https://www.youtube.com/watch?v=rXXc-i82ziQ)
+- 🌐 [Deployed Website (ICP Mainnet)](https://rlfkm-gqaaa-aaaab-abtiq-cai.icp0.io/)
 
 ## Project Structure
 
