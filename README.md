@@ -193,13 +193,6 @@ O Kaisen utiliza uma arquitetura cliente-servidor moderna baseada em APIs RESTfu
 4. Outros usuários podem explorar, adaptar (fork) ou melhorar a trilha publicada.
 5. O criador original ganha visibilidade, métricas de engajamento e reconhecimento no ecossistema.
 
-## Demonstração
-
-Acesse os materiais abaixo para uma visão completa do projeto (versões originais da concepção do projeto):
-
-* 🎥 [Vídeo de Demonstração (Walkthrough inicial)](https://www.youtube.com/watch?v=6K1YQ5hfnrw)
-* 🖼️ [Pitch Deck e Apresentação (Problema, Solução, Roadmap)](https://www.youtube.com/watch?v=rXXc-i82ziQ)
-
 ## Estrutura do Projeto
 
 * **documents:** Contém todos os documentos do projeto, como o Web Application Document (WAD) e materiais complementares.
