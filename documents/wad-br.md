@@ -919,16 +919,16 @@ Esta segunda versão do Kaisen solidifica a plataforma como um ecossistema de ap
 <a id="5-market-study-and-marketing-plan"></a>
 # 5. Estudo de Mercado e Plano de Marketing
 
-A pesquisa de mercado e o plano de marketing da Kaisen visam alinhar a proposta da plataforma às reais necessidades do público, no contexto da educação digital descentralizada. Compreender o comportamento de aprendizagem e o cenário competitivo permite o posicionamento estratégico da solução, enquanto o plano de marketing orienta sua comunicação e promoção, com foco no engajamento e consolidação da marca.
+A pesquisa de mercado e o plano de marketing da Kaisen buscam alinhar a proposta da plataforma às necessidades reais do público no contexto da educação digital. Compreender o comportamento de aprendizagem, os concorrentes e as tendências do setor permite posicionar a solução de forma mais precisa, enquanto o plano de marketing orienta sua comunicação, distribuição e promoção, com foco em aquisição, retenção e consolidação da marca.
 
 <a id="51-executive-summary"></a>
 ## 5.1. Sumário executivo
 
-Kaisen é uma plataforma educacional descentralizada que integra inteligência artificial e blockchain para personalizar o aprendizado e certificar o conhecimento por meio de NFTs, garantindo autenticidade e portabilidade. Num contexto marcado pelo crescimento da aprendizagem informal e pela falta de validação confiável, Kaisen conecta autonomia, reconhecimento e colaboração, transformando a aprendizagem em uma experiência gamificada e acessível.
+Kaisen é uma plataforma educacional que integra inteligência artificial, aprendizagem colaborativa e certificação digital para transformar estudo informal em trajetórias estruturadas, compartilháveis e reconhecíveis. Em um contexto marcado pelo crescimento da aprendizagem autodirigida e pela fragmentação de conteúdos em diferentes ferramentas, a plataforma conecta organização, produtividade, reconhecimento e comunidade em uma experiência acessível e gamificada.
 
-Suas características distintivas incluem a organização automática de caminhos personalizados alimentados por IA, certificação digital imutável, uma economia simbólica para recompensas e incentivo à cocriação comunitária. A plataforma oferece uma alternativa inovadora às soluções educacionais tradicionais, democratizando o acesso à reputação digital baseada em conhecimento real.
+Seus principais diferenciais são a geração de trilhas personalizadas com base no conteúdo do próprio usuário, a possibilidade de colaboração e aprofundamento pela comunidade, a emissão de certificados digitais verificáveis e a monetização de trilhas criadas por especialistas e criadores. Com isso, a Kaisen propõe um modelo no qual aprender, organizar conhecimento e ensinar passam a gerar valor para quem consome e para quem cria.
 
-Seus objetivos estratégicos incluem: (i) personalizar a aprendizagem com base no conteúdo do usuário; (ii) promover a certificação pública e segura; (iii) estimular a curadoria colaborativa; e (iv) transformar a aprendizagem numa jornada gratificante e significativa.
+Seus objetivos estratégicos incluem: (i) personalizar a aprendizagem com base no conteúdo do usuário; (ii) tornar o conhecimento produzido e adquirido mais organizável e validável; (iii) estimular a curadoria colaborativa e a criação de trilhas de alta qualidade; e (iv) transformar a aprendizagem em uma jornada gratificante, recorrente e economicamente sustentável.
 
 <a id="52-market-analysis"></a>
 ## 5.2. Análise de Mercado
@@ -936,55 +936,61 @@ Seus objetivos estratégicos incluem: (i) personalizar a aprendizagem com base n
 <a id="521-industry-overview"></a>
 ### 5.2.1. Visão geral da indústria
 
-O mercado global de EdTech está a crescer rapidamente, impulsionado pela digitalização e pela procura de aprendizagem autónoma, e deverá ultrapassar os 400 mil milhões de dólares até 2025, de acordo com a HolonIQ. No Brasil, a expansão das certificações, da aprendizagem autodirigida e da gamificação é uma tendência consolidada.
+O mercado global de EdTech está em crescimento acelerado, impulsionado pela digitalização do ensino, pela popularização de ferramentas baseadas em IA e pela demanda crescente por aprendizagem autônoma. No Brasil, a educação online deixou de ser complementar e passou a ocupar um papel central na forma como estudantes e profissionais atualizam habilidades, especialmente em segmentos ligados à tecnologia, design e formação continuada.
 
-A integração da IA ​​com blockchain representa uma inovação promissora, permitindo uma personalização eficaz e uma certificação segura. Embora ainda emergente, espera-se que este modelo cresça, especialmente em áreas com elevada procura de reconhecimento informal, como tecnologia, design e educação continuada.
+Nesse cenário, há espaço para soluções que não se limitem à entrega de conteúdo pronto, mas que ajudem o usuário a transformar materiais dispersos em percursos de estudo estruturados. A integração de IA com mecanismos de organização, curadoria e certificação digital representa uma oportunidade relevante, especialmente em nichos com alta demanda por prova de competência prática e atualização constante.
 
 <a id="522-market-size-and-growth"></a>
 ### 5.2.2. Tamanho e crescimento do mercado
 
 O mercado brasileiro de educação online gerou receita de R$ 1,8 bilhão em 2023, com expectativa de crescimento médio anual de 16% até 2027, segundo a ABED. Espera-se que plataformas que combinem autonomia, gamificação e validação de conhecimento ganhem força em meio à insatisfação com modelos rígidos e à busca por formas mais acessíveis e significativas de aprender.
 
-Além disso, espera-se que o mercado educacional de NFT cresça à medida que aumenta a adoção de credenciais digitais descentralizadas. A IBM e a OCDE apontam que os certificados digitais verificáveis ​​são uma das principais tendências na validação de competências.
+Além do crescimento do setor como um todo, observa-se o aumento do valor atribuído a certificados digitais verificáveis, trilhas flexíveis de aprendizagem e soluções capazes de integrar estudo, prática e demonstração de competência. Esse movimento favorece plataformas como a Kaisen, que operam na interseção entre educação, produtividade, comunidade e reputação digital.
 
 <a id="523-market-trends"></a>
 ### 5.2.3. Tendências de mercado
 
-As tendências que impactam diretamente o mercado Kaisen incluem: a validação da aprendizagem informal, o fortalecimento da reputação digital e de portfólios verificáveis, o avanço de plataformas descentralizadas e autogeridas, a valorização de certificações com aplicação profissional, a personalização do ensino por meio de IA e a gamificação como estratégia de engajamento.
+As tendências que impactam diretamente o mercado da Kaisen incluem: a validação da aprendizagem informal, o fortalecimento da reputação digital e de portfólios verificáveis, o uso da inteligência artificial para personalização do estudo, a gamificação como mecanismo de retenção, o crescimento de comunidades de aprendizagem e a monetização de conhecimento criado por especialistas e criadores independentes.
 
 <a id="53-competitive-analysis"></a>
 ## 5.3. Análise Competitiva
 
 **Principais Concorrentes:**<br>
-Kaisen se posiciona contra diversos concorrentes. Os concorrentes diretos incluem plataformas como Coursera, Udemy e edX, focadas na educação formal online; Duolingo, com seu modelo de aprendizagem gamificado; e plataformas voltadas para tecnologia e mercado criativo, como Platzi, Alura e Rocketseat. Os concorrentes indiretos incluem plataformas como YouTube, Reddit, Notion e ferramentas como GPTs, Obsidian e Google Keep, que, embora não sejam plataformas de aprendizagem estruturadas, são amplamente utilizadas na aprendizagem autodirigida e na construção de conhecimento pessoal.
+Kaisen se posiciona em um espaço competitivo híbrido. Entre os concorrentes diretos estão NotebookLM, Coursera, Udemy, edX, Duolingo e plataformas de nicho como Alura, Rocketseat e Platzi. Esses produtos competem pela atenção do mesmo usuário, seja por oferecer organização de conteúdo com IA, seja por oferecer cursos estruturados e experiências de aprendizagem recorrentes. Entre os concorrentes indiretos ou substitutos estão YouTube, Reddit, Notion, GPTs, Obsidian e outras ferramentas utilizadas para estudar, organizar anotações e revisar conhecimento sem uma proposta educacional integrada.
 
 **Vantagens Competitivas do Aplicativo Web:**<br>
-A principal vantagem competitiva da Kaisen é seu modelo de certificação integrado via NFTs – imutáveis, verificáveis ​​e compartilháveis ​​– combinado com IA que estrutura trilhas personalizadas com base no conteúdo do próprio usuário. Além disso, a economia de tokens como forma de recompensa, a curadoria da comunidade e o foco na reputação digital, mais do que apenas na entrega de conteúdo, solidificam sua diferenciação de mercado.
+A principal vantagem competitiva da Kaisen está em combinar personalização baseada no conteúdo do usuário com comunidade, certificação digital e monetização de trilhas. Diferentemente de plataformas centradas apenas em cursos prontos ou de ferramentas focadas apenas em organização pessoal, a Kaisen conecta criação, consumo, validação e compartilhamento de conhecimento em uma mesma experiência. Esse posicionamento permite competir não apenas pela entrega de conteúdo, mas pela capacidade de transformar estudo em reputação, recorrência e valor econômico para criadores.
 
 <a id="54-target-audience"></a>
 ## 5.4. Público-alvo
 
-O público-alvo da plataforma Kaisen são principalmente jovens com idades entre 16 e 35 anos, incluindo estudantes, desenvolvedores e freelancers. Este grupo valoriza a autonomia no processo de aprendizagem, procura o reconhecimento formal das competências adquiridas informalmente e está interessado em métodos de aprendizagem inovadores. Psicograficamente, esses indivíduos desejam flexibilidade, autonomia e validação de suas habilidades. Comportamentalmente, estão familiarizados com tecnologias como IA, Web3 e plataformas digitais colaborativas, o que os torna naturalmente receptivos à abordagem Kaisen.
+O público-alvo da plataforma Kaisen é formado principalmente por jovens de 16 a 30 anos, com foco inicial em estudantes, desenvolvedores iniciantes, freelancers e outros perfis ligados à área de tecnologia. Trata-se de um grupo que valoriza autonomia no processo de aprendizagem, utiliza conteúdo digital com frequência e busca maneiras mais concretas de organizar, demonstrar e aprofundar suas competências.
+
+Do ponto de vista psicográfico, são usuários que desejam flexibilidade, reconhecimento e progresso visível. Do ponto de vista comportamental, já utilizam ferramentas digitais para estudar, pesquisar e produzir conhecimento, o que os torna receptivos a uma solução que una IA, comunidade, gamificação e certificação digital. Dentro desse público, há uma dinâmica complementar: usuários mais experientes tendem a criar trilhas e monetizar conhecimento, enquanto estudantes e iniciantes tendem a consumir esse conteúdo e evoluir a partir dele.
 
 <a id="55-positioning"></a>
 ## 5.5. Posicionamento
 
-A proposta de valor da Kaisen ? ser a primeira plataforma educacional descentralizada que permite aos usu?rios criar trilhas de aprendizagem personalizadas impulsionadas por intelig?ncia artificial, validar seus conhecimentos por meio de NFTs e compartilhar sua reputa??o digital de forma p?blica, segura e transparente. A estratégia de diferenciação centra-se na inversão do modelo tradicional: em vez de depender de conteúdos pré-formatados, Kaisen organiza e potencia o conhecimento já adquirido pelo utilizador, transformando esse conteúdo numa viagem significativa com a ajuda da IA. O sistema de certificação NFT e a curadoria coletiva garantem autenticidade, colaboração e uma reputação verificável para os usuários.
+A proposta de valor da Kaisen é ser uma plataforma educacional que permite aos usuários criar trilhas de aprendizagem personalizadas com apoio de inteligência artificial, validar seus avanços com certificados digitais e compartilhar conhecimento de forma estruturada, colaborativa e economicamente viável. Sua diferenciação está em inverter a lógica tradicional do ensino digital: em vez de depender apenas de catálogos fechados de cursos, a plataforma organiza e potencializa o conhecimento que o próprio usuário já possui ou deseja aprofundar.
+
+Com isso, a Kaisen se posiciona como uma ponte entre estudo autônomo, criação de conteúdo e reputação profissional. O foco da marca está menos em vender apenas acesso a conteúdo e mais em oferecer uma infraestrutura para aprender, provar competências, colaborar com a comunidade e gerar valor a partir do conhecimento compartilhado.
 
 <a id="56-marketing-strategy"></a>
 ## 5.6. Estratégia de Marketing
 
 **Produto:**<br>
-Kaisen é uma plataforma web educacional gamificada que integra inteligência artificial, blockchain e NFTs. Seu principal diferencial está na capacidade de criar trilhas de aprendizagem personalizadas com base nos conteúdos e interesses do usuário, transformando o conhecimento em uma jornada interativa e significativa. Além disso, a plataforma emite certificados digitais em formato NFT, oferecendo prova de aprendizagem imutável. Para fortalecer o engajamento, existe uma loja de recompensas com itens como skins e ferramentas que podem ser adquiridos por meio da economia simbólica. Outro componente essencial é a presença de uma comunidade ativa e de coautoria, que contribui para a curadoria dos caminhos, valida conteúdos e promove uma experiência de aprendizagem colaborativa.
+Kaisen é uma plataforma web educacional gamificada que integra inteligência artificial, organização de conhecimento, comunidade e certificação digital. Seu principal diferencial está na capacidade de criar trilhas de aprendizagem personalizadas com base nos conteúdos e interesses do usuário, transformando materiais dispersos em uma jornada interativa e significativa. A plataforma também permite que criadores publiquem trilhas, disponibilizem partes gratuitas ou pagas e monetizem o conhecimento compartilhado. Como complemento, a experiência inclui recursos de engajamento, histórico de progresso, perfis de usuário, assistente virtual e mecanismos de colaboração comunitária.
 
 **Preço:**<br>
-A plataforma adota um modelo de negócios freemium, oferecendo acesso gratuito aos recursos básicos do Kaisen. Recursos avançados como personalizações, caminhos premium, documentos privados, limites de upload mais altos e acesso a recursos avançados de IA (“Kaisen Pro”) são desbloqueados por meio do token da plataforma, $KOIN. A certificação NFT é gratuita para usuários que concluírem as trilhas, criando um ecossistema que valoriza o mérito e o envolvimento do usuário sem criar barreiras financeiras ao aprendizado.
+A plataforma adota um modelo de negócios freemium, oferecendo acesso gratuito aos recursos básicos e uma camada premium denominada Kaisen Pro, com assinatura mensal de R$44,90. Os recursos pagos incluem personalizações, documentos privados, maiores limites de uso, acesso ampliado à IA e funcionalidades avançadas de estudo e produtividade. Além disso, a plataforma pode capturar valor por meio da comercialização de trilhas da comunidade, com uma taxa aplicada sobre transações realizadas entre criadores e consumidores. Esse modelo permite combinar acessibilidade inicial com diversificação de receita.
 
 **Local:**<br>
-A distribuição da plataforma será estratégica, com lançamento inicial em comunidades digitais e hubs de inovação com foco em tecnologia e educação. Kaisen também buscará parcerias com bootcamps, hackathons, escolas técnicas e iniciativas relacionadas ao universo Web3. A presença em eventos de tecnologia e educação – tanto online quanto presenciais – será essencial para promover a plataforma, estabelecer conexões com educadores e desenvolvedores e atrair usuários inovadores dispostos a experimentar novos métodos de aprendizagem.
+A distribuição da plataforma será concentrada inicialmente em canais digitais e comunidades com forte aderência ao perfil do público-alvo. O lançamento e a divulgação devem priorizar ecossistemas de tecnologia, ensino online, criadores de conteúdo educacional, bootcamps, hackathons, escolas técnicas e comunidades de estudantes. A presença em eventos de tecnologia e educação, tanto online quanto presenciais, também será importante para gerar reconhecimento de marca, validar a proposta com usuários reais e formar parcerias de distribuição e conteúdo.
 
 **Promoção:**<br>
-A promoção de Kaisen se concentrará no marketing de conteúdo e no envolvimento da comunidade. Serão produzidos artigos, vídeos e posts sobre temas como reputação digital, validação de competências, inteligência artificial e novas formas de aprender de forma independente. A marca estará presente em redes como Twitter, Telegram e Discord, onde as conversas sobre Web3 e tecnologia educacional são mais ativas. Além disso, a plataforma fará parceria com influenciadores do mundo da tecnologia e da educação, que poderão compartilhar suas experiências com a Kaisen e aumentar a credibilidade da marca. Campanhas de storytelling com histórias reais de usuários – mostrando como Kaisen impactou seu aprendizado ou trajetória profissional – fortalecerão a conexão emocional com o público e destacarão o valor transformador da proposta.
+A promoção da Kaisen se concentrará em marketing de conteúdo, demonstração de uso do produto e ativação de comunidade. Serão produzidos artigos, vídeos curtos, posts e estudos de caso sobre temas como produtividade no estudo, aprendizagem com IA, organização de conhecimento, construção de portfólio e desenvolvimento de competências em tecnologia. A marca deverá atuar principalmente em Instagram e Twitter/X, além de parcerias com criadores de conteúdo e influenciadores dos setores de tecnologia e educação.
+
+Outra frente relevante será o uso de storytelling com histórias reais de estudantes e criadores, destacando como a Kaisen ajuda a transformar conhecimento disperso em trilhas de aprendizagem, resultados concretos e possíveis fontes de renda. Essa estratégia reforça a proposta de valor da plataforma e aproxima a comunicação das dores reais do público. Como foco inicial, a prioridade do marketing deve estar menos em escala imediata e mais em validação de posicionamento, atração dos primeiros usuários recorrentes e formação de uma base ativa de criadores e consumidores.
 
 <a id="6-conclusions-and-future-work"></a>
 # 6. Conclusões e trabalhos futuros
@@ -1021,3 +1027,4 @@ GONZÁLEZ, R.; MORALES, F. Como a IA impacta a validação do conhecimento. Pré
 SMITH, L.; JONES, A. A lacuna de credibilidade no conteúdo educacional gerado por IA. Pré-impressão arXiv, 2024. Disponível em: https://arxiv.org/pdf/2406.18900. Acesso em: 04 de julho de 2025.
 
 TECNOLOGIA. 8 principais cursos de certificação de blockchain a serem seguidos. TechTarget, 2023. Disponível em: https://www.techtarget.com/whatis/feature/8-top-blockchain-certification-courses-to-pursue. Acesso em: 04 de julho de 2025.
+
