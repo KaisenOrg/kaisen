@@ -13,1022 +13,1018 @@
 
 <img src="assets/intro/header-bottom.png">
 
-## Table of Contents
+<a id="table-of-contents"></a>
+## Índice
 
 <details>
-  <summary><a href="#1-introduction">1. Introduction</a></summary>
+<summary><a href="#1-introduction">1. Introdução</a></summary>
 </details>
 
 <details>
-  <summary><a href="#2-application-overview">2. Application Overview</a></summary>
+<summary><a href="#2-application-overview">2. Visão geral do aplicativo</a></summary>
   <ul>
     <li>
-      <a href="#21-project-scope">2.1. Project Scope</a>
+<a href="#21-project-scope">2.1. Escopo do Projeto</a>
       <ul>
-        <li><a href="#211-porter-5-forces-model">2.1.1. Porter's 5 Forces Model</a></li>
-        <li><a href="#212-swot-analysis-of-partner-institution">2.1.2. SWOT Analysis of Partner Institution</a></li>
-        <li><a href="#213-solution">2.1.3. Solution</a></li>
-        <li><a href="#214-value-proposition-canvas">2.1.4. Value Proposition Canvas</a></li>
-        <li><a href="#216-business-model-canvas">2.1.5. Business Model Canvas</a></li>
+<li><a href="#211-porter-5-forces-model">2.1.1. Modelo das 5 Forças de Porter</a></li>
+<li><a href="#212-swot-analysis-of-partner-institution">2.1.2. Análise SWOT da Instituição Parceira</a></li>
+<li><a href="#213-solution">2.1.3. Solução</a></li>
+<li><a href="#214-value-proposition-canvas">2.1.4. Tela de proposta de valor</a></li>
+<li><a href="#216-business-model-canvas">2.1.5. Tela de modelo de negócios</a></li>
       </ul>
     </li>
-    <li><a href="#22-personas">2.2. Personas</a></li>
+<li><a href="#22-personas">2.2. Personagens</a></li>
   </ul>
 </details>
 
 <details>
-  <summary><a href="#3-application-project">3. Application Project</a></summary>
+<summary><a href="#3-application-project">3. Projeto de Aplicação</a></summary>
   <ul>
-    <li><a href="#31-architecture-diagram">3.1. Architecture Diagram</a></li>
-    <li><a href="#32-style-guide">3.2. Style Guide</a></li>
+<li><a href="#31-architecture-diagram">3.1. Diagrama de Arquitetura</a></li>
+<li><a href="#32-style-guide">3.2. Guia de estilo</a></li>
     <ul>
-      <li><a href="#321-colors">3.2.1. Colors</a></li>
-      <li><a href="#322-typography">3.2.2. Typography</a></li>
-      <li><a href="#323-iconography-and-images">3.2.3. Iconography and Images</a></li>
+<li><a href="#321-colors">3.2.1. Cores</a></li>
+<li><a href="#322-typography">3.2.2. Tipografia</a></li>
+<li><a href="#323-iconography-and-images">3.2.3. Iconografia e Imagens</a></li>
     </ul>
-    <li><a href="#33-high-fidelity-prototype">3.3. High-Fidelity Prototype</a></li>
-    <li><a href="#34-data-modeling-on-chain">3.4. Data Modeling (On-Chain)</a></li>
+<li><a href="#33-high-fidelity-prototype">3.3. Protótipo de alta fidelidade</a></li>
+<li><a href="#34-data-modeling-on-chain">3.4. Modelagem de dados (on-chain)</a></li>
     <ul>
-      <li><a href="#341-smart-contracts-logic-on-chain">3.4.1. Smart Contracts Logic (On-Chain)</a></li>
+<li><a href="#341-smart-contracts-logic-on-chain">3.4.1. Lógica de contratos inteligentes (on-chain)</a></li>
     </ul>
   </ul>
 </details>
 
 <details>
-  <summary><a href="#4-application-development">4. Application Development</a></summary>
+<summary><a href="#4-application-development">4. Desenvolvimento de Aplicativos</a></summary>
   <ul>
-    <li><a href="#41-first-version-of-the-application-mvp">4.1. First Version of the Application</a></li>
-    <li><a href="#42-second-version-of-the-application-mvp">4.2. Second Version of the Application</a></li>
+<li><a href="#41-first-version-of-the-application-mvp">4.1. Primeira versão do aplicativo</a></li>
+<li><a href="#42-second-version-of-the-application-mvp">4.2. Segunda versão do aplicativo</a></li>
   </ul>
 </details>
 
 <details>
-  <summary><a href="#5-market-study-and-marketing-plan">5. Market Study and Marketing Plan</a></summary>
+<summary><a href="#5-market-study-and-marketing-plan">5. Estudo de Mercado e Plano de Marketing</a></summary>
   <ul>
-    <li><a href="#51-executive-summary">5.1. Executive Summary</a></li>
-    <li><a href="#52-market-analysis">5.2. Market Analysis</a></li>
-    <li><a href="#53-competitive-analysis">5.3. Competitive Analysis</a></li>
-    <li><a href="#54-target-audience">5.4. Target Audience</a></li>
-    <li><a href="#55-positioning">5.5. Positioning</a></li>
-    <li><a href="#56-marketing-strategy">5.6. Marketing Strategy</a></li>
+<li><a href="#51-executive-summary">5.1. Resumo Executivo</a></li>
+<li><a href="#52-market-analysis">5.2. Análise de Mercado</a></li>
+<li><a href="#53-competitive-analysis">5.3. Análise Competitiva</a></li>
+<li><a href="#54-target-audience">5.4. Público-alvo</a></li>
+<li><a href="#55-positioning">5.5. Posicionamento</a></li>
+<li><a href="#56-marketing-strategy">5.6. Estratégia de Marketing</a></li>
   </ul>
 </details>
 
 <details>
-  <summary><a href="#6-conclusions-and-future-work">6. Conclusions and Future Work</a></summary>
+<summary><a href="#6-conclusions-and-future-work">6. Conclusões e trabalhos futuros</a></summary>
 </details>
 
 <details>
-  <summary><a href="#7-references">7. References</a></summary>
+<summary><a href="#7-references">7. Referências</a></summary>
 </details>
 
 <details>
-  <summary><a href="#8-appendices">8. Appendices</a></summary>
+<summary><a href="#8-appendices">8. Apêndices</a></summary>
 </details>
 
-# 1. Introduction
+<a id="1-introduction"></a>
+# 1. Introdução
 
-Kaisen is a decentralized educational platform that transforms the way people learn, gather, and validate knowledge. By integrating artificial intelligence and blockchain technology, the app offers an innovative and seamless experience where users not only study in a personalized way but also publicly demonstrate their progress through immutable digital certifications.
+Kaisen é uma plataforma educacional descentralizada que transforma a forma como as pessoas aprendem, coletam e validam conhecimento. Ao integrar inteligência artificial e tecnologia blockchain, o aplicativo oferece uma experiência inovadora e integrada, onde os usuários não apenas estudam de forma personalizada, mas também demonstram publicamente seu progresso por meio de certificações digitais imutáveis.
 
-In practice, the process begins when users send content such as PDFs, notes, or articles directly to Kai—the platform's intelligent virtual assistant. From this material, Kai generates interactive flashcards, quizzes, summaries, and personalized study paths, facilitating targeted and efficient learning. Upon completing their study journey, users can validate the knowledge acquired through an NFT certificate, which reliably and transparently attests to their mastery of the training content.
+Na prática, o processo começa quando os usuários enviam conteúdos como PDFs, notas ou artigos diretamente para o Kai – assistente virtual inteligente da plataforma. A partir desse material, Kai gera flashcards interativos, questionários, resumos e roteiros de estudo personalizados, facilitando um aprendizado direcionado e eficiente. Ao concluir a jornada de estudos, o usuário pode validar os conhecimentos adquiridos por meio de um certificado NFT, que atesta de forma confiável e transparente o domínio do conteúdo do treinamento.
 
-Furthermore, Kaisen promotes knowledge sharing, where users, after completing their paths, can make them publicly available with the training content, allowing others to benefit from the journey. To further enrich this exchange, community members can contribute supplementary materials to existing trails, while the trail creator retains the autonomy to accept all, some, or none of the contributions. This promotes active curation and ensures the quality of shared resources.
+Além disso, Kaisen promove a partilha de conhecimento, onde os utilizadores, após completarem os seus percursos, podem disponibilizá-los publicamente com o conteúdo da formação, permitindo que outros beneficiem da jornada. Para enriquecer ainda mais este intercâmbio, os membros da comunidade podem contribuir com materiais suplementares para os trilhos existentes, enquanto o criador do trilho mantém a autonomia para aceitar todas, algumas ou nenhuma das contribuições. Isso promove a curadoria ativa e garante a qualidade dos recursos compartilhados.
 
-The Kaisen community plays a central role in collaboration and engagement. If a user needs help developing a trail, they can share their request with the community via a post with just one click. These complaints are posted both in the post area and directly on the trail itself, but clearly state that the trail is open for improvement. When a contribution is made, the trail creator can evaluate it and decide whether to accept it.
+A comunidade Kaisen desempenha um papel central na colaboração e no envolvimento. Se um usuário precisar de ajuda para desenvolver uma trilha, ele poderá compartilhar sua solicitação com a comunidade por meio de uma postagem com apenas um clique. Essas reclamações são postadas tanto na área do posto quanto diretamente na própria trilha, mas deixam claro que a trilha está aberta para melhorias. Quando uma contribuição é feita, o criador da trilha pode avaliá-la e decidir se a aceita.
 
-The token reward system encourages active participation. Users accumulate tokens by interacting meaningfully—whether by answering questions correctly, completing trails, contributing content, helping other users, or interacting with the community with feedback and suggestions. Additionally, you can earn tokens by recommending a platform to friends using a unique code: new users enter this code when registering, ensuring that those who wish to receive it receive a reward. Posts on the platform's internal Twitter account also earn tokens, encouraging publicity and social participation.
+O sistema de recompensa simbólica incentiva a participação ativa. Os usuários acumulam tokens interagindo de forma significativa, seja respondendo perguntas corretamente, completando trilhas, contribuindo com conteúdo, ajudando outros usuários ou interagindo com a comunidade com feedback e sugestões. Além disso, você pode ganhar tokens recomendando uma plataforma a amigos por meio de um código único: novos usuários inserem esse código no momento do cadastro, garantindo que quem desejar recebê-lo receberá uma recompensa. As postagens na conta interna da plataforma no Twitter também ganham tokens, incentivando a publicidade e a participação social.
 
-Kaisen also values building digital trust and connections between users. You can access other members' profiles, view their posts, selected tracks, published tracks, and contributions to the community. Clicking on a user's name in any post opens their profile, making it easier to see their history and follow their work.
+Kaisen também valoriza a construção de confiança digital e conexões entre os usuários. Você pode acessar os perfis de outros membros, visualizar suas postagens, faixas selecionadas, faixas publicadas e contribuições para a comunidade. Clicar no nome de um usuário em qualquer postagem abre seu perfil, facilitando a visualização de seu histórico e o acompanhamento de seu trabalho.
 
-Finally, to make learning more fun and motivating, earned tokens can be used in the Kai Store—an interactive environment where you can unlock mascot options with exclusive skins, as well as special tools to enhance the learning and content creation experience.
+Por fim, para tornar o aprendizado mais divertido e motivador, os tokens ganhos podem ser usados ​​na Kai Store – um ambiente interativo onde você pode desbloquear opções de mascotes com skins exclusivas, além de ferramentas especiais para aprimorar a experiência de aprendizado e criação de conteúdo.
 
-In this way, Kaisen establishes itself as an intelligent, collaborative, and rewarding learning environment—where every achievement is recorded, every contribution is valued, and knowledge is transformed into rewards, recognition, and real rewards.
+Dessa forma, Kaisen se estabelece como um ambiente de aprendizagem inteligente, colaborativo e gratificante – onde cada conquista é registrada, cada contribuição é valorizada e o conhecimento é transformado em recompensas, reconhecimento e recompensas reais.
 
-# 2. Application Overview
+<a id="2-application-overview"></a>
+# 2. Visão geral do aplicativo
 
-## 2.1. Project Scope
+<a id="21-project-scope"></a>
+## 2.1. Escopo do Projeto
 
-### 2.1.1. Porter's 5 Forces Model
+<a id="211-porters-5-forces-model"></a>
+### 2.1.1. Modelo das 5 Forças de Porter
 
-The education industry faces growing challenges, such as the low quality of teaching and the difficulty of reliably proving learning. According to UNESCO, millions of young people still do not have access to adequate education, while the job market evolves rapidly and demands constant professional development. In addition, the lack of effective means—digital or physical—to validate knowledge hinders the advancement of many individuals.
+O mercado de EdTech brasileiro, avaliado em US$6 bilhões em 2025 com crescimento projetado de 11,12% CAGR até 2034, apresenta alta atratividade estratégica para o Kaisen apesar da intensa concorrência. Esta análise detalhada das Cinco Forças de Porter revela um cenário de rivalidade competitiva extremamente alta, em que a plataforma Alura domina com 1,2 milhão de usuários pagantes a R$85/mês, DIO possui 500 mil usuários no plano Pro de R$59/mês com parcerias de emprego, Rocketseat atende 100 mil desenvolvedores premium a R$183/mês e Udemy alcança 5 milhões de brasileiros com cursos individuais de R$29-99.
 
-In this context, Kaisen emerges as an innovative solution by combining artificial intelligence and blockchain to personalize learning and ensure the secure validation of knowledge through immutable digital certificates (NFTs). By facilitating learning, transparent certification, and collaborative sharing, Kaisen offers an effective alternative to the limitations of the traditional education model, expanding access and trust in the educational process.
+A **ameaça de novos entrantes** é moderada-alta devido às baixas barreiras técnicas. A equipe interna de profissionais especializados para validação de conteúdos iniciais cria credibilidade técnica diferenciada, o uso da Inteligência Artificial que estabelece uma vantagem competitiva significativa. Dados da Liga Ventures indicam que 70% das 425+ startups EdTech falham no primeiro ano por falta de tração comunitária, dando ao Kaisen uma janela de 18 meses de moat competitivo.
 
-In this scenario, Porter's Five Forces analysis is applied—an essential tool for assessing the competitive environment and understanding the factors that influence the dynamics of the sector.
+O **poder de barganha dos clientes** é muito alto, diversos desenvolvedores usam alternativas gratuitas dominantes como YouTube (80% dos iniciantes), ChatGPT Edu (70% uso diário) e freeCodeCamp. O Kaisen mitiga essa pressão com freemium agressivo de textos ilimitados grátis, preço 47% inferior à Alura (R$44,90 vs R$85), IA que disponibiliza mais funcionalidades para o usuário e certificados emitidos para comprovar o conhecimento.
 
-<div align="center">
+A **ameaça de substitutos** é alta, com produtos diretos como trilhas Alura (IA básica) e bootcamps DIO competindo contra alternativas indiretas gratuitas que capturam 80% do mercado. O Kaisen se posiciona com o uso da IA (geração de vídeos, quizzes, etc), revenue share de 75% para criadores de trilhas pagas (superior aos 50% da Udemy), colaboração GitHub-like com fork/melhorias comunitárias e certificação.
 
-<sub>Figure 1 - Porter's 5 Forces Model</sub>
+Finalmente, o **poder de barganha dos fornecedores** é moderado, isso porque, embora as APIs de IA representem 70% dos custos variáveis operacionais, o mercado de inteligência artificial tornou-se altamente commoditizado em 2026, oferecendo múltiplas alternativas intercambiáveis com preços competitivos e sem lock-in tecnológico. Esta commoditização reduz drasticamente o poder individual de qualquer fornecedor, permitindo ao Kaisen migrar entre provedores sem impacto significativo nos custos ou na qualidade do serviço.
 
-<img src="assets/business/five-forces.png" width="100%">
+### 2.1.2. Análise SWOT da Instituição Parceira
 
-<sup>Source: Material produced by the authors (2025)</sup>
+A análise SWOT do Kaisen revela um posicionamento estratégico sólido no nicho de tecnologia, com forças técnicas e de precificação que contrabalançam fraquezas operacionais iniciais, aproveitando oportunidades de mercado em expansão enquanto mitiga ameaças competitivas através de diferenciação clara em revenue share e validação de conteúdos pela comunidade. Os seus principais pontos fortes residem na personalização da aprendizagem, no envolvimento da comunidade e na construção da reputação digital, todos alinhados com as tendências emergentes na educação.
 
-</div>
+###### Forças (Strengths)
 
-**Competitor Rivalry – High**<br>
-The online education platform market is booming, driven by giants such as Coursera, Udemy, Duolingo, and Khan Academy, which reach millions of users around the world. This diversity of alternatives increases the competition for attention and engagement. To differentiate itself in this scenario, Kaisen adopts a unique proposal: it combines personalized artificial intelligence with immutable validation of knowledge via blockchain. This approach creates a qualitative barrier that reduces the direct impact of traditional competition and positions the platform as a reference in educational innovation.
+O preço da plataforma do Kaisen representa 47% do valor da Alura e 76% do DIO Pro, criando barreira imediata de entrada para concorrentes genéricos e acelerando conversão freemium projetada em 15-20%, padrão comprovado no setor. A validação de conteúdos iniciais com profissionais experientes e qualificados garante credibilidade técnica, mas com 100% de controle operacional e custo previsível de R$3 mil/mês. O modelo de revenue share de 75% para criadores de trilhas pagas é superior aos 50% da Udemy, estabelecendo incentivo econômico poderoso que atrai 20% dos desenvolvedores como criadores de conteúdo, gerando efeito rede viral onde cada trilha monetizada recruta novos autores.
 
-**Threat of new entrants – Moderate**<br>
-The threat of new entrants is moderate because, despite the ease of entry into the digital sector, developing a platform that integrates AI, blockchain, gamification, and knowledge validation requires technical expertise, investment in infrastructure, and educational credibility. These requirements create technological and trust barriers, thus making it difficult for new participants with similar proposals to enter and protecting the position of the Kaisen platform in the market.
+###### Fraquezas (Weaknesses)
 
-**Threat of substitute products – High**<br>
-The threat of substitute products is high, as users may opt for informal solutions, such as YouTube videos, e-books, forums, or free podcasts. These alternatives, although accessible, lack pedagogical structure, valid certification, and engagement mechanisms. To overcome this scenario, the Kaisen platform relies on a personalized learning journey based on artificial intelligence and the immutable validation of knowledge through NFTs—a significant differentiator that is not easily replicable by traditional or informal substitutes.
+A ausência total de tração inicial coloca o Kaisen em desvantagem competitiva frente à Alura (1,2M usuários), DIO (500k) e Rocketseat (100k), exigindo investimento agressivo de marketing para alcançar 1.000 usuários freemium em 6 meses, com CAC projetado de R$25/usuário. A dependência de APIs de IA para 70% dos custos variáveis cria vulnerabilidade a flutuações de preço, embora mitigada por multi-provedores, impactando margens brutas nos primeiros 12 meses. O controle interno da validação de conteúdos, embora economicamente vantajoso, carece do peso de marca institucional.
 
-**Bargaining power of customers – High**<br>
-Given the wide range of free or low-cost educational resources available, users have a high level of choice and demand clear value in their decisions. To reduce this pressure, Kaisen invests in the user experience by offering a gamified, transparent platform focused on digital reputation through certified NFTs. This value proposition strengthens loyalty, increases engagement, and transforms the user into an active agent in their own educational development.
+###### Oportunidades (Opportunities)
 
-**Supplier Bargaining Power – Moderate**<br>
-Dependence on external technological infrastructure and tools—such as AI APIs and blockchain networks—can increase suppliers’ bargaining power and impact operating costs. To mitigate this risk, Kaisen adopts a service decentralization strategy, prioritizing scalable, interoperable solutions that allow flexibility in choosing partners. With this, the platform ensures technical autonomy and greater resilience in the face of fluctuations in the supplier market.
+O mercado EdTech brasileiro cresce continuamente, com nicho tech impulsionado por 200 mil vagas anuais em programação (JavaScript/Node/React), onde apenas 30% dos desenvolvedores conseguem certificação formal, criando demanda imediata por trilhas estruturadas acessíveis. A tendência de IA generativa em educação (40% das plataformas em 2026) favorece o modelo freemium do Kaisen (textos grátis, vídeos/quizzes pagos), alinhando-se perfeitamente à evolução de APIs como Groq Llama3. O crescimento do UGC colaborativo abre espaço para revenue share diferenciado, onde 15% dos desenvolvedores já criam conteúdo informalmente mas sem monetização estruturada.
 
-### 2.1.2. SWOT Analysis of Partner Institution
+###### Ameaças (Threats)
 
-The SWOT analysis is a widely used tool for planning and mapping out various solutions. It helps in understanding how a company, brand, product, or service positions itself in the market by identifying its strengths and weaknesses (internal factors), as well as opportunities and threats (external factors). Below is the analysis of the developed solution.
+A evolução acelerada de IA gratuita como ChatGPT Edu e Google Gemini commoditiza vídeos e quizzes básicos, fazendo 70% dos usuários freemium permanecerem sem upgrade, pois questionam "para que pagar R$44,90 se consigo conteúdo similar de graça?", forçando o Kaisen a diferenciar-se exclusivamente por colaboração avançada GitHub-like e certificação técnica. Finalmente, lentidão de APIs IA como Groq (latência real 2-5s) compromete a experiência paga, pois 30% dos usuários abandonam plataformas que apresentam lentidão no momento de interação, destruindo conversão freemium-paga de 15-20%.
 
-<div align="center">
 
-<sub>Figure 2 - Swot Analysis Model</sub>
+Contudo, o projeto enfrenta desafios relacionados à sua estrutura interna e ao atual nível de maturidade do mercado. A falta de tração inicial e validação de mercado, combinada com a curva de adoção das tecnologias envolvidas, apresenta obstáculos reais à expansão generalizada e à aceitação dos utilizadores. A disponibilidade limitada de recursos técnicos e financeiros, juntamente com a ausência de certificação institucional formalmente reconhecida, reforça a necessidade de uma estratégia sólida de entrada no mercado que priorize a facilidade de uso, testes com usuários reais e parcerias estratégicas.
 
-<img src="assets/business/swot-analysis.png" width="100%">
+As oportunidades externas são claras, especialmente com o valor crescente atribuído à aprendizagem autodirigida, à reputação digital e às comunidades colaborativas. No entanto, o projeto deve superar ameaças como a saturação do mercado edtech e o ceticismo em relação a tecnologias.
 
-<sup>Source: Material produced by the authors (2025)</sup>
+Portanto, para garantir a sustentabilidade da solução, é essencial validá-la em nichos específicos, modularizar a sua complexidade tecnológica e desenvolver um plano de marketing que comunique claramente o seu valor único de forma acessível e focada no utilizador.
 
-</div>
+<a id="213-solution"></a>
+### 2.1.3. Solução
 
-**Strengths:**<br>
+**Problema a ser resolvido:** <br>
+O modelo educacional tradicional é centralizado, caro e ineficiente no fornecimento de provas detalhadas e verificáveis ​​do conhecimento individual. Além disso, os certificados actualmente utilizados são frágeis e a aprendizagem é tratada como um produto e não como um ecossistema colaborativo. Consequentemente, faltam mecanismos eficazes para validar o conhecimento, bem como incentivos limitados para a partilha e colaboração dentro da comunidade.
 
-- Unique integration of AI, gamification, and NFTs.
-- True learning personalization through an intelligent assistant.
-- Decentralized and transparent knowledge validation.
-- Digital reputation system.
-- Active and collaborative community.
-- Multidisciplinary team with a strong technological vision.
+**Dados disponíveis:** <br>
+A plataforma oferece uma ampla variedade de conteúdos educacionais, disponíveis em diversos formatos, como PDFs, artigos, trabalhos de pesquisa e documentação técnica. Além disso, são coletados dados relevantes, como padrões e preferências de aprendizagem do usuário, métricas de envolvimento da comunidade e registros de validação baseados em blockchain. É importante destacar que a plataforma utiliza tanto conteúdo gerado pelo usuário quanto materiais de aprendizagem processados ​​por inteligência artificial (IA), criando assim um repositório de conhecimento abrangente e dinâmico.
 
-**Weaknesses:**<br>
+**Solução proposta:** <br>
+Kaisen é o primeiro protocolo de conhecimento descentralizado que transforma a aprendizagem – antes um processo de consumo passivo – em uma experiência criativa, colaborativa e valiosa. A solução combina caminhos de aprendizagem personalizados com tecnologias de IA e validação de blockchain, criando um verdadeiro “GitHub of Knowledge”.
 
-- Limited financial and technical resources.
-- Adoption curve of the chosen technologies (AI, NFT, Web3).
-- Lack of initial traction and market validation.
-- Risk of dependency on third-party technologies (e.g., blockchain networks, third-party AIs).
-- Absence of institutional support or formally recognized certification.
+Os usuários inserem matérias-primas (como PDFs, tópicos e links), que são processadas por Kai, um assistente de IA. A partir desse processamento, Kai gera trilhas de aprendizagem personalizadas. Se preferir, o usuário também pode criar sua trilha manualmente. Essas faixas podem ser publicadas, bifurcadas e melhoradas pela comunidade, resultando em um repositório vivo e em constante evolução, validado por certificados NFT e incentivado pela economia de tokens $KOIN.
 
-**Opportunities:**<br>
+**Como usar a solução:** <br>
+- Entrada de Conteúdo: O usuário envia documentos ou define temas de interesse da Kai.
+- Geração de caminhos: a IA, ou o próprio usuário, cria caminhos de aprendizagem personalizados que incluem questionários, flashcards e conteúdo interativo.
+- Processo de aprendizagem: os usuários progridem nos caminhos com o apoio do tutor de IA.
+- Colaboração da Comunidade: Após a conclusão, os caminhos podem ser publicados e melhorados pela comunidade através de bifurcação.
+- Validação: A conclusão do processo de aprendizagem é certificada por NFTs “mineráveis”, servindo como prova de aprendizagem.
+- Incentivo: os usuários são recompensados ​​com tokens $KOIN por criar conteúdo de qualidade, completar caminhos e colaborar com a comunidade.
 
-- Expansion of decentralized education.
-- Growth of peer-to-peer learning communities.
-- Increasing interest in self-directed learning.
-- Education as a reputational asset (public curriculum).
-- Partnerships with innovative platforms and institutions.
+**Benefícios esperados:** <br>
+- Democratização do acesso à educação personalizada e baseada na IA.
+- Credenciais de conhecimento verificáveis ​​e portáteis, protegidas por certificados blockchain.
+- Criação de um ecossistema colaborativo de conhecimento, com conteúdos continuamente aprimorados pela comunidade.
+- Estabelecimento de um modelo de incentivo sustentável que valorize o aprendizado e o compartilhamento.
+- Redução dos custos educacionais e ampliação do acesso à educação.
+- Fortalecer a reputação digital e o reconhecimento profissional através de conquistas certificadas.
 
-**Threats:**<br>
+**Critérios de sucesso e como será avaliado:** <br>
+- Engajamento do usuário: medido pelo número de caminhos criados, concluídos e bifurcados mensalmente.
+- Crescimento da Comunidade: Avaliado com base no número de usuários ativos e taxa de retenção (meta: mais de 5.000 usuários ativos no primeiro ano).
+- Qualidade do conhecimento: verificada por meio de análises da comunidade e métricas de engajamento para faixas publicadas.
+- Adoção de Certificações: Quantificada pelo número de certificados NFT emitidos e partilhados em contextos profissionais.
+- Saúde da Economia Token: Monitorada com base na circulação do token $KOIN, adoção de mecanismos de staking e atividade de mercado.
+- Impacto Educacional: Avaliado medindo melhorias no conhecimento e habilidades do usuário por meio de pré e pós-avaliações.
 
-- Uncertain regulation regarding the use of AI and blockchain.
-- Established educational platforms.
-- Adoption challenges among users unfamiliar with Web3.
-- Saturation of the edtech market (startups and education-focused platforms).
-- Potential devaluation of NFT certificates if not externally recognized.
+<a id="214-value-proposition-canvas"></a>
+### 2.1.4. Tela de proposta de valor
 
-The SWOT analysis of the Kaisen platform highlights a project with high innovative potential, supported by a differentiated value proposition that integrates Artificial Intelligence, gamification, and decentralized validation through NFTs. Its main strengths lie in the personalization of learning, community engagement, and the construction of digital reputation, all aligned with emerging trends in education and Web3.
-
-However, the project faces challenges related to its internal structure and the current maturity level of the market. The lack of initial traction and market validation, combined with the adoption curve of the technologies involved, presents real obstacles to widespread expansion and user acceptance. The limited availability of technical and financial resources, along with the absence of formally recognized institutional certification, reinforces the need for a solid market entry strategy that prioritizes ease of use, real-user testing, and strategic partnerships.
-
-External opportunities are clear, especially with the growing value placed on self-directed learning, digital reputation, and collaborative communities. Nonetheless, the project must overcome threats such as the saturation of the edtech market, skepticism toward technologies like NFTs, and increasing regulatory pressure on AI and blockchain.
-
-Therefore, to ensure the sustainability of the solution, it is essential to validate it within specific niches, modularize its technological complexity, and develop a marketing plan that clearly communicates its unique value in an accessible, user-focused manner.
-
-### 2.1.3. Solution
-
-**Problem to be solved:** <br> 
-The traditional educational model is centralized, expensive, and inefficient in providing detailed and verifiable proof of individual knowledge. Furthermore, the certificates currently used are fragile, and learning is treated as a product rather than a collaborative ecosystem. Consequently, there is a lack of effective mechanisms for validating knowledge, as well as limited incentives for sharing and collaboration within the community.
-
-**Available data:** <br> 
-The platform offers a wide variety of educational content, available in various formats, such as PDFs, articles, research papers, and technical documentation. Furthermore, relevant data is collected, such as user learning patterns and preferences, community engagement metrics, and blockchain-based validation records. It is worth noting that the platform utilizes both user-generated content and learning materials processed by artificial intelligence (AI), thus creating a comprehensive and dynamic knowledge repository.
-
-**Proposed solution:** <br> 
-Kaisen is the first decentralized knowledge protocol that transforms learning—once a passive consumption process—into a creative, collaborative, and valuable experience. The solution combines personalized learning paths with AI technologies and blockchain validation, creating a true “GitHub of Knowledge.”
-
-Users insert raw materials (like PDFs, topics, and links), which are processed by Kai, an AI assistant. From this processing, Kai generates personalized learning tracks. If they prefer, the user can also create their track manually. These tracks can be published, forked, and improved by the community, resulting in a living and constantly evolving repository, validated by NFT certificates and incentivized by the $KOIN token economy.
-
-**How to use the solution:** <br> 
-- Content Input: The user submits documents or defines topics of interest to Kai.
-- Path Generation: The AI, or the user themselves, creates personalized learning paths that include quizzes, flashcards, and interactive content.
-- Learning Process: Users progress through the paths with the support of the AI tutor.
-- Community Collaboration: Upon completion, paths can be published and improved by the community through forking.
-- Validation: Completion of the learning process is certified by “mineable” NFTs, serving as proof of learning.
-- Incentive: Users are rewarded with $KOIN tokens for creating quality content, completing paths, and collaborating with the community.
-
-**Expected benefits:** <br>
-- Democratization of access to personalized, AI-driven education.
-- Verifiable and portable knowledge credentials, secured by blockchain certificates.
-- Creation of a collaborative knowledge ecosystem, with content continuously improved by the community.
-- Establishment of a sustainable incentive model that values learning and sharing.
-- Reduction of educational costs and expansion of access to education.
-- Strengthening digital reputation and professional recognition through certified achievements.
-
-**Success criteria and how it will be evaluated:** <br>
-- User Engagement: Measured by the number of paths created, completed, and forked monthly.
-- Community Growth: Assessed based on the number of active users and retention rate (goal: over 5,000 active users in the first year).
-- Knowledge Quality: Verified through community reviews and engagement metrics for published tracks.
-- Certification Adoption: Quantified by the number of NFT certificates issued and shared in professional contexts.
-- Token Economy Health: Monitored based on the circulation of the $KOIN token, adoption of staking mechanisms, and market activity.
-- Educational Impact: Assessed by measuring improvements in user knowledge and skills through pre- and post-assessments.
-
-### 2.1.4. Value Proposition Canvas
-
-The Value Proposition Canvas is a strategic tool used by various companies with the objective of deeply understanding the needs, pains, and desires of their customers, while simultaneously aiming to create and position the offered product or service according to those demands. Based on this, the following is the Value Proposition Canvas of the Kaisen solution, which presents a well-defined customer profile and a clear description of how the proposed solution aligns with it.
+O Value Proposition Canvas é uma ferramenta estratégica utilizada por diversas empresas com o objetivo de compreender profundamente as necessidades, dores e desejos de seus clientes, ao mesmo tempo em que visa criar e posicionar o produto ou serviço oferecido de acordo com essas demandas. Com base nisso, segue-se o Canvas de Proposta de Valor da solução Kaisen, que apresenta um perfil de cliente bem definido e uma descrição clara de como a solução proposta se alinha a ele.
 
 <div align="center">
 
-<sub>Figure 3 - Value Proposition Canvas</sub>
+<sub>Figura 3 - Tela de proposta de valor</sub>
 
 <img src="assets/business/canvas-value.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-**Customer Jobs:**<br>
+**Trabalhos do cliente:**<br>
 
-- Study autonomously using online content.
-- Create and organize their own study materials (summaries, flashcards, learning paths).
-- Search for reliable and relevant materials aligned with their goals.
-- Officially validate knowledge acquired through informal means.
-- Share knowledge and materials with others.
-- View their progress and learning history in a clear and personalized way.
-- Evaluate and select candidates based on real and evidenced learning journeys.
+- Estude de forma autônoma utilizando conteúdos online.
+- Criar e organizar seus próprios materiais de estudo (resumos, flashcards, roteiros de aprendizagem).
+- Buscar materiais confiáveis ​​e relevantes alinhados aos seus objetivos.
+- Validar oficialmente o conhecimento adquirido através de meios informais.
+- Compartilhe conhecimento e materiais com outras pessoas.
+- Visualize seu progresso e histórico de aprendizado de forma clara e personalizada.
+- Avaliar e selecionar candidatos com base em jornadas de aprendizagem reais e comprovadas.
 
-**Pains:**<br>
+**Dores:**<br>
 
-- Lack of free, logically or chronologically organized study content.
-- Difficulty finding high-quality, objective materials.
-- Absence of a clear and personalized overview of study progress.
-- Inability to officially validate informal learning.
-- Lack of centralization of study materials across different fields of knowledge.
-- Lack of incentive for those who share knowledge with the community.
+- Falta de conteúdo de estudo gratuito, organizado de forma lógica ou cronológica.
+- Dificuldade em encontrar materiais objetivos e de alta qualidade.
+- Ausência de uma visão clara e personalizada do progresso do estudo.
+- Incapacidade de validar oficialmente a aprendizagem informal.
+- Falta de centralização dos materiais de estudo nas diferentes áreas do conhecimento.
+- Falta de incentivo para quem compartilha conhecimento com a comunidade.
 
-**Gains:**<br>
+**Ganhos:**<br>
 
-- Creation of a valued digital reputation through an active community.
-- Income generation and recognition through created content and learning paths.
-- Transparent, trustworthy, and immutable digital certificates that validate knowledge.
-- A solid, traceable portfolio for use in selection processes.
-- Continuous motivation through gamification and rewards.
-- Integrated and clear view of any individual's learning history.
+- Criação de uma reputação digital de valor através de uma comunidade ativa.
+- Geração de renda e reconhecimento através de conteúdos criados e trilhas de aprendizagem.
+- Certificados digitais transparentes, confiáveis ​​e imutáveis ​​que validam o conhecimento.
+- Um portfólio sólido e rastreável para utilização em processos seletivos.
+- Motivação contínua através de gamificação e recompensas.
+- Visão integrada e clara do histórico de aprendizagem de qualquer indivíduo.
 
-**Products & Services:**<br>
+**Produtos e Serviços:**<br>
 
-- Decentralized educational platform integrating AI and blockchain.
-- Intelligent virtual assistant (Kai) that transforms any material into flashcards, summaries, quizzes, and personalized study paths.
-- Digital certification via NFT with public and immutable validation.
-- Public learning paths with possibilities for collaboration and community curation.
-- Gamification system with rewards in tokens and cosmetic items.
-- Interactive store with customizations and additional tools.
-- Traceable educational profile with reputation linked to progress and collaboration.
+- Plataforma educacional descentralizada integrando IA e blockchain.
+- Assistente virtual inteligente (Kai) que transforma qualquer material em flashcards, resumos, quizzes e roteiros de estudo personalizados.
+- Certificação digital via NFT com validação pública e imutável.
+- Trilhas públicas de aprendizagem com possibilidades de colaboração e curadoria comunitária.
+- Sistema de gamificação com recompensas em tokens e itens cosméticos.
+- Loja interativa com customizações e ferramentas adicionais.
+- Perfil educacional rastreável com reputação ligada ao progresso e à colaboração.
 
-**Pain Relievers:**<br>
+**Analgésicos:**<br>
 
-- Automated and personalized organization of studies based on the user’s own materials.
-- Official validation of informal learning without dependence on traditional institutions.
-- Clear and continuous visualization of knowledge evolution.
-- Tools to centralize and document the entire educational journey.
-- Tangible incentives for those who contribute to the community (rewards and reputation).
-- Transparency and traceability in recording competencies and learning.
+- Organização automatizada e personalizada de estudos com base em materiais do próprio usuário.
+- Validação oficial da aprendizagem informal sem dependência de instituições tradicionais.
+- Visualização clara e contínua da evolução do conhecimento.
+- Ferramentas para centralizar e documentar todo o percurso educativo.
+- Incentivos tangíveis para quem contribui para a comunidade (recompensas e reputação).
+- Transparência e rastreabilidade no registo de competências e aprendizagem.
 
-**Gain Creators:**<br>
+**Ganhe criadores:**<br>
 
-- More efficient, personalized, and motivating study experience supported by AI.
-- Rewards for every meaningful interaction: studying, creating, contributing.
-- Possibility to monetize one’s own educational content.
-- Recognition of the educational journey as a reputation-building asset.
-- Shareable educational portfolio for recruiters in an objective and reliable format.
+- Experiência de estudo mais eficiente, personalizada e motivadora apoiada pela IA.
+- Recompensas por cada interação significativa: estudar, criar, contribuir.
+- Possibilidade de rentabilizar o próprio conteúdo educativo.
+- Reconhecimento da jornada educacional como um ativo de construção de reputação.
+- Portfólio educacional compartilhável para recrutadores em formato objetivo e confiável.
 
-The analysis conducted through the Kaisen Value Proposition Canvas demonstrates not only a clear understanding of the target audience’s pains and expectations but also a consistent plan to offer a functional and strategic response to these demands. The proposal is anchored in technological differentiators, such as the integration of AI, blockchain, and NFT certifications. However, the most relevant aspect of the proposal lies in the platform’s ability to convert informal learning into verifiable reputation, a feature still rarely explored consistently in the educational market.
+A análise realizada por meio do Kaisen Value Proposition Canvas demonstra não apenas um entendimento claro das dores e expectativas do público-alvo, mas também um plano consistente para oferecer uma resposta funcional e estratégica a essas demandas. A proposta está ancorada em diferenciais tecnológicos, como a integração de IA, blockchain e certificações NFT. Contudo, o aspecto mais relevante da proposta reside na capacidade da plataforma de converter a aprendizagem informal em reputação verificável, característica ainda pouco explorada de forma consistente no mercado educacional.
 
-Therefore, it is worth emphasizing that the solution addresses a real and pressing issue: the disconnect between knowledge acquired through non-traditional means and its validation. The centralization of learning data, personalization of the study process, and the possibility of monetizing and sharing educational journeys add direct value to the end user. Kaisen does not merely rely on emerging technologies; it builds an ecosystem in which knowledge is treated as a reputational asset—traceable, shareable, and, most importantly, rewardable.
+Portanto, vale ressaltar que a solução aborda uma questão real e premente: a desconexão entre o conhecimento adquirido por meios não tradicionais e sua validação. A centralização dos dados de aprendizagem, a personalização do processo de estudo e a possibilidade de rentabilizar e partilhar jornadas educativas acrescentam valor direto ao utilizador final. Kaisen não depende apenas de tecnologias emergentes; constrói um ecossistema no qual o conhecimento é tratado como um ativo de reputação – rastreável, partilhável e, o mais importante, recompensável.
 
-### 2.1.5 Business Model Canvas
+<a id="215-business-model-canvas"></a>
+### 2.1.5 Tela do Modelo de Negócios
 
-The Business Model Canvas (BMC) for Kaisen presents, in a structured way, the main elements that sustain the platform’s business model. It organizes everything from the value proposition — based on transforming scattered content into personalized learning tracks certified via blockchain — to customer segments, relationship channels, revenue streams, and cost structure. In addition to mapping these areas, the BMC will be used as a tool to analyze the solution’s feasibility, consistency, and growth potential, guiding strategic decisions and continuous improvements.
+O Business Model Canvas (BMC) para Kaisen apresenta, de forma estruturada, os principais elementos que sustentam o modelo de negócios da plataforma. Ela organiza tudo, desde a proposta de valor — baseada na transformação de conteúdo disperso em trilhas de aprendizagem personalizadas e certificadas via blockchain — até segmentos de clientes, canais de relacionamento, fluxos de receita e estrutura de custos. Além de mapear essas áreas, o BMC será utilizado como ferramenta para analisar a viabilidade, consistência e potencial de crescimento da solução, orientando decisões estratégicas e melhorias contínuas.
 
 <div align="center">
 
-<sub>Figure 4 - Business Model Canvas</sub>
+<sub>Figura 4 - Business Model Canvas</sub>
 
 <img src="assets/business/business-model-canvas.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-#### 1. Value Proposition
+<a id="1-value-proposition"></a>
+#### 1. Proposta de valor
 
-Kaisen transforms scattered content — such as PDFs, links, and topics — into personalized learning tracks generated by artificial intelligence, enhanced by the community, and certified via blockchain. The learning process shifts from passive to active, collaborative, and trackable, with a reliable educational record.
+Kaisen transforma conteúdo disperso — como PDFs, links e tópicos — em trilhas de aprendizagem personalizadas geradas por inteligência artificial, aprimoradas pela comunidade e certificadas via blockchain. O processo de aprendizagem muda de passivo para ativo, colaborativo e rastreável, com um histórico educacional confiável.
 
-Free users can explore and adapt existing public tracks. Premium subscribers unlock full AI-powered creation, access to exclusive tracks, customizable NFT certificates, and advanced personalization and gamification features.
+Os usuários gratuitos podem explorar e adaptar faixas públicas existentes. Os assinantes premium desbloqueiam a criação completa com tecnologia de IA, acesso a faixas exclusivas, certificados NFT personalizáveis ​​e recursos avançados de personalização e gamificação.
 
-**The platform enables:**
-- Transformation of raw content into personalized, interactive tracks with AI.
-- Community sharing and remixing of tracks, with social curation and decentralized validation.
-- Immutable certification of progress through educational NFTs, creating a verifiable portfolio.
-- Free access to discover and adapt public tracks.
-- Premium features for advanced creation, personalization, and in-depth validation.
-- A future rewards and curation system based on the $KOIN token.
-
-
-#### 2. Customer Segments
-
-Kaisen serves various profiles connected to decentralized education, informal knowledge validation, and technical track curation.
-
-**Main segments include:**
-- Self-learners and technical creators seeking to validate and monetize their knowledge and creations.
-- Students from underserved areas with high digital engagement and limited access to formal education.
-- HR professionals needing concrete, verifiable evidence of skills, in addition to traditional diplomas.
-- Educational platforms seeking to integrate reliable and interoperable blockchain certifications.
-- Web3 communities, DAOs, and decentralized education projects focused on distributed curation and validation.
+**A plataforma permite:**
+- Transformação de conteúdo bruto em trilhas interativas e personalizadas com IA.
+- Compartilhamento comunitário e remixagem de faixas, com curadoria social e validação descentralizada.
+- Certificação imutável do progresso através de NFTs educacionais, criando um portfólio verificável.
+- Acesso gratuito para descobrir e adaptar faixas públicas.
+- Recursos premium para criação avançada, personalização e validação aprofundada.
+- Um sistema futuro de recompensas e curadoria baseado no token $KOIN.
 
 
-#### 3. Channels
+<a id="2-customer-segments"></a>
+#### 2. Segmentos de clientes
 
-Kaisen connects with its users through multiple digital and community channels, integrating acquisition, value delivery, and continuous engagement.
+Kaisen atende diversos perfis ligados à educação descentralizada, validação informal de conhecimento e curadoria de trilhas técnicas.
 
-**Acquisition channels:**
-- Strategic social networks: X (Twitter), Instagram, YouTube, LinkedIn.
-- Partnerships with content creators and influencers in the educational ecosystem.
-- Participation in hackathons, innovation events, technical and Web3 communities.
-- Organic outreach through educational content, NFTs as proof of learning, and interactive materials.
-
-**Delivery channels:**
-- Responsive web platform accessible on desktop and mobile.
-- Login via decentralized identity (e.g., Internet Identity or digital wallets).
-- AI-assisted navigation and gamification elements integrated into the interface.
-
-**Engagement channels:**
-- Discord servers and community forums for support and peer interaction.
-- Educational DAOs and Web3 networks for collective curation and track development.
-- Internal reputation, badge, and ranking system to encourage continuous contribution.
+**Os principais segmentos incluem:**
+- Autodidatas e criadores técnicos que procuram validar e rentabilizar os seus conhecimentos e criações.
+- Estudantes de áreas desfavorecidas com elevado envolvimento digital e acesso limitado à educação formal.
+- Profissionais de RH que necessitam de provas concretas e verificáveis ​​de competências, além dos diplomas tradicionais.
+- Plataformas educacionais que buscam integrar certificações blockchain confiáveis ​​e interoperáveis.
+- Comunidades Web3, DAOs e projetos educacionais descentralizados focados em curadoria e validação distribuída.
 
 
-#### 4. Customer Relationships
+<a id="3-channels"></a>
+#### 3. Canais
 
-Kaisen’s relationship with users is driven by an assisted, gamified journey guided by constant feedback, with different approaches for end users, creators, and corporate stakeholders.
+Kaisen se conecta com seus usuários por meio de vários canais digitais e comunitários, integrando aquisição, entrega de valor e envolvimento contínuo.
 
-**For end users:**
-- Interactive AI onboarding introducing the platform’s key features (tracks, certificates, Kai assistant).
-- Initial rewards for actions such as publishing, forking, and sharing certificates.
-- Real-time feedback through quizzes, achievements, and progress tracking.
+**Canais de aquisição:**
+- Redes sociais estratégicas: X (Twitter), Instagram, YouTube, LinkedIn.
+- Parcerias com criadores de conteúdo e influenciadores do ecossistema educacional.
+- Participação em hackathons, eventos de inovação, comunidades técnicas e Web3.
+- Divulgação orgânica por meio de conteúdo educacional, NFTs como prova de aprendizagem e materiais interativos.
 
-**For content creators:**
-- Dashboard with engagement metrics for published tracks.
-- Symbolic rewards and visibility within the community.
-- Participation in future decision-making through a suggestion and voting system (future $KOIN governance).
+**Canais de entrega:**
+- Plataforma web responsiva acessível em desktop e mobile.
+- Login via identidade descentralizada (por exemplo, Identidade da Internet ou carteiras digitais).
+- Elementos de navegação e gamificação assistidos por IA integrados na interface.
 
-
-#### 5. Revenue Streams
-
-Kaisen’s monetization strategy is hybrid, combining SaaS, marketplace transactions, and gamified economy.
-
-**Premium Subscription (Kaisen Pro):**
-- Full AI-powered track creation.
-- Customizable NFT certificates.
-- Access to private and exclusive tracks.
-- Profile customization.
-- Discounts at the Kai Store.
-- Unlimited use of the Kai assistant.
-
-**Kai Store:**
-- Sale of personalized digital items (avatars, visual effects, badges).
-- Direct revenue from sales and potential future use of the $KOIN token.
+**Canais de engajamento:**
+- Servidores Discord e fóruns da comunidade para suporte e interação entre pares.
+- DAOs educacionais e redes Web3 para curadoria coletiva e desenvolvimento de trilhas.
+- Reputação interna, distintivo e sistema de classificação para incentivar a contribuição contínua.
 
 
-#### 6. Key Resources
+<a id="4-customer-relationships"></a>
+#### 4. Relacionamento com o cliente
 
-Kaisen relies on a combination of a robust technological architecture, a strategic team, and an active community base.
+O relacionamento da Kaisen com os usuários é impulsionado por uma jornada assistida e gamificada, guiada por feedback constante, com diferentes abordagens para usuários finais, criadores e stakeholders corporativos.
 
-**Technological infrastructure:**
-- AI for track generation and personalization.
-- NFT issuance and verification system on blockchain.
-- Responsive web platform with a gamified, accessible interface.
+**Para usuários finais:**
+- Integração interativa de IA apresentando os principais recursos da plataforma (faixas, certificados, assistente Kai).
+- Recompensas iniciais por ações como publicação, bifurcação e compartilhamento de certificados.
+- Feedback em tempo real por meio de questionários, conquistas e acompanhamento de progresso.
 
-**Team:**
-- Full-stack development (front-end, AI, Web3).
-- Product design and user experience.
-- Community and content management.
-
-**Intangible assets:**
-- Brand positioned as a reference in decentralized educational reputation.
-- Engaged community of creators, curators, and early adopters.
-- Distributed reputation and track validation mechanism.
+**Para criadores de conteúdo:**
+- Dashboard com métricas de engajamento das faixas publicadas.
+- Recompensas simbólicas e visibilidade dentro da comunidade.
+- Participação em futuras tomadas de decisão através de sistema de sugestões e votação (futura governança $KOIN).
 
 
-#### 7. Key Activities
+<a id="5-revenue-streams"></a>
+#### 5. Fluxos de receita
 
-Kaisen performs strategic activities aimed at continuous platform innovation, knowledge validation, and community engagement.
+A estratégia de monetização da Kaisen é híbrida, combinando SaaS, transações de mercado e economia gamificada.
 
-**Development and maintenance:**
-- Platform and Kai assistant evolution.
-- AI infrastructure updates and blockchain protocol integration.
-- Ensuring security, stability, and usability.
+**Assinatura Premium (Kaisen Pro):**
+- Criação completa de pistas com tecnologia de IA.
+- Certificados NFT personalizáveis.
+- Acesso a faixas privadas e exclusivas.
+- Personalização do perfil.
+- Descontos na Loja Kai.
+- Uso ilimitado do assistente Kai.
 
-**Curation and validation:**
-- Monitoring track quality and moderating content.
-- Validating issued NFT certificates.
-- Maintaining the decentralized social curation and reputation system.
-
-**Engagement and growth:**
-- Active community management (Discord, forums, events).
-- Encouraging track creation and forking with incentives and symbolic rewards.
-- Partnerships with DAOs, edtechs, creators, and companies for organic growth.
+**Loja Kai:**
+- Venda de itens digitais personalizados (avatares, efeitos visuais, crachás).
+- Receita direta de vendas e potencial uso futuro do token $KOIN.
 
 
-#### 8. Key Partnerships
+<a id="6-key-resources"></a>
+#### 6. Recursos principais
 
-Kaisen relies on a strategic network of partners for infrastructure, content, validation, and impact expansion.
+Kaisen depende de uma combinação de uma arquitetura tecnológica robusta, uma equipe estratégica e uma base comunitária ativa.
 
-**Technology and validation:**
-- Blockchain providers for educational NFT issuance (e.g., ICP).
-- APIs and protocols for educational interoperability (open badges, decentralized wallets).
+**Infraestrutura tecnológica:**
+- IA para geração e personalização de trilhas.
+- Sistema de emissão e verificação de NFT em blockchain.
+- Plataforma web responsiva com interface gamificada e acessível.
 
-**Content and distribution:**
-- Educational platforms and technical content creators.
-- Web3 communities, DAOs, and projects focused on decentralized curation and education.
-- Universities, hackathons, and innovation hubs.
+**Equipe:**
+- Desenvolvimento full-stack (front-end, IA, Web3).
+- Design de produto e experiência do usuário.
+- Comunidade e gerenciamento de conteúdo.
 
-**Inclusion and impact:**
-- Specialists in recognizing informal knowledge and micro-certifications.
-- NGOs and initiatives promoting digital inclusion for underserved youth and accessible technical education.
-
-
-#### 9. Cost Structure
-
-Kaisen’s cost structure was designed based on a functional MVP scenario, with production-ready technology and moderate initial adoption. The projected 12-month cycle includes:
-- 500 to 1,000 active users/month with recurring usage.
-- Track generation, content uploads, NFT certificate issuance.
-- 3 GB storage in canisters, with an average execution of 300 billion cycles/month.
-- A small, highly skilled team focused on dev, AI, design, and Web3.
-
-**Team composition:**
-6 strategic professionals and 1 freelance support role:
-- 1 Full-Stack Developer (front-end, back-end, AI and blockchain integrations)
-- 1 AI Specialist (part-time)
-- 1 Product Designer (UX/UI)
-- 1 Product Manager (partial consultant)
-- 1 Web3 Engineer
-- 1 Community Manager
-- 1 Freelance Technical Support
-
-**Estimated monthly costs by category:**
-- **Development and technical team:** R$ 22,000 – R$ 33,000
-- **Infrastructure (Internet Computer + auxiliary tools):** R$ 16,500 – R$ 25,300
-- **Community and support:** R$ 5,500 – R$ 8,500
-- **Marketing and acquisition:** R$ 3,000 – R$ 8,000
-- **Incentives and gamification:** R$ 1,500 – R$ 4,500
-
-**Total monthly cost:** R$ 48,500 – R$ 79,300  
-**Estimated annual cost:** R$ 582,000 – R$ 951,600
+**Ativos intangíveis:**
+- Marca posicionada como referência em reputação educacional descentralizada.
+- Comunidade engajada de criadores, curadores e primeiros usuários.
+- Reputação distribuída e mecanismo de validação de rastreamento.
 
 
-Kaisen positions itself as an innovative platform in the decentralized education landscape, combining artificial intelligence, community curation, and blockchain certification to transform scattered content into personalized, verifiable learning journeys. Its value proposition blends accessibility, with a robust freemium model, and depth, offering Premium users advanced creation, personalization, and skill validation features.
+<a id="7-key-activities"></a>
+#### 7. Atividades principais
 
-The business model was designed to serve diverse profiles, from self-learners and underserved students to companies and Web3 communities, connecting with the audience through multiple digital and community channels. The user experience is guided by a gamified, assisted relationship that encourages active participation and continuous growth.
+Kaisen realiza atividades estratégicas que visam a inovação contínua da plataforma, validação de conhecimento e envolvimento da comunidade.
 
-The hybrid monetization model — combining SaaS subscriptions, marketplace, and gamified economy — ensures revenue diversification, while the key resources and activities reflect a balance between cutting-edge technology, experience design, and community engagement. Strategic partnerships expand the solution’s reach and relevance, strengthening its ecosystem and credibility.
+**Desenvolvimento e manutenção:**
+- Evolução da plataforma e do assistente Kai.
+- Atualizações da infraestrutura de IA e integração do protocolo blockchain.
+- Garantir segurança, estabilidade e usabilidade.
 
-With this solid foundation, Kaisen has the potential to become a global reference in decentralized educational reputation, combining technology, community, and knowledge recognition to democratize and value learning in all its forms.
+**Curadoria e validação:**
+- Monitoramento da qualidade da trilha e moderação de conteúdo.
+- Validação de certificados NFT emitidos.
+- Manutenção do sistema descentralizado de curadoria social e reputação.
+
+**Engajamento e crescimento:**
+- Gestão ativa da comunidade (Discord, fóruns, eventos).
+- Incentivar a criação e bifurcação de pistas com incentivos e recompensas simbólicas.
+- Parcerias com DAOs, edtechs, criadores e empresas para crescimento orgânico.
 
 
+<a id="8-key-partnerships"></a>
+#### 8. Parcerias-chave
+
+Kaisen conta com uma rede estratégica de parceiros para infraestrutura, conteúdo, validação e expansão de impacto.
+
+**Tecnologia e validação:**
+- Provedores de blockchain para emissão educacional de NFT (por exemplo, ICP).
+- APIs e protocolos para interoperabilidade educacional (crachás abertos, carteiras descentralizadas).
+
+**Conteúdo e distribuição:**
+- Plataformas educacionais e criadores de conteúdo técnico.
+- Comunidades Web3, DAOs e projetos focados em curadoria e educação descentralizadas.
+- Universidades, hackathons e centros de inovação.
+
+**Inclusão e impacto:**
+- Especialistas em reconhecimento de conhecimentos informais e microcertificações.
+- ONG e iniciativas que promovem a inclusão digital para jovens desfavorecidos e educação técnica acessível.
+
+
+<a id="9-cost-structure"></a>
+#### 9. Estrutura de custos
+
+A estrutura de custos da Kaisen foi desenhada com base em um cenário de MVP funcional, com tecnologia pronta para produção e adoção inicial moderada. O ciclo projetado de 12 meses inclui:
+- 500 a 1.000 usuários ativos/mês com uso recorrente.
+- Geração de rastreamento, upload de conteúdo, emissão de certificado NFT.
+- 3 GB de armazenamento em canisters, com execução média de 300 bilhões de ciclos/mês.
+- Uma equipe pequena e altamente qualificada focada em desenvolvimento, IA, design e Web3.
+
+**Composição da equipe:**
+6 profissionais estratégicos e 1 função de suporte freelance:
+- 1 Desenvolvedor Full-Stack (integrações front-end, back-end, IA e blockchain)
+- 1 especialista em IA (meio período)
+- 1 Designer de Produto (UX/UI)
+- 1 Gerente de Produto (consultor parcial)
+- 1 engenheiro Web3
+- 1 Gerente de Comunidade
+- 1 Suporte Técnico Autônomo
+
+**Custos mensais estimados por categoria:**
+- **Equipe de desenvolvimento e técnica:** R$ 22 mil – R$ 33 mil
+- **Infraestrutura (Internet Computador + ferramentas auxiliares):** R$ 16.500 – R$ 25.300
+- **Comunidade e suporte:** R$ 5.500 – R$ 8.500
+- **Marketing e aquisição:** R$ 3.000 – R$ 8.000
+- **Incentivos e gamificação:** R$ 1.500 – R$ 4.500
+
+**Custo mensal total:** R$ 48.500 – R$ 79.300
+**Custo anual estimado:** R$ 582 mil – R$ 951,6 mil
+
+
+Kaisen se posiciona como uma plataforma inovadora no cenário educacional descentralizado, combinando inteligência artificial, curadoria comunitária e certificação blockchain para transformar conteúdo disperso em jornadas de aprendizagem personalizadas e verificáveis. Sua proposta de valor combina acessibilidade, com um modelo freemium robusto e profundidade, oferecendo aos usuários Premium recursos avançados de criação, personalização e validação de habilidades.
+
+O modelo de negócios foi pensado para atender diversos perfis, desde autodidatas e estudantes carentes até empresas e comunidades Web3, conectando-se com o público por meio de múltiplos canais digitais e comunitários. A experiência do usuário é pautada por um relacionamento gamificado e assistido que estimula a participação ativa e o crescimento contínuo.
+
+O modelo de monetização híbrido — combinando assinaturas SaaS, mercado e economia gamificada — garante a diversificação das receitas, enquanto os principais recursos e atividades refletem um equilíbrio entre tecnologia de ponta, design de experiência e envolvimento da comunidade. Parcerias estratégicas ampliam o alcance e a relevância da solução, fortalecendo seu ecossistema e credibilidade.
+
+Com esta base sólida, Kaisen tem potencial para se tornar uma referência global em reputação educacional descentralizada, combinando tecnologia, comunidade e reconhecimento de conhecimento para democratizar e valorizar a aprendizagem em todas as suas formas.
+
+
+<a id="22-personas"></a>
 ## 2.2. Personas
 
-Representing specific individuals, personas are semi-fictional profiles built based on real data and observations about the target audience. Their main function is to facilitate the understanding of users' needs, behaviors, and motivations, allowing for more targeted and effective solution development.
+Representando indivíduos específicos, as personas são perfis semifictícios construídos com base em dados reais e observações sobre o público-alvo. Sua principal função é facilitar o entendimento das necessidades, comportamentos e motivações dos usuários, permitindo o desenvolvimento de soluções mais direcionadas e eficazes.
 
-Below are three personas developed specifically for this project to guide decision-making and ensure greater alignment with end-user expectations.
+Abaixo estão três personas desenvolvidas especificamente para este projeto para orientar a tomada de decisões e garantir maior alinhamento com as expectativas do usuário final.
 
 <div align="center">
 
-<sub>Figure 5 - Persona 1</sub>
+<sub>Figura 5 - Persona 1</sub>
 
 <img src="assets/business/persona-clara.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-She represents an ambitious young student from a peripheral community who sees technology as a path to new opportunities. As a technical high school student studying Computer Science in the outskirts of São Paulo, she embodies the self-taught learner, using mobile technology as an ally in her educational journey. Clara's persona highlights the importance of accessible and personalized learning, capable of transforming informal study into recognized credentials—a key challenge for students seeking to demonstrate their competencies beyond traditional academic settings.
+Ela representa uma jovem estudante ambiciosa de uma comunidade periférica que vê a tecnologia como um caminho para novas oportunidades. Aluna do ensino médio técnico cursando Ciência da Computação na periferia de São Paulo, ela personifica o aprendiz autodidata, utilizando a tecnologia móvel como aliada em sua jornada educacional. A personalidade de Clara destaca a importância da aprendizagem acessível e personalizada, capaz de transformar o estudo informal em credenciais reconhecidas – um desafio fundamental para estudantes que procuram demonstrar as suas competências para além dos ambientes académicos tradicionais.
 
 <div align="center">
 
-<sub>Figure 6 - Persona 2</sub>
+<sub>Figura 6 - Persona 2</sub>
 
 <img src="assets/business/persona-daniel.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-He personifies the modern self-taught developer who stands out in the Web3 ecosystem. At 23, this junior developer represents a growing community of professionals who have honed their skills through alternative learning paths—such as YouTube tutorials, contributions to open-source projects, and participation in hackathons. His persona highlights the gap between practical knowledge and formal recognition, while also symbolizing the creative economy, in which educational content producers seek to generate impact and monetize their knowledge.
+Ele personifica o desenvolvedor autodidata moderno que se destaca no ecossistema Web3. Aos 23 anos, esse desenvolvedor júnior representa uma comunidade crescente de profissionais que aprimoraram suas habilidades por meio de caminhos de aprendizagem alternativos, como tutoriais no YouTube, contribuições para projetos de código aberto e participação em hackathons. Sua persona destaca a lacuna entre o conhecimento prático e o reconhecimento formal, ao mesmo tempo que simboliza a economia criativa, na qual os produtores de conteúdo educacional buscam gerar impacto e monetizar seu conhecimento.
 
 <div align="center">
 
-<sub>Figure 7 - Persona 3</sub>
+<sub>Figura 7 - Persona 3</sub>
 
 <img src="assets/business/persona-renata.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-She represents the progressive HR professional working in a constantly changing talent landscape, especially in technology startups. As an HR analyst with a background in Psychology, she faces the daily challenge of evaluating candidates whose most relevant skills were often acquired through non-traditional learning paths. Her persona highlights the modern recruiter's dilemma: how to fairly recognize and validate informal learning while developing more inclusive, evidence-based selection processes capable of identifying talent beyond formal educational credentials.
+Ela representa o profissional de RH progressista que trabalha em um cenário de talentos em constante mudança, especialmente em startups de tecnologia. Como analista de RH com formação em Psicologia, ela enfrenta o desafio diário de avaliar candidatos cujas competências mais relevantes foram muitas vezes adquiridas através de percursos de aprendizagem não tradicionais. A sua personalidade destaca o dilema do recrutador moderno: como reconhecer e validar de forma justa a aprendizagem informal e, ao mesmo tempo, desenvolver processos de seleção mais inclusivos e baseados em evidências, capazes de identificar talentos para além das credenciais educacionais formais.
 
-# 3. Application Project
+<a id="3-application-project"></a>
+# 3. Projeto de aplicação
 
-## 3.1. Architecture Diagram
+<a id="31-architecture-diagram"></a>
+## 3.1. Diagrama de Arquitetura
 
-The application's architecture diagram, as illustrated in the image, was designed with a clear separation between the front-end, authentication, back-end, and external integration layers. This modular structure aims to ensure not only the organization and maintainability of the code, but also security, scalability, and a high-performance user experience. The diagram is, therefore, an essential tool for visualizing the organization of components, facilitating understanding among developers, and guiding technical decisions throughout the project.
+O diagrama de arquitetura da aplicação, conforme ilustrado na imagem, foi projetado com uma separação clara entre as camadas front-end, autenticação, back-end e integração externa. Essa estrutura modular visa garantir não apenas a organização e facilidade de manutenção do código, mas também segurança, escalabilidade e uma experiência de usuário de alto desempenho. O diagrama é, portanto, uma ferramenta essencial para visualizar a organização dos componentes, facilitando o entendimento entre os desenvolvedores e orientando as decisões técnicas ao longo do projeto.
 
 <div align="center">
 
-<sub>Figure 8 - Architecture diagram</sub>
+<sub>Figura 8 - Diagrama de arquitetura</sub>
 
 <img src="./assets/simple-architecture.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The front-end represents the layer of direct interaction with the client, built with a set of modern technologies to ensure an efficient interface. The foundation of the interface is developed in React, which allows for the creation of dynamic and reusable UI components. The development process is accelerated by Vite, a high-speed build tool. To ensure the robustness and quality of the code, the project adopts TypeScript, which adds static typing to JavaScript, while styling is managed by Tailwind CSS, a utility-first framework that enables the construction of custom designs in an agile and consistent manner.
+O front-end representa a camada de interação direta com o cliente, construída com um conjunto de tecnologias modernas para garantir uma interface eficiente. A base da interface é desenvolvida em React, que permite a criação de componentes de UI dinâmicos e reutilizáveis. O processo de desenvolvimento é acelerado pelo Vite, uma ferramenta de construção de alta velocidade. Para garantir a robustez e qualidade do código, o projeto adota TypeScript, que adiciona digitação estática ao JavaScript, enquanto o estilo é gerenciado pelo Tailwind CSS, um framework utilitário que permite a construção de designs customizados de forma ágil e consistente.
 
-The bridge between the user interface and the back-end services is the authentication layer, which adopts a sovereign digital identity approach through Internet Identity and NFID. Unlike traditional systems based on username and password, this method allows users to securely access the application using cryptography and devices with WebAuthn support. This strengthens security, privacy, and the user experience by removing the need to memorize passwords.
+A ponte entre a interface do usuário e os serviços back-end é a camada de autenticação, que adota uma abordagem de identidade digital soberana por meio da Identidade da Internet e do NFID. Ao contrário dos sistemas tradicionais baseados em nome de usuário e senha, este método permite que os usuários acessem a aplicação com segurança usando criptografia e dispositivos com suporte WebAuthn. Isso fortalece a segurança, a privacidade e a experiência do usuário, eliminando a necessidade de memorizar senhas.
 
-The logical core of the application resides in the back-end, which is implemented through Canisters hosted on the Internet Computer (ICP) blockchain. This choice decentralizes the application, making it more secure, transparent, and resistant to failures or censorship. Within this structure, several canisters operate in an orchestrated manner to deliver the platform's functionalities. The users_backend manages user profiles and data; the tracks_backend serves as the central repository for the learning tracks; the chats_backend enables communication and community functionalities; and the nft_certificates, in direct communication with the tracks_backend, is responsible for generating and issuing completion certificates in NFT format, ensuring their authenticity and immutability.
+O núcleo lógico do aplicativo reside no back-end, que é implementado por meio de Canisters hospedados no blockchain do Internet Computer (ICP). Essa escolha descentraliza a aplicação, tornando-a mais segura, transparente e resistente a falhas ou censura. Dentro dessa estrutura, diversos canisters operam de forma orquestrada para entregar as funcionalidades da plataforma. O users_backend gerencia perfis e dados de usuários; otracks_backend serve como repositório central para as trilhas de aprendizagem; o chats_backend permite funcionalidades de comunicação e comunidade; e o nft_certificates, em comunicação direta com otracks_backend, é responsável por gerar e emitir certificados de conclusão em formato NFT, garantindo sua autenticidade e imutabilidade.
 
-To enhance the application with advanced artificial intelligence, the architecture integrates a cutting-edge external service. The orchestration of this integration is handled by the kai_backend, a specific canister that acts as an intermediary. It receives the raw materials provided by the user (such as PDFs and links) and triggers the Gemini language model, from Google, through secure API calls. Gemini then processes this data to generate personalized learning tracks. This hybrid approach combines the computational power of a large-scale LLM with the security and decentralization of the business logic running on-chain, optimizing the best of both worlds.
+Para aprimorar a aplicação com inteligência artificial avançada, a arquitetura integra um serviço externo de última geração. A orquestração dessa integração é feita pelo kai_backend, um canister específico que atua como intermediário. Ele recebe as matérias-primas fornecidas pelo usuário (como PDFs e links) e aciona o modelo de linguagem Gemini, do Google, por meio de chamadas seguras de API. O Gemini então processa esses dados para gerar trilhas de aprendizagem personalizadas. Esta abordagem híbrida combina o poder computacional de um LLM em grande escala com a segurança e a descentralização da lógica de negócios executada em cadeia, otimizando o melhor dos dois mundos.
  
- This diagram is essential for visualizing the organization of components, facilitating understanding between developers and stakeholders, and guiding technical decisions throughout development.
+Este diagrama é essencial para visualizar a organização dos componentes, facilitando o entendimento entre desenvolvedores e stakeholders e orientando as decisões técnicas ao longo do desenvolvimento.
 
-## 3.2. Style Guide
+<a id="32-style-guide"></a>
+## 3.2. Guia de Estilo
 
-The Kaisen style guide aims to ensure visual and functional consistency throughout the platform's interface. It serves as a central reference for designers and developers, standardizing the use of colors, typography, and graphic elements. By strengthening Kaisen's visual identity, the guide reduces inconsistencies in interface development and ensures accessibility, aesthetic coherence, and scalability across different application modules—whether they are aimed at individual learning, community validation, or public presentation of acquired knowledge.
+O guia de estilo do Kaisen tem como objetivo garantir a consistência visual e funcional em toda a interface da plataforma. Ele serve como referência central para designers e desenvolvedores, padronizando o uso de cores, tipografia e elementos gráficos. Ao fortalecer a identidade visual do Kaisen, o guia reduz inconsistências no desenvolvimento da interface e assegura acessibilidade, coerência estética e escalabilidade entre os diferentes módulos da aplicação — sejam eles voltados para o aprendizado individual, validação comunitária ou apresentação pública do conhecimento adquirido.
 
-### 3.2.1. Colors
+### 3.2.1. Cores
 
-The color palette is an essential element in the visual construction of the Kaisen platform, contributing to the clear communication of the application's purpose, reinforcing its values of autonomy, innovation, and decentralization. The colors were chosen based on principles of contrast, accessibility, and visual hierarchy, ensuring an intuitive, functional, and welcoming experience for different user profiles.
+A paleta de cores é um elemento essencial na construção visual, contribuindo para a comunicação clara do propósito da aplicação e reforçando seus valores de autonomia, inovação e descentralização. As cores foram escolhidas com base em princípios de contraste, acessibilidade e hierarquia visual, garantindo uma experiência intuitiva, funcional e acolhedora para diferentes perfis de usuários.
 
 <div align="center">
 
-<sub>Figure 9 - Colors</sub>
+<sub>Figura 9 - Cores</sub>
 
 <img src="assets/design/colors.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The main color of the visual identity is a vibrant shade of orange (#F97316 | orange-500), which evokes energy, creativity, and transformation—core aspects of Kaisen's educational proposal. This color is applied to prominent interactive elements, such as primary buttons, calls to action, and progress markers. Its more intense variation, dark orange (#C2410C | orange-700), is used in contexts where greater emphasis or visual depth is desired, maintaining consistency and dynamism in communication.
+A cor principal da identidade visual é um tom vibrante de laranja (#F97316 | orange-500), que evoca energia, criatividade e transformação — aspectos centrais da proposta educacional do Kaisen. Essa cor é aplicada a elementos interativos de destaque, como botões primários, chamadas para ação e marcadores de progresso. Sua variação mais intensa, o laranja escuro (#C2410C | orange-700), é utilizada em contextos que exigem maior ênfase ou profundidade visual, mantendo a consistência e o dinamismo na comunicação.
 
-The palette also includes a carefully distributed grayscale, ranging from white (#FAFAFA | zinc-50) to black (#09090B | zinc-950). These neutral tones provide balance to the interface, allowing the orange elements to stand out clearly, while ensuring readability and accessibility across devices and viewing modes (such as dark mode).
+A paleta também inclui uma escala de cinzas cuidadosamente distribuída, que vai do branco (#FAFAFA | zinc-50) ao preto (#09090B | zinc-950). Esses tons neutros proporcionam equilíbrio à interface, permitindo que os elementos em laranja se destaquem claramente, além de garantir legibilidade e acessibilidade em diferentes dispositivos e modos de visualização (como o modo escuro).
 
-Each color in the palette serves a strategic purpose—whether as a background, outline, shadow, or text—reinforcing the Kaisen identity and promoting consistent, streamlined navigation focused on continuous learning.
+Cada cor da paleta cumpre um papel estratégico — seja como fundo, contorno, sombra ou texto — reforçando a identidade do Kaisen e promovendo uma navegação consistente e fluida, focada no aprendizado contínuo.
 
-### 3.2.2. Typography
+### 3.2.2. Tipografia
 
-The typography used on the Kaisen platform was selected based on legibility, simplicity, and visual consistency, aiming to provide fluid and accessible reading across different devices and contexts. The Poppins font, available on Google Fonts, was chosen for its clean, modern, and highly legible design.
+A tipografia utilizada na plataforma Kaisen foi selecionada para proporcionar uma leitura fluida e acessível em diferentes dispositivos e contextos. A fonte Poppins, disponível no Google Fonts, foi escolhida por seu design limpo e moderno.
 
 <div align="center">
 
-<sub>Figure 10 - Typography</sub>
+<sub>Figura 10 - Tipografia</sub>
 
 <img src="assets/design/typography.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The use of a single typeface throughout the interface contributes to the design's uniformity, while variations in size, weight, and spacing allow for the creation of a well-defined visual hierarchy. Titles and calls to action use bolder weights, such as SemiBold, in larger sizes (32px and 24px), to highlight relevant information and guide user navigation. Body text, such as descriptions and instructions, uses Regular or Medium weights, with sizes ranging from 14px to 16px and consistent spacing of -2%, promoting comfortable and fluid reading.
+O uso de uma única família tipográfica em toda a interface contribui para a uniformidade do design, enquanto as variações de tamanho, peso e espaçamento permitem a criação de uma hierarquia visual bem definida. Títulos e chamadas para ação utilizam pesos mais ousados, como SemiBold, em tamanhos maiores (32px e 24px), para destacar informações relevantes e orientar a navegação do usuário. Textos corridos, como descrições e instruções, utilizam pesos Regular ou Medium, com tamanhos entre 14px e 16px e espaçamento consistente de -2%, promovendo uma leitura confortável e fluida.
 
-By strategically adopting the Poppins font and its variations, Kaisen reinforces its visual identity and provides a consistent, welcoming, and inclusive experience for its entire decentralized learning community.
+### 3.2.3. Elementos Visuais
 
-
-### 3.2.3. Visual Elements
-
-The visual elements of the Kaisen platform were designed to communicate, symbolically and emotionally, the solution's core values. Notable among these elements are the mascot and logo, which reinforce the platform's identity and foster a closer connection with users.
+Os elementos visuais da plataforma Kaisen foram concebidos para comunicar, de forma simbólica e emocional, os valores centrais da solução. Destacam-se entre esses elementos o mascote e o logotipo, que reforçam a identidade da plataforma e promovem uma conexão mais próxima com os usuários.
 
 <div align="center">
 
-<sub>Figure 11 - Mascot</sub>
+<sub>Figura 11 - Mascote</sub>
 
 <img src="assets/design/mascot.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The platform's mascot, Kai, is an expressive and welcoming fox, presented in several variations that represent different emotional states and moments in the learning journey—such as studying, relaxing, listening to music, or moving. The choice of this animal evokes attributes such as intelligence, curiosity, and lightheartedness, reflecting the platform's vision of making decentralized learning more human, engaging, and accessible. The mascot's presence contributes to strengthening the emotional connection with users, making the experience more engaging and captivating.
+O mascote da plataforma, Kai, é uma raposa expressiva e acolhedora, apresentada em diversas variações que representam diferentes estados emocionais e momentos da jornada de aprendizagem — como estudando, relaxando, ouvindo música ou em movimento. A escolha desse animal evoca atributos como inteligência, curiosidade e leveza, refletindo a visão da plataforma de tornar o aprendizado mais humano e acessível. A presença do mascote contribui para fortalecer a conexão emocional com os usuários, tornando a experiência mais cativante e engajadora.
 
 <div align="center">
 
-<sub>Figure 12 - Logo</sub>
+<sub>Figura 12 - Logotipo</sub>
 
 <img src="assets/design/logo.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The Kaisen logo, meanwhile, is composed of modular geometric shapes organized around a central block—a key symbol of the platform's visual identity. This central block carries a dual meaning: it represents both the blocks that structure blockchain technology and the knowledge blocks constructed throughout the learning process. It's not a traditional solid shape, like a square or rectangle; rather, it's made up of several parts that connect and evolve.
+O logotipo do Kaisen, por sua vez, é composto por formas geométricas modulares organizadas em torno de um bloco central — símbolo-chave da identidade visual da plataforma. Esse bloco central carrega o significado: representa os blocos de conhecimento construídos ao longo do processo de aprendizagem. Não se trata de uma forma sólida tradicional, como um quadrado ou retângulo; ao contrário, é formado por várias partes que se conectam e evoluem.
 
-This fragmented composition symbolizes the collaborative and constantly evolving nature of Kaisen, where users and artificial intelligence work together to organize, validate, and expand knowledge. The logo thus conveys the fundamental pillars of the platform's proposal: decentralization, autonomy, technology, and co-authorship.
+Essa composição fragmentada simboliza a natureza colaborativa e em constante evolução do Kaisen, onde usuários e inteligência artificial trabalham juntos para organizar, validar e expandir o conhecimento. O logotipo, assim, transmite os pilares fundamentais da proposta da plataforma: autonomia, tecnologia e coautoria.
 
-Together, the Kai mascot and the logo form a strong, symbolic visual identity that's consistent with the principles of Kaisen—a platform that combines cutting-edge technology with empathy and purpose, transforming the way people learn and share knowledge.
+Juntos, o mascote Kai e o logotipo formam uma identidade visual forte e simbólica, alinhada aos princípios do Kaisen — uma plataforma que combina tecnologia de ponta com empatia e propósito, transformando a maneira como as pessoas aprendem e compartilham conhecimento.
 
-## 3.3. High-Fidelity Prototype
+<a id="33-high-fidelity-prototype"></a>
+## 3.3. Protótipo de alta fidelidade
 
-A high-fidelity prototype provides a detailed visual representation of the application. It simulates the design's field format, interactions, and user experience, using colors, typography, icons, buttons, and other graphic elements compatible with the final product.
+Um protótipo de alta fidelidade fornece uma representação visual detalhada do aplicativo. Simula o formato dos campos do design, as interações e a experiência do usuário, utilizando cores, tipografia, ícones, botões e outros elementos gráficos compatíveis com o produto final.
 
-This type of prototype allows you to validate design decisions before development begins, test usability with real users, and present a solution visually and functionally to interested parties.
+Este tipo de protótipo permite validar decisões de design antes do início do desenvolvimento, testar a usabilidade com usuários reais e apresentar uma solução visual e funcionalmente aos interessados.
 
-The complete prototype can be accessed through the Figma platform, using the following link: [Figma Prototype](https://www.figma.com/design/qPsCtf4GvgwH6cmUgdy7Q8/Kaisen--WCHL-?node-id=11-55&p=f&t=iUgnCTERVnBrP4BJ-0)
+O protótipo completo pode ser acessado através da plataforma Figma, através do seguinte link: [Figma Prototype](https://www.figma.com/design/qPsCtf4GvgwH6cmUgdy7Q8/Kaisen--WCHL-?node-id=11-55&p=f&t=iUgnCTERVnBrP4BJ-0)
 
-Below are the prototyped screens, which illustrate the application's main functionalities:
+Abaixo estão as telas prototipadas, que ilustram as principais funcionalidades do aplicativo:
 
 <div align="center">
 
-<sub>Figure 13 - Home</sub>
+<sub>Figura 13 - Home</sub>
 
 <img src="./assets/screens/1.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The home screen serves as the platform's central navigation point, offering users a bird's-eye view of their progress and quick access to key features. As the user's first contact with the application, it plays a crucial role in defining the user experience, setting the visual and functional tone for the journey. It displays highlighted learning paths and personalized statistics, facilitating the intuitive discovery of relevant content.
+A tela inicial serve como ponto central de navegação da plataforma, oferecendo aos usuários uma visão panorâmica de seu progresso e acesso rápido aos principais recursos. Sendo o primeiro contacto do utilizador com a aplicação, desempenha um papel crucial na definição da experiência do utilizador, dando o tom visual e funcional da viagem. Ele exibe caminhos de aprendizagem destacados e estatísticas personalizadas, facilitando a descoberta intuitiva de conteúdos relevantes.
 
 <div align="center">
 
-<sub>Figure 14 - Chat</sub>
+<sub>Figura 14 - Bate-papo</sub>
 
 <img src="./assets/screens/2.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-This interface allows direct communication with the platform's artificial intelligence assistant, Kai. Through this channel, users can submit materials, ask questions, and receive personalized educational guidance. This functionality represents the core of Kaisen's value proposition, as it transforms raw content into structured, dynamic, and interactive learning experiences, powered by AI.
+Essa interface permite a comunicação direta com o assistente de inteligência artificial da plataforma, Kai. Por meio desse canal, os usuários podem enviar materiais, tirar dúvidas e receber orientações educacionais personalizadas. Esta funcionalidade representa o núcleo da proposta de valor da Kaisen, pois transforma conteúdo bruto em experiências de aprendizagem estruturadas, dinâmicas e interativas, alimentadas por IA.
 
 <div align="center">
 
-<sub>Figure 15 - Tracks</sub>
+<sub>Figura 15 - Trilhas</sub>
 
 <img src="./assets/screens/3.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The tracks screen is the central environment for content discovery, where all the platform's material is organized and categorized by areas of knowledge. To facilitate the search, the interface offers filtering features by topics, interests, and difficulty levels, allowing users to easily find the most suitable tracks for their educational goals. Furthermore, the platform encourages collective building: users who wish to improve a track can start their collaboration through the "Collaborate" button.
+A tela de trilhas é o ambiente central de descoberta de conteúdo, onde todo o material da plataforma é organizado e categorizado por áreas de conhecimento. Para facilitar a busca, a interface oferece recursos de filtragem por temas, interesses e níveis de dificuldade, permitindo ao usuário encontrar facilmente as trilhas mais adequadas aos seus objetivos educacionais. Além disso, a plataforma incentiva a construção coletiva: os usuários que desejam melhorar uma trilha podem iniciar sua colaboração através do botão “Colaborar”.
 
 <div align="center">
 
-<sub>Figure 16 - Tracks</sub>
+<sub>Figura 16 - Trilhas</sub>
 
 <img src="./assets/screens/4.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-Modals provide an in-depth overview of a specific learning path, including its description, user progress, available modules, related content, and supplementary resources. They are essential components for user engagement, as they allow direct access to different types of educational resources, such as flashcards, summaries, quizzes, and videos. Thus, they provide a more dynamic, interactive, and structured learning experience, favoring personalized and efficient knowledge assimilation.
+Os modais fornecem uma visão geral detalhada de um caminho de aprendizagem específico, incluindo sua descrição, progresso do usuário, módulos disponíveis, conteúdo relacionado e recursos suplementares. São componentes essenciais para o engajamento do usuário, pois permitem acesso direto a diversos tipos de recursos educacionais, como flashcards, resumos, questionários e vídeos. Assim, proporcionam uma experiência de aprendizagem mais dinâmica, interativa e estruturada, favorecendo a assimilação personalizada e eficiente do conhecimento.
 
 <div align="center">
 
-<sub>Figure 17 - Practice and Proof of Learning</sub>
+<sub>Figura 17 - Prática e Prova de Aprendizagem</sub>
 
 <img src="./assets/screens/5.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-In the Practice section, users have access to features that help them review the content studied throughout the path, including quizzes and interactive tests. These resources are essential for consolidating learning and validating individual progress. Upon completing the proposed activities, users unlock the Proof of Learning section, where they can obtain their certificate in NFT format. This certificate is authenticated via blockchain, ensuring its authenticity and immutability. The platform also offers direct sharing options to social media, increasing the visibility of users' achievements and strengthening their digital reputation.
+Na seção Prática, os usuários têm acesso a recursos que os auxiliam na revisão do conteúdo estudado ao longo do caminho, incluindo quizzes e testes interativos. Esses recursos são essenciais para consolidar o aprendizado e validar o progresso individual. Ao concluir as atividades propostas, o usuário desbloqueia a seção Prova de Aprendizagem, onde poderá obter seu certificado em formato NFT. Este certificado é autenticado via blockchain, garantindo sua autenticidade e imutabilidade. A plataforma também oferece opções de compartilhamento direto nas redes sociais, aumentando a visibilidade das conquistas dos usuários e fortalecendo sua reputação digital.
 
 <div align="center">
 
-<sub>Figure 18 - Discover</sub>
+<sub>Figura 18 - Descubra</sub>
 
 <img src="./assets/screens/6.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The Discover feature aims to expand learning possibilities by facilitating the exploration of new paths and content through thematic categories, smart filters, and personalized recommendations. This screen is vital for maintaining ongoing user engagement and stimulating curiosity, connecting them to knowledge that might otherwise go unnoticed.
+O recurso Descobrir tem como objetivo ampliar as possibilidades de aprendizagem, facilitando a exploração de novos caminhos e conteúdos por meio de categorias temáticas, filtros inteligentes e recomendações personalizadas. Essa tela é vital para manter o envolvimento contínuo dos usuários e estimular a curiosidade, conectando-os a conhecimentos que de outra forma poderiam passar despercebidos.
 
 <div align="center">
 
-<sub>Figure 19 - Profile</sub>
+<sub>Figura 19 - Perfil</sub>
 
 <img src="./assets/screens/7.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The profile screen is a centralized dashboard that consolidates all of the user's information, activities, and contributions on the Kaizen platform, offering a comprehensive view of their journey and social interaction. It presents identifying information, such as a photo, name, and username, in addition to a personal biography, links to social media, and metrics for followers and followed profiles. The interface also includes action buttons to follow or send messages, and a badges section that highlights special achievements like 'PRO' and 'OG'. 
+A tela de perfil é um painel centralizado que consolida todas as informações, atividades e contribuições do usuário na plataforma Kaizen, oferecendo uma visão abrangente de sua jornada e interação social. Apresenta informações de identificação, como foto, nome e nome de usuário, além de biografia pessoal, links para redes sociais e métricas de seguidores e perfis seguidos. A interface também inclui botões de ação para seguir ou enviar mensagens e uma seção de emblemas que destaca conquistas especiais como ‘PRO’ e ‘OG’.
 
-The main content is organized into tabs, where the "Overview" tab displays the user's collaborations, such as the learning tracks they created, and a feed of recent activities with completed tracks and social interactions. On the "Community" tab, the user can access all of their publications and track engagement through likes, comments, and reposts.
+O conteúdo principal é organizado em abas, onde a aba “Visão Geral” exibe as colaborações do usuário, como as trilhas de aprendizagem que ele criou, e um feed de atividades recentes com trilhas concluídas e interações sociais. Na aba “Comunidade”, o usuário pode acessar todas as suas publicações e acompanhar o engajamento por meio de curtidas, comentários e repostagens.
 
 <div align="center">
 
-<sub>Figure 20 - Kai's store</sub>
+<sub>Figura 20 - Loja do Kai</sub>
 
 <img src="./assets/screens/8.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-Kai's store is a gamified interface where users can use platform tokens ($KOIN) to purchase visual customizations, skins, exclusive features, and premium tools. This is a strategic feature for both monetization and user retention, offering tangible incentives for continued engagement. By enabling personalized experiences, the store also helps strengthen users' emotional bond with the platform.
+A loja de Kai é uma interface gamificada onde os usuários podem usar tokens de plataforma ($KOIN) para adquirir personalizações visuais, skins, recursos exclusivos e ferramentas premium. Este é um recurso estratégico tanto para monetização quanto para retenção de usuários, oferecendo incentivos tangíveis para envolvimento contínuo. Ao possibilitar experiências personalizadas, a loja também ajuda a fortalecer o vínculo emocional dos usuários com a plataforma.
 
 <div align="center">
 
-<sub>Figure 21 - settings and community</sub>
+<sub>Figura 21 - configurações e comunidade</sub>
 
 <img src="./assets/screens/9.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The settings screen allows users to adjust their usage preferences, configure notifications, and manage their accounts in a personalized way. This feature offers greater control over the individual experience within the platform, promoting comfort, accessibility, and security during continued use.
+A tela de configurações permite que os usuários ajustem suas preferências de uso, configurem notificações e gerenciem suas contas de forma personalizada. Esse recurso oferece maior controle sobre a experiência individual dentro da plataforma, promovendo conforto, acessibilidade e segurança durante o uso contínuo.
 
-The community screen aims to strengthen interactions between users, serving as a space for exchange and collaboration. Here, participants can post about their experiences on the platform, share reflections on the learning process, promote created paths, and interact with other members' content. This dynamic contributes to building a network of support and educational engagement, encouraging mutual recognition and collective development.
+A tela da comunidade tem como objetivo fortalecer as interações entre os usuários, servindo como espaço de troca e colaboração. Aqui, os participantes podem postar sobre suas experiências na plataforma, compartilhar reflexões sobre o processo de aprendizagem, divulgar caminhos criados e interagir com conteúdos de outros membros. Essa dinâmica contribui para a construção de uma rede de apoio e engajamento educativo, incentivando o reconhecimento mútuo e o desenvolvimento coletivo.
 
 <div align="center">
 
-<sub>Figure 22 - create tracks</sub>
+<sub>Figura 22 - criar trilhas</sub>
 
 <img src="./assets/screens/10.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-The process of creating a new learning track (track) is an intuitive and flexible workflow, allowing the user to build content manually or with the help of Artificial Intelligence. The flow begins with a modal where the user defines the track's basic information, such as the title and description. Next, they advance to an objective selection screen, "What do you want to learn?", which guides the content generation by the AI or prepares the path for manual construction. When opting for manual creation, the user accesses a visual and interactive canvas-style editor, where they can structure the track dynamically by adding and connecting different content sections such as summaries, flashcards, quizzes, videos, and questions. Furthermore, before proceeding, it is necessary to fill out a "Course Information" form to add metadata and other details.
+O processo de criação de uma nova trilha (trilha) de aprendizagem é um fluxo de trabalho intuitivo e flexível, permitindo ao usuário construir conteúdo manualmente ou com auxílio de Inteligência Artificial. O fluxo começa com um modal onde o usuário define as informações básicas da faixa, como título e descrição. Em seguida, avançam para uma tela de seleção de objetivos, “O que você quer aprender?”, que orienta a geração de conteúdo pela IA ou prepara o caminho para a construção manual. Ao optar pela criação manual, o usuário acessa um editor visual e interativo estilo canvas, onde pode estruturar a trilha de forma dinâmica adicionando e conectando diferentes seções de conteúdo como resumos, flashcards, quizzes, vídeos e perguntas. Além disso, antes de prosseguir, é necessário preencher um formulário de “Informações do Curso” para adicionar metadados e outros detalhes.
 
 <div align="center">
 
-<sub>Figure 23 - create sections</sub>
+<sub>Figura 23 - criar seções</sub>
 
 <img src="./assets/screens/11.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-Inside the track editor, the platform offers a set of specific modals for creating different types of content sections. Each modal is designed to be intuitive and task-focused, allowing the user to build a rich and interactive learning experience.
+Dentro do editor de trilhas, a plataforma oferece um conjunto de modais específicos para a criação de diversos tipos de seções de conteúdo. Cada modal é projetado para ser intuitivo e focado em tarefas, permitindo ao usuário construir uma experiência de aprendizagem rica e interativa.
 
-For the creation of Summaries, the user utilizes a full-featured text editor (rich text editor). The interface allows for the insertion of a title and the formatting of the text body with several options, such as bold, italics, underline, numbered or bulleted lists, and the insertion of links, ensuring the creation of a well-structured and organized reading material.
+Para a criação dos Resumos, o usuário utiliza um editor de texto completo (editor de rich text). A interface permite a inserção de título e a formatação do corpo do texto com diversas opções, como negrito, itálico, sublinhado, listas numeradas ou com marcadores, e a inserção de links, garantindo a criação de um material de leitura bem estruturado e organizado.
 
-The Flashcards section is ideal for memorization exercises. The user can define a title for the set and then create cards individually, filling in the "Front" (for the question or term) and "Back" (for the answer or definition) fields. The interface offers the flexibility to add as many flashcards as needed to the set through the "+ Add new card" button.
+A seção Flashcards é ideal para exercícios de memorização. O usuário pode definir um título para o conjunto e depois criar cartões individualmente, preenchendo os campos “Frente” (para a pergunta ou termo) e “Voltar” (para a resposta ou definição). A interface oferece a flexibilidade de adicionar quantos flashcards forem necessários ao conjunto por meio do botão "+ Adicionar novo cartão".
 
-In the creation of Quizzes, the user can craft an objective question and configure multiple answer options. For each option, there is a selector that allows marking which one is correct, making the assessment automated and interactive. It is possible to add more questions according to the user's needs.
+Na criação de Quizzes, o usuário pode elaborar uma pergunta objetiva e configurar múltiplas opções de resposta. Para cada opção existe um seletor que permite marcar qual é a correta, tornando a avaliação automatizada e interativa. É possível adicionar mais perguntas de acordo com a necessidade do usuário.
 
-Additionally, it is possible to incorporate audiovisual content through the Video section. The user simply inserts the desired video URL, adds a title, and a description to contextualize the material. The platform displays a preview of the video, ensuring that the link has been correctly incorporated before the section's creation.
+Além disso, é possível incorporar conteúdo audiovisual através da seção Vídeo. Basta o usuário inserir a URL do vídeo desejado, adicionar um título e uma descrição para contextualizar o material. A plataforma exibe uma prévia do vídeo, garantindo que o link foi incorporado corretamente antes da criação da seção.
 
 <div align="center">
 
-<sub>Figure 24 - collaboration tools</sub>
+<sub>Figura 24 - ferramentas de colaboração</sub>
 
 <img src="./assets/screens/12.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-On the collaboration screen, it is possible to reorganize the order of the sections using a drag-and-drop system, edit the content of existing sections through specific editors (such as the rich text editor for summaries), or add new content sections. All the creation tools available to the original author are also made available to the collaborator, ensuring that their contributions can be rich and well-formatted.
+Na tela de colaboração é possível reorganizar a ordem das seções através de um sistema de arrastar e soltar, editar o conteúdo das seções existentes através de editores específicos (como o editor de rich text para resumos) ou adicionar novas seções de conteúdo. Todas as ferramentas de criação à disposição do autor original também são disponibilizadas ao colaborador, garantindo que suas contribuições sejam ricas e bem formatadas.
 
-After a collaborator submits their changes, the track's original author is notified. On the "Collaboration" tab, they find a management panel with a detailed history of all pending contributions. For each proposal, crucial information is displayed: what was modified, who made the change, and the submission date. The author then has the power to review each change and decide whether to accept the collaboration, integrating it permanently into the track, or reject it. This approval system ensures the quality and integrity of the original content, while stimulating continuous improvement through the collective intelligence of the community.
+Depois que um colaborador envia as alterações, o autor original da faixa é notificado. Na aba “Colaboração”, eles encontram um painel de gerenciamento com um histórico detalhado de todas as contribuições pendentes. Para cada proposta são exibidas informações cruciais: o que foi modificado, quem fez a alteração e a data de envio. O autor então tem o poder de revisar cada alteração e decidir se aceita a colaboração, integrando-a permanentemente na trilha, ou rejeita-a. Este sistema de aprovação garante a qualidade e integridade do conteúdo original, ao mesmo tempo que estimula a melhoria contínua através da inteligência coletiva da comunidade.
 
-# 4. Application Development
+<a id="4-application-development"></a>
+# 4. Desenvolvimento de aplicativos
 
-## 4.1. First Version of the Application
+<a id="41-first-version-of-the-application"></a>
+## 4.1. Primeira versão do aplicativo
 
-The first version of the Kaisen application MVP has been completed, providing the essential structure of the system, focusing on validating the main usage flows and integrations between the backend and frontend. This initial delivery prioritized user experience, authentication, basic interaction features, and integration with the blockchain layer.
+Foi concluída a primeira versão do MVP da aplicação Kaisen, fornecendo a estrutura essencial do sistema, com foco na validação dos principais fluxos de utilização e integrações entre backend e frontend. Essa entrega inicial priorizou a experiência do usuário, autenticação, recursos básicos de interação e integração com a camada blockchain.
 
-#### Structure and implemented features
+<a id="structure-and-implemented-features"></a>
+#### Estrutura e recursos implementados
 
-In this initial version, the following functional components were delivered:
+Nesta versão inicial foram entregues os seguintes componentes funcionais:
 
-- **Home page with navigation menu:** Clear interface, with quick access to the main areas of the system.
-- **User profile management:** Creation, viewing, and editing of profiles, including nicknames, bios, and roles.
-- **Community dashboard:** Screen for viewing community posts, promoting interaction and engagement among users.
-- **User Track Management and Display:** View created, in-progress, and completed tracks for each profile.
+- **Página inicial com menu de navegação:** Interface clara, com acesso rápido às principais áreas do sistema.
+- **Gerenciamento de perfil de usuário:** Criação, visualização e edição de perfis, incluindo apelidos, biografias e funções.
+- **Painel da comunidade:** Tela para visualização de postagens da comunidade, promovendo interação e engajamento entre os usuários.
+- **Gerenciamento e exibição de trilhas de usuários:** Veja trilhas criadas, em andamento e concluídas para cada perfil.
 
-#### Technical Development Process
+<a id="technical-development-process"></a>
+#### Processo de Desenvolvimento Técnico
 
-Development combined modern technologies, with a clear division between the React/Vite (TypeScript) frontend and the Motoko backend. Hooks and providers were created for authentication, user management, and integration of operations with Motoko canisters. The AI chat system uses asynchronous requests, contextual history, and interaction persistence.
+O desenvolvimento combinou tecnologias modernas, com uma divisão clara entre o frontend React/Vite (TypeScript) e o backend Motoko. Hooks e provedores foram criados para autenticação, gerenciamento de usuários e integração de operações com canisters Motoko. O sistema de chat AI usa solicitações assíncronas, histórico contextual e persistência de interação.
 
-#### Screen Illustrations
-Some of the main screens implemented in this version are:
+<a id="screen-illustrations"></a>
+#### Ilustrações de tela
+Algumas das principais telas implementadas nesta versão são:
 
 <div align="center">
 
-<sub>Figure 25 - Home</sub>
+<sub>Figura 25 - Home</sub>
 
 <img src="./assets/screens-aplication/home.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
 <div align="center">
 
-<sub>Figure 26 - Tracks</sub>
+<sub>Figura 26 - Trilhas</sub>
 
 <img src="./assets/screens-aplication/tracks.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
 <div align="center">
 
-<sub>Figure 27 - Discover</sub>
+<sub>Figura 27 - Descobrir</sub>
 
 <img src="./assets/screens-aplication/discover.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-#### Challenges Faced
+<a id="challenges-faced"></a>
+#### Desafios enfrentados
 
-Among the main challenges were the secure integration between the frontend and Motoko canisters, the modeling of the decentralized authentication flow, and the management of conversation status with AI, ensuring real-time updates to the interface and consistency of user data.
+Entre os principais desafios estavam a integração segura entre o frontend e os canisters Motoko, a modelagem do fluxo de autenticação descentralizada e a gestão do status da conversa com IA, garantindo atualizações em tempo real da interface e consistência dos dados do usuário.
 
-This MVP version validates the essential pillars of the Kaisen platform, serving as a solid foundation for continuous evolution and the inclusion of new features in the next stages of the project.
+Esta versão MVP valida os pilares essenciais da plataforma Kaisen, servindo como uma base sólida para a evolução contínua e a inclusão de novas funcionalidades nas próximas etapas do projeto.
 
-## 4.2 Second Version of the Application
+<a id="42-second-version-of-the-application"></a>
+## 4.2 Segunda versão do aplicativo
 
-The second version of the Kaizen platform represents a significant evolution, focused on enhancing the user experience and expanding the key functionalities of the learning ecosystem. The main objective was to solidify the technical infrastructure with the development of a robust back-end and, at the same time, introduce new features to increase engagement, interactivity, and the validation of user achievements through innovative technologies like NFTs.
+A segunda versão da plataforma Kaizen representa uma evolução significativa, focada em melhorar a experiência do usuário e expandir as principais funcionalidades do ecossistema de aprendizagem. O principal objetivo era solidificar a infraestrutura técnica com o desenvolvimento de um back-end robusto e, ao mesmo tempo, introduzir novos recursos para aumentar o engajamento, a interatividade e a validação das conquistas dos usuários por meio de tecnologias inovadoras como os NFTs.
 
-To ensure a cohesive implementation aligned with usability goals, all development followed a high-fidelity prototype. This allowed for the programming of new screens and the precise restructuring of existing interfaces, resulting in a more polished, intuitive, and functional final product, prepared to support new community interactions and solidify the platform's learning model.
+Para garantir uma implementação coesa e alinhada aos objetivos de usabilidade, todo o desenvolvimento seguiu um protótipo de alta fidelidade. Isso permitiu a programação de novas telas e a reestruturação precisa das interfaces existentes, resultando em um produto final mais polido, intuitivo e funcional, preparado para suportar novas interações da comunidade e solidificar o modelo de aprendizagem da plataforma.
 
-#### Structure and implemented features
-In this new version, the following functional components were delivered, transforming the platform into a more complete and collaborative learning ecosystem:
+<a id="structure-and-implemented-features"></a>
+#### Estrutura e recursos implementados
+Nesta nova versão foram entregues os seguintes componentes funcionais, transformando a plataforma em um ecossistema de aprendizagem mais completo e colaborativo:
 
-- **NFT Certificate Management:** Implementation of the complete flow for the generation, viewing, and management of NFT certificates, validating user achievements on the blockchain.
-- **User Authentication System:** Implementation of login, logout, and identity management, integrating with the Motoko backend.
-- **AI Chat (Kai):** Intelligent chat functionality, allowing users to initiate conversations with AI, save history, and dynamic responses.
-- **Track Creation Flow:** Advanced tools for users to create complex learning tracks, with support for multiple content types such as summaries, quizzes, flashcards, and videos.
-- **Community Collaboration System:** A new area that allows users to suggest edits and improvements to existing tracks, with an approval system for the original author.
-- **Enhanced User Profile:** Restructuring of the profile screen to include engagement metrics, published tracks, certificates, and recent activities.
-- **External NFT Verification:** A public page that allows anyone to verify the authenticity of an NFT certificate via a unique code.
+- **Gerenciamento de certificados NFT:** Implementação do fluxo completo de geração, visualização e gerenciamento de certificados NFT, validando as conquistas dos usuários no blockchain.
+- **Sistema de Autenticação de Usuário:** Implementação de login, logout e gerenciamento de identidade, integrando com o backend da Motoko.
+- **AI Chat (Kai):** Funcionalidade de chat inteligente, permitindo aos usuários iniciar conversas com IA, salvar histórico e respostas dinâmicas.
+- **Fluxo de criação de trilhas:** Ferramentas avançadas para os usuários criarem trilhas de aprendizagem complexas, com suporte para vários tipos de conteúdo, como resumos, questionários, flashcards e vídeos.
+- **Sistema de Colaboração da Comunidade:** Uma nova área que permite aos usuários sugerir edições e melhorias em faixas existentes, com sistema de aprovação do autor original.
+- **Perfil de usuário aprimorado:** Reestruturação da tela de perfil para incluir métricas de engajamento, faixas publicadas, certificados e atividades recentes.
+- **Verificação externa de NFT:** Uma página pública que permite a qualquer pessoa verificar a autenticidade de um certificado NFT por meio de um código exclusivo.
 
-#### Technical Development Process
+<a id="technical-development-process"></a>
+#### Processo de Desenvolvimento Técnico
 
-The development was guided by a high-fidelity prototype, ensuring cohesion between design and implementation. On the back-end, robust services were created for the generation and management of NFTs, in addition to the implementation of endpoints to support track creation (CRUD operations), the "Koins" system, the dynamic chat, and user progress tracking. On the front-end, the team implemented the new interfaces, such as the enhanced profile, the complete content creation flow, and the collaboration modals, in addition to adjusting the identity management with support for "DevAuth".
+O desenvolvimento foi orientado por um protótipo de alta fidelidade, garantindo coesão entre design e implementação. No back-end, foram criados serviços robustos para geração e gerenciamento de NFTs, além da implementação de endpoints para suporte à criação de trilhas (operações CRUD), do sistema “Koins”, do chat dinâmico e do acompanhamento do progresso do usuário. No front-end, a equipe implementou as novas interfaces, como o perfil aprimorado, o fluxo completo de criação de conteúdo e os modais de colaboração, além de ajustar o gerenciamento de identidades com suporte ao “DevAuth”.
 
-#### Screen Illustrations
-Some of the main screens and flows implemented in this version are:
+<a id="screen-illustrations"></a>
+#### Ilustrações de tela
+Algumas das principais telas e fluxos implementados nesta versão são:
 
 <div align="center">
 
-<sub>Figure 28 - Track Add Section</sub>
+<sub>Figura 28 - Seção de adição de trilha</sub>
 
 <img src="./assets/screens-aplication/track-add-section.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
 <div align="center">
 
-<sub>Figure 29 - NFT Awarded</sub>
+<sub>Figura 29 - NFT premiado</sub>
 
 <img src="./assets/screens-aplication/nft-awarded.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
 <div align="center">
 
-<sub>Figure 30 - Chat</sub>
+<sub>Figura 30 - Bate-papo</sub>
 
 <img src="./assets/screens-aplication/chat.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
 <div align="center">
 
-<sub>Figure 31 - Profile Overview</sub>
+<sub>Figura 31 - Visão geral do perfil</sub>
 
 <img src="./assets/screens-aplication/profile-overview.png" width="100%">
 
-<sup>Source: Material produced by the authors (2025)</sup>
+<sup>Fonte: Material produzido pelos autores (2025)</sup>
 
 </div>
 
-#### Challenges Faced
+<a id="challenges-faced"></a>
+#### Desafios enfrentados
 
-Among the main challenges were the integration of the back-end with blockchain technology for the generation and verification of NFTs, the implementation of a collaboration system that managed different versions and content approvals, and the development of the chat back-end to support dynamic and real-time interactions. On the front-end, the challenge was to translate the complex flows of the prototype into interactive and responsive components.
+Entre os principais desafios estavam a integração do back-end com a tecnologia blockchain para geração e verificação de NFTs, a implementação de um sistema de colaboração que gerenciasse diferentes versões e aprovações de conteúdo e o desenvolvimento do back-end de chat para suportar interações dinâmicas e em tempo real. No front-end, o desafio era traduzir os fluxos complexos do protótipo em componentes interativos e responsivos.
 
-This second version of Kaisen solidifies the platform as a robust and interactive learning ecosystem. The new features for creation, collaboration, and certification via NFT not only enrich the user experience but also establish an advanced technical foundation for the future implementation of gamification, personalization, and other innovative features.
+Esta segunda versão do Kaisen solidifica a plataforma como um ecossistema de aprendizagem robusto e interativo. Os novos recursos para criação, colaboração e certificação via NFT não apenas enriquecem a experiência do usuário, mas também estabelecem uma base técnica avançada para a implementação futura de gamificação, personalização e outros recursos inovadores.
 
-# 5. Market Study and Marketing Plan
+<a id="5-market-study-and-marketing-plan"></a>
+# 5. Estudo de Mercado e Plano de Marketing
 
-Kaisen's market research and marketing plan aim to align the platform's proposal with the audience's real needs, within the context of decentralized digital education. Understanding learning behavior and the competitive landscape allows for strategic positioning of the solution, while the marketing plan guides its communication and promotion, focusing on engagement and brand consolidation.
+A pesquisa de mercado e o plano de marketing da Kaisen buscam alinhar a proposta da plataforma às necessidades reais do público no contexto da educação digital. Compreender o comportamento de aprendizagem, os concorrentes e as tendências do setor permite posicionar a solução de forma mais precisa, enquanto o plano de marketing orienta sua comunicação, distribuição e promoção, com foco em aquisição, retenção e consolidação da marca.
 
-## 5.1. Executive Summary
+<a id="51-executive-summary"></a>
+## 5.1. Sumário executivo
 
-Kaisen is a decentralized educational platform that integrates artificial intelligence and blockchain to personalize learning and certify knowledge through NFTs, ensuring authenticity and portability. In a context marked by the growth of informal learning and the lack of reliable validation, Kaisen connects autonomy, recognition, and collaboration, transforming learning into a gamified and accessible experience.
+Kaisen é uma plataforma educacional que integra inteligência artificial, aprendizagem colaborativa e certificação digital para transformar estudo informal em trajetórias estruturadas, compartilháveis e reconhecíveis. Em um contexto marcado pelo crescimento da aprendizagem autodirigida e pela fragmentação de conteúdos em diferentes ferramentas, a plataforma conecta organização, produtividade, reconhecimento e comunidade em uma experiência acessível e gamificada.
 
-Its distinguishing features include the automatic organization of personalized paths powered by AI, immutable digital certification, a token economy for rewards, and encouraging community co-creation. The platform offers an innovative alternative to traditional educational solutions, democratizing access to digital reputation based on real knowledge.
+Seus principais diferenciais são a geração de trilhas personalizadas com base no conteúdo do próprio usuário, a possibilidade de colaboração e aprofundamento pela comunidade, a emissão de certificados digitais verificáveis e a monetização de trilhas criadas por especialistas e criadores. Com isso, a Kaisen propõe um modelo no qual aprender, organizar conhecimento e ensinar passam a gerar valor para quem consome e para quem cria.
 
-Its strategic objectives include: (i) personalizing learning based on user content; (ii) promoting public and secure certification; (iii) stimulating collaborative curation; and (iv) transforming learning into a rewarding and meaningful journey.
+Seus objetivos estratégicos incluem: (i) personalizar a aprendizagem com base no conteúdo do usuário; (ii) tornar o conhecimento produzido e adquirido mais organizável e validável; (iii) estimular a curadoria colaborativa e a criação de trilhas de alta qualidade; e (iv) transformar a aprendizagem em uma jornada gratificante, recorrente e economicamente sustentável.
 
-## 5.2. Market Analysis
+<a id="52-market-analysis"></a>
+## 5.2. Análise de Mercado
 
-### 5.2.1. Industry Overview 
+<a id="521-industry-overview"></a>
+### 5.2.1. Visão geral da indústria
 
-The global EdTech market is growing rapidly, driven by digitalization and the demand for autonomous learning, and is expected to exceed US$400 billion by 2025, according to HolonIQ. In Brazil, the expansion of certifications, self-directed learning, and gamification is a consolidated trend.
+O mercado global de EdTech está em crescimento acelerado, impulsionado pela digitalização do ensino, pela popularização de ferramentas baseadas em IA e pela demanda crescente por aprendizagem autônoma. No Brasil, a educação online deixou de ser complementar e passou a ocupar um papel central na forma como estudantes e profissionais atualizam habilidades, especialmente em segmentos ligados à tecnologia, design e formação continuada.
 
-The integration of AI with blockchain represents a promising innovation, enabling effective personalization and secure certification. Although still emerging, this model is expected to grow, especially in areas with a high demand for informal recognition, such as technology, design, and continuing education.
+Nesse cenário, há espaço para soluções que não se limitem à entrega de conteúdo pronto, mas que ajudem o usuário a transformar materiais dispersos em percursos de estudo estruturados. A integração de IA com mecanismos de organização, curadoria e certificação digital representa uma oportunidade relevante, especialmente em nichos com alta demanda por prova de competência prática e atualização constante.
 
-### 5.2.2. Market Size and Growth
+<a id="522-market-size-and-growth"></a>
+### 5.2.2. Tamanho e crescimento do mercado
 
-The Brazilian online education market generated R$1.8 billion in revenue in 2023, with an expected average annual growth of 16% through 2027, according to ABED. Platforms that combine autonomy, gamification, and knowledge validation are expected to gain traction amid dissatisfaction with rigid models and the search for more accessible and meaningful ways to learn.
+O mercado brasileiro de educação online gerou receita de R$ 1,8 bilhão em 2023, com expectativa de crescimento médio anual de 16% até 2027, segundo a ABED. Espera-se que plataformas que combinem autonomia, gamificação e validação de conhecimento ganhem força em meio à insatisfação com modelos rígidos e à busca por formas mais acessíveis e significativas de aprender.
 
-Furthermore, the educational NFT market is expected to grow as the adoption of decentralized digital credentials increases. IBM and the OECD point out that verifiable digital certificates are one of the main trends in competency validation.
+Além do crescimento do setor como um todo, observa-se o aumento do valor atribuído a certificados digitais verificáveis, trilhas flexíveis de aprendizagem e soluções capazes de integrar estudo, prática e demonstração de competência. Esse movimento favorece plataformas como a Kaisen, que operam na interseção entre educação, produtividade, comunidade e reputação digital.
 
-### 5.2.3. Market Trends
+<a id="523-market-trends"></a>
+### 5.2.3. Tendências de mercado
 
-Trends directly impacting the Kaisen market include: the validation of informal learning, the strengthening of digital reputation and verifiable portfolios, the advancement of decentralized and self-managed platforms, the appreciation of certifications with professional application, the personalization of teaching through AI, and gamification as an engagement strategy.
+As tendências que impactam diretamente o mercado da Kaisen incluem: a validação da aprendizagem informal, o fortalecimento da reputação digital e de portfólios verificáveis, o uso da inteligência artificial para personalização do estudo, a gamificação como mecanismo de retenção, o crescimento de comunidades de aprendizagem e a monetização de conhecimento criado por especialistas e criadores independentes.
 
-## 5.3. Competitive Analysis
+<a id="53-competitive-analysis"></a>
+## 5.3. Análise Competitiva
 
-**Main Competitors:**<br>
-Kaisen positions itself against several competitors. Direct competitors include platforms such as Coursera, Udemy, and edX, focused on formal online education; Duolingo, with its gamified learning model; and platforms focused on technology and the creative market, such as Platzi, Alura, and Rocketseat. Indirect competitors include platforms such as YouTube, Reddit, Notion, and tools such as GPTs, Obsidian, and Google Keep, which, while not structured learning platforms, are widely used in self-directed learning and personal knowledge building.
+**Principais Concorrentes:**<br>
+Kaisen se posiciona em um espaço competitivo híbrido. Entre os concorrentes diretos estão NotebookLM, Coursera, Udemy, edX, Duolingo e plataformas de nicho como Alura, Rocketseat e Platzi. Esses produtos competem pela atenção do mesmo usuário, seja por oferecer organização de conteúdo com IA, seja por oferecer cursos estruturados e experiências de aprendizagem recorrentes. Entre os concorrentes indiretos ou substitutos estão YouTube, Reddit, Notion, GPTs, Obsidian e outras ferramentas utilizadas para estudar, organizar anotações e revisar conhecimento sem uma proposta educacional integrada.
 
-**Competitive Advantages of the Web Application:**<br>
-Kaisen's main competitive advantage is its integrated certification model via NFTs—immutable, verifiable, and shareable—combined with AI that structures personalized trails based on users' own content. Furthermore, the token economy as a form of reward, community curation, and a focus on digital reputation, more than just content delivery, solidify its market differentiation.
+**Vantagens Competitivas do Aplicativo Web:**<br>
+A principal vantagem competitiva da Kaisen está em combinar personalização baseada no conteúdo do usuário com comunidade, certificação digital e monetização de trilhas. Diferentemente de plataformas centradas apenas em cursos prontos ou de ferramentas focadas apenas em organização pessoal, a Kaisen conecta criação, consumo, validação e compartilhamento de conhecimento em uma mesma experiência. Esse posicionamento permite competir não apenas pela entrega de conteúdo, mas pela capacidade de transformar estudo em reputação, recorrência e valor econômico para criadores.
 
-## 5.4. Target Audience
+<a id="54-target-audience"></a>
+## 5.4. Público-alvo
 
-The Kaisen platform's target audience is primarily young people between the ages of 16 and 35, including students, developers, and freelancers. This group values autonomy in the learning process, seeks formal recognition for informally acquired skills, and is interested in innovative learning methods. Psychographically, these individuals desire flexibility, autonomy, and validation of their skills. Behaviorally, they are familiar with technologies such as AI, Web3, and collaborative digital platforms, which makes them naturally receptive to the Kaisen approach.
+O público-alvo da plataforma Kaisen é formado principalmente por jovens de 16 a 30 anos, com foco inicial em estudantes, desenvolvedores iniciantes, freelancers e outros perfis ligados à área de tecnologia. Trata-se de um grupo que valoriza autonomia no processo de aprendizagem, utiliza conteúdo digital com frequência e busca maneiras mais concretas de organizar, demonstrar e aprofundar suas competências.
 
-## 5.5. Positioning
+Do ponto de vista psicográfico, são usuários que desejam flexibilidade, reconhecimento e progresso visível. Do ponto de vista comportamental, já utilizam ferramentas digitais para estudar, pesquisar e produzir conhecimento, o que os torna receptivos a uma solução que una IA, comunidade, gamificação e certificação digital. Dentro desse público, há uma dinâmica complementar: usuários mais experientes tendem a criar trilhas e monetizar conhecimento, enquanto estudantes e iniciantes tendem a consumir esse conteúdo e evoluir a partir dele.
 
-Kaisen's value proposition is to be the first decentralized educational platform that allows users to create personalized learning paths powered by artificial intelligence, validate their knowledge through NFTs, and share their digital reputation publicly, securely, and transparently. The differentiation strategy centers on inverting the traditional model: instead of relying on pre-formatted content, Kaisen organizes and enhances the knowledge already acquired by the user, transforming this content into a meaningful journey with the help of AI. The NFT certification system and collective curation ensure authenticity, collaboration, and a verifiable reputation for users.
+<a id="55-positioning"></a>
+## 5.5. Posicionamento
 
-## 5.6. Marketing Strategy
+A proposta de valor da Kaisen é ser uma plataforma educacional que permite aos usuários criar trilhas de aprendizagem personalizadas com apoio de inteligência artificial, validar seus avanços com certificados digitais e compartilhar conhecimento de forma estruturada, colaborativa e economicamente viável. Sua diferenciação está em inverter a lógica tradicional do ensino digital: em vez de depender apenas de catálogos fechados de cursos, a plataforma organiza e potencializa o conhecimento que o próprio usuário já possui ou deseja aprofundar.
 
-**Product:**<br>
-Kaisen is a gamified educational web platform that integrates artificial intelligence, blockchain, and NFTs. Its main differentiator lies in its ability to create personalized learning paths based on the user's content and interests, transforming knowledge into an interactive and meaningful journey. Furthermore, the platform issues digital certificates in NFT format, offering immutable proof of learning. To strengthen engagement, there is a rewards store with items such as skins and tools that can be purchased through the token economy. Another essential component is the presence of an active, co-authoring community, which contributes to the curation of the paths, validates content, and promotes a collaborative learning experience.
+Com isso, a Kaisen se posiciona como uma ponte entre estudo autônomo, criação de conteúdo e reputação profissional. O foco da marca está menos em vender apenas acesso a conteúdo e mais em oferecer uma infraestrutura para aprender, provar competências, colaborar com a comunidade e gerar valor a partir do conhecimento compartilhado.
 
-**Price:**<br>
-The platform adopts a freemium business model, offering free access to Kaisen's basic features. Advanced features such as customizations, premium paths, private documents, higher upload limits, and access to advanced AI features ("Kaisen Pro") are unlocked through the platform's token, $KOIN. NFT certification is free for users who complete the tracks, creating an ecosystem that values merit and user engagement without creating financial barriers to learning.
+<a id="56-marketing-strategy"></a>
+## 5.6. Estratégia de Marketing
 
-**Place:**<br>
-The platform's distribution will be strategic, with an initial launch in digital communities and innovation hubs focused on technology and education. Kaisen will also seek partnerships with bootcamps, hackathons, technical schools, and initiatives related to the Web3 universe. Presence at technology and education events—both online and in-person—will be essential to promote the platform, establish connections with educators and developers, and attract innovative users willing to experiment with new learning methods.
+**Produto:**<br>
+Kaisen é uma plataforma web educacional gamificada que integra inteligência artificial, organização de conhecimento, comunidade e certificação digital. Seu principal diferencial está na capacidade de criar trilhas de aprendizagem personalizadas com base nos conteúdos e interesses do usuário, transformando materiais dispersos em uma jornada interativa e significativa. A plataforma também permite que criadores publiquem trilhas, disponibilizem partes gratuitas ou pagas e monetizem o conhecimento compartilhado. Como complemento, a experiência inclui recursos de engajamento, histórico de progresso, perfis de usuário, assistente virtual e mecanismos de colaboração comunitária.
 
-**Promotion:**<br>
-Kaisen's promotion will focus on content marketing and community engagement. Articles, videos, and posts will be produced on topics such as digital reputation, skills validation, artificial intelligence, and new ways to learn independently. The brand will be present on networks such as Twitter, Telegram, and Discord, where conversations about Web3 and educational technology are most active. Additionally, the platform will partner with influencers from the tech and education worlds, who will be able to share their experiences with Kaisen and boost the brand's credibility. Storytelling campaigns featuring real user stories—showing how Kaisen impacted their learning or career paths—will strengthen the emotional connection with the audience and highlight the transformative value of the proposal.
+**Preço:**<br>
+A plataforma adota um modelo de negócios freemium, oferecendo acesso gratuito aos recursos básicos e uma camada premium denominada Kaisen Pro, com assinatura mensal de R$44,90. Os recursos pagos incluem personalizações, documentos privados, maiores limites de uso, acesso ampliado à IA e funcionalidades avançadas de estudo e produtividade. Além disso, a plataforma pode capturar valor por meio da comercialização de trilhas da comunidade, com uma taxa aplicada sobre transações realizadas entre criadores e consumidores. Esse modelo permite combinar acessibilidade inicial com diversificação de receita.
 
-# 6. Conclusions and Future Work
+**Local:**<br>
+A distribuição da plataforma será concentrada inicialmente em canais digitais e comunidades com forte aderência ao perfil do público-alvo. O lançamento e a divulgação devem priorizar ecossistemas de tecnologia, ensino online, criadores de conteúdo educacional, bootcamps, hackathons, escolas técnicas e comunidades de estudantes. A presença em eventos de tecnologia e educação, tanto online quanto presenciais, também será importante para gerar reconhecimento de marca, validar a proposta com usuários reais e formar parcerias de distribuição e conteúdo.
 
-Kaisen has established itself as an innovative platform for learning and collectively building knowledge pathways in a decentralized environment. Combining modern architecture, blockchain integration, and a focus on user experience, the project allows people to explore and share knowledge in an open, secure, and gamified way.
+**Promoção:**<br>
+A promoção da Kaisen se concentrará em marketing de conteúdo, demonstração de uso do produto e ativação de comunidade. Serão produzidos artigos, vídeos curtos, posts e estudos de caso sobre temas como produtividade no estudo, aprendizagem com IA, organização de conhecimento, construção de portfólio e desenvolvimento de competências em tecnologia. A marca deverá atuar principalmente em Instagram e Twitter/X, além de parcerias com criadores de conteúdo e influenciadores dos setores de tecnologia e educação.
 
-With the advances achieved to date, Kaisen already offers essential features such as modular content organization, assistive chat, user profiles, and progress tracking. However, the team recognizes the potential for expansion and improvement of the platform, aiming for ambitious goals for future versions.
+Outra frente relevante será o uso de storytelling com histórias reais de estudantes e criadores, destacando como a Kaisen ajuda a transformar conhecimento disperso em trilhas de aprendizagem, resultados concretos e possíveis fontes de renda. Essa estratégia reforça a proposta de valor da plataforma e aproxima a comunicação das dores reais do público. Como foco inicial, a prioridade do marketing deve estar menos em escala imediata e mais em validação de posicionamento, atração dos primeiros usuários recorrentes e formação de uma base ativa de criadores e consumidores.
 
-Among the main focuses of future development is the implementation of a tokenized rewards system, in which users will be rewarded for performing relevant actions on the platform—such as following trails, completing steps, contributing content, and interacting socially. This incentive mechanism aims not only to increase engagement but also to value collaboration and active community participation.
+<a id="6-conclusions-and-future-work"></a>
+# 6. Conclusões e trabalhos futuros
 
-Furthermore, a decentralized governance system is being planned, allowing users to participate in Kaisen's strategic and evolutionary decisions. Through mechanisms that allow the community to directly influence the platform's direction, strengthening the sense of belonging and collective autonomy.
+Kaisen estabeleceu-se como uma plataforma inovadora para aprender e construir coletivamente caminhos de conhecimento num ambiente descentralizado. Combinando arquitetura moderna, integração blockchain e foco na experiência do usuário, o projeto permite que as pessoas explorem e compartilhem conhecimento de forma aberta, segura e gamificada.
 
-Another planned advancement is the introduction of the path forking functionality—a mechanism inspired by open-source development practices. With this feature, users will be able to create a personal copy (fork) of any public learning path and freely adapt its structure, content, and flow to suit their individual learning objectives or preferred styles. This opens up possibilities for deeper personalization and experimentation, empowering learners to build truly personalized journeys. Once modified, users will have the option to submit their forked version for review or reintegrate it into the original path, fostering a dynamic ecosystem of collaborative refinement. This not only encourages knowledge diversity and co-creation but also helps identify and elevate the most effective learning experiences for the community as a whole.
+Com os avanços alcançados até o momento, Kaisen já oferece recursos essenciais como organização modular de conteúdo, chat assistido, perfis de usuário e acompanhamento de progresso. Porém, a equipe reconhece o potencial de expansão e melhoria da plataforma, visando metas ambiciosas para versões futuras.
 
-These advances, combined with the constant pursuit of improvements in usability, accessibility, internationalization, and integration with new protocols, pave the way for Kaisen to become a benchmark in decentralized, collaborative, and future-oriented education. The commitment remains to build an open, democratic, and increasingly meaningful environment for all its users.
+Entre os principais focos de desenvolvimento futuro está a implementação de um sistema de recompensas tokenizadas, no qual os usuários serão recompensados ​​por realizar ações relevantes na plataforma – como seguir trilhas, completar etapas, contribuir com conteúdo e interagir socialmente. Este mecanismo de incentivo visa não só aumentar o envolvimento, mas também valorizar a colaboração e a participação activa da comunidade.
 
-# 7. References
+Além disso, está a ser planeado um sistema de governação descentralizado, permitindo aos utilizadores participar nas decisões estratégicas e evolutivas da Kaisen. Através de mecanismos que permitem à comunidade influenciar diretamente os rumos da plataforma, fortalecendo o sentimento de pertença e autonomia coletiva.
 
-IBM. Blockchain in Education Report. 2023. Available at: https://www.ibm.com/downloads/cas/6YVBDQKL. Accessed on: July 03, 2025.
+Outro avanço planejado é a introdução da funcionalidade de bifurcação de caminho – um mecanismo inspirado em práticas de desenvolvimento de código aberto. Com esse recurso, os usuários poderão criar uma cópia pessoal (fork) de qualquer caminho de aprendizagem público e adaptar livremente sua estrutura, conteúdo e fluxo para atender aos seus objetivos individuais de aprendizagem ou estilos preferidos. Isto abre possibilidades para uma personalização e experimentação mais profundas, capacitando os alunos a construir jornadas verdadeiramente personalizadas. Uma vez modificado, os usuários terão a opção de enviar sua versão bifurcada para revisão ou reintegrá-la ao caminho original, promovendo um ecossistema dinâmico de refinamento colaborativo. Isto não só incentiva a diversidade e a cocriação de conhecimento, mas também ajuda a identificar e elevar as experiências de aprendizagem mais eficazes para a comunidade como um todo.
 
-HOLONIQ. Global EdTech Market Outlook 2024. 2024. Available at: https://www.holoniq.com/edtech. Accessed on: July 03, 2025.
+Esses avanços, aliados à busca constante por melhorias em usabilidade, acessibilidade, internacionalização e integração com novos protocolos, abrem caminho para que Kaisen se torne referência em educação descentralizada, colaborativa e voltada para o futuro. O compromisso permanece com a construção de um ambiente aberto, democrático e cada vez mais significativo para todos os seus usuários.
 
-DATACAMP. AI in Education: Integrity and Validation Challenges. 2024. Available at: https://www.datacamp.com/pt/blog/ai-in-education. Accessed on: July 03, 2025.
+<a id="7-references"></a>
+# 7. Referências
 
-FT MAGAZINE. Artificial Intelligence in Education: Impacts and Challenges. 2024. Available at: https://revistaft.com.br/inteligencia-artificial-na-educacao-impactos-e-desafios/. Accessed on: July 03, 2025.
+IBM. Relatório Blockchain na Educação. 2023. Disponível em: https://www.ibm.com/downloads/cas/6YVBDQKL. Acesso em: 03 de julho de 2025.
 
-RNP – NATIONAL EDUCATION AND RESEARCH NETWORK. Artificial intelligence in education: advances and challenges. 2024. Available at: https://www.rnp.br/blog/inteligencia-artificial-na-educacao-avancos-e-desafios/. Accessed on: July 04, 2025.
+HOLONIQ. Global EdTech Market Outlook 2024. 2024. Disponível em: https://www.holoniq.com/edtech. Acesso em: 03 de julho de 2025.
 
-FRONTIERS IN EDUCATION. Limitations in assessing and formally validating learning outcomes using AI tools. Frontiers in Education, 2024. Available at: https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1501819/full. Accessed on: July 04, 2025.
+DATACAMP. IA na Educação: Desafios de Integridade e Validação. 2024. Disponível em: https://www.datacamp.com/pt/blog/ai-in-education. Acesso em: 03 de julho de 2025.
 
-GONZÁLEZ, R.; MORALES, F. How AI impacts the validation of knowledge. arXiv preprint, 2024. Available at: https://arxiv.org/pdf/2504.06928. Accessed: July 04, 2025.
+REVISTA FT. Inteligência Artificial na Educação: Impactos e Desafios. 2024. Disponível em: https://revistaft.com.br/inteligencia-artificial-na-educacao-impactos-e-desafios/. Acesso em: 03 de julho de 2025.
 
-SMITH, L.; JONES, A. The credibility gap in AI-generated educational content. arXiv preprint, 2024. Available at: https://arxiv.org/pdf/2406.18900. Accessed: July 04, 2025.
+RNP – REDE NACIONAL DE EDUCAÇÃO E PESQUISA. Inteligência artificial na educação: avanços e desafios. 2024. Disponível em: https://www.rnp.br/blog/inteligencia-artificial-na-educacao-avancos-e-desafios/. Acesso em: 04 de julho de 2025.
 
-TECHTARGET. 8 top blockchain certification courses to pursue. TechTarget, 2023. Available at: https://www.techtarget.com/whatis/feature/8-top-blockchain-certification-courses-to-pursue. Accessed: July 04, 2025.
+FRONTEIRAS NA EDUCAÇÃO. Limitações na avaliação e validação formal dos resultados da aprendizagem utilizando ferramentas de IA. Frontiers in Education, 2024. Disponível em: https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1501819/full. Acesso em: 04 de julho de 2025.
 
-# 8. Appendices
+GONZÁLEZ, R.; MORALES, F. Como a IA impacta a validação do conhecimento. Pré-impressão arXiv, 2024. Disponível em: https://arxiv.org/pdf/2504.06928. Acesso em: 04 de julho de 2025.
 
-[FILL IN - Include here any complements to your project, such as diagrams, images, tables, etc.]
+SMITH, L.; JONES, A. A lacuna de credibilidade no conteúdo educacional gerado por IA. Pré-impressão arXiv, 2024. Disponível em: https://arxiv.org/pdf/2406.18900. Acesso em: 04 de julho de 2025.
+
+TECNOLOGIA. 8 principais cursos de certificação de blockchain a serem seguidos. TechTarget, 2023. Disponível em: https://www.techtarget.com/whatis/feature/8-top-blockchain-certification-courses-to-pursue. Acesso em: 04 de julho de 2025.
+
