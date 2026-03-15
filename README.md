@@ -2,332 +2,237 @@
 
 <div align="center">
 
-<img src="./documents/assets/banner.png" width="100%">
+<img src="./documents/assets/banner.png" width="100%" alt="Banner Kaisen">
 
 </div>
 
 <p align="center">
-  <a href="#solution-overview">Solution Overview</a> •
-  <a href="#core-features">Core Features</a> •
-  <a href="#technologies-used">Technologies Used</a> •
-  <a href="#project-setup">Project Setup</a> •
-  <a href="#data-storage-setup">Data Storage Setup</a> •
-  <a href="#deploying-to-icp-mainnet">Deploying to ICP (Mainnet)</a> •
-  <a href="#system-architecture">System Architecture</a> •
-  <a href="#application-flows">Application Flows</a> •
-  <a href="#demo">Demo</a> •
-  <a href="#project-structure">Project Structure</a> •
-  <a href="#conclusions-and-future-work">Conclusions and Future Work</a> •
-  <a href="#development-team">Development Team</a> •
-  <a href="#license">License</a>
+  <a href="#visão-geral-da-solução">Visão Geral da Solução</a> •
+  <a href="#principais-funcionalidades">Principais Funcionalidades</a> •
+  <a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a> •
+  <a href="#configuração-do-projeto">Configuração do Projeto</a> •
+  <a href="#arquitetura-do-sistema">Arquitetura do Sistema</a> •
+  <a href="#fluxos-da-aplicação">Fluxos da Aplicação</a> •
+  <a href="#demonstração">Demonstração</a> •
+  <a href="#estrutura-do-projeto">Estrutura do Projeto</a> •
+  <a href="#próximos-passos">Próximos Passos</a> •
+  <a href="#equipe-de-desenvolvimento">Equipe de Desenvolvimento</a>
 </p>
 
-> This README provides an overview of the Kaisen platform. For more detailed information about the application, please refer to the [wad.md](./documents/wad.md).
+> Este README fornece uma visão geral da plataforma Kaisen. Para informações mais detalhadas sobre a arquitetura e regras de negócio, consulte o nosso [wad.md](./documents/wad.md).
 
-Kaisen proposes a new framework for acquiring and validating knowledge. It is a decentralized protocol that replaces the passive logic of content consumption with an active, intelligent, and community-driven learning experience.
+O Kaisen propõe um novo formato para a aquisição de conhecimento no Brasil. Somos uma plataforma educacional inteligente que substitui a lógica passiva de consumo de conteúdo por uma experiência ativa, guiada por inteligência artificial e impulsionada pela comunidade.
 
-Through the combination of artificial intelligence and collective curation, users build personalized learning paths, while the network itself validates and enhances the most effective routes to mastery. Individual progress is transparently recorded and recognized through NFT certificates, which securely, verifiably, and permanently attest to proficiency in specific skills.
+Através da combinação de IA generativa e curadoria coletiva, os usuários constroem trilhas de aprendizado personalizadas. O progresso individual é registrado de forma transparente e impulsionado por um sistema de gamificação, que engaja o usuário no desenvolvimento de habilidades específicas para o mercado de trabalho.
 
-More than just an educational platform, Kaisen lays the foundation for a decentralized, interoperable, and reputation-based knowledge infrastructure.
+Mais do que apenas uma plataforma de cursos, o Kaisen lança as bases para uma infraestrutura de conhecimento escalável, focada em resolver o gap de qualificação técnica das empresas e profissionais brasileiros.
 
-## Solution Overview
-
-<div align="center">
-
-<img src="./documents/assets/banner-home.png" width="100%">
-
-</div>
-
-The advancement of artificial intelligence has radically transformed access to knowledge. Tools like ChatGPT, YouTube, and online course platforms are empowering a new generation of autonomous learners — a movement growing rapidly, as highlighted by HolonIQ reports.
-
-However, this revolution faces a structural limitation: the lack of reliable mechanisms to authenticate learning acquired outside of traditional institutions.
-
-Kaisen was created to bridge this gap. It combines artificial intelligence, collective curation, and decentralized infrastructure to transform individual learning journeys into verifiable records. Each path is built with AI support, validated by the community, and registered as NFT certificates that securely, auditably, and interoperably prove the real competencies acquired by each user.
-
-## Core Features
+## Visão Geral da Solução
 
 <div align="center">
 
-<img src="./documents/assets/feature-banner.png" width="100%">
+<img src="./documents/assets/banner-home.png" width="100%" alt="Banner Home Kaisen">
 
 </div>
 
-### 1. Kai - AI-Powered Content Engine
+O avanço da inteligência artificial transformou radicalmente o acesso à informação. Ferramentas como ChatGPT, YouTube e plataformas de cursos online estão capacitando uma nova geração de alunos autônomos. 
 
-Kai is the intelligent core of Kaisen, designed to turn any information source into a structured and meaningful learning experience:
+No entanto, essa revolução enfrenta uma limitação estrutural no mercado corporativo brasileiro: a falta de mecanismos ágeis para acompanhar e validar o aprendizado adquirido fora das instituições tradicionais.
 
-- **Interactive & Contextual Chat**: Acts as an overlay tutor, allowing users to input topics, links, or documents (e.g. PDFs) to start a learning journey.
-- **Automated Path Generation**: Builds personalized tracks with quizzes, flashcards, mind maps, and summaries.
-- **Incentivized Smart Curation**: Evaluates the quality of generated paths and suggests publishing them to the community — high-quality contributions are rewarded with $KOIN tokens.
-- **Modular Visual Editing**: Users can visually rearrange and edit content through an intuitive block/card interface.
+O Kaisen nasceu para preencher essa lacuna. A plataforma atua como uma solução educacional que combina IA e curadoria para transformar jornadas individuais de estudo em um histórico de desenvolvimento contínuo. Cada trilha é construída com suporte de IA e validada pela comunidade, criando um portfólio de conhecimento que facilita a conexão com oportunidades de emprego.
 
----
+## Principais Funcionalidades
 
-### 2. Collaborative & Community Ecosystem
+<div align="center">
 
-Kaisen is not just a platform — it’s a living ecosystem where knowledge evolves through collective intelligence:
+<img src="./documents/assets/feature-banner.png" width="100%" alt="Funcionalidades Kaisen">
 
-- **Community Feed**: Explore published learning paths, track trends, and engage with other learners.
-- **Knowledge Forking**: Any public path can be forked, allowing others to adapt, enhance, or expand it.
-- **Integrated Contextual Forums**: Discussions, feedback, and debates are embedded directly within content modules.
+</div>
 
----
+### 1. Kai - Motor de Conteúdo com IA
 
-### 3. Knowledge Validation & Reputation (Proof-of-Learning)
+O Kai é o núcleo inteligente da plataforma, projetado para transformar qualquer fonte de informação em uma experiência de aprendizado estruturada:
 
-Kaisen introduces a reliable infrastructure to authenticate acquired skills, replacing generic certificates with immutable technical proof:
+- **Chat Interativo e Contextual**: Atua como um tutor virtual. O usuário insere tópicos, links ou documentos (ex: PDFs) para iniciar uma jornada de aprendizado.
+- **Geração Automatizada de Trilhas**: Constrói percursos personalizados com quizzes, flashcards, mapas mentais e resumos.
+- **Edição Visual Modular**: Os usuários podem reorganizar e editar o conteúdo visualmente através de uma interface intuitiva de blocos/cards.
 
-- **NFT Certificates**: Completing a track generates an NFT that verifiably proves mastery.
-- **Social Recognition**: NFT credentials can be shared on LinkedIn and other networks, with verified blockchain authenticity.
-- **Incentivized Sharing**: Users are rewarded with $KOIN tokens for promoting their earned credentials.
+### 2. Ecossistema Colaborativo
 
----
+O Kaisen é um ambiente vivo onde o conhecimento evolui através da inteligência coletiva:
 
-### 4. User Experience & Impact Monitoring
+- **Feed da Comunidade**: Explore trilhas de aprendizado publicadas, acompanhe tendências e interaja com outros estudantes.
+- **Adaptação de Trilhas (Forking)**: Qualquer trilha pública pode ser duplicada e adaptada, permitindo que outros usuários aprimorem ou expandam o conteúdo para seus próprios contextos.
+- **Fóruns Contextuais Integrados**: Discussões, feedbacks e debates são incorporados diretamente nos módulos de conteúdo.
 
-The user journey is carefully designed to maximize clarity, autonomy, and long-term value:
+### 3. Gamificação e Engajamento
 
-- **Universal User Profile**: A personal hub aggregating created tracks, earned NFTs, preferences, and history.
-- **Content Creator Dashboard**: Insightful metrics on views, forks, and rewards for each created learning path.
-- **Guided Onboarding**: An interactive tutorial walks new users through the full platform potential step-by-step.
+Criamos um ambiente dinâmico que incentiva o aprendizado contínuo:
 
-## Technologies Used
+- **Histórico de Aprendizado**: A conclusão de uma trilha fica registrada no perfil do usuário, demonstrando sua evolução constante e domínio sobre os assuntos.
+- **Reconhecimento Social**: O progresso e as trilhas concluídas podem ser compartilhados nativamente no LinkedIn e outras redes, destacando o engajamento do usuário.
+- **Sistema de Pontuação e Recompensas**: Usuários que criam trilhas de alta qualidade e engajam a comunidade são recompensados e ganham destaque na plataforma.
 
-### Languages & Frameworks
+### 4. Experiência do Usuário e Monitoramento
 
-- **Motoko** – Native language for Internet Computer, used to build decentralized backend canisters.
-- **TypeScript** – Statically typed JavaScript superset used for frontend scalability.
-- **JavaScript** – Browser-side logic and library interoperability.
-- **React** – Declarative library for building reactive modular UIs.
-- **Vite.js** – A modern front-end build tool optimized for frameworks like React, with instant startup and fast loading during development.
+- **Perfil Universal do Usuário**: Um hub pessoal que agrega trilhas criadas e o histórico completo de aprendizado.
+- **Dashboard para Criadores**: Métricas detalhadas sobre visualizações, adaptações (forks) e impacto de cada trilha criada.
+- **Onboarding Guiado**: Um tutorial interativo que mostra passo a passo todo o potencial da plataforma para novos usuários.
 
-### UI & Styling
+## Tecnologias Utilizadas
 
-- **Tailwind CSS** – Utility-first CSS framework for fast, responsive design.
-- **CSS** – Custom styling support on top of Tailwind.
+### Frontend
+- **React** – Biblioteca declarativa para construção de interfaces modulares.
+- **Vite.js** – Ferramenta moderna de build com inicialização instantânea e carregamento rápido.
+- **TypeScript** – Superset tipado do JavaScript para garantir previsibilidade e segurança no código.
+- **Tailwind CSS** – Framework CSS utilitário para design rápido e responsivo.
 
-### Web3 & Internet Computer
+### Backend & Banco de Dados
+- **NestJS** – Framework Node.js progressivo para a construção de aplicações backend eficientes e escaláveis.
+- **Prisma ORM** – Ferramenta moderna de mapeamento objeto-relacional (ORM) para comunicação segura e tipada com o banco.
+- **PostgreSQL** – Banco de dados relacional robusto para armazenamento de perfis, trilhas e progresso dos usuários.
 
-- **DFX** – CLI tool for building, testing, and deploying canisters.
-- `@dfinity/agent`, `@dfinity/candid`, `@dfinity/auth-client`, `@dfinity/ledger-icp`, `@dfinity/principal`, `@dfinity/utils` – Official DFINITY libraries for agent communication, authentication, serialization, and identity handling.
+### Integrações e IA
+- **Gemini API (Google)** – Integração com IA generativa para a criação de conteúdo educacional (resumos, quizzes, mapas mentais).
 
-### Identity & Integrations
+## Configuração do Projeto
 
-- **@nfid/identitykit** – NFID-based authentication as an alternative to Internet Identity.
-- **Gemini API (Google)** – Integration with generative AI for content creation (summaries, quizzes, etc.).
-
-### DevTools & Infrastructure
-
-- **TypeScript 5** – Modern features and type safety.
-- **dotenv** – Environment variable management.
-- **path (Node.js)** – File path manipulation utility.
-
-## Project Setup
-
-### Requirements
-
-| OS              | Requirements                                                      |
-| --------------- | ----------------------------------------------------------------- |
-| **Linux/macOS** | Node.js 22.x, DFX CLI, Git, Gemini API key                               |
-| **Windows**     | WSL 2 with Ubuntu 20.04+, Node.js 22.x (inside WSL), DFX CLI, Git |
-
-> ⚠️ **Note**: DFX runs only on Linux/macOS. Windows users must use WSL (Windows Subsystem for Linux).
+### Pré-requisitos
+- [Node.js](https://nodejs.org/) (v20 ou superior)
+- [PostgreSQL](https://www.postgresql.org/) rodando localmente ou via Docker
+- Chave de API do [Google Gemini](https://ai.google.dev/)
 
 ---
 
-### Installation Guide
+### Guia de Instalação
 
-#### 💻 Linux/macOS
-
-1. Clone the repository and access the folder:
-
+1. **Clone o repositório:**
 ```bash
-git clone https://github.com/KaisenOrg/kaisen.git
-cd kaisen
-```
-2. Grant permission to the script and run:
-
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-
-The script automatically performs the following steps:
-> Tip: Run `dfx identity get-principal` to get your ID
-
-- Creates the `env.mo` file with the provided data
-- Requests your **Gemini API key**
-- Starts DFX (`--background --clean`)
-- Creates, compiles, generates, and deploys all canisters
-- Requests your **ICP Principal ID**
-- Deploys the `icrc1_ledger` canister with the correct parameters
-
-#### 🪟 Windows (via WSL)
-
-1. Install WSL 2 (Microsoft Official Guide)
-
-2. Use Ubuntu 20.04+ from Microsoft Store
-
-3. Open the WSL terminal and run:
-
-```bash
-sudo apt update && sudo apt upgrade -y
-
-# Install Node.js 22.x
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt install -y nodejs build-essential
-
-# Install DFX (Internet Computer SDK)
-sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
-
-# Install Git and dos2unix
-sudo apt install git dos2unix
-
-git clone https://github.com/KaisenOrg/kaisen.git
+git clone [https://github.com/KaisenOrg/kaisen.git](https://github.com/KaisenOrg/kaisen.git)
 cd kaisen
 
-# Fix line endings (required if inside /mnt/c/...)
-dos2unix setup.sh
-
-chmod +x setup.sh
-./setup.sh
 ```
 
-> ⚠️ Important: If you cloned the project in a Windows directory (e.g., /mnt/c/...), running `dos2unix setup.sh` is required to avoid execution errors like:
-> -bash: ./setup.sh: cannot execute: required file not found
-
-**Check:** Run `npm run dev` and visit http://localhost:5173 to view the running app or enter the kaisen_frontend link returned by setup.sh.
-
-### Data Storage Setup
-
-> ⚠️This project does not use a traditional relational database. All data storage is decentralized and handled through Internet Computer canisters.
-
-#### 📦 Storage Structure
-
-- Canisters written in Motoko store persistent application state and logic.
-
-- User data (tracks, certificates, tokens) is kept directly inside canisters and accessed via authenticated calls.
-
-- Frontend communicates via @dfinity/agent using the Candid interface.
-
-#### 🔐 Architecture Benefits
-
-- **Fully decentralized:** No external databases or cloud servers required.
-
-- **Automatic persistence:** Handled natively by the ICP protocol.
-
-- **Built-in security:** Identity, isolation, and data integrity by design.
-
-## Deploying to ICP Mainnet
-
-### Prerequisites
-
-- Internet Identity account
-
-- ICP Wallet with sufficient cycles
-
-- DFX CLI installed and authenticated
-
-### Deployment Steps
+2. **Configuração do Backend:**
 
 ```bash
-dfx identity new <your-identity>  # only if needed
-dfx identity use <your-identity>
-dfx identity get-principal
-dfx wallet --network ic
-dfx build --network ic
-dfx deploy --network ic
+cd backend
+npm install
+
 ```
 
-### Mainnet Canister IDs
+* Crie um arquivo `.env` na raiz da pasta `backend` baseando-se no `.env.example`:
+```env
+DATABASE_URL="postgresql://usuario:senha@localhost:5432/kaisen_db?schema=public"
+GEMINI_API_KEY="sua_chave_aqui"
 
-- `kaisen_frontend`: `rlfkm-gqaaa-aaaab-abtiq-cai`
-- `kai_backend`: `rmemy-liaaa-aaaab-abtia-cai`
-- `tracks_backend`: `rfhhe-5aaaa-aaaab-abtjq-cai`
-- `nft_certificates`: `rcgbq-qyaaa-aaaab-abtja-cai`
-- `chats_backend`: `atduo-raaaa-aaaab-abqbq-cai`
-- `icrc1_ledger`: `aigil-lyaaa-aaaab-abqda-cai`
-- `users_backend`: `rqawj-4iaaa-aaaab-abtka-cai`
+```
 
-## System Architecture
 
-The diagram below provides a simplified overview of Kaisen’s architecture. Users interact with a modern interface built using React and Vite.js, styled with Tailwind CSS, and developed with TypeScript and JavaScript. This front-end layer communicates directly with canisters hosted on the Internet Computer (ICP), which serve as the decentralized back-end of the application. Additionally, these canisters integrate with external services such as the Gemini API to generate content through artificial intelligence, ensuring a dynamic and personalized experience.
+* Rode as migrations do banco de dados para criar as tabelas:
 
-<div align="center">
+```bash
+npx prisma migrate dev
 
-<img src="./documents/assets/simple-architecture-1.png" width="100%">
+```
 
-</div>
+* Inicie o servidor de desenvolvimento:
 
-> For more detailed information about the architecture diagram, please refer to the [wad.md](./documents/wad.md).
+```bash
+npm run start:dev
 
-## Application Flows
+```
 
-### Personal Learning Flow (Private Use)
+3. **Configuração do Frontend:**
+Abra uma nova aba no terminal, volte para a raiz do projeto e acesse o frontend:
 
-1. The user accesses the platform and completes the guided onboarding.
-2. Through the Kai assistant, the user submits a topic, link, or PDF.
-3. Kai generates a personalized learning path with quizzes, summaries, flashcards, and mind maps.
-4. The user studies the content at their own pace and tracks their progress.
-5. Upon completion, a verifiable NFT certificate is issued and stored in the user’s profile.
+```bash
+cd frontend
+npm install
+
+```
+
+* Crie um arquivo `.env` (se necessário para variáveis públicas do Vite):
+```env
+VITE_API_URL="http://localhost:3000"
+
+```
+
+
+* Inicie a aplicação web:
+
+```bash
+npm run dev
+
+```
+
+**Pronto!** Acesso o frontend em `http://localhost:5173` e a API local estará respondendo em `http://localhost:3000`.
+
+## Arquitetura do Sistema
+
+O Kaisen utiliza uma arquitetura cliente-servidor moderna baseada em APIs RESTful. O frontend em React/Vite se comunica de forma segura com o backend em NestJS. Este backend centraliza as regras de negócio, a persistência de dados no PostgreSQL (através do Prisma ORM) e atua como intermediário seguro para a comunicação com a API do Gemini, responsável pelo processamento de linguagem natural e geração de material didático.
+
+> Para informações mais detalhadas sobre os diagramas de arquitetura, consulte o [wad.md](https://www.google.com/search?q=./documents/wad.md).
+
+## Fluxos da Aplicação
+
+### Fluxo de Aprendizado Pessoal (Uso Privado)
+
+1. O usuário acessa a plataforma e conclui o onboarding guiado.
+2. Através do assistente Kai, ele envia um tópico, link ou PDF.
+3. O backend processa a requisição via IA e gera uma trilha de aprendizado personalizada com quizzes, resumos e mapas mentais.
+4. O usuário estuda o conteúdo em seu próprio ritmo.
+5. Após a conclusão, a trilha é salva permanentemente em seu histórico de aprendizado no banco de dados relacional.
 
 ---
 
-### Community Publishing Flow (Public Contribution)
+### Fluxo de Publicação na Comunidade (Contribuição Pública)
 
-1. After creating a learning path, the user can edit and refine the content visually.
-2. Kai evaluates the educational value of the path and suggests publishing it.
-3. The user chooses to publish the path in the community feed.
-4. Other users can explore, fork, or enhance the published path.
-5. The original creator earns visibility, engagement metrics, and may receive $KOIN token rewards.
+1. Após criar uma trilha de aprendizado, o usuário pode editar e refinar o conteúdo visualmente.
+2. O Kai avalia o valor educacional da trilha e sugere sua publicação.
+3. O usuário opta por publicar a trilha no feed da comunidade.
+4. Outros usuários podem explorar, adaptar (fork) ou melhorar a trilha publicada.
+5. O criador original ganha visibilidade, métricas de engajamento e reconhecimento no ecossistema.
 
----
+## Demonstração
 
-> 📝 These flows reflect Kaisen's hybrid design: empowering personal learning journeys while nurturing a collaborative knowledge ecosystem. Access Figma at the following link: [high-fidelity prototype](https://www.figma.com/design/qPsCtf4GvgwH6cmUgdy7Q8/Kaisen--WCHL-?node-id=11-55&p=f&t=mlAWH3cQRxuj6eXQ-0)
+Acesse os materiais abaixo para uma visão completa do projeto (versões originais da concepção do projeto):
 
-## Demo
+* 🎥 [Vídeo de Demonstração (Walkthrough inicial)](https://www.youtube.com/watch?v=6K1YQ5hfnrw)
+* 🖼️ [Pitch Deck e Apresentação (Problema, Solução, Roadmap)](https://www.youtube.com/watch?v=rXXc-i82ziQ)
 
-Access the materials below — including the demo video, pitch deck, and deployed website — for a complete overview of the project, covering its proposal, technical operation, and strategic vision.
+## Estrutura do Projeto
 
-- 🎥 [Demo Video (with walkthrough and architecture overview)](https://www.youtube.com/watch?v=6K1YQ5hfnrw)
-- 🖼️ [Pitch Deck and Presentation (problem, solution, roadmap)](https://www.youtube.com/watch?v=rXXc-i82ziQ)
-- 🌐 [Deployed Website (ICP Mainnet)](https://rlfkm-gqaaa-aaaab-abtiq-cai.icp0.io/)
+* **documents:** Contém todos os documentos do projeto, como o Web Application Document (WAD) e materiais complementares.
+* **frontend:** Pasta contendo os arquivos da interface do usuário (React, Tailwind e Vite.js).
+* **backend:** Pasta contendo a API do projeto (NestJS) e a modelagem do banco de dados (Prisma).
+* **.gitignore:** Especifica para o Git quais arquivos ou pastas não devem ser versionados.
+* **README.md:** Arquivo que serve como guia introdutório e explicação geral do projeto.
 
-## Project Structure
+## Próximos Passos e Conclusões
 
-Among the files and folders present in the project root, the following are defined:
+O Kaisen está evoluindo para se consolidar como uma plataforma Web2 educacional robusta e escalável no mercado brasileiro.
 
-- **document:** This contains all project documents, such as the Web Application Document (WAD), as well as supplementary documents.
+Para os próximos passos, nossos principais objetivos incluem:
 
-- **frontend:** Folder containing files related to the user interface, developed with React, Tailwind, and Vite.js.
+* Refatorar integrações antigas para a nova arquitetura NestJS + PostgreSQL.
+* Continuar o desenvolvimento do construtor de trilhas, permitindo múltiplas seções multimídia.
+* Implementar colaboração ativa dentro das trilhas (sistema de pull requests para conteúdo educacional).
+* Expandir a inteligência do Kai para geração de métricas de performance do aluno.
 
-- **backend:** Folder responsible for business logic and data persistence, implemented in canisters on the Internet Computer (ICP).
+## Equipe de Desenvolvimento
 
-- **dfx.json:** DFINITY configuration file that defines the canisters, their dependencies, and other instructions necessary for deployment on the Internet Computer.
+* [Giovanna Neves Rodrigues](https://github.com/GigicaNeves)
+* [José Antônio Ferreira de Lima](https://github.com/jlimaz)
+* [Marcus Felipe dos Santos Valente](http://github.com/m4rcusml)
+* [Messias Fernandes de Olivindo](https://github.com/Messias-Olivindo)
+* [Nicole Riedla Paiva Neves](https://github.com/nicriedla)
 
-- **.gitignore:** Specifies to Git which files or folders should not be included in versioning.
+## Licença
 
-- **README.md:** File that serves as an introductory guide and general explanation of the project and application (the same file you are reading now).
+Este projeto está licenciado sob os termos da [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).
 
-## Conclusions and future work
+Você é livre para usar, modificar e distribuir este software — inclusive para fins comerciais — desde que mantenha os avisos de direitos autorais e atribuições.
 
-Kaisen is establishing itself as a collaborative and decentralized learning platform, allowing users to explore and share knowledge in an open and secure way. So far, we have developed important features such as modular content organization, assistive chat, user profiles, progress tracking, trail creation, tutorials to facilitate platform understanding, user authentication, NFT generation, the Koins system, and chat with Kai.
+> Veja o arquivo [LICENSE](https://www.google.com/search?q=./LICENSE) para mais detalhes.
 
-During development, we have faced challenges related to blockchain integration and ensuring a smooth user experience. These obstacles have served to enhance the structure and usability of the platform.
-
-For the next steps, our main goals include continuing the development of trail creation, enabling users to create multiple sections — for example, sections with videos, flashcards, and other formats — as well as enabling NFT visualization through its code/ID, providing more robust tutorials, and implementing collaboration within trails, where the author can view changes and choose to accept or reject them. In addition, we will advance the coding implementation of the already prototyped screens.
-
-## Development Team
-
-- [Giovanna Neves Rodrigues](https://github.com/GigicaNeves)
-- [José Antônio Ferreira de Lima](https://github.com/jlimaz)
-- [Marcus Felipe dos Santos Valente](http://github.com/m4rcusml)
-- [Messias Fernandes de Olivindo](https://github.com/Messias-Olivindo)
-- [Nicole Riedla Paiva Neves](https://github.com/nicriedla)
-
-## License
-
-This project is licensed under the terms of the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).  
-You are free to use, modify, and distribute this software — including for commercial purposes — as long as you retain the copyright notices and attribution.
-
-> See the [LICENSE](./LICENSE) file for more details.
