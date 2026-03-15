@@ -1,13 +1,46 @@
 import type { MotokoUser, UserData, Track, Section, Content, Flashcard, Quiz, EssayQuestion } from '@/types'
-import type {
-  Track as BackendTrack,
-  Section as BackendSection,
-  Content as BackendContent,
-  Flashcard as BackendFlashcard,
-  Quiz as BackendQuiz,
-  EssayQuestion as BackendEssay,
-  Alternative as BackendAlternative
-} from '@/declarations/tracks_backend/tracks_backend.did'
+
+type BackendTrack = {
+  id: string
+  title: string
+  description: string
+  authorId: string
+  createdAt: bigint
+  sections: BackendSection[]
+}
+
+type BackendSection = {
+  id: bigint
+  title: string
+  content: BackendContent
+}
+
+type BackendFlashcard = {
+  sentence: string
+  answer: string
+}
+
+type BackendAlternative = {
+  id: bigint
+  text: string
+}
+
+type BackendQuiz = {
+  question: string
+  alternatives: BackendAlternative[]
+  correctAnswerId: bigint
+}
+
+type BackendEssay = {
+  question: string
+  expectedAnswer: string
+}
+
+type BackendContent =
+  | { Page: { title: string; content: string } }
+  | { Flashcard: BackendFlashcard[] }
+  | { Quiz: BackendQuiz[] }
+  | { Essay: BackendEssay[] }
 
 export interface PositionedSection extends Section {
   active: boolean

@@ -40,7 +40,14 @@ export const DevAuthProvider = ({ children }: { children: React.ReactNode }) => 
 
   useEffect(() => {
     const savedIdentity = loadIdentity()
-    if (savedIdentity) setIdentity(savedIdentity)
+    if (savedIdentity) {
+      setIdentity(savedIdentity)
+      return
+    }
+
+    const newIdentity = Ed25519KeyIdentity.generate()
+    saveIdentity(newIdentity)
+    setIdentity(newIdentity)
   }, [])
 
   return (

@@ -4,8 +4,14 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import confetti from "canvas-confetti";
 
 import { useActor } from "@/lib/agent";
-import type { NFT } from "../../../declarations/nft_certificates/nft_certificates.did";
 import { Button } from "@/components/ui/button";
+
+type NFT = {
+  id: string;
+  img: string;
+  owner: string;
+  trackName: string;
+};
 
 interface NftModalProps {
   username: string;
