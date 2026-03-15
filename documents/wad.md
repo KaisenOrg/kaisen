@@ -353,13 +353,13 @@ O diagrama de arquitetura da aplicação, conforme ilustrado na imagem, foi proj
 
 </div>
 
-O front-end representa a camada de interação direta com o cliente, construída com um conjunto de tecnologias modernas para garantir uma interface eficiente. A base da interface é desenvolvida em React, que permite a criação de componentes de UI dinâmicos e reutilizáveis. O processo de desenvolvimento é acelerado pelo Vite, uma ferramenta de construção de alta velocidade. Para garantir a robustez e qualidade do código, o projeto adota TypeScript, que adiciona digitação estática ao JavaScript, enquanto o estilo é gerenciado pelo Tailwind CSS, um framework utilitário que permite a construção de designs customizados de forma ágil e consistente.
+O front-end representa a camada de interação direta com o cliente, construída com um conjunto de tecnologias modernas para garantir uma interface eficiente. A base da interface é desenvolvida em React, que permite a criação de componentes de UI dinâmicos e reutilizáveis. O processo de desenvolvimento é acelerado pelo Vite, uma ferramenta de construção de alta velocidade. Para garantir a robustez e qualidade do código, o projeto adota TypeScript, que adiciona tipagem estática ao JavaScript, enquanto a estilização é gerenciada pelo Tailwind CSS, um framework utilitário que permite a construção de designs customizados de forma ágil e consistente.
 
-A ponte entre a interface do usuário e os serviços back-end é a camada de autenticação, que adota uma abordagem de identidade digital soberana por meio da Identidade da Internet e do NFID. Ao contrário dos sistemas tradicionais baseados em nome de usuário e senha, este método permite que os usuários acessem a aplicação com segurança usando criptografia e dispositivos com suporte WebAuthn. Isso fortalece a segurança, a privacidade e a experiência do usuário, eliminando a necessidade de memorizar senhas.
+A ponte entre a interface do usuário e os serviços back-end é a camada de autenticação, que adota padrões modernos de mercado para garantir a segurança dos dados. Utilizando protocolos consolidados como JWT (JSON Web Tokens) e OAuth, o sistema permite que os usuários acessem a aplicação de forma protegida e rápida. Isso fortalece a segurança, a privacidade e a experiência do usuário, oferecendo fluxos de login simplificados e gerenciamento seguro de sessões.
 
-O núcleo lógico do aplicativo reside no back-end, que é implementado por meio de Canisters hospedados no blockchain do Internet Computer (ICP). Essa escolha descentraliza a aplicação, tornando-a mais segura, transparente e resistente a falhas ou censura. Dentro dessa estrutura, diversos canisters operam de forma orquestrada para entregar as funcionalidades da plataforma. O users_backend gerencia perfis e dados de usuários; otracks_backend serve como repositório central para as trilhas de aprendizagem; o chats_backend permite funcionalidades de comunicação e comunidade; e o nft_certificates, em comunicação direta com otracks_backend, é responsável por gerar e emitir certificados de conclusão em formato NFT, garantindo sua autenticidade e imutabilidade.
+O núcleo lógico do aplicativo reside no back-end, que é implementado utilizando **NestJS**, um framework Node.js progressivo, operando em conjunto com um banco de dados relacional **PostgreSQL** por meio do ORM **Prisma**. Essa escolha garante uma arquitetura escalável, transações seguras e alta integridade relacional dos dados. Dentro dessa estrutura, diversos módulos operam de forma orquestrada para entregar as funcionalidades da plataforma: o módulo de usuários gerencia perfis e históricos; o módulo de trilhas serve como repositório central para as jornadas de aprendizagem; o módulo de interações permite a comunicação da comunidade; e o módulo de certificação é responsável por gerar e emitir Certificados Digitais Autenticados de conclusão, garantindo sua validade e rastreabilidade por meio de códigos de verificação únicos no banco de dados.
 
-Para aprimorar a aplicação com inteligência artificial avançada, a arquitetura integra um serviço externo de última geração. A orquestração dessa integração é feita pelo kai_backend, um canister específico que atua como intermediário. Ele recebe as matérias-primas fornecidas pelo usuário (como PDFs e links) e aciona o modelo de linguagem Gemini, do Google, por meio de chamadas seguras de API. O Gemini então processa esses dados para gerar trilhas de aprendizagem personalizadas. Esta abordagem híbrida combina o poder computacional de um LLM em grande escala com a segurança e a descentralização da lógica de negócios executada em cadeia, otimizando o melhor dos dois mundos.
+Para aprimorar a aplicação com inteligência artificial avançada, a arquitetura integra um serviço externo de última geração. A orquestração dessa integração é feita pelo módulo do assistente Kai, que atua como intermediário seguro no back-end. Ele recebe as matérias-primas fornecidas pelo usuário (como PDFs e links) e aciona o modelo de linguagem Gemini, do Google, por meio de chamadas de API REST. O Gemini então processa esses dados para gerar trilhas de aprendizagem personalizadas. Esta abordagem combina o poder de processamento de um LLM de grande escala na nuvem com a estabilidade e eficiência de regras de negócio centralizadas.
  
 Este diagrama é essencial para visualizar a organização dos componentes, facilitando o entendimento entre desenvolvedores e stakeholders e orientando as decisões técnicas ao longo do desenvolvimento.
 
@@ -441,169 +441,117 @@ Juntos, o mascote Kai e o logotipo formam uma identidade visual forte e simbóli
 
 Um protótipo de alta fidelidade fornece uma representação visual detalhada do aplicativo. Simula o formato dos campos do design, as interações e a experiência do usuário, utilizando cores, tipografia, ícones, botões e outros elementos gráficos compatíveis com o produto final.
 
-Este tipo de protótipo permite validar decisões de design antes do início do desenvolvimento, testar a usabilidade com usuários reais e apresentar uma solução visual e funcionalmente aos interessados.
+Este tipo de protótipo permite validar decisões de design antes do início do desenvolvimento, testar a usabilidade com usuários reais e apresentar a solução visual e funcionalmente aos interessados.
 
-O protótipo completo pode ser acessado através da plataforma Figma, através do seguinte link: [Figma Prototype](https://www.figma.com/design/qPsCtf4GvgwH6cmUgdy7Q8/Kaisen--WCHL-?node-id=11-55&p=f&t=iUgnCTERVnBrP4BJ-0)
+O protótipo completo pode ser acessado através da plataforma Figma, pelo seguinte link: [Figma Prototype](https://www.figma.com/design/qPsCtf4GvgwH6cmUgdy7Q8/Kaisen--WCHL-?node-id=11-55&p=f&t=iUgnCTERVnBrP4BJ-0)
 
 Abaixo estão as telas prototipadas, que ilustram as principais funcionalidades do aplicativo:
 
 <div align="center">
-
 <sub>Figura 13 - Home</sub>
-
 <img src="./assets/screens/1.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A tela inicial serve como ponto central de navegação da plataforma, oferecendo aos usuários uma visão panorâmica de seu progresso e acesso rápido aos principais recursos. Sendo o primeiro contacto do utilizador com a aplicação, desempenha um papel crucial na definição da experiência do utilizador, dando o tom visual e funcional da viagem. Ele exibe caminhos de aprendizagem destacados e estatísticas personalizadas, facilitando a descoberta intuitiva de conteúdos relevantes.
+A tela inicial serve como ponto central de navegação da plataforma, oferecendo aos usuários uma visão panorâmica de seu progresso e acesso rápido aos principais recursos. Sendo o primeiro contato do usuário com a aplicação, desempenha um papel crucial na definição da experiência, ditando o tom visual e funcional da jornada. Ela exibe trilhas de aprendizagem em destaque e estatísticas personalizadas, facilitando a descoberta intuitiva de conteúdos relevantes.
 
 <div align="center">
-
-<sub>Figura 14 - Bate-papo</sub>
-
+<sub>Figura 14 - Suporte e Ajuda (Kai)</sub>
 <img src="./assets/screens/2.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Essa interface permite a comunicação direta com o assistente de inteligência artificial da plataforma, Kai. Por meio desse canal, os usuários podem enviar materiais, tirar dúvidas e receber orientações educacionais personalizadas. Esta funcionalidade representa o núcleo da proposta de valor da Kaisen, pois transforma conteúdo bruto em experiências de aprendizagem estruturadas, dinâmicas e interativas, alimentadas por IA.
+Essa interface permite a comunicação com o assistente virtual da plataforma, Kai. Por meio desse canal interativo, os usuários podem tirar dúvidas sobre a navegação, buscar materiais específicos no banco de dados da plataforma e receber orientações sobre como estruturar melhor seus estudos. Esta funcionalidade centraliza o suporte ao aluno de forma dinâmica e amigável.
 
 <div align="center">
-
 <sub>Figura 15 - Trilhas</sub>
-
 <img src="./assets/screens/3.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A tela de trilhas é o ambiente central de descoberta de conteúdo, onde todo o material da plataforma é organizado e categorizado por áreas de conhecimento. Para facilitar a busca, a interface oferece recursos de filtragem por temas, interesses e níveis de dificuldade, permitindo ao usuário encontrar facilmente as trilhas mais adequadas aos seus objetivos educacionais. Além disso, a plataforma incentiva a construção coletiva: os usuários que desejam melhorar uma trilha podem iniciar sua colaboração através do botão “Colaborar”.
+A tela de trilhas é o ambiente central de descoberta de conteúdo, onde todo o material da plataforma é organizado e categorizado por áreas de conhecimento. Para facilitar a busca, a interface oferece recursos de filtragem por temas, interesses e níveis de dificuldade, permitindo ao usuário encontrar facilmente as jornadas mais adequadas aos seus objetivos educacionais. Além disso, a plataforma incentiva a construção coletiva: os usuários que desejam sugerir melhorias em uma trilha pública podem iniciar sua colaboração através do botão “Colaborar”.
 
 <div align="center">
-
-<sub>Figura 16 - Trilhas</sub>
-
+<sub>Figura 16 - Visão Geral da Trilha</sub>
 <img src="./assets/screens/4.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Os modais fornecem uma visão geral detalhada de um caminho de aprendizagem específico, incluindo sua descrição, progresso do usuário, módulos disponíveis, conteúdo relacionado e recursos suplementares. São componentes essenciais para o engajamento do usuário, pois permitem acesso direto a diversos tipos de recursos educacionais, como flashcards, resumos, questionários e vídeos. Assim, proporcionam uma experiência de aprendizagem mais dinâmica, interativa e estruturada, favorecendo a assimilação personalizada e eficiente do conhecimento.
+Os modais fornecem uma visão geral detalhada de uma trilha de aprendizagem específica, incluindo sua descrição, progresso do usuário, módulos disponíveis, conteúdo relacionado e recursos suplementares. São componentes essenciais para o engajamento, pois permitem acesso direto a diversos tipos de recursos educacionais, como flashcards, resumos, quizzes e vídeos. Assim, proporcionam uma experiência de aprendizagem mais dinâmica, interativa e estruturada.
 
 <div align="center">
-
-<sub>Figura 17 - Prática e Prova de Aprendizagem</sub>
-
+<sub>Figura 17 - Prática e Comprovação de Aprendizagem</sub>
 <img src="./assets/screens/5.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Na seção Prática, os usuários têm acesso a recursos que os auxiliam na revisão do conteúdo estudado ao longo do caminho, incluindo quizzes e testes interativos. Esses recursos são essenciais para consolidar o aprendizado e validar o progresso individual. Ao concluir as atividades propostas, o usuário desbloqueia a seção Prova de Aprendizagem, onde poderá obter seu certificado em formato NFT. Este certificado é autenticado via blockchain, garantindo sua autenticidade e imutabilidade. A plataforma também oferece opções de compartilhamento direto nas redes sociais, aumentando a visibilidade das conquistas dos usuários e fortalecendo sua reputação digital.
+Na seção Prática, os usuários têm acesso a recursos que os auxiliam na revisão do conteúdo estudado ao longo da trilha, incluindo quizzes e testes interativos. Esses recursos são essenciais para consolidar o aprendizado e validar o progresso individual. Ao concluir as atividades propostas com êxito, o usuário desbloqueia a seção de Comprovação de Aprendizagem, onde obtém seu Certificado Digital Autenticado. Este certificado possui um código de verificação único no banco de dados da plataforma, garantindo sua validade para o mercado de trabalho. A interface também oferece opções de compartilhamento direto no LinkedIn e outras redes, aumentando a visibilidade das conquistas do usuário.
 
 <div align="center">
-
 <sub>Figura 18 - Descubra</sub>
-
 <img src="./assets/screens/6.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-O recurso Descobrir tem como objetivo ampliar as possibilidades de aprendizagem, facilitando a exploração de novos caminhos e conteúdos por meio de categorias temáticas, filtros inteligentes e recomendações personalizadas. Essa tela é vital para manter o envolvimento contínuo dos usuários e estimular a curiosidade, conectando-os a conhecimentos que de outra forma poderiam passar despercebidos.
+O recurso Descobrir tem como objetivo ampliar as possibilidades de aprendizagem, facilitando a exploração de novas trilhas e conteúdos por meio de categorias temáticas, filtros inteligentes e recomendações. Essa tela é vital para manter o envolvimento contínuo dos usuários e estimular a curiosidade, conectando-os a conhecimentos que de outra forma poderiam passar despercebidos.
 
 <div align="center">
-
 <sub>Figura 19 - Perfil</sub>
-
 <img src="./assets/screens/7.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A tela de perfil é um painel centralizado que consolida todas as informações, atividades e contribuições do usuário na plataforma Kaizen, oferecendo uma visão abrangente de sua jornada e interação social. Apresenta informações de identificação, como foto, nome e nome de usuário, além de biografia pessoal, links para redes sociais e métricas de seguidores e perfis seguidos. A interface também inclui botões de ação para seguir ou enviar mensagens e uma seção de emblemas que destaca conquistas especiais como ‘PRO’ e ‘OG’.
+A tela de perfil é um painel centralizado que consolida todas as informações, histórico de estudos e contribuições do usuário na plataforma Kaisen, oferecendo uma visão abrangente de sua jornada educacional. Apresenta informações de identificação, biografia pessoal, links para redes sociais e métricas de conexão (seguidores/seguindo). A interface também inclui uma seção de emblemas (badges) que destaca conquistas gamificadas.
 
-O conteúdo principal é organizado em abas, onde a aba “Visão Geral” exibe as colaborações do usuário, como as trilhas de aprendizagem que ele criou, e um feed de atividades recentes com trilhas concluídas e interações sociais. Na aba “Comunidade”, o usuário pode acessar todas as suas publicações e acompanhar o engajamento por meio de curtidas, comentários e repostagens.
+O conteúdo principal é organizado em abas: a aba “Visão Geral” exibe as trilhas que o usuário criou e um feed de atividades recentes; já a aba “Comunidade” permite acessar publicações e acompanhar o engajamento social.
 
 <div align="center">
-
-<sub>Figura 20 - Loja do Kai</sub>
-
+<sub>Figura 20 - Loja de Recompensas</sub>
 <img src="./assets/screens/8.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A loja de Kai é uma interface gamificada onde os usuários podem usar tokens de plataforma ($KOIN) para adquirir personalizações visuais, skins, recursos exclusivos e ferramentas premium. Este é um recurso estratégico tanto para monetização quanto para retenção de usuários, oferecendo incentivos tangíveis para envolvimento contínuo. Ao possibilitar experiências personalizadas, a loja também ajuda a fortalecer o vínculo emocional dos usuários com a plataforma.
+A loja é uma interface gamificada onde os usuários podem usar os pontos de experiência (XP) ou moedas virtuais da plataforma — adquiridas ao completar trilhas e manter ofensivas de estudo — para resgatar personalizações visuais, avatares, bordas de perfil e recursos cosméticos exclusivos. Este é um recurso estratégico para retenção de usuários, oferecendo incentivos tangíveis para o engajamento contínuo e fortalecendo o vínculo com a plataforma.
 
 <div align="center">
-
-<sub>Figura 21 - configurações e comunidade</sub>
-
+<sub>Figura 21 - Configurações e Comunidade</sub>
 <img src="./assets/screens/9.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A tela de configurações permite que os usuários ajustem suas preferências de uso, configurem notificações e gerenciem suas contas de forma personalizada. Esse recurso oferece maior controle sobre a experiência individual dentro da plataforma, promovendo conforto, acessibilidade e segurança durante o uso contínuo.
+A tela de configurações permite que os usuários ajustem suas preferências, gerenciem assinaturas, configurem notificações e editem os dados da conta de forma segura. 
 
-A tela da comunidade tem como objetivo fortalecer as interações entre os usuários, servindo como espaço de troca e colaboração. Aqui, os participantes podem postar sobre suas experiências na plataforma, compartilhar reflexões sobre o processo de aprendizagem, divulgar caminhos criados e interagir com conteúdos de outros membros. Essa dinâmica contribui para a construção de uma rede de apoio e engajamento educativo, incentivando o reconhecimento mútuo e o desenvolvimento coletivo.
+A tela da comunidade serve como um fórum integrado para fortalecer as interações. Aqui, os participantes podem compartilhar reflexões sobre o processo de aprendizagem, tirar dúvidas técnicas, divulgar trilhas que criaram e interagir com o conteúdo de outros membros. Essa dinâmica constrói uma rede de apoio mútuo e desenvolvimento coletivo.
 
 <div align="center">
-
-<sub>Figura 22 - criar trilhas</sub>
-
+<sub>Figura 22 - Criar Trilhas</sub>
 <img src="./assets/screens/10.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-O processo de criação de uma nova trilha (trilha) de aprendizagem é um fluxo de trabalho intuitivo e flexível, permitindo ao usuário construir conteúdo manualmente ou com auxílio de Inteligência Artificial. O fluxo começa com um modal onde o usuário define as informações básicas da faixa, como título e descrição. Em seguida, avançam para uma tela de seleção de objetivos, “O que você quer aprender?”, que orienta a geração de conteúdo pela IA ou prepara o caminho para a construção manual. Ao optar pela criação manual, o usuário acessa um editor visual e interativo estilo canvas, onde pode estruturar a trilha de forma dinâmica adicionando e conectando diferentes seções de conteúdo como resumos, flashcards, quizzes, vídeos e perguntas. Além disso, antes de prosseguir, é necessário preencher um formulário de “Informações do Curso” para adicionar metadados e outros detalhes.
+O processo de criação de uma nova trilha de aprendizagem é um fluxo de trabalho flexível para produtores de conteúdo. O fluxo começa com a definição de informações básicas (título, descrição e público-alvo). Em seguida, o autor acessa um construtor visual interativo, onde pode estruturar a trilha de forma dinâmica, adicionando e conectando diferentes módulos (resumos, flashcards, vídeos e avaliações) para desenhar a jornada pedagógica ideal.
 
 <div align="center">
-
-<sub>Figura 23 - criar seções</sub>
-
+<sub>Figura 23 - Criar Seções</sub>
 <img src="./assets/screens/11.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Dentro do editor de trilhas, a plataforma oferece um conjunto de modais específicos para a criação de diversos tipos de seções de conteúdo. Cada modal é projetado para ser intuitivo e focado em tarefas, permitindo ao usuário construir uma experiência de aprendizagem rica e interativa.
-
-Para a criação dos Resumos, o usuário utiliza um editor de texto completo (editor de rich text). A interface permite a inserção de título e a formatação do corpo do texto com diversas opções, como negrito, itálico, sublinhado, listas numeradas ou com marcadores, e a inserção de links, garantindo a criação de um material de leitura bem estruturado e organizado.
-
-A seção Flashcards é ideal para exercícios de memorização. O usuário pode definir um título para o conjunto e depois criar cartões individualmente, preenchendo os campos “Frente” (para a pergunta ou termo) e “Voltar” (para a resposta ou definição). A interface oferece a flexibilidade de adicionar quantos flashcards forem necessários ao conjunto por meio do botão "+ Adicionar novo cartão".
-
-Na criação de Quizzes, o usuário pode elaborar uma pergunta objetiva e configurar múltiplas opções de resposta. Para cada opção existe um seletor que permite marcar qual é a correta, tornando a avaliação automatizada e interativa. É possível adicionar mais perguntas de acordo com a necessidade do usuário.
-
-Além disso, é possível incorporar conteúdo audiovisual através da seção Vídeo. Basta o usuário inserir a URL do vídeo desejado, adicionar um título e uma descrição para contextualizar o material. A plataforma exibe uma prévia do vídeo, garantindo que o link foi incorporado corretamente antes da criação da seção.
+Dentro do construtor de trilhas, a plataforma oferece ferramentas específicas para a criação de diversos formatos de conteúdo:
+- **Resumos:** O usuário utiliza um editor de *rich text* completo para formatar textos (negrito, listas, links), garantindo um material de leitura bem estruturado.
+- **Flashcards:** Ideal para memorização. O autor define a "Frente" (pergunta/termo) e o "Verso" (resposta/definição) de múltiplos cartões.
+- **Quizzes:** Permite elaborar perguntas objetivas de múltipla escolha, sinalizando a alternativa correta para garantir a correção automatizada pela plataforma.
+- **Vídeos:** O autor pode incorporar links de plataformas de vídeo, adicionando título e contexto. O sistema exibe um *preview* automático para garantir que a mídia foi carregada corretamente.
 
 <div align="center">
-
-<sub>Figura 24 - ferramentas de colaboração</sub>
-
+<sub>Figura 24 - Ferramentas de Colaboração</sub>
 <img src="./assets/screens/12.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Na tela de colaboração é possível reorganizar a ordem das seções através de um sistema de arrastar e soltar, editar o conteúdo das seções existentes através de editores específicos (como o editor de rich text para resumos) ou adicionar novas seções de conteúdo. Todas as ferramentas de criação à disposição do autor original também são disponibilizadas ao colaborador, garantindo que suas contribuições sejam ricas e bem formatadas.
+Inspirada no modelo open-source, a tela de colaboração permite que outros usuários sugiram melhorias em uma trilha pública (sistema semelhante a um *Pull Request*). Colaboradores podem sugerir a reorganização de módulos, correção de textos ou adição de novos quizzes e flashcards.
 
-Depois que um colaborador envia as alterações, o autor original da faixa é notificado. Na aba “Colaboração”, eles encontram um painel de gerenciamento com um histórico detalhado de todas as contribuições pendentes. Para cada proposta são exibidas informações cruciais: o que foi modificado, quem fez a alteração e a data de envio. O autor então tem o poder de revisar cada alteração e decidir se aceita a colaboração, integrando-a permanentemente na trilha, ou rejeita-a. Este sistema de aprovação garante a qualidade e integridade do conteúdo original, ao mesmo tempo que estimula a melhoria contínua através da inteligência coletiva da comunidade.
+Após o envio da sugestão, o autor original da trilha recebe uma notificação. Em seu painel de gerenciamento, ele visualiza um histórico detalhado contendo o que foi modificado, quem sugeriu e quando. O autor tem o poder total de revisar as alterações, podendo "Aceitar" (integrando o conteúdo à trilha oficial) ou "Rejeitar" a colaboração. Este sistema garante a integridade do material original enquanto escala a qualidade do conteúdo através do conhecimento da comunidade.
 
 <a id="4-application-development"></a>
 # 4. Desenvolvimento de aplicativos
