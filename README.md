@@ -82,8 +82,7 @@ Criamos um ambiente dinâmico que incentiva o aprendizado contínuo:
 ## Tecnologias Utilizadas
 
 ### Frontend
-- **React** – Biblioteca declarativa para construção de interfaces modulares.
-- **Vite.js** – Ferramenta moderna de build com inicialização instantânea e carregamento rápido.
+- **Next.js** – Framework React para construção de interfaces modernas e performáticas.
 - **TypeScript** – Superset tipado do JavaScript para garantir previsibilidade e segurança no código.
 - **Tailwind CSS** – Framework CSS utilitário para design rápido e responsivo.
 
@@ -106,16 +105,16 @@ Criamos um ambiente dinâmico que incentiva o aprendizado contínuo:
 
 ### Guia de Instalação
 
-1. **Clone o repositório:**
-```bash
+1.**Clone o repositório:**
+```
 git clone [https://github.com/KaisenOrg/kaisen.git](https://github.com/KaisenOrg/kaisen.git)
 cd kaisen
 
 ```
 
-2. **Configuração do Backend:**
+2.**Configuração do Backend (em desenvolvimento):**
 
-```bash
+```
 cd backend
 npm install
 
@@ -144,7 +143,7 @@ npm run start:dev
 ```
 
 3. **Configuração do Frontend:**
-Abra uma nova aba no terminal, volte para a raiz do projeto e acesse o frontend:
+>Abra uma nova aba no terminal, volte para a raiz do projeto e acesse o frontend:
 
 ```bash
 cd frontend
@@ -166,7 +165,7 @@ npm run dev
 
 ```
 
-**Pronto!** Acesso o frontend em `http://localhost:5173` e a API local estará respondendo em `http://localhost:3000`.
+>Acesse o frontend em `http://localhost:5173` e a API local estará respondendo em `http://localhost:3000`.
 
 ## Arquitetura do Sistema
 
@@ -222,8 +221,6 @@ Para os próximos passos, nossos principais objetivos incluem:
 
 ## Equipe de Desenvolvimento
 
-* [Giovanna Neves Rodrigues](https://github.com/GigicaNeves)
-* [José Antônio Ferreira de Lima](https://github.com/jlimaz)
 * [Marcus Felipe dos Santos Valente](http://github.com/m4rcusml)
 * [Messias Fernandes de Olivindo](https://github.com/Messias-Olivindo)
 * [Nicole Riedla Paiva Neves](https://github.com/nicriedla)
