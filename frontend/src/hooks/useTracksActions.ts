@@ -13,7 +13,7 @@ export function useTracksActions() {
     try {
       const res = await tracksActor.listAllTracks()
       setTracks(res.map(toFrontendTrack))
-      console.log(res.map(toFrontendTrack).map(t => t.sections))
+      console.log(res.map(toFrontendTrack).map((track: Track) => track.sections))
     } catch (err) {
       console.error(err)
       setError('Falha ao buscar trilhas')

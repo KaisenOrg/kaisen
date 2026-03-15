@@ -9,6 +9,7 @@ import { ArrowUpToLineIcon } from 'lucide-react';
 import { getEditorDOMFromHtmlString } from 'platejs';
 import { useEditorRef } from 'platejs/react';
 import { useFilePicker } from 'use-file-picker';
+import type { UseFilePickerConfig } from 'use-file-picker';
 
 import {
   DropdownMenu,
@@ -21,6 +22,7 @@ import {
 import { ToolbarButton } from './toolbar';
 
 type ImportType = 'html' | 'markdown';
+type FilePickerData = Parameters<NonNullable<UseFilePickerConfig['onFilesSelected']>>[0]
 
 export function ImportToolbarButton(props: DropdownMenuProps) {
   const editor = useEditorRef();
@@ -46,24 +48,26 @@ export function ImportToolbarButton(props: DropdownMenuProps) {
   const { openFilePicker: openMdFilePicker } = useFilePicker({
     accept: ['.md', '.mdx'],
     multiple: false,
-    onFilesSelected: async ({ plainFiles }) => {
-      const text = await plainFiles[0].text();
-
-      const nodes = getFileNodes(text, 'markdown');
-
-      editor.tf.insertNodes(nodes);
+    onFilesSelected: (data: FilePickerData) => {
+      const plainFiles = data.plainFiles;
+      if (!plainFiles?.length) return;
+      void plainFiles[0].text().then((text: string) => {
+        const nodes = getFileNodes(text, 'markdown');
+        editor.tf.insertNodes(nodes);
+      });
     },
   });
 
   const { openFilePicker: openHtmlFilePicker } = useFilePicker({
     accept: ['text/html'],
     multiple: false,
-    onFilesSelected: async ({ plainFiles }) => {
-      const text = await plainFiles[0].text();
-
-      const nodes = getFileNodes(text, 'html');
-
-      editor.tf.insertNodes(nodes);
+    onFilesSelected: (data: FilePickerData) => {
+      const plainFiles = data.plainFiles;
+      if (!plainFiles?.length) return;
+      void plainFiles[0].text().then((text: string) => {
+        const nodes = getFileNodes(text, 'html');
+        editor.tf.insertNodes(nodes);
+      });
     },
   });
 

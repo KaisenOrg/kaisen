@@ -15,6 +15,8 @@ import { v4 as uuidv4 } from "uuid";
 import type { Message } from "@/types";
 import { LoadingBubble } from "../kai/loading-bubble";
 
+type KaiResponse = { ok: string } | { err: string }
+
 const card1Prompt = "Hi Kai! I'd like you to explain a concept to me. Please ask me what the concept is and then explain it in a simple and easy-to-understand way.";
 const card2Prompt = "Let's do a quiz to test my knowledge. Ask me for the topic, and then create 5 multiple-choice questions about it. After I answer, tell me my score.";
 
@@ -64,8 +66,8 @@ export function ChatPanel() {
       .join(", ");
 
     kaiActor
-      ?.generateChatResponse(input, chat.length > 0 ? [historyForAI] : [])
-      .then((response) => {
+      ?.generateChatResponse(contentToSend, chat.length > 0 ? [historyForAI] : [])
+      .then((response: KaiResponse) => {
         if ("err" in response) {
           console.error("API Error:", response.err); // Bom para debugar
           setChat((prev) => {
