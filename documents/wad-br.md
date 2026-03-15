@@ -115,90 +115,40 @@ Dessa forma, Kaisen se estabelece como um ambiente de aprendizagem inteligente, 
 <a id="211-porters-5-forces-model"></a>
 ### 2.1.1. Modelo das 5 Forças de Porter
 
-A indústria da educação enfrenta desafios crescentes, como a baixa qualidade do ensino e a dificuldade de comprovar a aprendizagem de forma confiável. Segundo a UNESCO, milhões de jovens ainda não têm acesso a uma educação adequada, enquanto o mercado de trabalho evolui rapidamente e exige um desenvolvimento profissional constante. Além disso, a falta de meios eficazes – digitais ou físicos – para validar o conhecimento dificulta o avanço de muitos indivíduos.
+O mercado de EdTech brasileiro, avaliado em US$6 bilhões em 2025 com crescimento projetado de 11,12% CAGR até 2034, apresenta alta atratividade estratégica para o Kaisen apesar da intensa concorrência. Esta análise detalhada das Cinco Forças de Porter revela um cenário de rivalidade competitiva extremamente alta, em que a plataforma Alura domina com 1,2 milhão de usuários pagantes a R$85/mês, DIO possui 500 mil usuários no plano Pro de R$59/mês com parcerias de emprego, Rocketseat atende 100 mil desenvolvedores premium a R$183/mês e Udemy alcança 5 milhões de brasileiros com cursos individuais de R$29-99.
 
-Neste contexto, Kaisen surge como uma solução inovadora ao combinar inteligência artificial e blockchain para personalizar a aprendizagem e garantir a validação segura do conhecimento através de certificados digitais imutáveis ​​(NFTs). Ao facilitar a aprendizagem, a certificação transparente e o compartilhamento colaborativo, Kaisen oferece uma alternativa eficaz às limitações do modelo educacional tradicional, ampliando o acesso e a confiança no processo educacional.
+A **ameaça de novos entrantes** é moderada-alta devido às baixas barreiras técnicas. A equipe interna de profissionais especializados para validação de conteúdos iniciais cria credibilidade técnica diferenciada, o uso da Inteligência Artificial que estabelece uma vantagem competitiva significativa. Dados da Liga Ventures indicam que 70% das 425+ startups EdTech falham no primeiro ano por falta de tração comunitária, dando ao Kaisen uma janela de 18 meses de moat competitivo.
 
-Nesse cenário, aplica-se a análise das Cinco Forças de Porter, ferramenta essencial para avaliar o ambiente competitivo e compreender os fatores que influenciam a dinâmica do setor.
+O **poder de barganha dos clientes** é muito alto, diversos desenvolvedores usam alternativas gratuitas dominantes como YouTube (80% dos iniciantes), ChatGPT Edu (70% uso diário) e freeCodeCamp. O Kaisen mitiga essa pressão com freemium agressivo de textos ilimitados grátis, preço 47% inferior à Alura (R$44,90 vs R$85), IA que disponibiliza mais funcionalidades para o usuário e certificados emitidos para comprovar o conhecimento.
 
-<div align="center">
+A **ameaça de substitutos** é alta, com produtos diretos como trilhas Alura (IA básica) e bootcamps DIO competindo contra alternativas indiretas gratuitas que capturam 80% do mercado. O Kaisen se posiciona com o uso da IA (geração de vídeos, quizzes, etc), revenue share de 75% para criadores de trilhas pagas (superior aos 50% da Udemy), colaboração GitHub-like com fork/melhorias comunitárias e certificação.
 
-<sub>Figura 1 - Modelo das 5 Forças de Porter</sub>
+Finalmente, o **poder de barganha dos fornecedores** é moderado, isso porque, embora as APIs de IA representem 70% dos custos variáveis operacionais, o mercado de inteligência artificial tornou-se altamente commoditizado em 2026, oferecendo múltiplas alternativas intercambiáveis com preços competitivos e sem lock-in tecnológico. Esta commoditização reduz drasticamente o poder individual de qualquer fornecedor, permitindo ao Kaisen migrar entre provedores sem impacto significativo nos custos ou na qualidade do serviço.
 
-<img src="assets/business/five-forces.png" width="100%">
-
-<sup>Fonte: Material produzido pelos autores (2025)</sup>
-
-</div>
-
-**Rivalidade do Concorrente – Alta**<br>
-O mercado de plataformas de educação online está em franca expansão, impulsionado por gigantes como Coursera, Udemy, Duolingo e Khan Academy, que alcançam milhões de usuários em todo o mundo. Esta diversidade de alternativas aumenta a competição por atenção e envolvimento. Para se diferenciar nesse cenário, a Kaisen adota uma proposta única: combina inteligência artificial personalizada com validação imutável de conhecimento via blockchain. Esta abordagem cria uma barreira qualitativa que reduz o impacto direto da concorrência tradicional e posiciona a plataforma como referência em inovação educacional.
-
-**Ameaça de novos participantes – Moderada**<br>
-A ameaça de novos participantes é moderada porque, apesar da facilidade de entrada no sector digital, o desenvolvimento de uma plataforma que integre IA, blockchain, gamificação e validação de conhecimento requer conhecimentos técnicos, investimento em infra-estruturas e credibilidade educacional. Estes requisitos criam barreiras tecnológicas e de confiança, dificultando a entrada de novos participantes com propostas semelhantes e protegendo a posição da plataforma Kaisen no mercado.
-
-**Ameaça de produtos substitutos – Alta**<br>
-A ameaça de produtos substitutos é elevada, pois os utilizadores podem optar por soluções informais, como vídeos do YouTube, e-books, fóruns ou podcasts gratuitos. Estas alternativas, embora acessíveis, carecem de estrutura pedagógica, certificação válida e mecanismos de engajamento. Para superar esse cenário, a plataforma Kaisen conta com uma jornada de aprendizagem personalizada baseada em inteligência artificial e na validação imutável do conhecimento por meio de NFTs – um diferencial significativo que não é facilmente replicável por substitutos tradicionais ou informais.
-
-**Poder de barganha dos clientes – Alto**<br>
-Dada a vasta gama de recursos educativos gratuitos ou de baixo custo disponíveis, os utilizadores têm um elevado nível de escolha e exigem um valor claro nas suas decisões. Para reduzir essa pressão, a Kaisen investe na experiência do usuário, oferecendo uma plataforma gamificada, transparente e focada na reputação digital por meio de NFTs certificados. Esta proposta de valor fortalece a fidelização, aumenta o engagement e transforma o utilizador num agente ativo no seu próprio desenvolvimento educativo.
-
-**Poder de negociação do fornecedor – Moderado**<br>
-A dependência de infraestruturas e ferramentas tecnológicas externas – como APIs de IA e redes blockchain – pode aumentar o poder de negociação dos fornecedores e impactar os custos operacionais. Para mitigar este risco, a Kaisen adota uma estratégia de descentralização de serviços, priorizando soluções escaláveis, interoperáveis ​​e que permitam flexibilidade na escolha de parceiros. Com isso, a plataforma garante autonomia técnica e maior resiliência diante das oscilações do mercado fornecedor.
-
-<a id="212-swot-analysis-of-partner-institution"></a>
 ### 2.1.2. Análise SWOT da Instituição Parceira
 
-A análise SWOT é uma ferramenta amplamente utilizada para planejar e mapear diversas soluções. Auxilia na compreensão de como uma empresa, marca, produto ou serviço se posiciona no mercado, identificando seus pontos fortes e fracos (fatores internos), bem como oportunidades e ameaças (fatores externos). Abaixo segue a análise da solução desenvolvida.
+A análise SWOT do Kaisen revela um posicionamento estratégico sólido no nicho de tecnologia, com forças técnicas e de precificação que contrabalançam fraquezas operacionais iniciais, aproveitando oportunidades de mercado em expansão enquanto mitiga ameaças competitivas através de diferenciação clara em revenue share e validação de conteúdos pela comunidade. Os seus principais pontos fortes residem na personalização da aprendizagem, no envolvimento da comunidade e na construção da reputação digital, todos alinhados com as tendências emergentes na educação.
 
-<div align="center">
+###### Forças (Strengths)
 
-<sub>Figura 2 - Modelo de Análise SWOT</sub>
+O preço da plataforma do Kaisen representa 47% do valor da Alura e 76% do DIO Pro, criando barreira imediata de entrada para concorrentes genéricos e acelerando conversão freemium projetada em 15-20%, padrão comprovado no setor. A validação de conteúdos iniciais com profissionais experientes e qualificados garante credibilidade técnica, mas com 100% de controle operacional e custo previsível de R$3 mil/mês. O modelo de revenue share de 75% para criadores de trilhas pagas é superior aos 50% da Udemy, estabelecendo incentivo econômico poderoso que atrai 20% dos desenvolvedores como criadores de conteúdo, gerando efeito rede viral onde cada trilha monetizada recruta novos autores.
 
-<img src="assets/business/swot-analysis.png" width="100%">
+###### Fraquezas (Weaknesses)
 
-<sup>Fonte: Material produzido pelos autores (2025)</sup>
+A ausência total de tração inicial coloca o Kaisen em desvantagem competitiva frente à Alura (1,2M usuários), DIO (500k) e Rocketseat (100k), exigindo investimento agressivo de marketing para alcançar 1.000 usuários freemium em 6 meses, com CAC projetado de R$25/usuário. A dependência de APIs de IA para 70% dos custos variáveis cria vulnerabilidade a flutuações de preço, embora mitigada por multi-provedores, impactando margens brutas nos primeiros 12 meses. O controle interno da validação de conteúdos, embora economicamente vantajoso, carece do peso de marca institucional.
 
-</div>
+###### Oportunidades (Opportunities)
 
-**Fortes:**<br>
+O mercado EdTech brasileiro cresce continuamente, com nicho tech impulsionado por 200 mil vagas anuais em programação (JavaScript/Node/React), onde apenas 30% dos desenvolvedores conseguem certificação formal, criando demanda imediata por trilhas estruturadas acessíveis. A tendência de IA generativa em educação (40% das plataformas em 2026) favorece o modelo freemium do Kaisen (textos grátis, vídeos/quizzes pagos), alinhando-se perfeitamente à evolução de APIs como Groq Llama3. O crescimento do UGC colaborativo abre espaço para revenue share diferenciado, onde 15% dos desenvolvedores já criam conteúdo informalmente mas sem monetização estruturada.
 
-- Integração única de IA, gamificação e NFTs.
-- Verdadeira personalização da aprendizagem através de um assistente inteligente.
-- Validação de conhecimento descentralizada e transparente.
-- Sistema de reputação digital.
-- Comunidade ativa e colaborativa.
-- Equipe multidisciplinar com forte visão tecnológica.
+###### Ameaças (Threats)
 
-**Fraquezas:**<br>
+A evolução acelerada de IA gratuita como ChatGPT Edu e Google Gemini commoditiza vídeos e quizzes básicos, fazendo 70% dos usuários freemium permanecerem sem upgrade, pois questionam "para que pagar R$44,90 se consigo conteúdo similar de graça?", forçando o Kaisen a diferenciar-se exclusivamente por colaboração avançada GitHub-like e certificação técnica. Finalmente, lentidão de APIs IA como Groq (latência real 2-5s) compromete a experiência paga, pois 30% dos usuários abandonam plataformas que apresentam lentidão no momento de interação, destruindo conversão freemium-paga de 15-20%.
 
-- Recursos financeiros e técnicos limitados.
-- Curva de adoção das tecnologias escolhidas (AI, NFT, Web3).
-- Falta de tração inicial e validação de mercado.
-- Risco de dependência de tecnologias de terceiros (por exemplo, redes blockchain, IA de terceiros).
-- Ausência de apoio institucional ou certificação formalmente reconhecida.
-
-**Oportunidades:**<br>
-
-- Expansão da educação descentralizada.
-- Crescimento de comunidades de aprendizagem entre pares.
-- Aumentar o interesse na aprendizagem autodirigida.
-- A educação como ativo reputacional (currículo público).
-- Parcerias com plataformas e instituições inovadoras.
-
-**Ameaças:**<br>
-
-- Regulamentação incerta em relação ao uso de IA e blockchain.
-- Plataformas educacionais estabelecidas.
-- Desafios de adoção entre usuários não familiarizados com Web3.
-- Saturação do mercado edtech (startups e plataformas voltadas para educação).
-- Potencial desvalorização dos certificados NFT se não forem reconhecidos externamente.
-
-A análise SWOT da plataforma Kaisen destaca um projeto com elevado potencial inovador, apoiado numa proposta de valor diferenciada que integra Inteligência Artificial, gamificação e validação descentralizada através de NFTs. Os seus principais pontos fortes residem na personalização da aprendizagem, no envolvimento da comunidade e na construção da reputação digital, todos alinhados com as tendências emergentes na educação e na Web3.
 
 Contudo, o projeto enfrenta desafios relacionados à sua estrutura interna e ao atual nível de maturidade do mercado. A falta de tração inicial e validação de mercado, combinada com a curva de adoção das tecnologias envolvidas, apresenta obstáculos reais à expansão generalizada e à aceitação dos utilizadores. A disponibilidade limitada de recursos técnicos e financeiros, juntamente com a ausência de certificação institucional formalmente reconhecida, reforça a necessidade de uma estratégia sólida de entrada no mercado que priorize a facilidade de uso, testes com usuários reais e parcerias estratégicas.
 
-As oportunidades externas são claras, especialmente com o valor crescente atribuído à aprendizagem autodirigida, à reputação digital e às comunidades colaborativas. No entanto, o projeto deve superar ameaças como a saturação do mercado edtech, o ceticismo em relação a tecnologias como os NFTs e o aumento da pressão regulatória sobre a IA e o blockchain.
+As oportunidades externas são claras, especialmente com o valor crescente atribuído à aprendizagem autodirigida, à reputação digital e às comunidades colaborativas. No entanto, o projeto deve superar ameaças como a saturação do mercado edtech e o ceticismo em relação a tecnologias.
 
 Portanto, para garantir a sustentabilidade da solução, é essencial validá-la em nichos específicos, modularizar a sua complexidade tecnológica e desenvolver um plano de marketing que comunique claramente o seu valor único de forma acessível e focada no utilizador.
 
@@ -515,7 +465,7 @@ Com esta base sólida, Kaisen tem potencial para se tornar uma referência globa
 
 
 <a id="22-personas"></a>
-## 2.2. Personagens
+## 2.2. Personas
 
 Representando indivíduos específicos, as personas são perfis semifictícios construídos com base em dados reais e observações sobre o público-alvo. Sua principal função é facilitar o entendimento das necessidades, comportamentos e motivações dos usuários, permitindo o desenvolvimento de soluções mais direcionadas e eficazes.
 
@@ -586,14 +536,13 @@ Para aprimorar a aplicação com inteligência artificial avançada, a arquitetu
 Este diagrama é essencial para visualizar a organização dos componentes, facilitando o entendimento entre desenvolvedores e stakeholders e orientando as decisões técnicas ao longo do desenvolvimento.
 
 <a id="32-style-guide"></a>
-## 3.2. Guia de estilo
+## 3.2. Guia de Estilo
 
-O guia de estilo Kaisen visa garantir consistência visual e funcional em toda a interface da plataforma. Serve como referência central para designers e desenvolvedores, padronizando o uso de cores, tipografia e elementos gráficos. Ao fortalecer a identidade visual de Kaisen, o guia reduz inconsistências no desenvolvimento de interfaces e garante acessibilidade, coerência estética e escalabilidade em diferentes módulos de aplicação – sejam eles voltados para aprendizagem individual, validação comunitária ou apresentação pública do conhecimento adquirido.
+O guia de estilo do Kaisen tem como objetivo garantir a consistência visual e funcional em toda a interface da plataforma. Ele serve como referência central para designers e desenvolvedores, padronizando o uso de cores, tipografia e elementos gráficos. Ao fortalecer a identidade visual do Kaisen, o guia reduz inconsistências no desenvolvimento da interface e assegura acessibilidade, coerência estética e escalabilidade entre os diferentes módulos da aplicação — sejam eles voltados para o aprendizado individual, validação comunitária ou apresentação pública do conhecimento adquirido.
 
-<a id="321-colors"></a>
 ### 3.2.1. Cores
 
-A paleta de cores é um elemento essencial na construção visual da plataforma Kaisen, contribuindo para a comunicação clara do propósito da aplicação, reforçando os seus valores de autonomia, inovação e descentralização. As cores foram escolhidas com base em princípios de contraste, acessibilidade e hierarquia visual, garantindo uma experiência intuitiva, funcional e acolhedora para diferentes perfis de usuários.
+A paleta de cores é um elemento essencial na construção visual, contribuindo para a comunicação clara do propósito da aplicação e reforçando seus valores de autonomia, inovação e descentralização. As cores foram escolhidas com base em princípios de contraste, acessibilidade e hierarquia visual, garantindo uma experiência intuitiva, funcional e acolhedora para diferentes perfis de usuários.
 
 <div align="center">
 
@@ -605,16 +554,15 @@ A paleta de cores é um elemento essencial na construção visual da plataforma 
 
 </div>
 
-A cor principal da identidade visual é um tom vibrante de laranja (#F97316 | orange-500), que evoca energia, criatividade e transformação – aspectos centrais da proposta educacional de Kaisen. Essa cor é aplicada a elementos interativos proeminentes, como botões principais, frases de chamariz e marcadores de progresso. Sua variação mais intensa, laranja escuro (#C2410C | laranja-700), é utilizada em contextos onde se deseja maior ênfase ou profundidade visual, mantendo a consistência e o dinamismo na comunicação.
+A cor principal da identidade visual é um tom vibrante de laranja (#F97316 | orange-500), que evoca energia, criatividade e transformação — aspectos centrais da proposta educacional do Kaisen. Essa cor é aplicada a elementos interativos de destaque, como botões primários, chamadas para ação e marcadores de progresso. Sua variação mais intensa, o laranja escuro (#C2410C | orange-700), é utilizada em contextos que exigem maior ênfase ou profundidade visual, mantendo a consistência e o dinamismo na comunicação.
 
-A paleta também inclui tons de cinza cuidadosamente distribuídos, variando do branco (#FAFAFA | zinc-50) ao preto (#09090B | zinc-950). Esses tons neutros proporcionam equilíbrio à interface, permitindo que os elementos laranja se destaquem claramente, garantindo ao mesmo tempo legibilidade e acessibilidade em todos os dispositivos e modos de visualização (como o modo escuro).
+A paleta também inclui uma escala de cinzas cuidadosamente distribuída, que vai do branco (#FAFAFA | zinc-50) ao preto (#09090B | zinc-950). Esses tons neutros proporcionam equilíbrio à interface, permitindo que os elementos em laranja se destaquem claramente, além de garantir legibilidade e acessibilidade em diferentes dispositivos e modos de visualização (como o modo escuro).
 
-Cada cor da paleta serve a um propósito estratégico – seja como plano de fundo, contorno, sombra ou texto – reforçando a identidade Kaisen e promovendo uma navegação consistente e simplificada, focada no aprendizado contínuo.
+Cada cor da paleta cumpre um papel estratégico — seja como fundo, contorno, sombra ou texto — reforçando a identidade do Kaisen e promovendo uma navegação consistente e fluida, focada no aprendizado contínuo.
 
-<a id="322-typography"></a>
 ### 3.2.2. Tipografia
 
-A tipografia utilizada na plataforma Kaisen foi selecionada com base na legibilidade, simplicidade e consistência visual, visando proporcionar uma leitura fluida e acessível em diferentes dispositivos e contextos. A fonte Poppins, disponível no Google Fonts, foi escolhida por seu design clean, moderno e altamente legível.
+A tipografia utilizada na plataforma Kaisen foi selecionada para proporcionar uma leitura fluida e acessível em diferentes dispositivos e contextos. A fonte Poppins, disponível no Google Fonts, foi escolhida por seu design limpo e moderno.
 
 <div align="center">
 
@@ -626,15 +574,11 @@ A tipografia utilizada na plataforma Kaisen foi selecionada com base na legibili
 
 </div>
 
-O uso de uma única fonte em toda a interface contribui para a uniformidade do design, enquanto variações de tamanho, peso e espaçamento permitem a criação de uma hierarquia visual bem definida. Títulos e call to action utilizam pesos mais ousados, como SemiBold, em tamanhos maiores (32px e 24px), para destacar informações relevantes e orientar a navegação do usuário. O corpo do texto, como descrições e instruções, utiliza gramaturas Regular ou Média, com tamanhos que variam de 14px a 16px e espaçamento consistente de -2%, promovendo uma leitura confortável e fluida.
+O uso de uma única família tipográfica em toda a interface contribui para a uniformidade do design, enquanto as variações de tamanho, peso e espaçamento permitem a criação de uma hierarquia visual bem definida. Títulos e chamadas para ação utilizam pesos mais ousados, como SemiBold, em tamanhos maiores (32px e 24px), para destacar informações relevantes e orientar a navegação do usuário. Textos corridos, como descrições e instruções, utilizam pesos Regular ou Medium, com tamanhos entre 14px e 16px e espaçamento consistente de -2%, promovendo uma leitura confortável e fluida.
 
-Ao adotar estrategicamente a fonte Poppins e suas variações, Kaisen reforça sua identidade visual e proporciona uma experiência consistente, acolhedora e inclusiva para toda a sua comunidade de aprendizagem descentralizada.
-
-
-<a id="323-visual-elements"></a>
 ### 3.2.3. Elementos Visuais
 
-Os elementos visuais da plataforma Kaisen foram concebidos para comunicar, simbólica e emocionalmente, os valores fundamentais da solução. Entre esses elementos destacam-se o mascote e o logotipo, que reforçam a identidade da plataforma e promovem uma ligação mais próxima com os usuários.
+Os elementos visuais da plataforma Kaisen foram concebidos para comunicar, de forma simbólica e emocional, os valores centrais da solução. Destacam-se entre esses elementos o mascote e o logotipo, que reforçam a identidade da plataforma e promovem uma conexão mais próxima com os usuários.
 
 <div align="center">
 
@@ -646,7 +590,7 @@ Os elementos visuais da plataforma Kaisen foram concebidos para comunicar, simb�
 
 </div>
 
-O mascote da plataforma, Kai, é uma raposa expressiva e acolhedora, apresentada em diversas variações que representam diferentes estados emocionais e momentos da jornada de aprendizagem – como estudar, relaxar, ouvir música ou se movimentar. A escolha deste animal evoca atributos como inteligência, curiosidade e despreocupação, refletindo a visão da plataforma de tornar a aprendizagem descentralizada mais humana, envolvente e acessível. A presença da mascote contribui para fortalecer a ligação emocional com os utilizadores, tornando a experiência mais envolvente e cativante.
+O mascote da plataforma, Kai, é uma raposa expressiva e acolhedora, apresentada em diversas variações que representam diferentes estados emocionais e momentos da jornada de aprendizagem — como estudando, relaxando, ouvindo música ou em movimento. A escolha desse animal evoca atributos como inteligência, curiosidade e leveza, refletindo a visão da plataforma de tornar o aprendizado mais humano e acessível. A presença do mascote contribui para fortalecer a conexão emocional com os usuários, tornando a experiência mais cativante e engajadora.
 
 <div align="center">
 
@@ -658,11 +602,11 @@ O mascote da plataforma, Kai, é uma raposa expressiva e acolhedora, apresentada
 
 </div>
 
-O logotipo Kaisen, por sua vez, é composto por formas geométricas modulares organizadas em torno de um bloco central – um símbolo fundamental da identidade visual da plataforma. Este bloco central carrega um duplo significado: representa tanto os blocos que estruturam a tecnologia blockchain quanto os blocos de conhecimento construídos ao longo do processo de aprendizagem. Não é uma forma sólida tradicional, como um quadrado ou retângulo; em vez disso, é composto de diversas partes que se conectam e evoluem.
+O logotipo do Kaisen, por sua vez, é composto por formas geométricas modulares organizadas em torno de um bloco central — símbolo-chave da identidade visual da plataforma. Esse bloco central carrega o significado: representa os blocos de conhecimento construídos ao longo do processo de aprendizagem. Não se trata de uma forma sólida tradicional, como um quadrado ou retângulo; ao contrário, é formado por várias partes que se conectam e evoluem.
 
-Esta composição fragmentada simboliza a natureza colaborativa e em constante evolução do Kaisen, onde os usuários e a inteligência artificial trabalham juntos para organizar, validar e expandir o conhecimento. O logotipo transmite assim os pilares fundamentais da proposta da plataforma: descentralização, autonomia, tecnologia e coautoria.
+Essa composição fragmentada simboliza a natureza colaborativa e em constante evolução do Kaisen, onde usuários e inteligência artificial trabalham juntos para organizar, validar e expandir o conhecimento. O logotipo, assim, transmite os pilares fundamentais da proposta da plataforma: autonomia, tecnologia e coautoria.
 
-Juntos, o mascote Kai e o logotipo formam uma identidade visual forte e simbólica que é consistente com os princípios do Kaisen – uma plataforma que combina tecnologia de ponta com empatia e propósito, transformando a forma como as pessoas aprendem e compartilham conhecimento.
+Juntos, o mascote Kai e o logotipo formam uma identidade visual forte e simbólica, alinhada aos princípios do Kaisen — uma plataforma que combina tecnologia de ponta com empatia e propósito, transformando a maneira como as pessoas aprendem e compartilham conhecimento.
 
 <a id="33-high-fidelity-prototype"></a>
 ## 3.3. Protótipo de alta fidelidade
