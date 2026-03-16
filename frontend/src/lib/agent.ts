@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { getMockActor } from '@/lib/mock-backend'
+import { createBackendActors } from '@/lib/backend-client'
 
 const canisterNames = [
   'kai_backend',
@@ -13,5 +13,8 @@ const canisterNames = [
 type CanisterName = (typeof canisterNames)[number]
 
 export const useActor = <T extends CanisterName>(canisterName: T) => {
-  return useMemo(() => getMockActor(canisterName), [canisterName]) as any
+  return useMemo(() => {
+    const actors = createBackendActors()
+    return actors[canisterName]
+  }, [canisterName]) as any
 }

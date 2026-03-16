@@ -14,6 +14,7 @@ import { AudioLines, FileUp, Film, ImageIcon, Loader2Icon } from 'lucide-react';
 import { KEYS } from 'platejs';
 import { PlateElement, useEditorPlugin, withHOC } from 'platejs/react';
 import { useFilePicker } from 'use-file-picker';
+import type { UseFilePickerConfig } from 'use-file-picker';
 
 import { cn } from '@/lib/utils';
 import { useUploadFile } from '@/hooks/use-upload-file';
@@ -48,6 +49,14 @@ const CONTENT: Record<
   },
 };
 
+type FilePickerData = Parameters<NonNullable<UseFilePickerConfig['onFilesSelected']>>[0]
+
+function toFileList(files: File[]): FileList {
+  const dataTransfer = new DataTransfer()
+  files.forEach((file) => dataTransfer.items.add(file))
+  return dataTransfer.files
+}
+
 export const PlaceholderElement = withHOC(
   PlaceholderProvider,
   function PlaceholderElement(props: PlateElementProps<TPlaceholderElement>) {
@@ -69,14 +78,16 @@ export const PlaceholderElement = withHOC(
     const { openFilePicker } = useFilePicker({
       accept: currentContent.accept,
       multiple: true,
-      onFilesSelected: ({ plainFiles: updatedFiles }) => {
+      onFilesSelected: (data: FilePickerData) => {
+        const updatedFiles = data.plainFiles;
+        if (!updatedFiles?.length) return;
         const firstFile = updatedFiles[0];
         const restFiles = updatedFiles.slice(1);
 
         replaceCurrentPlaceholder(firstFile);
 
         if (restFiles.length > 0) {
-          editor.getTransforms(PlaceholderPlugin).insert.media(restFiles);
+          editor.getTransforms(PlaceholderPlugin).insert.media(toFileList(restFiles));
         }
       },
     });

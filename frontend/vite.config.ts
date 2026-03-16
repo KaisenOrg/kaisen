@@ -6,28 +6,22 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   define: {
     "process.env": {
       DFX_NETWORK: process.env.DFX_NETWORK,
-      CANISTER_ID_KAI_BACKEND: process.env.CANISTER_ID_KAI_BACKEND,
-      CANISTER_ID_TRACKS_BACKEND: process.env.CANISTER_ID_TRACKS_BACKEND,
-      CANISTER_ID_CHATS_BACKEND: process.env.CANISTER_ID_CHATS_BACKEND,
-      CANISTER_ID_USERS_BACKEND: process.env.CANISTER_ID_USERS_BACKEND,
-      CANISTER_ID_ICRC1_LEDGER: process.env.CANISTER_ID_ICRC1_LEDGER,
-      CANISTER_ID_NFT_CERTIFICATES: process.env.CANISTER_ID_NFT_CERTIFICATES,
+      VITE_API_BASE_URL: process.env.VITE_API_BASE_URL,
     },
   },
   server: {
     proxy: {
-      '/api/v2': {
-        target: 'http://127.0.0.1:4943',
+      "/api": {
+        target: process.env.VITE_API_PROXY_TARGET || "http://127.0.0.1:3000",
         changeOrigin: true,
-        rewrite: path => path, // mantém /api/v2/...
-      }
-    }
+        rewrite: path => path,
+      },
+    },
   },
   resolve: {
     alias: {

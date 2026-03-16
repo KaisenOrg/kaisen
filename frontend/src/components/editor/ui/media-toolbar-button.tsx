@@ -16,6 +16,7 @@ import { isUrl, KEYS } from 'platejs';
 import { useEditorRef } from 'platejs/react';
 import { toast } from 'sonner';
 import { useFilePicker } from 'use-file-picker';
+import type { UseFilePickerConfig } from 'use-file-picker';
 
 import {
   AlertDialog,
@@ -77,6 +78,14 @@ const MEDIA_CONFIG: Record<
   },
 };
 
+type FilePickerData = Parameters<NonNullable<UseFilePickerConfig['onFilesSelected']>>[0]
+
+function toFileList(files: File[]): FileList {
+  const dataTransfer = new DataTransfer()
+  files.forEach((file) => dataTransfer.items.add(file))
+  return dataTransfer.files
+}
+
 export function MediaToolbarButton({
   nodeType,
   ...props
@@ -90,8 +99,10 @@ export function MediaToolbarButton({
   const { openFilePicker } = useFilePicker({
     accept: currentConfig.accept,
     multiple: true,
-    onFilesSelected: ({ plainFiles: updatedFiles }) => {
-      editor.getTransforms(PlaceholderPlugin).insert.media(updatedFiles);
+    onFilesSelected: (data: FilePickerData) => {
+      const updatedFiles = data.plainFiles;
+      if (!updatedFiles?.length) return;
+      editor.getTransforms(PlaceholderPlugin).insert.media(toFileList(updatedFiles));
     },
   });
 
