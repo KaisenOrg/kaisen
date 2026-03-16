@@ -119,6 +119,30 @@ function extractErrorMessage(error: unknown) {
   return 'Unexpected error'
 }
 
+function getApiErrorMessage(payload: unknown): string {
+  if (typeof payload === 'string') {
+    return payload
+  }
+
+  if (payload && typeof payload === 'object') {
+    const payloadRecord = payload as Record<string, unknown>
+    const message = payloadRecord.message
+
+    if (typeof message === 'string') {
+      return message
+    }
+
+    if (message && typeof message === 'object') {
+      const nested = message as Record<string, unknown>
+      if (typeof nested.message === 'string') {
+        return nested.message
+      }
+    }
+  }
+
+  return 'Unexpected error'
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${path}`, {
     headers: {
@@ -132,7 +156,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     let message = `HTTP ${response.status}`
     try {
       const payload = await response.json()
-      message = typeof payload.message === 'string' ? payload.message : JSON.stringify(payload.message)
+      message = getApiErrorMessage(payload)
     } catch {
       message = await response.text()
     }
@@ -204,63 +228,74 @@ function toBackendSection(section: MotokoSection): BackendSection {
 function toMotokoSection(section: BackendSection): MotokoSection {
   const { content } = section
 
+  const sectionId = Number.isFinite(section.id) ? section.id : 0
+  const sectionTitle = typeof section.title === 'string' ? section.title : ''
+
   if (content.type === 'Page') {
     return {
-      id: BigInt(section.id),
-      title: section.title,
+      id: BigInt(sectionId),
+      title: sectionTitle,
       content: {
         Page: {
-          title: content.title,
-          content: content.content,
+          title: typeof content.title === 'string' ? content.title : '',
+          content: typeof content.content === 'string' ? content.content : '',
         },
       },
     }
   }
 
   if (content.type === 'Flashcard') {
+    const cards = Array.isArray(content.cards) ? content.cards : []
+
     return {
-      id: BigInt(section.id),
-      title: section.title,
+      id: BigInt(sectionId),
+      title: sectionTitle,
       content: {
-        Flashcard: content.cards,
+        Flashcard: cards,
       },
     }
   }
 
   if (content.type === 'Quiz') {
+    const questions = Array.isArray(content.questions) ? content.questions : []
+
     return {
-      id: BigInt(section.id),
-      title: section.title,
+      id: BigInt(sectionId),
+      title: sectionTitle,
       content: {
-        Quiz: content.questions.map((question) => ({
-          question: question.question,
-          alternatives: question.alternatives.map((alternative) => ({
-            id: BigInt(alternative.id),
-            text: alternative.text,
+        Quiz: questions.map((question) => ({
+          question: typeof question.question === 'string' ? question.question : '',
+          alternatives: (Array.isArray(question.alternatives) ? question.alternatives : []).map((alternative, index) => ({
+            id: BigInt(Number.isFinite(alternative.id) ? alternative.id : index + 1),
+            text: typeof alternative.text === 'string' ? alternative.text : '',
           })),
-          correctAnswerId: BigInt(question.correctAnswerId),
+          correctAnswerId: BigInt(Number.isFinite(question.correctAnswerId) ? question.correctAnswerId : 1),
         })),
       },
     }
   }
 
+  const essayQuestions = Array.isArray(content.questions) ? content.questions : []
+
   return {
-    id: BigInt(section.id),
-    title: section.title,
+    id: BigInt(sectionId),
+    title: sectionTitle,
     content: {
-      Essay: content.questions,
+      Essay: essayQuestions,
     },
   }
 }
 
 function toMotokoTrack(track: BackendTrack): MotokoTrack {
+  const sections = Array.isArray(track.sections) ? track.sections : []
+
   return {
     id: track.id,
     title: track.title,
     description: track.description,
     authorId: track.authorId,
     createdAt: BigInt(new Date(track.createdAt).getTime()),
-    sections: track.sections.map(toMotokoSection),
+    sections: sections.map(toMotokoSection),
   }
 }
 

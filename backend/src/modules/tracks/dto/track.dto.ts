@@ -1,8 +1,10 @@
 import { Type } from 'class-transformer';
 import {
   ArrayMinSize,
+  IsIn,
   IsArray,
   IsInt,
+  IsNotEmpty,
   IsOptional,
   IsString,
   Min,
@@ -11,9 +13,11 @@ import {
 
 export class FlashcardItemDto {
   @IsString()
+  @IsNotEmpty()
   sentence!: string;
 
   @IsString()
+  @IsNotEmpty()
   answer!: string;
 }
 
@@ -23,11 +27,13 @@ export class QuizAlternativeDto {
   id!: number;
 
   @IsString()
+  @IsNotEmpty()
   text!: string;
 }
 
 export class QuizItemDto {
   @IsString()
+  @IsNotEmpty()
   question!: string;
 
   @IsArray()
@@ -43,14 +49,16 @@ export class QuizItemDto {
 
 export class EssayItemDto {
   @IsString()
+  @IsNotEmpty()
   question!: string;
 
   @IsString()
+  @IsNotEmpty()
   expectedAnswer!: string;
 }
 
 export class SectionContentDto {
-  @IsString()
+  @IsIn(['Page', 'Flashcard', 'Quiz', 'Essay'])
   type!: 'Page' | 'Flashcard' | 'Quiz' | 'Essay';
 
   @IsOptional()
@@ -78,6 +86,7 @@ export class TrackSectionDto {
   id!: number;
 
   @IsString()
+  @IsNotEmpty()
   title!: string;
 
   @ValidateNested()
@@ -87,15 +96,19 @@ export class TrackSectionDto {
 
 export class CreateTrackDto {
   @IsString()
+  @IsNotEmpty()
   title!: string;
 
   @IsString()
+  @IsNotEmpty()
   description!: string;
 
   @IsString()
+  @IsNotEmpty()
   authorId!: string;
 
   @IsArray()
+  @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => TrackSectionDto)
   sections!: TrackSectionDto[];

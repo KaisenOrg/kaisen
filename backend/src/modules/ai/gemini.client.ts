@@ -21,6 +21,10 @@ interface GeminiResponse {
   }>;
 }
 
+interface GenerateTextOptions {
+  responseMimeType?: 'application/json' | 'text/plain';
+}
+
 @Injectable()
 export class GeminiClient {
   private readonly apiKey?: string;
@@ -36,9 +40,16 @@ export class GeminiClient {
     );
   }
 
-  async generateText(prompt: string, context?: string): Promise<string> {
+  async generateText(prompt: string, context?: string, options?: GenerateTextOptions): Promise<string> {
     const response = await this.request(this.textModel, {
       contents: this.buildContents(prompt, context),
+      ...(options?.responseMimeType
+        ? {
+            generationConfig: {
+              responseMimeType: options.responseMimeType,
+            },
+          }
+        : {}),
     });
 
     const text = response.candidates?.[0]?.content?.parts?.find((part) => part.text)?.text;
