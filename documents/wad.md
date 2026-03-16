@@ -5,9 +5,7 @@
   <tr>
     <td style="border: none;"><a href="https://www.linkedin.com/in/nicoleriedla/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/nicole.png" alt="Nicole Riedla"></a></td>
     <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/marcus-valente/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/marcus.png" alt="Marcus Valente"></a></td>
-    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/lima-j/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/jose.png" alt="Jose Lima"></a></td>
     <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/messias-olivindo/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/messias.png" alt="Messias Olivindo"></a></td>
-    <td style="border: none; padding: 1;"><a href="https://www.linkedin.com/in/giovanna-neves-rodrigues/" target="_blank" rel="noopener noreferrer"><img src="assets/intro/giovanna.png" alt="Giovanna Neves"></a></td>
   </tr>
 </table>
 
@@ -115,353 +113,183 @@ Dessa forma, Kaisen se estabelece como um ambiente de aprendizagem inteligente, 
 <a id="211-porters-5-forces-model"></a>
 ### 2.1.1. Modelo das 5 Forças de Porter
 
-O mercado de EdTech brasileiro, avaliado em US$6 bilhões em 2025 com crescimento projetado de 11,12% CAGR até 2034, apresenta alta atratividade estratégica para o Kaisen apesar da intensa concorrência. Esta análise detalhada das Cinco Forças de Porter revela um cenário de rivalidade competitiva extremamente alta, em que a plataforma Alura domina com 1,2 milhão de usuários pagantes a R$85/mês, DIO possui 500 mil usuários no plano Pro de R$59/mês com parcerias de emprego, Rocketseat atende 100 mil desenvolvedores premium a R$183/mês e Udemy alcança 5 milhões de brasileiros com cursos individuais de R$29-99.
+O mercado de EdTech brasileiro, avaliado em US\$6 bilhões em 2025 com crescimento projetado de 11,12% CAGR até 2034, apresenta alta atratividade estratégica para o Kaisen apesar da intensa concorrência. Esta análise detalhada das Cinco Forças de Porter revela um cenário de rivalidade competitiva extremamente alta, em que a plataforma Alura domina com 1,2 milhão de usuários pagantes a R\$85/mês, DIO possui 500 mil usuários no plano Pro de R\$59/mês com parcerias de emprego, Rocketseat atende 100 mil desenvolvedores premium a R\$183/mês e Udemy alcança 5 milhões de brasileiros com cursos individuais de R\$29-99.
 
-A **ameaça de novos entrantes** é moderada-alta devido às baixas barreiras técnicas. A equipe interna de profissionais especializados para validação de conteúdos iniciais cria credibilidade técnica diferenciada, o uso da Inteligência Artificial que estabelece uma vantagem competitiva significativa. Dados da Liga Ventures indicam que 70% das 425+ startups EdTech falham no primeiro ano por falta de tração comunitária, dando ao Kaisen uma janela de 18 meses de moat competitivo.
+A **ameaça de novos entrantes** é moderada-alta devido às baixas barreiras técnicas de entrada para plataformas simples. No entanto, a equipe interna de profissionais especializados para validação de conteúdos iniciais cria credibilidade técnica diferenciada, e o motor de Inteligência Artificial nativo do Kaisen estabelece uma vantagem competitiva significativa. Dados da Liga Ventures indicam que 70% das 425+ startups EdTech falham no primeiro ano por falta de tração comunitária, dando ao Kaisen uma janela de 18 meses de "moat" competitivo devido ao seu modelo focado em curadoria.
 
-O **poder de barganha dos clientes** é muito alto, diversos desenvolvedores usam alternativas gratuitas dominantes como YouTube (80% dos iniciantes), ChatGPT Edu (70% uso diário) e freeCodeCamp. O Kaisen mitiga essa pressão com freemium agressivo de textos ilimitados grátis, preço 47% inferior à Alura (R$44,90 vs R$85), IA que disponibiliza mais funcionalidades para o usuário e certificados emitidos para comprovar o conhecimento.
+O **poder de barganha dos clientes** é muito alto. Diversos desenvolvedores usam alternativas gratuitas dominantes como YouTube (80% dos iniciantes), ChatGPT Edu (70% uso diário) e freeCodeCamp. O Kaisen mitiga essa pressão com um modelo freemium agressivo (criação de trilhas em texto ilimitadas grátis), preço 47% inferior à Alura (R$44,90 vs R$85), e IA que não apenas gera conteúdo, mas emite Certificados Digitais Autenticados para comprovar o conhecimento diretamente no histórico do usuário.
 
-A **ameaça de substitutos** é alta, com produtos diretos como trilhas Alura (IA básica) e bootcamps DIO competindo contra alternativas indiretas gratuitas que capturam 80% do mercado. O Kaisen se posiciona com o uso da IA (geração de vídeos, quizzes, etc), revenue share de 75% para criadores de trilhas pagas (superior aos 50% da Udemy), colaboração GitHub-like com fork/melhorias comunitárias e certificação.
+A **ameaça de substitutos** é alta, com produtos diretos como trilhas Alura (IA básica) e bootcamps DIO competindo contra alternativas indiretas gratuitas que capturam 80% do mercado. O Kaisen se posiciona oferecendo um modelo de marketplace de conhecimento (revenue share de 75% para criadores de trilhas pagas, superior aos 50% da Udemy) e uma dinâmica de colaboração inspirada no GitHub, com "forks" e melhorias comunitárias em trilhas de estudo.
 
-Finalmente, o **poder de barganha dos fornecedores** é moderado, isso porque, embora as APIs de IA representem 70% dos custos variáveis operacionais, o mercado de inteligência artificial tornou-se altamente commoditizado em 2026, oferecendo múltiplas alternativas intercambiáveis com preços competitivos e sem lock-in tecnológico. Esta commoditização reduz drasticamente o poder individual de qualquer fornecedor, permitindo ao Kaisen migrar entre provedores sem impacto significativo nos custos ou na qualidade do serviço.
+Finalmente, o **poder de barganha dos fornecedores** é moderado. Embora as APIs de IA (como Google Gemini) e serviços de nuvem (AWS/GCP) representem grande parte dos custos variáveis operacionais, o mercado de inteligência artificial e infraestrutura em nuvem tornou-se altamente commoditizado. Isso oferece múltiplas alternativas com preços competitivos e sem "lock-in" tecnológico irreversível, permitindo ao Kaisen migrar de provedores (ex: trocar de LLM) sem impacto crítico nos custos.
 
 ### 2.1.2. Análise SWOT da Instituição Parceira
 
-A análise SWOT do Kaisen revela um posicionamento estratégico sólido no nicho de tecnologia, com forças técnicas e de precificação que contrabalançam fraquezas operacionais iniciais, aproveitando oportunidades de mercado em expansão enquanto mitiga ameaças competitivas através de diferenciação clara em revenue share e validação de conteúdos pela comunidade. Os seus principais pontos fortes residem na personalização da aprendizagem, no envolvimento da comunidade e na construção da reputação digital, todos alinhados com as tendências emergentes na educação.
+A análise SWOT do Kaisen revela um posicionamento estratégico sólido no nicho de tecnologia, com forças técnicas e de precificação que contrabalançam fraquezas operacionais iniciais, aproveitando oportunidades de mercado em expansão.
 
 ###### Forças (Strengths)
 
-O preço da plataforma do Kaisen representa 47% do valor da Alura e 76% do DIO Pro, criando barreira imediata de entrada para concorrentes genéricos e acelerando conversão freemium projetada em 15-20%, padrão comprovado no setor. A validação de conteúdos iniciais com profissionais experientes e qualificados garante credibilidade técnica, mas com 100% de controle operacional e custo previsível de R$3 mil/mês. O modelo de revenue share de 75% para criadores de trilhas pagas é superior aos 50% da Udemy, estabelecendo incentivo econômico poderoso que atrai 20% dos desenvolvedores como criadores de conteúdo, gerando efeito rede viral onde cada trilha monetizada recruta novos autores.
+O preço da assinatura Pro do Kaisen representa 47% do valor da Alura e 76% do DIO Pro, criando uma barreira imediata contra concorrentes genéricos e acelerando a conversão do modelo freemium (projetada em 15-20%). A validação de conteúdos com profissionais qualificados garante credibilidade técnica. O modelo de revenue share de 75% para criadores de conteúdo estabelece um incentivo econômico poderoso, gerando um efeito de rede viral onde cada trilha monetizada atrai novos autores para a plataforma.
 
 ###### Fraquezas (Weaknesses)
 
-A ausência total de tração inicial coloca o Kaisen em desvantagem competitiva frente à Alura (1,2M usuários), DIO (500k) e Rocketseat (100k), exigindo investimento agressivo de marketing para alcançar 1.000 usuários freemium em 6 meses, com CAC projetado de R$25/usuário. A dependência de APIs de IA para 70% dos custos variáveis cria vulnerabilidade a flutuações de preço, embora mitigada por multi-provedores, impactando margens brutas nos primeiros 12 meses. O controle interno da validação de conteúdos, embora economicamente vantajoso, carece do peso de marca institucional.
+A ausência de tração inicial coloca o Kaisen em desvantagem competitiva frente aos gigantes do mercado (Alura, DIO, Rocketseat), exigindo investimento agressivo de marketing para alcançar os primeiros 1.000 usuários freemium em 6 meses (CAC projetado de R$25/usuário). A dependência de APIs de IA para custos variáveis cria vulnerabilidade a flutuações de preço em escala, impactando as margens brutas nos primeiros 12 meses. O controle interno de validação carece, no momento zero, do peso de uma marca institucional de ensino superior.
 
 ###### Oportunidades (Opportunities)
 
-O mercado EdTech brasileiro cresce continuamente, com nicho tech impulsionado por 200 mil vagas anuais em programação (JavaScript/Node/React), onde apenas 30% dos desenvolvedores conseguem certificação formal, criando demanda imediata por trilhas estruturadas acessíveis. A tendência de IA generativa em educação (40% das plataformas em 2026) favorece o modelo freemium do Kaisen (textos grátis, vídeos/quizzes pagos), alinhando-se perfeitamente à evolução de APIs como Groq Llama3. O crescimento do UGC colaborativo abre espaço para revenue share diferenciado, onde 15% dos desenvolvedores já criam conteúdo informalmente mas sem monetização estruturada.
+O mercado tech brasileiro é impulsionado por 200 mil vagas anuais, onde apenas 30% dos desenvolvedores possuem certificação formal. Isso cria uma demanda imediata por trilhas acessíveis e atestados de proficiência ágeis. A integração da IA generativa na educação favorece o modelo do Kaisen, alinhando-se perfeitamente à evolução de modelos de linguagem (LLMs). O crescimento do User-Generated Content (UGC) colaborativo abre espaço para nosso revenue share, dado que 15% dos desenvolvedores já criam conteúdo informalmente (artigos, repositórios), mas sem monetização estruturada.
 
 ###### Ameaças (Threats)
 
-A evolução acelerada de IA gratuita como ChatGPT Edu e Google Gemini commoditiza vídeos e quizzes básicos, fazendo 70% dos usuários freemium permanecerem sem upgrade, pois questionam "para que pagar R$44,90 se consigo conteúdo similar de graça?", forçando o Kaisen a diferenciar-se exclusivamente por colaboração avançada GitHub-like e certificação técnica. Finalmente, lentidão de APIs IA como Groq (latência real 2-5s) compromete a experiência paga, pois 30% dos usuários abandonam plataformas que apresentam lentidão no momento de interação, destruindo conversão freemium-paga de 15-20%.
-
-
-Contudo, o projeto enfrenta desafios relacionados à sua estrutura interna e ao atual nível de maturidade do mercado. A falta de tração inicial e validação de mercado, combinada com a curva de adoção das tecnologias envolvidas, apresenta obstáculos reais à expansão generalizada e à aceitação dos utilizadores. A disponibilidade limitada de recursos técnicos e financeiros, juntamente com a ausência de certificação institucional formalmente reconhecida, reforça a necessidade de uma estratégia sólida de entrada no mercado que priorize a facilidade de uso, testes com usuários reais e parcerias estratégicas.
-
-As oportunidades externas são claras, especialmente com o valor crescente atribuído à aprendizagem autodirigida, à reputação digital e às comunidades colaborativas. No entanto, o projeto deve superar ameaças como a saturação do mercado edtech e o ceticismo em relação a tecnologias.
-
-Portanto, para garantir a sustentabilidade da solução, é essencial validá-la em nichos específicos, modularizar a sua complexidade tecnológica e desenvolver um plano de marketing que comunique claramente o seu valor único de forma acessível e focada no utilizador.
+A evolução acelerada de IA gratuita pode commoditizar resumos e quizzes, fazendo com que usuários freemium questionem o upgrade para o plano pago. O Kaisen precisa se diferenciar agressivamente pela curadoria comunitária, validação de currículo e recursos avançados para RHs (B2B). Problemas de latência de provedores de IA também podem comprometer a experiência fluida do usuário, prejudicando a retenção.
 
 <a id="213-solution"></a>
 ### 2.1.3. Solução
 
 **Problema a ser resolvido:** <br>
-O modelo educacional tradicional é centralizado, caro e ineficiente no fornecimento de provas detalhadas e verificáveis ​​do conhecimento individual. Além disso, os certificados actualmente utilizados são frágeis e a aprendizagem é tratada como um produto e não como um ecossistema colaborativo. Consequentemente, faltam mecanismos eficazes para validar o conhecimento, bem como incentivos limitados para a partilha e colaboração dentro da comunidade.
+O modelo educacional tradicional é centralizado, caro e ineficiente em fornecer provas ágeis do conhecimento que os indivíduos adquirem de forma autodidata. A aprendizagem online costuma ser solitária, e os certificados de cursos livres em vídeo muitas vezes comprovam apenas que o usuário "assistiu", e não que "aprendeu". Faltam mecanismos para validar ativamente o conhecimento e incentivar a colaboração entre estudantes.
 
 **Dados disponíveis:** <br>
-A plataforma oferece uma ampla variedade de conteúdos educacionais, disponíveis em diversos formatos, como PDFs, artigos, trabalhos de pesquisa e documentação técnica. Além disso, são coletados dados relevantes, como padrões e preferências de aprendizagem do usuário, métricas de envolvimento da comunidade e registros de validação baseados em blockchain. É importante destacar que a plataforma utiliza tanto conteúdo gerado pelo usuário quanto materiais de aprendizagem processados ​​por inteligência artificial (IA), criando assim um repositório de conhecimento abrangente e dinâmico.
+A internet oferece uma quantidade infinita de conteúdos em PDFs, artigos, documentação técnica e vídeos. No entanto, são conteúdos não estruturados. O Kaisen coleta dados de interação do usuário, preferências de estudo e progresso em testes, armazenando tudo de forma segura em bancos de dados relacionais (PostgreSQL) para criar um histórico de aprendizagem claro e auditável para o mercado de trabalho.
 
 **Solução proposta:** <br>
-Kaisen é o primeiro protocolo de conhecimento descentralizado que transforma a aprendizagem – antes um processo de consumo passivo – em uma experiência criativa, colaborativa e valiosa. A solução combina caminhos de aprendizagem personalizados com tecnologias de IA e validação de blockchain, criando um verdadeiro “GitHub of Knowledge”.
+O Kaisen é uma plataforma educacional SaaS e marketplace que transforma a aprendizagem em uma experiência ativa, guiada por IA e validada pela comunidade. Ele funciona como um "GitHub do Conhecimento".
 
-Os usuários inserem matérias-primas (como PDFs, tópicos e links), que são processadas por Kai, um assistente de IA. A partir desse processamento, Kai gera trilhas de aprendizagem personalizadas. Se preferir, o usuário também pode criar sua trilha manualmente. Essas faixas podem ser publicadas, bifurcadas e melhoradas pela comunidade, resultando em um repositório vivo e em constante evolução, validado por certificados NFT e incentivado pela economia de tokens $KOIN.
+Os usuários inserem materiais brutos (PDFs, links ou temas) que são processados pelo Kai, nosso motor de IA. O Kai estrutura trilhas de aprendizagem completas. Essas trilhas podem ser publicadas, "bifurcadas" (forked) e aprimoradas pela comunidade, resultando em um repositório vivo e em constante evolução. O progresso é atestado por Certificados Digitais Autenticados e impulsionado por um sistema de gamificação e ranking.
 
 **Como usar a solução:** <br>
-- Entrada de Conteúdo: O usuário envia documentos ou define temas de interesse da Kai.
-- Geração de caminhos: a IA, ou o próprio usuário, cria caminhos de aprendizagem personalizados que incluem questionários, flashcards e conteúdo interativo.
-- Processo de aprendizagem: os usuários progridem nos caminhos com o apoio do tutor de IA.
-- Colaboração da Comunidade: Após a conclusão, os caminhos podem ser publicados e melhorados pela comunidade através de bifurcação.
-- Validação: A conclusão do processo de aprendizagem é certificada por NFTs “mineráveis”, servindo como prova de aprendizagem.
-- Incentivo: os usuários são recompensados ​​com tokens $KOIN por criar conteúdo de qualidade, completar caminhos e colaborar com a comunidade.
+- **Entrada de Conteúdo:** O usuário envia documentos ou define temas de interesse.
+- **Geração de Trilhas:** A IA gera jornadas contendo quizzes, flashcards e resumos.
+- **Processo de Aprendizagem:** O usuário consome a trilha no seu ritmo, validando o conhecimento nos testes.
+- **Colaboração:** Trilhas podem ser tornadas públicas e melhoradas pela comunidade.
+- **Validação:** A conclusão gera um Certificado Digital Autenticado com um ID único, compartilhável no LinkedIn.
+- **Incentivo e Gamificação:** Usuários ganham pontos de reputação e destravam conquistas visuais na plataforma ao criar trilhas populares ou manter ofensivas de estudo.
 
 **Benefícios esperados:** <br>
-- Democratização do acesso à educação personalizada e baseada na IA.
-- Credenciais de conhecimento verificáveis ​​e portáteis, protegidas por certificados blockchain.
-- Criação de um ecossistema colaborativo de conhecimento, com conteúdos continuamente aprimorados pela comunidade.
-- Estabelecimento de um modelo de incentivo sustentável que valorize o aprendizado e o compartilhamento.
-- Redução dos custos educacionais e ampliação do acesso à educação.
-- Fortalecer a reputação digital e o reconhecimento profissional através de conquistas certificadas.
+- Democratização da criação de cursos através de IA.
+- Geração de credenciais de conhecimento verificáveis e portáteis.
+- Criação de um ecossistema colaborativo (efeito de rede na educação).
+- Construção de um portfólio de estudos rastreável para uso em processos seletivos.
+- Geração de renda extra para criadores de conteúdo técnico (Revenue Share).
 
-**Critérios de sucesso e como será avaliado:** <br>
-- Engajamento do usuário: medido pelo número de caminhos criados, concluídos e bifurcados mensalmente.
-- Crescimento da Comunidade: Avaliado com base no número de usuários ativos e taxa de retenção (meta: mais de 5.000 usuários ativos no primeiro ano).
-- Qualidade do conhecimento: verificada por meio de análises da comunidade e métricas de engajamento para faixas publicadas.
-- Adoção de Certificações: Quantificada pelo número de certificados NFT emitidos e partilhados em contextos profissionais.
-- Saúde da Economia Token: Monitorada com base na circulação do token $KOIN, adoção de mecanismos de staking e atividade de mercado.
-- Impacto Educacional: Avaliado medindo melhorias no conhecimento e habilidades do usuário por meio de pré e pós-avaliações.
+**Critérios de sucesso e avaliação:** <br>
+- **Engajamento:** Medido pelo número de trilhas criadas, concluídas e bifurcadas mensalmente.
+- **Retenção:** Taxa de usuários ativos semanais (WAU) e conversão freemium para pro (Meta: 15%).
+- **Adoção de Certificados:** Volume de certificados emitidos e taxas de clique/compartilhamento no LinkedIn.
+- **Qualidade do Conteúdo:** Avaliações (estrelas) dadas pela comunidade às trilhas publicadas.
 
 <a id="214-value-proposition-canvas"></a>
-### 2.1.4. Tela de proposta de valor
+### 2.1.4. Tela de Proposta de Valor
 
-O Value Proposition Canvas é uma ferramenta estratégica utilizada por diversas empresas com o objetivo de compreender profundamente as necessidades, dores e desejos de seus clientes, ao mesmo tempo em que visa criar e posicionar o produto ou serviço oferecido de acordo com essas demandas. Com base nisso, segue-se o Canvas de Proposta de Valor da solução Kaisen, que apresenta um perfil de cliente bem definido e uma descrição clara de como a solução proposta se alinha a ele.
+O Value Proposition Canvas da solução Kaisen mapeia como o produto resolve as dores reais do estudante autodidata e do criador de conteúdo no Brasil.
 
 <div align="center">
-
-<sub>Figura 3 - Tela de proposta de valor</sub>
-
+<sub>Figura 3 - Tela de Proposta de Valor</sub>
 <img src="assets/business/canvas-value.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
 **Trabalhos do cliente:**<br>
-
-- Estude de forma autônoma utilizando conteúdos online.
-- Criar e organizar seus próprios materiais de estudo (resumos, flashcards, roteiros de aprendizagem).
-- Buscar materiais confiáveis ​​e relevantes alinhados aos seus objetivos.
-- Validar oficialmente o conhecimento adquirido através de meios informais.
-- Compartilhe conhecimento e materiais com outras pessoas.
-- Visualize seu progresso e histórico de aprendizado de forma clara e personalizada.
-- Avaliar e selecionar candidatos com base em jornadas de aprendizagem reais e comprovadas.
+- Estudar de forma autônoma utilizando conteúdos dispersos online.
+- Buscar materiais confiáveis e atualizados para a área de tecnologia.
+- Validar oficialmente o conhecimento adquirido em tutoriais e projetos práticos.
+- Construir um portfólio atraente para recrutadores.
 
 **Dores:**<br>
-
-- Falta de conteúdo de estudo gratuito, organizado de forma lógica ou cronológica.
-- Dificuldade em encontrar materiais objetivos e de alta qualidade.
-- Ausência de uma visão clara e personalizada do progresso do estudo.
-- Incapacidade de validar oficialmente a aprendizagem informal.
-- Falta de centralização dos materiais de estudo nas diferentes áreas do conhecimento.
-- Falta de incentivo para quem compartilha conhecimento com a comunidade.
+- Cursos tradicionais são caros, longos e rapidamente ficam desatualizados.
+- Falta de validação para quem estuda por conta própria (síndrome do impostor).
+- Sensação de solidão no estudo online.
+- Criadores de conteúdo técnico têm dificuldade em monetizar seus materiais fora do YouTube.
 
 **Ganhos:**<br>
-
-- Criação de uma reputação digital de valor através de uma comunidade ativa.
-- Geração de renda e reconhecimento através de conteúdos criados e trilhas de aprendizagem.
-- Certificados digitais transparentes, confiáveis ​​e imutáveis ​​que validam o conhecimento.
-- Um portfólio sólido e rastreável para utilização em processos seletivos.
-- Motivação contínua através de gamificação e recompensas.
-- Visão integrada e clara do histórico de aprendizagem de qualquer indivíduo.
+- Criação de uma reputação digital validada por dados (histórico de quizzes e exercícios).
+- Economia de tempo ao usar a IA para resumir e estruturar PDFs e documentações.
+- Possibilidade de renda extra (para criadores que vendem trilhas premium).
+- Motivação contínua através de gamificação, rankings e recompensas virtuais.
 
 **Produtos e Serviços:**<br>
-
-- Plataforma educacional descentralizada integrando IA e blockchain.
-- Assistente virtual inteligente (Kai) que transforma qualquer material em flashcards, resumos, quizzes e roteiros de estudo personalizados.
-- Certificação digital via NFT com validação pública e imutável.
-- Trilhas públicas de aprendizagem com possibilidades de colaboração e curadoria comunitária.
-- Sistema de gamificação com recompensas em tokens e itens cosméticos.
-- Loja interativa com customizações e ferramentas adicionais.
-- Perfil educacional rastreável com reputação ligada ao progresso e à colaboração.
+- Plataforma educacional web SaaS (Frontend React/Vite, Backend NestJS).
+- Assistente IA (Kai) para geração de trilhas e flashcards.
+- Certificação Digital Autenticada (com URL de validação pública).
+- Feed da comunidade e sistema de "Fork" de trilhas de estudo.
+- Sistema de gamificação, pontuação e loja de cosméticos para perfis.
 
 **Analgésicos:**<br>
+- Organização automatizada de estudos baseada nos próprios links do usuário.
+- Validação rápida de conhecimento sem depender do MEC ou faculdades de 4 anos.
+- Ferramenta "tudo-em-um" (substitui o Notion, Anki e ChatGPT soltos em abas diferentes).
 
-- Organização automatizada e personalizada de estudos com base em materiais do próprio usuário.
-- Validação oficial da aprendizagem informal sem dependência de instituições tradicionais.
-- Visualização clara e contínua da evolução do conhecimento.
-- Ferramentas para centralizar e documentar todo o percurso educativo.
-- Incentivos tangíveis para quem contribui para a comunidade (recompensas e reputação).
-- Transparência e rastreabilidade no registo de competências e aprendizagem.
-
-**Ganhe criadores:**<br>
-
-- Experiência de estudo mais eficiente, personalizada e motivadora apoiada pela IA.
-- Recompensas por cada interação significativa: estudar, criar, contribuir.
-- Possibilidade de rentabilizar o próprio conteúdo educativo.
-- Reconhecimento da jornada educacional como um ativo de construção de reputação.
-- Portfólio educacional compartilhável para recrutadores em formato objetivo e confiável.
-
-A análise realizada por meio do Kaisen Value Proposition Canvas demonstra não apenas um entendimento claro das dores e expectativas do público-alvo, mas também um plano consistente para oferecer uma resposta funcional e estratégica a essas demandas. A proposta está ancorada em diferenciais tecnológicos, como a integração de IA, blockchain e certificações NFT. Contudo, o aspecto mais relevante da proposta reside na capacidade da plataforma de converter a aprendizagem informal em reputação verificável, característica ainda pouco explorada de forma consistente no mercado educacional.
-
-Portanto, vale ressaltar que a solução aborda uma questão real e premente: a desconexão entre o conhecimento adquirido por meios não tradicionais e sua validação. A centralização dos dados de aprendizagem, a personalização do processo de estudo e a possibilidade de rentabilizar e partilhar jornadas educativas acrescentam valor direto ao utilizador final. Kaisen não depende apenas de tecnologias emergentes; constrói um ecossistema no qual o conhecimento é tratado como um ativo de reputação – rastreável, partilhável e, o mais importante, recompensável.
+**Criadores de Ganhos (Gain Creators):**<br>
+- Experiência de estudo personalizada.
+- Painel de análise (Dashboard) para recrutadores validarem as habilidades do candidato.
+- Portfólio educacional compartilhável e dinâmico.
 
 <a id="215-business-model-canvas"></a>
 ### 2.1.5 Tela do Modelo de Negócios
 
-O Business Model Canvas (BMC) para Kaisen apresenta, de forma estruturada, os principais elementos que sustentam o modelo de negócios da plataforma. Ela organiza tudo, desde a proposta de valor — baseada na transformação de conteúdo disperso em trilhas de aprendizagem personalizadas e certificadas via blockchain — até segmentos de clientes, canais de relacionamento, fluxos de receita e estrutura de custos. Além de mapear essas áreas, o BMC será utilizado como ferramenta para analisar a viabilidade, consistência e potencial de crescimento da solução, orientando decisões estratégicas e melhorias contínuas.
+O Business Model Canvas (BMC) estrutura os principais elementos que sustentam o Kaisen. O modelo foi desenhado para ser escalável via infraestrutura em nuvem, focando em receita recorrente e monetização de marketplace.
 
 <div align="center">
-
 <sub>Figura 4 - Business Model Canvas</sub>
-
 <img src="assets/business/business-model-canvas.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
 <a id="1-value-proposition"></a>
-#### 1. Proposta de valor
-
-Kaisen transforma conteúdo disperso — como PDFs, links e tópicos — em trilhas de aprendizagem personalizadas geradas por inteligência artificial, aprimoradas pela comunidade e certificadas via blockchain. O processo de aprendizagem muda de passivo para ativo, colaborativo e rastreável, com um histórico educacional confiável.
-
-Os usuários gratuitos podem explorar e adaptar faixas públicas existentes. Os assinantes premium desbloqueiam a criação completa com tecnologia de IA, acesso a faixas exclusivas, certificados NFT personalizáveis ​​e recursos avançados de personalização e gamificação.
-
-**A plataforma permite:**
-- Transformação de conteúdo bruto em trilhas interativas e personalizadas com IA.
-- Compartilhamento comunitário e remixagem de faixas, com curadoria social e validação descentralizada.
-- Certificação imutável do progresso através de NFTs educacionais, criando um portfólio verificável.
-- Acesso gratuito para descobrir e adaptar faixas públicas.
-- Recursos premium para criação avançada, personalização e validação aprofundada.
-- Um sistema futuro de recompensas e curadoria baseado no token $KOIN.
-
+#### 1. Proposta de Valor
+O Kaisen transforma conteúdo online não estruturado em trilhas de aprendizagem gamificadas, validadas e assistidas por IA. 
+- **Para Estudantes:** Uma ferramenta que automatiza a criação de cronogramas de estudo e atesta o aprendizado através de certificados verificáveis.
+- **Para Criadores:** Uma plataforma para monetizar trilhas de conhecimento técnico de forma justa (75% de comissão).
+- **Para Empresas:** Uma fonte de dados confiável para recrutamento, baseada em histórico real de resolução de problemas e engajamento, não apenas em diplomas.
 
 <a id="2-customer-segments"></a>
-#### 2. Segmentos de clientes
-
-Kaisen atende diversos perfis ligados à educação descentralizada, validação informal de conhecimento e curadoria de trilhas técnicas.
-
-**Os principais segmentos incluem:**
-- Autodidatas e criadores técnicos que procuram validar e rentabilizar os seus conhecimentos e criações.
-- Estudantes de áreas desfavorecidas com elevado envolvimento digital e acesso limitado à educação formal.
-- Profissionais de RH que necessitam de provas concretas e verificáveis ​​de competências, além dos diplomas tradicionais.
-- Plataformas educacionais que buscam integrar certificações blockchain confiáveis ​​e interoperáveis.
-- Comunidades Web3, DAOs e projetos educacionais descentralizados focados em curadoria e validação distribuída.
-
+#### 2. Segmentos de Clientes
+- **B2C (Estudantes e Autodidatas):** Jovens e adultos em transição de carreira, estudantes de tecnologia, e profissionais buscando upskilling contínuo.
+- **B2C (Criadores):** Tech leads, influenciadores de tecnologia e professores independentes.
+- **B2B (Empresas/RH - Expansão Futura):** Startups e corporações que precisam de ferramentas para treinamento interno (onboarding corporativo) ou validação de candidatos técnicos.
 
 <a id="3-channels"></a>
 #### 3. Canais
-
-Kaisen se conecta com seus usuários por meio de vários canais digitais e comunitários, integrando aquisição, entrega de valor e envolvimento contínuo.
-
-**Canais de aquisição:**
-- Redes sociais estratégicas: X (Twitter), Instagram, YouTube, LinkedIn.
-- Parcerias com criadores de conteúdo e influenciadores do ecossistema educacional.
-- Participação em hackathons, eventos de inovação, comunidades técnicas e Web3.
-- Divulgação orgânica por meio de conteúdo educacional, NFTs como prova de aprendizagem e materiais interativos.
-
-**Canais de entrega:**
-- Plataforma web responsiva acessível em desktop e mobile.
-- Login via identidade descentralizada (por exemplo, Identidade da Internet ou carteiras digitais).
-- Elementos de navegação e gamificação assistidos por IA integrados na interface.
-
-**Canais de engajamento:**
-- Servidores Discord e fóruns da comunidade para suporte e interação entre pares.
-- DAOs educacionais e redes Web3 para curadoria coletiva e desenvolvimento de trilhas.
-- Reputação interna, distintivo e sistema de classificação para incentivar a contribuição contínua.
-
+- **Aquisição:** Marketing de conteúdo, SEO, tráfego pago (Instagram/LinkedIn Ads), influenciadores de tecnologia no YouTube e TikTok.
+- **Entrega:** Aplicação Web Responsiva (SaaS).
+- **Comunidade:** Discord oficial da plataforma, grupos no Telegram e perfis institucionais no LinkedIn e X.
 
 <a id="4-customer-relationships"></a>
-#### 4. Relacionamento com o cliente
-
-O relacionamento da Kaisen com os usuários é impulsionado por uma jornada assistida e gamificada, guiada por feedback constante, com diferentes abordagens para usuários finais, criadores e stakeholders corporativos.
-
-**Para usuários finais:**
-- Integração interativa de IA apresentando os principais recursos da plataforma (faixas, certificados, assistente Kai).
-- Recompensas iniciais por ações como publicação, bifurcação e compartilhamento de certificados.
-- Feedback em tempo real por meio de questionários, conquistas e acompanhamento de progresso.
-
-**Para criadores de conteúdo:**
-- Dashboard com métricas de engajamento das faixas publicadas.
-- Recompensas simbólicas e visibilidade dentro da comunidade.
-- Participação em futuras tomadas de decisão através de sistema de sugestões e votação (futura governança $KOIN).
-
+#### 4. Relacionamento com o Cliente
+- Self-service com onboarding gamificado (guiado pelo assistente IA Kai).
+- Suporte comunitário ágil (via Discord).
+- Engajamento contínuo através de notificações de ofensiva de estudo (streaks), e-mails de acompanhamento de progresso e rankings semanais.
 
 <a id="5-revenue-streams"></a>
-#### 5. Fluxos de receita
-
-A estratégia de monetização da Kaisen é híbrida, combinando SaaS, transações de mercado e economia gamificada.
-
-**Assinatura Premium (Kaisen Pro):**
-- Criação completa de pistas com tecnologia de IA.
-- Certificados NFT personalizáveis.
-- Acesso a faixas privadas e exclusivas.
-- Personalização do perfil.
-- Descontos na Loja Kai.
-- Uso ilimitado do assistente Kai.
-
-**Loja Kai:**
-- Venda de itens digitais personalizados (avatares, efeitos visuais, crachás).
-- Receita direta de vendas e potencial uso futuro do token $KOIN.
-
+#### 5. Fluxos de Receita
+- **Kaisen Pro (SaaS B2C):** Assinatura mensal/anual (ex: R$ 44,90/mês) que libera uso ilimitado da IA para criação de trilhas e personalização avançada de certificados.
+- **Marketplace (Revenue Share):** Retenção de 25% sobre a venda de trilhas exclusivas criadas por especialistas dentro da plataforma.
+- **Kaisen for Business (B2B SaaS - Futuro):** Planos corporativos para empresas utilizarem a plataforma para treinar equipes internas.
 
 <a id="6-key-resources"></a>
-#### 6. Recursos principais
-
-Kaisen depende de uma combinação de uma arquitetura tecnológica robusta, uma equipe estratégica e uma base comunitária ativa.
-
-**Infraestrutura tecnológica:**
-- IA para geração e personalização de trilhas.
-- Sistema de emissão e verificação de NFT em blockchain.
-- Plataforma web responsiva com interface gamificada e acessível.
-
-**Equipe:**
-- Desenvolvimento full-stack (front-end, IA, Web3).
-- Design de produto e experiência do usuário.
-- Comunidade e gerenciamento de conteúdo.
-
-**Ativos intangíveis:**
-- Marca posicionada como referência em reputação educacional descentralizada.
-- Comunidade engajada de criadores, curadores e primeiros usuários.
-- Reputação distribuída e mecanismo de validação de rastreamento.
-
+#### 6. Recursos Principais
+- **Tecnológicos:** Arquitetura em nuvem (AWS/GCP), Banco de Dados Relacional (PostgreSQL), APIs de LLMs (Google Gemini), Backend escalável (NestJS).
+- **Humanos:** Equipe de engenharia de software, especialistas em produto (UX/UI), e gestão de tráfego/comunidade.
+- **Propriedade Intelectual:** Algoritmo proprietário de estruturação de prompts e análise de retenção educacional.
 
 <a id="7-key-activities"></a>
-#### 7. Atividades principais
-
-Kaisen realiza atividades estratégicas que visam a inovação contínua da plataforma, validação de conhecimento e envolvimento da comunidade.
-
-**Desenvolvimento e manutenção:**
-- Evolução da plataforma e do assistente Kai.
-- Atualizações da infraestrutura de IA e integração do protocolo blockchain.
-- Garantir segurança, estabilidade e usabilidade.
-
-**Curadoria e validação:**
-- Monitoramento da qualidade da trilha e moderação de conteúdo.
-- Validação de certificados NFT emitidos.
-- Manutenção do sistema descentralizado de curadoria social e reputação.
-
-**Engajamento e crescimento:**
-- Gestão ativa da comunidade (Discord, fóruns, eventos).
-- Incentivar a criação e bifurcação de pistas com incentivos e recompensas simbólicas.
-- Parcerias com DAOs, edtechs, criadores e empresas para crescimento orgânico.
-
+#### 7. Atividades Principais
+- Desenvolvimento e manutenção contínua da plataforma de software.
+- Engenharia de Prompt e fine-tuning de modelos de IA para garantir a precisão dos materiais didáticos gerados.
+- Marketing digital, otimização de funil de vendas (CRO) e gestão ativa da comunidade.
 
 <a id="8-key-partnerships"></a>
-#### 8. Parcerias-chave
-
-Kaisen conta com uma rede estratégica de parceiros para infraestrutura, conteúdo, validação e expansão de impacto.
-
-**Tecnologia e validação:**
-- Provedores de blockchain para emissão educacional de NFT (por exemplo, ICP).
-- APIs e protocolos para interoperabilidade educacional (crachás abertos, carteiras descentralizadas).
-
-**Conteúdo e distribuição:**
-- Plataformas educacionais e criadores de conteúdo técnico.
-- Comunidades Web3, DAOs e projetos focados em curadoria e educação descentralizadas.
-- Universidades, hackathons e centros de inovação.
-
-**Inclusão e impacto:**
-- Especialistas em reconhecimento de conhecimentos informais e microcertificações.
-- ONG e iniciativas que promovem a inclusão digital para jovens desfavorecidos e educação técnica acessível.
-
+#### 8. Parcerias-Chave
+- **Infraestrutura:** Provedores de nuvem (AWS Startups/Google Cloud) e provedores de IA.
+- **Estratégicas:** Bootcamps de programação, universidades, criadores de conteúdo técnico (influenciadores), e plataformas de pagamentos (Stripe/Mercado Pago).
 
 <a id="9-cost-structure"></a>
-#### 9. Estrutura de custos
-
-A estrutura de custos da Kaisen foi desenhada com base em um cenário de MVP funcional, com tecnologia pronta para produção e adoção inicial moderada. O ciclo projetado de 12 meses inclui:
-- 500 a 1.000 usuários ativos/mês com uso recorrente.
-- Geração de rastreamento, upload de conteúdo, emissão de certificado NFT.
-- 3 GB de armazenamento em canisters, com execução média de 300 bilhões de ciclos/mês.
-- Uma equipe pequena e altamente qualificada focada em desenvolvimento, IA, design e Web3.
-
-**Composição da equipe:**
-6 profissionais estratégicos e 1 função de suporte freelance:
-- 1 Desenvolvedor Full-Stack (integrações front-end, back-end, IA e blockchain)
-- 1 especialista em IA (meio período)
-- 1 Designer de Produto (UX/UI)
-- 1 Gerente de Produto (consultor parcial)
-- 1 engenheiro Web3
-- 1 Gerente de Comunidade
-- 1 Suporte Técnico Autônomo
-
-**Custos mensais estimados por categoria:**
-- **Equipe de desenvolvimento e técnica:** R$ 22 mil – R$ 33 mil
-- **Infraestrutura (Internet Computador + ferramentas auxiliares):** R$ 16.500 – R$ 25.300
-- **Comunidade e suporte:** R$ 5.500 – R$ 8.500
-- **Marketing e aquisição:** R$ 3.000 – R$ 8.000
-- **Incentivos e gamificação:** R$ 1.500 – R$ 4.500
-
-**Custo mensal total:** R$ 48.500 – R$ 79.300
-**Custo anual estimado:** R$ 582 mil – R$ 951,6 mil
-
-
-Kaisen se posiciona como uma plataforma inovadora no cenário educacional descentralizado, combinando inteligência artificial, curadoria comunitária e certificação blockchain para transformar conteúdo disperso em jornadas de aprendizagem personalizadas e verificáveis. Sua proposta de valor combina acessibilidade, com um modelo freemium robusto e profundidade, oferecendo aos usuários Premium recursos avançados de criação, personalização e validação de habilidades.
-
-O modelo de negócios foi pensado para atender diversos perfis, desde autodidatas e estudantes carentes até empresas e comunidades Web3, conectando-se com o público por meio de múltiplos canais digitais e comunitários. A experiência do usuário é pautada por um relacionamento gamificado e assistido que estimula a participação ativa e o crescimento contínuo.
-
-O modelo de monetização híbrido — combinando assinaturas SaaS, mercado e economia gamificada — garante a diversificação das receitas, enquanto os principais recursos e atividades refletem um equilíbrio entre tecnologia de ponta, design de experiência e envolvimento da comunidade. Parcerias estratégicas ampliam o alcance e a relevância da solução, fortalecendo seu ecossistema e credibilidade.
-
-Com esta base sólida, Kaisen tem potencial para se tornar uma referência global em reputação educacional descentralizada, combinando tecnologia, comunidade e reconhecimento de conhecimento para democratizar e valorizar a aprendizagem em todas as suas formas.
+#### 9. Estrutura de Custos
+O modelo opera com altos custos fixos de equipe e custos variáveis atrelados ao uso da plataforma (nuvem e IA).
+- **Equipe (Maior custo fixo):** Desenvolvedores (Frontend React, Backend NestJS), Designer UX/UI, Marketing/Comunidade.
+- **Infraestrutura Cloud e APIs (Custo variável):** Servidores na AWS/GCP, instâncias de banco de dados PostgreSQL, chamadas de API do Google Gemini.
+- **Marketing e Vendas:** CAC (Custo de Aquisição de Clientes) via tráfego pago e campanhas.
+- **Operacional e Ferramentas:** Softwares de gestão, gateways de pagamento (taxas por transação), contabilidade e jurídico.
 
 
 <a id="22-personas"></a>
@@ -525,13 +353,13 @@ O diagrama de arquitetura da aplicação, conforme ilustrado na imagem, foi proj
 
 </div>
 
-O front-end representa a camada de interação direta com o cliente, construída com um conjunto de tecnologias modernas para garantir uma interface eficiente. A base da interface é desenvolvida em React, que permite a criação de componentes de UI dinâmicos e reutilizáveis. O processo de desenvolvimento é acelerado pelo Vite, uma ferramenta de construção de alta velocidade. Para garantir a robustez e qualidade do código, o projeto adota TypeScript, que adiciona digitação estática ao JavaScript, enquanto o estilo é gerenciado pelo Tailwind CSS, um framework utilitário que permite a construção de designs customizados de forma ágil e consistente.
+O front-end representa a camada de interação direta com o cliente, construída com um conjunto de tecnologias modernas para garantir uma interface eficiente. A base da interface é desenvolvida em React, que permite a criação de componentes de UI dinâmicos e reutilizáveis. O processo de desenvolvimento é acelerado pelo Vite, uma ferramenta de construção de alta velocidade. Para garantir a robustez e qualidade do código, o projeto adota TypeScript, que adiciona tipagem estática ao JavaScript, enquanto a estilização é gerenciada pelo Tailwind CSS, um framework utilitário que permite a construção de designs customizados de forma ágil e consistente.
 
-A ponte entre a interface do usuário e os serviços back-end é a camada de autenticação, que adota uma abordagem de identidade digital soberana por meio da Identidade da Internet e do NFID. Ao contrário dos sistemas tradicionais baseados em nome de usuário e senha, este método permite que os usuários acessem a aplicação com segurança usando criptografia e dispositivos com suporte WebAuthn. Isso fortalece a segurança, a privacidade e a experiência do usuário, eliminando a necessidade de memorizar senhas.
+A ponte entre a interface do usuário e os serviços back-end é a camada de autenticação, que adota padrões modernos de mercado para garantir a segurança dos dados. Utilizando protocolos consolidados como JWT (JSON Web Tokens) e OAuth, o sistema permite que os usuários acessem a aplicação de forma protegida e rápida. Isso fortalece a segurança, a privacidade e a experiência do usuário, oferecendo fluxos de login simplificados e gerenciamento seguro de sessões.
 
-O núcleo lógico do aplicativo reside no back-end, que é implementado por meio de Canisters hospedados no blockchain do Internet Computer (ICP). Essa escolha descentraliza a aplicação, tornando-a mais segura, transparente e resistente a falhas ou censura. Dentro dessa estrutura, diversos canisters operam de forma orquestrada para entregar as funcionalidades da plataforma. O users_backend gerencia perfis e dados de usuários; otracks_backend serve como repositório central para as trilhas de aprendizagem; o chats_backend permite funcionalidades de comunicação e comunidade; e o nft_certificates, em comunicação direta com otracks_backend, é responsável por gerar e emitir certificados de conclusão em formato NFT, garantindo sua autenticidade e imutabilidade.
+O núcleo lógico do aplicativo reside no back-end, que é implementado utilizando **NestJS**, um framework Node.js progressivo, operando em conjunto com um banco de dados relacional **PostgreSQL** por meio do ORM **Prisma**. Essa escolha garante uma arquitetura escalável, transações seguras e alta integridade relacional dos dados. Dentro dessa estrutura, diversos módulos operam de forma orquestrada para entregar as funcionalidades da plataforma: o módulo de usuários gerencia perfis e históricos; o módulo de trilhas serve como repositório central para as jornadas de aprendizagem; o módulo de interações permite a comunicação da comunidade; e o módulo de certificação é responsável por gerar e emitir Certificados Digitais Autenticados de conclusão, garantindo sua validade e rastreabilidade por meio de códigos de verificação únicos no banco de dados.
 
-Para aprimorar a aplicação com inteligência artificial avançada, a arquitetura integra um serviço externo de última geração. A orquestração dessa integração é feita pelo kai_backend, um canister específico que atua como intermediário. Ele recebe as matérias-primas fornecidas pelo usuário (como PDFs e links) e aciona o modelo de linguagem Gemini, do Google, por meio de chamadas seguras de API. O Gemini então processa esses dados para gerar trilhas de aprendizagem personalizadas. Esta abordagem híbrida combina o poder computacional de um LLM em grande escala com a segurança e a descentralização da lógica de negócios executada em cadeia, otimizando o melhor dos dois mundos.
+Para aprimorar a aplicação com inteligência artificial avançada, a arquitetura integra um serviço externo de última geração. A orquestração dessa integração é feita pelo módulo do assistente Kai, que atua como intermediário seguro no back-end. Ele recebe as matérias-primas fornecidas pelo usuário (como PDFs e links) e aciona o modelo de linguagem Gemini, do Google, por meio de chamadas de API REST. O Gemini então processa esses dados para gerar trilhas de aprendizagem personalizadas. Esta abordagem combina o poder de processamento de um LLM de grande escala na nuvem com a estabilidade e eficiência de regras de negócio centralizadas.
  
 Este diagrama é essencial para visualizar a organização dos componentes, facilitando o entendimento entre desenvolvedores e stakeholders e orientando as decisões técnicas ao longo do desenvolvimento.
 
@@ -613,169 +441,117 @@ Juntos, o mascote Kai e o logotipo formam uma identidade visual forte e simbóli
 
 Um protótipo de alta fidelidade fornece uma representação visual detalhada do aplicativo. Simula o formato dos campos do design, as interações e a experiência do usuário, utilizando cores, tipografia, ícones, botões e outros elementos gráficos compatíveis com o produto final.
 
-Este tipo de protótipo permite validar decisões de design antes do início do desenvolvimento, testar a usabilidade com usuários reais e apresentar uma solução visual e funcionalmente aos interessados.
+Este tipo de protótipo permite validar decisões de design antes do início do desenvolvimento, testar a usabilidade com usuários reais e apresentar a solução visual e funcionalmente aos interessados.
 
-O protótipo completo pode ser acessado através da plataforma Figma, através do seguinte link: [Figma Prototype](https://www.figma.com/design/qPsCtf4GvgwH6cmUgdy7Q8/Kaisen--WCHL-?node-id=11-55&p=f&t=iUgnCTERVnBrP4BJ-0)
+O protótipo completo pode ser acessado através da plataforma Figma, pelo seguinte link: [Figma Prototype](https://www.figma.com/design/qPsCtf4GvgwH6cmUgdy7Q8/Kaisen--WCHL-?node-id=11-55&p=f&t=iUgnCTERVnBrP4BJ-0)
 
 Abaixo estão as telas prototipadas, que ilustram as principais funcionalidades do aplicativo:
 
 <div align="center">
-
 <sub>Figura 13 - Home</sub>
-
 <img src="./assets/screens/1.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A tela inicial serve como ponto central de navegação da plataforma, oferecendo aos usuários uma visão panorâmica de seu progresso e acesso rápido aos principais recursos. Sendo o primeiro contacto do utilizador com a aplicação, desempenha um papel crucial na definição da experiência do utilizador, dando o tom visual e funcional da viagem. Ele exibe caminhos de aprendizagem destacados e estatísticas personalizadas, facilitando a descoberta intuitiva de conteúdos relevantes.
+A tela inicial serve como ponto central de navegação da plataforma, oferecendo aos usuários uma visão panorâmica de seu progresso e acesso rápido aos principais recursos. Sendo o primeiro contato do usuário com a aplicação, desempenha um papel crucial na definição da experiência, ditando o tom visual e funcional da jornada. Ela exibe trilhas de aprendizagem em destaque e estatísticas personalizadas, facilitando a descoberta intuitiva de conteúdos relevantes.
 
 <div align="center">
-
-<sub>Figura 14 - Bate-papo</sub>
-
+<sub>Figura 14 - Suporte e Ajuda (Kai)</sub>
 <img src="./assets/screens/2.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Essa interface permite a comunicação direta com o assistente de inteligência artificial da plataforma, Kai. Por meio desse canal, os usuários podem enviar materiais, tirar dúvidas e receber orientações educacionais personalizadas. Esta funcionalidade representa o núcleo da proposta de valor da Kaisen, pois transforma conteúdo bruto em experiências de aprendizagem estruturadas, dinâmicas e interativas, alimentadas por IA.
+Essa interface permite a comunicação com o assistente virtual da plataforma, Kai. Por meio desse canal interativo, os usuários podem tirar dúvidas sobre a navegação, buscar materiais específicos no banco de dados da plataforma e receber orientações sobre como estruturar melhor seus estudos. Esta funcionalidade centraliza o suporte ao aluno de forma dinâmica e amigável.
 
 <div align="center">
-
 <sub>Figura 15 - Trilhas</sub>
-
 <img src="./assets/screens/3.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A tela de trilhas é o ambiente central de descoberta de conteúdo, onde todo o material da plataforma é organizado e categorizado por áreas de conhecimento. Para facilitar a busca, a interface oferece recursos de filtragem por temas, interesses e níveis de dificuldade, permitindo ao usuário encontrar facilmente as trilhas mais adequadas aos seus objetivos educacionais. Além disso, a plataforma incentiva a construção coletiva: os usuários que desejam melhorar uma trilha podem iniciar sua colaboração através do botão “Colaborar”.
+A tela de trilhas é o ambiente central de descoberta de conteúdo, onde todo o material da plataforma é organizado e categorizado por áreas de conhecimento. Para facilitar a busca, a interface oferece recursos de filtragem por temas, interesses e níveis de dificuldade, permitindo ao usuário encontrar facilmente as jornadas mais adequadas aos seus objetivos educacionais. Além disso, a plataforma incentiva a construção coletiva: os usuários que desejam sugerir melhorias em uma trilha pública podem iniciar sua colaboração através do botão “Colaborar”.
 
 <div align="center">
-
-<sub>Figura 16 - Trilhas</sub>
-
+<sub>Figura 16 - Visão Geral da Trilha</sub>
 <img src="./assets/screens/4.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Os modais fornecem uma visão geral detalhada de um caminho de aprendizagem específico, incluindo sua descrição, progresso do usuário, módulos disponíveis, conteúdo relacionado e recursos suplementares. São componentes essenciais para o engajamento do usuário, pois permitem acesso direto a diversos tipos de recursos educacionais, como flashcards, resumos, questionários e vídeos. Assim, proporcionam uma experiência de aprendizagem mais dinâmica, interativa e estruturada, favorecendo a assimilação personalizada e eficiente do conhecimento.
+Os modais fornecem uma visão geral detalhada de uma trilha de aprendizagem específica, incluindo sua descrição, progresso do usuário, módulos disponíveis, conteúdo relacionado e recursos suplementares. São componentes essenciais para o engajamento, pois permitem acesso direto a diversos tipos de recursos educacionais, como flashcards, resumos, quizzes e vídeos. Assim, proporcionam uma experiência de aprendizagem mais dinâmica, interativa e estruturada.
 
 <div align="center">
-
-<sub>Figura 17 - Prática e Prova de Aprendizagem</sub>
-
+<sub>Figura 17 - Prática e Comprovação de Aprendizagem</sub>
 <img src="./assets/screens/5.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Na seção Prática, os usuários têm acesso a recursos que os auxiliam na revisão do conteúdo estudado ao longo do caminho, incluindo quizzes e testes interativos. Esses recursos são essenciais para consolidar o aprendizado e validar o progresso individual. Ao concluir as atividades propostas, o usuário desbloqueia a seção Prova de Aprendizagem, onde poderá obter seu certificado em formato NFT. Este certificado é autenticado via blockchain, garantindo sua autenticidade e imutabilidade. A plataforma também oferece opções de compartilhamento direto nas redes sociais, aumentando a visibilidade das conquistas dos usuários e fortalecendo sua reputação digital.
+Na seção Prática, os usuários têm acesso a recursos que os auxiliam na revisão do conteúdo estudado ao longo da trilha, incluindo quizzes e testes interativos. Esses recursos são essenciais para consolidar o aprendizado e validar o progresso individual. Ao concluir as atividades propostas com êxito, o usuário desbloqueia a seção de Comprovação de Aprendizagem, onde obtém seu Certificado Digital Autenticado. Este certificado possui um código de verificação único no banco de dados da plataforma, garantindo sua validade para o mercado de trabalho. A interface também oferece opções de compartilhamento direto no LinkedIn e outras redes, aumentando a visibilidade das conquistas do usuário.
 
 <div align="center">
-
 <sub>Figura 18 - Descubra</sub>
-
 <img src="./assets/screens/6.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-O recurso Descobrir tem como objetivo ampliar as possibilidades de aprendizagem, facilitando a exploração de novos caminhos e conteúdos por meio de categorias temáticas, filtros inteligentes e recomendações personalizadas. Essa tela é vital para manter o envolvimento contínuo dos usuários e estimular a curiosidade, conectando-os a conhecimentos que de outra forma poderiam passar despercebidos.
+O recurso Descobrir tem como objetivo ampliar as possibilidades de aprendizagem, facilitando a exploração de novas trilhas e conteúdos por meio de categorias temáticas, filtros inteligentes e recomendações. Essa tela é vital para manter o envolvimento contínuo dos usuários e estimular a curiosidade, conectando-os a conhecimentos que de outra forma poderiam passar despercebidos.
 
 <div align="center">
-
 <sub>Figura 19 - Perfil</sub>
-
 <img src="./assets/screens/7.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A tela de perfil é um painel centralizado que consolida todas as informações, atividades e contribuições do usuário na plataforma Kaizen, oferecendo uma visão abrangente de sua jornada e interação social. Apresenta informações de identificação, como foto, nome e nome de usuário, além de biografia pessoal, links para redes sociais e métricas de seguidores e perfis seguidos. A interface também inclui botões de ação para seguir ou enviar mensagens e uma seção de emblemas que destaca conquistas especiais como ‘PRO’ e ‘OG’.
+A tela de perfil é um painel centralizado que consolida todas as informações, histórico de estudos e contribuições do usuário na plataforma Kaisen, oferecendo uma visão abrangente de sua jornada educacional. Apresenta informações de identificação, biografia pessoal, links para redes sociais e métricas de conexão (seguidores/seguindo). A interface também inclui uma seção de emblemas (badges) que destaca conquistas gamificadas.
 
-O conteúdo principal é organizado em abas, onde a aba “Visão Geral” exibe as colaborações do usuário, como as trilhas de aprendizagem que ele criou, e um feed de atividades recentes com trilhas concluídas e interações sociais. Na aba “Comunidade”, o usuário pode acessar todas as suas publicações e acompanhar o engajamento por meio de curtidas, comentários e repostagens.
+O conteúdo principal é organizado em abas: a aba “Visão Geral” exibe as trilhas que o usuário criou e um feed de atividades recentes; já a aba “Comunidade” permite acessar publicações e acompanhar o engajamento social.
 
 <div align="center">
-
-<sub>Figura 20 - Loja do Kai</sub>
-
+<sub>Figura 20 - Loja de Recompensas</sub>
 <img src="./assets/screens/8.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A loja de Kai é uma interface gamificada onde os usuários podem usar tokens de plataforma ($KOIN) para adquirir personalizações visuais, skins, recursos exclusivos e ferramentas premium. Este é um recurso estratégico tanto para monetização quanto para retenção de usuários, oferecendo incentivos tangíveis para envolvimento contínuo. Ao possibilitar experiências personalizadas, a loja também ajuda a fortalecer o vínculo emocional dos usuários com a plataforma.
+A loja é uma interface gamificada onde os usuários podem usar os pontos de experiência (XP) ou moedas virtuais da plataforma — adquiridas ao completar trilhas e manter ofensivas de estudo — para resgatar personalizações visuais, avatares, bordas de perfil e recursos cosméticos exclusivos. Este é um recurso estratégico para retenção de usuários, oferecendo incentivos tangíveis para o engajamento contínuo e fortalecendo o vínculo com a plataforma.
 
 <div align="center">
-
-<sub>Figura 21 - configurações e comunidade</sub>
-
+<sub>Figura 21 - Configurações e Comunidade</sub>
 <img src="./assets/screens/9.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-A tela de configurações permite que os usuários ajustem suas preferências de uso, configurem notificações e gerenciem suas contas de forma personalizada. Esse recurso oferece maior controle sobre a experiência individual dentro da plataforma, promovendo conforto, acessibilidade e segurança durante o uso contínuo.
+A tela de configurações permite que os usuários ajustem suas preferências, gerenciem assinaturas, configurem notificações e editem os dados da conta de forma segura. 
 
-A tela da comunidade tem como objetivo fortalecer as interações entre os usuários, servindo como espaço de troca e colaboração. Aqui, os participantes podem postar sobre suas experiências na plataforma, compartilhar reflexões sobre o processo de aprendizagem, divulgar caminhos criados e interagir com conteúdos de outros membros. Essa dinâmica contribui para a construção de uma rede de apoio e engajamento educativo, incentivando o reconhecimento mútuo e o desenvolvimento coletivo.
+A tela da comunidade serve como um fórum integrado para fortalecer as interações. Aqui, os participantes podem compartilhar reflexões sobre o processo de aprendizagem, tirar dúvidas técnicas, divulgar trilhas que criaram e interagir com o conteúdo de outros membros. Essa dinâmica constrói uma rede de apoio mútuo e desenvolvimento coletivo.
 
 <div align="center">
-
-<sub>Figura 22 - criar trilhas</sub>
-
+<sub>Figura 22 - Criar Trilhas</sub>
 <img src="./assets/screens/10.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-O processo de criação de uma nova trilha (trilha) de aprendizagem é um fluxo de trabalho intuitivo e flexível, permitindo ao usuário construir conteúdo manualmente ou com auxílio de Inteligência Artificial. O fluxo começa com um modal onde o usuário define as informações básicas da faixa, como título e descrição. Em seguida, avançam para uma tela de seleção de objetivos, “O que você quer aprender?”, que orienta a geração de conteúdo pela IA ou prepara o caminho para a construção manual. Ao optar pela criação manual, o usuário acessa um editor visual e interativo estilo canvas, onde pode estruturar a trilha de forma dinâmica adicionando e conectando diferentes seções de conteúdo como resumos, flashcards, quizzes, vídeos e perguntas. Além disso, antes de prosseguir, é necessário preencher um formulário de “Informações do Curso” para adicionar metadados e outros detalhes.
+O processo de criação de uma nova trilha de aprendizagem é um fluxo de trabalho flexível para produtores de conteúdo. O fluxo começa com a definição de informações básicas (título, descrição e público-alvo). Em seguida, o autor acessa um construtor visual interativo, onde pode estruturar a trilha de forma dinâmica, adicionando e conectando diferentes módulos (resumos, flashcards, vídeos e avaliações) para desenhar a jornada pedagógica ideal.
 
 <div align="center">
-
-<sub>Figura 23 - criar seções</sub>
-
+<sub>Figura 23 - Criar Seções</sub>
 <img src="./assets/screens/11.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Dentro do editor de trilhas, a plataforma oferece um conjunto de modais específicos para a criação de diversos tipos de seções de conteúdo. Cada modal é projetado para ser intuitivo e focado em tarefas, permitindo ao usuário construir uma experiência de aprendizagem rica e interativa.
-
-Para a criação dos Resumos, o usuário utiliza um editor de texto completo (editor de rich text). A interface permite a inserção de título e a formatação do corpo do texto com diversas opções, como negrito, itálico, sublinhado, listas numeradas ou com marcadores, e a inserção de links, garantindo a criação de um material de leitura bem estruturado e organizado.
-
-A seção Flashcards é ideal para exercícios de memorização. O usuário pode definir um título para o conjunto e depois criar cartões individualmente, preenchendo os campos “Frente” (para a pergunta ou termo) e “Voltar” (para a resposta ou definição). A interface oferece a flexibilidade de adicionar quantos flashcards forem necessários ao conjunto por meio do botão "+ Adicionar novo cartão".
-
-Na criação de Quizzes, o usuário pode elaborar uma pergunta objetiva e configurar múltiplas opções de resposta. Para cada opção existe um seletor que permite marcar qual é a correta, tornando a avaliação automatizada e interativa. É possível adicionar mais perguntas de acordo com a necessidade do usuário.
-
-Além disso, é possível incorporar conteúdo audiovisual através da seção Vídeo. Basta o usuário inserir a URL do vídeo desejado, adicionar um título e uma descrição para contextualizar o material. A plataforma exibe uma prévia do vídeo, garantindo que o link foi incorporado corretamente antes da criação da seção.
+Dentro do construtor de trilhas, a plataforma oferece ferramentas específicas para a criação de diversos formatos de conteúdo:
+- **Resumos:** O usuário utiliza um editor de *rich text* completo para formatar textos (negrito, listas, links), garantindo um material de leitura bem estruturado.
+- **Flashcards:** Ideal para memorização. O autor define a "Frente" (pergunta/termo) e o "Verso" (resposta/definição) de múltiplos cartões.
+- **Quizzes:** Permite elaborar perguntas objetivas de múltipla escolha, sinalizando a alternativa correta para garantir a correção automatizada pela plataforma.
+- **Vídeos:** O autor pode incorporar links de plataformas de vídeo, adicionando título e contexto. O sistema exibe um *preview* automático para garantir que a mídia foi carregada corretamente.
 
 <div align="center">
-
-<sub>Figura 24 - ferramentas de colaboração</sub>
-
+<sub>Figura 24 - Ferramentas de Colaboração</sub>
 <img src="./assets/screens/12.png" width="100%">
-
 <sup>Fonte: Material produzido pelos autores (2025)</sup>
-
 </div>
 
-Na tela de colaboração é possível reorganizar a ordem das seções através de um sistema de arrastar e soltar, editar o conteúdo das seções existentes através de editores específicos (como o editor de rich text para resumos) ou adicionar novas seções de conteúdo. Todas as ferramentas de criação à disposição do autor original também são disponibilizadas ao colaborador, garantindo que suas contribuições sejam ricas e bem formatadas.
+Inspirada no modelo open-source, a tela de colaboração permite que outros usuários sugiram melhorias em uma trilha pública (sistema semelhante a um *Pull Request*). Colaboradores podem sugerir a reorganização de módulos, correção de textos ou adição de novos quizzes e flashcards.
 
-Depois que um colaborador envia as alterações, o autor original da faixa é notificado. Na aba “Colaboração”, eles encontram um painel de gerenciamento com um histórico detalhado de todas as contribuições pendentes. Para cada proposta são exibidas informações cruciais: o que foi modificado, quem fez a alteração e a data de envio. O autor então tem o poder de revisar cada alteração e decidir se aceita a colaboração, integrando-a permanentemente na trilha, ou rejeita-a. Este sistema de aprovação garante a qualidade e integridade do conteúdo original, ao mesmo tempo que estimula a melhoria contínua através da inteligência coletiva da comunidade.
+Após o envio da sugestão, o autor original da trilha recebe uma notificação. Em seu painel de gerenciamento, ele visualiza um histórico detalhado contendo o que foi modificado, quem sugeriu e quando. O autor tem o poder total de revisar as alterações, podendo "Aceitar" (integrando o conteúdo à trilha oficial) ou "Rejeitar" a colaboração. Este sistema garante a integridade do material original enquanto escala a qualidade do conteúdo através do conhecimento da comunidade.
 
 <a id="4-application-development"></a>
 # 4. Desenvolvimento de aplicativos
