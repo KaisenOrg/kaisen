@@ -1,6 +1,10 @@
-import { BadGatewayException, Injectable } from '@nestjs/common';
-import { GeminiClient } from './gemini.client';
-import { KAI_SYSTEM_PROMPT, SECTION_SCHEMA_PROMPT, TRACK_SCHEMA_PROMPT } from './gemini.prompts';
+import { BadGatewayException, Injectable } from "@nestjs/common";
+import { GeminiClient } from "./gemini.client";
+import {
+  KAI_SYSTEM_PROMPT,
+  SECTION_SCHEMA_PROMPT,
+  TRACK_SCHEMA_PROMPT,
+} from "./gemini.prompts";
 
 type NormalizedTrackPayload = {
   title: string;
@@ -9,17 +13,23 @@ type NormalizedTrackPayload = {
     id: number;
     title: string;
     content:
-      | { type: 'Page'; title: string; content: string }
-      | { type: 'Flashcard'; cards: Array<{ sentence: string; answer: string }> }
+      | { type: "Page"; title: string; content: string }
       | {
-          type: 'Quiz';
+          type: "Flashcard";
+          cards: Array<{ sentence: string; answer: string }>;
+        }
+      | {
+          type: "Quiz";
           questions: Array<{
             question: string;
             alternatives: Array<{ id: number; text: string }>;
             correctAnswerId: number;
           }>;
         }
-      | { type: 'Essay'; questions: Array<{ question: string; expectedAnswer: string }> };
+      | {
+          type: "Essay";
+          questions: Array<{ question: string; expectedAnswer: string }>;
+        };
   }>;
 };
 
@@ -43,7 +53,7 @@ export class AiService {
     const text = await this.geminiClient.generateText(
       `${KAI_SYSTEM_PROMPT}\n\n${TRACK_SCHEMA_PROMPT}\n\nPedido:\n${prompt}`,
       context,
-      { responseMimeType: 'application/json' },
+      { responseMimeType: "application/json" },
     );
 
     let normalizedTrack: string;
@@ -54,7 +64,7 @@ export class AiService {
         throw error;
       }
 
-      throw new BadGatewayException('Model returned invalid track structure.');
+      throw new BadGatewayException("Model returned invalid track structure.");
     }
 
     return {
@@ -117,10 +127,15 @@ export class AiService {
 
     const sectionsRaw = Array.isArray(parsed.sections) ? parsed.sections : [];
     const sections = sectionsRaw
-      .filter((section): section is Record<string, unknown> => this.isRecord(section))
+      .filter((section): section is Record<string, unknown> =>
+        this.isRecord(section),
+      )
       .map((section, index) => ({
         id: this.toPositiveInt(section.id, index + 1),
-        title: this.ensureText(this.normalizeText(section.title), `Section ${index + 1}`),
+        title: this.ensureText(
+          this.normalizeText(section.title),
+          `Section ${index + 1}`,
+        ),
         content: this.normalizeTrackSectionContent(section.content),
       }));
 
@@ -133,10 +148,13 @@ export class AiService {
     const title =
       parsedTitle && !this.isUnknownTitle(parsedTitle)
         ? parsedTitle
-        : this.ensureText(topicFromPrompt, 'Nova Trilha');
+        : this.ensureText(topicFromPrompt, "Nova Trilha");
 
     const parsedDescription = this.normalizeText(parsed.description);
-    const description = this.ensureText(parsedDescription, `Trilha sobre ${title}.`);
+    const description = this.ensureText(
+      parsedDescription,
+      `Trilha sobre ${title}.`,
+    );
 
     const normalized: NormalizedTrackPayload = {
       title,
@@ -149,7 +167,7 @@ export class AiService {
 
   private buildFallbackTrackJson(prompt: string, rawText: string): string {
     const topicFromPrompt = this.extractPromptTopic(prompt);
-    const title = this.ensureText(topicFromPrompt, 'Nova Trilha');
+    const title = this.ensureText(topicFromPrompt, "Nova Trilha");
 
     const cleanedText = this.cleanModelText(rawText);
     const description = this.ensureText(
@@ -163,11 +181,11 @@ export class AiService {
       sections: [
         {
           id: 1,
-          title: 'Introdução',
+          title: "Introdução",
           content: {
-            type: 'Page',
-            title: 'Visão geral',
-            content: this.ensureText(cleanedText, 'Conteúdo em preparação.'),
+            type: "Page",
+            title: "Visão geral",
+            content: this.ensureText(cleanedText, "Conteúdo em preparação."),
           },
         },
       ],
@@ -184,57 +202,73 @@ export class AiService {
     const contentRecord = content as Record<string, unknown>;
 
     if (
-      'Page' in contentRecord ||
-      'Flashcard' in contentRecord ||
-      'Quiz' in contentRecord ||
-      'Essay' in contentRecord
+      "Page" in contentRecord ||
+      "Flashcard" in contentRecord ||
+      "Quiz" in contentRecord ||
+      "Essay" in contentRecord
     ) {
       return this.normalizeLegacyContent(contentRecord);
     }
 
     const contentType = this.normalizeText(contentRecord.type);
 
-    if (contentType === 'Page') {
-      const title = this.ensureText(this.normalizeText(contentRecord.title), 'Introdução');
+    if (contentType === "Page") {
+      const title = this.ensureText(
+        this.normalizeText(contentRecord.title),
+        "Introdução",
+      );
       const body = this.ensureText(
         this.normalizeText(contentRecord.content) ||
           this.normalizeText(contentRecord.text) ||
           this.normalizeText(contentRecord.body),
-        'Conteúdo em preparação.',
+        "Conteúdo em preparação.",
       );
       return {
-        type: 'Page' as const,
+        type: "Page" as const,
         title,
         content: body,
       };
     }
 
-    if (contentType === 'Flashcard') {
-      const cardsRaw = Array.isArray(contentRecord.cards) ? contentRecord.cards : [];
+    if (contentType === "Flashcard") {
+      const cardsRaw = Array.isArray(contentRecord.cards)
+        ? contentRecord.cards
+        : [];
       const cards = cardsRaw
-        .filter((card: unknown): card is Record<string, unknown> => this.isRecord(card))
+        .filter((card: unknown): card is Record<string, unknown> =>
+          this.isRecord(card),
+        )
         .map((card: Record<string, unknown>) => ({
           sentence: this.normalizeText(card.sentence),
           answer: this.normalizeText(card.answer),
         }))
-        .filter((card: { sentence: string; answer: string }) => card.sentence && card.answer);
+        .filter(
+          (card: { sentence: string; answer: string }) =>
+            card.sentence && card.answer,
+        );
 
       if (cards.length === 0) {
         return this.pageFallback();
       }
 
       return {
-        type: 'Flashcard' as const,
+        type: "Flashcard" as const,
         cards,
       };
     }
 
-    if (contentType === 'Quiz') {
-      const questionsRaw = Array.isArray(contentRecord.questions) ? contentRecord.questions : [];
+    if (contentType === "Quiz") {
+      const questionsRaw = Array.isArray(contentRecord.questions)
+        ? contentRecord.questions
+        : [];
       const questions = questionsRaw
-        .filter((question: unknown): question is Record<string, unknown> => this.isRecord(question))
+        .filter((question: unknown): question is Record<string, unknown> =>
+          this.isRecord(question),
+        )
         .map((question: Record<string, unknown>) => {
-          const alternativesRaw = Array.isArray(question.alternatives) ? question.alternatives : [];
+          const alternativesRaw = Array.isArray(question.alternatives)
+            ? question.alternatives
+            : [];
           const alternatives = alternativesRaw
             .filter(
               (alternative: unknown): alternative is Record<string, unknown> =>
@@ -244,10 +278,17 @@ export class AiService {
               id: this.toPositiveInt(alternative.id, index + 1),
               text: this.normalizeText(alternative.text),
             }))
-            .filter((alternative: { id: number; text: string }) => alternative.text);
+            .filter(
+              (alternative: { id: number; text: string }) => alternative.text,
+            );
 
-          const desiredCorrect = this.toPositiveInt(question.correctAnswerId, 1);
-          const correctAnswerId = alternatives.some((item: { id: number }) => item.id === desiredCorrect)
+          const desiredCorrect = this.toPositiveInt(
+            question.correctAnswerId,
+            1,
+          );
+          const correctAnswerId = alternatives.some(
+            (item: { id: number }) => item.id === desiredCorrect,
+          )
             ? desiredCorrect
             : (alternatives[0]?.id ?? 1);
 
@@ -258,8 +299,10 @@ export class AiService {
           };
         })
         .filter(
-          (question: { question: string; alternatives: Array<{ id: number; text: string }> }) =>
-            question.question && question.alternatives.length > 0,
+          (question: {
+            question: string;
+            alternatives: Array<{ id: number; text: string }>;
+          }) => question.question && question.alternatives.length > 0,
         );
 
       if (questions.length === 0) {
@@ -267,15 +310,19 @@ export class AiService {
       }
 
       return {
-        type: 'Quiz' as const,
+        type: "Quiz" as const,
         questions,
       };
     }
 
-    if (contentType === 'Essay') {
-      const questionsRaw = Array.isArray(contentRecord.questions) ? contentRecord.questions : [];
+    if (contentType === "Essay") {
+      const questionsRaw = Array.isArray(contentRecord.questions)
+        ? contentRecord.questions
+        : [];
       const questions = questionsRaw
-        .filter((question: unknown): question is Record<string, unknown> => this.isRecord(question))
+        .filter((question: unknown): question is Record<string, unknown> =>
+          this.isRecord(question),
+        )
         .map((question: Record<string, unknown>) => ({
           question: this.normalizeText(question.question),
           expectedAnswer: this.normalizeText(question.expectedAnswer),
@@ -290,7 +337,7 @@ export class AiService {
       }
 
       return {
-        type: 'Essay' as const,
+        type: "Essay" as const,
         questions,
       };
     }
@@ -302,30 +349,41 @@ export class AiService {
     if (this.isRecord(content.Page)) {
       const page = content.Page as Record<string, unknown>;
       return {
-        type: 'Page' as const,
-        title: this.ensureText(this.normalizeText(page.title), 'Introdução'),
-        content: this.ensureText(this.normalizeText(page.content), 'Conteúdo em preparação.'),
+        type: "Page" as const,
+        title: this.ensureText(this.normalizeText(page.title), "Introdução"),
+        content: this.ensureText(
+          this.normalizeText(page.content),
+          "Conteúdo em preparação.",
+        ),
       };
     }
 
     if (Array.isArray(content.Flashcard)) {
-      const cards = content.Flashcard
-        .filter((card: unknown): card is Record<string, unknown> => this.isRecord(card))
+      const cards = content.Flashcard.filter(
+        (card: unknown): card is Record<string, unknown> => this.isRecord(card),
+      )
         .map((card: Record<string, unknown>) => ({
           sentence: this.normalizeText(card.sentence),
           answer: this.normalizeText(card.answer),
         }))
-        .filter((card: { sentence: string; answer: string }) => card.sentence && card.answer);
+        .filter(
+          (card: { sentence: string; answer: string }) =>
+            card.sentence && card.answer,
+        );
       if (cards.length > 0) {
-        return { type: 'Flashcard' as const, cards };
+        return { type: "Flashcard" as const, cards };
       }
     }
 
     if (Array.isArray(content.Quiz)) {
-      const questions = content.Quiz
-        .filter((question: unknown): question is Record<string, unknown> => this.isRecord(question))
+      const questions = content.Quiz.filter(
+        (question: unknown): question is Record<string, unknown> =>
+          this.isRecord(question),
+      )
         .map((question: Record<string, unknown>) => {
-          const alternativesRaw = Array.isArray(question.alternatives) ? question.alternatives : [];
+          const alternativesRaw = Array.isArray(question.alternatives)
+            ? question.alternatives
+            : [];
           const alternatives = alternativesRaw
             .filter(
               (alternative: unknown): alternative is Record<string, unknown> =>
@@ -335,10 +393,17 @@ export class AiService {
               id: this.toPositiveInt(alternative.id, index + 1),
               text: this.normalizeText(alternative.text),
             }))
-            .filter((alternative: { id: number; text: string }) => alternative.text);
+            .filter(
+              (alternative: { id: number; text: string }) => alternative.text,
+            );
 
-          const desiredCorrect = this.toPositiveInt(question.correctAnswerId, 1);
-          const correctAnswerId = alternatives.some((item: { id: number }) => item.id === desiredCorrect)
+          const desiredCorrect = this.toPositiveInt(
+            question.correctAnswerId,
+            1,
+          );
+          const correctAnswerId = alternatives.some(
+            (item: { id: number }) => item.id === desiredCorrect,
+          )
             ? desiredCorrect
             : (alternatives[0]?.id ?? 1);
 
@@ -349,18 +414,22 @@ export class AiService {
           };
         })
         .filter(
-          (question: { question: string; alternatives: Array<{ id: number; text: string }> }) =>
-            question.question && question.alternatives.length > 0,
+          (question: {
+            question: string;
+            alternatives: Array<{ id: number; text: string }>;
+          }) => question.question && question.alternatives.length > 0,
         );
 
       if (questions.length > 0) {
-        return { type: 'Quiz' as const, questions };
+        return { type: "Quiz" as const, questions };
       }
     }
 
     if (Array.isArray(content.Essay)) {
-      const questions = content.Essay
-        .filter((question: unknown): question is Record<string, unknown> => this.isRecord(question))
+      const questions = content.Essay.filter(
+        (question: unknown): question is Record<string, unknown> =>
+          this.isRecord(question),
+      )
         .map((question: Record<string, unknown>) => ({
           question: this.normalizeText(question.question),
           expectedAnswer: this.normalizeText(question.expectedAnswer),
@@ -371,7 +440,7 @@ export class AiService {
         );
 
       if (questions.length > 0) {
-        return { type: 'Essay' as const, questions };
+        return { type: "Essay" as const, questions };
       }
     }
 
@@ -385,32 +454,32 @@ export class AiService {
     try {
       return JSON.parse(stripped);
     } catch {
-      const start = stripped.indexOf('{');
-      const end = stripped.lastIndexOf('}');
+      const start = stripped.indexOf("{");
+      const end = stripped.lastIndexOf("}");
 
       if (start >= 0 && end > start) {
         try {
           return JSON.parse(stripped.slice(start, end + 1));
         } catch {
-          throw new BadGatewayException('Model response is not valid JSON.');
+          throw new BadGatewayException("Model response is not valid JSON.");
         }
       }
 
-      throw new BadGatewayException('Model response is not valid JSON.');
+      throw new BadGatewayException("Model response is not valid JSON.");
     }
   }
 
   private cleanModelText(text: string): string {
     const withoutFence = text
-      .replace(/```(?:json)?/gi, '')
-      .replace(/```/g, '')
+      .replace(/```(?:json)?/gi, "")
+      .replace(/```/g, "")
       .trim();
 
     return withoutFence.slice(0, 6000);
   }
 
   private normalizeText(value: unknown): string {
-    return typeof value === 'string' ? value.trim() : '';
+    return typeof value === "string" ? value.trim() : "";
   }
 
   private ensureText(value: string, fallback: string): string {
@@ -418,7 +487,7 @@ export class AiService {
   }
 
   private toPositiveInt(value: unknown, fallback: number): number {
-    if (typeof value === 'number' && Number.isFinite(value) && value > 0) {
+    if (typeof value === "number" && Number.isFinite(value) && value > 0) {
       return Math.floor(value);
     }
 
@@ -431,32 +500,36 @@ export class AiService {
   }
 
   private isRecord(value: unknown): value is Record<string, unknown> {
-    return typeof value === 'object' && value !== null;
+    return typeof value === "object" && value !== null;
   }
 
   private isUnknownTitle(value: string): boolean {
     const normalized = value.toLowerCase();
-    return normalized === 'unknown' || normalized === 'unkown' || normalized === 'desconhecido';
+    return (
+      normalized === "unknown" ||
+      normalized === "unkown" ||
+      normalized === "desconhecido"
+    );
   }
 
   private extractPromptTopic(prompt: string): string {
     const normalizedPrompt = prompt
-      .replace(/\s+/g, ' ')
-      .replace(/^\s+|\s+$/g, '');
+      .replace(/\s+/g, " ")
+      .replace(/^\s+|\s+$/g, "");
 
     const match = normalizedPrompt.match(/sobre\s+(.+?)(?:\.|$)/i);
     if (!match?.[1]) {
-      return '';
+      return "";
     }
 
-    return this.normalizeText(match[1].replace(/^["'“”]|["'“”]$/g, ''));
+    return this.normalizeText(match[1].replace(/^["'“”]|["'“”]$/g, ""));
   }
 
   private pageFallback() {
     return {
-      type: 'Page' as const,
-      title: 'Introdução',
-      content: 'Conteúdo em preparação.',
+      type: "Page" as const,
+      title: "Introdução",
+      content: "Conteúdo em preparação.",
     };
   }
 }

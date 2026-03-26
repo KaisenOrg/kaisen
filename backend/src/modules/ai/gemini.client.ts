@@ -2,8 +2,8 @@ import {
   BadGatewayException,
   Injectable,
   ServiceUnavailableException,
-} from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+} from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
 
 interface GeminiPart {
   text?: string;
@@ -22,7 +22,7 @@ interface GeminiResponse {
 }
 
 interface GenerateTextOptions {
-  responseMimeType?: 'application/json' | 'text/plain';
+  responseMimeType?: "application/json" | "text/plain";
 }
 
 @Injectable()
@@ -32,15 +32,22 @@ export class GeminiClient {
   private readonly imageModel: string;
 
   constructor(private readonly configService: ConfigService) {
-    this.apiKey = this.configService.get<string>('GEMINI_API_KEY');
-    this.textModel = this.configService.get<string>('GEMINI_TEXT_MODEL', 'gemini-2.5-flash');
+    this.apiKey = this.configService.get<string>("GEMINI_API_KEY");
+    this.textModel = this.configService.get<string>(
+      "GEMINI_TEXT_MODEL",
+      "gemini-2.5-flash",
+    );
     this.imageModel = this.configService.get<string>(
-      'GEMINI_IMAGE_MODEL',
-      'gemini-2.0-flash-preview-image-generation',
+      "GEMINI_IMAGE_MODEL",
+      "gemini-2.0-flash-preview-image-generation",
     );
   }
 
-  async generateText(prompt: string, context?: string, options?: GenerateTextOptions): Promise<string> {
+  async generateText(
+    prompt: string,
+    context?: string,
+    options?: GenerateTextOptions,
+  ): Promise<string> {
     const response = await this.request(this.textModel, {
       contents: this.buildContents(prompt, context),
       ...(options?.responseMimeType
@@ -52,9 +59,11 @@ export class GeminiClient {
         : {}),
     });
 
-    const text = response.candidates?.[0]?.content?.parts?.find((part) => part.text)?.text;
+    const text = response.candidates?.[0]?.content?.parts?.find(
+      (part) => part.text,
+    )?.text;
     if (!text) {
-      throw new BadGatewayException('Gemini returned no text content.');
+      throw new BadGatewayException("Gemini returned no text content.");
     }
 
     return text;
@@ -63,7 +72,7 @@ export class GeminiClient {
   async generateImage(prompt: string, context?: string) {
     const response = await this.request(this.imageModel, {
       generationConfig: {
-        responseModalities: ['TEXT', 'IMAGE'],
+        responseModalities: ["TEXT", "IMAGE"],
       },
       contents: this.buildContents(prompt, context),
     });
@@ -73,7 +82,7 @@ export class GeminiClient {
     const text = parts.find((part) => part.text)?.text ?? null;
 
     if (!image) {
-      throw new BadGatewayException('Gemini returned no image content.');
+      throw new BadGatewayException("Gemini returned no image content.");
     }
 
     return {
@@ -84,34 +93,40 @@ export class GeminiClient {
   }
 
   private buildContents(prompt: string, context?: string) {
-    const contents: Array<{ role: string; parts: Array<{ text: string }> }> = [];
+    const contents: Array<{ role: string; parts: Array<{ text: string }> }> =
+      [];
 
     if (context?.trim()) {
       contents.push({
-        role: 'user',
+        role: "user",
         parts: [{ text: `Contexto anterior:\n${context}` }],
       });
     }
 
     contents.push({
-      role: 'user',
+      role: "user",
       parts: [{ text: prompt }],
     });
 
     return contents;
   }
 
-  private async request(model: string, body: Record<string, unknown>): Promise<GeminiResponse> {
+  private async request(
+    model: string,
+    body: Record<string, unknown>,
+  ): Promise<GeminiResponse> {
     if (!this.apiKey) {
-      throw new ServiceUnavailableException('GEMINI_API_KEY is not configured.');
+      throw new ServiceUnavailableException(
+        "GEMINI_API_KEY is not configured.",
+      );
     }
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${this.apiKey}`,
       {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(body),
       },

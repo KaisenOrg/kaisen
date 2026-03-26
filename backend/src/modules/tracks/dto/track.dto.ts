@@ -1,4 +1,4 @@
-import { Type } from 'class-transformer';
+import { Type } from "class-transformer";
 import {
   ArrayMinSize,
   IsIn,
@@ -9,7 +9,7 @@ import {
   IsString,
   Min,
   ValidateNested,
-} from 'class-validator';
+} from "class-validator";
 
 export class FlashcardItemDto {
   @IsString()
@@ -58,8 +58,8 @@ export class EssayItemDto {
 }
 
 export class SectionContentDto {
-  @IsIn(['Page', 'Flashcard', 'Quiz', 'Essay'])
-  type!: 'Page' | 'Flashcard' | 'Quiz' | 'Essay';
+  @IsIn(["Page", "Flashcard", "Quiz", "Essay"])
+  type!: "Page" | "Flashcard" | "Quiz" | "Essay";
 
   @IsOptional()
   @IsString()
